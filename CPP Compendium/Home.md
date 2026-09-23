@@ -31,7 +31,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-domains -->
 | | Domain | The question it answers | Progress |
 |---|---|---|---|
-| `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `░░░░░░░░` 0/9 |
+| `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `█░░░░░░░` 1/9 |
 | `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `░░░░░░░░` 0/18 |
 | `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `░░░░░░░░` 0/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `░░░░░░░░` 0/12 |
@@ -57,29 +57,30 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 285 | 0 | 0 | 6 | 0 | 291 | 0 | 1 |
+| 284 | 1 | 0 | 6 | 0 | 291 | 1 | 1 |
 
 `░░░░░░░░░░░░░░░░░░░░` **2%** of the Atlas written · last build 2026-09-23
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Map — What C++ Is]] · *map* · `D00` — pinned by Editor
-2. [[Map — Ownership & Move Semantics]] · *map* · `D07` — pinned by Editor
-3. [[Map — Inheritance & Polymorphism]] · *map* · `D08` — pinned by Editor
-4. [[Map — Program Structure & Build]] · *map* · `D01` — wave 0
-5. [[Map — Types & Values]] · *map* · `D02` — wave 0
-6. [[Map — Expressions & Control]] · *map* · `D03` — wave 0
+1. [[Map — Ownership & Move Semantics]] · *map* · `D07` — pinned by Editor
+2. [[Map — Inheritance & Polymorphism]] · *map* · `D08` — pinned by Editor
+3. [[Map — Program Structure & Build]] · *map* · `D01` — wave 0
+4. [[Map — Types & Values]] · *map* · `D02` — wave 0
+5. [[Map — Expressions & Control]] · *map* · `D03` — wave 0
+6. [[Map — Functions]] · *map* · `D05` — wave 0
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-23
 - ● [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-23
-- ● [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-23
 - ● [[RAII]] · *idiom* · updated 2026-09-23
+- ● [[Dangling Pointers and References]] · *pitfall* · updated 2026-09-23
+- ● [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-23
 - ● [[Value Categories]] · *concept* · updated 2026-09-23
 - ● [[Pointers vs References]] · *comparison* · updated 2026-09-23
-- ● [[Dangling Pointers and References]] · *pitfall* · updated 2026-09-23
 <!-- cc:end -->
 
 ## Start here

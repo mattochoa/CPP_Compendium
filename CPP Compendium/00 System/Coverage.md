@@ -8,16 +8,16 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 285 |
+| ○ planned | 284 |
 | ◌ stub | 0 |
-| ◐ draft | 0 |
+| ◐ draft | 1 |
 | ⟲ revise | 0 |
 | ● reviewed | 6 |
 | ★ evergreen | 0 |
 
 **Total topics:** 291
 
-- Wave 0: `█░░░░░░░░░░░░░░░░░░░` 1/17
+- Wave 0: `██░░░░░░░░░░░░░░░░░░` 2/17
 - Wave 1: `█░░░░░░░░░░░░░░░░░░░` 3/49
 - Wave 2: `░░░░░░░░░░░░░░░░░░░░` 2/99
 - Wave 3: `░░░░░░░░░░░░░░░░░░░░` 0/97
@@ -25,11 +25,11 @@ tags: [system/generated]
 
 ## D00 · What C++ Is
 
-*What contract does C++ make between the programmer, the compiler and the machine?*  `░░░░░░░░░░` 0/9
+*What contract does C++ make between the programmer, the compiler and the machine?*  `█░░░░░░░░░` 1/9
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ○ | [[Map — What C++ Is]] | map | 1 | 0 |  |
+| ◐ | [[Map — What C++ Is]] | map | 1 | 0 |  |
 | ○ | [[The C++ Design Philosophy]] | concept | 1 | 1 |  |
 | ○ | [[Zero-Overhead Principle]] | concept | 1 | 1 |  |
 | ○ | [[Levels of Abstraction — From Bits to Libraries]] | concept | 1 | 1 |  |

@@ -64,7 +64,7 @@ A **resource** is anything that must be given back: heap memory, a file handle, 
 > 5. **Price:** Every kind of resource needs a wrapper type. Its copy and move behavior must be designed (who owns it after a copy?). Destructors must not throw.
 
 > [!tension] safety ⟷ performance, resolved without compromise
-> Garbage-collected languages make memory safe by deferring release to a collector, which costs run time and loses *determinism*: a file closes "eventually". RAII makes release **safe and immediate**, and it compiles to the same instructions you would have written by hand. That is the [[Zero-Overhead Principle]] in its purest form.
+> Garbage-collected languages make memory safe by deferring release to a collector, which costs run time and loses *determinism*: a file closes "eventually". RAII makes release **safe and immediate**, and it compiles to the same instructions you would have written by hand. That is the [[Zero-Overhead Principle]] in its purest form — the same bargain [[Map — What C++ Is|the language as a whole]] makes.
 
 The name is historical and slightly misleading. Stroustrup coined *Resource Acquisition Is Initialization* for the acquisition half, but the idiom's power lies in the release half. Many people prefer *scope-bound resource management*.
 

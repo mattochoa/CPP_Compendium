@@ -43,7 +43,7 @@ rubric:
 
 ## Why This Domain Exists
 
-A program computes with **objects**: regions of storage that hold values of a type ([[The C++ Object Model — What an Object Is]]). Take away a language's conveniences, and three facts remain that any language must handle:
+[[Map — What C++ Is|The previous domain]] established that C++'s contract binds only *observable behavior*, leaving everything else — including where things live and how long they last — for the implementation to decide within rules the Standard still pins down. A program computes with **objects**: regions of storage that hold values of a type ([[The C++ Object Model — What an Object Is]]). Take away a language's conveniences, and three facts remain that any language must handle:
 
 > [!principle] The three questions, from first principles
 > 1. **Where?** An object needs *storage*: bytes somewhere. Storage comes from different places with different costs. The stack is almost free to allocate from but limited to a scope. The heap is flexible but needs an allocator call. Static storage lasts forever but exists only once. So C++ exposes the choice as [[Storage Duration]].

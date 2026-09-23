@@ -62,7 +62,7 @@ Dangling bugs are the most deceptive family in C++ because the program usually *
 
 > [!principle] Why the language allows it
 > 1. **Constraint:** Tracking every pointer to every object at run time (as garbage collectors or reference counts do) costs time and memory on *every* access.
-> 2. **Design:** C++ ties object lifetime to scope or explicit `delete` ([[RAII]]) and lets pointers and references be plain addresses at zero overhead ([[Zero-Overhead Principle]]).
+> 2. **Design:** C++ ties object lifetime to scope or explicit `delete` ([[RAII]]) and lets pointers and references be plain addresses at zero overhead ([[Zero-Overhead Principle]]) — the trade the whole language commits to (see [[Map — What C++ Is]]).
 > 3. **Price:** An address carries no information about whether its object is alive. Once the object's lifetime ends, `[basic.life]` already forbids almost every use of the pointer. Once its *storage* is released as well, the pointer's value becomes an *invalid pointer value* (`[basic.stc.general]`), and indirection through it is undefined behavior.
 
 The failure always has the same shape. **The observer's lifetime extends past the observed object's lifetime:**
