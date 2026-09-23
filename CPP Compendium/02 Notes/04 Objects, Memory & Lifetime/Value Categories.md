@@ -285,7 +285,7 @@ Allowing this would let `edit` modify a temporary that dies at the semicolon. Th
 
 ## Connections
 
-- **Prerequisites:** [[Object Lifetime]] (what "expiring" means) · [[Anatomy of an Expression]] (every expression has a type and a category).
+- **Prerequisites:** [[Object Lifetime]] (what "expiring" means) · [[Anatomy of an Expression]] (every expression has a type and a category — see [[Map — Expressions & Control]] for the grammar this category system labels).
 - **Enables:** [[Rvalue References]] → [[Move Semantics]] → [[move and forward — Casts, Not Actions]] → [[Forwarding References and Reference Collapsing]].
 - **Explains:** [[Copy Elision and RVO]] (prvalues initialize directly) · [[Temporaries and Lifetime Extension]] · [[decltype and decltype(auto)]].
 - **Hazards:** [[Dangling Pointers and References]] · [[The Moved-From State]].

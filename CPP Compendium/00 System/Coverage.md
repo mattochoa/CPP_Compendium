@@ -8,16 +8,16 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 324 |
+| ○ planned | 323 |
 | ◌ stub | 0 |
-| ◐ draft | 20 |
+| ◐ draft | 21 |
 | ⟲ revise | 0 |
 | ● reviewed | 5 |
 | ★ evergreen | 0 |
 
 **Total topics:** 349
 
-- Wave 0: `████████░░░░░░░░░░░░` 7/18
+- Wave 0: `█████████░░░░░░░░░░░` 8/18
 - Wave 1: `██░░░░░░░░░░░░░░░░░░` 4/51
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 10/122
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 4/123
@@ -98,11 +98,11 @@ tags: [system/generated]
 
 ## D03 · Expressions & Control
 
-*How does a program compute a value and decide what to do next?*  `░░░░░░░░░░` 0/12
+*How does a program compute a value and decide what to do next?*  `█░░░░░░░░░` 1/12
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ○ | [[Map — Expressions & Control]] | map | 1 | 0 |  |
+| ◐ | [[Map — Expressions & Control]] | map | 1 | 0 |  |
 | ○ | [[Anatomy of an Expression]] | concept | 1 | 1 |  |
 | ○ | [[Precedence and Associativity]] | concept | 1 | 1 |  |
 | ○ | [[Control Flow — Selection and Iteration]] | concept | 1 | 1 |  |

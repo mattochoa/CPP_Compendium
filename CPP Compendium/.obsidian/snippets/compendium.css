@@ -71,12 +71,26 @@
 .markdown-rendered .mermaid { display: flex; justify-content: center; margin: 1em 0; }
 .markdown-rendered .mermaid svg { max-width: 100%; height: auto; }
 
-/* Box-drawing diagrams: crisp monospace, no wrap */
+/* Box-drawing diagrams and Quick-Reference tables: crisp monospace, no wrap.
+   Header Cards align their `// cc: fragment` rows with manual spacing
+   (expression // input | operation | result), exactly like the text/txt
+   box diagrams — word-wrap breaks that alignment just as badly, so cpp
+   blocks get the same treatment. Long rows scroll horizontally instead. */
 .markdown-rendered pre.language-text code,
-.markdown-rendered pre.language-txt code {
+.markdown-rendered pre.language-txt code,
+.markdown-rendered pre.language-cpp code {
   line-height: 1.25;
   font-variant-ligatures: none;
   white-space: pre;
+}
+
+/* No-wrap only helps if the box can scroll instead of clipping —
+   force horizontal scroll on the container for all three. */
+.markdown-rendered pre.language-text,
+.markdown-rendered pre.language-txt,
+.markdown-rendered pre.language-cpp {
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 /* ---------- code ---------------------------------------------------------- */

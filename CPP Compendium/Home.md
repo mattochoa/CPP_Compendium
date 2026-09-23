@@ -34,7 +34,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `█░░░░░░░` 1/9 |
 | `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `░░░░░░░░` 1/18 |
 | `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `░░░░░░░░` 1/25 |
-| `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `░░░░░░░░` 0/12 |
+| `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `█░░░░░░░` 1/12 |
 | `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `█░░░░░░░` 4/26 |
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `░░░░░░░░` 0/16 |
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `░░░░░░░░` 0/19 |
@@ -58,33 +58,33 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 324 | 20 | 0 | 5 | 0 | 349 | 6 | 1 |
+| 323 | 21 | 0 | 5 | 0 | 349 | 7 | 1 |
 
 `█░░░░░░░░░░░░░░░░░░░` **7%** of the Atlas written · last build 2026-09-23
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Map — Expressions & Control]] · *map* · `D03` — wave 0
-2. [[Map — Functions]] · *map* · `D05` — wave 0
-3. [[Map — Classes & Encapsulation]] · *map* · `D06` — wave 0
-4. [[Map — Generic Programming]] · *map* · `D09` — wave 0
-5. [[Map — Standard Library]] · *map* · `D10` — wave 0
-6. [[Map — Errors & Contracts]] · *map* · `D11` — wave 0
+1. [[Map — Functions]] · *map* · `D05` — wave 0
+2. [[Map — Classes & Encapsulation]] · *map* · `D06` — wave 0
+3. [[Map — Generic Programming]] · *map* · `D09` — wave 0
+4. [[Map — Standard Library]] · *map* · `D10` — wave 0
+5. [[Map — Errors & Contracts]] · *map* · `D11` — wave 0
+6. [[Map — Concurrency]] · *map* · `D12` — wave 0
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — Expressions & Control]] · *map* · updated 2026-09-23
+- ● [[Value Categories]] · *concept* · updated 2026-09-23
+- ◐ [[Map — Types & Values]] · *map* · updated 2026-09-23
+- ◐ [[Header — cmath]] · *header* · updated 2026-09-23
+- ◐ [[Header — cctype]] · *header* · updated 2026-09-23
 - ◐ [[Map — Standard Headers]] · *map* · updated 2026-09-23
 - ◐ [[Header — conio (non-standard)]] · *header* · updated 2026-09-23
 - ◐ [[Header — sstream]] · *header* · updated 2026-09-23
 - ◐ [[Header — ios]] · *header* · updated 2026-09-23
 - ◐ [[Header — fstream]] · *header* · updated 2026-09-23
-- ◐ [[Header — cstring]] · *header* · updated 2026-09-23
-- ◐ [[Header — cstdio]] · *header* · updated 2026-09-23
-- ◐ [[Header — cmath]] · *header* · updated 2026-09-23
-- ◐ [[Header — Modern IO]] · *header* · updated 2026-09-23
-- ◐ [[Header — iomanip]] · *header* · updated 2026-09-23
 <!-- cc:end -->
 
 ## Start here

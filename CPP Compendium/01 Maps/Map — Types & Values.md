@@ -73,7 +73,7 @@ flowchart LR
     classDef danger  fill:#7f1d1d,stroke:#f87171,color:#fef2f2
 ```
 
-**What a type is** sits at the root: everything else in the domain is either a kind of type, a rule for moving between types, or a way one of those rules goes wrong.
+**What a type is** sits at the root: everything else in the domain is either a kind of type, a rule for moving between types, or a way one of those rules goes wrong. Once a value has a type, [[Map — Expressions & Control]] asks how it combines with others and how a program chooses what runs next.
 
 ## Learning Route
 

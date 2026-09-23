@@ -1,6 +1,6 @@
 {
-  "runs": 7,
-  "builder_runs": 6,
+  "runs": 8,
+  "builder_runs": 7,
   "editor_runs": 1,
   "history": [
     {
@@ -139,10 +139,25 @@
       "code": "0/0 12/14 10/11 16/19 16/18 14/15 11/12 12/15 8/18 15/18 16/18 11/14 17/20 6/14",
       "commit": "✓",
       "summary": "owner request: adopted the owner's 13 std-header sheets as Header Cards (05 Headers, HDR domain), hub map, 44 cards registered; header archetype, cc: stmts, export-pdf; originals + PDFs archived to __RESOURCES__"
+    },
+    {
+      "when": "2026-09-23T13:20:42Z",
+      "run": 7,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "map-d03",
+        "map-d02",
+        "value-categories"
+      ],
+      "lint": "100–100",
+      "code": "0/0 0/0 4/4",
+      "commit": "✓",
+      "summary": "wave 0: wrote Map — Expressions & Control (D03), the third of 16 remaining domain maps; back-wove links from Map — Types & Values and Value Categories"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-23T12:20:05Z"
+  "last_builder": "2026-09-23T13:20:42Z"
 }
