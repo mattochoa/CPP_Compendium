@@ -67,7 +67,7 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 29 | Multithreaded Producer-Consumer Simulation | ○ [[Threads — thread and jthread]], ○ [[Data Races and Race Conditions]], ○ [[Mutexes and Lock Guards]], ○ [[Condition Variables]], ○ [[Sanitizers — ASan, UBSan, TSan]] |
+| 29 | Multithreaded Producer-Consumer Simulation | ○ [[Threads — thread and jthread]], ○ [[Data Races and Race Conditions]], ○ [[Mutexes and Lock Guards]], ○ [[Condition Variables]], ○ [[Sanitizers — ASan, UBSan, TSan]], ◐ [[Kit — Background Worker (C++14-17)]] |
 | 30 | Design Patterns Toolkit | ○ [[Strategy Pattern]], ○ [[Observer Pattern]], ○ [[Factory Patterns]], ○ [[Singleton — and Why to Avoid It]] |
 | 31 | TCP Chat Client/Server | ● [[RAII]] |
 | 32 | Performance Profiling & Optimization Challenge | ○ [[chrono — Durations, Clocks, Time Points]], ○ [[Performance — Measure, Don't Guess]], ○ [[The Memory Hierarchy and Caches]], ○ [[Benchmarking Correctly]], ○ [[Profiling]], ○ [[Data Locality and Access Patterns]] |
@@ -78,4 +78,4 @@ tags: [system/generated, practice]
 |---|---|---|
 | 33 | Capstone A: Text Adventure / 2D Game Engine Core | — |
 | 34 | Capstone B: Mini Database Engine with Persistence | — |
-| 35 | Capstone C: Multithreaded Chat/Web Server Platform | ○ [[Thread Pools and Task Queues]] |
+| 35 | Capstone C: Multithreaded Chat/Web Server Platform | ○ [[Thread Pools and Task Queues]], ◐ [[Kit — Background Worker (C++14-17)]] |

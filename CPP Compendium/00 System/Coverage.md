@@ -8,19 +8,19 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 319 |
+| ○ planned | 316 |
 | ◌ stub | 0 |
-| ◐ draft | 25 |
+| ◐ draft | 29 |
 | ⟲ revise | 0 |
 | ● reviewed | 5 |
 | ★ evergreen | 0 |
 
-**Total topics:** 349
+**Total topics:** 350
 
 - Wave 0: `█████████████░░░░░░░` 12/18
 - Wave 1: `██░░░░░░░░░░░░░░░░░░` 4/51
-- Wave 2: `██░░░░░░░░░░░░░░░░░░` 10/122
-- Wave 3: `█░░░░░░░░░░░░░░░░░░░` 4/123
+- Wave 2: `██░░░░░░░░░░░░░░░░░░` 11/123
+- Wave 3: `█░░░░░░░░░░░░░░░░░░░` 7/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
 ## D00 · What C++ Is
@@ -439,17 +439,18 @@ tags: [system/generated]
 
 ## PRX · Practice
 
-*How does knowledge become skill?*  `░░░░░░░░░░` 0/3
+*How does knowledge become skill?*  `██░░░░░░░░` 1/4
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ○ | [[Path — Course Companion]] | path | 1 | 2 |  |
 | ○ | [[Path — Modern C++ Fluency]] | path | 2 | 3 |  |
 | ○ | [[Path — Systems & Performance]] | path | 3 | 3 |  |
+| ◐ | [[Kit — Background Worker (C++14-17)]] | guide | 2 | 2 |  |
 
 ## HDR · Standard Headers
 
-*Where does each standard facility live, and what exactly does its header promise?*  `██░░░░░░░░` 14/58
+*Where does each standard facility live, and what exactly does its header promise?*  `███░░░░░░░` 17/58
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -487,7 +488,7 @@ tags: [system/generated]
 | ○ | [[Header — optional, variant and any]] | header | 2 | 3 |  |
 | ○ | [[Header — tuple]] | header | 2 | 3 |  |
 | ○ | [[Header — functional]] | header | 2 | 3 |  |
-| ○ | [[Header — chrono]] | header | 2 | 3 |  |
+| ◐ | [[Header — chrono]] | header | 2 | 3 |  |
 | ○ | [[Header — span]] | header | 2 | 3 |  |
 | ○ | [[Header — charconv]] | header | 2 | 3 |  |
 | ○ | [[Header — ranges]] | header | 2 | 3 |  |
@@ -500,11 +501,11 @@ tags: [system/generated]
 | ○ | [[Header — regex]] | header | 3 | 3 |  |
 | ○ | [[Header — type_traits]] | header | 3 | 3 |  |
 | ○ | [[Header — concepts]] | header | 3 | 3 |  |
-| ○ | [[Header — thread and stop_token]] | header | 2 | 3 |  |
+| ◐ | [[Header — thread and stop_token]] | header | 2 | 3 |  |
 | ○ | [[Header — mutex and shared_mutex]] | header | 2 | 3 |  |
 | ○ | [[Header — condition_variable]] | header | 2 | 3 |  |
 | ○ | [[Header — future]] | header | 2 | 3 |  |
-| ○ | [[Header — atomic]] | header | 3 | 3 |  |
+| ◐ | [[Header — atomic]] | header | 3 | 3 |  |
 | ○ | [[Header — system_error]] | header | 3 | 4 |  |
 | ○ | [[Header — new]] | header | 3 | 4 |  |
 | ○ | [[Header — locale]] | header | 3 | 4 |  |

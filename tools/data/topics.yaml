@@ -412,3 +412,7 @@
 - {id: hdr-complex-valarray, t: "Header — complex and valarray", ty: header, d: HDR, tier: 3, w: 4, al: ["<complex>", "<valarray>"]}
 - {id: hdr-source-location, t: "Header — source_location and stacktrace", ty: header, d: HDR, tier: 3, w: 4, al: ["<source_location>", "<stacktrace>"]}
 - {id: hdr-coroutine, t: "Header — coroutine", ty: header, d: HDR, tier: 4, w: 4, pre: [coroutines], al: ["<coroutine>"]}
+
+# ---------------------------------------------------------------- ADDITIONS
+# Appended by `cc.py registry add`; the Editor files them into their domain sections.
+- {id: kit-background-worker, t: "Kit — Background Worker (C++14-17)", ty: guide, d: PRX, tier: 2, w: 2, pr: [29,35], kw: ["std::thread", "stop_token", "jthread", "background worker"]}

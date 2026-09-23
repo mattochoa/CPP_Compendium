@@ -1,6 +1,6 @@
 {
-  "runs": 14,
-  "builder_runs": 13,
+  "runs": 15,
+  "builder_runs": 14,
   "editor_runs": 1,
   "history": [
     {
@@ -222,7 +222,12 @@
       "summary": "Wrote Map — Standard Library (wave 0 domain map): derives the library from first principles (shared, zero-overhead answer to containers/algorithms/IO so programs interoperate), names abstraction-vs-control and compatibility-vs-evolution as the domain's tensions, draws a 13-node concept map hubbed on STL Architecture and Iterators, and routes through vector -> Iterators -> Algorithms -> associative/hash containers -> IO streams -> views/ranges -> vocabulary types. Already linked in from Map — Generic Programming, Map — Expressions & Control and Map — Standard Headers."
     }
   ],
-  "current": null,
+  "current": {
+    "role": "builder",
+    "run": 14,
+    "mode": "AUTHOR",
+    "started": "2026-09-23T17:36:41Z"
+  },
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
   "last_builder": "2026-09-23T17:36:34Z"

@@ -49,8 +49,8 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D15` | [[Map — Design & Idioms\|Design & Idioms]] | Which recurring shapes of solution survive contact with real programs? | `░░░░░░░░` 0/14 |
 | `D16` | [[Map — Evolution of C++\|Evolution of C++]] | How did the language get here, and where is it going? | `░░░░░░░░` 0/10 |
 | `SRC` | Sources | What should be read, in what order, and for what? | `░░░░░░░░` 0/5 |
-| `PRX` | Practice | How does knowledge become skill? | `░░░░░░░░` 0/3 |
-| `HDR` | [[Map — Standard Headers\|Standard Headers]] | Where does each standard facility live, and what exactly does its header promise? | `██░░░░░░` 14/58 |
+| `PRX` | Practice | How does knowledge become skill? | `██░░░░░░` 1/4 |
+| `HDR` | [[Map — Standard Headers\|Standard Headers]] | Where does each standard facility live, and what exactly does its header promise? | `██░░░░░░` 17/58 |
 <!-- cc:end -->
 
 ## Progress
@@ -58,9 +58,9 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 319 | 25 | 0 | 5 | 0 | 349 | 13 | 1 |
+| 316 | 29 | 0 | 5 | 0 | 350 | 14 | 1 |
 
-`██░░░░░░░░░░░░░░░░░░` **9%** of the Atlas written · last build 2026-09-23
+`██░░░░░░░░░░░░░░░░░░` **10%** of the Atlas written · last build 2026-09-23
 <!-- cc:end -->
 
 **Up next (Builder queue):**
@@ -75,16 +75,16 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — Standard Headers]] · *map* · updated 2026-09-23
+- ◐ [[Header — thread and stop_token]] · *header* · updated 2026-09-23
+- ◐ [[Kit — Background Worker (C++14-17)]] · *guide* · updated 2026-09-23
+- ◐ [[Header — atomic]] · *header* · updated 2026-09-23
+- ◐ [[Header — chrono]] · *header* · updated 2026-09-23
 - ◐ [[Map — Standard Library]] · *map* · updated 2026-09-23
 - ◐ [[Pointers vs References]] · *comparison* · updated 2026-09-23
 - ● [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-23
 - ◐ [[Map — Generic Programming]] · *map* · updated 2026-09-23
 - ◐ [[Map — Classes & Encapsulation]] · *map* · updated 2026-09-23
-- ◐ [[Map — Functions]] · *map* · updated 2026-09-23
-- ◐ [[Map — Expressions & Control]] · *map* · updated 2026-09-23
-- ● [[Value Categories]] · *concept* · updated 2026-09-23
-- ◐ [[Map — Types & Values]] · *map* · updated 2026-09-23
-- ◐ [[Header — cmath]] · *header* · updated 2026-09-23
 <!-- cc:end -->
 
 ## Start here

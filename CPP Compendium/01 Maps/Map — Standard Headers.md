@@ -103,6 +103,12 @@ The stream family is one architecture seen at three layers: [[Header — streamb
 | "How do I split a string?" | [[Header — string]] / [[Header — sstream]] | splitting |
 | "Why doesn't `0.1 + 0.2 == 0.3`?" | [[Header — cmath]] | comparing floats |
 | "Why does `isalpha` crash on accented text?" | [[Header — cctype]] | the cast, always |
+| "How do I run work in the background while `main` keeps going?" | [[Header — thread and stop_token]] | main keeps working while a background loop runs |
+| "Why did my program abort when a `std::thread` went out of scope?" | [[Header — thread and stop_token]] | joinable at destruction → `std::terminate` |
+| "How do I tell a thread to stop?" | [[Header — atomic]] / [[Header — thread and stop_token]] | stop flag · `jthread` + `stop_token` |
+| "How do I count from many threads without a mutex?" | [[Header — atomic]] | counter incremented from many threads |
+| "How long did this take?" | [[Header — chrono]] | measuring how long something takes |
+| "How do I convert milliseconds to seconds?" | [[Header — chrono]] | converting between units · rounding |
 | "What's the difference between `fail` and `bad`?" | [[Header — ios]] | state flag decision table |
 | "How do I reset a `stringstream`?" | [[Header — sstream]] | the two-step reset |
 | "How do I make `cout` write to a socket?" | [[Header — streambuf]] | custom buffers |
@@ -176,7 +182,7 @@ C++26   strstream removed; println() with no arguments; runtime_format
 - ○ [[Header — optional, variant and any]] · *header*
 - ○ [[Header — tuple]] · *header*
 - ○ [[Header — functional]] · *header*
-- ○ [[Header — chrono]] · *header*
+- ◐ [[Header — chrono]] · *header*
 - ○ [[Header — span]] · *header*
 - ○ [[Header — charconv]] · *header*
 - ○ [[Header — ranges]] · *header*
@@ -185,7 +191,7 @@ C++26   strstream removed; println() with no arguments; runtime_format
 - ○ [[Header — compare]] · *header*
 - ○ [[Header — expected]] · *header*
 - ○ [[Header — bitset]] · *header*
-- ○ [[Header — thread and stop_token]] · *header*
+- ◐ [[Header — thread and stop_token]] · *header*
 - ○ [[Header — mutex and shared_mutex]] · *header*
 - ○ [[Header — condition_variable]] · *header*
 - ○ [[Header — future]] · *header*
@@ -196,7 +202,7 @@ C++26   strstream removed; println() with no arguments; runtime_format
 - ○ [[Header — regex]] · *header*
 - ○ [[Header — type_traits]] · *header*
 - ○ [[Header — concepts]] · *header*
-- ○ [[Header — atomic]] · *header*
+- ◐ [[Header — atomic]] · *header*
 - ○ [[Header — system_error]] · *header*
 - ○ [[Header — new]] · *header*
 - ○ [[Header — locale]] · *header*
@@ -206,7 +212,7 @@ C++26   strstream removed; println() with no arguments; runtime_format
 **Tier 4 · Expert**
 - ○ [[Header — coroutine]] · *header*
 
-`██░░░░░░░░` 14/58 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███░░░░░░░` 17/58 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

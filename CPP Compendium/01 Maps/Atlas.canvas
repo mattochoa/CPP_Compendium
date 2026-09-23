@@ -2800,7 +2800,7 @@
 			"x": 1658,
 			"y": 4408,
 			"width": 842,
-			"height": 172,
+			"height": 244,
 			"label": "PRX · Practice",
 			"color": "#15803d"
 		},
@@ -2821,6 +2821,16 @@
 			"width": 250,
 			"height": 56,
 			"text": "○ [[Path — Modern C++ Fluency]]\n*path · T2*"
+		},
+		{
+			"id": "t-kit-background-worker",
+			"type": "text",
+			"x": 1954,
+			"y": 4550,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Kit — Background Worker (C++14-17)]]\n*guide · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-path-systems-performance",
@@ -3158,7 +3168,8 @@
 			"y": 5486,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Header — chrono]]\n*header · T2*"
+			"text": "◐ [[Header — chrono]]\n*header · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-hdr-span",
@@ -3239,7 +3250,8 @@
 			"y": 6134,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Header — thread and stop_token]]\n*header · T2*"
+			"text": "◐ [[Header — thread and stop_token]]\n*header · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-hdr-mutex",
@@ -3321,7 +3333,8 @@
 			"y": 4838,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Header — atomic]]\n*header · T3*"
+			"text": "◐ [[Header — atomic]]\n*header · T3*",
+			"color": "3"
 		},
 		{
 			"id": "t-hdr-system-error",
