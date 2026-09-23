@@ -11,3 +11,5 @@ CPP Compendium/.trash/
 # Python
 __pycache__/
 *.pyc
+
+_to_delete/

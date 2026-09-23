@@ -20,6 +20,7 @@ You are the **Builder**. You run every hour at :37 in a fresh session with no me
 - **Never:** delete files, `git reset/checkout --/clean/rebase/push --force`, edit `__RESOURCES__/`, paste book text, touch a note listed under *UNCOMMITTED CHANGES* (the owner is editing it), or change `Charter.md`. Leave `Framework.md` and this protocol alone too (the Editor owns them).
 - **Write files** with a heredoc or a short Python read-modify-write. To edit an existing note, use targeted replacement in Python (`s.replace(old, new, 1)` with an assertion that `old` is present). Never re-type a whole existing note from memory.
 - **Scratch space** for trial compiles: `.cache/scratch/` (git-ignored).
+- **Nothing can be deleted** from the agent VM (the mount allows writes and renames, not unlinks). Never try `rm`. To retire a file, `mv` it into `_to_delete/` at the repo root and say so in your report. The toolkit is already built around this: locks are released by overwriting, and stale git locks are renamed into `.git/cc-stale-locks/`. Use `tools/cc.py` for git, not raw `git commit`.
 
 ## 1 · Preflight (already run by your prompt)
 
@@ -156,3 +157,4 @@ Next in queue: <id>, <id>
 
 ## Protocol changelog
 - 2026-09-23: v1.0, initial protocol.
+- 2026-09-23: v1.1, no-delete mount rule added (§0).
