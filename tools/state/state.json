@@ -1,6 +1,6 @@
 {
-  "runs": 9,
-  "builder_runs": 8,
+  "runs": 10,
+  "builder_runs": 9,
   "editor_runs": 1,
   "history": [
     {
@@ -167,10 +167,23 @@
       "code": "0/0",
       "commit": "✓",
       "summary": "Wrote Map — Functions (D05, wave 0): derives the naming/invocation problem from first principles, covers the call stack, parameter passing, overload resolution, lambdas/closures and callables under abstraction-vs-control and value-vs-identity tensions. Woven from Map — Expressions & Control and Map — Objects, Memory & Lifetime (already frontier-linked)."
+    },
+    {
+      "when": "2026-09-23T16:58:53Z",
+      "run": 9,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "map-d06"
+      ],
+      "lint": "100–100",
+      "code": "0/0",
+      "commit": "✓",
+      "summary": "Wrote Map — Classes & Encapsulation (D06): derives the invariant/encapsulation problem from first principles, maps 13 of the domain's 18 registered topics (Classes as Types through Value Semantics), names abstraction-vs-control and value-vs-identity as the core tensions, and routes all 18 topics in the Learning Route. Woven in via existing prereqs/related links from Map — Functions, Map — Ownership & Move Semantics and Map — Inheritance & Polymorphism."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-23T16:51:24Z"
+  "last_builder": "2026-09-23T16:58:53Z"
 }
