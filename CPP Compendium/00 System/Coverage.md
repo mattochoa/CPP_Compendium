@@ -8,16 +8,16 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 321 |
+| ○ planned | 320 |
 | ◌ stub | 0 |
-| ◐ draft | 23 |
+| ◐ draft | 24 |
 | ⟲ revise | 0 |
 | ● reviewed | 5 |
 | ★ evergreen | 0 |
 
 **Total topics:** 349
 
-- Wave 0: `███████████░░░░░░░░░` 10/18
+- Wave 0: `████████████░░░░░░░░` 11/18
 - Wave 1: `██░░░░░░░░░░░░░░░░░░` 4/51
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 10/122
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 4/123
@@ -247,11 +247,11 @@ tags: [system/generated]
 
 ## D09 · Generic Programming
 
-*How can one piece of code work with many types chosen at compile time?*  `░░░░░░░░░░` 0/16
+*How can one piece of code work with many types chosen at compile time?*  `█░░░░░░░░░` 1/16
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ○ | [[Map — Generic Programming]] | map | 1 | 0 |  |
+| ◐ | [[Map — Generic Programming]] | map | 1 | 0 |  |
 | ○ | [[Templates — Code That Writes Code]] | concept | 1 | 1 |  |
 | ○ | [[Function Templates]] | concept | 1 | 2 |  |
 | ○ | [[Class Templates]] | concept | 2 | 2 |  |

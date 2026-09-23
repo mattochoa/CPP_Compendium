@@ -57,7 +57,7 @@ tags: [system/generated, practice]
 | # | Project | Concepts it exercises |
 |---|---|---|
 | 23 | STL Container & Algorithm Playground | ◐ [[Map — Functions]], ○ [[Lambda Expressions]], ○ [[STL Architecture — Containers, Iterators, Algorithms]], ○ [[The Algorithms Library]] |
-| 24 | Generic Data Structure Library | ○ [[Function Templates]], ○ [[Class Templates]], ○ [[Concepts and Constraints]], ○ [[Full and Partial Specialization]] |
+| 24 | Generic Data Structure Library | ◐ [[Map — Generic Programming]], ○ [[Function Templates]], ○ [[Class Templates]], ○ [[Concepts and Constraints]], ○ [[Full and Partial Specialization]] |
 | 25 | Smart Pointer Refactor Lab | ◐ [[Map — Ownership & Move Semantics]], ● [[Value Categories]], ● [[Dangling Pointers and References]], ● [[RAII]], ○ [[unique_ptr]], ○ [[shared_ptr and Reference Counting]], ○ [[weak_ptr and Reference Cycles]] |
 | 26 | Custom Exception Hierarchy & Robust CSV Parser | ◐ [[Map — Ownership & Move Semantics]], ● [[RAII]], ○ [[Exception Safety Guarantees]], ○ [[Exceptions]], ○ [[Designing Exception Hierarchies]] |
 | 27 | Task Manager with Lambdas & std::function | ◐ [[Map — Functions]], ○ [[Lambda Expressions]], ○ [[Callables and std-function]] |

@@ -40,7 +40,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `░░░░░░░░` 1/19 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `█░░░░░░░` 2/19 |
 | `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `█░░░░░░░` 2/15 |
-| `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `░░░░░░░░` 0/16 |
+| `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `░░░░░░░░` 1/16 |
 | `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `░░░░░░░░` 0/30 |
 | `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `░░░░░░░░` 0/11 |
 | `D12` | [[Map — Concurrency\|Concurrency]] | How do multiple threads of execution share memory without corrupting it? | `░░░░░░░░` 0/17 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 321 | 23 | 0 | 5 | 0 | 349 | 9 | 1 |
+| 320 | 24 | 0 | 5 | 0 | 349 | 11 | 1 |
 
 `██░░░░░░░░░░░░░░░░░░` **8%** of the Atlas written · last build 2026-09-23
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Map — Generic Programming]] · *map* · `D09` — wave 0
-2. [[Map — Standard Library]] · *map* · `D10` — wave 0
-3. [[Map — Errors & Contracts]] · *map* · `D11` — wave 0
-4. [[Map — Concurrency]] · *map* · `D12` — wave 0
-5. [[Map — Performance & the Machine]] · *map* · `D13` — wave 0
-6. [[Map — Tooling & Engineering]] · *map* · `D14` — wave 0
+1. [[Map — Standard Library]] · *map* · `D10` — wave 0
+2. [[Map — Errors & Contracts]] · *map* · `D11` — wave 0
+3. [[Map — Concurrency]] · *map* · `D12` — wave 0
+4. [[Map — Performance & the Machine]] · *map* · `D13` — wave 0
+5. [[Map — Tooling & Engineering]] · *map* · `D14` — wave 0
+6. [[Map — Design & Idioms]] · *map* · `D15` — wave 0
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — Generic Programming]] · *map* · updated 2026-09-23
 - ◐ [[Map — Classes & Encapsulation]] · *map* · updated 2026-09-23
 - ◐ [[Map — Functions]] · *map* · updated 2026-09-23
 - ◐ [[Map — Expressions & Control]] · *map* · updated 2026-09-23
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Header — cctype]] · *header* · updated 2026-09-23
 - ◐ [[Map — Standard Headers]] · *map* · updated 2026-09-23
 - ◐ [[Header — conio (non-standard)]] · *header* · updated 2026-09-23
-- ◐ [[Header — sstream]] · *header* · updated 2026-09-23
 <!-- cc:end -->
 
 ## Start here
