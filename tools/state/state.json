@@ -1,6 +1,6 @@
 {
-  "runs": 1,
-  "builder_runs": 1,
+  "runs": 0,
+  "builder_runs": 0,
   "editor_runs": 0,
   "history": [
     {
@@ -11,7 +11,7 @@
       "items": [],
       "lint": "-",
       "code": "-",
-      "commit": "✓",
+      "commit": "\u2713",
       "summary": "setup verification: tooling patched for the no-delete mount; dry run of the run lifecycle"
     }
   ],
