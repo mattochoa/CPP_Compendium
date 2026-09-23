@@ -8,16 +8,16 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 284 |
+| ○ planned | 283 |
 | ◌ stub | 0 |
-| ◐ draft | 1 |
+| ◐ draft | 2 |
 | ⟲ revise | 0 |
 | ● reviewed | 6 |
 | ★ evergreen | 0 |
 
 **Total topics:** 291
 
-- Wave 0: `██░░░░░░░░░░░░░░░░░░` 2/17
+- Wave 0: `████░░░░░░░░░░░░░░░░` 3/17
 - Wave 1: `█░░░░░░░░░░░░░░░░░░░` 3/49
 - Wave 2: `░░░░░░░░░░░░░░░░░░░░` 2/99
 - Wave 3: `░░░░░░░░░░░░░░░░░░░░` 0/97
@@ -199,11 +199,11 @@ tags: [system/generated]
 
 ## D07 · Ownership & Move Semantics
 
-*Who is responsible for releasing a resource, and how does responsibility transfer?*  `█░░░░░░░░░` 1/19
+*Who is responsible for releasing a resource, and how does responsibility transfer?*  `█░░░░░░░░░` 2/19
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ○ | [[Map — Ownership & Move Semantics]] | map | 1 | 0 |  |
+| ◐ | [[Map — Ownership & Move Semantics]] | map | 1 | 0 |  |
 | ○ | [[Ownership — Who Releases What]] | concept | 1 | 1 |  |
 | ● | [[RAII]] | idiom | 1 | 1 | 20 |
 | ○ | [[Copy Semantics — Deep vs Shallow Copy]] | comparison | 1 | 2 |  |

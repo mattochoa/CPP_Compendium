@@ -1223,7 +1223,7 @@
 			"width": 782,
 			"height": 36,
 			"color": "#22c55e",
-			"text": "**[[Map — Ownership & Move Semantics]]** ○"
+			"text": "**[[Map — Ownership & Move Semantics]]** ◐"
 		},
 		{
 			"id": "t-ownership-model",

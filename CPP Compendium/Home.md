@@ -38,7 +38,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `█░░░░░░░` 4/26 |
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `░░░░░░░░` 0/16 |
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `░░░░░░░░` 0/19 |
-| `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `░░░░░░░░` 1/19 |
+| `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `█░░░░░░░` 2/19 |
 | `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `█░░░░░░░` 1/15 |
 | `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `░░░░░░░░` 0/16 |
 | `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `░░░░░░░░` 0/30 |
@@ -57,23 +57,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 284 | 1 | 0 | 6 | 0 | 291 | 1 | 1 |
+| 283 | 2 | 0 | 6 | 0 | 291 | 2 | 1 |
 
-`░░░░░░░░░░░░░░░░░░░░` **2%** of the Atlas written · last build 2026-09-23
+`█░░░░░░░░░░░░░░░░░░░` **3%** of the Atlas written · last build 2026-09-23
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Map — Ownership & Move Semantics]] · *map* · `D07` — pinned by Editor
-2. [[Map — Inheritance & Polymorphism]] · *map* · `D08` — pinned by Editor
-3. [[Map — Program Structure & Build]] · *map* · `D01` — wave 0
-4. [[Map — Types & Values]] · *map* · `D02` — wave 0
-5. [[Map — Expressions & Control]] · *map* · `D03` — wave 0
-6. [[Map — Functions]] · *map* · `D05` — wave 0
+1. [[Map — Inheritance & Polymorphism]] · *map* · `D08` — pinned by Editor
+2. [[Map — Program Structure & Build]] · *map* · `D01` — wave 0
+3. [[Map — Types & Values]] · *map* · `D02` — wave 0
+4. [[Map — Expressions & Control]] · *map* · `D03` — wave 0
+5. [[Map — Functions]] · *map* · `D05` — wave 0
+6. [[Map — Classes & Encapsulation]] · *map* · `D06` — wave 0
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-23
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-23
 - ● [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-23
 - ● [[RAII]] · *idiom* · updated 2026-09-23

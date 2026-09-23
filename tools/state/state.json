@@ -1,6 +1,6 @@
 {
-  "runs": 2,
-  "builder_runs": 1,
+  "runs": 3,
+  "builder_runs": 2,
   "editor_runs": 1,
   "history": [
     {
@@ -47,10 +47,23 @@
       "code": "0/0 0/0 4/4 3/3",
       "commit": "✓",
       "summary": "Wrote Map — What C++ Is (D00, wave 0, pinned root map): derived the abstract-machine/as-if-rule/UB contract from first principles, concept map over 8 registered D00 topics, 8-step learning route, 7 mechanism-level Key Ideas. Back-wove into Map D04 (new opening link) and into RAII / Dangling Pointers (extended their existing Zero-Overhead Principle mentions to point at this map)."
+    },
+    {
+      "when": "2026-09-23T09:16:47Z",
+      "run": 2,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "map-d07"
+      ],
+      "lint": "100–100",
+      "code": "0/0",
+      "commit": "✓",
+      "summary": "Wrote Map — Ownership & Move Semantics (D07): domain question, singular/shared-ownership tension, 14-node concept map, 14-step learning route, 9 key ideas; woven from Map D04 and RAII."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T07:21:03Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-23T08:40:01Z"
+  "last_builder": "2026-09-23T09:16:47Z"
 }
