@@ -32,7 +32,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | | Domain | The question it answers | Progress |
 |---|---|---|---|
 | `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `█░░░░░░░` 1/9 |
-| `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `░░░░░░░░` 0/18 |
+| `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `░░░░░░░░` 1/18 |
 | `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `░░░░░░░░` 0/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `░░░░░░░░` 0/12 |
 | `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `█░░░░░░░` 4/26 |
@@ -57,23 +57,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 282 | 3 | 0 | 6 | 0 | 291 | 3 | 1 |
+| 281 | 4 | 0 | 6 | 0 | 291 | 4 | 1 |
 
 `█░░░░░░░░░░░░░░░░░░░` **3%** of the Atlas written · last build 2026-09-23
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Map — Program Structure & Build]] · *map* · `D01` — wave 0
-2. [[Map — Types & Values]] · *map* · `D02` — wave 0
-3. [[Map — Expressions & Control]] · *map* · `D03` — wave 0
-4. [[Map — Functions]] · *map* · `D05` — wave 0
-5. [[Map — Classes & Encapsulation]] · *map* · `D06` — wave 0
-6. [[Map — Generic Programming]] · *map* · `D09` — wave 0
+1. [[Map — Types & Values]] · *map* · `D02` — wave 0
+2. [[Map — Expressions & Control]] · *map* · `D03` — wave 0
+3. [[Map — Functions]] · *map* · `D05` — wave 0
+4. [[Map — Classes & Encapsulation]] · *map* · `D06` — wave 0
+5. [[Map — Generic Programming]] · *map* · `D09` — wave 0
+6. [[Map — Standard Library]] · *map* · `D10` — wave 0
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — Program Structure & Build]] · *map* · updated 2026-09-23
 - ◐ [[Map — Inheritance & Polymorphism]] · *map* · updated 2026-09-23
 - ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-23
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-23

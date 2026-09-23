@@ -8,16 +8,16 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 282 |
+| ○ planned | 281 |
 | ◌ stub | 0 |
-| ◐ draft | 3 |
+| ◐ draft | 4 |
 | ⟲ revise | 0 |
 | ● reviewed | 6 |
 | ★ evergreen | 0 |
 
 **Total topics:** 291
 
-- Wave 0: `█████░░░░░░░░░░░░░░░` 4/17
+- Wave 0: `██████░░░░░░░░░░░░░░` 5/17
 - Wave 1: `█░░░░░░░░░░░░░░░░░░░` 3/49
 - Wave 2: `░░░░░░░░░░░░░░░░░░░░` 2/99
 - Wave 3: `░░░░░░░░░░░░░░░░░░░░` 0/97
@@ -41,11 +41,11 @@ tags: [system/generated]
 
 ## D01 · Program Structure & Build
 
-*How does text in many files become one running program?*  `░░░░░░░░░░` 0/18
+*How does text in many files become one running program?*  `█░░░░░░░░░` 1/18
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ○ | [[Map — Program Structure & Build]] | map | 1 | 0 |  |
+| ◐ | [[Map — Program Structure & Build]] | map | 1 | 0 |  |
 | ○ | [[The Compilation Pipeline]] | mechanism | 1 | 1 |  |
 | ○ | [[Translation Units]] | concept | 1 | 1 |  |
 | ○ | [[The Preprocessor]] | mechanism | 1 | 1 |  |

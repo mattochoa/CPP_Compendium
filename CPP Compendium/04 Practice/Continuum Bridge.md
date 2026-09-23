@@ -14,7 +14,7 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 01 | Hello, Compiler | ○ [[The Compilation Pipeline]], ○ [[Compilers and Essential Flags]], ○ [[CMake Fundamentals]] |
+| 01 | Hello, Compiler | ◐ [[Map — Program Structure & Build]], ○ [[The Compilation Pipeline]], ○ [[Compilers and Essential Flags]], ○ [[CMake Fundamentals]] |
 | 02 | Unit & Temperature Converter Suite | ○ [[Fundamental Types]], ○ [[Control Flow — Selection and Iteration]], ○ [[switch and Fallthrough]] |
 | 03 | Number Guessing Game | ○ [[Control Flow — Selection and Iteration]], ○ [[Stream State and Robust Input]], ○ [[Random Number Generation]] |
 | 04 | Grade & GPA Calculator | ○ [[array]] |
@@ -24,7 +24,7 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 06 | Function Library & Header Refactor | ○ [[Headers and Include Guards]], ○ [[Declarations vs Definitions]], ○ [[References]], ● [[Pointers vs References]], ○ [[Parameter Passing — Value, Reference, Pointer]], ○ [[Function Overloading]], ○ [[assert and static_assert]] |
+| 06 | Function Library & Header Refactor | ◐ [[Map — Program Structure & Build]], ○ [[Headers and Include Guards]], ○ [[Declarations vs Definitions]], ○ [[References]], ● [[Pointers vs References]], ○ [[Parameter Passing — Value, Reference, Pointer]], ○ [[Function Overloading]], ○ [[assert and static_assert]] |
 | 07 | Word & Text Analyzer | ○ [[vector]], ○ [[string]], ○ [[Ordered Associative Containers — map and set]], ○ [[IO Streams Architecture]], ○ [[File IO]] |
 | 08 | Matrix Operations Toolkit | ○ [[Preconditions, Postconditions and Contracts]] |
 | 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ○ [[The Call Stack and Stack Frames]], ○ [[Recursion]] |
