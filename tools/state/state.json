@@ -1,6 +1,6 @@
 {
-  "runs": 18,
-  "builder_runs": 17,
+  "runs": 20,
+  "builder_runs": 19,
   "editor_runs": 1,
   "history": [
     {
@@ -250,10 +250,24 @@
       "code": "0/0 0/0 3/3",
       "commit": "✓",
       "summary": "map-d12: Map — Concurrency (frame: memory model as hub, safety-vs-performance + abstraction-vs-control tensions, Amdahl's Law price, 15-node concept map, 11-step route, 8 Key Ideas). Wove into Map — Ownership & Move Semantics (atomic ref-count tension) and RAII (jthread row)."
+    },
+    {
+      "when": "2026-09-23T22:54:03Z",
+      "run": 19,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "map-d13",
+        "map-d04"
+      ],
+      "lint": "100–100",
+      "code": "0/0 0/0",
+      "commit": "✓",
+      "summary": "Wrote Map — Performance & the Machine (D13, wave 0): derives the domain's question from D00's abstract-machine contract, covers memory hierarchy, pipeline/branch prediction, compiler optimization and UB-as-optimization-license, data locality/data-oriented design, allocation cost and SIMD. 14-node concept map hubbed on Big-O Meets the Hardware. Back-wove into Map — Objects, Memory & Lifetime (new related link + forward pointer); Map — Concurrency already linked here. Next: map-d14, map-d15, map-d16."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-23T21:27:17Z"
+  "last_builder": "2026-09-23T22:54:03Z"
 }

@@ -12,6 +12,7 @@ related:
 - "[[Map — Ownership & Move Semantics]]"
 - "[[Map — Types & Values]]"
 - "[[Map — Functions]]"
+- "[[Map — Performance & the Machine]]"
 practice:
 - 11
 - 12
@@ -102,7 +103,7 @@ flowchart LR
 7. [[Dangling Pointers and References]] and [[Memory Leaks]]: the two ways the answers go wrong: an observer too long, an owner never ending.
 8. [[Value Categories]] → [[Temporaries and Lifetime Extension]]: the expression-level view of lifetime that powers move semantics.
 9. [[The Forms of Initialization]]: exactly when and how a lifetime begins.
-10. Advanced layer: [[Object Representation, Padding and Layout]] (including hidden members such as the [[Virtual Dispatch — vptr and vtable|vptr]]) → [[Strict Aliasing and Type Punning]] → [[Placement new and Manual Lifetime]] → [[Allocators and pmr Memory Resources]].
+10. Advanced layer: [[Object Representation, Padding and Layout]] (including hidden members such as the [[Virtual Dispatch — vptr and vtable|vptr]]) → [[Strict Aliasing and Type Punning]] → [[Placement new and Manual Lifetime]] → [[Allocators and pmr Memory Resources]]. What that layout costs on real hardware — cache lines, false sharing, allocation overhead — is [[Map — Performance & the Machine|a later domain's]] question, not this one's.
 
 ## Key Ideas
 

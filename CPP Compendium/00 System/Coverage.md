@@ -8,16 +8,16 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 314 |
+| ○ planned | 313 |
 | ◌ stub | 0 |
-| ◐ draft | 31 |
+| ◐ draft | 32 |
 | ⟲ revise | 0 |
 | ● reviewed | 5 |
 | ★ evergreen | 0 |
 
 **Total topics:** 350
 
-- Wave 0: `████████████████░░░░` 14/18
+- Wave 0: `█████████████████░░░` 15/18
 - Wave 1: `██░░░░░░░░░░░░░░░░░░` 4/51
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 11/123
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 7/123
@@ -349,11 +349,11 @@ tags: [system/generated]
 
 ## D13 · Performance & the Machine
 
-*What does the hardware actually do with our code, and how do we make it fast?*  `░░░░░░░░░░` 0/15
+*What does the hardware actually do with our code, and how do we make it fast?*  `█░░░░░░░░░` 1/15
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ○ | [[Map — Performance & the Machine]] | map | 1 | 0 |  |
+| ◐ | [[Map — Performance & the Machine]] | map | 1 | 0 |  |
 | ○ | [[Performance — Measure, Don't Guess]] | concept | 1 | 2 |  |
 | ○ | [[The Memory Hierarchy and Caches]] | mechanism | 2 | 2 |  |
 | ○ | [[Benchmarking Correctly]] | idiom | 2 | 3 |  |
