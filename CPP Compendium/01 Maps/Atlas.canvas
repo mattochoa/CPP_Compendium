@@ -2099,7 +2099,7 @@
 			"width": 1048,
 			"height": 36,
 			"color": "#a855f7",
-			"text": "**[[Map — Concurrency]]** ○"
+			"text": "**[[Map — Concurrency]]** ◐"
 		},
 		{
 			"id": "t-concurrency-vs-parallelism",

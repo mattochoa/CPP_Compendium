@@ -1,6 +1,6 @@
 {
-  "runs": 16,
-  "builder_runs": 15,
+  "runs": 18,
+  "builder_runs": 17,
   "editor_runs": 1,
   "history": [
     {
@@ -235,10 +235,25 @@
       "code": "0/0 3/3 0/0",
       "commit": "✓",
       "summary": "Wrote Map — Errors & Contracts (D11, wave 0): contracts as the domain hub, fanning into exceptions/error_code/expected, assertions, noexcept, stack unwinding, exception hierarchies, and the cost of exceptions. Woven into RAII and Map — What C++ Is."
+    },
+    {
+      "when": "2026-09-23T21:27:17Z",
+      "run": 17,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "map-d12",
+        "map-d07",
+        "raii"
+      ],
+      "lint": "100–100",
+      "code": "0/0 0/0 3/3",
+      "commit": "✓",
+      "summary": "map-d12: Map — Concurrency (frame: memory model as hub, safety-vs-performance + abstraction-vs-control tensions, Amdahl's Law price, 15-node concept map, 11-step route, 8 Key Ideas). Wove into Map — Ownership & Move Semantics (atomic ref-count tension) and RAII (jthread row)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-23T19:18:49Z"
+  "last_builder": "2026-09-23T21:27:17Z"
 }

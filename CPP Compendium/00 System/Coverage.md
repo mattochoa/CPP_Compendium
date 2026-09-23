@@ -8,16 +8,16 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 315 |
+| ○ planned | 314 |
 | ◌ stub | 0 |
-| ◐ draft | 30 |
+| ◐ draft | 31 |
 | ⟲ revise | 0 |
 | ● reviewed | 5 |
 | ★ evergreen | 0 |
 
 **Total topics:** 350
 
-- Wave 0: `██████████████░░░░░░` 13/18
+- Wave 0: `████████████████░░░░` 14/18
 - Wave 1: `██░░░░░░░░░░░░░░░░░░` 4/51
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 11/123
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 7/123
@@ -325,11 +325,11 @@ tags: [system/generated]
 
 ## D12 · Concurrency
 
-*How do multiple threads of execution share memory without corrupting it?*  `░░░░░░░░░░` 0/17
+*How do multiple threads of execution share memory without corrupting it?*  `█░░░░░░░░░` 1/17
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ○ | [[Map — Concurrency]] | map | 1 | 0 |  |
+| ◐ | [[Map — Concurrency]] | map | 1 | 0 |  |
 | ○ | [[Concurrency vs Parallelism]] | comparison | 1 | 1 |  |
 | ○ | [[Threads — thread and jthread]] | concept | 2 | 2 |  |
 | ○ | [[Data Races and Race Conditions]] | pitfall | 2 | 2 |  |

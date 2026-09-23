@@ -244,7 +244,7 @@ int main() {
 | **Lock guards** | mutex ownership | `std::lock_guard`, `std::scoped_lock`, `std::unique_lock` |
 | **Containers** | heap buffers | `std::vector`, `std::string`: RAII you use daily |
 | **Streams** | file descriptors | `std::ifstream` / `std::ofstream` close in their destructors |
-| **Threads** | a running thread | `std::jthread` (C++20) joins in its destructor |
+| **Threads** | a running thread | `std::jthread` (C++20) joins in its destructor — see [[Map — Concurrency]] |
 | **Scope guard** | "run this lambda at exit" | `scope_exit` (Library Fundamentals TS v3); see [[Scope Guards]] |
 | **Transaction** | commit-or-rollback | the destructor rolls back unless `commit()` was called |
 
