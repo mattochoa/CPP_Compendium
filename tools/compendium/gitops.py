@@ -78,11 +78,14 @@ def changed_since(hours: float) -> list[str]:
 def commit(message: str) -> str:
     sweep_stale_locks()
     a = git("add", "-A", "--", ".", write=True)
+    sweep_stale_locks(max_age_min=0)
     if a.returncode != 0:
         return "FAILED(add): " + (a.stderr or a.stdout).strip()[:200]
     if not git("diff", "--cached", "--name-only").stdout.strip():
         return "-"
     cp = git(*BOT, "commit", "-q", "--no-verify", "-m", message + TRAILER, write=True)
+    # git could not unlink its own lock files (e.g. HEAD.lock); they are ours, so clear them now
+    sweep_stale_locks(max_age_min=0)
     if cp.returncode != 0:
         return "FAILED: " + (cp.stderr or cp.stdout).strip()[:200]
     return git("rev-parse", "--short", "HEAD").stdout.strip()

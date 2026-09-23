@@ -1,0 +1,20 @@
+{
+  "runs": 1,
+  "builder_runs": 1,
+  "editor_runs": 0,
+  "history": [
+    {
+      "when": "2026-09-23T07:21:03Z",
+      "run": 1,
+      "role": "human",
+      "mode": "SETUP",
+      "items": [],
+      "lint": "-",
+      "code": "-",
+      "commit": "✓",
+      "summary": "setup verification: tooling patched for the no-delete mount; dry run of the run lifecycle"
+    }
+  ],
+  "current": null,
+  "last_human": "2026-09-23T07:21:03Z"
+}

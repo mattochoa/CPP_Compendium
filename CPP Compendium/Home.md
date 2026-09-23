@@ -57,7 +57,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 285 | 0 | 0 | 6 | 0 | 291 | 0 | 0 |
+| 285 | 0 | 0 | 6 | 0 | 291 | 1 | 0 |
 
 `░░░░░░░░░░░░░░░░░░░░` **2%** of the Atlas written · last build 2026-09-23
 <!-- cc:end -->
