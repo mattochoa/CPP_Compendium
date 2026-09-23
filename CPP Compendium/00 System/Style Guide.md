@@ -50,7 +50,7 @@ Put the derivation in a `[!principle]` callout. If you cannot derive a rule, you
 
 - Read with `cc.py src find / read`, then **close the book and write in your own words**. Never paste passages, never lightly reword a paragraph, never reproduce a book's example program. Invent your own examples.
 - A quotation, if ever needed, is one sentence at most, in a `[!quote]` callout with its citation. Prefer none.
-- **Cite precisely:** `Primer §13.6.2 (p. 532)`, `Tour §6.2 (p. 74)`, `PPP §17.4`, `Pikus ch. 4 (p. 98)`. Page = printed page label as `cc.py src` reports it.
+- **Cite precisely:** `Primer §13.6.1 (p. 532)`, `Tour §6.2 (p. 74)`, `PPP §17.4` (the PPP edition has no printed page labels: cite the section), `Pikus ch. 4 (p. 113)`. Page = printed page label as `cc.py src` reports it. Cite the page where the point is made, not only where the section starts (e.g. `Primer §12.1.2 (p. 463)`).
 - The copy-guard rejects any 12-word run shared with a book.
 
 ## 6 · Code rules
@@ -74,3 +74,6 @@ Mix three kinds: **recall** (definition), **reasoning** (why/what-if), **predict
 ## 8 · Words to avoid
 
 "simply", "just", "obviously", "basically", "magic", "under the covers" (say *Under the Hood* and show it), "always/never" without qualification, and "the stack/the heap" when *storage duration* is meant.
+
+## Protocol changelog
+- 2026-09-23 (Editor #1): §5 citation examples corrected (§13.6.2 starts on p. 534, not 532; Pikus ch. 4 starts on p. 113); PPP section-only citation made explicit; "cite the page where the point is made" added.

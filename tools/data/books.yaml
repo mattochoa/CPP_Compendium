@@ -1,5 +1,5 @@
 # Local library. `glob` is matched inside "CPP Compendium/__RESOURCES__".
-# `cite` is the short form used in notes' Sources sections, e.g.  Primer §13.6.2 (p. 532)
+# `cite` is the short form used in notes' Sources sections, e.g.  Primer §13.6.1 (p. 532)
 - key: primer
   cite: Primer
   title: "C++ Primer, 5th ed. (Lippman, Lajoie, Moo, 2012)"

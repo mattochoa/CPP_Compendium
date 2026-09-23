@@ -1,22 +1,49 @@
 ---
 id: dangling-pointers-and-references
 title: Dangling Pointers and References
-aliases: [use-after-free, dangling reference, dangling pointer, use-after-scope]
+aliases:
+- use-after-free
+- dangling reference
+- dangling pointer
+- use-after-scope
 type: pitfall
 domain: D04
 tier: 1
 status: reviewed
 standard: C++98
-prereqs: ["[[Object Lifetime]]", "[[Pointers]]", "[[References]]"]
-related: ["[[Iterator Invalidation]]", "[[Temporaries and Lifetime Extension]]", "[[string_view]]", "[[Lambda Captures and Closure Objects]]", "[[Sanitizers — ASan, UBSan, TSan]]"]
-practice: [11, 13, 25]
-tags: [type/pitfall, domain/d04, tier/1, tension/safety-vs-performance]
+prereqs:
+- "[[Object Lifetime]]"
+- "[[Pointers]]"
+- "[[References]]"
+related:
+- "[[Iterator Invalidation]]"
+- "[[Temporaries and Lifetime Extension]]"
+- "[[string_view]]"
+- "[[Lambda Captures and Closure Objects]]"
+- "[[Sanitizers — ASan, UBSan, TSan]]"
+practice:
+- 11
+- 13
+- 25
+tags:
+- type/pitfall
+- domain/d04
+- tier/1
+- tension/safety-vs-performance
 created: 2026-09-23
 updated: 2026-09-23
 reviewed: 2026-09-23
 score: 19
-rubric: {accuracy: 3, first_principles: 3, clarity: 3, depth: 3, visual: 2, code: 3, integration: 2}
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 2
 ---
+
 # Dangling Pointers and References
 
 > [!essence]
@@ -36,7 +63,7 @@ Dangling bugs are the most deceptive family in C++ because the program usually *
 > [!principle] Why the language allows it
 > 1. **Constraint:** Tracking every pointer to every object at run time (as garbage collectors or reference counts do) costs time and memory on *every* access.
 > 2. **Design:** C++ ties object lifetime to scope or explicit `delete` ([[RAII]]) and lets pointers and references be plain addresses at zero overhead ([[Zero-Overhead Principle]]).
-> 3. **Price:** An address carries no information about whether its object is alive. After the object's lifetime ends, the pointer's value becomes an *invalid pointer value* (`[basic.stc.general]`, `[basic.life]`), and indirection through it is undefined behavior.
+> 3. **Price:** An address carries no information about whether its object is alive. Once the object's lifetime ends, `[basic.life]` already forbids almost every use of the pointer. Once its *storage* is released as well, the pointer's value becomes an *invalid pointer value* (`[basic.stc.general]`), and indirection through it is undefined behavior.
 
 The failure always has the same shape. **The observer's lifetime extends past the observed object's lifetime:**
 
@@ -101,14 +128,14 @@ int main() {
 1. `string_view` is a non-owning (pointer, length) pair. Initializing it from a temporary `std::string` does **not** extend the string's lifetime: lifetime extension applies only when a *reference* binds directly to the temporary ([[Temporaries and Lifetime Extension]]).
 2. A heap-allocated buffer (40+ characters: beyond the small-string buffer) makes ASan report the bug deterministically.
 
-**3 · Returning the address of a local** (stack use-after-return)
+**3 · Returning a reference to a local** (stack use-after-return)
 
 ```cpp
 // cc: ub
 #include <iostream>
 
 const int& larger(int a, int b) {
-    return a > b ? a : b;           // ① reference to a parameter: dies at return
+    return a > b ? a : b;           // ① reference to a parameter: dead by the next statement
 }
 
 int main() {
@@ -116,7 +143,7 @@ int main() {
     std::cout << r << '\n';         // ② UB: the callee's frame is gone
 }
 ```
-1. Parameters are local objects of the callee. GCC warns (`-Wreturn-local-addr`).
+1. Parameters are local objects of the callee. Whether a parameter dies when the function returns or at the end of the caller's full-expression is implementation-defined (`[expr.call]`). Either way it is gone before `r` is next used. GCC warns (`-Wreturn-local-addr`).
 2. The stack slot is reused by the next call (here, the `operator<<` machinery), so the value is garbage or the program crashes.
 
 ## Detection
@@ -192,12 +219,12 @@ int main() {
 > `Config::name` views `n`'s characters, and `n` is destroyed when `load` returns. Every use of the returned `Config` reads freed memory. Store `std::string name;` in the struct.
 
 > [!quiz]- Why does `const std::string& r = std::string("abc");` *not* dangle, while `std::string_view v = std::string("abc");` does?
-> A reference binding directly to a temporary extends the temporary's lifetime to the reference's. `string_view` is a class object, not a reference. Its constructor receives the temporary as an argument and keeps pointers into it, so no extension happens, and the string dies at the `;`.
+> A reference binding directly to a temporary extends the temporary's lifetime to the reference's. `string_view` is a class object, not a reference. The conversion (`std::string`'s `operator std::string_view`) is called on the temporary and returns a view of its characters, so no extension happens, and the string dies at the `;`.
 
 ## Sources
 
 - Primer §2.3.2 "Pointers" (p. 52): valid vs invalid pointer states.
-- Primer §12.1.2 "Managing Memory Directly" (p. 458): dangling pointers after `delete`.
+- Primer §12.1.2 "Managing Memory Directly" (pp. 458–464; dangling pointers after `delete` on p. 463).
 - Primer §9.3.6 "Container Operations May Invalidate Iterators" (p. 353).
 - Tour §15.2 "Pointers" (p. 196): owning vs non-owning pointers and the ownership discipline.
 - cppreference, *Lifetime*: https://en.cppreference.com/w/cpp/language/lifetime

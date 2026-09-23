@@ -1,22 +1,51 @@
 ---
 id: virtual-dispatch
 title: Virtual Dispatch — vptr and vtable
-aliases: [vtable, vptr, dynamic dispatch, virtual table, late binding]
+aliases:
+- vtable
+- vptr
+- dynamic dispatch
+- virtual table
+- late binding
 type: mechanism
 domain: D08
 tier: 2
 status: reviewed
 standard: C++98
-prereqs: ["[[Virtual Functions]]", "[[Inheritance]]", "[[Pointers]]"]
-related: ["[[Static vs Dynamic Polymorphism]]", "[[Virtual Destructors]]", "[[Virtual Calls in Constructors and Destructors]]", "[[Object Slicing]]", "[[RTTI and dynamic_cast]]", "[[Branch Prediction]]"]
-practice: [18, 21]
-tags: [type/mechanism, domain/d08, tier/2, tension/compile-time-vs-run-time, tension/abstraction-vs-control]
+prereqs:
+- "[[Virtual Functions]]"
+- "[[Inheritance]]"
+- "[[Pointers]]"
+related:
+- "[[Static vs Dynamic Polymorphism]]"
+- "[[Virtual Destructors]]"
+- "[[Virtual Calls in Constructors and Destructors]]"
+- "[[Object Slicing]]"
+- "[[RTTI and dynamic_cast]]"
+- "[[Branch Prediction]]"
+practice:
+- 18
+- 21
+tags:
+- type/mechanism
+- domain/d08
+- tier/2
+- tension/compile-time-vs-run-time
+- tension/abstraction-vs-control
 created: 2026-09-23
 updated: 2026-09-23
 reviewed: 2026-09-23
 score: 20
-rubric: {accuracy: 3, first_principles: 3, clarity: 3, depth: 3, visual: 3, code: 3, integration: 2}
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 3
+  code: 3
+  integration: 2
 ---
+
 # Virtual Dispatch — vptr and vtable
 
 > [!essence]

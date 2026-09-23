@@ -1,7 +1,7 @@
 {
-  "runs": 0,
+  "runs": 1,
   "builder_runs": 0,
-  "editor_runs": 0,
+  "editor_runs": 1,
   "history": [
     {
       "when": "2026-09-23T07:21:03Z",
@@ -11,10 +11,29 @@
       "items": [],
       "lint": "-",
       "code": "-",
-      "commit": "\u2713",
+      "commit": "✓",
       "summary": "setup verification: tooling patched for the no-delete mount; dry run of the run lifecycle"
+    },
+    {
+      "when": "2026-09-23T08:31:45Z",
+      "run": 1,
+      "role": "editor",
+      "mode": "AUDIT",
+      "items": [
+        "dangling-pointers-and-references",
+        "pointers-vs-references",
+        "value-categories",
+        "raii",
+        "virtual-dispatch",
+        "map-d04"
+      ],
+      "lint": "100–100",
+      "code": "4/4 2/2 4/4 3/3 3/3 0/0",
+      "commit": "✓",
+      "summary": "audit: 6 scored, 6 pass, 0 revise, 5 fixed; health 97; tooling: MinGW sanitizer fallback, quotepath fix"
     }
   ],
   "current": null,
-  "last_human": "2026-09-23T07:21:03Z"
+  "last_human": "2026-09-23T07:21:03Z",
+  "last_editor": "2026-09-23T08:31:45Z"
 }

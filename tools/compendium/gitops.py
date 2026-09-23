@@ -18,7 +18,8 @@ from . import paths
 
 ENV = dict(os.environ, GIT_TERMINAL_PROMPT="0", GCM_INTERACTIVE="never")
 SAFE = ["-c", "core.createObject=rename", "-c", "gc.auto=0", "-c", "maintenance.auto=false",
-        "-c", "core.fsmonitor=false"]
+        "-c", "core.fsmonitor=false",
+        "-c", "core.quotepath=false"]   # raw UTF-8 paths: titles with "—" must not come back octal-escaped
 BOT = ["-c", "user.name=CPP Compendium Bot", "-c", "user.email=noreply@anthropic.com",
        "-c", "commit.gpgsign=false"]   # never block on a signing prompt
 TRAILER = "\n\nCo-Authored-By: Claude <noreply@anthropic.com>"
@@ -28,6 +29,7 @@ LOCK_STALE_MIN = 10
 def git(*args, check=False, timeout=90, write=False) -> subprocess.CompletedProcess:
     pre = [] if write else ["--no-optional-locks"]
     return subprocess.run(["git", *pre, "-C", str(paths.REPO), *SAFE, *args], capture_output=True, text=True,
+                          encoding="utf-8", errors="replace",
                           timeout=timeout, check=check, env=ENV)
 
 
@@ -72,7 +74,8 @@ def dirty() -> list[str]:
 
 def changed_since(hours: float) -> list[str]:
     out = git("log", f"--since={int(hours * 60)} minutes ago", "--name-only", "--pretty=format:").stdout
-    return sorted({ln.strip() for ln in out.splitlines() if ln.strip().endswith(".md")})
+    names = {ln.strip().strip('"') for ln in out.splitlines() if ln.strip()}
+    return sorted(n for n in names if n.endswith(".md"))
 
 
 def commit(message: str) -> str:

@@ -1,22 +1,48 @@
 ---
 id: raii
 title: RAII
-aliases: [Resource Acquisition Is Initialization, scope-bound resource management, SBRM]
+aliases:
+- Resource Acquisition Is Initialization
+- scope-bound resource management
+- SBRM
 type: idiom
 domain: D07
 tier: 1
 status: reviewed
 standard: C++98
-prereqs: ["[[Object Lifetime]]", "[[Destructors]]"]
-related: ["[[unique_ptr]]", "[[Stack Unwinding]]", "[[Exception Safety Guarantees]]", "[[Rule of Zero, Three and Five]]", "[[Scope Guards]]"]
-practice: [25, 26, 31]
-tags: [type/idiom, domain/d07, tier/1, tension/safety-vs-performance, tension/abstraction-vs-control]
+prereqs:
+- "[[Object Lifetime]]"
+- "[[Destructors]]"
+related:
+- "[[unique_ptr]]"
+- "[[Stack Unwinding]]"
+- "[[Exception Safety Guarantees]]"
+- "[[Rule of Zero, Three and Five]]"
+- "[[Scope Guards]]"
+practice:
+- 25
+- 26
+- 31
+tags:
+- type/idiom
+- domain/d07
+- tier/1
+- tension/safety-vs-performance
+- tension/abstraction-vs-control
 created: 2026-09-23
 updated: 2026-09-23
 reviewed: 2026-09-23
 score: 20
-rubric: {accuracy: 3, first_principles: 3, clarity: 3, depth: 3, visual: 3, code: 3, integration: 2}
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 3
+  code: 3
+  integration: 2
 ---
+
 # RAII
 
 > [!essence]
@@ -243,7 +269,7 @@ int main() {
 
 ## Sources
 
-- Tour §5.2.2 "A Container" (p. 57): constructor acquires, destructor releases; the canonical introduction (also §4.3, p. 45, on RAII as the basis of error handling).
+- Tour §5.2.2 "A Container" (pp. 57–58): constructor acquires, destructor releases; the canonical introduction (also §4.2 "Exceptions", p. 45, on RAII as the basis of error handling).
 - Tour §15.2.1 "unique_ptr and shared_ptr" (p. 197): standard RAII handles.
 - Primer §12.1.4 "Smart Pointers and Exceptions" (p. 467): why direct `new`/`delete` leaks on exceptions; custom deleters.
 - Primer §18.1.1 "Throwing an Exception" (p. 772): stack unwinding destroys local objects.

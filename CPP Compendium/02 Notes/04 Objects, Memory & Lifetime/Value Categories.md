@@ -1,22 +1,51 @@
 ---
 id: value-categories
 title: Value Categories
-aliases: [lvalue, rvalue, xvalue, prvalue, glvalue]
+aliases:
+- lvalue
+- rvalue
+- xvalue
+- prvalue
+- glvalue
 type: concept
 domain: D04
 tier: 2
 status: reviewed
 standard: C++11
-prereqs: ["[[Object Lifetime]]", "[[Anatomy of an Expression]]"]
-related: ["[[Rvalue References]]", "[[Move Semantics]]", "[[Temporaries and Lifetime Extension]]", "[[Copy Elision and RVO]]", "[[decltype and decltype(auto)]]"]
-practice: [22, 25]
-tags: [type/concept, domain/d04, tier/2, tension/value-vs-identity, tension/abstraction-vs-control, std/c++11, std/c++17]
+prereqs:
+- "[[Object Lifetime]]"
+- "[[Anatomy of an Expression]]"
+related:
+- "[[Rvalue References]]"
+- "[[Move Semantics]]"
+- "[[Temporaries and Lifetime Extension]]"
+- "[[Copy Elision and RVO]]"
+- "[[decltype and decltype(auto)]]"
+practice:
+- 22
+- 25
+tags:
+- type/concept
+- domain/d04
+- tier/2
+- tension/value-vs-identity
+- tension/abstraction-vs-control
+- std/c++11
+- std/c++17
 created: 2026-09-23
 updated: 2026-09-23
 reviewed: 2026-09-23
 score: 20
-rubric: {accuracy: 3, first_principles: 3, clarity: 3, depth: 3, visual: 3, code: 3, integration: 2}
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 3
+  code: 3
+  integration: 2
 ---
+
 # Value Categories
 
 > [!essence]
@@ -89,7 +118,7 @@ The Standard defines the categories in `[basic.lval]`. The practical rules:
 | `std::move(x)` = `static_cast<T&&>(x)` | xvalue | A cast to rvalue reference grants permission to pilfer. |
 | `++x`, `x = y`, `*p`, `a[i]` (built-in) | lvalue | They yield the object itself. |
 | `x++`, `x + y`, `&x`, `-x` (built-in) | prvalue | They yield a new value. |
-| `a.m` where `a` is an rvalue | xvalue | A member of an expiring object is expiring. |
+| `a.m` where `a` is an rvalue and `m` a non-static, non-reference data member | xvalue | A member of an expiring object is expiring. |
 | Lambda expression, `this` | prvalue | Pure values. |
 
 **How categories drive binding.** Reference binding is where categories have visible consequences:
@@ -104,7 +133,7 @@ The Standard defines the categories in `[basic.lval]`. The practical rules:
 When both `const T&` and `T&&` overloads exist, an rvalue argument prefers `T&&` (`[over.ics.rank]`). That single tie-breaker is the entire routing mechanism of [[Move Semantics]].
 
 > [!standard] C++17: prvalues are not objects
-> Since C++17 (P0135), a prvalue is a *recipe for initializing an object*, not a temporary object. It becomes an object only when **materialized**: when it is bound to a reference, when a member is accessed, or when it is discarded (the *temporary materialization conversion*, `[conv.rval]`). When a prvalue initializes an object of the same type, it initializes that object **directly**. That is why [[Copy Elision and RVO|copy elision]] of returned prvalues is guaranteed, not an optimization.
+> Since C++17 (P0135), a prvalue is a *recipe for initializing an object*, not a temporary object. It becomes an object only when **materialized**: for example, when it is bound to a reference, when a member is accessed, or when it is discarded (the *temporary materialization conversion*, `[conv.rval]`). When a prvalue initializes an object of the same type, it initializes that object **directly**. That is why [[Copy Elision and RVO|copy elision]] of returned prvalues is guaranteed, not an optimization.
 
 **Asking the compiler.** `decltype((e))` (note the double parentheses) reports the category of `e` in its type: `T&` for an lvalue, `T&&` for an xvalue, plain `T` for a prvalue. The second example below uses this to build a category probe. See [[decltype and decltype(auto)]].
 
@@ -242,7 +271,7 @@ Allowing this would let `edit` modify a temporary that dies at the semicolon. Th
 > Lifetime extension applies only when a reference binds *directly* to a prvalue (or its member). `const std::string& r = std::string("a").append("b");` binds to the lvalue returned by `append`, so there is no extension. The temporary dies at the `;`, and `r` dangles. See [[Temporaries and Lifetime Extension]] and [[Dangling Pointers and References]].
 
 > [!trap] Using a moved-from object
-> After `T y = std::move(x);`, `x` is in a *valid but unspecified* state for standard types: only assign to it or destroy it. See [[The Moved-From State]].
+> After `T y = std::move(x);`, `x` is in a *valid but unspecified* state for standard types: use only operations that have no preconditions, such as assigning to it, destroying it, or calling `clear()` or `size()`. Never assume its value. See [[The Moved-From State]].
 
 ## Evolution
 
@@ -282,7 +311,7 @@ Allowing this would let `edit` modify a temporary that dies at the semicolon. Th
 - Primer §4.1.1 "Lvalues and Rvalues" (p. 135): the C++11-era two-category rules and which operators yield lvalues.
 - Primer §13.6.1 "Rvalue References" (pp. 532–533): binding rules; "lvalues persist, rvalues are ephemeral"; why a named rvalue reference is an lvalue.
 - Tour §6.2 "Copy and Move" (p. 74): the design rationale for moving from expiring objects.
-- PPP ch. 17 "Essential Operations": copy vs move built up from first principles.
+- PPP §17.4 "Copying and moving" (ch. 17 "Essential Operations"): copy vs move built up from first principles.
 - cppreference, *Value categories*: https://en.cppreference.com/w/cpp/language/value_category
 - Draft standard `[basic.lval]` (categories) and `[conv.rval]` (temporary materialization): https://eel.is/c++draft/basic.lval · https://eel.is/c++draft/conv.rval
 - P0135R1, *Guaranteed copy elision through simplified value categories*: https://wg21.link/p0135r1

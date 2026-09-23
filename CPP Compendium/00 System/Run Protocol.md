@@ -88,7 +88,7 @@ cat > "$R/CPP Compendium/02 Notes/<Domain folder>/<Title>.md" <<'CCEOF'
 > ...
 CCEOF
 ```
-Prototype every code block in `.cache/scratch/` with `g++ -std=c++20 -Wall -Wextra -fsanitize=address,undefined` first.
+Prototype every code block in `.cache/scratch/` with `g++ -std=c++20 -Wall -Wextra -fsanitize=address,undefined` first. On the owner's Windows toolchain (MinGW g++, no ASan/UBSan runtime) that link fails: prototype with `-fsanitize=undefined -fsanitize-undefined-trap-on-error` instead. `cc.py code` detects this and degrades on its own.
 
 **3.5 Verify (≤ 5 min).** All of these must be clean:
 ```bash
@@ -141,6 +141,7 @@ Links to planned topics are fine: they mark the frontier.
 | A `device_bash` call times out | Split the work; never retry a half-written heredoc without checking the file. |
 | Compiler Explorer unreachable | Keep `// cc: std=c++23`; the check reports WARN. Say so in the summary. |
 | Local g++ lacks a header (`<print>`, `<expected>`) | `cc.py code` routes the block to Compiler Explorer automatically. |
+| `cannot find -lasan` / `-lubsan` | Local MinGW has no sanitizer runtimes. `cc.py code` now probes and falls back to UBSan trap mode; a `// cc: ub` demo that needs ASan to *fire* still PASSes ("sanitizer silent"). Never claim in prose that the check saw ASan output. |
 | Sources disagree | Prefer Standard > cppreference > Tour/PPP > Primer, and note it in a `[!standard]` callout. |
 | Topic too big for one note | Write the core; register the split-off topics (`registry add`); mention them as frontier links. |
 | Queue item is a duplicate of an existing note | Don't write it. Add `hold` guidance in your summary for the Editor, and take the next item. |
@@ -158,3 +159,4 @@ Next in queue: <id>, <id>
 ## Protocol changelog
 - 2026-09-23: v1.0, initial protocol.
 - 2026-09-23: v1.1, no-delete mount rule added (§0).
+- 2026-09-23: v1.2 (Editor #1), sanitizer fallback for MinGW documented in §3.4 and §7; tooling fixed (`snippets.py` probes sanitizer support; `gitops.py` reads paths with `core.quotepath=false` so notes with "—" in the title reach the audit).

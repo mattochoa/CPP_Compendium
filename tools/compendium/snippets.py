@@ -81,6 +81,44 @@ def _local_major() -> int:
         return 0
 
 
+_SAN_CACHE: list[str] | None = None
+
+
+def _sanitizer_flags() -> list[str]:
+    """Best sanitizer flags the local toolchain can actually link.
+
+    MinGW-w64 (WinLibs) ships no libasan/libubsan, so the full ASan+UBSan link
+    fails for *every* block. Probe once and degrade: full ASan+UBSan -> UBSan in
+    trap mode (no runtime library needed; UB aborts the program) -> none.
+    """
+    global _SAN_CACHE
+    if _SAN_CACHE is not None:
+        return _SAN_CACHE
+    exe = _local_gxx()
+    candidates = [["-fsanitize=address,undefined", "-fno-omit-frame-pointer"],
+                  ["-fsanitize=undefined", "-fsanitize-undefined-trap-on-error"],
+                  []]
+    tmp = tempfile.mkdtemp(prefix="cc-san-")
+    try:
+        src = os.path.join(tmp, "p.cpp")
+        with open(src, "w", encoding="utf-8") as fh:
+            fh.write("int main(){return 0;}\n")
+        for flags in candidates:
+            try:
+                cp = subprocess.run([exe, *flags, src, "-o", os.path.join(tmp, "p.out")],
+                                    capture_output=True, text=True, timeout=60)
+                if cp.returncode == 0:
+                    _SAN_CACHE = flags
+                    break
+            except Exception:
+                continue
+        else:
+            _SAN_CACHE = []
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+    return _SAN_CACHE
+
+
 def _needs_remote(code: str, d: dict) -> bool:
     if d.get("remote"):
         return True
@@ -106,7 +144,7 @@ def _run_local(code: str, d: dict, has_main: bool) -> tuple[bool, bool, str, str
         std = "-std=" + d["std"]
         if has_main and not d.get("ill-formed"):
             out = os.path.join(tmp, "a.out")
-            cmd = [exe, std, *BASE_FLAGS, *d["flags"], "-g", "-fsanitize=address,undefined", "-fno-omit-frame-pointer", src, "-o", out, "-pthread"]
+            cmd = [exe, std, *BASE_FLAGS, *d["flags"], "-g", *_sanitizer_flags(), src, "-o", out, "-pthread"]
         else:
             cmd = [exe, std, *BASE_FLAGS, *d["flags"], "-c", src, "-o", os.path.join(tmp, "s.o")]
         cp = subprocess.run(cmd, capture_output=True, text=True, timeout=120)

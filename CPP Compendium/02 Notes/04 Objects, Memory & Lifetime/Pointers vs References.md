@@ -1,22 +1,47 @@
 ---
 id: pointers-vs-references
 title: Pointers vs References
-aliases: ["T* vs T&", pointer or reference]
+aliases:
+- T* vs T&
+- pointer or reference
 type: comparison
 domain: D04
 tier: 1
 status: reviewed
 standard: C++98
-prereqs: ["[[Pointers]]", "[[References]]"]
-related: ["[[Parameter Passing — Value, Reference, Pointer]]", "[[Owning vs Observing Pointers]]", "[[nullptr and Null Pointers]]", "[[Dangling Pointers and References]]", "[[optional]]"]
-practice: [6, 11, 13]
-tags: [type/comparison, domain/d04, tier/1, tension/value-vs-identity, tension/safety-vs-performance]
+prereqs:
+- "[[Pointers]]"
+- "[[References]]"
+related:
+- "[[Parameter Passing — Value, Reference, Pointer]]"
+- "[[Owning vs Observing Pointers]]"
+- "[[nullptr and Null Pointers]]"
+- "[[Dangling Pointers and References]]"
+- "[[optional]]"
+practice:
+- 6
+- 11
+- 13
+tags:
+- type/comparison
+- domain/d04
+- tier/1
+- tension/value-vs-identity
+- tension/safety-vs-performance
 created: 2026-09-23
 updated: 2026-09-23
 reviewed: 2026-09-23
 score: 19
-rubric: {accuracy: 3, first_principles: 3, clarity: 3, depth: 2, visual: 3, code: 3, integration: 2}
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 2
+  visual: 3
+  code: 3
+  integration: 2
 ---
+
 # Pointers vs References
 
 > [!essence]
@@ -169,6 +194,6 @@ int main() {}
 
 - Primer §2.3.1 "References" (p. 50) and §2.3.2 "Pointers" (p. 52): binding rules and pointer states.
 - Tour §1.7 "Pointers, Arrays, and References" (p. 11): the designer's short comparison.
-- PPP ch. 16 "Arrays, Pointers, and References": pointer vs reference from first principles.
+- PPP §16.2 "Pointers and references" (ch. 16 "Arrays, Pointers, and References"): pointer vs reference from first principles.
 - cppreference, *Reference declaration*: https://en.cppreference.com/w/cpp/language/reference · *Pointer declaration*: https://en.cppreference.com/w/cpp/language/pointer
 - C++ Core Guidelines F.60, F.17, R.3: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines

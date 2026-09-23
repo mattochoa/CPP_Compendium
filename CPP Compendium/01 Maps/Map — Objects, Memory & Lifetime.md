@@ -6,16 +6,36 @@ domain: D04
 tier: 1
 status: reviewed
 standard: C++98
-prereqs: ["[[Map — What C++ Is]]"]
-related: ["[[Map — Ownership & Move Semantics]]", "[[Map — Types & Values]]", "[[Map — Functions]]"]
-practice: [11, 12, 13]
-tags: [type/map, domain/d04, tier/1, tension/safety-vs-performance, tension/value-vs-identity]
+prereqs:
+- "[[Map — What C++ Is]]"
+related:
+- "[[Map — Ownership & Move Semantics]]"
+- "[[Map — Types & Values]]"
+- "[[Map — Functions]]"
+practice:
+- 11
+- 12
+- 13
+tags:
+- type/map
+- domain/d04
+- tier/1
+- tension/safety-vs-performance
+- tension/value-vs-identity
 created: 2026-09-23
 updated: 2026-09-23
 reviewed: 2026-09-23
 score: 19
-rubric: {accuracy: 3, first_principles: 3, clarity: 3, depth: 2, visual: 3, code: 3, integration: 2}
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 2
+  visual: 3
+  code: 3
+  integration: 2
 ---
+
 # Map — Objects, Memory & Lifetime
 
 > [!essence]
@@ -82,7 +102,7 @@ flowchart LR
 7. [[Dangling Pointers and References]] and [[Memory Leaks]]: the two ways the answers go wrong: an observer too long, an owner never ending.
 8. [[Value Categories]] → [[Temporaries and Lifetime Extension]]: the expression-level view of lifetime that powers move semantics.
 9. [[The Forms of Initialization]]: exactly when and how a lifetime begins.
-10. Advanced layer: [[Object Representation, Padding and Layout]] → [[Strict Aliasing and Type Punning]] → [[Placement new and Manual Lifetime]] → [[Allocators and pmr Memory Resources]].
+10. Advanced layer: [[Object Representation, Padding and Layout]] (including hidden members such as the [[Virtual Dispatch — vptr and vtable|vptr]]) → [[Strict Aliasing and Type Punning]] → [[Placement new and Manual Lifetime]] → [[Allocators and pmr Memory Resources]].
 
 ## Key Ideas
 
