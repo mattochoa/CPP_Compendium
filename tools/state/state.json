@@ -1,6 +1,6 @@
 {
-  "runs": 5,
-  "builder_runs": 4,
+  "runs": 6,
+  "builder_runs": 5,
   "editor_runs": 1,
   "history": [
     {
@@ -86,10 +86,24 @@
       "code": "0/0",
       "commit": "✓",
       "summary": "Wrote Map — Program Structure & Build (D01, wave 0): derives translation units as the domain hub from the one-file-at-a-time constraint; concept map of 14 registered topics; 13-step learning route; 8 key ideas incl. ODR exception (inline), linker semantics, static-init-order gap, and Modules as the domain's own compatibility-vs-evolution resolution. Sourced Primer §2.2.2/§6.1.3, Tour §3.2 (p.30-32), PPP §1.3-1.4/§4.4/§4.7, cppreference Phases of Translation + ODR, [lex.phases]."
+    },
+    {
+      "when": "2026-09-23T11:28:50Z",
+      "run": 5,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "map-d02",
+        "map-d00"
+      ],
+      "lint": "100–100",
+      "code": "0/0 0/0",
+      "commit": "✓",
+      "summary": "author: Map — Types & Values (D02) written from first principles (bits -> type as values x operations x representation), citing Primer/Tour/PPP/Pikus + cppreference + WG21 P0907R4 (C++20 two's-complement mandate); back-wove a forward link from Map — What C++ Is"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T07:21:03Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-23T11:19:58Z"
+  "last_builder": "2026-09-23T11:28:50Z"
 }

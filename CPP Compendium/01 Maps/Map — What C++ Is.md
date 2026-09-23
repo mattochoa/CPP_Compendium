@@ -63,7 +63,7 @@ flowchart LR
     classDef danger  fill:#7f1d1d,stroke:#f87171,color:#fef2f2
 ```
 
-**The abstract machine is the hub.** The design philosophy and the Standard/compiler relationship both feed it; the as-if rule and undefined behavior are its two operating consequences — one enabling optimization, the other bounding it — and the three-way behavior taxonomy refines what "the Standard doesn't say" actually means.
+**The abstract machine is the hub.** The design philosophy and the Standard/compiler relationship both feed it; the as-if rule and undefined behavior are its two operating consequences — one enabling optimization, the other bounding it — and the three-way behavior taxonomy refines what "the Standard doesn't say" actually means. Two domains put the contract to work next: [[Map — Program Structure & Build]] asks how source text becomes a running instance of this machine, and [[Map — Types & Values]] asks how meaning gets attached to the bits that instance manipulates.
 
 ## Learning Route
 

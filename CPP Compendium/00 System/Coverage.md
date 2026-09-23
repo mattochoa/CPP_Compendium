@@ -8,16 +8,16 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 281 |
+| ○ planned | 280 |
 | ◌ stub | 0 |
-| ◐ draft | 4 |
+| ◐ draft | 5 |
 | ⟲ revise | 0 |
 | ● reviewed | 6 |
 | ★ evergreen | 0 |
 
 **Total topics:** 291
 
-- Wave 0: `██████░░░░░░░░░░░░░░` 5/17
+- Wave 0: `███████░░░░░░░░░░░░░` 6/17
 - Wave 1: `█░░░░░░░░░░░░░░░░░░░` 3/49
 - Wave 2: `░░░░░░░░░░░░░░░░░░░░` 2/99
 - Wave 3: `░░░░░░░░░░░░░░░░░░░░` 0/97
@@ -66,11 +66,11 @@ tags: [system/generated]
 
 ## D02 · Types & Values
 
-*How are meaning and operations attached to raw bits?*  `░░░░░░░░░░` 0/25
+*How are meaning and operations attached to raw bits?*  `░░░░░░░░░░` 1/25
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ○ | [[Map — Types & Values]] | map | 1 | 0 |  |
+| ◐ | [[Map — Types & Values]] | map | 1 | 0 |  |
 | ○ | [[What a Type Is]] | concept | 1 | 1 |  |
 | ○ | [[Fundamental Types]] | concept | 1 | 1 |  |
 | ○ | [[const and Const-Correctness]] | concept | 1 | 1 |  |

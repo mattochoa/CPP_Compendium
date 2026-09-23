@@ -15,7 +15,7 @@ tags: [system/generated, practice]
 | # | Project | Concepts it exercises |
 |---|---|---|
 | 01 | Hello, Compiler | ◐ [[Map — Program Structure & Build]], ○ [[The Compilation Pipeline]], ○ [[Compilers and Essential Flags]], ○ [[CMake Fundamentals]] |
-| 02 | Unit & Temperature Converter Suite | ○ [[Fundamental Types]], ○ [[Control Flow — Selection and Iteration]], ○ [[switch and Fallthrough]] |
+| 02 | Unit & Temperature Converter Suite | ◐ [[Map — Types & Values]], ○ [[Fundamental Types]], ○ [[Control Flow — Selection and Iteration]], ○ [[switch and Fallthrough]] |
 | 03 | Number Guessing Game | ○ [[Control Flow — Selection and Iteration]], ○ [[Stream State and Robust Input]], ○ [[Random Number Generation]] |
 | 04 | Grade & GPA Calculator | ○ [[array]] |
 | 05 | Console Calculator REPL | ○ [[Function Overloading]], ○ [[Stream State and Robust Input]], ○ [[String Streams]], ○ [[Exceptions]] |
@@ -28,7 +28,7 @@ tags: [system/generated, practice]
 | 07 | Word & Text Analyzer | ○ [[vector]], ○ [[string]], ○ [[Ordered Associative Containers — map and set]], ○ [[IO Streams Architecture]], ○ [[File IO]] |
 | 08 | Matrix Operations Toolkit | ○ [[Preconditions, Postconditions and Contracts]] |
 | 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ○ [[The Call Stack and Stack Frames]], ○ [[Recursion]] |
-| 10 | Caesar & Vigenere Cipher Toolkit | ○ [[Bitwise Operations and the bit Header]], ○ [[File IO]] |
+| 10 | Caesar & Vigenere Cipher Toolkit | ◐ [[Map — Types & Values]], ○ [[Bitwise Operations and the bit Header]], ○ [[File IO]] |
 
 ## Tier 3: Memory & Data Structures
 
@@ -45,9 +45,9 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 17 | Bank Account Simulator | ○ [[const and Const-Correctness]], ○ [[Classes as User-Defined Types]], ○ [[Encapsulation and Class Invariants]] |
+| 17 | Bank Account Simulator | ◐ [[Map — Types & Values]], ○ [[const and Const-Correctness]], ○ [[Classes as User-Defined Types]], ○ [[Encapsulation and Class Invariants]] |
 | 18 | Shape Hierarchy & Polymorphic Area Calculator | ◐ [[Map — Inheritance & Polymorphism]], ○ [[Inheritance]], ○ [[Virtual Functions]], ● [[Virtual Dispatch — vptr and vtable]], ○ [[Abstract Classes and Interfaces]], ○ [[Virtual Destructors]] |
-| 19 | Complex Number & Vector Math Library | ○ [[const and Const-Correctness]], ○ [[Operator Overloading]], ○ [[Value Semantics]] |
+| 19 | Complex Number & Vector Math Library | ◐ [[Map — Types & Values]], ○ [[const and Const-Correctness]], ○ [[Operator Overloading]], ○ [[Value Semantics]] |
 | 20 | Employee Management System | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Inheritance & Polymorphism]], ○ [[Owning vs Observing Pointers]], ○ [[Inheritance]], ○ [[Composition vs Inheritance]] |
 | 21 | Game Entity System | ◐ [[Map — Inheritance & Polymorphism]], ● [[Virtual Dispatch — vptr and vtable]], ○ [[Abstract Classes and Interfaces]], ○ [[RTTI and dynamic_cast]], ○ [[Multiple and Virtual Inheritance]] |
 | 22 | Rule-of-Five Resource Manager | ◐ [[Map — Ownership & Move Semantics]], ● [[Value Categories]], ○ [[Rule of Zero, Three and Five]], ○ [[Move Semantics]], ○ [[noexcept and Why Move Must Not Throw]], ○ [[Benchmarking Correctly]] |
