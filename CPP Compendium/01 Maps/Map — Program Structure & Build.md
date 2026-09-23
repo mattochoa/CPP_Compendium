@@ -12,6 +12,7 @@ related:
 - "[[Map — Types & Values]]"
 - "[[Map — Objects, Memory & Lifetime]]"
 - "[[Map — Generic Programming]]"
+- "[[Map — Tooling & Engineering]]"
 practice:
 - 1
 - 6
@@ -92,7 +93,7 @@ flowchart LR
 9. [[Static Initialization Order Fiasco]]: the one ordering question program startup deliberately leaves unanswered across translation units.
 10. [[inline — Meaning Beyond Inlining]]: the ODR's one sanctioned exception, and the only reason a function body may legally live in a header.
 11. [[Name Mangling and extern C]]: how the linker's flat, one-name-one-symbol world survives function overloading, and how C++ calls C.
-12. [[Static vs Shared Libraries]]: what "linking" means once the linker's own output becomes an input to somebody else's link.
+12. [[Static vs Shared Libraries]]: what "linking" means once the linker's own output becomes an input to somebody else's link — the exact invocation a build system such as [[CMake Fundamentals|CMake]] exists to generate consistently ([[Map — Tooling & Engineering]]).
 13. [[Modules (C++20)]]: replaces the preprocessor's blind text-paste with a compiled, checkable interface — the domain's own answer to its central tension.
 
 ## Key Ideas

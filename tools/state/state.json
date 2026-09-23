@@ -1,6 +1,6 @@
 {
-  "runs": 20,
-  "builder_runs": 19,
+  "runs": 21,
+  "builder_runs": 20,
   "editor_runs": 1,
   "history": [
     {
@@ -264,10 +264,25 @@
       "code": "0/0 0/0",
       "commit": "✓",
       "summary": "Wrote Map — Performance & the Machine (D13, wave 0): derives the domain's question from D00's abstract-machine contract, covers memory hierarchy, pipeline/branch prediction, compiler optimization and UB-as-optimization-license, data locality/data-oriented design, allocation cost and SIMD. 14-node concept map hubbed on Big-O Meets the Hardware. Back-wove into Map — Objects, Memory & Lifetime (new related link + forward pointer); Map — Concurrency already linked here. Next: map-d14, map-d15, map-d16."
+    },
+    {
+      "when": "2026-09-23T23:21:04Z",
+      "run": 20,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "map-d14",
+        "map-d11",
+        "map-d01"
+      ],
+      "lint": "100–100",
+      "code": "0/0 0/0 0/0",
+      "commit": "✓",
+      "summary": "wave 0: authored Map — Tooling & Engineering (D14), the 15th of 17 domain maps; wove it into Map — Errors & Contracts and Map — Program Structure & Build (Tooling was already a frontier link from Map — Performance & the Machine)"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-23T22:54:03Z"
+  "last_builder": "2026-09-23T23:21:04Z"
 }

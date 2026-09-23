@@ -14,7 +14,7 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 01 | Hello, Compiler | ◐ [[Map — Program Structure & Build]], ○ [[The Compilation Pipeline]], ○ [[Compilers and Essential Flags]], ○ [[CMake Fundamentals]] |
+| 01 | Hello, Compiler | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Tooling & Engineering]], ○ [[The Compilation Pipeline]], ○ [[Compilers and Essential Flags]], ○ [[CMake Fundamentals]] |
 | 02 | Unit & Temperature Converter Suite | ◐ [[Map — Types & Values]], ◐ [[Map — Expressions & Control]], ○ [[Fundamental Types]], ○ [[Control Flow — Selection and Iteration]], ○ [[switch and Fallthrough]] |
 | 03 | Number Guessing Game | ◐ [[Map — Expressions & Control]], ○ [[Control Flow — Selection and Iteration]], ○ [[Stream State and Robust Input]], ○ [[Random Number Generation]] |
 | 04 | Grade & GPA Calculator | ○ [[array]] |
@@ -34,7 +34,7 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 11 | Pointer & Array Internals Lab | ● [[Map — Objects, Memory & Lifetime]], ○ [[Process Memory Layout — Stack, Heap, Static]], ○ [[Pointers]], ○ [[Pointer Arithmetic and Arrays]], ◐ [[Pointers vs References]], ○ [[Built-in Arrays and Array-to-Pointer Decay]], ● [[Dangling Pointers and References]], ○ [[Sanitizers — ASan, UBSan, TSan]] |
+| 11 | Pointer & Array Internals Lab | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Tooling & Engineering]], ○ [[Process Memory Layout — Stack, Heap, Static]], ○ [[Pointers]], ○ [[Pointer Arithmetic and Arrays]], ◐ [[Pointers vs References]], ○ [[Built-in Arrays and Array-to-Pointer Decay]], ● [[Dangling Pointers and References]], ○ [[Sanitizers — ASan, UBSan, TSan]] |
 | 12 | Build-Your-Own Dynamic Array | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Standard Library]], ○ [[Dynamic Memory — new and delete]], ○ [[Rule of Zero, Three and Five]], ○ [[Copy Semantics — Deep vs Shallow Copy]], ○ [[vector]], ○ [[How vector Grows — Capacity and Amortized Cost]] |
 | 13 | Singly & Doubly Linked List Library | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Pointers vs References]], ● [[Dangling Pointers and References]] |
 | 14 | Stack & Queue Library + Applications | ○ [[Container Adaptors — stack, queue, priority_queue]] |
@@ -67,7 +67,7 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 29 | Multithreaded Producer-Consumer Simulation | ◐ [[Map — Concurrency]], ○ [[Threads — thread and jthread]], ○ [[Data Races and Race Conditions]], ○ [[Mutexes and Lock Guards]], ○ [[Condition Variables]], ○ [[Sanitizers — ASan, UBSan, TSan]], ◐ [[Kit — Background Worker (C++14-17)]] |
+| 29 | Multithreaded Producer-Consumer Simulation | ◐ [[Map — Concurrency]], ◐ [[Map — Tooling & Engineering]], ○ [[Threads — thread and jthread]], ○ [[Data Races and Race Conditions]], ○ [[Mutexes and Lock Guards]], ○ [[Condition Variables]], ○ [[Sanitizers — ASan, UBSan, TSan]], ◐ [[Kit — Background Worker (C++14-17)]] |
 | 30 | Design Patterns Toolkit | ○ [[Strategy Pattern]], ○ [[Observer Pattern]], ○ [[Factory Patterns]], ○ [[Singleton — and Why to Avoid It]] |
 | 31 | TCP Chat Client/Server | ● [[RAII]] |
 | 32 | Performance Profiling & Optimization Challenge | ◐ [[Map — Performance & the Machine]], ○ [[chrono — Durations, Clocks, Time Points]], ○ [[Performance — Measure, Don't Guess]], ○ [[The Memory Hierarchy and Caches]], ○ [[Benchmarking Correctly]], ○ [[Profiling]], ○ [[Data Locality and Access Patterns]] |
