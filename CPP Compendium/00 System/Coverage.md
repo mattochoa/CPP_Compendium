@@ -8,16 +8,16 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 323 |
+| ○ planned | 322 |
 | ◌ stub | 0 |
-| ◐ draft | 21 |
+| ◐ draft | 22 |
 | ⟲ revise | 0 |
 | ● reviewed | 5 |
 | ★ evergreen | 0 |
 
 **Total topics:** 349
 
-- Wave 0: `█████████░░░░░░░░░░░` 8/18
+- Wave 0: `██████████░░░░░░░░░░` 9/18
 - Wave 1: `██░░░░░░░░░░░░░░░░░░` 4/51
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 10/122
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 4/123
@@ -150,11 +150,11 @@ tags: [system/generated]
 
 ## D05 · Functions
 
-*How is computation named, parameterised, reused and passed around?*  `░░░░░░░░░░` 0/16
+*How is computation named, parameterised, reused and passed around?*  `█░░░░░░░░░` 1/16
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ○ | [[Map — Functions]] | map | 1 | 0 |  |
+| ◐ | [[Map — Functions]] | map | 1 | 0 |  |
 | ○ | [[Anatomy of a Function]] | concept | 1 | 1 |  |
 | ○ | [[The Call Stack and Stack Frames]] | mechanism | 1 | 1 |  |
 | ○ | [[Parameter Passing — Value, Reference, Pointer]] | comparison | 1 | 1 |  |

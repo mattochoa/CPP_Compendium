@@ -18,16 +18,16 @@ tags: [system/generated, practice]
 | 02 | Unit & Temperature Converter Suite | ◐ [[Map — Types & Values]], ◐ [[Map — Expressions & Control]], ○ [[Fundamental Types]], ○ [[Control Flow — Selection and Iteration]], ○ [[switch and Fallthrough]] |
 | 03 | Number Guessing Game | ◐ [[Map — Expressions & Control]], ○ [[Control Flow — Selection and Iteration]], ○ [[Stream State and Robust Input]], ○ [[Random Number Generation]] |
 | 04 | Grade & GPA Calculator | ○ [[array]] |
-| 05 | Console Calculator REPL | ○ [[Function Overloading]], ○ [[Stream State and Robust Input]], ○ [[String Streams]], ○ [[Exceptions]] |
+| 05 | Console Calculator REPL | ◐ [[Map — Functions]], ○ [[Function Overloading]], ○ [[Stream State and Robust Input]], ○ [[String Streams]], ○ [[Exceptions]] |
 
 ## Tier 2: Core Programming
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 06 | Function Library & Header Refactor | ◐ [[Map — Program Structure & Build]], ○ [[Headers and Include Guards]], ○ [[Declarations vs Definitions]], ○ [[References]], ◐ [[Pointers vs References]], ○ [[Parameter Passing — Value, Reference, Pointer]], ○ [[Function Overloading]], ○ [[assert and static_assert]] |
+| 06 | Function Library & Header Refactor | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Functions]], ○ [[Headers and Include Guards]], ○ [[Declarations vs Definitions]], ○ [[References]], ◐ [[Pointers vs References]], ○ [[Parameter Passing — Value, Reference, Pointer]], ○ [[Function Overloading]], ○ [[assert and static_assert]] |
 | 07 | Word & Text Analyzer | ○ [[vector]], ○ [[string]], ○ [[Ordered Associative Containers — map and set]], ○ [[IO Streams Architecture]], ○ [[File IO]] |
 | 08 | Matrix Operations Toolkit | ○ [[Preconditions, Postconditions and Contracts]] |
-| 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ○ [[The Call Stack and Stack Frames]], ○ [[Recursion]] |
+| 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ◐ [[Map — Functions]], ○ [[The Call Stack and Stack Frames]], ○ [[Recursion]] |
 | 10 | Caesar & Vigenere Cipher Toolkit | ◐ [[Map — Types & Values]], ○ [[Bitwise Operations and the bit Header]], ○ [[File IO]] |
 
 ## Tier 3: Memory & Data Structures
@@ -56,11 +56,11 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 23 | STL Container & Algorithm Playground | ○ [[Lambda Expressions]], ○ [[STL Architecture — Containers, Iterators, Algorithms]], ○ [[The Algorithms Library]] |
+| 23 | STL Container & Algorithm Playground | ◐ [[Map — Functions]], ○ [[Lambda Expressions]], ○ [[STL Architecture — Containers, Iterators, Algorithms]], ○ [[The Algorithms Library]] |
 | 24 | Generic Data Structure Library | ○ [[Function Templates]], ○ [[Class Templates]], ○ [[Concepts and Constraints]], ○ [[Full and Partial Specialization]] |
 | 25 | Smart Pointer Refactor Lab | ◐ [[Map — Ownership & Move Semantics]], ● [[Value Categories]], ● [[Dangling Pointers and References]], ● [[RAII]], ○ [[unique_ptr]], ○ [[shared_ptr and Reference Counting]], ○ [[weak_ptr and Reference Cycles]] |
 | 26 | Custom Exception Hierarchy & Robust CSV Parser | ◐ [[Map — Ownership & Move Semantics]], ● [[RAII]], ○ [[Exception Safety Guarantees]], ○ [[Exceptions]], ○ [[Designing Exception Hierarchies]] |
-| 27 | Task Manager with Lambdas & std::function | ○ [[Lambda Expressions]], ○ [[Callables and std-function]] |
+| 27 | Task Manager with Lambdas & std::function | ◐ [[Map — Functions]], ○ [[Lambda Expressions]], ○ [[Callables and std-function]] |
 | 28 | Mini JSON Parser / Key-Value Store Engine | ○ [[variant and visit]], ○ [[Designing Interfaces — Easy to Use Correctly]], ○ [[Visitor — Classic vs variant]] |
 
 ## Tier 6: Advanced & Systems Programming

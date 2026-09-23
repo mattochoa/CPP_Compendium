@@ -1,6 +1,6 @@
 {
-  "runs": 8,
-  "builder_runs": 7,
+  "runs": 9,
+  "builder_runs": 8,
   "editor_runs": 1,
   "history": [
     {
@@ -154,10 +154,23 @@
       "code": "0/0 0/0 4/4",
       "commit": "✓",
       "summary": "wave 0: wrote Map — Expressions & Control (D03), the third of 16 remaining domain maps; back-wove links from Map — Types & Values and Value Categories"
+    },
+    {
+      "when": "2026-09-23T16:51:24Z",
+      "run": 8,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "map-d05"
+      ],
+      "lint": "100–100",
+      "code": "0/0",
+      "commit": "✓",
+      "summary": "Wrote Map — Functions (D05, wave 0): derives the naming/invocation problem from first principles, covers the call stack, parameter passing, overload resolution, lambdas/closures and callables under abstraction-vs-control and value-vs-identity tensions. Woven from Map — Expressions & Control and Map — Objects, Memory & Lifetime (already frontier-linked)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-23T13:20:42Z"
+  "last_builder": "2026-09-23T16:51:24Z"
 }
