@@ -1,0 +1,2 @@
+# CPP Compendium (obsidian vault)
+
