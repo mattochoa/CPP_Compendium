@@ -1,0 +1,118 @@
+# CPP Compendium: domain registry
+# Each domain is one region of the Atlas. `folder` is relative to the vault.
+# `color` drives the graph view, the Atlas canvas and dashboards. Keep hues distinct.
+# `question` is the domain's "first question": the problem it exists to solve.
+
+- code: D00
+  name: What C++ Is
+  folder: 02 Notes/00 What C++ Is
+  color: "#64748b"
+  question: What contract does C++ make between the programmer, the compiler and the machine?
+
+- code: D01
+  name: Program Structure & Build
+  folder: 02 Notes/01 Program Structure & Build
+  color: "#0ea5e9"
+  question: How does text in many files become one running program?
+
+- code: D02
+  name: Types & Values
+  folder: 02 Notes/02 Types & Values
+  color: "#6366f1"
+  question: How are meaning and operations attached to raw bits?
+
+- code: D03
+  name: Expressions & Control
+  folder: 02 Notes/03 Expressions & Control
+  color: "#8b5cf6"
+  question: How does a program compute a value and decide what to do next?
+
+- code: D04
+  name: Objects, Memory & Lifetime
+  folder: 02 Notes/04 Objects, Memory & Lifetime
+  color: "#ef4444"
+  question: Where does an object live, how long does it live, and who can reach it?
+
+- code: D05
+  name: Functions
+  folder: 02 Notes/05 Functions
+  color: "#f97316"
+  question: How is computation named, parameterised, reused and passed around?
+
+- code: D06
+  name: Classes & Encapsulation
+  folder: 02 Notes/06 Classes & Encapsulation
+  color: "#eab308"
+  question: How do we build new types that protect their own invariants?
+
+- code: D07
+  name: Ownership & Move Semantics
+  folder: 02 Notes/07 Ownership & Move Semantics
+  color: "#22c55e"
+  question: Who is responsible for releasing a resource, and how does responsibility transfer?
+
+- code: D08
+  name: Inheritance & Polymorphism
+  folder: 02 Notes/08 Inheritance & Polymorphism
+  color: "#14b8a6"
+  question: How can one piece of code work with many types chosen at run time?
+
+- code: D09
+  name: Generic Programming
+  folder: 02 Notes/09 Generic Programming
+  color: "#06b6d4"
+  question: How can one piece of code work with many types chosen at compile time?
+
+- code: D10
+  name: Standard Library
+  folder: 02 Notes/10 Standard Library
+  color: "#3b82f6"
+  question: Which solved problems ship with the language, and how are they composed?
+
+- code: D11
+  name: Errors & Contracts
+  folder: 02 Notes/11 Errors & Contracts
+  color: "#f43f5e"
+  question: What happens when an operation cannot do what it promised?
+
+- code: D12
+  name: Concurrency
+  folder: 02 Notes/12 Concurrency
+  color: "#a855f7"
+  question: How do multiple threads of execution share memory without corrupting it?
+
+- code: D13
+  name: Performance & the Machine
+  folder: 02 Notes/13 Performance & the Machine
+  color: "#d946ef"
+  question: What does the hardware actually do with our code, and how do we make it fast?
+
+- code: D14
+  name: Tooling & Engineering
+  folder: 02 Notes/14 Tooling & Engineering
+  color: "#78716c"
+  question: Which tools turn correct-looking code into verified, maintainable software?
+
+- code: D15
+  name: Design & Idioms
+  folder: 02 Notes/15 Design & Idioms
+  color: "#84cc16"
+  question: Which recurring shapes of solution survive contact with real programs?
+
+- code: D16
+  name: Evolution of C++
+  folder: 02 Notes/16 Evolution of C++
+  color: "#94a3b8"
+  question: How did the language get here, and where is it going?
+
+- code: SRC
+  name: Sources
+  folder: 03 Sources
+  color: "#a16207"
+  question: What should be read, in what order, and for what?
+
+- code: PRX
+  name: Practice
+  folder: 04 Practice
+  color: "#15803d"
+  question: How does knowledge become skill?

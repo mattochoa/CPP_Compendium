@@ -1,0 +1,351 @@
+# CPP Compendium: topic registry (the Atlas backlog)
+#
+# One line per planned note. The registry is the source of truth for what the
+# Compendium intends to contain; a note's frontmatter is the source of truth
+# for its *status*.
+#
+# Fields
+#   id    stable kebab-case key (never rename; it is the note's `id` property)
+#   t     title = file name (no  : / \ ? * < > | "  characters)
+#   ty    archetype: map | concept | mechanism | idiom | pitfall | comparison | evolution | guide | path
+#   d     domain code (see domains.yaml)
+#   tier  depth: 1 foundational, 2 working proficiency, 3 advanced, 4 expert
+#   w     wave: 0 frame (maps), 1 spine, 2 proficiency, 3 advanced, 4 specialist
+#   pre   prerequisite topic ids (shape the learning graph and the selection order)
+#   kw    extra search keywords for `cc.py src suggest`
+#   pr    CPP Project Continuum project numbers that exercise this topic
+#   al    aliases (Obsidian aliases; may contain :: and <>)
+#
+# Growth rule: the Builder MAY append topics discovered while writing (use
+# `cc.py registry add`). The Editor curates: merges, splits, re-waves.
+
+# ---------------------------------------------------------------- WAVE 0: the frame
+- {id: map-d00, t: "Map — What C++ Is", ty: map, d: D00, tier: 1, w: 0}
+- {id: map-d01, t: "Map — Program Structure & Build", ty: map, d: D01, tier: 1, w: 0}
+- {id: map-d02, t: "Map — Types & Values", ty: map, d: D02, tier: 1, w: 0}
+- {id: map-d03, t: "Map — Expressions & Control", ty: map, d: D03, tier: 1, w: 0}
+- {id: map-d04, t: "Map — Objects, Memory & Lifetime", ty: map, d: D04, tier: 1, w: 0}
+- {id: map-d05, t: "Map — Functions", ty: map, d: D05, tier: 1, w: 0}
+- {id: map-d06, t: "Map — Classes & Encapsulation", ty: map, d: D06, tier: 1, w: 0}
+- {id: map-d07, t: "Map — Ownership & Move Semantics", ty: map, d: D07, tier: 1, w: 0}
+- {id: map-d08, t: "Map — Inheritance & Polymorphism", ty: map, d: D08, tier: 1, w: 0}
+- {id: map-d09, t: "Map — Generic Programming", ty: map, d: D09, tier: 1, w: 0}
+- {id: map-d10, t: "Map — Standard Library", ty: map, d: D10, tier: 1, w: 0}
+- {id: map-d11, t: "Map — Errors & Contracts", ty: map, d: D11, tier: 1, w: 0}
+- {id: map-d12, t: "Map — Concurrency", ty: map, d: D12, tier: 1, w: 0}
+- {id: map-d13, t: "Map — Performance & the Machine", ty: map, d: D13, tier: 1, w: 0}
+- {id: map-d14, t: "Map — Tooling & Engineering", ty: map, d: D14, tier: 1, w: 0}
+- {id: map-d15, t: "Map — Design & Idioms", ty: map, d: D15, tier: 1, w: 0}
+- {id: map-d16, t: "Map — Evolution of C++", ty: map, d: D16, tier: 1, w: 0}
+
+# ---------------------------------------------------------------- D00 What C++ Is
+- {id: cpp-design-philosophy, t: "The C++ Design Philosophy", ty: concept, d: D00, tier: 1, w: 1, kw: [zero-overhead, direct map to hardware, Stroustrup ideals]}
+- {id: zero-overhead-principle, t: "Zero-Overhead Principle", ty: concept, d: D00, tier: 1, w: 1, pre: [cpp-design-philosophy], kw: [you don't pay for what you don't use]}
+- {id: abstraction-layers, t: "Levels of Abstraction — From Bits to Libraries", ty: concept, d: D00, tier: 1, w: 1, pre: [cpp-design-philosophy]}
+- {id: abstract-machine, t: "The C++ Abstract Machine", ty: concept, d: D00, tier: 1, w: 1, kw: [observable behavior, abstract machine]}
+- {id: undefined-behavior, t: "Undefined Behavior", ty: concept, d: D00, tier: 1, w: 1, pre: [abstract-machine], al: [UB]}
+- {id: as-if-rule, t: "The As-If Rule", ty: mechanism, d: D00, tier: 2, w: 2, pre: [abstract-machine]}
+- {id: behavior-taxonomy, t: "Implementation-Defined, Unspecified and Undefined Behavior", ty: comparison, d: D00, tier: 2, w: 2, pre: [undefined-behavior]}
+- {id: standard-and-compilers, t: "The ISO Standard, Compilers and Conformance", ty: concept, d: D00, tier: 1, w: 2, kw: [WG21, conformance, GCC, Clang, MSVC]}
+
+# ---------------------------------------------------------------- D01 Program Structure & Build
+- {id: compilation-pipeline, t: "The Compilation Pipeline", ty: mechanism, d: D01, tier: 1, w: 1, pr: [1], kw: [preprocess compile assemble link]}
+- {id: translation-units, t: "Translation Units", ty: concept, d: D01, tier: 1, w: 1, pre: [compilation-pipeline]}
+- {id: preprocessor, t: "The Preprocessor", ty: mechanism, d: D01, tier: 1, w: 1, pre: [compilation-pipeline], kw: ["#include", "#define", macro]}
+- {id: headers-and-include-guards, t: "Headers and Include Guards", ty: idiom, d: D01, tier: 1, w: 1, pre: [preprocessor], pr: [6], kw: [pragma once]}
+- {id: declarations-vs-definitions, t: "Declarations vs Definitions", ty: comparison, d: D01, tier: 1, w: 1, pr: [6]}
+- {id: scope, t: "Scope", ty: concept, d: D01, tier: 1, w: 1, kw: [block scope, namespace scope, shadowing]}
+- {id: namespaces, t: "Namespaces", ty: concept, d: D01, tier: 1, w: 2, pre: [scope], kw: [using directive, using declaration]}
+- {id: linkage, t: "Linkage — Internal, External, None", ty: concept, d: D01, tier: 2, w: 2, pre: [translation-units], kw: [static, extern, anonymous namespace]}
+- {id: one-definition-rule, t: "The One Definition Rule", ty: concept, d: D01, tier: 2, w: 2, pre: [linkage], al: [ODR]}
+- {id: the-linker, t: "What the Linker Does", ty: mechanism, d: D01, tier: 2, w: 2, pre: [compilation-pipeline, linkage], kw: [symbol resolution, relocation, undefined reference]}
+- {id: main-and-program-startup, t: "main, Program Startup and Termination", ty: mechanism, d: D01, tier: 2, w: 2, kw: [exit, return code, static initialization]}
+- {id: inline-beyond-inlining, t: "inline — Meaning Beyond Inlining", ty: concept, d: D01, tier: 2, w: 3, pre: [one-definition-rule], kw: [inline variable]}
+- {id: name-mangling, t: "Name Mangling and extern C", ty: mechanism, d: D01, tier: 3, w: 3, pre: [the-linker]}
+- {id: name-lookup, t: "Name Lookup and ADL", ty: mechanism, d: D01, tier: 3, w: 3, pre: [namespaces], al: [argument-dependent lookup, Koenig lookup]}
+- {id: static-init-order-fiasco, t: "Static Initialization Order Fiasco", ty: pitfall, d: D01, tier: 3, w: 3, pre: [main-and-program-startup, storage-duration]}
+- {id: static-vs-shared-libraries, t: "Static vs Shared Libraries", ty: comparison, d: D01, tier: 2, w: 3, pre: [the-linker]}
+- {id: modules, t: "Modules (C++20)", ty: concept, d: D01, tier: 3, w: 3, pre: [translation-units, preprocessor], kw: [import, export module]}
+
+# ---------------------------------------------------------------- D02 Types & Values
+- {id: what-a-type-is, t: "What a Type Is", ty: concept, d: D02, tier: 1, w: 1, kw: [set of values, operations, representation]}
+- {id: fundamental-types, t: "Fundamental Types", ty: concept, d: D02, tier: 1, w: 1, pre: [what-a-type-is], pr: [2], kw: [int, double, char, bool]}
+- {id: const-correctness, t: "const and Const-Correctness", ty: concept, d: D02, tier: 1, w: 1, pr: [17, 19]}
+- {id: integer-representation, t: "Integer Representation and Two's Complement", ty: mechanism, d: D02, tier: 1, w: 2, pre: [fundamental-types]}
+- {id: implicit-conversions, t: "Implicit Conversions and Promotions", ty: mechanism, d: D02, tier: 1, w: 2, pre: [fundamental-types], kw: [integral promotion]}
+- {id: narrowing-and-brace-init, t: "Narrowing Conversions and Brace Initialization", ty: concept, d: D02, tier: 1, w: 2, pre: [implicit-conversions]}
+- {id: auto-type-deduction, t: "auto Type Deduction", ty: mechanism, d: D02, tier: 1, w: 2}
+- {id: type-aliases, t: "Type Aliases (typedef and using)", ty: concept, d: D02, tier: 1, w: 2}
+- {id: enumerations, t: "Enumerations — Plain vs Scoped", ty: comparison, d: D02, tier: 1, w: 2, kw: [enum class]}
+- {id: signed-overflow, t: "Signed Integer Overflow", ty: pitfall, d: D02, tier: 2, w: 2, pre: [integer-representation, undefined-behavior]}
+- {id: floating-point, t: "Floating-Point Representation (IEEE 754)", ty: mechanism, d: D02, tier: 2, w: 2, pre: [fundamental-types]}
+- {id: floating-point-comparison, t: "Comparing Floating-Point Values", ty: pitfall, d: D02, tier: 2, w: 2, pre: [floating-point], kw: [epsilon, NaN]}
+- {id: usual-arithmetic-conversions, t: "Usual Arithmetic Conversions", ty: mechanism, d: D02, tier: 2, w: 2, pre: [implicit-conversions]}
+- {id: signed-unsigned-mixing, t: "Mixing Signed and Unsigned", ty: pitfall, d: D02, tier: 2, w: 2, pre: [usual-arithmetic-conversions]}
+- {id: named-casts, t: "The Named Casts", ty: comparison, d: D02, tier: 2, w: 2, pre: [implicit-conversions], al: [static_cast, reinterpret_cast, const_cast]}
+- {id: top-vs-low-level-const, t: "Top-Level vs Low-Level const", ty: comparison, d: D02, tier: 2, w: 2, pre: [const-correctness, pointers]}
+- {id: constexpr-values, t: "constexpr Variables and Constant Expressions", ty: concept, d: D02, tier: 2, w: 2, pre: [const-correctness]}
+- {id: sizeof-and-alignment, t: "sizeof, alignof and Alignment", ty: mechanism, d: D02, tier: 2, w: 2, pre: [fundamental-types]}
+- {id: decltype, t: "decltype and decltype(auto)", ty: mechanism, d: D02, tier: 2, w: 3, pre: [auto-type-deduction, value-categories]}
+- {id: literals-and-udl, t: "Literals and User-Defined Literals", ty: concept, d: D02, tier: 2, w: 3}
+- {id: characters-and-encodings, t: "Characters, Encodings and the char Types", ty: concept, d: D02, tier: 2, w: 3, kw: [UTF-8, char8_t, wchar_t]}
+- {id: bit-manipulation, t: "Bitwise Operations and the bit Header", ty: concept, d: D02, tier: 2, w: 3, pr: [10], kw: [popcount, bit_cast, shift]}
+- {id: strong-types, t: "Strong Types", ty: idiom, d: D02, tier: 3, w: 3, pre: [type-aliases]}
+- {id: volatile-misconceptions, t: "volatile — What It Does Not Mean", ty: pitfall, d: D02, tier: 3, w: 4}
+
+# ---------------------------------------------------------------- D03 Expressions & Control
+- {id: anatomy-of-an-expression, t: "Anatomy of an Expression", ty: concept, d: D03, tier: 1, w: 1, kw: [operand, operator, result type]}
+- {id: operator-precedence, t: "Precedence and Associativity", ty: concept, d: D03, tier: 1, w: 1, pre: [anatomy-of-an-expression]}
+- {id: control-flow, t: "Control Flow — Selection and Iteration", ty: concept, d: D03, tier: 1, w: 1, pr: [2, 3]}
+- {id: evaluation-order, t: "Evaluation Order and Sequencing", ty: mechanism, d: D03, tier: 2, w: 2, pre: [operator-precedence, undefined-behavior], kw: [sequenced before, unsequenced]}
+- {id: short-circuit-evaluation, t: "Short-Circuit Evaluation", ty: concept, d: D03, tier: 1, w: 2}
+- {id: prefix-vs-postfix, t: "Prefix vs Postfix Increment", ty: comparison, d: D03, tier: 1, w: 2}
+- {id: range-for, t: "The Range-Based for Loop", ty: mechanism, d: D03, tier: 1, w: 2, pre: [control-flow, iterators]}
+- {id: switch-statement, t: "switch and Fallthrough", ty: concept, d: D03, tier: 1, w: 2, pr: [2]}
+- {id: statement-initializers, t: "if and switch with Initializers, and if constexpr", ty: concept, d: D03, tier: 2, w: 3}
+- {id: structured-bindings, t: "Structured Bindings", ty: mechanism, d: D03, tier: 2, w: 3}
+- {id: conditional-and-comma, t: "The Conditional and Comma Operators", ty: concept, d: D03, tier: 2, w: 3}
+
+# ---------------------------------------------------------------- D04 Objects, Memory & Lifetime
+- {id: object-model, t: "The C++ Object Model — What an Object Is", ty: concept, d: D04, tier: 1, w: 1, pre: [abstract-machine]}
+- {id: process-memory-layout, t: "Process Memory Layout — Stack, Heap, Static", ty: mechanism, d: D04, tier: 1, w: 1, pr: [11]}
+- {id: storage-duration, t: "Storage Duration", ty: concept, d: D04, tier: 1, w: 1, pre: [object-model]}
+- {id: object-lifetime, t: "Object Lifetime", ty: concept, d: D04, tier: 1, w: 1, pre: [storage-duration]}
+- {id: references, t: "References", ty: concept, d: D04, tier: 1, w: 1, pr: [6]}
+- {id: pointers, t: "Pointers", ty: concept, d: D04, tier: 1, w: 1, pr: [11]}
+- {id: dynamic-memory, t: "Dynamic Memory — new and delete", ty: mechanism, d: D04, tier: 1, w: 1, pre: [pointers], pr: [12]}
+- {id: value-categories, t: "Value Categories", ty: concept, d: D04, tier: 2, w: 1, pre: [object-lifetime, anatomy-of-an-expression], al: [lvalue, rvalue, xvalue, prvalue, glvalue]}
+- {id: initialization-forms, t: "The Forms of Initialization", ty: comparison, d: D04, tier: 2, w: 2, pre: [object-lifetime], kw: [default, value, direct, copy, list, aggregate, zero initialization]}
+- {id: uninitialized-variables, t: "Reading Uninitialized Variables", ty: pitfall, d: D04, tier: 1, w: 2}
+- {id: pointer-arithmetic, t: "Pointer Arithmetic and Arrays", ty: mechanism, d: D04, tier: 1, w: 2, pre: [pointers], pr: [11]}
+- {id: pointers-vs-references, t: "Pointers vs References", ty: comparison, d: D04, tier: 1, w: 2, pre: [pointers, references]}
+- {id: nullptr, t: "nullptr and Null Pointers", ty: concept, d: D04, tier: 1, w: 2}
+- {id: arrays-and-decay, t: "Built-in Arrays and Array-to-Pointer Decay", ty: mechanism, d: D04, tier: 1, w: 2, pr: [11]}
+- {id: memory-leaks, t: "Memory Leaks", ty: pitfall, d: D04, tier: 1, w: 2}
+- {id: dangling-pointers-and-references, t: "Dangling Pointers and References", ty: pitfall, d: D04, tier: 1, w: 2, pre: [object-lifetime, pointers, references], al: [use-after-free, dangling reference]}
+- {id: double-free-and-mismatched-delete, t: "Double Free and Mismatched new-delete", ty: pitfall, d: D04, tier: 2, w: 2}
+- {id: temporaries-and-lifetime-extension, t: "Temporaries and Lifetime Extension", ty: mechanism, d: D04, tier: 2, w: 2, pre: [value-categories, object-lifetime]}
+- {id: c-strings, t: "C-Style Strings", ty: concept, d: D04, tier: 2, w: 3}
+- {id: object-representation, t: "Object Representation, Padding and Layout", ty: mechanism, d: D04, tier: 2, w: 3, pre: [sizeof-and-alignment]}
+- {id: memory-safety, t: "Memory Safety in C++ — Threats and Defenses", ty: concept, d: D04, tier: 2, w: 3}
+- {id: strict-aliasing, t: "Strict Aliasing and Type Punning", ty: pitfall, d: D04, tier: 3, w: 3, pre: [object-representation]}
+- {id: special-type-categories, t: "Trivial, Standard-Layout and Aggregate Types", ty: concept, d: D04, tier: 3, w: 3}
+- {id: placement-new, t: "Placement new and Manual Lifetime", ty: mechanism, d: D04, tier: 3, w: 4}
+- {id: allocators-and-pmr, t: "Allocators and pmr Memory Resources", ty: concept, d: D04, tier: 4, w: 4}
+
+# ---------------------------------------------------------------- D05 Functions
+- {id: function-anatomy, t: "Anatomy of a Function", ty: concept, d: D05, tier: 1, w: 1}
+- {id: call-stack, t: "The Call Stack and Stack Frames", ty: mechanism, d: D05, tier: 1, w: 1, pre: [process-memory-layout], pr: [9]}
+- {id: parameter-passing, t: "Parameter Passing — Value, Reference, Pointer", ty: comparison, d: D05, tier: 1, w: 1, pr: [6]}
+- {id: function-overloading, t: "Function Overloading", ty: concept, d: D05, tier: 1, w: 2, pr: [5, 6]}
+- {id: default-arguments, t: "Default Arguments", ty: concept, d: D05, tier: 1, w: 2}
+- {id: recursion, t: "Recursion", ty: concept, d: D05, tier: 1, w: 2, pre: [call-stack], pr: [9, 15]}
+- {id: lambdas, t: "Lambda Expressions", ty: concept, d: D05, tier: 1, w: 2, pr: [23, 27]}
+- {id: return-values, t: "Returning Values — Copies, References and RVO", ty: concept, d: D05, tier: 2, w: 2, pre: [parameter-passing]}
+- {id: function-pointers, t: "Function Pointers", ty: concept, d: D05, tier: 2, w: 2}
+- {id: lambda-captures, t: "Lambda Captures and Closure Objects", ty: mechanism, d: D05, tier: 2, w: 2, pre: [lambdas]}
+- {id: callables-and-std-function, t: "Callables and std-function", ty: comparison, d: D05, tier: 2, w: 3, pre: [lambdas, function-pointers], pr: [27], al: ["std::function"]}
+- {id: constexpr-functions, t: "constexpr and consteval Functions", ty: concept, d: D05, tier: 2, w: 3, pre: [constexpr-values]}
+- {id: inlining, t: "Inlining — Compiler Reality vs the Keyword", ty: mechanism, d: D05, tier: 2, w: 3}
+- {id: attributes, t: "Attributes — nodiscard, maybe_unused, likely", ty: concept, d: D05, tier: 2, w: 3}
+- {id: overload-resolution, t: "Overload Resolution", ty: mechanism, d: D05, tier: 3, w: 3, pre: [function-overloading, implicit-conversions]}
+
+# ---------------------------------------------------------------- D06 Classes & Encapsulation
+- {id: classes-as-types, t: "Classes as User-Defined Types", ty: concept, d: D06, tier: 1, w: 1, pr: [17]}
+- {id: encapsulation-and-invariants, t: "Encapsulation and Class Invariants", ty: concept, d: D06, tier: 1, w: 1, pr: [17]}
+- {id: constructors, t: "Constructors", ty: concept, d: D06, tier: 1, w: 1}
+- {id: destructors, t: "Destructors", ty: concept, d: D06, tier: 1, w: 1, pre: [object-lifetime]}
+- {id: struct-vs-class, t: "struct vs class", ty: comparison, d: D06, tier: 1, w: 2}
+- {id: member-initializer-lists, t: "Member Initializer Lists and Initialization Order", ty: mechanism, d: D06, tier: 1, w: 2, pre: [constructors]}
+- {id: this-pointer, t: "The this Pointer and Member Function Calls", ty: mechanism, d: D06, tier: 1, w: 2}
+- {id: const-member-functions, t: "const Member Functions and mutable", ty: concept, d: D06, tier: 1, w: 2, pre: [const-correctness]}
+- {id: static-members, t: "Static Members", ty: concept, d: D06, tier: 1, w: 2}
+- {id: special-member-functions, t: "The Special Member Functions", ty: concept, d: D06, tier: 2, w: 2, pre: [constructors, destructors]}
+- {id: rule-of-zero-three-five, t: "Rule of Zero, Three and Five", ty: idiom, d: D06, tier: 2, w: 2, pre: [special-member-functions], pr: [12, 22]}
+- {id: operator-overloading, t: "Operator Overloading", ty: concept, d: D06, tier: 2, w: 2, pr: [19]}
+- {id: value-semantics, t: "Value Semantics", ty: concept, d: D06, tier: 2, w: 2, pr: [19]}
+- {id: friends, t: "Friends", ty: concept, d: D06, tier: 2, w: 3}
+- {id: comparisons-and-spaceship, t: "Comparisons and the Spaceship Operator", ty: concept, d: D06, tier: 2, w: 3, pre: [operator-overloading]}
+- {id: conversion-operators-and-explicit, t: "Conversion Operators and explicit", ty: concept, d: D06, tier: 2, w: 3}
+- {id: aggregates-and-designated-init, t: "Aggregates and Designated Initializers", ty: concept, d: D06, tier: 2, w: 3}
+- {id: implicit-member-generation, t: "When the Compiler Generates Special Members", ty: mechanism, d: D06, tier: 3, w: 3, pre: [special-member-functions]}
+
+# ---------------------------------------------------------------- D07 Ownership & Move Semantics
+- {id: ownership-model, t: "Ownership — Who Releases What", ty: concept, d: D07, tier: 1, w: 1}
+- {id: raii, t: "RAII", ty: idiom, d: D07, tier: 1, w: 1, pre: [object-lifetime, destructors], pr: [25, 26, 31], al: [Resource Acquisition Is Initialization, scope-bound resource management]}
+- {id: copy-semantics, t: "Copy Semantics — Deep vs Shallow Copy", ty: comparison, d: D07, tier: 1, w: 2, pr: [12]}
+- {id: owning-vs-observing-pointers, t: "Owning vs Observing Pointers", ty: comparison, d: D07, tier: 2, w: 2, pr: [20]}
+- {id: unique-ptr, t: "unique_ptr", ty: concept, d: D07, tier: 1, w: 2, pre: [ownership-model], pr: [25]}
+- {id: rvalue-references, t: "Rvalue References", ty: concept, d: D07, tier: 2, w: 2, pre: [value-categories]}
+- {id: move-semantics, t: "Move Semantics", ty: concept, d: D07, tier: 2, w: 2, pre: [rvalue-references, copy-semantics], pr: [22]}
+- {id: shared-ptr, t: "shared_ptr and Reference Counting", ty: mechanism, d: D07, tier: 2, w: 2, pr: [25]}
+- {id: move-and-forward, t: "move and forward — Casts, Not Actions", ty: mechanism, d: D07, tier: 2, w: 3, pre: [move-semantics], al: ["std::move", "std::forward"]}
+- {id: moved-from-state, t: "The Moved-From State", ty: pitfall, d: D07, tier: 2, w: 3, pre: [move-semantics]}
+- {id: copy-elision, t: "Copy Elision and RVO", ty: mechanism, d: D07, tier: 2, w: 3, pre: [return-values], al: [RVO, NRVO]}
+- {id: weak-ptr-and-cycles, t: "weak_ptr and Reference Cycles", ty: pitfall, d: D07, tier: 2, w: 3, pre: [shared-ptr], pr: [25]}
+- {id: choosing-a-smart-pointer, t: "Choosing a Smart Pointer", ty: comparison, d: D07, tier: 2, w: 3, pre: [unique-ptr, shared-ptr]}
+- {id: make-functions, t: "make_unique and make_shared", ty: concept, d: D07, tier: 2, w: 3}
+- {id: exception-safety-guarantees, t: "Exception Safety Guarantees", ty: concept, d: D07, tier: 2, w: 3, pre: [raii, exceptions], pr: [26]}
+- {id: forwarding-references, t: "Forwarding References and Reference Collapsing", ty: mechanism, d: D07, tier: 3, w: 3, pre: [move-and-forward, template-argument-deduction], al: [universal reference]}
+- {id: copy-and-swap, t: "Copy-and-Swap", ty: idiom, d: D07, tier: 3, w: 3, pre: [rule-of-zero-three-five]}
+- {id: noexcept-and-move, t: "noexcept and Why Move Must Not Throw", ty: mechanism, d: D07, tier: 3, w: 3, pre: [move-semantics], pr: [22], kw: [move_if_noexcept]}
+
+# ---------------------------------------------------------------- D08 Inheritance & Polymorphism
+- {id: inheritance, t: "Inheritance", ty: concept, d: D08, tier: 1, w: 1, pr: [18, 20]}
+- {id: virtual-functions, t: "Virtual Functions", ty: concept, d: D08, tier: 1, w: 1, pr: [18]}
+- {id: virtual-dispatch, t: "Virtual Dispatch — vptr and vtable", ty: mechanism, d: D08, tier: 2, w: 1, pre: [virtual-functions], pr: [18, 21], al: [vtable, vptr, dynamic dispatch]}
+- {id: abstract-classes, t: "Abstract Classes and Interfaces", ty: concept, d: D08, tier: 1, w: 2, pr: [18, 21]}
+- {id: virtual-destructors, t: "Virtual Destructors", ty: pitfall, d: D08, tier: 1, w: 2, pr: [18]}
+- {id: object-slicing, t: "Object Slicing", ty: pitfall, d: D08, tier: 1, w: 2}
+- {id: override-and-final, t: "override and final", ty: concept, d: D08, tier: 1, w: 2}
+- {id: composition-vs-inheritance, t: "Composition vs Inheritance", ty: comparison, d: D08, tier: 2, w: 2, pr: [20]}
+- {id: access-in-inheritance, t: "Public, Protected and Private Inheritance", ty: comparison, d: D08, tier: 2, w: 3}
+- {id: rtti-and-dynamic-cast, t: "RTTI and dynamic_cast", ty: mechanism, d: D08, tier: 2, w: 3, pr: [21]}
+- {id: name-hiding, t: "Name Hiding in Derived Classes", ty: pitfall, d: D08, tier: 2, w: 3}
+- {id: virtual-calls-in-ctors, t: "Virtual Calls in Constructors and Destructors", ty: pitfall, d: D08, tier: 3, w: 3}
+- {id: multiple-inheritance, t: "Multiple and Virtual Inheritance", ty: mechanism, d: D08, tier: 3, w: 3, pr: [21], kw: [diamond]}
+- {id: static-vs-dynamic-polymorphism, t: "Static vs Dynamic Polymorphism", ty: comparison, d: D08, tier: 3, w: 3, pre: [virtual-dispatch, function-templates]}
+
+# ---------------------------------------------------------------- D09 Generic Programming
+- {id: why-templates, t: "Templates — Code That Writes Code", ty: concept, d: D09, tier: 1, w: 1}
+- {id: function-templates, t: "Function Templates", ty: concept, d: D09, tier: 1, w: 2, pre: [why-templates], pr: [24]}
+- {id: class-templates, t: "Class Templates", ty: concept, d: D09, tier: 2, w: 2, pre: [why-templates], pr: [24]}
+- {id: template-instantiation, t: "Template Instantiation", ty: mechanism, d: D09, tier: 2, w: 2, pre: [function-templates]}
+- {id: templates-in-headers, t: "Why Templates Live in Headers", ty: pitfall, d: D09, tier: 2, w: 2, pre: [template-instantiation]}
+- {id: concepts-and-constraints, t: "Concepts and Constraints", ty: concept, d: D09, tier: 2, w: 2, pr: [24], kw: [requires]}
+- {id: non-type-template-parameters, t: "Non-Type Template Parameters", ty: concept, d: D09, tier: 2, w: 3}
+- {id: template-argument-deduction, t: "Template Argument Deduction", ty: mechanism, d: D09, tier: 3, w: 3, pre: [function-templates]}
+- {id: template-specialization, t: "Full and Partial Specialization", ty: concept, d: D09, tier: 3, w: 3, pr: [24]}
+- {id: variadic-templates, t: "Variadic Templates and Fold Expressions", ty: concept, d: D09, tier: 3, w: 3}
+- {id: ctad, t: "Class Template Argument Deduction", ty: mechanism, d: D09, tier: 3, w: 3, al: [CTAD]}
+- {id: type-traits, t: "Type Traits", ty: concept, d: D09, tier: 3, w: 3}
+- {id: sfinae, t: "SFINAE and enable_if", ty: mechanism, d: D09, tier: 4, w: 4}
+- {id: two-phase-lookup, t: "Two-Phase Lookup and Dependent Names", ty: mechanism, d: D09, tier: 4, w: 4, kw: [typename, template disambiguator]}
+- {id: compile-time-programming, t: "Compile-Time Programming — From TMP to constexpr", ty: concept, d: D09, tier: 4, w: 4}
+
+# ---------------------------------------------------------------- D10 Standard Library
+- {id: stl-architecture, t: "STL Architecture — Containers, Iterators, Algorithms", ty: concept, d: D10, tier: 1, w: 1, pr: [23]}
+- {id: std-vector, t: "vector", ty: concept, d: D10, tier: 1, w: 1, pr: [7, 12], al: ["std::vector"]}
+- {id: iterators, t: "Iterators", ty: concept, d: D10, tier: 1, w: 1}
+- {id: std-string, t: "string", ty: concept, d: D10, tier: 1, w: 1, pr: [7], al: ["std::string"]}
+- {id: std-array, t: "array", ty: concept, d: D10, tier: 1, w: 2, pr: [4], al: ["std::array"]}
+- {id: associative-containers, t: "Ordered Associative Containers — map and set", ty: concept, d: D10, tier: 1, w: 2, pr: [7]}
+- {id: algorithms, t: "The Algorithms Library", ty: concept, d: D10, tier: 1, w: 2, pr: [23]}
+- {id: iostreams, t: "IO Streams Architecture", ty: mechanism, d: D10, tier: 1, w: 2, pr: [7, 16]}
+- {id: stream-state-and-input, t: "Stream State and Robust Input", ty: idiom, d: D10, tier: 1, w: 2, pr: [3, 5]}
+- {id: file-io, t: "File IO", ty: concept, d: D10, tier: 1, w: 2, pr: [7, 10, 16]}
+- {id: random-numbers, t: "Random Number Generation", ty: concept, d: D10, tier: 1, w: 2, pr: [3]}
+- {id: vector-growth, t: "How vector Grows — Capacity and Amortized Cost", ty: mechanism, d: D10, tier: 2, w: 2, pre: [std-vector], pr: [12]}
+- {id: sequence-containers, t: "Sequence Containers Compared", ty: comparison, d: D10, tier: 2, w: 2, kw: [deque, list, forward_list]}
+- {id: unordered-containers, t: "Hash Tables — unordered_map and unordered_set", ty: mechanism, d: D10, tier: 2, w: 2}
+- {id: iterator-invalidation, t: "Iterator Invalidation", ty: pitfall, d: D10, tier: 2, w: 2, pre: [iterators, vector-growth]}
+- {id: string-streams, t: "String Streams", ty: concept, d: D10, tier: 1, w: 3, pr: [5]}
+- {id: container-adaptors, t: "Container Adaptors — stack, queue, priority_queue", ty: concept, d: D10, tier: 2, w: 3, pr: [14]}
+- {id: iterator-categories, t: "Iterator Categories and Concepts", ty: concept, d: D10, tier: 2, w: 3}
+- {id: erase-remove, t: "Erase-Remove and erase_if", ty: idiom, d: D10, tier: 2, w: 3}
+- {id: ranges-and-views, t: "Ranges and Views", ty: concept, d: D10, tier: 2, w: 3}
+- {id: string-view, t: "string_view", ty: concept, d: D10, tier: 2, w: 3, pre: [std-string, dangling-pointers-and-references]}
+- {id: format-and-print, t: "format and print", ty: concept, d: D10, tier: 2, w: 3, al: ["std::format", "std::print"]}
+- {id: optional, t: "optional", ty: concept, d: D10, tier: 2, w: 3, al: ["std::optional"]}
+- {id: variant, t: "variant and visit", ty: concept, d: D10, tier: 2, w: 3, pr: [28], al: ["std::variant"]}
+- {id: span, t: "span", ty: concept, d: D10, tier: 2, w: 3, al: ["std::span"]}
+- {id: pair-and-tuple, t: "pair and tuple", ty: concept, d: D10, tier: 2, w: 3}
+- {id: chrono, t: "chrono — Durations, Clocks, Time Points", ty: concept, d: D10, tier: 2, w: 3, pr: [32]}
+- {id: small-string-optimization, t: "Small String Optimization", ty: mechanism, d: D10, tier: 3, w: 4, al: [SSO]}
+- {id: std-any, t: "any", ty: concept, d: D10, tier: 3, w: 4, al: ["std::any"]}
+
+# ---------------------------------------------------------------- D11 Errors & Contracts
+- {id: error-handling-strategies, t: "Error Handling Strategies Compared", ty: comparison, d: D11, tier: 1, w: 1}
+- {id: exceptions, t: "Exceptions", ty: concept, d: D11, tier: 1, w: 1, pr: [5, 26]}
+- {id: assertions, t: "assert and static_assert", ty: concept, d: D11, tier: 1, w: 2, pr: [6]}
+- {id: stack-unwinding, t: "Stack Unwinding", ty: mechanism, d: D11, tier: 2, w: 2, pre: [exceptions, raii]}
+- {id: exception-hierarchies, t: "Designing Exception Hierarchies", ty: idiom, d: D11, tier: 2, w: 3, pr: [26]}
+- {id: noexcept, t: "noexcept", ty: concept, d: D11, tier: 2, w: 3}
+- {id: std-expected, t: "expected — Errors as Values", ty: concept, d: D11, tier: 2, w: 3, al: ["std::expected"]}
+- {id: contracts, t: "Preconditions, Postconditions and Contracts", ty: concept, d: D11, tier: 2, w: 3, pr: [8]}
+- {id: error-codes, t: "error_code and System Errors", ty: concept, d: D11, tier: 3, w: 4}
+- {id: cost-of-exceptions, t: "The Cost of Exceptions", ty: mechanism, d: D11, tier: 3, w: 4}
+
+# ---------------------------------------------------------------- D12 Concurrency
+- {id: concurrency-vs-parallelism, t: "Concurrency vs Parallelism", ty: comparison, d: D12, tier: 1, w: 1}
+- {id: threads, t: "Threads — thread and jthread", ty: concept, d: D12, tier: 2, w: 2, pr: [29]}
+- {id: data-races, t: "Data Races and Race Conditions", ty: pitfall, d: D12, tier: 2, w: 2, pr: [29]}
+- {id: mutexes-and-locks, t: "Mutexes and Lock Guards", ty: concept, d: D12, tier: 2, w: 2, pr: [29]}
+- {id: deadlock, t: "Deadlock", ty: pitfall, d: D12, tier: 2, w: 3}
+- {id: condition-variables, t: "Condition Variables", ty: mechanism, d: D12, tier: 2, w: 3, pr: [29], kw: [spurious wakeup]}
+- {id: futures-and-async, t: "Futures, Promises and async", ty: concept, d: D12, tier: 2, w: 3}
+- {id: memory-model, t: "The C++ Memory Model — happens-before", ty: mechanism, d: D12, tier: 3, w: 3}
+- {id: atomics, t: "Atomics", ty: concept, d: D12, tier: 3, w: 3}
+- {id: thread-pools, t: "Thread Pools and Task Queues", ty: idiom, d: D12, tier: 3, w: 4, pr: [35]}
+- {id: stop-tokens, t: "Cooperative Cancellation with stop_token", ty: concept, d: D12, tier: 3, w: 4}
+- {id: false-sharing, t: "False Sharing", ty: pitfall, d: D12, tier: 3, w: 4, pre: [cache-hierarchy]}
+- {id: parallel-algorithms, t: "Parallel Algorithms and Execution Policies", ty: concept, d: D12, tier: 3, w: 4}
+- {id: memory-orderings, t: "Memory Orderings", ty: mechanism, d: D12, tier: 4, w: 4, pre: [atomics, memory-model]}
+- {id: lock-free-basics, t: "Lock-Free Programming Basics", ty: concept, d: D12, tier: 4, w: 4}
+- {id: coroutines, t: "Coroutines", ty: mechanism, d: D12, tier: 4, w: 4}
+
+# ---------------------------------------------------------------- D13 Performance & the Machine
+- {id: performance-mindset, t: "Performance — Measure, Don't Guess", ty: concept, d: D13, tier: 1, w: 2, pr: [32]}
+- {id: cache-hierarchy, t: "The Memory Hierarchy and Caches", ty: mechanism, d: D13, tier: 2, w: 2, pr: [32], kw: [cache line, latency]}
+- {id: benchmarking, t: "Benchmarking Correctly", ty: idiom, d: D13, tier: 2, w: 3, pr: [22, 32]}
+- {id: profiling, t: "Profiling", ty: concept, d: D13, tier: 2, w: 3, pr: [32], kw: [perf, sampling]}
+- {id: data-locality, t: "Data Locality and Access Patterns", ty: concept, d: D13, tier: 2, w: 3, pr: [32]}
+- {id: reading-assembly, t: "Reading Compiler Output", ty: guide, d: D13, tier: 2, w: 3, kw: [Compiler Explorer, godbolt]}
+- {id: big-o-meets-hardware, t: "Big-O Meets the Hardware", ty: concept, d: D13, tier: 2, w: 3}
+- {id: cpu-pipeline, t: "The CPU Pipeline and Instruction-Level Parallelism", ty: mechanism, d: D13, tier: 3, w: 3}
+- {id: branch-prediction, t: "Branch Prediction", ty: mechanism, d: D13, tier: 3, w: 3}
+- {id: compiler-optimizations, t: "What Optimizers Do", ty: mechanism, d: D13, tier: 3, w: 3}
+- {id: data-oriented-design, t: "Data-Oriented Design — AoS vs SoA", ty: comparison, d: D13, tier: 3, w: 4}
+- {id: allocation-cost, t: "The Cost of Dynamic Allocation", ty: concept, d: D13, tier: 3, w: 4}
+- {id: ub-and-optimization, t: "How UB Enables and Breaks Optimization", ty: mechanism, d: D13, tier: 3, w: 4, pre: [undefined-behavior, compiler-optimizations]}
+- {id: simd, t: "SIMD and Auto-Vectorization", ty: mechanism, d: D13, tier: 4, w: 4}
+
+# ---------------------------------------------------------------- D14 Tooling & Engineering
+- {id: compilers-and-flags, t: "Compilers and Essential Flags", ty: guide, d: D14, tier: 1, w: 1, pr: [1]}
+- {id: warnings-as-guardrails, t: "Warnings as Guardrails", ty: idiom, d: D14, tier: 1, w: 2}
+- {id: cmake-fundamentals, t: "CMake Fundamentals", ty: guide, d: D14, tier: 1, w: 2, pr: [1]}
+- {id: debugging, t: "Debugging with a Debugger", ty: guide, d: D14, tier: 1, w: 2, kw: [gdb, breakpoints, watch]}
+- {id: sanitizers, t: "Sanitizers — ASan, UBSan, TSan", ty: guide, d: D14, tier: 2, w: 2, pr: [11, 29]}
+- {id: static-analysis, t: "Static Analysis and clang-tidy", ty: guide, d: D14, tier: 2, w: 3}
+- {id: unit-testing, t: "Unit Testing in C++", ty: guide, d: D14, tier: 2, w: 3}
+- {id: core-guidelines, t: "The C++ Core Guidelines", ty: guide, d: D14, tier: 2, w: 3}
+- {id: formatting-tooling, t: "Formatting and Style Tooling", ty: guide, d: D14, tier: 2, w: 4}
+- {id: package-management, t: "Dependencies and Package Managers", ty: guide, d: D14, tier: 3, w: 4, kw: [vcpkg, Conan]}
+
+# ---------------------------------------------------------------- D15 Design & Idioms
+- {id: interface-design, t: "Designing Interfaces — Easy to Use Correctly", ty: concept, d: D15, tier: 2, w: 2, pr: [28]}
+- {id: scope-guards, t: "Scope Guards", ty: idiom, d: D15, tier: 2, w: 3, pre: [raii]}
+- {id: solid-in-cpp, t: "SOLID in C++", ty: concept, d: D15, tier: 2, w: 3}
+- {id: strategy-pattern, t: "Strategy Pattern", ty: idiom, d: D15, tier: 2, w: 3, pr: [30]}
+- {id: observer-pattern, t: "Observer Pattern", ty: idiom, d: D15, tier: 2, w: 3, pr: [30]}
+- {id: factory-patterns, t: "Factory Patterns", ty: idiom, d: D15, tier: 2, w: 3, pr: [30]}
+- {id: singleton, t: "Singleton — and Why to Avoid It", ty: idiom, d: D15, tier: 2, w: 3, pr: [30]}
+- {id: pimpl, t: "Pimpl", ty: idiom, d: D15, tier: 3, w: 3, al: [pointer to implementation, compilation firewall]}
+- {id: crtp, t: "CRTP", ty: idiom, d: D15, tier: 3, w: 4, al: [Curiously Recurring Template Pattern]}
+- {id: nvi, t: "Non-Virtual Interface", ty: idiom, d: D15, tier: 3, w: 4, al: [NVI]}
+- {id: visitor-pattern, t: "Visitor — Classic vs variant", ty: comparison, d: D15, tier: 3, w: 4, pr: [28]}
+- {id: type-erasure, t: "Type Erasure", ty: idiom, d: D15, tier: 4, w: 4}
+- {id: policy-based-design, t: "Policy-Based Design", ty: idiom, d: D15, tier: 4, w: 4}
+
+# ---------------------------------------------------------------- D16 Evolution of C++
+- {id: history-of-cpp, t: "A History of C++", ty: evolution, d: D16, tier: 1, w: 2, kw: [C with Classes, Cfront]}
+- {id: cpp11, t: "C++11 — The Modern Reboot", ty: evolution, d: D16, tier: 1, w: 2}
+- {id: cpp20, t: "C++20 — The Big Four", ty: evolution, d: D16, tier: 2, w: 2, kw: [concepts, ranges, coroutines, modules]}
+- {id: cpp98-03, t: "C++98 and C++03", ty: evolution, d: D16, tier: 1, w: 3}
+- {id: cpp14, t: "C++14", ty: evolution, d: D16, tier: 2, w: 3}
+- {id: cpp17, t: "C++17", ty: evolution, d: D16, tier: 2, w: 3}
+- {id: cpp23, t: "C++23", ty: evolution, d: D16, tier: 2, w: 3}
+- {id: cpp26, t: "C++26", ty: evolution, d: D16, tier: 3, w: 3, kw: [reflection, contracts, std::execution]}
+- {id: c-and-cpp, t: "C and C++ — Compatibility and Divergence", ty: comparison, d: D16, tier: 2, w: 4}
+
+# ---------------------------------------------------------------- SRC Sources
+- {id: guide-web-references, t: "Guide — cppreference, the Draft Standard and the Core Guidelines", ty: guide, d: SRC, tier: 1, w: 1}
+- {id: guide-primer, t: "Guide — C++ Primer (5th ed)", ty: guide, d: SRC, tier: 1, w: 1}
+- {id: guide-tour, t: "Guide — A Tour of C++ (3rd ed)", ty: guide, d: SRC, tier: 1, w: 1}
+- {id: guide-ppp, t: "Guide — Programming Principles and Practice (3rd ed)", ty: guide, d: SRC, tier: 1, w: 2}
+- {id: guide-pikus, t: "Guide — The Art of Writing Efficient Programs", ty: guide, d: SRC, tier: 2, w: 2}
+
+# ---------------------------------------------------------------- PRX Practice
+- {id: path-course-companion, t: "Path — Course Companion", ty: path, d: PRX, tier: 1, w: 2}
+- {id: path-modern-fluency, t: "Path — Modern C++ Fluency", ty: path, d: PRX, tier: 2, w: 3}
+- {id: path-systems-performance, t: "Path — Systems & Performance", ty: path, d: PRX, tier: 3, w: 3}

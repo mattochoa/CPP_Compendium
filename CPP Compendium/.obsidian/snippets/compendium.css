@@ -1,0 +1,87 @@
+/* =====================================================================
+   CPP Compendium: Visual Language
+   Semantic callouts, typography accents, tables and diagrams.
+   Spec: "00 System/Visual Language.md"
+   ===================================================================== */
+
+/* ---------- semantic callouts (colour = kind) ------------------------ */
+.callout[data-callout="essence"]   { --callout-color:  99, 102, 241; --callout-icon: lucide-gem; }
+.callout[data-callout="principle"] { --callout-color:  20, 184, 166; --callout-icon: lucide-compass; }
+.callout[data-callout="model"]     { --callout-color: 139,  92, 246; --callout-icon: lucide-brain; }
+.callout[data-callout="machine"]   { --callout-color: 100, 116, 139; --callout-icon: lucide-cpu; }
+.callout[data-callout="standard"]  { --callout-color:  14, 165, 233; --callout-icon: lucide-scale; }
+.callout[data-callout="rule"]      { --callout-color:  34, 197,  94; --callout-icon: lucide-shield-check; }
+.callout[data-callout="trap"]      { --callout-color: 249, 115,  22; --callout-icon: lucide-flame; }
+.callout[data-callout="ub"]        { --callout-color: 239,  68,  68; --callout-icon: lucide-skull; }
+.callout[data-callout="tension"]   { --callout-color: 236,  72, 153; --callout-icon: lucide-git-compare; }
+.callout[data-callout="quiz"]      { --callout-color: 234, 179,   8; --callout-icon: lucide-lightbulb; }
+.callout[data-callout="history"]   { --callout-color: 148, 163, 184; --callout-icon: lucide-history; }
+.callout[data-callout="source"]    { --callout-color: 161,  98,   7; --callout-icon: lucide-book-open; }
+
+/* The essence reads as a lede */
+.callout[data-callout="essence"] {
+  border-left: 4px solid rgb(var(--callout-color));
+  background: linear-gradient(90deg, rgba(var(--callout-color), .14), rgba(var(--callout-color), .04));
+}
+.callout[data-callout="essence"] .callout-content {
+  font-size: 1.08em;
+  line-height: 1.55;
+}
+.callout[data-callout="essence"] .callout-title-inner { letter-spacing: .06em; text-transform: uppercase; font-size: .78em; }
+
+/* UB is loud */
+.callout[data-callout="ub"] { border-left: 4px solid rgb(var(--callout-color)); }
+.callout[data-callout="ub"] .callout-title-inner::before { content: "UNDEFINED BEHAVIOR · "; font-weight: 700; }
+
+/* Quiz: folded, compact */
+.callout[data-callout="quiz"] { margin: .45em 0; }
+.callout[data-callout="quiz"] .callout-title { padding: .45em .75em; }
+
+/* ---------- headings: domain-neutral accent rail ------------------------ */
+.markdown-rendered h2,
+.markdown-source-view.mod-cm6 .cm-header-2 {
+  letter-spacing: .01em;
+}
+.markdown-rendered h2 {
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: .25em;
+  margin-top: 1.8em;
+}
+.markdown-rendered h2::before {
+  content: "";
+  display: inline-block;
+  width: .55em; height: .55em;
+  margin-right: .5em;
+  border-radius: 2px;
+  background: rgb(99, 102, 241);
+  vertical-align: middle;
+}
+
+/* ---------- tables: readable matrices ------------------------------------ */
+.markdown-rendered table { border-collapse: collapse; font-size: .94em; }
+.markdown-rendered th {
+  background: rgba(99, 102, 241, .10);
+  font-weight: 600;
+}
+.markdown-rendered td, .markdown-rendered th { padding: .38em .7em; }
+.markdown-rendered tbody tr:nth-child(even) { background: rgba(127, 127, 127, .05); }
+.markdown-rendered td:first-child { font-weight: 500; }
+
+/* ---------- diagrams ------------------------------------------------------- */
+.markdown-rendered .mermaid { display: flex; justify-content: center; margin: 1em 0; }
+.markdown-rendered .mermaid svg { max-width: 100%; height: auto; }
+
+/* Box-drawing diagrams: crisp monospace, no wrap */
+.markdown-rendered pre.language-text code,
+.markdown-rendered pre.language-txt code {
+  line-height: 1.25;
+  font-variant-ligatures: none;
+  white-space: pre;
+}
+
+/* ---------- code ---------------------------------------------------------- */
+.markdown-rendered pre.language-cpp { border-left: 3px solid rgba(20, 184, 166, .7); }
+
+/* ---------- Home dashboard ------------------------------------------------ */
+.cc-home .markdown-rendered h1,
+.markdown-rendered .cc-banner { letter-spacing: .02em; }

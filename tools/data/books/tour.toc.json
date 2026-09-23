@@ -1,0 +1,1118 @@
+[
+ {
+  "level": 0,
+  "title": "Cover",
+  "i": 0,
+  "label": "Cover"
+ },
+ {
+  "level": 0,
+  "title": "Half Title",
+  "i": 1,
+  "label": "i"
+ },
+ {
+  "level": 0,
+  "title": "Title Page",
+  "i": 3,
+  "label": "iii"
+ },
+ {
+  "level": 0,
+  "title": "Copyright Page",
+  "i": 4,
+  "label": "iv"
+ },
+ {
+  "level": 0,
+  "title": "Contents",
+  "i": 5,
+  "label": "v"
+ },
+ {
+  "level": 0,
+  "title": "Preface",
+  "i": 11,
+  "label": "xi"
+ },
+ {
+  "level": 0,
+  "title": "1 The Basics",
+  "i": 13,
+  "label": "1"
+ },
+ {
+  "level": 1,
+  "title": "1.1 Introduction",
+  "i": 13,
+  "label": "1"
+ },
+ {
+  "level": 1,
+  "title": "1.2 Programs",
+  "i": 14,
+  "label": "2"
+ },
+ {
+  "level": 1,
+  "title": "1.3 Functions",
+  "i": 16,
+  "label": "4"
+ },
+ {
+  "level": 1,
+  "title": "1.4 Types, Variables, and Arithmetic",
+  "i": 17,
+  "label": "5"
+ },
+ {
+  "level": 1,
+  "title": "1.5 Scope and Lifetime",
+  "i": 21,
+  "label": "9"
+ },
+ {
+  "level": 1,
+  "title": "1.6 Constants",
+  "i": 22,
+  "label": "10"
+ },
+ {
+  "level": 1,
+  "title": "1.7 Pointers, Arrays, and References",
+  "i": 23,
+  "label": "11"
+ },
+ {
+  "level": 1,
+  "title": "1.8 Tests",
+  "i": 26,
+  "label": "14"
+ },
+ {
+  "level": 1,
+  "title": "1.9 Mapping to Hardware",
+  "i": 28,
+  "label": "16"
+ },
+ {
+  "level": 1,
+  "title": "1.10 Advice",
+  "i": 31,
+  "label": "19"
+ },
+ {
+  "level": 0,
+  "title": "2 User-Defined Types",
+  "i": 33,
+  "label": "21"
+ },
+ {
+  "level": 1,
+  "title": "2.1 Introduction",
+  "i": 33,
+  "label": "21"
+ },
+ {
+  "level": 1,
+  "title": "2.2 Structures",
+  "i": 34,
+  "label": "22"
+ },
+ {
+  "level": 1,
+  "title": "2.3 Classes",
+  "i": 35,
+  "label": "23"
+ },
+ {
+  "level": 1,
+  "title": "2.4 Enumerations",
+  "i": 37,
+  "label": "25"
+ },
+ {
+  "level": 1,
+  "title": "2.5 Unions",
+  "i": 39,
+  "label": "27"
+ },
+ {
+  "level": 1,
+  "title": "2.6 Advice",
+  "i": 40,
+  "label": "28"
+ },
+ {
+  "level": 0,
+  "title": "3 Modularity",
+  "i": 41,
+  "label": "29"
+ },
+ {
+  "level": 1,
+  "title": "3.1 Introduction",
+  "i": 41,
+  "label": "29"
+ },
+ {
+  "level": 1,
+  "title": "3.2 Separate Compilation",
+  "i": 42,
+  "label": "30"
+ },
+ {
+  "level": 1,
+  "title": "3.3 Namespaces",
+  "i": 47,
+  "label": "35"
+ },
+ {
+  "level": 1,
+  "title": "3.4 Function Arguments and Return Values",
+  "i": 49,
+  "label": "37"
+ },
+ {
+  "level": 1,
+  "title": "3.5 Advice",
+  "i": 54,
+  "label": "42"
+ },
+ {
+  "level": 0,
+  "title": "4 Error Handling",
+  "i": 55,
+  "label": "43"
+ },
+ {
+  "level": 1,
+  "title": "4.1 Introduction",
+  "i": 55,
+  "label": "43"
+ },
+ {
+  "level": 1,
+  "title": "4.2 Exceptions",
+  "i": 56,
+  "label": "44"
+ },
+ {
+  "level": 1,
+  "title": "4.3 Invariants",
+  "i": 57,
+  "label": "45"
+ },
+ {
+  "level": 1,
+  "title": "4.4 Error-Handling Alternatives",
+  "i": 59,
+  "label": "47"
+ },
+ {
+  "level": 1,
+  "title": "4.5 Assertions",
+  "i": 60,
+  "label": "48"
+ },
+ {
+  "level": 1,
+  "title": "4.6 Advice",
+  "i": 63,
+  "label": "51"
+ },
+ {
+  "level": 0,
+  "title": "5 Classes",
+  "i": 65,
+  "label": "53"
+ },
+ {
+  "level": 1,
+  "title": "5.1 Introduction",
+  "i": 65,
+  "label": "53"
+ },
+ {
+  "level": 1,
+  "title": "5.2 Concrete Types",
+  "i": 66,
+  "label": "54"
+ },
+ {
+  "level": 1,
+  "title": "5.3 Abstract Types",
+  "i": 72,
+  "label": "60"
+ },
+ {
+  "level": 1,
+  "title": "5.4 Virtual Functions",
+  "i": 74,
+  "label": "62"
+ },
+ {
+  "level": 1,
+  "title": "5.5 Class Hierarchies",
+  "i": 75,
+  "label": "63"
+ },
+ {
+  "level": 1,
+  "title": "5.6 Advice",
+  "i": 81,
+  "label": "69"
+ },
+ {
+  "level": 0,
+  "title": "6 Essential Operations",
+  "i": 83,
+  "label": "71"
+ },
+ {
+  "level": 1,
+  "title": "6.1 Introduction",
+  "i": 83,
+  "label": "71"
+ },
+ {
+  "level": 1,
+  "title": "6.2 Copy and Move",
+  "i": 86,
+  "label": "74"
+ },
+ {
+  "level": 1,
+  "title": "6.3 Resource Management",
+  "i": 90,
+  "label": "78"
+ },
+ {
+  "level": 1,
+  "title": "6.4 Operator Overloading",
+  "i": 92,
+  "label": "80"
+ },
+ {
+  "level": 1,
+  "title": "6.5 Conventional Operations",
+  "i": 93,
+  "label": "81"
+ },
+ {
+  "level": 1,
+  "title": "6.6 User-Defined Literals",
+  "i": 96,
+  "label": "84"
+ },
+ {
+  "level": 1,
+  "title": "6.7 Advice",
+  "i": 97,
+  "label": "85"
+ },
+ {
+  "level": 0,
+  "title": "7 Templates",
+  "i": 99,
+  "label": "87"
+ },
+ {
+  "level": 1,
+  "title": "7.1 Introduction",
+  "i": 99,
+  "label": "87"
+ },
+ {
+  "level": 1,
+  "title": "7.2 Parameterized Types",
+  "i": 100,
+  "label": "88"
+ },
+ {
+  "level": 1,
+  "title": "7.3 Parameterized Operations",
+  "i": 105,
+  "label": "93"
+ },
+ {
+  "level": 1,
+  "title": "7.4 Template Mechanisms",
+  "i": 111,
+  "label": "99"
+ },
+ {
+  "level": 1,
+  "title": "7.5 Advice",
+  "i": 114,
+  "label": "102"
+ },
+ {
+  "level": 0,
+  "title": "8 Concepts and Generic Programming",
+  "i": 115,
+  "label": "103"
+ },
+ {
+  "level": 1,
+  "title": "8.1 Introduction",
+  "i": 115,
+  "label": "103"
+ },
+ {
+  "level": 1,
+  "title": "8.2 Concepts",
+  "i": 116,
+  "label": "104"
+ },
+ {
+  "level": 1,
+  "title": "8.3 Generic Programming",
+  "i": 124,
+  "label": "112"
+ },
+ {
+  "level": 1,
+  "title": "8.4 Variadic Templates",
+  "i": 126,
+  "label": "114"
+ },
+ {
+  "level": 1,
+  "title": "8.5 Template Compilation Model",
+  "i": 129,
+  "label": "117"
+ },
+ {
+  "level": 1,
+  "title": "8.6 Advice",
+  "i": 129,
+  "label": "117"
+ },
+ {
+  "level": 0,
+  "title": "9 Library Overview",
+  "i": 131,
+  "label": "119"
+ },
+ {
+  "level": 1,
+  "title": "9.1 Introduction",
+  "i": 131,
+  "label": "119"
+ },
+ {
+  "level": 1,
+  "title": "9.2 Standard-Library Components",
+  "i": 132,
+  "label": "120"
+ },
+ {
+  "level": 1,
+  "title": "9.3 Standard-Library Organization",
+  "i": 133,
+  "label": "121"
+ },
+ {
+  "level": 1,
+  "title": "9.4 Advice",
+  "i": 136,
+  "label": "124"
+ },
+ {
+  "level": 0,
+  "title": "10 Strings and Regular Expressions",
+  "i": 137,
+  "label": "125"
+ },
+ {
+  "level": 1,
+  "title": "10.1 Introduction",
+  "i": 137,
+  "label": "125"
+ },
+ {
+  "level": 1,
+  "title": "10.2 Strings",
+  "i": 137,
+  "label": "125"
+ },
+ {
+  "level": 1,
+  "title": "10.3 String Views",
+  "i": 140,
+  "label": "128"
+ },
+ {
+  "level": 1,
+  "title": "10.4 Regular Expressions",
+  "i": 142,
+  "label": "130"
+ },
+ {
+  "level": 1,
+  "title": "10.5 Advice",
+  "i": 148,
+  "label": "136"
+ },
+ {
+  "level": 0,
+  "title": "11 Input and Output",
+  "i": 149,
+  "label": "137"
+ },
+ {
+  "level": 1,
+  "title": "11.1 Introduction",
+  "i": 149,
+  "label": "137"
+ },
+ {
+  "level": 1,
+  "title": "11.2 Output",
+  "i": 150,
+  "label": "138"
+ },
+ {
+  "level": 1,
+  "title": "11.3 Input",
+  "i": 151,
+  "label": "139"
+ },
+ {
+  "level": 1,
+  "title": "11.4 I/O State",
+  "i": 153,
+  "label": "141"
+ },
+ {
+  "level": 1,
+  "title": "11.5 I/O of User-Defined Types",
+  "i": 153,
+  "label": "141"
+ },
+ {
+  "level": 1,
+  "title": "11.6 Output Formatting",
+  "i": 155,
+  "label": "143"
+ },
+ {
+  "level": 1,
+  "title": "11.7 Streams",
+  "i": 158,
+  "label": "146"
+ },
+ {
+  "level": 1,
+  "title": "11.8 C-style I/O",
+  "i": 161,
+  "label": "149"
+ },
+ {
+  "level": 1,
+  "title": "11.9 File System",
+  "i": 162,
+  "label": "150"
+ },
+ {
+  "level": 1,
+  "title": "11.10 Advice",
+  "i": 166,
+  "label": "154"
+ },
+ {
+  "level": 0,
+  "title": "12 Containers",
+  "i": 169,
+  "label": "157"
+ },
+ {
+  "level": 1,
+  "title": "12.1 Introduction",
+  "i": 169,
+  "label": "157"
+ },
+ {
+  "level": 1,
+  "title": "12.2 vector",
+  "i": 170,
+  "label": "158"
+ },
+ {
+  "level": 1,
+  "title": "12.3 list",
+  "i": 174,
+  "label": "162"
+ },
+ {
+  "level": 1,
+  "title": "12.4 forward_list",
+  "i": 176,
+  "label": "164"
+ },
+ {
+  "level": 1,
+  "title": "12.5 map",
+  "i": 176,
+  "label": "164"
+ },
+ {
+  "level": 1,
+  "title": "12.6 unordered_map",
+  "i": 177,
+  "label": "165"
+ },
+ {
+  "level": 1,
+  "title": "12.7 Allocators",
+  "i": 179,
+  "label": "167"
+ },
+ {
+  "level": 1,
+  "title": "12.8 Container Overview",
+  "i": 180,
+  "label": "168"
+ },
+ {
+  "level": 1,
+  "title": "12.9 Advice",
+  "i": 182,
+  "label": "170"
+ },
+ {
+  "level": 0,
+  "title": "13 Algorithms",
+  "i": 185,
+  "label": "173"
+ },
+ {
+  "level": 1,
+  "title": "13.1 Introduction",
+  "i": 185,
+  "label": "173"
+ },
+ {
+  "level": 1,
+  "title": "13.2 Use of Iterators",
+  "i": 187,
+  "label": "175"
+ },
+ {
+  "level": 1,
+  "title": "13.3 Iterator Types",
+  "i": 190,
+  "label": "178"
+ },
+ {
+  "level": 1,
+  "title": "13.4 Use of Predicates",
+  "i": 193,
+  "label": "181"
+ },
+ {
+  "level": 1,
+  "title": "13.5 Algorithm Overview",
+  "i": 193,
+  "label": "181"
+ },
+ {
+  "level": 1,
+  "title": "13.6 Parallel Algorithms",
+  "i": 195,
+  "label": "183"
+ },
+ {
+  "level": 1,
+  "title": "13.7 Advice",
+  "i": 195,
+  "label": "183"
+ },
+ {
+  "level": 0,
+  "title": "14 Ranges",
+  "i": 197,
+  "label": "185"
+ },
+ {
+  "level": 1,
+  "title": "14.1 Introduction",
+  "i": 197,
+  "label": "185"
+ },
+ {
+  "level": 1,
+  "title": "14.2 Views",
+  "i": 198,
+  "label": "186"
+ },
+ {
+  "level": 1,
+  "title": "14.3 Generators",
+  "i": 200,
+  "label": "188"
+ },
+ {
+  "level": 1,
+  "title": "14.4 Pipelines",
+  "i": 200,
+  "label": "188"
+ },
+ {
+  "level": 1,
+  "title": "14.5 Concepts Overview",
+  "i": 202,
+  "label": "190"
+ },
+ {
+  "level": 1,
+  "title": "14.6 Advice",
+  "i": 206,
+  "label": "194"
+ },
+ {
+  "level": 0,
+  "title": "15 Pointers and Containers",
+  "i": 207,
+  "label": "195"
+ },
+ {
+  "level": 1,
+  "title": "15.1 Introduction",
+  "i": 207,
+  "label": "195"
+ },
+ {
+  "level": 1,
+  "title": "15.2 Pointers",
+  "i": 208,
+  "label": "196"
+ },
+ {
+  "level": 1,
+  "title": "15.3 Containers",
+  "i": 213,
+  "label": "201"
+ },
+ {
+  "level": 1,
+  "title": "15.4 Alternatives",
+  "i": 220,
+  "label": "208"
+ },
+ {
+  "level": 1,
+  "title": "15.5 Advice",
+  "i": 224,
+  "label": "212"
+ },
+ {
+  "level": 0,
+  "title": "16 Utilities",
+  "i": 225,
+  "label": "213"
+ },
+ {
+  "level": 1,
+  "title": "16.1 Introduction",
+  "i": 225,
+  "label": "213"
+ },
+ {
+  "level": 1,
+  "title": "16.2 Time",
+  "i": 226,
+  "label": "214"
+ },
+ {
+  "level": 1,
+  "title": "16.3 Function Adaption",
+  "i": 228,
+  "label": "216"
+ },
+ {
+  "level": 1,
+  "title": "16.4 Type Functions",
+  "i": 229,
+  "label": "217"
+ },
+ {
+  "level": 1,
+  "title": "16.5 source_location",
+  "i": 234,
+  "label": "222"
+ },
+ {
+  "level": 1,
+  "title": "16.6 move() and forward()",
+  "i": 235,
+  "label": "223"
+ },
+ {
+  "level": 1,
+  "title": "16.7 Bit Manipulation",
+  "i": 236,
+  "label": "224"
+ },
+ {
+  "level": 1,
+  "title": "16.8 Exiting a Program",
+  "i": 237,
+  "label": "225"
+ },
+ {
+  "level": 1,
+  "title": "16.9 Advice",
+  "i": 237,
+  "label": "225"
+ },
+ {
+  "level": 0,
+  "title": "17 Numerics",
+  "i": 239,
+  "label": "227"
+ },
+ {
+  "level": 1,
+  "title": "17.1 Introduction",
+  "i": 239,
+  "label": "227"
+ },
+ {
+  "level": 1,
+  "title": "17.2 Mathematical Functions",
+  "i": 240,
+  "label": "228"
+ },
+ {
+  "level": 1,
+  "title": "17.3 Numerical Algorithms",
+  "i": 241,
+  "label": "229"
+ },
+ {
+  "level": 1,
+  "title": "17.4 Complex Numbers",
+  "i": 242,
+  "label": "230"
+ },
+ {
+  "level": 1,
+  "title": "17.5 Random Numbers",
+  "i": 243,
+  "label": "231"
+ },
+ {
+  "level": 1,
+  "title": "17.6 Vector Arithmetic",
+  "i": 245,
+  "label": "233"
+ },
+ {
+  "level": 1,
+  "title": "17.7 Numeric Limits",
+  "i": 246,
+  "label": "234"
+ },
+ {
+  "level": 1,
+  "title": "17.8 Type Aliases",
+  "i": 246,
+  "label": "234"
+ },
+ {
+  "level": 1,
+  "title": "17.9 Mathematical Constants",
+  "i": 246,
+  "label": "234"
+ },
+ {
+  "level": 1,
+  "title": "17.10 Advice",
+  "i": 247,
+  "label": "235"
+ },
+ {
+  "level": 0,
+  "title": "18 Concurrency",
+  "i": 249,
+  "label": "237"
+ },
+ {
+  "level": 1,
+  "title": "18.1 Introduction",
+  "i": 249,
+  "label": "237"
+ },
+ {
+  "level": 1,
+  "title": "18.2 Tasks and threads",
+  "i": 250,
+  "label": "238"
+ },
+ {
+  "level": 1,
+  "title": "18.3 Sharing Data",
+  "i": 253,
+  "label": "241"
+ },
+ {
+  "level": 1,
+  "title": "18.4 Waiting for Events",
+  "i": 255,
+  "label": "243"
+ },
+ {
+  "level": 1,
+  "title": "18.5 Communicating Tasks",
+  "i": 257,
+  "label": "245"
+ },
+ {
+  "level": 1,
+  "title": "18.6 Coroutines",
+  "i": 262,
+  "label": "250"
+ },
+ {
+  "level": 1,
+  "title": "18.7 Advice",
+  "i": 265,
+  "label": "253"
+ },
+ {
+  "level": 0,
+  "title": "19 History and Compatibility",
+  "i": 267,
+  "label": "255"
+ },
+ {
+  "level": 1,
+  "title": "19.1 History",
+  "i": 267,
+  "label": "255"
+ },
+ {
+  "level": 1,
+  "title": "19.2 C++ Feature Evolution",
+  "i": 275,
+  "label": "263"
+ },
+ {
+  "level": 1,
+  "title": "19.3 C/C++ Compatibility",
+  "i": 280,
+  "label": "268"
+ },
+ {
+  "level": 1,
+  "title": "19.4 Bibliography",
+  "i": 283,
+  "label": "271"
+ },
+ {
+  "level": 1,
+  "title": "19.5 Advice",
+  "i": 286,
+  "label": "274"
+ },
+ {
+  "level": 0,
+  "title": "Module std",
+  "i": 289,
+  "label": "277"
+ },
+ {
+  "level": 1,
+  "title": "A.1 Introduction",
+  "i": 289,
+  "label": "277"
+ },
+ {
+  "level": 1,
+  "title": "A.2 Use What Your Implementation Offers",
+  "i": 290,
+  "label": "278"
+ },
+ {
+  "level": 1,
+  "title": "A.3 Use Headers",
+  "i": 290,
+  "label": "278"
+ },
+ {
+  "level": 1,
+  "title": "A.4 Make Your Own module std",
+  "i": 290,
+  "label": "278"
+ },
+ {
+  "level": 1,
+  "title": "A.5 Advice",
+  "i": 291,
+  "label": "279"
+ },
+ {
+  "level": 0,
+  "title": "Index",
+  "i": 293,
+  "label": "281"
+ },
+ {
+  "level": 1,
+  "title": "A",
+  "i": 294,
+  "label": "282"
+ },
+ {
+  "level": 1,
+  "title": "B",
+  "i": 295,
+  "label": "283"
+ },
+ {
+  "level": 1,
+  "title": "C",
+  "i": 296,
+  "label": "284"
+ },
+ {
+  "level": 1,
+  "title": "D",
+  "i": 298,
+  "label": "286"
+ },
+ {
+  "level": 1,
+  "title": "E",
+  "i": 299,
+  "label": "287"
+ },
+ {
+  "level": 1,
+  "title": "F",
+  "i": 300,
+  "label": "288"
+ },
+ {
+  "level": 1,
+  "title": "G",
+  "i": 301,
+  "label": "289"
+ },
+ {
+  "level": 1,
+  "title": "H",
+  "i": 301,
+  "label": "289"
+ },
+ {
+  "level": 1,
+  "title": "I",
+  "i": 301,
+  "label": "289"
+ },
+ {
+  "level": 1,
+  "title": "J",
+  "i": 302,
+  "label": "290"
+ },
+ {
+  "level": 1,
+  "title": "K",
+  "i": 303,
+  "label": "291"
+ },
+ {
+  "level": 1,
+  "title": "L",
+  "i": 303,
+  "label": "291"
+ },
+ {
+  "level": 1,
+  "title": "M",
+  "i": 303,
+  "label": "291"
+ },
+ {
+  "level": 1,
+  "title": "N",
+  "i": 304,
+  "label": "292"
+ },
+ {
+  "level": 1,
+  "title": "O",
+  "i": 305,
+  "label": "293"
+ },
+ {
+  "level": 1,
+  "title": "P",
+  "i": 305,
+  "label": "293"
+ },
+ {
+  "level": 1,
+  "title": "Q",
+  "i": 306,
+  "label": "294"
+ },
+ {
+  "level": 1,
+  "title": "R",
+  "i": 306,
+  "label": "294"
+ },
+ {
+  "level": 1,
+  "title": "S",
+  "i": 307,
+  "label": "295"
+ },
+ {
+  "level": 1,
+  "title": "T",
+  "i": 309,
+  "label": "297"
+ },
+ {
+  "level": 1,
+  "title": "U",
+  "i": 310,
+  "label": "298"
+ },
+ {
+  "level": 1,
+  "title": "V",
+  "i": 310,
+  "label": "298"
+ },
+ {
+  "level": 1,
+  "title": "W",
+  "i": 311,
+  "label": "299"
+ },
+ {
+  "level": 1,
+  "title": "X",
+  "i": 311,
+  "label": "299"
+ },
+ {
+  "level": 1,
+  "title": "Y",
+  "i": 311,
+  "label": "299"
+ },
+ {
+  "level": 1,
+  "title": "Z",
+  "i": 311,
+  "label": "299"
+ }
+]

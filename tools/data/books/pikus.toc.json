@@ -1,0 +1,1226 @@
+[
+ {
+  "level": 0,
+  "title": "Cover",
+  "i": 0,
+  "label": "Cover"
+ },
+ {
+  "level": 0,
+  "title": "Title Page",
+  "i": 1,
+  "label": "i"
+ },
+ {
+  "level": 0,
+  "title": "Copyright and Credits",
+  "i": 2,
+  "label": "ii"
+ },
+ {
+  "level": 0,
+  "title": "Contributors",
+  "i": 3,
+  "label": "iii"
+ },
+ {
+  "level": 0,
+  "title": "Table of Contents",
+  "i": 5,
+  "label": "v"
+ },
+ {
+  "level": 0,
+  "title": "Preface",
+  "i": 11,
+  "label": "xi"
+ },
+ {
+  "level": 0,
+  "title": "Section 1 – Performance Fundamentals",
+  "i": 19,
+  "label": "1"
+ },
+ {
+  "level": 0,
+  "title": "Chapter 1: Introduction to Performance and Concurrency",
+  "i": 21,
+  "label": "3"
+ },
+ {
+  "level": 1,
+  "title": "Why focus on performance?",
+  "i": 22,
+  "label": "4"
+ },
+ {
+  "level": 1,
+  "title": "Why performance matters",
+  "i": 24,
+  "label": "6"
+ },
+ {
+  "level": 1,
+  "title": "What is performance?",
+  "i": 27,
+  "label": "9"
+ },
+ {
+  "level": 2,
+  "title": "Performance as throughput",
+  "i": 28,
+  "label": "10"
+ },
+ {
+  "level": 2,
+  "title": "Performance as power consumption",
+  "i": 28,
+  "label": "10"
+ },
+ {
+  "level": 2,
+  "title": "Performance for real-time applications",
+  "i": 29,
+  "label": "11"
+ },
+ {
+  "level": 2,
+  "title": "Performance as dependent on context",
+  "i": 31,
+  "label": "13"
+ },
+ {
+  "level": 1,
+  "title": "Evaluating, estimating, and predicting performance",
+  "i": 31,
+  "label": "13"
+ },
+ {
+  "level": 1,
+  "title": "Learning about high performance",
+  "i": 33,
+  "label": "15"
+ },
+ {
+  "level": 1,
+  "title": "Summary",
+  "i": 35,
+  "label": "17"
+ },
+ {
+  "level": 1,
+  "title": "Questions",
+  "i": 36,
+  "label": "18"
+ },
+ {
+  "level": 0,
+  "title": "Chapter 2: Performance Measurements",
+  "i": 37,
+  "label": "19"
+ },
+ {
+  "level": 1,
+  "title": "Technical requirements",
+  "i": 38,
+  "label": "20"
+ },
+ {
+  "level": 1,
+  "title": "Performance measurements by example",
+  "i": 39,
+  "label": "21"
+ },
+ {
+  "level": 1,
+  "title": "Performance benchmarking",
+  "i": 47,
+  "label": "29"
+ },
+ {
+  "level": 2,
+  "title": "C++ chrono timers",
+  "i": 47,
+  "label": "29"
+ },
+ {
+  "level": 2,
+  "title": "High-resolution timers",
+  "i": 48,
+  "label": "30"
+ },
+ {
+  "level": 1,
+  "title": "Performance profiling",
+  "i": 53,
+  "label": "35"
+ },
+ {
+  "level": 2,
+  "title": "The perf profiler",
+  "i": 55,
+  "label": "37"
+ },
+ {
+  "level": 2,
+  "title": "Detailed profiling with perf",
+  "i": 57,
+  "label": "39"
+ },
+ {
+  "level": 2,
+  "title": "The Google Performance profiler",
+  "i": 61,
+  "label": "43"
+ },
+ {
+  "level": 2,
+  "title": "Profiling with call graphs",
+  "i": 62,
+  "label": "44"
+ },
+ {
+  "level": 2,
+  "title": "Optimization and inlining",
+  "i": 66,
+  "label": "48"
+ },
+ {
+  "level": 2,
+  "title": "Practical profiling",
+  "i": 68,
+  "label": "50"
+ },
+ {
+  "level": 1,
+  "title": "Micro-benchmarking",
+  "i": 70,
+  "label": "52"
+ },
+ {
+  "level": 2,
+  "title": "Basics of micro-benchmarking",
+  "i": 70,
+  "label": "52"
+ },
+ {
+  "level": 2,
+  "title": "Micro-benchmarking and compiler optimizations",
+  "i": 73,
+  "label": "55"
+ },
+ {
+  "level": 2,
+  "title": "Google Benchmark",
+  "i": 77,
+  "label": "59"
+ },
+ {
+  "level": 2,
+  "title": "Micro-benchmarks are lies",
+  "i": 81,
+  "label": "63"
+ },
+ {
+  "level": 1,
+  "title": "Summary",
+  "i": 85,
+  "label": "67"
+ },
+ {
+  "level": 1,
+  "title": "Questions",
+  "i": 86,
+  "label": "68"
+ },
+ {
+  "level": 0,
+  "title": "Chapter 3: CPU Architecture, Resources, and Performance",
+  "i": 87,
+  "label": "69"
+ },
+ {
+  "level": 1,
+  "title": "Technical requirements",
+  "i": 88,
+  "label": "70"
+ },
+ {
+  "level": 1,
+  "title": "The performance begins with the CPU",
+  "i": 88,
+  "label": "70"
+ },
+ {
+  "level": 1,
+  "title": "Probing performance with micro-benchmarks",
+  "i": 90,
+  "label": "72"
+ },
+ {
+  "level": 2,
+  "title": "Visualizing instruction-level parallelism",
+  "i": 96,
+  "label": "78"
+ },
+ {
+  "level": 1,
+  "title": "Data dependencies and pipelining",
+  "i": 99,
+  "label": "81"
+ },
+ {
+  "level": 1,
+  "title": "Pipelining and branches",
+  "i": 105,
+  "label": "87"
+ },
+ {
+  "level": 2,
+  "title": "Branch prediction",
+  "i": 108,
+  "label": "90"
+ },
+ {
+  "level": 2,
+  "title": "Profiling for branch mispredictions",
+  "i": 111,
+  "label": "93"
+ },
+ {
+  "level": 1,
+  "title": "Speculative execution",
+  "i": 114,
+  "label": "96"
+ },
+ {
+  "level": 1,
+  "title": "Optimization of complex conditions",
+  "i": 115,
+  "label": "97"
+ },
+ {
+  "level": 1,
+  "title": "Branchless computing",
+  "i": 121,
+  "label": "103"
+ },
+ {
+  "level": 2,
+  "title": "Loop unrolling",
+  "i": 121,
+  "label": "103"
+ },
+ {
+  "level": 2,
+  "title": "Branchless selection",
+  "i": 122,
+  "label": "104"
+ },
+ {
+  "level": 2,
+  "title": "Branchless computing examples",
+  "i": 124,
+  "label": "106"
+ },
+ {
+  "level": 1,
+  "title": "Summary",
+  "i": 128,
+  "label": "110"
+ },
+ {
+  "level": 1,
+  "title": "Questions",
+  "i": 129,
+  "label": "111"
+ },
+ {
+  "level": 0,
+  "title": "Chapter 4: Memory Architecture and Performance",
+  "i": 131,
+  "label": "113"
+ },
+ {
+  "level": 1,
+  "title": "Technical requirements",
+  "i": 132,
+  "label": "114"
+ },
+ {
+  "level": 1,
+  "title": "The performance begins with the CPU but does not end there",
+  "i": 132,
+  "label": "114"
+ },
+ {
+  "level": 1,
+  "title": "Measuring memory access speed",
+  "i": 135,
+  "label": "117"
+ },
+ {
+  "level": 2,
+  "title": "Memory architecture",
+  "i": 136,
+  "label": "118"
+ },
+ {
+  "level": 2,
+  "title": "Measuring memory and cache speeds",
+  "i": 138,
+  "label": "120"
+ },
+ {
+  "level": 1,
+  "title": "The speed of memory: the numbers",
+  "i": 141,
+  "label": "123"
+ },
+ {
+  "level": 2,
+  "title": "The speed of random memory access",
+  "i": 142,
+  "label": "124"
+ },
+ {
+  "level": 2,
+  "title": "The speed of sequential memory access",
+  "i": 145,
+  "label": "127"
+ },
+ {
+  "level": 2,
+  "title": "Memory performance optimizations in hardware",
+  "i": 147,
+  "label": "129"
+ },
+ {
+  "level": 1,
+  "title": "Optimizing memory performance",
+  "i": 150,
+  "label": "132"
+ },
+ {
+  "level": 2,
+  "title": "Memory-efficient data structures",
+  "i": 150,
+  "label": "132"
+ },
+ {
+  "level": 2,
+  "title": "Profiling memory performance",
+  "i": 153,
+  "label": "135"
+ },
+ {
+  "level": 2,
+  "title": "Optimizing algorithms for memory performance",
+  "i": 155,
+  "label": "137"
+ },
+ {
+  "level": 1,
+  "title": "The ghost in the machine",
+  "i": 162,
+  "label": "144"
+ },
+ {
+  "level": 2,
+  "title": "What is Spectre?",
+  "i": 162,
+  "label": "144"
+ },
+ {
+  "level": 2,
+  "title": "Spectre by example",
+  "i": 165,
+  "label": "147"
+ },
+ {
+  "level": 2,
+  "title": "Spectre, unleashed",
+  "i": 169,
+  "label": "151"
+ },
+ {
+  "level": 1,
+  "title": "Summary",
+  "i": 174,
+  "label": "156"
+ },
+ {
+  "level": 1,
+  "title": "Questions",
+  "i": 175,
+  "label": "157"
+ },
+ {
+  "level": 0,
+  "title": "Chapter 5: Threads, Memory, and Concurrency",
+  "i": 177,
+  "label": "159"
+ },
+ {
+  "level": 1,
+  "title": "Technical requirements",
+  "i": 178,
+  "label": "160"
+ },
+ {
+  "level": 1,
+  "title": "Understanding threads and concurrency",
+  "i": 178,
+  "label": "160"
+ },
+ {
+  "level": 2,
+  "title": "What is a thread?",
+  "i": 178,
+  "label": "160"
+ },
+ {
+  "level": 2,
+  "title": "Symmetric multi-threading",
+  "i": 179,
+  "label": "161"
+ },
+ {
+  "level": 2,
+  "title": "Threads and memory",
+  "i": 180,
+  "label": "162"
+ },
+ {
+  "level": 2,
+  "title": "Memory-bound programs and concurrency",
+  "i": 184,
+  "label": "166"
+ },
+ {
+  "level": 1,
+  "title": "Understanding the cost of memory synchronization",
+  "i": 186,
+  "label": "168"
+ },
+ {
+  "level": 1,
+  "title": "Why data sharing is expensive",
+  "i": 191,
+  "label": "173"
+ },
+ {
+  "level": 1,
+  "title": "Learning about concurrency and order",
+  "i": 198,
+  "label": "180"
+ },
+ {
+  "level": 2,
+  "title": "The need for order",
+  "i": 198,
+  "label": "180"
+ },
+ {
+  "level": 2,
+  "title": "Memory order and memory barriers",
+  "i": 201,
+  "label": "183"
+ },
+ {
+  "level": 2,
+  "title": "Memory order in C++",
+  "i": 206,
+  "label": "188"
+ },
+ {
+  "level": 1,
+  "title": "Memory model",
+  "i": 209,
+  "label": "191"
+ },
+ {
+  "level": 1,
+  "title": "Summary",
+  "i": 213,
+  "label": "195"
+ },
+ {
+  "level": 1,
+  "title": "Questions",
+  "i": 214,
+  "label": "196"
+ },
+ {
+  "level": 0,
+  "title": "Section 2 – \nAdvanced Concurrency",
+  "i": 215,
+  "label": "197"
+ },
+ {
+  "level": 0,
+  "title": "Chapter 6: Concurrency and Performance",
+  "i": 217,
+  "label": "199"
+ },
+ {
+  "level": 1,
+  "title": "Technical requirements",
+  "i": 218,
+  "label": "200"
+ },
+ {
+  "level": 1,
+  "title": "What is needed to use concurrency effectively?",
+  "i": 218,
+  "label": "200"
+ },
+ {
+  "level": 1,
+  "title": "Locks, alternatives, and their performance",
+  "i": 220,
+  "label": "202"
+ },
+ {
+  "level": 2,
+  "title": "Lock-based, lock-free, and wait-free programs",
+  "i": 223,
+  "label": "205"
+ },
+ {
+  "level": 2,
+  "title": "Different locks for different problems",
+  "i": 225,
+  "label": "207"
+ },
+ {
+  "level": 2,
+  "title": "Lock-based versus lock-free, what is the real difference?",
+  "i": 230,
+  "label": "212"
+ },
+ {
+  "level": 1,
+  "title": "Building blocks for concurrent programming",
+  "i": 233,
+  "label": "215"
+ },
+ {
+  "level": 2,
+  "title": "The basics of concurrent data structures",
+  "i": 234,
+  "label": "216"
+ },
+ {
+  "level": 2,
+  "title": "Counters and accumulators",
+  "i": 237,
+  "label": "219"
+ },
+ {
+  "level": 2,
+  "title": "Publishing protocol",
+  "i": 243,
+  "label": "225"
+ },
+ {
+  "level": 2,
+  "title": "Smart pointers for concurrent programming",
+  "i": 246,
+  "label": "228"
+ },
+ {
+  "level": 1,
+  "title": "Summary",
+  "i": 253,
+  "label": "235"
+ },
+ {
+  "level": 1,
+  "title": "Questions",
+  "i": 253,
+  "label": "235"
+ },
+ {
+  "level": 0,
+  "title": "Chapter 7: Data Structures for Concurrency",
+  "i": 255,
+  "label": "237"
+ },
+ {
+  "level": 1,
+  "title": "Technical requirements",
+  "i": 256,
+  "label": "238"
+ },
+ {
+  "level": 1,
+  "title": "What is a thread-safe data structure?",
+  "i": 256,
+  "label": "238"
+ },
+ {
+  "level": 2,
+  "title": "The best kind of thread safety",
+  "i": 256,
+  "label": "238"
+ },
+ {
+  "level": 2,
+  "title": "The real thread safety",
+  "i": 258,
+  "label": "240"
+ },
+ {
+  "level": 1,
+  "title": "The thread-safe stack",
+  "i": 259,
+  "label": "241"
+ },
+ {
+  "level": 2,
+  "title": "Interface design for thread safety",
+  "i": 260,
+  "label": "242"
+ },
+ {
+  "level": 2,
+  "title": "Performance of mutex-guarded data structures",
+  "i": 263,
+  "label": "245"
+ },
+ {
+  "level": 2,
+  "title": "Performance requirements for different uses",
+  "i": 265,
+  "label": "247"
+ },
+ {
+  "level": 2,
+  "title": "Stack performance in detail",
+  "i": 270,
+  "label": "252"
+ },
+ {
+  "level": 2,
+  "title": "Performance estimates for synchronization schemes",
+  "i": 273,
+  "label": "255"
+ },
+ {
+  "level": 2,
+  "title": "Lock-free stack",
+  "i": 277,
+  "label": "259"
+ },
+ {
+  "level": 1,
+  "title": "The thread-safe queue",
+  "i": 285,
+  "label": "267"
+ },
+ {
+  "level": 2,
+  "title": "Lock-free queue",
+  "i": 286,
+  "label": "268"
+ },
+ {
+  "level": 2,
+  "title": "Non-sequentially consistent data structures",
+  "i": 292,
+  "label": "274"
+ },
+ {
+  "level": 2,
+  "title": "Memory management for concurrent data structures",
+  "i": 296,
+  "label": "278"
+ },
+ {
+  "level": 1,
+  "title": "The thread-safe list",
+  "i": 298,
+  "label": "280"
+ },
+ {
+  "level": 2,
+  "title": "Lock-free list",
+  "i": 301,
+  "label": "283"
+ },
+ {
+  "level": 1,
+  "title": "Summary",
+  "i": 308,
+  "label": "290"
+ },
+ {
+  "level": 1,
+  "title": "Questions",
+  "i": 309,
+  "label": "291"
+ },
+ {
+  "level": 0,
+  "title": "Chapter 8: Concurrency in C++",
+  "i": 311,
+  "label": "293"
+ },
+ {
+  "level": 1,
+  "title": "Technical requirements",
+  "i": 312,
+  "label": "294"
+ },
+ {
+  "level": 1,
+  "title": "Concurrency support in C++11",
+  "i": 312,
+  "label": "294"
+ },
+ {
+  "level": 1,
+  "title": "Concurrency support in C++17",
+  "i": 314,
+  "label": "296"
+ },
+ {
+  "level": 1,
+  "title": "Concurrency support in C++20",
+  "i": 318,
+  "label": "300"
+ },
+ {
+  "level": 2,
+  "title": "The foundations of coroutines",
+  "i": 318,
+  "label": "300"
+ },
+ {
+  "level": 2,
+  "title": "Coroutine C++ syntax",
+  "i": 324,
+  "label": "306"
+ },
+ {
+  "level": 2,
+  "title": "Coroutine examples",
+  "i": 325,
+  "label": "307"
+ },
+ {
+  "level": 1,
+  "title": "Summary",
+  "i": 332,
+  "label": "314"
+ },
+ {
+  "level": 1,
+  "title": "Questions",
+  "i": 332,
+  "label": "314"
+ },
+ {
+  "level": 0,
+  "title": "Section 3 – \nDesigning and Coding High-Performance Programs",
+  "i": 333,
+  "label": "315"
+ },
+ {
+  "level": 0,
+  "title": "Chapter 9: High-Performance C++",
+  "i": 335,
+  "label": "317"
+ },
+ {
+  "level": 1,
+  "title": "Technical requirements",
+  "i": 336,
+  "label": "318"
+ },
+ {
+  "level": 1,
+  "title": "What is the efficiency of a programming language?",
+  "i": 336,
+  "label": "318"
+ },
+ {
+  "level": 1,
+  "title": "Unnecessary copying",
+  "i": 337,
+  "label": "319"
+ },
+ {
+  "level": 2,
+  "title": "Copying and argument passing",
+  "i": 338,
+  "label": "320"
+ },
+ {
+  "level": 2,
+  "title": "Copying as an implementation technique",
+  "i": 340,
+  "label": "322"
+ },
+ {
+  "level": 2,
+  "title": "Copying to store data",
+  "i": 342,
+  "label": "324"
+ },
+ {
+  "level": 2,
+  "title": "Copying of return values",
+  "i": 343,
+  "label": "325"
+ },
+ {
+  "level": 2,
+  "title": "Using pointers to avoid copying",
+  "i": 347,
+  "label": "329"
+ },
+ {
+  "level": 2,
+  "title": "How to avoid unnecessary copying",
+  "i": 349,
+  "label": "331"
+ },
+ {
+  "level": 1,
+  "title": "Inefficient memory management",
+  "i": 350,
+  "label": "332"
+ },
+ {
+  "level": 2,
+  "title": "Unnecessary memory allocations",
+  "i": 351,
+  "label": "333"
+ },
+ {
+  "level": 2,
+  "title": "Memory management in concurrent programs",
+  "i": 355,
+  "label": "337"
+ },
+ {
+  "level": 2,
+  "title": "Avoiding memory fragmentation",
+  "i": 356,
+  "label": "338"
+ },
+ {
+  "level": 1,
+  "title": "Optimization of conditional execution",
+  "i": 359,
+  "label": "341"
+ },
+ {
+  "level": 1,
+  "title": "Summary",
+  "i": 362,
+  "label": "344"
+ },
+ {
+  "level": 1,
+  "title": "Questions",
+  "i": 363,
+  "label": "345"
+ },
+ {
+  "level": 0,
+  "title": "Chapter 10: Compiler Optimizations in C++",
+  "i": 365,
+  "label": "347"
+ },
+ {
+  "level": 1,
+  "title": "Technical requirements",
+  "i": 366,
+  "label": "348"
+ },
+ {
+  "level": 1,
+  "title": "Compilers optimizing code",
+  "i": 366,
+  "label": "348"
+ },
+ {
+  "level": 2,
+  "title": "Basics of compiler optimizations",
+  "i": 367,
+  "label": "349"
+ },
+ {
+  "level": 2,
+  "title": "Function inlining",
+  "i": 370,
+  "label": "352"
+ },
+ {
+  "level": 2,
+  "title": "What does the compiler really know?",
+  "i": 376,
+  "label": "358"
+ },
+ {
+  "level": 2,
+  "title": "Lifting knowledge from runtime to compile time",
+  "i": 383,
+  "label": "365"
+ },
+ {
+  "level": 1,
+  "title": "Summary",
+  "i": 386,
+  "label": "368"
+ },
+ {
+  "level": 1,
+  "title": "Questions",
+  "i": 387,
+  "label": "369"
+ },
+ {
+  "level": 0,
+  "title": "Chapter 11: Undefined Behavior and Performance",
+  "i": 389,
+  "label": "371"
+ },
+ {
+  "level": 1,
+  "title": "Technical requirements",
+  "i": 390,
+  "label": "372"
+ },
+ {
+  "level": 1,
+  "title": "What is undefined behavior?",
+  "i": 390,
+  "label": "372"
+ },
+ {
+  "level": 1,
+  "title": "Why have undefined behavior?",
+  "i": 394,
+  "label": "376"
+ },
+ {
+  "level": 1,
+  "title": "Undefined behavior and C++ optimization",
+  "i": 395,
+  "label": "377"
+ },
+ {
+  "level": 1,
+  "title": "Using undefined behavior for efficient design",
+  "i": 405,
+  "label": "387"
+ },
+ {
+  "level": 1,
+  "title": "Summary",
+  "i": 409,
+  "label": "391"
+ },
+ {
+  "level": 1,
+  "title": "Questions",
+  "i": 410,
+  "label": "392"
+ },
+ {
+  "level": 0,
+  "title": "Chapter 12: Design for Performance",
+  "i": 411,
+  "label": "393"
+ },
+ {
+  "level": 1,
+  "title": "Technical requirements",
+  "i": 412,
+  "label": "394"
+ },
+ {
+  "level": 1,
+  "title": "Interaction between the design and performance",
+  "i": 412,
+  "label": "394"
+ },
+ {
+  "level": 1,
+  "title": "Design for performance",
+  "i": 414,
+  "label": "396"
+ },
+ {
+  "level": 2,
+  "title": "The minimum information principle",
+  "i": 414,
+  "label": "396"
+ },
+ {
+  "level": 2,
+  "title": "The maximum information principle",
+  "i": 416,
+  "label": "398"
+ },
+ {
+  "level": 1,
+  "title": "API design considerations",
+  "i": 424,
+  "label": "406"
+ },
+ {
+  "level": 2,
+  "title": "API design for concurrency",
+  "i": 424,
+  "label": "406"
+ },
+ {
+  "level": 2,
+  "title": "Copying and sending data",
+  "i": 430,
+  "label": "412"
+ },
+ {
+  "level": 1,
+  "title": "Design for optimal data access",
+  "i": 433,
+  "label": "415"
+ },
+ {
+  "level": 1,
+  "title": "Performance trade-offs",
+  "i": 435,
+  "label": "417"
+ },
+ {
+  "level": 2,
+  "title": "Interface design",
+  "i": 435,
+  "label": "417"
+ },
+ {
+  "level": 2,
+  "title": "Component design",
+  "i": 437,
+  "label": "419"
+ },
+ {
+  "level": 2,
+  "title": "Errors and undefined behavior",
+  "i": 438,
+  "label": "420"
+ },
+ {
+  "level": 1,
+  "title": "Making informed design decisions",
+  "i": 439,
+  "label": "421"
+ },
+ {
+  "level": 1,
+  "title": "Summary",
+  "i": 442,
+  "label": "424"
+ },
+ {
+  "level": 1,
+  "title": "Questions",
+  "i": 442,
+  "label": "424"
+ },
+ {
+  "level": 0,
+  "title": "Assessments",
+  "i": 443,
+  "label": "425"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 1:",
+  "i": 443,
+  "label": "425"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 2:",
+  "i": 443,
+  "label": "425"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 3:",
+  "i": 444,
+  "label": "426"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 4:",
+  "i": 445,
+  "label": "427"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 5:",
+  "i": 446,
+  "label": "428"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 6:",
+  "i": 447,
+  "label": "429"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 7:",
+  "i": 448,
+  "label": "430"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 8:",
+  "i": 449,
+  "label": "431"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 9:",
+  "i": 449,
+  "label": "431"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 10:",
+  "i": 450,
+  "label": "432"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 11:",
+  "i": 451,
+  "label": "433"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 12:",
+  "i": 452,
+  "label": "434"
+ },
+ {
+  "level": 0,
+  "title": "Other Books You May Enjoy",
+  "i": 454,
+  "label": "436"
+ },
+ {
+  "level": 0,
+  "title": "Index",
+  "i": 457,
+  "label": "439"
+ }
+]

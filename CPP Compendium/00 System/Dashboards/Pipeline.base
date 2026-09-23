@@ -1,0 +1,61 @@
+filters:
+  and:
+    - file.inFolder("02 Notes")
+properties:
+  status:
+    displayName: Status
+  domain:
+    displayName: Domain
+  tier:
+    displayName: Tier
+  type:
+    displayName: Archetype
+  score:
+    displayName: Score /21
+  updated:
+    displayName: Updated
+views:
+  - type: table
+    name: By status
+    groupBy:
+      property: note.status
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - domain
+      - tier
+      - score
+      - updated
+  - type: table
+    name: Needs attention
+    filters:
+      or:
+        - 'status == "revise"'
+        - 'status == "draft"'
+        - 'status == "stub"'
+    order:
+      - file.name
+      - status
+      - revise_notes
+      - updated
+  - type: table
+    name: Quality (scored)
+    filters:
+      and:
+        - 'score > 0'
+    order:
+      - file.name
+      - score
+      - status
+      - reviewed
+      - domain
+  - type: cards
+    name: Cards by domain
+    groupBy:
+      property: note.domain
+      direction: ASC
+    order:
+      - file.name
+      - type
+      - status

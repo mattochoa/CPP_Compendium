@@ -1,0 +1,17 @@
+filters:
+  and:
+    - 'type == "pitfall"'
+properties:
+  domain:
+    displayName: Domain
+views:
+  - type: table
+    name: Hazard Files
+    groupBy:
+      property: note.domain
+      direction: ASC
+    order:
+      - file.name
+      - tier
+      - status
+      - score

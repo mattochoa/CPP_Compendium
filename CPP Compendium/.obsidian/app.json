@@ -1,0 +1,9 @@
+{
+  "promptDelete": false,
+  "userIgnoreFilters": [
+    "00 System/Templates/"
+  ],
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "shortest",
+  "showFrontmatter": false
+}

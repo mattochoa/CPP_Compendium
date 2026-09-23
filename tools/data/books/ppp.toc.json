@@ -1,0 +1,1160 @@
+[
+ {
+  "level": 0,
+  "title": "Cover Page",
+  "i": 1,
+  "label": "cover"
+ },
+ {
+  "level": 0,
+  "title": "About This eBook",
+  "i": 2,
+  "label": "pref00"
+ },
+ {
+  "level": 0,
+  "title": "Title Page",
+  "i": 3,
+  "label": "title"
+ },
+ {
+  "level": 0,
+  "title": "Copyright Page",
+  "i": 4,
+  "label": "copyright"
+ },
+ {
+  "level": 0,
+  "title": "Contents",
+  "i": 5,
+  "label": "toc"
+ },
+ {
+  "level": 0,
+  "title": "Preface",
+  "i": 6,
+  "label": "pref01"
+ },
+ {
+  "level": 1,
+  "title": "Previous Editions",
+  "i": 6,
+  "label": "pref01"
+ },
+ {
+  "level": 1,
+  "title": "Acknowledgments",
+  "i": 6,
+  "label": "pref01"
+ },
+ {
+  "level": 0,
+  "title": "0. Notes to the Reader",
+  "i": 7,
+  "label": "ch00"
+ },
+ {
+  "level": 1,
+  "title": "0.1 The structure of this book",
+  "i": 7,
+  "label": "ch00"
+ },
+ {
+  "level": 1,
+  "title": "0.2 A philosophy of teaching and learning",
+  "i": 7,
+  "label": "ch00"
+ },
+ {
+  "level": 1,
+  "title": "0.3 ISO standard C++",
+  "i": 7,
+  "label": "ch00"
+ },
+ {
+  "level": 1,
+  "title": "0.4 PPP support",
+  "i": 7,
+  "label": "ch00"
+ },
+ {
+  "level": 1,
+  "title": "0.5 Author biography",
+  "i": 7,
+  "label": "ch00"
+ },
+ {
+  "level": 1,
+  "title": "0.6 Bibliography",
+  "i": 7,
+  "label": "ch00"
+ },
+ {
+  "level": 0,
+  "title": "Part I: The Basics",
+  "i": 8,
+  "label": "part01"
+ },
+ {
+  "level": 1,
+  "title": "1. Hello, World!",
+  "i": 9,
+  "label": "ch01"
+ },
+ {
+  "level": 2,
+  "title": "1.1 Programs",
+  "i": 9,
+  "label": "ch01"
+ },
+ {
+  "level": 2,
+  "title": "1.2 The classic first program",
+  "i": 9,
+  "label": "ch01"
+ },
+ {
+  "level": 2,
+  "title": "1.3 Compilation",
+  "i": 9,
+  "label": "ch01"
+ },
+ {
+  "level": 2,
+  "title": "1.4 Linking",
+  "i": 9,
+  "label": "ch01"
+ },
+ {
+  "level": 2,
+  "title": "1.5 Programming environments",
+  "i": 9,
+  "label": "ch01"
+ },
+ {
+  "level": 1,
+  "title": "2. Objects, Types, and Values",
+  "i": 10,
+  "label": "ch02"
+ },
+ {
+  "level": 2,
+  "title": "2.1 Input",
+  "i": 10,
+  "label": "ch02"
+ },
+ {
+  "level": 2,
+  "title": "2.2 Variables",
+  "i": 10,
+  "label": "ch02"
+ },
+ {
+  "level": 2,
+  "title": "2.3 Input and type",
+  "i": 10,
+  "label": "ch02"
+ },
+ {
+  "level": 2,
+  "title": "2.4 Operations and operators",
+  "i": 10,
+  "label": "ch02"
+ },
+ {
+  "level": 2,
+  "title": "2.5 Assignment and initialization",
+  "i": 10,
+  "label": "ch02"
+ },
+ {
+  "level": 2,
+  "title": "2.6 Names",
+  "i": 10,
+  "label": "ch02"
+ },
+ {
+  "level": 2,
+  "title": "2.7 Types and objects",
+  "i": 10,
+  "label": "ch02"
+ },
+ {
+  "level": 2,
+  "title": "2.8 Type safety",
+  "i": 10,
+  "label": "ch02"
+ },
+ {
+  "level": 2,
+  "title": "2.9 Conversions",
+  "i": 10,
+  "label": "ch02"
+ },
+ {
+  "level": 2,
+  "title": "2.10 Type deduction: auto",
+  "i": 10,
+  "label": "ch02"
+ },
+ {
+  "level": 1,
+  "title": "3. Computation",
+  "i": 11,
+  "label": "ch03"
+ },
+ {
+  "level": 2,
+  "title": "3.1 Computation",
+  "i": 11,
+  "label": "ch03"
+ },
+ {
+  "level": 2,
+  "title": "3.2 Objectives and tools",
+  "i": 11,
+  "label": "ch03"
+ },
+ {
+  "level": 2,
+  "title": "3.3 Expressions",
+  "i": 11,
+  "label": "ch03"
+ },
+ {
+  "level": 2,
+  "title": "3.4 Statements",
+  "i": 11,
+  "label": "ch03"
+ },
+ {
+  "level": 2,
+  "title": "3.5 Functions",
+  "i": 11,
+  "label": "ch03"
+ },
+ {
+  "level": 2,
+  "title": "3.6 vector",
+  "i": 11,
+  "label": "ch03"
+ },
+ {
+  "level": 2,
+  "title": "3.7 Language features",
+  "i": 11,
+  "label": "ch03"
+ },
+ {
+  "level": 1,
+  "title": "4. Errors!",
+  "i": 12,
+  "label": "ch04"
+ },
+ {
+  "level": 2,
+  "title": "4.1 Introduction",
+  "i": 12,
+  "label": "ch04"
+ },
+ {
+  "level": 2,
+  "title": "4.2 Sources of errors",
+  "i": 12,
+  "label": "ch04"
+ },
+ {
+  "level": 2,
+  "title": "4.3 Compile-time errors",
+  "i": 12,
+  "label": "ch04"
+ },
+ {
+  "level": 2,
+  "title": "4.4 Link-time errors",
+  "i": 12,
+  "label": "ch04"
+ },
+ {
+  "level": 2,
+  "title": "4.5 Run-time errors",
+  "i": 12,
+  "label": "ch04"
+ },
+ {
+  "level": 2,
+  "title": "4.6 Exceptions",
+  "i": 12,
+  "label": "ch04"
+ },
+ {
+  "level": 2,
+  "title": "4.7 Avoiding and finding errors",
+  "i": 12,
+  "label": "ch04"
+ },
+ {
+  "level": 1,
+  "title": "5. Writing a Program",
+  "i": 13,
+  "label": "ch05"
+ },
+ {
+  "level": 2,
+  "title": "5.1 A problem",
+  "i": 13,
+  "label": "ch05"
+ },
+ {
+  "level": 2,
+  "title": "5.2 Thinking about the problem",
+  "i": 13,
+  "label": "ch05"
+ },
+ {
+  "level": 2,
+  "title": "5.3 Back to the calculator!",
+  "i": 13,
+  "label": "ch05"
+ },
+ {
+  "level": 2,
+  "title": "5.4 Back to the drawing board",
+  "i": 13,
+  "label": "ch05"
+ },
+ {
+  "level": 2,
+  "title": "5.5 Turning a grammar into code",
+  "i": 13,
+  "label": "ch05"
+ },
+ {
+  "level": 2,
+  "title": "5.6 Trying the first version",
+  "i": 13,
+  "label": "ch05"
+ },
+ {
+  "level": 2,
+  "title": "5.7 Trying the second version",
+  "i": 13,
+  "label": "ch05"
+ },
+ {
+  "level": 2,
+  "title": "5.8 Token streams",
+  "i": 13,
+  "label": "ch05"
+ },
+ {
+  "level": 2,
+  "title": "5.9 Program structure",
+  "i": 13,
+  "label": "ch05"
+ },
+ {
+  "level": 1,
+  "title": "6. Completing a Program",
+  "i": 14,
+  "label": "ch06"
+ },
+ {
+  "level": 2,
+  "title": "6.1 Introduction",
+  "i": 14,
+  "label": "ch06"
+ },
+ {
+  "level": 2,
+  "title": "6.2 Input and output",
+  "i": 14,
+  "label": "ch06"
+ },
+ {
+  "level": 2,
+  "title": "6.3 Error handling",
+  "i": 14,
+  "label": "ch06"
+ },
+ {
+  "level": 2,
+  "title": "6.4 Negative numbers",
+  "i": 14,
+  "label": "ch06"
+ },
+ {
+  "level": 2,
+  "title": "6.5 Remainder: %",
+  "i": 14,
+  "label": "ch06"
+ },
+ {
+  "level": 2,
+  "title": "6.6 Cleaning up the code",
+  "i": 14,
+  "label": "ch06"
+ },
+ {
+  "level": 2,
+  "title": "6.7 Recovering from errors",
+  "i": 14,
+  "label": "ch06"
+ },
+ {
+  "level": 2,
+  "title": "6.8 Variables",
+  "i": 14,
+  "label": "ch06"
+ },
+ {
+  "level": 1,
+  "title": "7. Technicalities: Functions, etc.",
+  "i": 15,
+  "label": "ch07"
+ },
+ {
+  "level": 2,
+  "title": "7.1 Technicalities",
+  "i": 15,
+  "label": "ch07"
+ },
+ {
+  "level": 2,
+  "title": "7.2 Declarations and definitions",
+  "i": 15,
+  "label": "ch07"
+ },
+ {
+  "level": 2,
+  "title": "7.3 Scope",
+  "i": 15,
+  "label": "ch07"
+ },
+ {
+  "level": 2,
+  "title": "7.4 Function call and return",
+  "i": 15,
+  "label": "ch07"
+ },
+ {
+  "level": 2,
+  "title": "7.5 Order of evaluation",
+  "i": 15,
+  "label": "ch07"
+ },
+ {
+  "level": 2,
+  "title": "7.6 Namespaces",
+  "i": 15,
+  "label": "ch07"
+ },
+ {
+  "level": 2,
+  "title": "7.7 Modules and headers",
+  "i": 15,
+  "label": "ch07"
+ },
+ {
+  "level": 1,
+  "title": "8. Technicalities: Classes, etc.",
+  "i": 16,
+  "label": "ch08"
+ },
+ {
+  "level": 2,
+  "title": "8.1 User-defined types",
+  "i": 16,
+  "label": "ch08"
+ },
+ {
+  "level": 2,
+  "title": "8.2 Classes and members",
+  "i": 16,
+  "label": "ch08"
+ },
+ {
+  "level": 2,
+  "title": "8.3 Interface and implementation",
+  "i": 16,
+  "label": "ch08"
+ },
+ {
+  "level": 2,
+  "title": "8.4 Evolving a class: Date",
+  "i": 16,
+  "label": "ch08"
+ },
+ {
+  "level": 2,
+  "title": "8.5 Enumerations",
+  "i": 16,
+  "label": "ch08"
+ },
+ {
+  "level": 2,
+  "title": "8.6 Operator overloading",
+  "i": 16,
+  "label": "ch08"
+ },
+ {
+  "level": 2,
+  "title": "8.7 Class interfaces",
+  "i": 16,
+  "label": "ch08"
+ },
+ {
+  "level": 0,
+  "title": "Part II: Input and Output",
+  "i": 17,
+  "label": "part02"
+ },
+ {
+  "level": 1,
+  "title": "9. Input and Output Streams",
+  "i": 18,
+  "label": "ch09"
+ },
+ {
+  "level": 2,
+  "title": "9.1 Input and output",
+  "i": 18,
+  "label": "ch09"
+ },
+ {
+  "level": 2,
+  "title": "9.2 The I/O stream model",
+  "i": 18,
+  "label": "ch09"
+ },
+ {
+  "level": 2,
+  "title": "9.3 Files",
+  "i": 18,
+  "label": "ch09"
+ },
+ {
+  "level": 2,
+  "title": "9.4 I/O error handling",
+  "i": 18,
+  "label": "ch09"
+ },
+ {
+  "level": 2,
+  "title": "9.5 Reading a single value",
+  "i": 18,
+  "label": "ch09"
+ },
+ {
+  "level": 2,
+  "title": "9.6 User-defined output operators",
+  "i": 18,
+  "label": "ch09"
+ },
+ {
+  "level": 2,
+  "title": "9.7 User-defined input operators",
+  "i": 18,
+  "label": "ch09"
+ },
+ {
+  "level": 2,
+  "title": "9.8 A standard input loop",
+  "i": 18,
+  "label": "ch09"
+ },
+ {
+  "level": 2,
+  "title": "9.9 Reading a structured file",
+  "i": 18,
+  "label": "ch09"
+ },
+ {
+  "level": 2,
+  "title": "9.10 Formatting",
+  "i": 18,
+  "label": "ch09"
+ },
+ {
+  "level": 2,
+  "title": "9.11 String streams",
+  "i": 18,
+  "label": "ch09"
+ },
+ {
+  "level": 1,
+  "title": "10. A Display Model",
+  "i": 19,
+  "label": "ch10"
+ },
+ {
+  "level": 2,
+  "title": "10.1 Why graphics?",
+  "i": 19,
+  "label": "ch10"
+ },
+ {
+  "level": 2,
+  "title": "10.2 A display model",
+  "i": 19,
+  "label": "ch10"
+ },
+ {
+  "level": 2,
+  "title": "10.3 A first example",
+  "i": 19,
+  "label": "ch10"
+ },
+ {
+  "level": 2,
+  "title": "10.4 Using a GUI library",
+  "i": 19,
+  "label": "ch10"
+ },
+ {
+  "level": 2,
+  "title": "10.5 Coordinates",
+  "i": 19,
+  "label": "ch10"
+ },
+ {
+  "level": 2,
+  "title": "10.6 Shapes",
+  "i": 19,
+  "label": "ch10"
+ },
+ {
+  "level": 2,
+  "title": "10.7 Using Shape primitives",
+  "i": 19,
+  "label": "ch10"
+ },
+ {
+  "level": 2,
+  "title": "10.8 Getting the first example to run",
+  "i": 19,
+  "label": "ch10"
+ },
+ {
+  "level": 1,
+  "title": "11. Graphics Classes",
+  "i": 20,
+  "label": "ch11"
+ },
+ {
+  "level": 2,
+  "title": "11.1 Overview of graphics classes",
+  "i": 20,
+  "label": "ch11"
+ },
+ {
+  "level": 2,
+  "title": "11.2 Point and Line",
+  "i": 20,
+  "label": "ch11"
+ },
+ {
+  "level": 2,
+  "title": "11.3 Lines",
+  "i": 20,
+  "label": "ch11"
+ },
+ {
+  "level": 2,
+  "title": "11.4 Color",
+  "i": 20,
+  "label": "ch11"
+ },
+ {
+  "level": 2,
+  "title": "11.5 Line_style",
+  "i": 20,
+  "label": "ch11"
+ },
+ {
+  "level": 2,
+  "title": "11.6 Polylines",
+  "i": 20,
+  "label": "ch11"
+ },
+ {
+  "level": 2,
+  "title": "11.7 Closed shapes",
+  "i": 20,
+  "label": "ch11"
+ },
+ {
+  "level": 2,
+  "title": "11.8 Text",
+  "i": 20,
+  "label": "ch11"
+ },
+ {
+  "level": 2,
+  "title": "11.9 Mark",
+  "i": 20,
+  "label": "ch11"
+ },
+ {
+  "level": 2,
+  "title": "11.10 Image",
+  "i": 20,
+  "label": "ch11"
+ },
+ {
+  "level": 1,
+  "title": "12. Class Design",
+  "i": 21,
+  "label": "ch12"
+ },
+ {
+  "level": 2,
+  "title": "12.1 Design principles",
+  "i": 21,
+  "label": "ch12"
+ },
+ {
+  "level": 2,
+  "title": "12.2 Shape",
+  "i": 21,
+  "label": "ch12"
+ },
+ {
+  "level": 2,
+  "title": "12.3 Base and derived classes",
+  "i": 21,
+  "label": "ch12"
+ },
+ {
+  "level": 2,
+  "title": "12.4 Other Shape functions",
+  "i": 21,
+  "label": "ch12"
+ },
+ {
+  "level": 2,
+  "title": "12.5 Benefits of object-oriented programming",
+  "i": 21,
+  "label": "ch12"
+ },
+ {
+  "level": 1,
+  "title": "13. Graphing Functions and Data",
+  "i": 22,
+  "label": "ch13"
+ },
+ {
+  "level": 2,
+  "title": "13.1 Introduction",
+  "i": 22,
+  "label": "ch13"
+ },
+ {
+  "level": 2,
+  "title": "13.2 Graphing simple functions",
+  "i": 22,
+  "label": "ch13"
+ },
+ {
+  "level": 2,
+  "title": "13.3 Function",
+  "i": 22,
+  "label": "ch13"
+ },
+ {
+  "level": 2,
+  "title": "13.4 Axis",
+  "i": 22,
+  "label": "ch13"
+ },
+ {
+  "level": 2,
+  "title": "13.5 Approximation",
+  "i": 22,
+  "label": "ch13"
+ },
+ {
+  "level": 2,
+  "title": "13.6 Graphing data",
+  "i": 22,
+  "label": "ch13"
+ },
+ {
+  "level": 1,
+  "title": "14. Graphical User Interfaces",
+  "i": 23,
+  "label": "ch14"
+ },
+ {
+  "level": 2,
+  "title": "14.1 User-interface alternatives",
+  "i": 23,
+  "label": "ch14"
+ },
+ {
+  "level": 2,
+  "title": "14.2 The “Next” button",
+  "i": 23,
+  "label": "ch14"
+ },
+ {
+  "level": 2,
+  "title": "14.3 A simple window",
+  "i": 23,
+  "label": "ch14"
+ },
+ {
+  "level": 2,
+  "title": "14.4 Button and other Widgets",
+  "i": 23,
+  "label": "ch14"
+ },
+ {
+  "level": 2,
+  "title": "14.5 An example: drawing lines",
+  "i": 23,
+  "label": "ch14"
+ },
+ {
+  "level": 2,
+  "title": "14.6 Simple animation",
+  "i": 23,
+  "label": "ch14"
+ },
+ {
+  "level": 2,
+  "title": "14.7 Debugging GUI code",
+  "i": 23,
+  "label": "ch14"
+ },
+ {
+  "level": 0,
+  "title": "Part III: Data and Algorithms",
+  "i": 24,
+  "label": "part03"
+ },
+ {
+  "level": 1,
+  "title": "15. Vector and Free Store",
+  "i": 25,
+  "label": "ch15"
+ },
+ {
+  "level": 2,
+  "title": "15.1 Introduction",
+  "i": 25,
+  "label": "ch15"
+ },
+ {
+  "level": 2,
+  "title": "15.2 vector basics",
+  "i": 25,
+  "label": "ch15"
+ },
+ {
+  "level": 2,
+  "title": "15.3 Memory, addresses, and pointers",
+  "i": 25,
+  "label": "ch15"
+ },
+ {
+  "level": 2,
+  "title": "15.4 Free store and pointers",
+  "i": 25,
+  "label": "ch15"
+ },
+ {
+  "level": 2,
+  "title": "15.5 Destructors",
+  "i": 25,
+  "label": "ch15"
+ },
+ {
+  "level": 2,
+  "title": "15.6 Access to elements",
+  "i": 25,
+  "label": "ch15"
+ },
+ {
+  "level": 2,
+  "title": "15.7 An example: lists",
+  "i": 25,
+  "label": "ch15"
+ },
+ {
+  "level": 2,
+  "title": "15.8 The this pointer",
+  "i": 25,
+  "label": "ch15"
+ },
+ {
+  "level": 1,
+  "title": "16. Arrays, Pointers, and References",
+  "i": 26,
+  "label": "ch16"
+ },
+ {
+  "level": 2,
+  "title": "16.1 Arrays",
+  "i": 26,
+  "label": "ch16"
+ },
+ {
+  "level": 2,
+  "title": "16.2 Pointers and references",
+  "i": 26,
+  "label": "ch16"
+ },
+ {
+  "level": 2,
+  "title": "16.3 C-style strings",
+  "i": 26,
+  "label": "ch16"
+ },
+ {
+  "level": 2,
+  "title": "16.4 Alternatives to pointer use",
+  "i": 26,
+  "label": "ch16"
+ },
+ {
+  "level": 2,
+  "title": "16.5 An example: palindromes",
+  "i": 26,
+  "label": "ch16"
+ },
+ {
+  "level": 1,
+  "title": "17. Essential Operations",
+  "i": 27,
+  "label": "ch17"
+ },
+ {
+  "level": 2,
+  "title": "17.1 Introduction",
+  "i": 27,
+  "label": "ch17"
+ },
+ {
+  "level": 2,
+  "title": "17.2 Access to elements",
+  "i": 27,
+  "label": "ch17"
+ },
+ {
+  "level": 2,
+  "title": "17.3 List initialization",
+  "i": 27,
+  "label": "ch17"
+ },
+ {
+  "level": 2,
+  "title": "17.4 Copying and moving",
+  "i": 27,
+  "label": "ch17"
+ },
+ {
+  "level": 2,
+  "title": "17.5 Essential operations",
+  "i": 27,
+  "label": "ch17"
+ },
+ {
+  "level": 2,
+  "title": "17.6 Other useful operations",
+  "i": 27,
+  "label": "ch17"
+ },
+ {
+  "level": 2,
+  "title": "17.7 Remaining Vector problems",
+  "i": 27,
+  "label": "ch17"
+ },
+ {
+  "level": 2,
+  "title": "17.8 Changing size",
+  "i": 27,
+  "label": "ch17"
+ },
+ {
+  "level": 2,
+  "title": "17.9 Our Vector so far",
+  "i": 27,
+  "label": "ch17"
+ },
+ {
+  "level": 1,
+  "title": "18. Templates and Exceptions",
+  "i": 28,
+  "label": "ch18"
+ },
+ {
+  "level": 2,
+  "title": "18.1 Templates",
+  "i": 28,
+  "label": "ch18"
+ },
+ {
+  "level": 2,
+  "title": "18.2 Generalizing Vector",
+  "i": 28,
+  "label": "ch18"
+ },
+ {
+  "level": 2,
+  "title": "18.3 Range checking and exceptions",
+  "i": 28,
+  "label": "ch18"
+ },
+ {
+  "level": 2,
+  "title": "18.4 Resources and exceptions",
+  "i": 28,
+  "label": "ch18"
+ },
+ {
+  "level": 2,
+  "title": "18.5 Resource-management pointers",
+  "i": 28,
+  "label": "ch18"
+ },
+ {
+  "level": 1,
+  "title": "19. Containers and Iterators",
+  "i": 29,
+  "label": "ch19"
+ },
+ {
+  "level": 2,
+  "title": "19.1 Storing and processing data",
+  "i": 29,
+  "label": "ch19"
+ },
+ {
+  "level": 2,
+  "title": "19.2 Sequences and iterators",
+  "i": 29,
+  "label": "ch19"
+ },
+ {
+  "level": 2,
+  "title": "19.3 Linked lists",
+  "i": 29,
+  "label": "ch19"
+ },
+ {
+  "level": 2,
+  "title": "19.4 Generalizing Vector yet again",
+  "i": 29,
+  "label": "ch19"
+ },
+ {
+  "level": 2,
+  "title": "19.5 An example: a simple text editor",
+  "i": 29,
+  "label": "ch19"
+ },
+ {
+  "level": 2,
+  "title": "19.6 vector, list, and string",
+  "i": 29,
+  "label": "ch19"
+ },
+ {
+  "level": 1,
+  "title": "20. Maps and Sets",
+  "i": 30,
+  "label": "ch20"
+ },
+ {
+  "level": 2,
+  "title": "20.1 Associative containers",
+  "i": 30,
+  "label": "ch20"
+ },
+ {
+  "level": 2,
+  "title": "20.2 Map",
+  "i": 30,
+  "label": "ch20"
+ },
+ {
+  "level": 2,
+  "title": "20.3 unordered_map",
+  "i": 30,
+  "label": "ch20"
+ },
+ {
+  "level": 2,
+  "title": "20.4 Timing",
+  "i": 30,
+  "label": "ch20"
+ },
+ {
+  "level": 2,
+  "title": "20.5 Set",
+  "i": 30,
+  "label": "ch20"
+ },
+ {
+  "level": 2,
+  "title": "20.6 Container overview",
+  "i": 30,
+  "label": "ch20"
+ },
+ {
+  "level": 2,
+  "title": "20.7 Ranges and iterators",
+  "i": 30,
+  "label": "ch20"
+ },
+ {
+  "level": 1,
+  "title": "21. Algorithms",
+  "i": 31,
+  "label": "ch21"
+ },
+ {
+  "level": 2,
+  "title": "21.1 Standard-library algorithms",
+  "i": 31,
+  "label": "ch21"
+ },
+ {
+  "level": 2,
+  "title": "21.2 Function objects",
+  "i": 31,
+  "label": "ch21"
+ },
+ {
+  "level": 2,
+  "title": "21.3 Numerical algorithms",
+  "i": 31,
+  "label": "ch21"
+ },
+ {
+  "level": 2,
+  "title": "21.4 Copying",
+  "i": 31,
+  "label": "ch21"
+ },
+ {
+  "level": 2,
+  "title": "21.5 Sorting and searching",
+  "i": 31,
+  "label": "ch21"
+ },
+ {
+  "level": 0,
+  "title": "Index",
+  "i": 32,
+  "label": "index"
+ },
+ {
+  "level": 0,
+  "title": "Code Snippets",
+  "i": 34,
+  "label": "ch00_images"
+ }
+]

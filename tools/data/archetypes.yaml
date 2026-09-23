@@ -1,0 +1,89 @@
+# CPP Compendium: archetype specifications (machine-readable half of Framework.md)
+# sections   H2 headings that must exist (order is the recommended order)
+# min_words  prose words excluding code/frontmatter
+# diagrams   minimum count of ```mermaid blocks + ```text diagram blocks (box-drawing art)
+# tables     minimum markdown tables
+# code       minimum ```cpp blocks
+# quiz       minimum "> [!quiz]-" items
+# template   file in 00 System/Templates used by `cc.py new`
+
+concept:
+  template: T-Concept.md
+  sections: [The Problem, Mental Model, Mechanics, Under the Hood, In Code, Pitfalls, Evolution, Connections, Check Yourself, Sources]
+  min_words: 1100
+  diagrams: 1
+  tables: 1
+  code: 2
+  quiz: 3
+
+mechanism:
+  template: T-Mechanism.md
+  sections: [The Problem, Mental Model, Step by Step, Under the Hood, In Code, Consequences, Connections, Check Yourself, Sources]
+  min_words: 1000
+  diagrams: 2
+  tables: 0
+  code: 2
+  quiz: 3
+
+idiom:
+  template: T-Idiom.md
+  sections: [Intent, The Problem, Structure, In Code, Consequences, Variations, Connections, Check Yourself, Sources]
+  min_words: 900
+  diagrams: 1
+  tables: 1
+  code: 2
+  quiz: 3
+
+pitfall:
+  template: T-Pitfall.md
+  sections: [Symptom, Root Cause, Minimal Reproduction, Detection, Fix, Prevention Rules, Connections, Check Yourself, Sources]
+  min_words: 700
+  diagrams: 1
+  tables: 1
+  code: 2
+  quiz: 2
+
+comparison:
+  template: T-Comparison.md
+  sections: [The Question, At a Glance, Deep Dive, Decision Guide, In Code, Connections, Check Yourself, Sources]
+  min_words: 800
+  diagrams: 1
+  tables: 1
+  code: 1
+  quiz: 2
+
+map:
+  template: T-Map.md
+  sections: [Why This Domain Exists, The Core Tension, Concept Map, Learning Route, Key Ideas, Index, Sources]
+  min_words: 700
+  diagrams: 1
+  tables: 1
+  code: 0
+  quiz: 0
+
+evolution:
+  template: T-Evolution.md
+  sections: [Context, Headline Features, Feature Map, Before and After, Impact, Connections, Sources]
+  min_words: 800
+  diagrams: 1
+  tables: 1
+  code: 2
+  quiz: 0
+
+guide:
+  template: T-Guide.md
+  sections: [Purpose, How to Use It, Coverage Map, Connections, Sources]
+  min_words: 600
+  diagrams: 0
+  tables: 1
+  code: 0
+  quiz: 0
+
+path:
+  template: T-Path.md
+  sections: [Destination, Route, Milestones, Connections]
+  min_words: 500
+  diagrams: 1
+  tables: 1
+  code: 0
+  quiz: 0

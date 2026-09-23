@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "type": "group",
+      "ctime": 1790147775845,
+      "title": "CPP Compendium",
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1790147775845,
+          "path": "Home.md",
+          "title": "Home"
+        },
+        {
+          "type": "file",
+          "ctime": 1790147775845,
+          "path": "01 Maps/Atlas.canvas",
+          "title": "Atlas"
+        },
+        {
+          "type": "file",
+          "ctime": 1790147775845,
+          "path": "00 System/Charter.md",
+          "title": "Charter"
+        },
+        {
+          "type": "file",
+          "ctime": 1790147775845,
+          "path": "00 System/Directives.md",
+          "title": "Directives"
+        },
+        {
+          "type": "file",
+          "ctime": 1790147775845,
+          "path": "00 System/Coverage.md",
+          "title": "Coverage"
+        },
+        {
+          "type": "file",
+          "ctime": 1790147775845,
+          "path": "00 System/Dashboards/Pipeline.base",
+          "title": "Pipeline"
+        },
+        {
+          "type": "file",
+          "ctime": 1790147775845,
+          "path": "04 Practice/Continuum Bridge.md",
+          "title": "Continuum Bridge"
+        }
+      ]
+    }
+  ]
+}

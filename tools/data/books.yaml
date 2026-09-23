@@ -1,0 +1,26 @@
+# Local library. `glob` is matched inside "CPP Compendium/__RESOURCES__".
+# `cite` is the short form used in notes' Sources sections, e.g.  Primer §13.6.2 (p. 532)
+- key: primer
+  cite: Primer
+  title: "C++ Primer, 5th ed. (Lippman, Lajoie, Moo, 2012)"
+  glob: "C++ Primer*.pdf"
+  kind: pdf
+  strengths: "Exhaustive rules of the core language and library up to C++11; the reference for \"how exactly does X behave\"."
+- key: tour
+  cite: Tour
+  title: "A Tour of C++, 3rd ed. (Stroustrup, 2022)"
+  glob: "A Tour of C++*.pdf"
+  kind: pdf
+  strengths: "Designer's-eye view of modern C++20; concise rationale; the best source for \"why does this exist\"."
+- key: ppp
+  cite: PPP
+  title: "Programming — Principles and Practice Using C++, 3rd ed. (Stroustrup, 2024)"
+  glob: "Programming_ Principles and Practice*.epub"
+  kind: epub
+  strengths: "Pedagogy and first-principles derivations for beginners; builds vector/containers from scratch."
+- key: pikus
+  cite: Pikus
+  title: "The Art of Writing Efficient Programs (Pikus, 2021)"
+  glob: "The Art of Writing Efficient Programs*.pdf"
+  kind: pdf
+  strengths: "Hardware reality: caches, pipelines, branch prediction, memory model, measurement, compiler optimizations."

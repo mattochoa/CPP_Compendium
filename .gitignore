@@ -1,0 +1,13 @@
+# --- CPP Compendium ---------------------------------------------------------
+# Copyrighted books stay local: never commit them (private repo or not).
+CPP Compendium/__RESOURCES__/
+# Rebuildable caches (book text, copy-guard index, locks, scratch compiles)
+.cache/
+# Obsidian per-device UI state
+CPP Compendium/.obsidian/workspace.json
+CPP Compendium/.obsidian/workspace-mobile.json
+CPP Compendium/.obsidian/cache
+CPP Compendium/.trash/
+# Python
+__pycache__/
+*.pyc

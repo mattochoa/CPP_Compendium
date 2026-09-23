@@ -1,0 +1,163 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "path:\"02 Notes/00 What C++ Is\"",
+      "color": {
+        "a": 1,
+        "rgb": 6583435
+      }
+    },
+    {
+      "query": "path:\"02 Notes/01 Program Structure & Build\"",
+      "color": {
+        "a": 1,
+        "rgb": 959977
+      }
+    },
+    {
+      "query": "path:\"02 Notes/02 Types & Values\"",
+      "color": {
+        "a": 1,
+        "rgb": 6514417
+      }
+    },
+    {
+      "query": "path:\"02 Notes/03 Expressions & Control\"",
+      "color": {
+        "a": 1,
+        "rgb": 9133302
+      }
+    },
+    {
+      "query": "path:\"02 Notes/04 Objects, Memory & Lifetime\"",
+      "color": {
+        "a": 1,
+        "rgb": 15680580
+      }
+    },
+    {
+      "query": "path:\"02 Notes/05 Functions\"",
+      "color": {
+        "a": 1,
+        "rgb": 16347926
+      }
+    },
+    {
+      "query": "path:\"02 Notes/06 Classes & Encapsulation\"",
+      "color": {
+        "a": 1,
+        "rgb": 15381256
+      }
+    },
+    {
+      "query": "path:\"02 Notes/07 Ownership & Move Semantics\"",
+      "color": {
+        "a": 1,
+        "rgb": 2278750
+      }
+    },
+    {
+      "query": "path:\"02 Notes/08 Inheritance & Polymorphism\"",
+      "color": {
+        "a": 1,
+        "rgb": 1357990
+      }
+    },
+    {
+      "query": "path:\"02 Notes/09 Generic Programming\"",
+      "color": {
+        "a": 1,
+        "rgb": 440020
+      }
+    },
+    {
+      "query": "path:\"02 Notes/10 Standard Library\"",
+      "color": {
+        "a": 1,
+        "rgb": 3900150
+      }
+    },
+    {
+      "query": "path:\"02 Notes/11 Errors & Contracts\"",
+      "color": {
+        "a": 1,
+        "rgb": 16007006
+      }
+    },
+    {
+      "query": "path:\"02 Notes/12 Concurrency\"",
+      "color": {
+        "a": 1,
+        "rgb": 11032055
+      }
+    },
+    {
+      "query": "path:\"02 Notes/13 Performance & the Machine\"",
+      "color": {
+        "a": 1,
+        "rgb": 14239471
+      }
+    },
+    {
+      "query": "path:\"02 Notes/14 Tooling & Engineering\"",
+      "color": {
+        "a": 1,
+        "rgb": 7893356
+      }
+    },
+    {
+      "query": "path:\"02 Notes/15 Design & Idioms\"",
+      "color": {
+        "a": 1,
+        "rgb": 8702998
+      }
+    },
+    {
+      "query": "path:\"02 Notes/16 Evolution of C++\"",
+      "color": {
+        "a": 1,
+        "rgb": 9741240
+      }
+    },
+    {
+      "query": "path:\"03 Sources\"",
+      "color": {
+        "a": 1,
+        "rgb": 10576391
+      }
+    },
+    {
+      "query": "path:\"04 Practice\"",
+      "color": {
+        "a": 1,
+        "rgb": 1409085
+      }
+    },
+    {
+      "query": "path:\"01 Maps\"",
+      "color": {
+        "a": 1,
+        "rgb": 16317180
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 1,
+  "close": true
+}

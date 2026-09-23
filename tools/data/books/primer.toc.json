@@ -1,0 +1,1364 @@
+[
+ {
+  "level": 0,
+  "title": "Contents",
+  "i": 7,
+  "label": "vii"
+ },
+ {
+  "level": 0,
+  "title": "Preface",
+  "i": 23,
+  "label": "xxiii"
+ },
+ {
+  "level": 0,
+  "title": "Chapter 1 Getting Started",
+  "i": 29,
+  "label": "1"
+ },
+ {
+  "level": 1,
+  "title": "1.1 Writing a Simple C++ Program",
+  "i": 30,
+  "label": "2"
+ },
+ {
+  "level": 2,
+  "title": "1.1.1 Compiling and Executing Our Program",
+  "i": 31,
+  "label": "3"
+ },
+ {
+  "level": 1,
+  "title": "1.2 A First Look at Input/Output",
+  "i": 33,
+  "label": "5"
+ },
+ {
+  "level": 1,
+  "title": "1.3 A Word about Comments",
+  "i": 37,
+  "label": "9"
+ },
+ {
+  "level": 1,
+  "title": "1.4 Flow of Control",
+  "i": 39,
+  "label": "11"
+ },
+ {
+  "level": 2,
+  "title": "1.4.1 The while Statement",
+  "i": 39,
+  "label": "11"
+ },
+ {
+  "level": 2,
+  "title": "1.4.2 The for Statement",
+  "i": 41,
+  "label": "13"
+ },
+ {
+  "level": 2,
+  "title": "1.4.3 Reading an Unknown Number of Inputs",
+  "i": 42,
+  "label": "14"
+ },
+ {
+  "level": 2,
+  "title": "1.4.4 The if Statement",
+  "i": 45,
+  "label": "17"
+ },
+ {
+  "level": 1,
+  "title": "1.5 Introducing Classes",
+  "i": 47,
+  "label": "19"
+ },
+ {
+  "level": 2,
+  "title": "1.5.1 The Sales_itemClass",
+  "i": 48,
+  "label": "20"
+ },
+ {
+  "level": 2,
+  "title": "1.5.2 A First Look at Member Functions",
+  "i": 51,
+  "label": "23"
+ },
+ {
+  "level": 1,
+  "title": "1.6 The Bookstore Program",
+  "i": 52,
+  "label": "24"
+ },
+ {
+  "level": 1,
+  "title": "Chapter Summary",
+  "i": 54,
+  "label": "26"
+ },
+ {
+  "level": 1,
+  "title": "Defined Terms",
+  "i": 54,
+  "label": "26"
+ },
+ {
+  "level": 0,
+  "title": "Part I: The Basics",
+  "i": 57,
+  "label": "29"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 2 Variables and Basic Types",
+  "i": 59,
+  "label": "31"
+ },
+ {
+  "level": 2,
+  "title": "2.1 Primitive Built-in Types",
+  "i": 60,
+  "label": "32"
+ },
+ {
+  "level": 2,
+  "title": "2.2 Variables",
+  "i": 69,
+  "label": "41"
+ },
+ {
+  "level": 2,
+  "title": "2.3 Compound Types",
+  "i": 78,
+  "label": "50"
+ },
+ {
+  "level": 2,
+  "title": "2.4 Const Qualifier",
+  "i": 87,
+  "label": "59"
+ },
+ {
+  "level": 2,
+  "title": "2.5 Dealing with Types",
+  "i": 95,
+  "label": "67"
+ },
+ {
+  "level": 2,
+  "title": "2.6 Defining Our Own Data Structures",
+  "i": 100,
+  "label": "72"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 106,
+  "label": "78"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 106,
+  "label": "78"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 3 Strings, Vectors, and Arrays",
+  "i": 109,
+  "label": "81"
+ },
+ {
+  "level": 2,
+  "title": "3.1 Namespace using Declarations",
+  "i": 110,
+  "label": "82"
+ },
+ {
+  "level": 2,
+  "title": "3.2 Library string Type",
+  "i": 112,
+  "label": "84"
+ },
+ {
+  "level": 2,
+  "title": "3.3 Library vector Type",
+  "i": 124,
+  "label": "96"
+ },
+ {
+  "level": 2,
+  "title": "3.4 Introducing Iterators",
+  "i": 134,
+  "label": "106"
+ },
+ {
+  "level": 2,
+  "title": "3.5 Arrays",
+  "i": 141,
+  "label": "113"
+ },
+ {
+  "level": 2,
+  "title": "3.6 Multidimensional Arrays",
+  "i": 153,
+  "label": "125"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 159,
+  "label": "131"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 159,
+  "label": "131"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 4 Expressions",
+  "i": 161,
+  "label": "133"
+ },
+ {
+  "level": 2,
+  "title": "4.1 Fundamentals",
+  "i": 162,
+  "label": "134"
+ },
+ {
+  "level": 2,
+  "title": "4.2 Arithmetic Operators",
+  "i": 167,
+  "label": "139"
+ },
+ {
+  "level": 2,
+  "title": "4.3 Logical and Relational Operators",
+  "i": 169,
+  "label": "141"
+ },
+ {
+  "level": 2,
+  "title": "4.4 Assignment Operators",
+  "i": 172,
+  "label": "144"
+ },
+ {
+  "level": 2,
+  "title": "4.5 Increment and Decrement Operators",
+  "i": 175,
+  "label": "147"
+ },
+ {
+  "level": 2,
+  "title": "4.6 The Member Access Operators",
+  "i": 178,
+  "label": "150"
+ },
+ {
+  "level": 2,
+  "title": "4.7 The Conditional Operator",
+  "i": 179,
+  "label": "151"
+ },
+ {
+  "level": 2,
+  "title": "4.8 The Bitwise Operators",
+  "i": 180,
+  "label": "152"
+ },
+ {
+  "level": 2,
+  "title": "4.9 The sizeof Operator",
+  "i": 184,
+  "label": "156"
+ },
+ {
+  "level": 2,
+  "title": "4.10 Comma Operator",
+  "i": 185,
+  "label": "157"
+ },
+ {
+  "level": 2,
+  "title": "4.11 Type Conversions",
+  "i": 187,
+  "label": "159"
+ },
+ {
+  "level": 2,
+  "title": "4.12 Operator Precedence Table",
+  "i": 194,
+  "label": "166"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 196,
+  "label": "168"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 196,
+  "label": "168"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 5 Statements",
+  "i": 199,
+  "label": "171"
+ },
+ {
+  "level": 2,
+  "title": "5.1 Simple Statements",
+  "i": 200,
+  "label": "172"
+ },
+ {
+  "level": 2,
+  "title": "5.2 Statement Scope",
+  "i": 202,
+  "label": "174"
+ },
+ {
+  "level": 2,
+  "title": "5.3 Conditional Statements",
+  "i": 202,
+  "label": "174"
+ },
+ {
+  "level": 2,
+  "title": "5.4 Iterative Statements",
+  "i": 211,
+  "label": "183"
+ },
+ {
+  "level": 2,
+  "title": "5.5 Jump Statements",
+  "i": 218,
+  "label": "190"
+ },
+ {
+  "level": 2,
+  "title": "5.6 Try Blocks and Exception Handling",
+  "i": 221,
+  "label": "193"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 227,
+  "label": "199"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 227,
+  "label": "199"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 6 Functions",
+  "i": 229,
+  "label": "201"
+ },
+ {
+  "level": 2,
+  "title": "6.1 Function Basics",
+  "i": 230,
+  "label": "202"
+ },
+ {
+  "level": 2,
+  "title": "6.2 Argument Passing",
+  "i": 236,
+  "label": "208"
+ },
+ {
+  "level": 2,
+  "title": "6.3 Return Types and the return Statement",
+  "i": 250,
+  "label": "222"
+ },
+ {
+  "level": 2,
+  "title": "6.4 Overloaded Functions",
+  "i": 258,
+  "label": "230"
+ },
+ {
+  "level": 2,
+  "title": "6.5 Features for Specialized Uses",
+  "i": 264,
+  "label": "236"
+ },
+ {
+  "level": 2,
+  "title": "6.6 Function Matching",
+  "i": 270,
+  "label": "242"
+ },
+ {
+  "level": 2,
+  "title": "6.7 Pointers to Functions",
+  "i": 275,
+  "label": "247"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 279,
+  "label": "251"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 279,
+  "label": "251"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 7 Classes",
+  "i": 281,
+  "label": "253"
+ },
+ {
+  "level": 2,
+  "title": "7.1 Defining Abstract Data Types",
+  "i": 282,
+  "label": "254"
+ },
+ {
+  "level": 2,
+  "title": "7.2 Access Control and Encapsulation",
+  "i": 296,
+  "label": "268"
+ },
+ {
+  "level": 2,
+  "title": "7.3 Additional Class Features",
+  "i": 299,
+  "label": "271"
+ },
+ {
+  "level": 2,
+  "title": "7.4 Class Scope",
+  "i": 310,
+  "label": "282"
+ },
+ {
+  "level": 2,
+  "title": "7.5 Constructors Revisited",
+  "i": 316,
+  "label": "288"
+ },
+ {
+  "level": 2,
+  "title": "7.6 Static Class Members",
+  "i": 328,
+  "label": "300"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 333,
+  "label": "305"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 333,
+  "label": "305"
+ },
+ {
+  "level": 0,
+  "title": "Part II: The C++ Library",
+  "i": 335,
+  "label": "307"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 8 The IO Library",
+  "i": 337,
+  "label": "309"
+ },
+ {
+  "level": 2,
+  "title": "8.1 The IO Classes",
+  "i": 338,
+  "label": "310"
+ },
+ {
+  "level": 2,
+  "title": "8.2 File Input and Output",
+  "i": 344,
+  "label": "316"
+ },
+ {
+  "level": 2,
+  "title": "8.3 string Streams",
+  "i": 349,
+  "label": "321"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 352,
+  "label": "324"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 352,
+  "label": "324"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 9 Sequential Containers",
+  "i": 353,
+  "label": "325"
+ },
+ {
+  "level": 2,
+  "title": "9.1 Overview of the Sequential Containers",
+  "i": 354,
+  "label": "326"
+ },
+ {
+  "level": 2,
+  "title": "9.2 Container Library Overview",
+  "i": 356,
+  "label": "328"
+ },
+ {
+  "level": 2,
+  "title": "9.3 Sequential Container Operations",
+  "i": 369,
+  "label": "341"
+ },
+ {
+  "level": 2,
+  "title": "9.4 How a vector Grows",
+  "i": 383,
+  "label": "355"
+ },
+ {
+  "level": 2,
+  "title": "9.5 Additional string Operations",
+  "i": 388,
+  "label": "360"
+ },
+ {
+  "level": 2,
+  "title": "9.6 Container Adaptors",
+  "i": 396,
+  "label": "368"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 400,
+  "label": "372"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 400,
+  "label": "372"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 10 Generic Algorithms",
+  "i": 403,
+  "label": "375"
+ },
+ {
+  "level": 2,
+  "title": "10.1 Overview",
+  "i": 404,
+  "label": "376"
+ },
+ {
+  "level": 2,
+  "title": "10.2 A First Look at the Algorithms",
+  "i": 406,
+  "label": "378"
+ },
+ {
+  "level": 2,
+  "title": "10.3 Customizing Operations",
+  "i": 413,
+  "label": "385"
+ },
+ {
+  "level": 2,
+  "title": "10.4 Revisiting Iterators",
+  "i": 429,
+  "label": "401"
+ },
+ {
+  "level": 2,
+  "title": "10.5 Structure of Generic Algorithms",
+  "i": 438,
+  "label": "410"
+ },
+ {
+  "level": 2,
+  "title": "10.6 Container-Specific Algorithms",
+  "i": 443,
+  "label": "415"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 445,
+  "label": "417"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 445,
+  "label": "417"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 11 Associative Containers",
+  "i": 447,
+  "label": "419"
+ },
+ {
+  "level": 2,
+  "title": "11.1 Using an Associative Container",
+  "i": 448,
+  "label": "420"
+ },
+ {
+  "level": 2,
+  "title": "11.2 Overview of the Associative Containers",
+  "i": 451,
+  "label": "423"
+ },
+ {
+  "level": 2,
+  "title": "11.3 Operations on Associative Containers",
+  "i": 456,
+  "label": "428"
+ },
+ {
+  "level": 2,
+  "title": "11.4 The Unordered Containers",
+  "i": 471,
+  "label": "443"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 475,
+  "label": "447"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 475,
+  "label": "447"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 12 Dynamic Memory",
+  "i": 477,
+  "label": "449"
+ },
+ {
+  "level": 2,
+  "title": "12.1 Dynamic Memory and Smart Pointers",
+  "i": 478,
+  "label": "450"
+ },
+ {
+  "level": 2,
+  "title": "12.2 Dynamic Arrays",
+  "i": 504,
+  "label": "476"
+ },
+ {
+  "level": 2,
+  "title": "12.3 Using the Library: A Text-Query Program",
+  "i": 512,
+  "label": "484"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 519,
+  "label": "491"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 519,
+  "label": "491"
+ },
+ {
+  "level": 0,
+  "title": "Part III: Tools for Class Authors",
+  "i": 521,
+  "label": "493"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 13 Copy Control",
+  "i": 523,
+  "label": "495"
+ },
+ {
+  "level": 2,
+  "title": "13.1 Copy, Assign, and Destroy",
+  "i": 524,
+  "label": "496"
+ },
+ {
+  "level": 2,
+  "title": "13.2 Copy Control and Resource Management",
+  "i": 538,
+  "label": "510"
+ },
+ {
+  "level": 2,
+  "title": "13.3 Swap",
+  "i": 544,
+  "label": "516"
+ },
+ {
+  "level": 2,
+  "title": "13.4 A Copy-Control Example",
+  "i": 547,
+  "label": "519"
+ },
+ {
+  "level": 2,
+  "title": "13.5 Classes That Manage Dynamic Memory",
+  "i": 552,
+  "label": "524"
+ },
+ {
+  "level": 2,
+  "title": "13.6 Moving Objects",
+  "i": 559,
+  "label": "531"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 577,
+  "label": "549"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 577,
+  "label": "549"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 14 Overloaded Operations and Conversions",
+  "i": 579,
+  "label": "551"
+ },
+ {
+  "level": 2,
+  "title": "14.1 Basic Concepts",
+  "i": 580,
+  "label": "552"
+ },
+ {
+  "level": 2,
+  "title": "14.2 Input and Output Operators",
+  "i": 584,
+  "label": "556"
+ },
+ {
+  "level": 2,
+  "title": "14.3 Arithmetic and Relational Operators",
+  "i": 588,
+  "label": "560"
+ },
+ {
+  "level": 2,
+  "title": "14.4 Assignment Operators",
+  "i": 591,
+  "label": "563"
+ },
+ {
+  "level": 2,
+  "title": "14.5 Subscript Operator",
+  "i": 592,
+  "label": "564"
+ },
+ {
+  "level": 2,
+  "title": "14.6 Increment and Decrement Operators",
+  "i": 594,
+  "label": "566"
+ },
+ {
+  "level": 2,
+  "title": "14.7 Member Access Operators",
+  "i": 597,
+  "label": "569"
+ },
+ {
+  "level": 2,
+  "title": "14.8 Function-Call Operator",
+  "i": 599,
+  "label": "571"
+ },
+ {
+  "level": 2,
+  "title": "14.9 Overloading, Conversions, and Operators",
+  "i": 607,
+  "label": "579"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 618,
+  "label": "590"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 618,
+  "label": "590"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 15 Object-Oriented Programming",
+  "i": 619,
+  "label": "591"
+ },
+ {
+  "level": 2,
+  "title": "15.1 OOP: An Overview",
+  "i": 620,
+  "label": "592"
+ },
+ {
+  "level": 2,
+  "title": "15.2 Defining Base and Derived Classes",
+  "i": 622,
+  "label": "594"
+ },
+ {
+  "level": 2,
+  "title": "15.3 Virtual Functions",
+  "i": 631,
+  "label": "603"
+ },
+ {
+  "level": 2,
+  "title": "15.4 Abstract Base Classes",
+  "i": 636,
+  "label": "608"
+ },
+ {
+  "level": 2,
+  "title": "15.5 Access Control and Inheritance",
+  "i": 639,
+  "label": "611"
+ },
+ {
+  "level": 2,
+  "title": "15.6 Class Scope under Inheritance",
+  "i": 645,
+  "label": "617"
+ },
+ {
+  "level": 2,
+  "title": "15.7 Constructors and Copy Control",
+  "i": 650,
+  "label": "622"
+ },
+ {
+  "level": 2,
+  "title": "15.8 Containers and Inheritance",
+  "i": 658,
+  "label": "630"
+ },
+ {
+  "level": 2,
+  "title": "15.9 Text Queries Revisited",
+  "i": 662,
+  "label": "634"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 677,
+  "label": "649"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 677,
+  "label": "649"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 16 Templates and Generic Programming",
+  "i": 679,
+  "label": "651"
+ },
+ {
+  "level": 2,
+  "title": "16.1 Defining a Template",
+  "i": 680,
+  "label": "652"
+ },
+ {
+  "level": 2,
+  "title": "16.2 Template Argument Deduction",
+  "i": 706,
+  "label": "678"
+ },
+ {
+  "level": 2,
+  "title": "16.3 Overloading and Templates",
+  "i": 722,
+  "label": "694"
+ },
+ {
+  "level": 2,
+  "title": "16.4 Variadic Templates",
+  "i": 727,
+  "label": "699"
+ },
+ {
+  "level": 2,
+  "title": "16.5 Template Specializations",
+  "i": 734,
+  "label": "706"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 741,
+  "label": "713"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 741,
+  "label": "713"
+ },
+ {
+  "level": 0,
+  "title": "Part IV: Advanced Topics",
+  "i": 743,
+  "label": "715"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 17 Specialized Library Facilities",
+  "i": 745,
+  "label": "717"
+ },
+ {
+  "level": 2,
+  "title": "17.1 The tuple Type",
+  "i": 746,
+  "label": "718"
+ },
+ {
+  "level": 2,
+  "title": "17.2 The bitset Type",
+  "i": 751,
+  "label": "723"
+ },
+ {
+  "level": 2,
+  "title": "17.3 Regular Expressions",
+  "i": 756,
+  "label": "728"
+ },
+ {
+  "level": 2,
+  "title": "17.4 Random Numbers",
+  "i": 773,
+  "label": "745"
+ },
+ {
+  "level": 2,
+  "title": "17.5 The IO Library Revisited",
+  "i": 780,
+  "label": "752"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 797,
+  "label": "769"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 797,
+  "label": "769"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 18 Tools for Large Programs",
+  "i": 799,
+  "label": "771"
+ },
+ {
+  "level": 2,
+  "title": "18.1 Exception Handling",
+  "i": 800,
+  "label": "772"
+ },
+ {
+  "level": 2,
+  "title": "18.2 Namespaces",
+  "i": 813,
+  "label": "785"
+ },
+ {
+  "level": 2,
+  "title": "18.3 Multiple and Virtual Inheritance",
+  "i": 830,
+  "label": "802"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 844,
+  "label": "816"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 844,
+  "label": "816"
+ },
+ {
+  "level": 1,
+  "title": "Chapter 19 Specialized Tools and Techniques",
+  "i": 847,
+  "label": "819"
+ },
+ {
+  "level": 2,
+  "title": "19.1 Controlling Memory Allocation",
+  "i": 848,
+  "label": "820"
+ },
+ {
+  "level": 2,
+  "title": "19.2 Run-Time Type Identification",
+  "i": 853,
+  "label": "825"
+ },
+ {
+  "level": 2,
+  "title": "19.3 Enumerations",
+  "i": 860,
+  "label": "832"
+ },
+ {
+  "level": 2,
+  "title": "19.4 Pointer to Class Member",
+  "i": 863,
+  "label": "835"
+ },
+ {
+  "level": 2,
+  "title": "19.5 Nested Classes",
+  "i": 871,
+  "label": "843"
+ },
+ {
+  "level": 2,
+  "title": "19.6 Union: A Space-Saving Class",
+  "i": 875,
+  "label": "847"
+ },
+ {
+  "level": 2,
+  "title": "19.7 Local Classes",
+  "i": 880,
+  "label": "852"
+ },
+ {
+  "level": 2,
+  "title": "19.8 Inherently Nonportable Features",
+  "i": 882,
+  "label": "854"
+ },
+ {
+  "level": 2,
+  "title": "Chapter Summary",
+  "i": 890,
+  "label": "862"
+ },
+ {
+  "level": 2,
+  "title": "Defined Terms",
+  "i": 890,
+  "label": "862"
+ },
+ {
+  "level": 0,
+  "title": "Appendix A: The Library",
+  "i": 893,
+  "label": "865"
+ },
+ {
+  "level": 1,
+  "title": "A.1 Library Names and Headers",
+  "i": 894,
+  "label": "866"
+ },
+ {
+  "level": 1,
+  "title": "A.2 A Brief Tour of the Algorithms",
+  "i": 898,
+  "label": "870"
+ },
+ {
+  "level": 2,
+  "title": "A.2.1 Algorithms to Find an Object",
+  "i": 899,
+  "label": "871"
+ },
+ {
+  "level": 2,
+  "title": "A.2.2 Other Read-Only Algorithms",
+  "i": 900,
+  "label": "872"
+ },
+ {
+  "level": 2,
+  "title": "A.2.3 Binary Search Algorithms",
+  "i": 901,
+  "label": "873"
+ },
+ {
+  "level": 2,
+  "title": "A.2.4 Algorithms That Write Container Elements",
+  "i": 901,
+  "label": "873"
+ },
+ {
+  "level": 2,
+  "title": "A.2.5 Partitioning and Sorting Algorithms",
+  "i": 903,
+  "label": "875"
+ },
+ {
+  "level": 2,
+  "title": "A.2.6 General Reordering Operations",
+  "i": 905,
+  "label": "877"
+ },
+ {
+  "level": 2,
+  "title": "A.2.7 Permutation Algorithms",
+  "i": 907,
+  "label": "879"
+ },
+ {
+  "level": 2,
+  "title": "A.2.8 Set Algorithms for Sorted Sequences",
+  "i": 908,
+  "label": "880"
+ },
+ {
+  "level": 2,
+  "title": "A.2.9 Minimum and Maximum Values",
+  "i": 908,
+  "label": "880"
+ },
+ {
+  "level": 2,
+  "title": "A.2.10 Numeric Algorithms",
+  "i": 909,
+  "label": "881"
+ },
+ {
+  "level": 1,
+  "title": "A.3 Random Numbers",
+  "i": 910,
+  "label": "882"
+ },
+ {
+  "level": 2,
+  "title": "A.3.1 Random Number Distributions",
+  "i": 911,
+  "label": "883"
+ },
+ {
+  "level": 2,
+  "title": "A.3.2 Random Number Engines",
+  "i": 912,
+  "label": "884"
+ },
+ {
+  "level": 0,
+  "title": "Index",
+  "i": 915,
+  "label": "887"
+ },
+ {
+  "level": 1,
+  "title": "A",
+  "i": 918,
+  "label": "890"
+ },
+ {
+  "level": 1,
+  "title": "B",
+  "i": 921,
+  "label": "893"
+ },
+ {
+  "level": 1,
+  "title": "C",
+  "i": 923,
+  "label": "895"
+ },
+ {
+  "level": 1,
+  "title": "D",
+  "i": 929,
+  "label": "901"
+ },
+ {
+  "level": 1,
+  "title": "E",
+  "i": 932,
+  "label": "904"
+ },
+ {
+  "level": 1,
+  "title": "F",
+  "i": 934,
+  "label": "906"
+ },
+ {
+  "level": 1,
+  "title": "G",
+  "i": 937,
+  "label": "909"
+ },
+ {
+  "level": 1,
+  "title": "H",
+  "i": 937,
+  "label": "909"
+ },
+ {
+  "level": 1,
+  "title": "I",
+  "i": 938,
+  "label": "910"
+ },
+ {
+  "level": 1,
+  "title": "K",
+  "i": 941,
+  "label": "913"
+ },
+ {
+  "level": 1,
+  "title": "L",
+  "i": 941,
+  "label": "913"
+ },
+ {
+  "level": 1,
+  "title": "M",
+  "i": 943,
+  "label": "915"
+ },
+ {
+  "level": 1,
+  "title": "N",
+  "i": 945,
+  "label": "917"
+ },
+ {
+  "level": 1,
+  "title": "O",
+  "i": 947,
+  "label": "919"
+ },
+ {
+  "level": 1,
+  "title": "P",
+  "i": 950,
+  "label": "922"
+ },
+ {
+  "level": 1,
+  "title": "Q",
+  "i": 953,
+  "label": "925"
+ },
+ {
+  "level": 1,
+  "title": "R",
+  "i": 953,
+  "label": "925"
+ },
+ {
+  "level": 1,
+  "title": "S",
+  "i": 956,
+  "label": "928"
+ },
+ {
+  "level": 1,
+  "title": "T",
+  "i": 961,
+  "label": "933"
+ },
+ {
+  "level": 1,
+  "title": "U",
+  "i": 963,
+  "label": "935"
+ },
+ {
+  "level": 1,
+  "title": "V",
+  "i": 964,
+  "label": "936"
+ },
+ {
+  "level": 1,
+  "title": "W",
+  "i": 965,
+  "label": "937"
+ },
+ {
+  "level": 1,
+  "title": "X",
+  "i": 966,
+  "label": "938"
+ },
+ {
+  "level": 1,
+  "title": "Z",
+  "i": 966,
+  "label": "938"
+ }
+]

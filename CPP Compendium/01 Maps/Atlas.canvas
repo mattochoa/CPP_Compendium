@@ -1,0 +1,3467 @@
+{
+	"nodes": [
+		{
+			"id": "g-D00",
+			"type": "group",
+			"x": 0,
+			"y": 0,
+			"width": 576,
+			"height": 532,
+			"label": "D00 · What C++ Is",
+			"color": "#64748b"
+		},
+		{
+			"id": "m-D00",
+			"type": "text",
+			"x": 30,
+			"y": 24,
+			"width": 516,
+			"height": 36,
+			"color": "#64748b",
+			"text": "**[[Map — What C++ Is]]** ○"
+		},
+		{
+			"id": "t-cpp-design-philosophy",
+			"type": "text",
+			"x": 30,
+			"y": 70,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The C++ Design Philosophy]]\n*concept · T1*"
+		},
+		{
+			"id": "t-zero-overhead-principle",
+			"type": "text",
+			"x": 30,
+			"y": 142,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Zero-Overhead Principle]]\n*concept · T1*"
+		},
+		{
+			"id": "t-abstraction-layers",
+			"type": "text",
+			"x": 30,
+			"y": 214,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Levels of Abstraction — From Bits to Libraries]]\n*concept · T1*"
+		},
+		{
+			"id": "t-abstract-machine",
+			"type": "text",
+			"x": 30,
+			"y": 286,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The C++ Abstract Machine]]\n*concept · T1*"
+		},
+		{
+			"id": "t-undefined-behavior",
+			"type": "text",
+			"x": 30,
+			"y": 358,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Undefined Behavior]]\n*concept · T1*"
+		},
+		{
+			"id": "t-standard-and-compilers",
+			"type": "text",
+			"x": 30,
+			"y": 430,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The ISO Standard, Compilers and Conformance]]\n*concept · T1*"
+		},
+		{
+			"id": "t-as-if-rule",
+			"type": "text",
+			"x": 296,
+			"y": 70,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The As-If Rule]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-behavior-taxonomy",
+			"type": "text",
+			"x": 296,
+			"y": 142,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Implementation-Defined, Unspecified and Undefined Behavior]]\n*comparison · T2*"
+		},
+		{
+			"id": "g-D01",
+			"type": "group",
+			"x": 696,
+			"y": 0,
+			"width": 842,
+			"height": 604,
+			"label": "D01 · Program Structure & Build",
+			"color": "#0ea5e9"
+		},
+		{
+			"id": "m-D01",
+			"type": "text",
+			"x": 726,
+			"y": 24,
+			"width": 782,
+			"height": 36,
+			"color": "#0ea5e9",
+			"text": "**[[Map — Program Structure & Build]]** ○"
+		},
+		{
+			"id": "t-compilation-pipeline",
+			"type": "text",
+			"x": 726,
+			"y": 70,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The Compilation Pipeline]]\n*mechanism · T1*"
+		},
+		{
+			"id": "t-translation-units",
+			"type": "text",
+			"x": 726,
+			"y": 142,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Translation Units]]\n*concept · T1*"
+		},
+		{
+			"id": "t-preprocessor",
+			"type": "text",
+			"x": 726,
+			"y": 214,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The Preprocessor]]\n*mechanism · T1*"
+		},
+		{
+			"id": "t-headers-and-include-guards",
+			"type": "text",
+			"x": 726,
+			"y": 286,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Headers and Include Guards]]\n*idiom · T1*"
+		},
+		{
+			"id": "t-declarations-vs-definitions",
+			"type": "text",
+			"x": 726,
+			"y": 358,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Declarations vs Definitions]]\n*comparison · T1*"
+		},
+		{
+			"id": "t-scope",
+			"type": "text",
+			"x": 726,
+			"y": 430,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Scope]]\n*concept · T1*"
+		},
+		{
+			"id": "t-namespaces",
+			"type": "text",
+			"x": 726,
+			"y": 502,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Namespaces]]\n*concept · T1*"
+		},
+		{
+			"id": "t-linkage",
+			"type": "text",
+			"x": 992,
+			"y": 70,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Linkage — Internal, External, None]]\n*concept · T2*"
+		},
+		{
+			"id": "t-one-definition-rule",
+			"type": "text",
+			"x": 992,
+			"y": 142,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The One Definition Rule]]\n*concept · T2*"
+		},
+		{
+			"id": "t-the-linker",
+			"type": "text",
+			"x": 992,
+			"y": 214,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[What the Linker Does]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-main-and-program-startup",
+			"type": "text",
+			"x": 992,
+			"y": 286,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[main, Program Startup and Termination]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-inline-beyond-inlining",
+			"type": "text",
+			"x": 992,
+			"y": 358,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[inline — Meaning Beyond Inlining]]\n*concept · T2*"
+		},
+		{
+			"id": "t-static-vs-shared-libraries",
+			"type": "text",
+			"x": 992,
+			"y": 430,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Static vs Shared Libraries]]\n*comparison · T2*"
+		},
+		{
+			"id": "t-name-mangling",
+			"type": "text",
+			"x": 1258,
+			"y": 70,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Name Mangling and extern C]]\n*mechanism · T3*"
+		},
+		{
+			"id": "t-name-lookup",
+			"type": "text",
+			"x": 1258,
+			"y": 142,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Name Lookup and ADL]]\n*mechanism · T3*"
+		},
+		{
+			"id": "t-static-init-order-fiasco",
+			"type": "text",
+			"x": 1258,
+			"y": 214,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Static Initialization Order Fiasco]]\n*pitfall · T3*"
+		},
+		{
+			"id": "t-modules",
+			"type": "text",
+			"x": 1258,
+			"y": 286,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Modules (C++20)]]\n*concept · T3*"
+		},
+		{
+			"id": "g-D02",
+			"type": "group",
+			"x": 1658,
+			"y": 0,
+			"width": 842,
+			"height": 1036,
+			"label": "D02 · Types & Values",
+			"color": "#6366f1"
+		},
+		{
+			"id": "m-D02",
+			"type": "text",
+			"x": 1688,
+			"y": 24,
+			"width": 782,
+			"height": 36,
+			"color": "#6366f1",
+			"text": "**[[Map — Types & Values]]** ○"
+		},
+		{
+			"id": "t-what-a-type-is",
+			"type": "text",
+			"x": 1688,
+			"y": 70,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[What a Type Is]]\n*concept · T1*"
+		},
+		{
+			"id": "t-fundamental-types",
+			"type": "text",
+			"x": 1688,
+			"y": 142,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Fundamental Types]]\n*concept · T1*"
+		},
+		{
+			"id": "t-const-correctness",
+			"type": "text",
+			"x": 1688,
+			"y": 214,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[const and Const-Correctness]]\n*concept · T1*"
+		},
+		{
+			"id": "t-integer-representation",
+			"type": "text",
+			"x": 1688,
+			"y": 286,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Integer Representation and Two's Complement]]\n*mechanism · T1*"
+		},
+		{
+			"id": "t-implicit-conversions",
+			"type": "text",
+			"x": 1688,
+			"y": 358,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Implicit Conversions and Promotions]]\n*mechanism · T1*"
+		},
+		{
+			"id": "t-narrowing-and-brace-init",
+			"type": "text",
+			"x": 1688,
+			"y": 430,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Narrowing Conversions and Brace Initialization]]\n*concept · T1*"
+		},
+		{
+			"id": "t-auto-type-deduction",
+			"type": "text",
+			"x": 1688,
+			"y": 502,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[auto Type Deduction]]\n*mechanism · T1*"
+		},
+		{
+			"id": "t-type-aliases",
+			"type": "text",
+			"x": 1688,
+			"y": 574,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Type Aliases (typedef and using)]]\n*concept · T1*"
+		},
+		{
+			"id": "t-enumerations",
+			"type": "text",
+			"x": 1688,
+			"y": 646,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Enumerations — Plain vs Scoped]]\n*comparison · T1*"
+		},
+		{
+			"id": "t-signed-overflow",
+			"type": "text",
+			"x": 1954,
+			"y": 70,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Signed Integer Overflow]]\n*pitfall · T2*"
+		},
+		{
+			"id": "t-floating-point",
+			"type": "text",
+			"x": 1954,
+			"y": 142,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Floating-Point Representation (IEEE 754)]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-floating-point-comparison",
+			"type": "text",
+			"x": 1954,
+			"y": 214,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Comparing Floating-Point Values]]\n*pitfall · T2*"
+		},
+		{
+			"id": "t-usual-arithmetic-conversions",
+			"type": "text",
+			"x": 1954,
+			"y": 286,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Usual Arithmetic Conversions]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-signed-unsigned-mixing",
+			"type": "text",
+			"x": 1954,
+			"y": 358,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Mixing Signed and Unsigned]]\n*pitfall · T2*"
+		},
+		{
+			"id": "t-named-casts",
+			"type": "text",
+			"x": 1954,
+			"y": 430,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The Named Casts]]\n*comparison · T2*"
+		},
+		{
+			"id": "t-top-vs-low-level-const",
+			"type": "text",
+			"x": 1954,
+			"y": 502,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Top-Level vs Low-Level const]]\n*comparison · T2*"
+		},
+		{
+			"id": "t-constexpr-values",
+			"type": "text",
+			"x": 1954,
+			"y": 574,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[constexpr Variables and Constant Expressions]]\n*concept · T2*"
+		},
+		{
+			"id": "t-sizeof-and-alignment",
+			"type": "text",
+			"x": 1954,
+			"y": 646,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[sizeof, alignof and Alignment]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-decltype",
+			"type": "text",
+			"x": 1954,
+			"y": 718,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[decltype and decltype(auto)]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-literals-and-udl",
+			"type": "text",
+			"x": 1954,
+			"y": 790,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Literals and User-Defined Literals]]\n*concept · T2*"
+		},
+		{
+			"id": "t-characters-and-encodings",
+			"type": "text",
+			"x": 1954,
+			"y": 862,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Characters, Encodings and the char Types]]\n*concept · T2*"
+		},
+		{
+			"id": "t-bit-manipulation",
+			"type": "text",
+			"x": 1954,
+			"y": 934,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Bitwise Operations and the bit Header]]\n*concept · T2*"
+		},
+		{
+			"id": "t-strong-types",
+			"type": "text",
+			"x": 2220,
+			"y": 70,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Strong Types]]\n*idiom · T3*"
+		},
+		{
+			"id": "t-volatile-misconceptions",
+			"type": "text",
+			"x": 2220,
+			"y": 142,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[volatile — What It Does Not Mean]]\n*pitfall · T3*"
+		},
+		{
+			"id": "g-D03",
+			"type": "group",
+			"x": 2620,
+			"y": 0,
+			"width": 576,
+			"height": 604,
+			"label": "D03 · Expressions & Control",
+			"color": "#8b5cf6"
+		},
+		{
+			"id": "m-D03",
+			"type": "text",
+			"x": 2650,
+			"y": 24,
+			"width": 516,
+			"height": 36,
+			"color": "#8b5cf6",
+			"text": "**[[Map — Expressions & Control]]** ○"
+		},
+		{
+			"id": "t-anatomy-of-an-expression",
+			"type": "text",
+			"x": 2650,
+			"y": 70,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Anatomy of an Expression]]\n*concept · T1*"
+		},
+		{
+			"id": "t-operator-precedence",
+			"type": "text",
+			"x": 2650,
+			"y": 142,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Precedence and Associativity]]\n*concept · T1*"
+		},
+		{
+			"id": "t-control-flow",
+			"type": "text",
+			"x": 2650,
+			"y": 214,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Control Flow — Selection and Iteration]]\n*concept · T1*"
+		},
+		{
+			"id": "t-short-circuit-evaluation",
+			"type": "text",
+			"x": 2650,
+			"y": 286,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Short-Circuit Evaluation]]\n*concept · T1*"
+		},
+		{
+			"id": "t-prefix-vs-postfix",
+			"type": "text",
+			"x": 2650,
+			"y": 358,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Prefix vs Postfix Increment]]\n*comparison · T1*"
+		},
+		{
+			"id": "t-range-for",
+			"type": "text",
+			"x": 2650,
+			"y": 430,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The Range-Based for Loop]]\n*mechanism · T1*"
+		},
+		{
+			"id": "t-switch-statement",
+			"type": "text",
+			"x": 2650,
+			"y": 502,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[switch and Fallthrough]]\n*concept · T1*"
+		},
+		{
+			"id": "t-evaluation-order",
+			"type": "text",
+			"x": 2916,
+			"y": 70,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Evaluation Order and Sequencing]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-statement-initializers",
+			"type": "text",
+			"x": 2916,
+			"y": 142,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[if and switch with Initializers, and if constexpr]]\n*concept · T2*"
+		},
+		{
+			"id": "t-structured-bindings",
+			"type": "text",
+			"x": 2916,
+			"y": 214,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Structured Bindings]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-conditional-and-comma",
+			"type": "text",
+			"x": 2916,
+			"y": 286,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The Conditional and Comma Operators]]\n*concept · T2*"
+		},
+		{
+			"id": "g-D04",
+			"type": "group",
+			"x": 0,
+			"y": 1156,
+			"width": 1108,
+			"height": 1108,
+			"label": "D04 · Objects, Memory & Lifetime",
+			"color": "#ef4444"
+		},
+		{
+			"id": "m-D04",
+			"type": "text",
+			"x": 30,
+			"y": 1180,
+			"width": 1048,
+			"height": 36,
+			"color": "#ef4444",
+			"text": "**[[Map — Objects, Memory & Lifetime]]** ●"
+		},
+		{
+			"id": "t-object-model",
+			"type": "text",
+			"x": 30,
+			"y": 1226,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The C++ Object Model — What an Object Is]]\n*concept · T1*"
+		},
+		{
+			"id": "t-process-memory-layout",
+			"type": "text",
+			"x": 30,
+			"y": 1298,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Process Memory Layout — Stack, Heap, Static]]\n*mechanism · T1*"
+		},
+		{
+			"id": "t-storage-duration",
+			"type": "text",
+			"x": 30,
+			"y": 1370,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Storage Duration]]\n*concept · T1*"
+		},
+		{
+			"id": "t-object-lifetime",
+			"type": "text",
+			"x": 30,
+			"y": 1442,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Object Lifetime]]\n*concept · T1*"
+		},
+		{
+			"id": "t-references",
+			"type": "text",
+			"x": 30,
+			"y": 1514,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[References]]\n*concept · T1*"
+		},
+		{
+			"id": "t-pointers",
+			"type": "text",
+			"x": 30,
+			"y": 1586,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Pointers]]\n*concept · T1*"
+		},
+		{
+			"id": "t-dynamic-memory",
+			"type": "text",
+			"x": 30,
+			"y": 1658,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Dynamic Memory — new and delete]]\n*mechanism · T1*"
+		},
+		{
+			"id": "t-uninitialized-variables",
+			"type": "text",
+			"x": 30,
+			"y": 1730,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Reading Uninitialized Variables]]\n*pitfall · T1*"
+		},
+		{
+			"id": "t-pointer-arithmetic",
+			"type": "text",
+			"x": 30,
+			"y": 1802,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Pointer Arithmetic and Arrays]]\n*mechanism · T1*"
+		},
+		{
+			"id": "t-pointers-vs-references",
+			"type": "text",
+			"x": 30,
+			"y": 1874,
+			"width": 250,
+			"height": 56,
+			"text": "● [[Pointers vs References]]\n*comparison · T1*",
+			"color": "4"
+		},
+		{
+			"id": "t-nullptr",
+			"type": "text",
+			"x": 30,
+			"y": 1946,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[nullptr and Null Pointers]]\n*concept · T1*"
+		},
+		{
+			"id": "t-arrays-and-decay",
+			"type": "text",
+			"x": 30,
+			"y": 2018,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Built-in Arrays and Array-to-Pointer Decay]]\n*mechanism · T1*"
+		},
+		{
+			"id": "t-memory-leaks",
+			"type": "text",
+			"x": 30,
+			"y": 2090,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Memory Leaks]]\n*pitfall · T1*"
+		},
+		{
+			"id": "t-dangling-pointers-and-references",
+			"type": "text",
+			"x": 30,
+			"y": 2162,
+			"width": 250,
+			"height": 56,
+			"text": "● [[Dangling Pointers and References]]\n*pitfall · T1*",
+			"color": "4"
+		},
+		{
+			"id": "t-value-categories",
+			"type": "text",
+			"x": 296,
+			"y": 1226,
+			"width": 250,
+			"height": 56,
+			"text": "● [[Value Categories]]\n*concept · T2*",
+			"color": "4"
+		},
+		{
+			"id": "t-initialization-forms",
+			"type": "text",
+			"x": 296,
+			"y": 1298,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The Forms of Initialization]]\n*comparison · T2*"
+		},
+		{
+			"id": "t-double-free-and-mismatched-delete",
+			"type": "text",
+			"x": 296,
+			"y": 1370,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Double Free and Mismatched new-delete]]\n*pitfall · T2*"
+		},
+		{
+			"id": "t-temporaries-and-lifetime-extension",
+			"type": "text",
+			"x": 296,
+			"y": 1442,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Temporaries and Lifetime Extension]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-c-strings",
+			"type": "text",
+			"x": 296,
+			"y": 1514,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[C-Style Strings]]\n*concept · T2*"
+		},
+		{
+			"id": "t-object-representation",
+			"type": "text",
+			"x": 296,
+			"y": 1586,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Object Representation, Padding and Layout]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-memory-safety",
+			"type": "text",
+			"x": 296,
+			"y": 1658,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Memory Safety in C++ — Threats and Defenses]]\n*concept · T2*"
+		},
+		{
+			"id": "t-strict-aliasing",
+			"type": "text",
+			"x": 562,
+			"y": 1226,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Strict Aliasing and Type Punning]]\n*pitfall · T3*"
+		},
+		{
+			"id": "t-special-type-categories",
+			"type": "text",
+			"x": 562,
+			"y": 1298,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Trivial, Standard-Layout and Aggregate Types]]\n*concept · T3*"
+		},
+		{
+			"id": "t-placement-new",
+			"type": "text",
+			"x": 562,
+			"y": 1370,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Placement new and Manual Lifetime]]\n*mechanism · T3*"
+		},
+		{
+			"id": "t-allocators-and-pmr",
+			"type": "text",
+			"x": 828,
+			"y": 1226,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Allocators and pmr Memory Resources]]\n*concept · T4*"
+		},
+		{
+			"id": "g-D05",
+			"type": "group",
+			"x": 1228,
+			"y": 1156,
+			"width": 842,
+			"height": 604,
+			"label": "D05 · Functions",
+			"color": "#f97316"
+		},
+		{
+			"id": "m-D05",
+			"type": "text",
+			"x": 1258,
+			"y": 1180,
+			"width": 782,
+			"height": 36,
+			"color": "#f97316",
+			"text": "**[[Map — Functions]]** ○"
+		},
+		{
+			"id": "t-function-anatomy",
+			"type": "text",
+			"x": 1258,
+			"y": 1226,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Anatomy of a Function]]\n*concept · T1*"
+		},
+		{
+			"id": "t-call-stack",
+			"type": "text",
+			"x": 1258,
+			"y": 1298,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The Call Stack and Stack Frames]]\n*mechanism · T1*"
+		},
+		{
+			"id": "t-parameter-passing",
+			"type": "text",
+			"x": 1258,
+			"y": 1370,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Parameter Passing — Value, Reference, Pointer]]\n*comparison · T1*"
+		},
+		{
+			"id": "t-function-overloading",
+			"type": "text",
+			"x": 1258,
+			"y": 1442,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Function Overloading]]\n*concept · T1*"
+		},
+		{
+			"id": "t-default-arguments",
+			"type": "text",
+			"x": 1258,
+			"y": 1514,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Default Arguments]]\n*concept · T1*"
+		},
+		{
+			"id": "t-recursion",
+			"type": "text",
+			"x": 1258,
+			"y": 1586,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Recursion]]\n*concept · T1*"
+		},
+		{
+			"id": "t-lambdas",
+			"type": "text",
+			"x": 1258,
+			"y": 1658,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Lambda Expressions]]\n*concept · T1*"
+		},
+		{
+			"id": "t-return-values",
+			"type": "text",
+			"x": 1524,
+			"y": 1226,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Returning Values — Copies, References and RVO]]\n*concept · T2*"
+		},
+		{
+			"id": "t-function-pointers",
+			"type": "text",
+			"x": 1524,
+			"y": 1298,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Function Pointers]]\n*concept · T2*"
+		},
+		{
+			"id": "t-lambda-captures",
+			"type": "text",
+			"x": 1524,
+			"y": 1370,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Lambda Captures and Closure Objects]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-callables-and-std-function",
+			"type": "text",
+			"x": 1524,
+			"y": 1442,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Callables and std-function]]\n*comparison · T2*"
+		},
+		{
+			"id": "t-constexpr-functions",
+			"type": "text",
+			"x": 1524,
+			"y": 1514,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[constexpr and consteval Functions]]\n*concept · T2*"
+		},
+		{
+			"id": "t-inlining",
+			"type": "text",
+			"x": 1524,
+			"y": 1586,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Inlining — Compiler Reality vs the Keyword]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-attributes",
+			"type": "text",
+			"x": 1524,
+			"y": 1658,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Attributes — nodiscard, maybe_unused, likely]]\n*concept · T2*"
+		},
+		{
+			"id": "t-overload-resolution",
+			"type": "text",
+			"x": 1790,
+			"y": 1226,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Overload Resolution]]\n*mechanism · T3*"
+		},
+		{
+			"id": "g-D06",
+			"type": "group",
+			"x": 2190,
+			"y": 1156,
+			"width": 842,
+			"height": 748,
+			"label": "D06 · Classes & Encapsulation",
+			"color": "#eab308"
+		},
+		{
+			"id": "m-D06",
+			"type": "text",
+			"x": 2220,
+			"y": 1180,
+			"width": 782,
+			"height": 36,
+			"color": "#eab308",
+			"text": "**[[Map — Classes & Encapsulation]]** ○"
+		},
+		{
+			"id": "t-classes-as-types",
+			"type": "text",
+			"x": 2220,
+			"y": 1226,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Classes as User-Defined Types]]\n*concept · T1*"
+		},
+		{
+			"id": "t-encapsulation-and-invariants",
+			"type": "text",
+			"x": 2220,
+			"y": 1298,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Encapsulation and Class Invariants]]\n*concept · T1*"
+		},
+		{
+			"id": "t-constructors",
+			"type": "text",
+			"x": 2220,
+			"y": 1370,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Constructors]]\n*concept · T1*"
+		},
+		{
+			"id": "t-destructors",
+			"type": "text",
+			"x": 2220,
+			"y": 1442,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Destructors]]\n*concept · T1*"
+		},
+		{
+			"id": "t-struct-vs-class",
+			"type": "text",
+			"x": 2220,
+			"y": 1514,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[struct vs class]]\n*comparison · T1*"
+		},
+		{
+			"id": "t-member-initializer-lists",
+			"type": "text",
+			"x": 2220,
+			"y": 1586,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Member Initializer Lists and Initialization Order]]\n*mechanism · T1*"
+		},
+		{
+			"id": "t-this-pointer",
+			"type": "text",
+			"x": 2220,
+			"y": 1658,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The this Pointer and Member Function Calls]]\n*mechanism · T1*"
+		},
+		{
+			"id": "t-const-member-functions",
+			"type": "text",
+			"x": 2220,
+			"y": 1730,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[const Member Functions and mutable]]\n*concept · T1*"
+		},
+		{
+			"id": "t-static-members",
+			"type": "text",
+			"x": 2220,
+			"y": 1802,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Static Members]]\n*concept · T1*"
+		},
+		{
+			"id": "t-special-member-functions",
+			"type": "text",
+			"x": 2486,
+			"y": 1226,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The Special Member Functions]]\n*concept · T2*"
+		},
+		{
+			"id": "t-rule-of-zero-three-five",
+			"type": "text",
+			"x": 2486,
+			"y": 1298,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Rule of Zero, Three and Five]]\n*idiom · T2*"
+		},
+		{
+			"id": "t-operator-overloading",
+			"type": "text",
+			"x": 2486,
+			"y": 1370,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Operator Overloading]]\n*concept · T2*"
+		},
+		{
+			"id": "t-value-semantics",
+			"type": "text",
+			"x": 2486,
+			"y": 1442,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Value Semantics]]\n*concept · T2*"
+		},
+		{
+			"id": "t-friends",
+			"type": "text",
+			"x": 2486,
+			"y": 1514,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Friends]]\n*concept · T2*"
+		},
+		{
+			"id": "t-comparisons-and-spaceship",
+			"type": "text",
+			"x": 2486,
+			"y": 1586,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Comparisons and the Spaceship Operator]]\n*concept · T2*"
+		},
+		{
+			"id": "t-conversion-operators-and-explicit",
+			"type": "text",
+			"x": 2486,
+			"y": 1658,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Conversion Operators and explicit]]\n*concept · T2*"
+		},
+		{
+			"id": "t-aggregates-and-designated-init",
+			"type": "text",
+			"x": 2486,
+			"y": 1730,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Aggregates and Designated Initializers]]\n*concept · T2*"
+		},
+		{
+			"id": "t-implicit-member-generation",
+			"type": "text",
+			"x": 2752,
+			"y": 1226,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[When the Compiler Generates Special Members]]\n*mechanism · T3*"
+		},
+		{
+			"id": "g-D07",
+			"type": "group",
+			"x": 3152,
+			"y": 1156,
+			"width": 842,
+			"height": 892,
+			"label": "D07 · Ownership & Move Semantics",
+			"color": "#22c55e"
+		},
+		{
+			"id": "m-D07",
+			"type": "text",
+			"x": 3182,
+			"y": 1180,
+			"width": 782,
+			"height": 36,
+			"color": "#22c55e",
+			"text": "**[[Map — Ownership & Move Semantics]]** ○"
+		},
+		{
+			"id": "t-ownership-model",
+			"type": "text",
+			"x": 3182,
+			"y": 1226,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Ownership — Who Releases What]]\n*concept · T1*"
+		},
+		{
+			"id": "t-raii",
+			"type": "text",
+			"x": 3182,
+			"y": 1298,
+			"width": 250,
+			"height": 56,
+			"text": "● [[RAII]]\n*idiom · T1*",
+			"color": "4"
+		},
+		{
+			"id": "t-copy-semantics",
+			"type": "text",
+			"x": 3182,
+			"y": 1370,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Copy Semantics — Deep vs Shallow Copy]]\n*comparison · T1*"
+		},
+		{
+			"id": "t-unique-ptr",
+			"type": "text",
+			"x": 3182,
+			"y": 1442,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[unique_ptr]]\n*concept · T1*"
+		},
+		{
+			"id": "t-owning-vs-observing-pointers",
+			"type": "text",
+			"x": 3448,
+			"y": 1226,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Owning vs Observing Pointers]]\n*comparison · T2*"
+		},
+		{
+			"id": "t-rvalue-references",
+			"type": "text",
+			"x": 3448,
+			"y": 1298,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Rvalue References]]\n*concept · T2*"
+		},
+		{
+			"id": "t-move-semantics",
+			"type": "text",
+			"x": 3448,
+			"y": 1370,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Move Semantics]]\n*concept · T2*"
+		},
+		{
+			"id": "t-shared-ptr",
+			"type": "text",
+			"x": 3448,
+			"y": 1442,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[shared_ptr and Reference Counting]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-move-and-forward",
+			"type": "text",
+			"x": 3448,
+			"y": 1514,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[move and forward — Casts, Not Actions]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-moved-from-state",
+			"type": "text",
+			"x": 3448,
+			"y": 1586,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The Moved-From State]]\n*pitfall · T2*"
+		},
+		{
+			"id": "t-copy-elision",
+			"type": "text",
+			"x": 3448,
+			"y": 1658,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Copy Elision and RVO]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-weak-ptr-and-cycles",
+			"type": "text",
+			"x": 3448,
+			"y": 1730,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[weak_ptr and Reference Cycles]]\n*pitfall · T2*"
+		},
+		{
+			"id": "t-choosing-a-smart-pointer",
+			"type": "text",
+			"x": 3448,
+			"y": 1802,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Choosing a Smart Pointer]]\n*comparison · T2*"
+		},
+		{
+			"id": "t-make-functions",
+			"type": "text",
+			"x": 3448,
+			"y": 1874,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[make_unique and make_shared]]\n*concept · T2*"
+		},
+		{
+			"id": "t-exception-safety-guarantees",
+			"type": "text",
+			"x": 3448,
+			"y": 1946,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Exception Safety Guarantees]]\n*concept · T2*"
+		},
+		{
+			"id": "t-forwarding-references",
+			"type": "text",
+			"x": 3714,
+			"y": 1226,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Forwarding References and Reference Collapsing]]\n*mechanism · T3*"
+		},
+		{
+			"id": "t-copy-and-swap",
+			"type": "text",
+			"x": 3714,
+			"y": 1298,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Copy-and-Swap]]\n*idiom · T3*"
+		},
+		{
+			"id": "t-noexcept-and-move",
+			"type": "text",
+			"x": 3714,
+			"y": 1370,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[noexcept and Why Move Must Not Throw]]\n*mechanism · T3*"
+		},
+		{
+			"id": "g-D08",
+			"type": "group",
+			"x": 0,
+			"y": 2384,
+			"width": 842,
+			"height": 532,
+			"label": "D08 · Inheritance & Polymorphism",
+			"color": "#14b8a6"
+		},
+		{
+			"id": "m-D08",
+			"type": "text",
+			"x": 30,
+			"y": 2408,
+			"width": 782,
+			"height": 36,
+			"color": "#14b8a6",
+			"text": "**[[Map — Inheritance & Polymorphism]]** ○"
+		},
+		{
+			"id": "t-inheritance",
+			"type": "text",
+			"x": 30,
+			"y": 2454,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Inheritance]]\n*concept · T1*"
+		},
+		{
+			"id": "t-virtual-functions",
+			"type": "text",
+			"x": 30,
+			"y": 2526,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Virtual Functions]]\n*concept · T1*"
+		},
+		{
+			"id": "t-abstract-classes",
+			"type": "text",
+			"x": 30,
+			"y": 2598,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Abstract Classes and Interfaces]]\n*concept · T1*"
+		},
+		{
+			"id": "t-virtual-destructors",
+			"type": "text",
+			"x": 30,
+			"y": 2670,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Virtual Destructors]]\n*pitfall · T1*"
+		},
+		{
+			"id": "t-object-slicing",
+			"type": "text",
+			"x": 30,
+			"y": 2742,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Object Slicing]]\n*pitfall · T1*"
+		},
+		{
+			"id": "t-override-and-final",
+			"type": "text",
+			"x": 30,
+			"y": 2814,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[override and final]]\n*concept · T1*"
+		},
+		{
+			"id": "t-virtual-dispatch",
+			"type": "text",
+			"x": 296,
+			"y": 2454,
+			"width": 250,
+			"height": 56,
+			"text": "● [[Virtual Dispatch — vptr and vtable]]\n*mechanism · T2*",
+			"color": "4"
+		},
+		{
+			"id": "t-composition-vs-inheritance",
+			"type": "text",
+			"x": 296,
+			"y": 2526,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Composition vs Inheritance]]\n*comparison · T2*"
+		},
+		{
+			"id": "t-access-in-inheritance",
+			"type": "text",
+			"x": 296,
+			"y": 2598,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Public, Protected and Private Inheritance]]\n*comparison · T2*"
+		},
+		{
+			"id": "t-rtti-and-dynamic-cast",
+			"type": "text",
+			"x": 296,
+			"y": 2670,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[RTTI and dynamic_cast]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-name-hiding",
+			"type": "text",
+			"x": 296,
+			"y": 2742,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Name Hiding in Derived Classes]]\n*pitfall · T2*"
+		},
+		{
+			"id": "t-virtual-calls-in-ctors",
+			"type": "text",
+			"x": 562,
+			"y": 2454,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Virtual Calls in Constructors and Destructors]]\n*pitfall · T3*"
+		},
+		{
+			"id": "t-multiple-inheritance",
+			"type": "text",
+			"x": 562,
+			"y": 2526,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Multiple and Virtual Inheritance]]\n*mechanism · T3*"
+		},
+		{
+			"id": "t-static-vs-dynamic-polymorphism",
+			"type": "text",
+			"x": 562,
+			"y": 2598,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Static vs Dynamic Polymorphism]]\n*comparison · T3*"
+		},
+		{
+			"id": "g-D09",
+			"type": "group",
+			"x": 962,
+			"y": 2384,
+			"width": 1108,
+			"height": 460,
+			"label": "D09 · Generic Programming",
+			"color": "#06b6d4"
+		},
+		{
+			"id": "m-D09",
+			"type": "text",
+			"x": 992,
+			"y": 2408,
+			"width": 1048,
+			"height": 36,
+			"color": "#06b6d4",
+			"text": "**[[Map — Generic Programming]]** ○"
+		},
+		{
+			"id": "t-why-templates",
+			"type": "text",
+			"x": 992,
+			"y": 2454,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Templates — Code That Writes Code]]\n*concept · T1*"
+		},
+		{
+			"id": "t-function-templates",
+			"type": "text",
+			"x": 992,
+			"y": 2526,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Function Templates]]\n*concept · T1*"
+		},
+		{
+			"id": "t-class-templates",
+			"type": "text",
+			"x": 1258,
+			"y": 2454,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Class Templates]]\n*concept · T2*"
+		},
+		{
+			"id": "t-template-instantiation",
+			"type": "text",
+			"x": 1258,
+			"y": 2526,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Template Instantiation]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-templates-in-headers",
+			"type": "text",
+			"x": 1258,
+			"y": 2598,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Why Templates Live in Headers]]\n*pitfall · T2*"
+		},
+		{
+			"id": "t-concepts-and-constraints",
+			"type": "text",
+			"x": 1258,
+			"y": 2670,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Concepts and Constraints]]\n*concept · T2*"
+		},
+		{
+			"id": "t-non-type-template-parameters",
+			"type": "text",
+			"x": 1258,
+			"y": 2742,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Non-Type Template Parameters]]\n*concept · T2*"
+		},
+		{
+			"id": "t-template-argument-deduction",
+			"type": "text",
+			"x": 1524,
+			"y": 2454,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Template Argument Deduction]]\n*mechanism · T3*"
+		},
+		{
+			"id": "t-template-specialization",
+			"type": "text",
+			"x": 1524,
+			"y": 2526,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Full and Partial Specialization]]\n*concept · T3*"
+		},
+		{
+			"id": "t-variadic-templates",
+			"type": "text",
+			"x": 1524,
+			"y": 2598,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Variadic Templates and Fold Expressions]]\n*concept · T3*"
+		},
+		{
+			"id": "t-ctad",
+			"type": "text",
+			"x": 1524,
+			"y": 2670,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Class Template Argument Deduction]]\n*mechanism · T3*"
+		},
+		{
+			"id": "t-type-traits",
+			"type": "text",
+			"x": 1524,
+			"y": 2742,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Type Traits]]\n*concept · T3*"
+		},
+		{
+			"id": "t-sfinae",
+			"type": "text",
+			"x": 1790,
+			"y": 2454,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[SFINAE and enable_if]]\n*mechanism · T4*"
+		},
+		{
+			"id": "t-two-phase-lookup",
+			"type": "text",
+			"x": 1790,
+			"y": 2526,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Two-Phase Lookup and Dependent Names]]\n*mechanism · T4*"
+		},
+		{
+			"id": "t-compile-time-programming",
+			"type": "text",
+			"x": 1790,
+			"y": 2598,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Compile-Time Programming — From TMP to constexpr]]\n*concept · T4*"
+		},
+		{
+			"id": "g-D10",
+			"type": "group",
+			"x": 2190,
+			"y": 2384,
+			"width": 842,
+			"height": 1180,
+			"label": "D10 · Standard Library",
+			"color": "#3b82f6"
+		},
+		{
+			"id": "m-D10",
+			"type": "text",
+			"x": 2220,
+			"y": 2408,
+			"width": 782,
+			"height": 36,
+			"color": "#3b82f6",
+			"text": "**[[Map — Standard Library]]** ○"
+		},
+		{
+			"id": "t-stl-architecture",
+			"type": "text",
+			"x": 2220,
+			"y": 2454,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[STL Architecture — Containers, Iterators, Algorithms]]\n*concept · T1*"
+		},
+		{
+			"id": "t-std-vector",
+			"type": "text",
+			"x": 2220,
+			"y": 2526,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[vector]]\n*concept · T1*"
+		},
+		{
+			"id": "t-iterators",
+			"type": "text",
+			"x": 2220,
+			"y": 2598,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Iterators]]\n*concept · T1*"
+		},
+		{
+			"id": "t-std-string",
+			"type": "text",
+			"x": 2220,
+			"y": 2670,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[string]]\n*concept · T1*"
+		},
+		{
+			"id": "t-std-array",
+			"type": "text",
+			"x": 2220,
+			"y": 2742,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[array]]\n*concept · T1*"
+		},
+		{
+			"id": "t-associative-containers",
+			"type": "text",
+			"x": 2220,
+			"y": 2814,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Ordered Associative Containers — map and set]]\n*concept · T1*"
+		},
+		{
+			"id": "t-algorithms",
+			"type": "text",
+			"x": 2220,
+			"y": 2886,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The Algorithms Library]]\n*concept · T1*"
+		},
+		{
+			"id": "t-iostreams",
+			"type": "text",
+			"x": 2220,
+			"y": 2958,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[IO Streams Architecture]]\n*mechanism · T1*"
+		},
+		{
+			"id": "t-stream-state-and-input",
+			"type": "text",
+			"x": 2220,
+			"y": 3030,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Stream State and Robust Input]]\n*idiom · T1*"
+		},
+		{
+			"id": "t-file-io",
+			"type": "text",
+			"x": 2220,
+			"y": 3102,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[File IO]]\n*concept · T1*"
+		},
+		{
+			"id": "t-random-numbers",
+			"type": "text",
+			"x": 2220,
+			"y": 3174,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Random Number Generation]]\n*concept · T1*"
+		},
+		{
+			"id": "t-string-streams",
+			"type": "text",
+			"x": 2220,
+			"y": 3246,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[String Streams]]\n*concept · T1*"
+		},
+		{
+			"id": "t-vector-growth",
+			"type": "text",
+			"x": 2486,
+			"y": 2454,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[How vector Grows — Capacity and Amortized Cost]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-sequence-containers",
+			"type": "text",
+			"x": 2486,
+			"y": 2526,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Sequence Containers Compared]]\n*comparison · T2*"
+		},
+		{
+			"id": "t-unordered-containers",
+			"type": "text",
+			"x": 2486,
+			"y": 2598,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Hash Tables — unordered_map and unordered_set]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-iterator-invalidation",
+			"type": "text",
+			"x": 2486,
+			"y": 2670,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Iterator Invalidation]]\n*pitfall · T2*"
+		},
+		{
+			"id": "t-container-adaptors",
+			"type": "text",
+			"x": 2486,
+			"y": 2742,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Container Adaptors — stack, queue, priority_queue]]\n*concept · T2*"
+		},
+		{
+			"id": "t-iterator-categories",
+			"type": "text",
+			"x": 2486,
+			"y": 2814,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Iterator Categories and Concepts]]\n*concept · T2*"
+		},
+		{
+			"id": "t-erase-remove",
+			"type": "text",
+			"x": 2486,
+			"y": 2886,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Erase-Remove and erase_if]]\n*idiom · T2*"
+		},
+		{
+			"id": "t-ranges-and-views",
+			"type": "text",
+			"x": 2486,
+			"y": 2958,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Ranges and Views]]\n*concept · T2*"
+		},
+		{
+			"id": "t-string-view",
+			"type": "text",
+			"x": 2486,
+			"y": 3030,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[string_view]]\n*concept · T2*"
+		},
+		{
+			"id": "t-format-and-print",
+			"type": "text",
+			"x": 2486,
+			"y": 3102,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[format and print]]\n*concept · T2*"
+		},
+		{
+			"id": "t-optional",
+			"type": "text",
+			"x": 2486,
+			"y": 3174,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[optional]]\n*concept · T2*"
+		},
+		{
+			"id": "t-variant",
+			"type": "text",
+			"x": 2486,
+			"y": 3246,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[variant and visit]]\n*concept · T2*"
+		},
+		{
+			"id": "t-span",
+			"type": "text",
+			"x": 2486,
+			"y": 3318,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[span]]\n*concept · T2*"
+		},
+		{
+			"id": "t-pair-and-tuple",
+			"type": "text",
+			"x": 2486,
+			"y": 3390,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[pair and tuple]]\n*concept · T2*"
+		},
+		{
+			"id": "t-chrono",
+			"type": "text",
+			"x": 2486,
+			"y": 3462,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[chrono — Durations, Clocks, Time Points]]\n*concept · T2*"
+		},
+		{
+			"id": "t-small-string-optimization",
+			"type": "text",
+			"x": 2752,
+			"y": 2454,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Small String Optimization]]\n*mechanism · T3*"
+		},
+		{
+			"id": "t-std-any",
+			"type": "text",
+			"x": 2752,
+			"y": 2526,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[any]]\n*concept · T3*"
+		},
+		{
+			"id": "g-D11",
+			"type": "group",
+			"x": 3152,
+			"y": 2384,
+			"width": 842,
+			"height": 460,
+			"label": "D11 · Errors & Contracts",
+			"color": "#f43f5e"
+		},
+		{
+			"id": "m-D11",
+			"type": "text",
+			"x": 3182,
+			"y": 2408,
+			"width": 782,
+			"height": 36,
+			"color": "#f43f5e",
+			"text": "**[[Map — Errors & Contracts]]** ○"
+		},
+		{
+			"id": "t-error-handling-strategies",
+			"type": "text",
+			"x": 3182,
+			"y": 2454,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Error Handling Strategies Compared]]\n*comparison · T1*"
+		},
+		{
+			"id": "t-exceptions",
+			"type": "text",
+			"x": 3182,
+			"y": 2526,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Exceptions]]\n*concept · T1*"
+		},
+		{
+			"id": "t-assertions",
+			"type": "text",
+			"x": 3182,
+			"y": 2598,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[assert and static_assert]]\n*concept · T1*"
+		},
+		{
+			"id": "t-stack-unwinding",
+			"type": "text",
+			"x": 3448,
+			"y": 2454,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Stack Unwinding]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-exception-hierarchies",
+			"type": "text",
+			"x": 3448,
+			"y": 2526,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Designing Exception Hierarchies]]\n*idiom · T2*"
+		},
+		{
+			"id": "t-noexcept",
+			"type": "text",
+			"x": 3448,
+			"y": 2598,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[noexcept]]\n*concept · T2*"
+		},
+		{
+			"id": "t-std-expected",
+			"type": "text",
+			"x": 3448,
+			"y": 2670,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[expected — Errors as Values]]\n*concept · T2*"
+		},
+		{
+			"id": "t-contracts",
+			"type": "text",
+			"x": 3448,
+			"y": 2742,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Preconditions, Postconditions and Contracts]]\n*concept · T2*"
+		},
+		{
+			"id": "t-error-codes",
+			"type": "text",
+			"x": 3714,
+			"y": 2454,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[error_code and System Errors]]\n*concept · T3*"
+		},
+		{
+			"id": "t-cost-of-exceptions",
+			"type": "text",
+			"x": 3714,
+			"y": 2526,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The Cost of Exceptions]]\n*mechanism · T3*"
+		},
+		{
+			"id": "g-D12",
+			"type": "group",
+			"x": 0,
+			"y": 3684,
+			"width": 1108,
+			"height": 532,
+			"label": "D12 · Concurrency",
+			"color": "#a855f7"
+		},
+		{
+			"id": "m-D12",
+			"type": "text",
+			"x": 30,
+			"y": 3708,
+			"width": 1048,
+			"height": 36,
+			"color": "#a855f7",
+			"text": "**[[Map — Concurrency]]** ○"
+		},
+		{
+			"id": "t-concurrency-vs-parallelism",
+			"type": "text",
+			"x": 30,
+			"y": 3754,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Concurrency vs Parallelism]]\n*comparison · T1*"
+		},
+		{
+			"id": "t-threads",
+			"type": "text",
+			"x": 296,
+			"y": 3754,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Threads — thread and jthread]]\n*concept · T2*"
+		},
+		{
+			"id": "t-data-races",
+			"type": "text",
+			"x": 296,
+			"y": 3826,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Data Races and Race Conditions]]\n*pitfall · T2*"
+		},
+		{
+			"id": "t-mutexes-and-locks",
+			"type": "text",
+			"x": 296,
+			"y": 3898,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Mutexes and Lock Guards]]\n*concept · T2*"
+		},
+		{
+			"id": "t-deadlock",
+			"type": "text",
+			"x": 296,
+			"y": 3970,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Deadlock]]\n*pitfall · T2*"
+		},
+		{
+			"id": "t-condition-variables",
+			"type": "text",
+			"x": 296,
+			"y": 4042,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Condition Variables]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-futures-and-async",
+			"type": "text",
+			"x": 296,
+			"y": 4114,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Futures, Promises and async]]\n*concept · T2*"
+		},
+		{
+			"id": "t-memory-model",
+			"type": "text",
+			"x": 562,
+			"y": 3754,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The C++ Memory Model — happens-before]]\n*mechanism · T3*"
+		},
+		{
+			"id": "t-atomics",
+			"type": "text",
+			"x": 562,
+			"y": 3826,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Atomics]]\n*concept · T3*"
+		},
+		{
+			"id": "t-thread-pools",
+			"type": "text",
+			"x": 562,
+			"y": 3898,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Thread Pools and Task Queues]]\n*idiom · T3*"
+		},
+		{
+			"id": "t-stop-tokens",
+			"type": "text",
+			"x": 562,
+			"y": 3970,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Cooperative Cancellation with stop_token]]\n*concept · T3*"
+		},
+		{
+			"id": "t-false-sharing",
+			"type": "text",
+			"x": 562,
+			"y": 4042,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[False Sharing]]\n*pitfall · T3*"
+		},
+		{
+			"id": "t-parallel-algorithms",
+			"type": "text",
+			"x": 562,
+			"y": 4114,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Parallel Algorithms and Execution Policies]]\n*concept · T3*"
+		},
+		{
+			"id": "t-memory-orderings",
+			"type": "text",
+			"x": 828,
+			"y": 3754,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Memory Orderings]]\n*mechanism · T4*"
+		},
+		{
+			"id": "t-lock-free-basics",
+			"type": "text",
+			"x": 828,
+			"y": 3826,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Lock-Free Programming Basics]]\n*concept · T4*"
+		},
+		{
+			"id": "t-coroutines",
+			"type": "text",
+			"x": 828,
+			"y": 3898,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Coroutines]]\n*mechanism · T4*"
+		},
+		{
+			"id": "g-D13",
+			"type": "group",
+			"x": 1228,
+			"y": 3684,
+			"width": 1108,
+			"height": 532,
+			"label": "D13 · Performance & the Machine",
+			"color": "#d946ef"
+		},
+		{
+			"id": "m-D13",
+			"type": "text",
+			"x": 1258,
+			"y": 3708,
+			"width": 1048,
+			"height": 36,
+			"color": "#d946ef",
+			"text": "**[[Map — Performance & the Machine]]** ○"
+		},
+		{
+			"id": "t-performance-mindset",
+			"type": "text",
+			"x": 1258,
+			"y": 3754,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Performance — Measure, Don't Guess]]\n*concept · T1*"
+		},
+		{
+			"id": "t-cache-hierarchy",
+			"type": "text",
+			"x": 1524,
+			"y": 3754,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The Memory Hierarchy and Caches]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-benchmarking",
+			"type": "text",
+			"x": 1524,
+			"y": 3826,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Benchmarking Correctly]]\n*idiom · T2*"
+		},
+		{
+			"id": "t-profiling",
+			"type": "text",
+			"x": 1524,
+			"y": 3898,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Profiling]]\n*concept · T2*"
+		},
+		{
+			"id": "t-data-locality",
+			"type": "text",
+			"x": 1524,
+			"y": 3970,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Data Locality and Access Patterns]]\n*concept · T2*"
+		},
+		{
+			"id": "t-reading-assembly",
+			"type": "text",
+			"x": 1524,
+			"y": 4042,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Reading Compiler Output]]\n*guide · T2*"
+		},
+		{
+			"id": "t-big-o-meets-hardware",
+			"type": "text",
+			"x": 1524,
+			"y": 4114,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Big-O Meets the Hardware]]\n*concept · T2*"
+		},
+		{
+			"id": "t-cpu-pipeline",
+			"type": "text",
+			"x": 1790,
+			"y": 3754,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The CPU Pipeline and Instruction-Level Parallelism]]\n*mechanism · T3*"
+		},
+		{
+			"id": "t-branch-prediction",
+			"type": "text",
+			"x": 1790,
+			"y": 3826,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Branch Prediction]]\n*mechanism · T3*"
+		},
+		{
+			"id": "t-compiler-optimizations",
+			"type": "text",
+			"x": 1790,
+			"y": 3898,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[What Optimizers Do]]\n*mechanism · T3*"
+		},
+		{
+			"id": "t-data-oriented-design",
+			"type": "text",
+			"x": 1790,
+			"y": 3970,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Data-Oriented Design — AoS vs SoA]]\n*comparison · T3*"
+		},
+		{
+			"id": "t-allocation-cost",
+			"type": "text",
+			"x": 1790,
+			"y": 4042,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The Cost of Dynamic Allocation]]\n*concept · T3*"
+		},
+		{
+			"id": "t-ub-and-optimization",
+			"type": "text",
+			"x": 1790,
+			"y": 4114,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[How UB Enables and Breaks Optimization]]\n*mechanism · T3*"
+		},
+		{
+			"id": "t-simd",
+			"type": "text",
+			"x": 2056,
+			"y": 3754,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[SIMD and Auto-Vectorization]]\n*mechanism · T4*"
+		},
+		{
+			"id": "g-D14",
+			"type": "group",
+			"x": 2456,
+			"y": 3684,
+			"width": 842,
+			"height": 460,
+			"label": "D14 · Tooling & Engineering",
+			"color": "#78716c"
+		},
+		{
+			"id": "m-D14",
+			"type": "text",
+			"x": 2486,
+			"y": 3708,
+			"width": 782,
+			"height": 36,
+			"color": "#78716c",
+			"text": "**[[Map — Tooling & Engineering]]** ○"
+		},
+		{
+			"id": "t-compilers-and-flags",
+			"type": "text",
+			"x": 2486,
+			"y": 3754,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Compilers and Essential Flags]]\n*guide · T1*"
+		},
+		{
+			"id": "t-warnings-as-guardrails",
+			"type": "text",
+			"x": 2486,
+			"y": 3826,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Warnings as Guardrails]]\n*idiom · T1*"
+		},
+		{
+			"id": "t-cmake-fundamentals",
+			"type": "text",
+			"x": 2486,
+			"y": 3898,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[CMake Fundamentals]]\n*guide · T1*"
+		},
+		{
+			"id": "t-debugging",
+			"type": "text",
+			"x": 2486,
+			"y": 3970,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Debugging with a Debugger]]\n*guide · T1*"
+		},
+		{
+			"id": "t-sanitizers",
+			"type": "text",
+			"x": 2752,
+			"y": 3754,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Sanitizers — ASan, UBSan, TSan]]\n*guide · T2*"
+		},
+		{
+			"id": "t-static-analysis",
+			"type": "text",
+			"x": 2752,
+			"y": 3826,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Static Analysis and clang-tidy]]\n*guide · T2*"
+		},
+		{
+			"id": "t-unit-testing",
+			"type": "text",
+			"x": 2752,
+			"y": 3898,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Unit Testing in C++]]\n*guide · T2*"
+		},
+		{
+			"id": "t-core-guidelines",
+			"type": "text",
+			"x": 2752,
+			"y": 3970,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The C++ Core Guidelines]]\n*guide · T2*"
+		},
+		{
+			"id": "t-formatting-tooling",
+			"type": "text",
+			"x": 2752,
+			"y": 4042,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Formatting and Style Tooling]]\n*guide · T2*"
+		},
+		{
+			"id": "t-package-management",
+			"type": "text",
+			"x": 3018,
+			"y": 3754,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Dependencies and Package Managers]]\n*guide · T3*"
+		},
+		{
+			"id": "g-D15",
+			"type": "group",
+			"x": 3418,
+			"y": 3684,
+			"width": 842,
+			"height": 604,
+			"label": "D15 · Design & Idioms",
+			"color": "#84cc16"
+		},
+		{
+			"id": "m-D15",
+			"type": "text",
+			"x": 3448,
+			"y": 3708,
+			"width": 782,
+			"height": 36,
+			"color": "#84cc16",
+			"text": "**[[Map — Design & Idioms]]** ○"
+		},
+		{
+			"id": "t-interface-design",
+			"type": "text",
+			"x": 3448,
+			"y": 3754,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Designing Interfaces — Easy to Use Correctly]]\n*concept · T2*"
+		},
+		{
+			"id": "t-scope-guards",
+			"type": "text",
+			"x": 3448,
+			"y": 3826,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Scope Guards]]\n*idiom · T2*"
+		},
+		{
+			"id": "t-solid-in-cpp",
+			"type": "text",
+			"x": 3448,
+			"y": 3898,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[SOLID in C++]]\n*concept · T2*"
+		},
+		{
+			"id": "t-strategy-pattern",
+			"type": "text",
+			"x": 3448,
+			"y": 3970,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Strategy Pattern]]\n*idiom · T2*"
+		},
+		{
+			"id": "t-observer-pattern",
+			"type": "text",
+			"x": 3448,
+			"y": 4042,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Observer Pattern]]\n*idiom · T2*"
+		},
+		{
+			"id": "t-factory-patterns",
+			"type": "text",
+			"x": 3448,
+			"y": 4114,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Factory Patterns]]\n*idiom · T2*"
+		},
+		{
+			"id": "t-singleton",
+			"type": "text",
+			"x": 3448,
+			"y": 4186,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Singleton — and Why to Avoid It]]\n*idiom · T2*"
+		},
+		{
+			"id": "t-pimpl",
+			"type": "text",
+			"x": 3714,
+			"y": 3754,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Pimpl]]\n*idiom · T3*"
+		},
+		{
+			"id": "t-crtp",
+			"type": "text",
+			"x": 3714,
+			"y": 3826,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[CRTP]]\n*idiom · T3*"
+		},
+		{
+			"id": "t-nvi",
+			"type": "text",
+			"x": 3714,
+			"y": 3898,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Non-Virtual Interface]]\n*idiom · T3*"
+		},
+		{
+			"id": "t-visitor-pattern",
+			"type": "text",
+			"x": 3714,
+			"y": 3970,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Visitor — Classic vs variant]]\n*comparison · T3*"
+		},
+		{
+			"id": "t-type-erasure",
+			"type": "text",
+			"x": 3980,
+			"y": 3754,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Type Erasure]]\n*idiom · T4*"
+		},
+		{
+			"id": "t-policy-based-design",
+			"type": "text",
+			"x": 3980,
+			"y": 3826,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Policy-Based Design]]\n*idiom · T4*"
+		},
+		{
+			"id": "g-D16",
+			"type": "group",
+			"x": 0,
+			"y": 4408,
+			"width": 842,
+			"height": 460,
+			"label": "D16 · Evolution of C++",
+			"color": "#94a3b8"
+		},
+		{
+			"id": "m-D16",
+			"type": "text",
+			"x": 30,
+			"y": 4432,
+			"width": 782,
+			"height": 36,
+			"color": "#94a3b8",
+			"text": "**[[Map — Evolution of C++]]** ○"
+		},
+		{
+			"id": "t-history-of-cpp",
+			"type": "text",
+			"x": 30,
+			"y": 4478,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[A History of C++]]\n*evolution · T1*"
+		},
+		{
+			"id": "t-cpp11",
+			"type": "text",
+			"x": 30,
+			"y": 4550,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[C++11 — The Modern Reboot]]\n*evolution · T1*"
+		},
+		{
+			"id": "t-cpp98-03",
+			"type": "text",
+			"x": 30,
+			"y": 4622,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[C++98 and C++03]]\n*evolution · T1*"
+		},
+		{
+			"id": "t-cpp20",
+			"type": "text",
+			"x": 296,
+			"y": 4478,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[C++20 — The Big Four]]\n*evolution · T2*"
+		},
+		{
+			"id": "t-cpp14",
+			"type": "text",
+			"x": 296,
+			"y": 4550,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[C++14]]\n*evolution · T2*"
+		},
+		{
+			"id": "t-cpp17",
+			"type": "text",
+			"x": 296,
+			"y": 4622,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[C++17]]\n*evolution · T2*"
+		},
+		{
+			"id": "t-cpp23",
+			"type": "text",
+			"x": 296,
+			"y": 4694,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[C++23]]\n*evolution · T2*"
+		},
+		{
+			"id": "t-c-and-cpp",
+			"type": "text",
+			"x": 296,
+			"y": 4766,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[C and C++ — Compatibility and Divergence]]\n*comparison · T2*"
+		},
+		{
+			"id": "t-cpp26",
+			"type": "text",
+			"x": 562,
+			"y": 4478,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[C++26]]\n*evolution · T3*"
+		},
+		{
+			"id": "g-SRC",
+			"type": "group",
+			"x": 962,
+			"y": 4408,
+			"width": 576,
+			"height": 388,
+			"label": "SRC · Sources",
+			"color": "#a16207"
+		},
+		{
+			"id": "t-guide-web-references",
+			"type": "text",
+			"x": 992,
+			"y": 4478,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Guide — cppreference, the Draft Standard and the Core Guidelines]]\n*guide · T1*"
+		},
+		{
+			"id": "t-guide-primer",
+			"type": "text",
+			"x": 992,
+			"y": 4550,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Guide — C++ Primer (5th ed)]]\n*guide · T1*"
+		},
+		{
+			"id": "t-guide-tour",
+			"type": "text",
+			"x": 992,
+			"y": 4622,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Guide — A Tour of C++ (3rd ed)]]\n*guide · T1*"
+		},
+		{
+			"id": "t-guide-ppp",
+			"type": "text",
+			"x": 992,
+			"y": 4694,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Guide — Programming Principles and Practice (3rd ed)]]\n*guide · T1*"
+		},
+		{
+			"id": "t-guide-pikus",
+			"type": "text",
+			"x": 1258,
+			"y": 4478,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Guide — The Art of Writing Efficient Programs]]\n*guide · T2*"
+		},
+		{
+			"id": "g-PRX",
+			"type": "group",
+			"x": 1658,
+			"y": 4408,
+			"width": 842,
+			"height": 172,
+			"label": "PRX · Practice",
+			"color": "#15803d"
+		},
+		{
+			"id": "t-path-course-companion",
+			"type": "text",
+			"x": 1688,
+			"y": 4478,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Path — Course Companion]]\n*path · T1*"
+		},
+		{
+			"id": "t-path-modern-fluency",
+			"type": "text",
+			"x": 1954,
+			"y": 4478,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Path — Modern C++ Fluency]]\n*path · T2*"
+		},
+		{
+			"id": "t-path-systems-performance",
+			"type": "text",
+			"x": 2220,
+			"y": 4478,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Path — Systems & Performance]]\n*path · T3*"
+		}
+	],
+	"edges": [
+		{
+			"id": "e-cpp-design-philosophy-zero-overhead-principle",
+			"fromNode": "t-cpp-design-philosophy",
+			"fromSide": "right",
+			"toNode": "t-zero-overhead-principle",
+			"toSide": "left"
+		},
+		{
+			"id": "e-cpp-design-philosophy-abstraction-layers",
+			"fromNode": "t-cpp-design-philosophy",
+			"fromSide": "right",
+			"toNode": "t-abstraction-layers",
+			"toSide": "left"
+		},
+		{
+			"id": "e-abstract-machine-undefined-behavior",
+			"fromNode": "t-abstract-machine",
+			"fromSide": "right",
+			"toNode": "t-undefined-behavior",
+			"toSide": "left"
+		},
+		{
+			"id": "e-abstract-machine-as-if-rule",
+			"fromNode": "t-abstract-machine",
+			"fromSide": "right",
+			"toNode": "t-as-if-rule",
+			"toSide": "left"
+		},
+		{
+			"id": "e-undefined-behavior-behavior-taxonomy",
+			"fromNode": "t-undefined-behavior",
+			"fromSide": "right",
+			"toNode": "t-behavior-taxonomy",
+			"toSide": "left"
+		},
+		{
+			"id": "e-compilation-pipeline-translation-units",
+			"fromNode": "t-compilation-pipeline",
+			"fromSide": "right",
+			"toNode": "t-translation-units",
+			"toSide": "left"
+		},
+		{
+			"id": "e-compilation-pipeline-preprocessor",
+			"fromNode": "t-compilation-pipeline",
+			"fromSide": "right",
+			"toNode": "t-preprocessor",
+			"toSide": "left"
+		},
+		{
+			"id": "e-preprocessor-headers-and-include-guards",
+			"fromNode": "t-preprocessor",
+			"fromSide": "right",
+			"toNode": "t-headers-and-include-guards",
+			"toSide": "left"
+		},
+		{
+			"id": "e-scope-namespaces",
+			"fromNode": "t-scope",
+			"fromSide": "right",
+			"toNode": "t-namespaces",
+			"toSide": "left"
+		},
+		{
+			"id": "e-translation-units-linkage",
+			"fromNode": "t-translation-units",
+			"fromSide": "right",
+			"toNode": "t-linkage",
+			"toSide": "left"
+		},
+		{
+			"id": "e-linkage-one-definition-rule",
+			"fromNode": "t-linkage",
+			"fromSide": "right",
+			"toNode": "t-one-definition-rule",
+			"toSide": "left"
+		},
+		{
+			"id": "e-compilation-pipeline-the-linker",
+			"fromNode": "t-compilation-pipeline",
+			"fromSide": "right",
+			"toNode": "t-the-linker",
+			"toSide": "left"
+		},
+		{
+			"id": "e-linkage-the-linker",
+			"fromNode": "t-linkage",
+			"fromSide": "right",
+			"toNode": "t-the-linker",
+			"toSide": "left"
+		},
+		{
+			"id": "e-one-definition-rule-inline-beyond-inlining",
+			"fromNode": "t-one-definition-rule",
+			"fromSide": "right",
+			"toNode": "t-inline-beyond-inlining",
+			"toSide": "left"
+		},
+		{
+			"id": "e-the-linker-name-mangling",
+			"fromNode": "t-the-linker",
+			"fromSide": "right",
+			"toNode": "t-name-mangling",
+			"toSide": "left"
+		},
+		{
+			"id": "e-namespaces-name-lookup",
+			"fromNode": "t-namespaces",
+			"fromSide": "right",
+			"toNode": "t-name-lookup",
+			"toSide": "left"
+		},
+		{
+			"id": "e-main-and-program-startup-static-init-order-fiasco",
+			"fromNode": "t-main-and-program-startup",
+			"fromSide": "right",
+			"toNode": "t-static-init-order-fiasco",
+			"toSide": "left"
+		},
+		{
+			"id": "e-the-linker-static-vs-shared-libraries",
+			"fromNode": "t-the-linker",
+			"fromSide": "right",
+			"toNode": "t-static-vs-shared-libraries",
+			"toSide": "left"
+		},
+		{
+			"id": "e-translation-units-modules",
+			"fromNode": "t-translation-units",
+			"fromSide": "right",
+			"toNode": "t-modules",
+			"toSide": "left"
+		},
+		{
+			"id": "e-preprocessor-modules",
+			"fromNode": "t-preprocessor",
+			"fromSide": "right",
+			"toNode": "t-modules",
+			"toSide": "left"
+		},
+		{
+			"id": "e-what-a-type-is-fundamental-types",
+			"fromNode": "t-what-a-type-is",
+			"fromSide": "right",
+			"toNode": "t-fundamental-types",
+			"toSide": "left"
+		},
+		{
+			"id": "e-fundamental-types-integer-representation",
+			"fromNode": "t-fundamental-types",
+			"fromSide": "right",
+			"toNode": "t-integer-representation",
+			"toSide": "left"
+		},
+		{
+			"id": "e-fundamental-types-implicit-conversions",
+			"fromNode": "t-fundamental-types",
+			"fromSide": "right",
+			"toNode": "t-implicit-conversions",
+			"toSide": "left"
+		},
+		{
+			"id": "e-implicit-conversions-narrowing-and-brace-init",
+			"fromNode": "t-implicit-conversions",
+			"fromSide": "right",
+			"toNode": "t-narrowing-and-brace-init",
+			"toSide": "left"
+		},
+		{
+			"id": "e-integer-representation-signed-overflow",
+			"fromNode": "t-integer-representation",
+			"fromSide": "right",
+			"toNode": "t-signed-overflow",
+			"toSide": "left"
+		},
+		{
+			"id": "e-fundamental-types-floating-point",
+			"fromNode": "t-fundamental-types",
+			"fromSide": "right",
+			"toNode": "t-floating-point",
+			"toSide": "left"
+		},
+		{
+			"id": "e-floating-point-floating-point-comparison",
+			"fromNode": "t-floating-point",
+			"fromSide": "right",
+			"toNode": "t-floating-point-comparison",
+			"toSide": "left"
+		},
+		{
+			"id": "e-implicit-conversions-usual-arithmetic-conversions",
+			"fromNode": "t-implicit-conversions",
+			"fromSide": "right",
+			"toNode": "t-usual-arithmetic-conversions",
+			"toSide": "left"
+		},
+		{
+			"id": "e-usual-arithmetic-conversions-signed-unsigned-mixing",
+			"fromNode": "t-usual-arithmetic-conversions",
+			"fromSide": "right",
+			"toNode": "t-signed-unsigned-mixing",
+			"toSide": "left"
+		},
+		{
+			"id": "e-implicit-conversions-named-casts",
+			"fromNode": "t-implicit-conversions",
+			"fromSide": "right",
+			"toNode": "t-named-casts",
+			"toSide": "left"
+		},
+		{
+			"id": "e-const-correctness-top-vs-low-level-const",
+			"fromNode": "t-const-correctness",
+			"fromSide": "right",
+			"toNode": "t-top-vs-low-level-const",
+			"toSide": "left"
+		},
+		{
+			"id": "e-const-correctness-constexpr-values",
+			"fromNode": "t-const-correctness",
+			"fromSide": "right",
+			"toNode": "t-constexpr-values",
+			"toSide": "left"
+		},
+		{
+			"id": "e-fundamental-types-sizeof-and-alignment",
+			"fromNode": "t-fundamental-types",
+			"fromSide": "right",
+			"toNode": "t-sizeof-and-alignment",
+			"toSide": "left"
+		},
+		{
+			"id": "e-auto-type-deduction-decltype",
+			"fromNode": "t-auto-type-deduction",
+			"fromSide": "right",
+			"toNode": "t-decltype",
+			"toSide": "left"
+		},
+		{
+			"id": "e-type-aliases-strong-types",
+			"fromNode": "t-type-aliases",
+			"fromSide": "right",
+			"toNode": "t-strong-types",
+			"toSide": "left"
+		},
+		{
+			"id": "e-anatomy-of-an-expression-operator-precedence",
+			"fromNode": "t-anatomy-of-an-expression",
+			"fromSide": "right",
+			"toNode": "t-operator-precedence",
+			"toSide": "left"
+		},
+		{
+			"id": "e-operator-precedence-evaluation-order",
+			"fromNode": "t-operator-precedence",
+			"fromSide": "right",
+			"toNode": "t-evaluation-order",
+			"toSide": "left"
+		},
+		{
+			"id": "e-control-flow-range-for",
+			"fromNode": "t-control-flow",
+			"fromSide": "right",
+			"toNode": "t-range-for",
+			"toSide": "left"
+		},
+		{
+			"id": "e-object-model-storage-duration",
+			"fromNode": "t-object-model",
+			"fromSide": "right",
+			"toNode": "t-storage-duration",
+			"toSide": "left"
+		},
+		{
+			"id": "e-storage-duration-object-lifetime",
+			"fromNode": "t-storage-duration",
+			"fromSide": "right",
+			"toNode": "t-object-lifetime",
+			"toSide": "left"
+		},
+		{
+			"id": "e-pointers-dynamic-memory",
+			"fromNode": "t-pointers",
+			"fromSide": "right",
+			"toNode": "t-dynamic-memory",
+			"toSide": "left"
+		},
+		{
+			"id": "e-object-lifetime-value-categories",
+			"fromNode": "t-object-lifetime",
+			"fromSide": "right",
+			"toNode": "t-value-categories",
+			"toSide": "left"
+		},
+		{
+			"id": "e-object-lifetime-initialization-forms",
+			"fromNode": "t-object-lifetime",
+			"fromSide": "right",
+			"toNode": "t-initialization-forms",
+			"toSide": "left"
+		},
+		{
+			"id": "e-pointers-pointer-arithmetic",
+			"fromNode": "t-pointers",
+			"fromSide": "right",
+			"toNode": "t-pointer-arithmetic",
+			"toSide": "left"
+		},
+		{
+			"id": "e-pointers-pointers-vs-references",
+			"fromNode": "t-pointers",
+			"fromSide": "right",
+			"toNode": "t-pointers-vs-references",
+			"toSide": "left"
+		},
+		{
+			"id": "e-references-pointers-vs-references",
+			"fromNode": "t-references",
+			"fromSide": "right",
+			"toNode": "t-pointers-vs-references",
+			"toSide": "left"
+		},
+		{
+			"id": "e-object-lifetime-dangling-pointers-and-references",
+			"fromNode": "t-object-lifetime",
+			"fromSide": "right",
+			"toNode": "t-dangling-pointers-and-references",
+			"toSide": "left"
+		},
+		{
+			"id": "e-pointers-dangling-pointers-and-references",
+			"fromNode": "t-pointers",
+			"fromSide": "right",
+			"toNode": "t-dangling-pointers-and-references",
+			"toSide": "left"
+		},
+		{
+			"id": "e-references-dangling-pointers-and-references",
+			"fromNode": "t-references",
+			"fromSide": "right",
+			"toNode": "t-dangling-pointers-and-references",
+			"toSide": "left"
+		},
+		{
+			"id": "e-value-categories-temporaries-and-lifetime-extension",
+			"fromNode": "t-value-categories",
+			"fromSide": "right",
+			"toNode": "t-temporaries-and-lifetime-extension",
+			"toSide": "left"
+		},
+		{
+			"id": "e-object-lifetime-temporaries-and-lifetime-extension",
+			"fromNode": "t-object-lifetime",
+			"fromSide": "right",
+			"toNode": "t-temporaries-and-lifetime-extension",
+			"toSide": "left"
+		},
+		{
+			"id": "e-object-representation-strict-aliasing",
+			"fromNode": "t-object-representation",
+			"fromSide": "right",
+			"toNode": "t-strict-aliasing",
+			"toSide": "left"
+		},
+		{
+			"id": "e-call-stack-recursion",
+			"fromNode": "t-call-stack",
+			"fromSide": "right",
+			"toNode": "t-recursion",
+			"toSide": "left"
+		},
+		{
+			"id": "e-parameter-passing-return-values",
+			"fromNode": "t-parameter-passing",
+			"fromSide": "right",
+			"toNode": "t-return-values",
+			"toSide": "left"
+		},
+		{
+			"id": "e-lambdas-lambda-captures",
+			"fromNode": "t-lambdas",
+			"fromSide": "right",
+			"toNode": "t-lambda-captures",
+			"toSide": "left"
+		},
+		{
+			"id": "e-lambdas-callables-and-std-function",
+			"fromNode": "t-lambdas",
+			"fromSide": "right",
+			"toNode": "t-callables-and-std-function",
+			"toSide": "left"
+		},
+		{
+			"id": "e-function-pointers-callables-and-std-function",
+			"fromNode": "t-function-pointers",
+			"fromSide": "right",
+			"toNode": "t-callables-and-std-function",
+			"toSide": "left"
+		},
+		{
+			"id": "e-function-overloading-overload-resolution",
+			"fromNode": "t-function-overloading",
+			"fromSide": "right",
+			"toNode": "t-overload-resolution",
+			"toSide": "left"
+		},
+		{
+			"id": "e-constructors-member-initializer-lists",
+			"fromNode": "t-constructors",
+			"fromSide": "right",
+			"toNode": "t-member-initializer-lists",
+			"toSide": "left"
+		},
+		{
+			"id": "e-constructors-special-member-functions",
+			"fromNode": "t-constructors",
+			"fromSide": "right",
+			"toNode": "t-special-member-functions",
+			"toSide": "left"
+		},
+		{
+			"id": "e-destructors-special-member-functions",
+			"fromNode": "t-destructors",
+			"fromSide": "right",
+			"toNode": "t-special-member-functions",
+			"toSide": "left"
+		},
+		{
+			"id": "e-special-member-functions-rule-of-zero-three-five",
+			"fromNode": "t-special-member-functions",
+			"fromSide": "right",
+			"toNode": "t-rule-of-zero-three-five",
+			"toSide": "left"
+		},
+		{
+			"id": "e-operator-overloading-comparisons-and-spaceship",
+			"fromNode": "t-operator-overloading",
+			"fromSide": "right",
+			"toNode": "t-comparisons-and-spaceship",
+			"toSide": "left"
+		},
+		{
+			"id": "e-special-member-functions-implicit-member-generation",
+			"fromNode": "t-special-member-functions",
+			"fromSide": "right",
+			"toNode": "t-implicit-member-generation",
+			"toSide": "left"
+		},
+		{
+			"id": "e-ownership-model-unique-ptr",
+			"fromNode": "t-ownership-model",
+			"fromSide": "right",
+			"toNode": "t-unique-ptr",
+			"toSide": "left"
+		},
+		{
+			"id": "e-rvalue-references-move-semantics",
+			"fromNode": "t-rvalue-references",
+			"fromSide": "right",
+			"toNode": "t-move-semantics",
+			"toSide": "left"
+		},
+		{
+			"id": "e-copy-semantics-move-semantics",
+			"fromNode": "t-copy-semantics",
+			"fromSide": "right",
+			"toNode": "t-move-semantics",
+			"toSide": "left"
+		},
+		{
+			"id": "e-move-semantics-move-and-forward",
+			"fromNode": "t-move-semantics",
+			"fromSide": "right",
+			"toNode": "t-move-and-forward",
+			"toSide": "left"
+		},
+		{
+			"id": "e-move-semantics-moved-from-state",
+			"fromNode": "t-move-semantics",
+			"fromSide": "right",
+			"toNode": "t-moved-from-state",
+			"toSide": "left"
+		},
+		{
+			"id": "e-shared-ptr-weak-ptr-and-cycles",
+			"fromNode": "t-shared-ptr",
+			"fromSide": "right",
+			"toNode": "t-weak-ptr-and-cycles",
+			"toSide": "left"
+		},
+		{
+			"id": "e-unique-ptr-choosing-a-smart-pointer",
+			"fromNode": "t-unique-ptr",
+			"fromSide": "right",
+			"toNode": "t-choosing-a-smart-pointer",
+			"toSide": "left"
+		},
+		{
+			"id": "e-shared-ptr-choosing-a-smart-pointer",
+			"fromNode": "t-shared-ptr",
+			"fromSide": "right",
+			"toNode": "t-choosing-a-smart-pointer",
+			"toSide": "left"
+		},
+		{
+			"id": "e-raii-exception-safety-guarantees",
+			"fromNode": "t-raii",
+			"fromSide": "right",
+			"toNode": "t-exception-safety-guarantees",
+			"toSide": "left"
+		},
+		{
+			"id": "e-move-and-forward-forwarding-references",
+			"fromNode": "t-move-and-forward",
+			"fromSide": "right",
+			"toNode": "t-forwarding-references",
+			"toSide": "left"
+		},
+		{
+			"id": "e-move-semantics-noexcept-and-move",
+			"fromNode": "t-move-semantics",
+			"fromSide": "right",
+			"toNode": "t-noexcept-and-move",
+			"toSide": "left"
+		},
+		{
+			"id": "e-virtual-functions-virtual-dispatch",
+			"fromNode": "t-virtual-functions",
+			"fromSide": "right",
+			"toNode": "t-virtual-dispatch",
+			"toSide": "left"
+		},
+		{
+			"id": "e-virtual-dispatch-static-vs-dynamic-polymorphism",
+			"fromNode": "t-virtual-dispatch",
+			"fromSide": "right",
+			"toNode": "t-static-vs-dynamic-polymorphism",
+			"toSide": "left"
+		},
+		{
+			"id": "e-why-templates-function-templates",
+			"fromNode": "t-why-templates",
+			"fromSide": "right",
+			"toNode": "t-function-templates",
+			"toSide": "left"
+		},
+		{
+			"id": "e-why-templates-class-templates",
+			"fromNode": "t-why-templates",
+			"fromSide": "right",
+			"toNode": "t-class-templates",
+			"toSide": "left"
+		},
+		{
+			"id": "e-function-templates-template-instantiation",
+			"fromNode": "t-function-templates",
+			"fromSide": "right",
+			"toNode": "t-template-instantiation",
+			"toSide": "left"
+		},
+		{
+			"id": "e-template-instantiation-templates-in-headers",
+			"fromNode": "t-template-instantiation",
+			"fromSide": "right",
+			"toNode": "t-templates-in-headers",
+			"toSide": "left"
+		},
+		{
+			"id": "e-function-templates-template-argument-deduction",
+			"fromNode": "t-function-templates",
+			"fromSide": "right",
+			"toNode": "t-template-argument-deduction",
+			"toSide": "left"
+		},
+		{
+			"id": "e-std-vector-vector-growth",
+			"fromNode": "t-std-vector",
+			"fromSide": "right",
+			"toNode": "t-vector-growth",
+			"toSide": "left"
+		},
+		{
+			"id": "e-iterators-iterator-invalidation",
+			"fromNode": "t-iterators",
+			"fromSide": "right",
+			"toNode": "t-iterator-invalidation",
+			"toSide": "left"
+		},
+		{
+			"id": "e-vector-growth-iterator-invalidation",
+			"fromNode": "t-vector-growth",
+			"fromSide": "right",
+			"toNode": "t-iterator-invalidation",
+			"toSide": "left"
+		},
+		{
+			"id": "e-std-string-string-view",
+			"fromNode": "t-std-string",
+			"fromSide": "right",
+			"toNode": "t-string-view",
+			"toSide": "left"
+		},
+		{
+			"id": "e-exceptions-stack-unwinding",
+			"fromNode": "t-exceptions",
+			"fromSide": "right",
+			"toNode": "t-stack-unwinding",
+			"toSide": "left"
+		},
+		{
+			"id": "e-atomics-memory-orderings",
+			"fromNode": "t-atomics",
+			"fromSide": "right",
+			"toNode": "t-memory-orderings",
+			"toSide": "left"
+		},
+		{
+			"id": "e-memory-model-memory-orderings",
+			"fromNode": "t-memory-model",
+			"fromSide": "right",
+			"toNode": "t-memory-orderings",
+			"toSide": "left"
+		},
+		{
+			"id": "e-compiler-optimizations-ub-and-optimization",
+			"fromNode": "t-compiler-optimizations",
+			"fromSide": "right",
+			"toNode": "t-ub-and-optimization",
+			"toSide": "left"
+		}
+	]
+}

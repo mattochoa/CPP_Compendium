@@ -1,0 +1,18 @@
+filters:
+  and:
+    - file.inFolder("01 Maps")
+    - 'type == "map"'
+properties:
+  domain:
+    displayName: Domain
+  status:
+    displayName: Status
+views:
+  - type: table
+    name: Domain Maps
+    order:
+      - file.name
+      - domain
+      - status
+      - score
+      - updated
