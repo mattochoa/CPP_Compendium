@@ -246,6 +246,7 @@ The mechanism explains a whole family of C++ rules and failures:
 
 - **Prerequisites:** [[Virtual Functions]] (the behavior) · [[Inheritance]] · [[Pointers]].
 - **Explains:** [[Virtual Destructors]] · [[Object Slicing]] · [[Virtual Calls in Constructors and Destructors]] · [[RTTI and dynamic_cast]].
+- **Access path:** [[Pointers vs References]] — this mechanism fires identically through a `Base&` and a `Base*` bound to the same object; only a by-value copy loses the dynamic type.
 - **Extends to:** [[Multiple and Virtual Inheritance]] (thunks, several vptrs) · [[Type Erasure]] (hand-built vtables).
 - **Alternatives:** [[Static vs Dynamic Polymorphism]] · [[variant and visit]] · [[CRTP]].
 - **Machine level:** [[Branch Prediction]] · [[What Optimizers Do]].

@@ -58,7 +58,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 320 | 24 | 0 | 5 | 0 | 349 | 11 | 1 |
+| 320 | 24 | 0 | 5 | 0 | 349 | 12 | 1 |
 
 `██░░░░░░░░░░░░░░░░░░` **8%** of the Atlas written · last build 2026-09-23
 <!-- cc:end -->
@@ -75,6 +75,8 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Pointers vs References]] · *comparison* · updated 2026-09-23
+- ● [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-23
 - ◐ [[Map — Generic Programming]] · *map* · updated 2026-09-23
 - ◐ [[Map — Classes & Encapsulation]] · *map* · updated 2026-09-23
 - ◐ [[Map — Functions]] · *map* · updated 2026-09-23
@@ -83,8 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Map — Types & Values]] · *map* · updated 2026-09-23
 - ◐ [[Header — cmath]] · *header* · updated 2026-09-23
 - ◐ [[Header — cctype]] · *header* · updated 2026-09-23
-- ◐ [[Map — Standard Headers]] · *map* · updated 2026-09-23
-- ◐ [[Header — conio (non-standard)]] · *header* · updated 2026-09-23
 <!-- cc:end -->
 
 ## Start here

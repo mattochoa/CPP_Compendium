@@ -19,6 +19,8 @@ related:
 - "[[Dangling Pointers and References]]"
 - "[[optional]]"
 - "[[Forwarding References and Reference Collapsing]]"
+- "[[Virtual Dispatch — vptr and vtable]]"
+- "[[Object Slicing]]"
 practice:
 - 6
 - 11
@@ -100,6 +102,14 @@ sum_ref(Big const&):                sum_ptr(Big const*):
 *(GCC, Compiler Explorer, `-O2 -std=c++20`; the two function bodies are byte-for-byte identical.)*
 
 Both parameters arrive in `rdi` as one 8-byte address, and neither prologue tests it for null: the compiler isn't allowed to doubt what the reference's contract already promised. The same equivalence shows up in layout. Whether a reference needs storage at all is **unspecified** (`[dcl.ref]` ¶4) — a local reference is often optimized away entirely — but as a *member*, the compiler must store the alias somewhere, and it costs precisely a pointer's worth: `sizeof(struct{int& r;})` equals `sizeof(struct{int* p;})` (8 bytes on a 64-bit ABI), because "a non-static data member of reference type usually increases the size of the class by the amount necessary to store a memory address" (cppreference, *Reference declaration*). Same bits, different rules about what you're allowed to do with them.
+
+### Corner Cases: same address, sharper edges
+
+**Dynamic dispatch doesn't care which one you used.** A common misreading of "pointers enable polymorphism" is that only a pointer can reach a derived class's override. That can't be right: a virtual call dispatches on the object's **dynamic type**, and a reference tracks the dynamic type exactly like a pointer does — only a **by-value** parameter loses it, by copying just the base slice ([[Object Slicing]]). cppreference's own worked example for the `virtual` specifier calls through both a `Base&` and a `Base*` bound to the same `Derived` object and gets the derived override either way (*virtual function specifier* §Explanation). The Primer's own definition of polymorphism names both access paths without favoring either: type-specific behavior chosen by the object's dynamic type, reached through a reference *or* a pointer (Primer §15.3, p. 605; *Defined Terms*, p. 650) — the mechanism could just as well have been called "reference dispatch" as "pointer dispatch". See [[Virtual Dispatch — vptr and vtable]] for what either access path actually triggers.
+
+**Comparing references compares values, not identity.** `p1 == p2` on two pointers asks "same address?" for free, because a pointer *is* an address. A reference has no `operator==` of its own: `r1 == r2` calls the *referent* type's `operator==` (or fails to compile if there isn't one), because a reference reads exactly like the object it names. To ask "do `r1` and `r2` name the same object?", compare addresses explicitly — `&r1 == &r2` — which is the "is an object" row of *At a Glance* showing up at a call site instead of in a table.
+
+**Pointer ordering across unrelated objects is *unspecified*, not undefined.** `p < q` for pointers into the same array is well-defined: the higher subscript is required to compare greater (`[expr.rel]` ¶4.1). For pointers into unrelated objects — the common assumption is that this is UB — the current working draft says the result is merely **unspecified**: some unstated but non-catastrophic answer, not licence for anything to happen (`[expr.rel]` ¶5). That is exactly why ordered containers of raw pointers are still well-defined: `std::less<T*>` is specified to follow an "implementation-defined strict total order over pointers" that stays consistent for the program's run (cppreference, *std::less*; guaranteed since the LWG 2562 defect report), so `std::set<T*>` and `std::map<T*, ...>` don't rely on `<` meaning anything for `p` and `q` on its own.
 
 ## Decision Guide
 
@@ -203,11 +213,43 @@ int main() {
 1. `target` is fixed for the object's whole life, exactly like any other reference.
 2. Copy-assigning `x` from `y` would have to reseat `target` (impossible) or write through it into `a` (silently changing an unrelated object, and not what "copy `x`" should mean). The compiler picks neither: it deletes `Binder::operator=` instead of guessing.
 
+**4 · A reference dispatches virtually too — it isn't a pointer-only power**
+
+```cpp
+#include <iostream>
+
+struct Shape {
+    virtual double area() const { return 0.0; }
+    virtual ~Shape() = default;
+};
+
+struct Circle : Shape {
+    double r;
+    explicit Circle(double r) : r(r) {}
+    double area() const override { return 3.14159 * r * r; }   // ①
+};
+
+double describe(const Shape& s) { return s.area(); }             // ② reference parameter
+
+int main() {
+    Circle c{2.0};
+    Shape& sref = c;    // ③ Shape&, bound to a Circle
+    Shape* sptr = &c;   // ④ Shape*, same object
+    std::cout << sref.area() << ' ' << sptr->area() << ' ' << describe(c) << '\n';
+}
+// expect: 12.5664 12.5664 12.5664
+```
+1. The override that both access paths must reach.
+2. `describe` never sees a pointer, yet its call is exactly as virtual as one written with `const Shape*`.
+3. A reference to the base, bound to a derived object: the dynamic type is `Circle`, not `Shape`.
+4. Same object, same dynamic type, same dispatch — the two access paths are interchangeable for this purpose. What *would* lose the dynamic type is `Shape s = c;` (a by-value copy: see [[Object Slicing]]).
+
 ## Connections
 
 - **Prerequisites:** [[Pointers]] · [[References]].
 - **Deeper:** [[Parameter Passing — Value, Reference, Pointer]] · [[Owning vs Observing Pointers]] · [[Top-Level vs Low-Level const]] · [[nullptr and Null Pointers]] · [[Forwarding References and Reference Collapsing]] (what a "reference to a reference" collapses into).
-- **Hazards shared by both:** [[Dangling Pointers and References]].
+- **Hazards shared by both:** [[Dangling Pointers and References]] · [[Object Slicing]] (loses the dynamic type that both a reference and a pointer preserve).
+- **Same dispatch, either access path:** [[Virtual Dispatch — vptr and vtable]].
 - **Alternatives:** [[optional]] · [[span]] (pointer + length) · [[unique_ptr]] (ownership).
 - **Domain:** [[Map — Objects, Memory & Lifetime]].
 - **Practice:** *Continuum #6 Function Library & Header Refactor* (choose each parameter's form deliberately) · *#11 Pointer & Array Internals Lab* · *#13 Linked List Library*.
@@ -223,11 +265,17 @@ int main() {
 > [!quiz]- A function signature is `void attach(Widget* parent)`. What three questions does it leave the reader asking that `void attach(Widget& parent)` would not?
 > Can `parent` be null (and what happens then)? Does `attach` take ownership (will it `delete` it)? Might `attach` store it and re-aim it later? A reference answers the first two by type: never null, never owning.
 
+> [!quiz]- `void render(const Shape& s) { std::cout << s.area(); }` is called as `render(circle)`. Does it call `Shape::area` or `Circle::area`, and would the answer differ if the parameter were `const Shape*`?
+> `Circle::area`, in both cases. Dispatch is decided by the object's dynamic type, which a reference preserves exactly as a pointer does; changing the parameter to `const Shape*` (called as `render(&circle)`) changes nothing about which override runs. Only a **by-value** `const Shape s` parameter would lose it, by slicing the object down to its `Shape` part.
+
+> [!quiz]- Is `p < q` for two `int*` pointing into unrelated arrays undefined behavior?
+> No — the Standard calls the result *unspecified* (`[expr.rel]` ¶5): no diagnostic is required, but nothing catastrophic is licensed either, unlike a true UB construct. `std::less<int*>` gives a consistent, implementation-defined total order over any pointers of that type, which is what ordered containers such as `std::set<int*>` actually rely on.
+
 ## Sources
 
-- Primer §2.3.1 "References" (p. 50) and §2.3.2 "Pointers" (p. 52): binding rules and pointer states. Primer §3.5 "Arrays" (p. 120): the one-past-the-end arithmetic limit. Primer §13.1 "Copy, Assign, and Destroy" (p. 508–509): why a reference (or `const`) member deletes copy assignment.
+- Primer §2.3.1 "References" (p. 50) and §2.3.2 "Pointers" (p. 52): binding rules and pointer states. Primer §3.5 "Arrays" (p. 120): the one-past-the-end arithmetic limit. Primer §13.1 "Copy, Assign, and Destroy" (p. 508–509): why a reference (or `const`) member deletes copy assignment. Primer §15.3 "Virtual Functions" (p. 605) and *Defined Terms* (p. 650): polymorphism defined by the dynamic type of a reference *or* pointer.
 - Tour §1.7 "Pointers, Arrays, and References" (p. 11): the designer's short comparison.
 - PPP §16.2 "Pointers and references" (ch. 16 "Arrays, Pointers, and References"): pointer vs reference from first principles.
-- cppreference, *Reference declaration* (incl. §*Reference collapsing*, §*Dangling references*): https://en.cppreference.com/w/cpp/language/reference · *Pointer declaration*: https://en.cppreference.com/w/cpp/language/pointer · *Copy assignment operator*: https://en.cppreference.com/w/cpp/language/copy_assignment
-- Draft standard `[dcl.ref]` ¶4–7 (storage, no references to references, collapsing): https://eel.is/c++draft/dcl.ref · `[class.copy.assign]` ¶7.2 (deleted copy assignment): https://eel.is/c++draft/class.copy.assign
+- cppreference, *Reference declaration* (incl. §*Reference collapsing*, §*Dangling references*): https://en.cppreference.com/w/cpp/language/reference · *Pointer declaration*: https://en.cppreference.com/w/cpp/language/pointer · *Copy assignment operator*: https://en.cppreference.com/w/cpp/language/copy_assignment · *`virtual` function specifier* §Explanation (dispatch through `Base&` and `Base*` alike): https://en.cppreference.com/w/cpp/language/virtual · *`std::less`* (implementation-defined strict total order over pointers): https://en.cppreference.com/w/cpp/utility/functional/less
+- Draft standard `[dcl.ref]` ¶4–7 (storage, no references to references, collapsing): https://eel.is/c++draft/dcl.ref · `[class.copy.assign]` ¶7.2 (deleted copy assignment): https://eel.is/c++draft/class.copy.assign · `[expr.rel]` ¶4–5 (same-array pointer ordering is defined; unrelated-object ordering is unspecified, not undefined): https://eel.is/c++draft/expr.rel
 - C++ Core Guidelines F.60, F.17, R.3: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
