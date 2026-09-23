@@ -8,16 +8,16 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 316 |
+| ○ planned | 315 |
 | ◌ stub | 0 |
-| ◐ draft | 29 |
+| ◐ draft | 30 |
 | ⟲ revise | 0 |
 | ● reviewed | 5 |
 | ★ evergreen | 0 |
 
 **Total topics:** 350
 
-- Wave 0: `█████████████░░░░░░░` 12/18
+- Wave 0: `██████████████░░░░░░` 13/18
 - Wave 1: `██░░░░░░░░░░░░░░░░░░` 4/51
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 11/123
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 7/123
@@ -307,11 +307,11 @@ tags: [system/generated]
 
 ## D11 · Errors & Contracts
 
-*What happens when an operation cannot do what it promised?*  `░░░░░░░░░░` 0/11
+*What happens when an operation cannot do what it promised?*  `█░░░░░░░░░` 1/11
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ○ | [[Map — Errors & Contracts]] | map | 1 | 0 |  |
+| ◐ | [[Map — Errors & Contracts]] | map | 1 | 0 |  |
 | ○ | [[Error Handling Strategies Compared]] | comparison | 1 | 1 |  |
 | ○ | [[Exceptions]] | concept | 1 | 1 |  |
 | ○ | [[assert and static_assert]] | concept | 1 | 2 |  |

@@ -253,7 +253,7 @@ int main() {
 - **Prerequisites:** [[Object Lifetime]] (when destructors run) · [[Destructors]].
 - **Builds on it:** [[unique_ptr]] · [[Rule of Zero, Three and Five]] · [[Exception Safety Guarantees]] · [[Stack Unwinding]] · [[Scope Guards]] · [[Ownership — Who Releases What]].
 - **Prevents:** [[Memory Leaks]] · [[Double Free and Mismatched new-delete]] · [[Dangling Pointers and References]] (partly: it fixes *who* releases, not *who still looks* — for that, see how [[Pointers vs References]] separates owning from observing access).
-- **Domain:** [[Map — Ownership & Move Semantics]].
+- **Domain:** [[Map — Ownership & Move Semantics]] · see also [[Map — Errors & Contracts]] for the channels (exceptions, error codes, `expected`) that RAII is built to survive.
 - **Practice:** *Continuum #25 Smart Pointer Refactor Lab* (replace every `delete`) · *#26 Custom Exception Hierarchy & Robust CSV Parser* (RAII under exceptions) · *#31 TCP Chat Client/Server* (RAII for sockets).
 
 ## Check Yourself

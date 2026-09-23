@@ -1,6 +1,6 @@
 {
-  "runs": 15,
-  "builder_runs": 14,
+  "runs": 16,
+  "builder_runs": 15,
   "editor_runs": 1,
   "history": [
     {
@@ -220,15 +220,25 @@
       "code": "0/0",
       "commit": "✓",
       "summary": "Wrote Map — Standard Library (wave 0 domain map): derives the library from first principles (shared, zero-overhead answer to containers/algorithms/IO so programs interoperate), names abstraction-vs-control and compatibility-vs-evolution as the domain's tensions, draws a 13-node concept map hubbed on STL Architecture and Iterators, and routes through vector -> Iterators -> Algorithms -> associative/hash containers -> IO streams -> views/ranges -> vocabulary types. Already linked in from Map — Generic Programming, Map — Expressions & Control and Map — Standard Headers."
+    },
+    {
+      "when": "2026-09-23T19:18:49Z",
+      "run": 15,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "map-d11",
+        "raii",
+        "map-d00"
+      ],
+      "lint": "100–100",
+      "code": "0/0 3/3 0/0",
+      "commit": "✓",
+      "summary": "Wrote Map — Errors & Contracts (D11, wave 0): contracts as the domain hub, fanning into exceptions/error_code/expected, assertions, noexcept, stack unwinding, exception hierarchies, and the cost of exceptions. Woven into RAII and Map — What C++ Is."
     }
   ],
-  "current": {
-    "role": "builder",
-    "run": 14,
-    "mode": "AUTHOR",
-    "started": "2026-09-23T17:36:41Z"
-  },
+  "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-23T17:36:34Z"
+  "last_builder": "2026-09-23T19:18:49Z"
 }
