@@ -25,7 +25,7 @@ tags: [system/generated, practice]
 | # | Project | Concepts it exercises |
 |---|---|---|
 | 06 | Function Library & Header Refactor | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Functions]], ○ [[Headers and Include Guards]], ○ [[Declarations vs Definitions]], ○ [[References]], ◐ [[Pointers vs References]], ○ [[Parameter Passing — Value, Reference, Pointer]], ○ [[Function Overloading]], ○ [[assert and static_assert]] |
-| 07 | Word & Text Analyzer | ○ [[vector]], ○ [[string]], ○ [[Ordered Associative Containers — map and set]], ○ [[IO Streams Architecture]], ○ [[File IO]] |
+| 07 | Word & Text Analyzer | ◐ [[Map — Standard Library]], ○ [[vector]], ○ [[string]], ○ [[Ordered Associative Containers — map and set]], ○ [[IO Streams Architecture]], ○ [[File IO]] |
 | 08 | Matrix Operations Toolkit | ○ [[Preconditions, Postconditions and Contracts]] |
 | 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ◐ [[Map — Functions]], ○ [[The Call Stack and Stack Frames]], ○ [[Recursion]] |
 | 10 | Caesar & Vigenere Cipher Toolkit | ◐ [[Map — Types & Values]], ○ [[Bitwise Operations and the bit Header]], ○ [[File IO]] |
@@ -35,7 +35,7 @@ tags: [system/generated, practice]
 | # | Project | Concepts it exercises |
 |---|---|---|
 | 11 | Pointer & Array Internals Lab | ● [[Map — Objects, Memory & Lifetime]], ○ [[Process Memory Layout — Stack, Heap, Static]], ○ [[Pointers]], ○ [[Pointer Arithmetic and Arrays]], ◐ [[Pointers vs References]], ○ [[Built-in Arrays and Array-to-Pointer Decay]], ● [[Dangling Pointers and References]], ○ [[Sanitizers — ASan, UBSan, TSan]] |
-| 12 | Build-Your-Own Dynamic Array | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ○ [[Dynamic Memory — new and delete]], ○ [[Rule of Zero, Three and Five]], ○ [[Copy Semantics — Deep vs Shallow Copy]], ○ [[vector]], ○ [[How vector Grows — Capacity and Amortized Cost]] |
+| 12 | Build-Your-Own Dynamic Array | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Standard Library]], ○ [[Dynamic Memory — new and delete]], ○ [[Rule of Zero, Three and Five]], ○ [[Copy Semantics — Deep vs Shallow Copy]], ○ [[vector]], ○ [[How vector Grows — Capacity and Amortized Cost]] |
 | 13 | Singly & Doubly Linked List Library | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Pointers vs References]], ● [[Dangling Pointers and References]] |
 | 14 | Stack & Queue Library + Applications | ○ [[Container Adaptors — stack, queue, priority_queue]] |
 | 15 | Binary Search Tree Explorer | ○ [[Recursion]] |
@@ -56,7 +56,7 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 23 | STL Container & Algorithm Playground | ◐ [[Map — Functions]], ○ [[Lambda Expressions]], ○ [[STL Architecture — Containers, Iterators, Algorithms]], ○ [[The Algorithms Library]] |
+| 23 | STL Container & Algorithm Playground | ◐ [[Map — Functions]], ◐ [[Map — Standard Library]], ○ [[Lambda Expressions]], ○ [[STL Architecture — Containers, Iterators, Algorithms]], ○ [[The Algorithms Library]] |
 | 24 | Generic Data Structure Library | ◐ [[Map — Generic Programming]], ○ [[Function Templates]], ○ [[Class Templates]], ○ [[Concepts and Constraints]], ○ [[Full and Partial Specialization]] |
 | 25 | Smart Pointer Refactor Lab | ◐ [[Map — Ownership & Move Semantics]], ● [[Value Categories]], ● [[Dangling Pointers and References]], ● [[RAII]], ○ [[unique_ptr]], ○ [[shared_ptr and Reference Counting]], ○ [[weak_ptr and Reference Cycles]] |
 | 26 | Custom Exception Hierarchy & Robust CSV Parser | ◐ [[Map — Ownership & Move Semantics]], ● [[RAII]], ○ [[Exception Safety Guarantees]], ○ [[Exceptions]], ○ [[Designing Exception Hierarchies]] |
