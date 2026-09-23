@@ -1,6 +1,6 @@
 {
-  "runs": 3,
-  "builder_runs": 2,
+  "runs": 4,
+  "builder_runs": 3,
   "editor_runs": 1,
   "history": [
     {
@@ -60,10 +60,23 @@
       "code": "0/0",
       "commit": "✓",
       "summary": "Wrote Map — Ownership & Move Semantics (D07): domain question, singular/shared-ownership tension, 14-node concept map, 14-step learning route, 9 key ideas; woven from Map D04 and RAII."
+    },
+    {
+      "when": "2026-09-23T10:17:38Z",
+      "run": 3,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "map-d08"
+      ],
+      "lint": "100–100",
+      "code": "0/0",
+      "commit": "✓",
+      "summary": "Wrote Map — Inheritance & Polymorphism (D08, wave 0): derives the domain's run-time-dispatch question from first principles, concept map hubbed on Virtual Dispatch, 14-step Learning Route and 8 Key Ideas covering is-a, vptr resolution, slicing, virtual destructors, ctor/dtor dispatch, name hiding, and the static/dynamic polymorphism contrast."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T07:21:03Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-23T09:16:47Z"
+  "last_builder": "2026-09-23T10:17:38Z"
 }
