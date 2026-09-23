@@ -9,8 +9,8 @@ health: 97
 # Daily Brief · 2026-09-23
 
 > [!essence] At a glance
-> **Health 97/100** (was 94) · coverage 6/291 (2%) · avg rubric 19.5/21 · avg lint 100 · orphans 0 · code 20/20 PASS
-> The six exemplar notes all pass (19–20/21) after 11 small fixes. Two tooling bugs were fixed: one made every code check fail, the other hid notes with "—" in their titles from the audit. The Builder hasn't produced a note yet, and Phase 1 (Domain Maps) starts with its next run.
+> **Health 97/100** (was 94) · coverage 6/291 (2%) · avg rubric 19.5/21 · avg lint 100 · orphans 0 · code 16/16 PASS
+> The six exemplar notes all pass (19–20/21) after 13 small fixes. Two tooling bugs were fixed: one made every code check fail, the other hid notes with "—" in their titles from the audit. The Builder hasn't produced a note yet, and Phase 1 (Domain Maps) starts with its next run.
 
 ## Yesterday's output
 - Builder runs: **0**. The Ledger holds only the owner's setup run. The 08:26 UTC Builder run overlapped this audit's lock.
@@ -27,15 +27,15 @@ health: 97
 | [[Map — Objects, Memory & Lifetime]] | 19 | pass | Correct; sources verified. Added the inbound vptr link. |
 
 **Deep reviews (every claim verified):** [[Value Categories]], [[RAII]], [[Dangling Pointers and References]] (checked against eel.is `[expr.call]`, cppreference, book indexes and Compiler Explorer).
-**Fixed by Editor:** 11 surgical edits across 5 notes, and 3 system docs (Style Guide citation examples were wrong: `Primer 13.6.2` starts on p. 534, and Pikus ch. 4 starts on p. 113, not p. 98).
+**Fixed by Editor:** 13 surgical edits across 5 notes, and 3 system docs (Style Guide citation examples were wrong: `Primer 13.6.2` starts on p. 534, and Pikus ch. 4 starts on p. 113, not p. 98).
 
 ## Health and trends
 - Health 94 → **97** (orphan removed). Lint 100 on every note. Copy-guard clean.
-- Code: 5/17 → **20/20 PASS**. Cause: the local MinGW g++ has no ASan/UBSan libraries, so every linked block failed. `snippets.py` now probes and falls back to UBSan trap mode.
+- Code: 2/13 → **16/16 PASS**. Cause: the local MinGW g++ has no ASan/UBSan libraries, so every linked block failed. `snippets.py` now probes and falls back to UBSan trap mode.
 - Audit scope: 4 → **6 notes**. Cause: git octal-escaped the "—" in paths, so `worksheet` skipped those notes. Fixed with `core.quotepath=false` plus UTF-8 decoding in `gitops.py`.
 
 ## Top risks
-1. **Weaker UB detection on Windows.** Without ASan, `// cc: ub` demos of use-after-free can no longer be *observed* failing. This matters because 3 of 17 blocks are UB demos. Mitigation: Directive 5. Real fix: an owner decision (below).
+1. **Weaker UB detection on Windows.** Without ASan, `// cc: ub` demos of use-after-free can no longer be *observed* failing. This matters because 3 of 16 blocks are UB demos. Mitigation: Directive 5. Real fix: an owner decision (below).
 2. **Builder hasn't run yet.** If the 09:12 UTC run doesn't produce a Map, Phase 1 slips.
 3. **Citation drift.** 4 of 6 exemplars had imprecise locations, and the house example taught the error. The Style Guide is corrected and the issue is on the Watchlist.
 
