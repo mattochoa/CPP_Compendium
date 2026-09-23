@@ -16,6 +16,7 @@ Run from anywhere:  python3 tools/cc.py <command> [...]
     code <targets>                       compile/run every C++ block in notes
     asm <file.cpp> [--flags "..."]       assembly via Compiler Explorer
     build                                regenerate derived pages, canvas, graph colours
+    export-pdf [targets] [--out DIR]     PDF of notes (default: every written Header Card) via Edge/Chrome headless
 
   Sources
     src build [--book K] [--force]       extract book text + TOC (resumable)
@@ -121,6 +122,21 @@ def cmd_code(a):
     return rc
 
 
+def cmd_export(a):
+    from compendium import export
+    if a.targets:
+        notes = resolve_targets(a.targets)
+    else:   # default: every written Header Card
+        notes = [Note(t.note.path) for t in registry.load_topics() if t.type == "header" and t.status in registry.DONE]
+    out = Path(a.out) if a.out else None
+    rc = 0
+    for n in notes:
+        msg = export.export(n, out)
+        print(msg)
+        rc |= msg.startswith(("FAILED", "timeout"))
+    return rc
+
+
 def cmd_asm(a):
     code = sys.stdin.read() if a.file == "-" else Path(a.file).read_text(encoding="utf-8")
     print(snippets.asm(code, a.flags, a.compiler))
@@ -222,6 +238,7 @@ def main(argv=None):
     p = sp.add_parser("asm"); p.add_argument("file"); p.add_argument("--flags", default="-O2 -std=c++20")
     p.add_argument("--compiler")
     sp.add_parser("build")
+    p = sp.add_parser("export-pdf"); p.add_argument("targets", nargs="*"); p.add_argument("--out")
 
     p = sp.add_parser("src"); ss = p.add_subparsers(dest="sub", required=True)
     q = ss.add_parser("build"); q.add_argument("--book"); q.add_argument("--force", action="store_true")
@@ -264,7 +281,7 @@ def main(argv=None):
         build.build_all()
         return 0
     handler = {"status": cmd_status, "next": cmd_next, "check": cmd_check, "code": cmd_code, "asm": cmd_asm,
-               "src": cmd_src, "registry": cmd_registry, "audit": cmd_audit}[a.cmd]
+               "src": cmd_src, "registry": cmd_registry, "audit": cmd_audit, "export-pdf": cmd_export}[a.cmd]
     return handler(a) or 0
 
 

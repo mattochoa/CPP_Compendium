@@ -1,17 +1,47 @@
-# CMATH_REFERENCE
-
-## Core Definition
-**`<cmath>`** is the C++ wrapper for C's `<math.h>`: floating-point mathematics — trigonometry, exponentials, logarithms, power, rounding, classification, and (C++17) special functions. Names live in namespace `std` and are overloaded for `float`, `double` and `long double`; C++11 adds integral overloads that promote to `double`.
-
-**Tags**: #cpp #cmath #math #trigonometry #floating-point #numeric #sqrt #pow
-
+---
+id: hdr-cmath
+title: Header — cmath
+aliases:
+- <cmath>
+- math.h
+- <numbers>
+type: header
+domain: HDR
+tier: 1
+status: draft
+standard: C++98
+related:
+- "[[Floating-Point Representation (IEEE 754)]]"
+- "[[Comparing Floating-Point Values]]"
+- "[[Implicit Conversions and Promotions]]"
+- "[[Signed Integer Overflow]]"
+tags:
+- type/header
+- domain/hdr
+- tier/1
+- header/cmath
+- tension/safety-vs-performance
+- tension/compatibility-vs-evolution
+created: '2026-09-23'
+updated: '2026-09-23'
+header: <cmath>
+origin: owner reference sheet CMATH_REFERENCE (2026-09)
 ---
 
-## COMPLETE CMATH QUICK REFERENCE
+# Header — cmath
+
+> [!essence]
+> **`<cmath>`** is the C++ wrapper for C's `<math.h>`: floating-point mathematics — trigonometry, exponentials, logarithms, power, rounding, classification, and (C++17) special functions. Names live in namespace `std` and are overloaded for `float`, `double` and `long double`; C++11 adds integral overloads that promote to `double`.
+
+> [!standard] Versions
+> C++11 (classification, cbrt, hypot, round) / C++17 (special functions, 3-arg hypot) / C++20 (`lerp`, `<numbers>`)
+
+## Quick Reference
 
 ### FUNCTIONS — Target | Operation | Output
 
 ```cpp
+// cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // BASIC OPERATIONS
 // ═══════════════════════════════════════════════════════════════════════════
@@ -161,6 +191,7 @@ FP_FAST_FMA / FP_FAST_FMAF        // Defined if fma is hardware-fast
 ### MATHEMATICAL CONSTANTS — `<numbers>` (C++20)
 
 ```cpp
+// cc: fragment
 #include <numbers>
 std::numbers::e            // 2.718281828459045   Euler's number
 std::numbers::log2e        // 1.442695040888963   log₂(e)
@@ -185,6 +216,7 @@ std::numbers::phi          // 1.618033988749895   Golden ratio φ
 ### NUMERIC LIMITS — `<limits>`
 
 ```cpp
+// cc: fragment
 #include <limits>
 std::numeric_limits<double>::max()               // Largest finite value
 std::numeric_limits<double>::min()               // Smallest POSITIVE normal value (not the most negative!)
@@ -198,9 +230,7 @@ std::numeric_limits<double>::max_digits10         // Digits for exact round-trip
 std::numeric_limits<double>::is_iec559            // True if IEEE 754 compliant
 ```
 
----
-
-## COMMON PATTERNS & EXAMPLES
+## Patterns
 
 ### Degrees and Radians
 ```cpp
@@ -242,20 +272,32 @@ bool withinUlps(double a, double b, int ulps = 4) {
 
 ### Detecting and Handling Bad Values
 ```cpp
-double x = compute();
+#include <cmath>
+#include <iostream>
+#include <limits>
 
-if (std::isnan(x))        std::cerr << "NaN produced\n";
-else if (std::isinf(x))   std::cerr << (x > 0 ? "+inf\n" : "-inf\n");
-else if (!std::isnormal(x) && x != 0) std::cerr << "subnormal\n";
+void report(double x) {
+    if (std::isnan(x))        std::cerr << "NaN produced\n";
+    else if (std::isinf(x))   std::cerr << (x > 0 ? "+inf\n" : "-inf\n");
+    else if (!std::isnormal(x) && x != 0) std::cerr << "subnormal\n";
+}
 
-// NaN != NaN — this is the one place == behaves unexpectedly by design:
-double n = std::numeric_limits<double>::quiet_NaN();
-bool b = (n == n);        // false
-bool c = std::isnan(n);   // true — always test this way
+int main() {
+    // NaN != NaN — this is the one place == behaves unexpectedly by design:
+    double n = std::numeric_limits<double>::quiet_NaN();
+    bool b = (n == n);        // false
+    bool c = std::isnan(n);   // true — always test this way
+    std::cout << std::boolalpha << b << ' ' << c << '\n';
+    report(n);
+}
+// expect: false true
 ```
 
 ### Rounding Behavior
 ```cpp
+#include <format>
+#include <cmath>
+
 double vals[] = {2.5, -2.5, 2.4, -2.4};
 
 //  x     ceil  floor  trunc  round  nearbyint(default banker's)
@@ -281,6 +323,10 @@ int ceilDiv(int n, int d) { return (n + d - 1) / d; }   // For positive n, d
 
 ### Safe `sqrt` and `log`
 ```cpp
+#include <stdexcept>
+#include <cmath>
+#include <limits>
+
 double safeSqrt(double x) {
     if (x < 0) throw std::domain_error("sqrt of negative");
     return std::sqrt(x);
@@ -295,11 +341,13 @@ double safeLog(double x) {
 
 ### `pow` Is Slower Than You Think
 ```cpp
+#include <cmath>
+
 double x = 3.7;
 
 double sq   = x * x;                // Fast
 double cube = x * x * x;            // Fast
-double p    = std::pow(x, 2.0);     // Much slower — general algorithm
+double p    = std::pow(x, 2.0);     // General algorithm, unless the compiler special-cases it (GCC -O1+ turns this one into x*x)
 double r    = std::sqrt(x);         // Faster than pow(x, 0.5)
 
 // pow with integer exponents can also lose precision:
@@ -308,42 +356,61 @@ double r    = std::sqrt(x);         // Faster than pow(x, 0.5)
 
 ### Distance and Magnitude
 ```cpp
-// Naive — can overflow when components are large:
-double d = std::sqrt(dx*dx + dy*dy);
+#include <cmath>
 
-// Robust:
-double d2 = std::hypot(dx, dy);           // C++11
-double d3 = std::hypot(dx, dy, dz);       // C++17, 3D
+// Naive — dx*dx overflows to inf once |dx| exceeds ~1.3e154:
+double naiveDist(double dx, double dy) { return std::sqrt(dx*dx + dy*dy); }
+
+// Robust — no intermediate overflow or underflow:
+double dist(double dx, double dy)             { return std::hypot(dx, dy); }       // C++11
+double dist3(double dx, double dy, double dz)  { return std::hypot(dx, dy, dz); }   // C++17, 3D
 
 // When only comparing distances, skip the sqrt entirely:
-double distSq = dx*dx + dy*dy;            // Compare squared distances
+bool isCloser(double ax, double ay, double bx, double by) { return ax*ax + ay*ay < bx*bx + by*by; }
 ```
 
 ### Angles from Coordinates
 ```cpp
+#include <cmath>
+
 // atan2 takes y FIRST and handles all four quadrants + x == 0:
-double angle = std::atan2(y, x);          // (-π, π]
+double angleOf(double x, double y) { return std::atan2(y, x); }   // result in [-π, π]
 
 // atan(y/x) loses the quadrant and divides by zero at x == 0.
 ```
 
 ### Splitting a Number
 ```cpp
-double intPart;
-double fracPart = std::modf(3.75, &intPart);   // intPart = 3.0, fracPart = 0.75
+#include <cmath>
+#include <iostream>
 
-int exp;
-double mant = std::frexp(8.0, &exp);           // mant = 0.5, exp = 4  (0.5 · 2⁴ = 8)
-double back = std::ldexp(mant, exp);           // 8.0
+int main() {
+    double intPart;
+    double fracPart = std::modf(3.75, &intPart);    // intPart = 3.0, fracPart = 0.75
+
+    int exponent;
+    double mant = std::frexp(8.0, &exponent);       // mant = 0.5, exponent = 4  (0.5 · 2⁴ = 8)
+    double back = std::ldexp(mant, exponent);       // 8.0
+    std::cout << intPart << ' ' << fracPart << ' ' << mant << ' ' << exponent << ' ' << back << '\n';
+}
+// expect: 3 0.75 0.5 4 8
 ```
 
 ### Accumulating Without Drift
 ```cpp
-// Naive accumulation of many small values loses precision:
-double sum = 0;
-for (double v : values) sum += v;
+#include <cmath>
+#include <cstddef>
+#include <vector>
 
-// Kahan summation — compensates for the lost low-order bits:
+// Naive accumulation of many small values loses precision:
+double naiveSum(const std::vector<double>& values) {
+    double sum = 0;
+    for (double v : values) sum += v;
+    return sum;
+}
+
+// Kahan summation — compensates for the lost low-order bits
+// (-ffast-math lets the compiler "simplify" the compensation away):
 double kahanSum(const std::vector<double>& values) {
     double sum = 0.0, c = 0.0;
     for (double v : values) {
@@ -356,12 +423,17 @@ double kahanSum(const std::vector<double>& values) {
 }
 
 // std::fma also helps in dot products — one rounding instead of two:
-double dot = 0;
-for (std::size_t i = 0; i < n; ++i) dot = std::fma(a[i], b[i], dot);
+double dot(const std::vector<double>& a, const std::vector<double>& b) {
+    double d = 0;
+    for (std::size_t i = 0; i < a.size() && i < b.size(); ++i) d = std::fma(a[i], b[i], d);
+    return d;
+}
 ```
 
 ### Factorials and Combinatorics
 ```cpp
+#include <cmath>
+
 // tgamma(n+1) == n!  — works for larger n than an integer factorial
 double factorial(int n) { return std::tgamma(n + 1.0); }
 
@@ -376,8 +448,9 @@ double logBinomial(int n, int k) {
 #include <algorithm>
 #include <cmath>
 
-double c = std::clamp(x, 0.0, 1.0);         // <algorithm>, C++17
-double v = std::lerp(a, b, t);              // <cmath>, C++20 — safer than a + t*(b-a)
+double unit(double x)                    { return std::clamp(x, 0.0, 1.0); }  // <algorithm>, C++17
+double mix(double a, double b, double t) { return std::lerp(a, b, t); }       // <cmath>, C++20 — exact at t = 0 and t = 1,
+                                                                               // monotonic; a + t*(b-a) guarantees neither
 
 // Smoothstep
 double smoothstep(double e0, double e1, double x) {
@@ -388,6 +461,8 @@ double smoothstep(double e0, double e1, double x) {
 
 ### Wrapping Values
 ```cpp
+#include <cmath>
+
 // fmod keeps the sign of x — often not what you want for a wrap:
 double wrapped = std::fmod(-1.0, 360.0);              // -1.0
 
@@ -400,9 +475,11 @@ double posMod(double x, double m) {
 
 ### Checking for Errors
 ```cpp
+// cc: stmts
 #include <cmath>
 #include <cfenv>
 #include <cerrno>
+#include <iostream>
 
 std::feclearexcept(FE_ALL_EXCEPT);
 errno = 0;
@@ -416,9 +493,7 @@ if (std::fetestexcept(FE_OVERFLOW))      std::cerr << "overflow\n";
 // Requires: #pragma STDC FENV_ACCESS ON  (support varies by compiler)
 ```
 
----
-
-## IMPORTANT CONCEPTS
+## Key Concepts
 
 ### Everything Is in Radians
 `sin`, `cos`, `tan` and their inverses all use radians. Converting from degrees is the caller's job — a missing `π/180` is the most common numerical bug in graphics and geometry code.
@@ -428,6 +503,7 @@ The y-coordinate comes first. Unlike `atan(y/x)`, it knows which quadrant the po
 
 ### `abs` vs `fabs` — the `<cstdlib>` Trap
 ```cpp
+// cc: stmts
 #include <cmath>
 std::abs(-3.7);          // 3.7  — correct, <cmath> overload
 
@@ -463,11 +539,9 @@ Any arithmetic involving NaN yields NaN, and every comparison against NaN (inclu
 ### `errno` vs Floating-Point Exceptions
 Which mechanism reports math errors is implementation-defined and reported by `math_errhandling`. Checking `errno` requires clearing it first; checking FP exception flags requires `<cfenv>` and `FENV_ACCESS`. In practice, validating inputs beforehand is more reliable than either.
 
----
+## Domain & Range Quick Table
 
-## DOMAIN & RANGE QUICK TABLE
-
-```
+```text
 Function        Valid domain          Result outside domain
 ─────────────────────────────────────────────────────────────
 sqrt(x)         x >= 0                NaN
@@ -481,9 +555,7 @@ tgamma(x)       x not a non-positive integer   ±inf or NaN
 fmod(x, 0)      y != 0                NaN
 ```
 
----
-
-## BEST PRACTICES
+## Best Practices
 
 1. **Never compare floats with `==`** — use a relative + absolute tolerance
 2. **Include `<cmath>` and qualify with `std::`** — the unqualified `abs` may be the int version
@@ -501,9 +573,7 @@ fmod(x, 0)      y != 0                NaN
 14. **Compare squared distances** when you only need an ordering
 15. **Use `std::lerp` and `std::clamp`** rather than hand-rolled equivalents
 
----
-
-## RELATED HEADERS
+## Related Headers
 
 ```cpp
 #include <cmath>       // The math functions
@@ -520,17 +590,18 @@ fmod(x, 0)      y != 0                NaN
 #include <ratio>       // Compile-time rational arithmetic
 ```
 
----
+## Connections
 
-## EXTERNAL RESOURCES
+- **Hub:** [[Map — Standard Headers]]
+- **Concept notes (the why behind this card):** [[Floating-Point Representation (IEEE 754)]] · [[Comparing Floating-Point Values]] · [[Implicit Conversions and Promotions]] · [[Signed Integer Overflow]]
+- **Sibling cards:** [[Header — cstdio]]
 
-- **Common mathematical functions**: https://en.cppreference.com/w/cpp/numeric/math
-- **`<cmath>`**: https://en.cppreference.com/w/cpp/header/cmath
-- **Mathematical special functions**: https://en.cppreference.com/w/cpp/numeric/special_functions
-- **`<numbers>`**: https://en.cppreference.com/w/cpp/numeric/constants
-- **What Every Computer Scientist Should Know About Floating-Point**: https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html
+## Sources
 
----
-
-**Standard**: C++11 (classification, cbrt, hypot, round) / C++17 (special functions, 3-arg hypot) / C++20 (`lerp`, `<numbers>`)
-**Last Updated**: September 2026
+- Tour §17.2 "Mathematical Functions" (p. 228) and §17.9 "Mathematical Constants" (p. 234).
+- cppreference / web, *Common mathematical functions*: https://en.cppreference.com/w/cpp/numeric/math
+- cppreference / web, *`<cmath>`*: https://en.cppreference.com/w/cpp/header/cmath
+- cppreference / web, *Mathematical special functions*: https://en.cppreference.com/w/cpp/numeric/special_functions
+- cppreference / web, *`<numbers>`*: https://en.cppreference.com/w/cpp/numeric/constants
+- *What Every Computer Scientist Should Know About Floating-Point*: https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html
+- Origin: the owner's reference sheet `CMATH_REFERENCE` (September 2026), adopted into the Compendium on 2026-09-23 and maintained by the Builder and Editor since.

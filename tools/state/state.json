@@ -113,10 +113,36 @@
       "code": "3/3",
       "commit": "✓",
       "summary": "deepen: depth + integration — added [dcl.ref]/[class.copy.assign] clause citations (reference collapsing, deleted copy-assign for reference members, dangling-reference UB, one-past-the-end pointer arithmetic), an Under the Hood section with verified GCC asm (sum_ref vs sum_ptr identical at -O2) and sizeof evidence, a 3rd compiled ill-formed code example, and a backlink from RAII's Prevents bullet"
+    },
+    {
+      "when": "2026-09-23T12:49:22Z",
+      "run": "?",
+      "role": "human",
+      "mode": "HEADERS",
+      "items": [
+        "map-hdr",
+        "hdr-iostream",
+        "hdr-ios",
+        "hdr-iomanip",
+        "hdr-fstream",
+        "hdr-sstream",
+        "hdr-streambuf",
+        "hdr-cstdio",
+        "hdr-modern-io",
+        "hdr-string",
+        "hdr-cstring",
+        "hdr-cctype",
+        "hdr-cmath",
+        "hdr-conio"
+      ],
+      "lint": "97–100",
+      "code": "0/0 12/14 10/11 16/19 16/18 14/15 11/12 12/15 8/18 15/18 16/18 11/14 17/20 6/14",
+      "commit": "✓",
+      "summary": "owner request: adopted the owner's 13 std-header sheets as Header Cards (05 Headers, HDR domain), hub map, 44 cards registered; header archetype, cc: stmts, export-pdf; originals + PDFs archived to __RESOURCES__"
     }
   ],
   "current": null,
-  "last_human": "2026-09-23T07:21:03Z",
+  "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
   "last_builder": "2026-09-23T12:20:05Z"
 }

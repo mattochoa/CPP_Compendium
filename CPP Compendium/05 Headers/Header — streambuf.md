@@ -1,15 +1,42 @@
-# STREAMBUF_REFERENCE
-
-## Core Definition
-**`<streambuf>`** defines `basic_streambuf`, the buffer layer beneath every stream. A stream (`ostream`, `ifstream`, `stringstream`) handles *formatting*; the streambuf handles *transport* — moving characters between the program and a device via get and put areas. Deriving from `basic_streambuf` is how you make `operator<<` write to anything: a socket, a compressor, a tee, a null sink.
-
-**Tags**: #cpp #streambuf #filebuf #stringbuf #custom-streams #buffering #rdbuf
-
+---
+id: hdr-streambuf
+title: Header — streambuf
+aliases:
+- <streambuf>
+- basic_streambuf
+type: header
+domain: HDR
+tier: 3
+status: draft
+standard: C++98
+related:
+- "[[IO Streams Architecture]]"
+- "[[Virtual Functions]]"
+- "[[Type Erasure]]"
+- "[[RAII]]"
+tags:
+- type/header
+- domain/hdr
+- tier/3
+- header/streambuf
+- tension/abstraction-vs-control
+created: '2026-09-23'
+updated: '2026-09-23'
+header: <streambuf>
+origin: owner reference sheet STREAMBUF_REFERENCE (2026-09)
 ---
 
-## THE BUFFER MODEL
+# Header — streambuf
 
-```
+> [!essence]
+> **`<streambuf>`** defines `basic_streambuf`, the buffer layer beneath every stream. A stream (`ostream`, `ifstream`, `stringstream`) handles *formatting*; the streambuf handles *transport* — moving characters between the program and a device via get and put areas. Deriving from `basic_streambuf` is how you make `operator<<` write to anything: a socket, a compressor, a tee, a null sink.
+
+> [!standard] Versions
+> C++11 baseline / C++20 (`syncbuf`) / C++23 (`spanbuf`)
+
+## The Buffer Model
+
+```text
 GET AREA (input)                          PUT AREA (output)
 ┌──────────────────────────┐              ┌──────────────────────────┐
 │ eback()  gptr()   egptr()│              │ pbase()  pptr()   epptr()│
@@ -25,11 +52,10 @@ GET AREA (input)                          PUT AREA (output)
  pptr == epptr → put area full      → overflow() drains
 ```
 
----
-
-## COMPLETE STREAMBUF QUICK REFERENCE
+## Quick Reference
 
 ```cpp
+// cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // PUBLIC INTERFACE — what streams call (the "pub" prefix)
 // ═══════════════════════════════════════════════════════════════════════════
@@ -122,12 +148,11 @@ std::streambuf                    // = basic_streambuf<char>
 std::wstreambuf                   // = basic_streambuf<wchar_t>
 ```
 
----
-
-## COMMON PATTERNS & EXAMPLES
+## Patterns
 
 ### Buffer-to-Buffer Copy (the idiom worth knowing)
 ```cpp
+// cc: stmts
 #include <fstream>
 #include <iostream>
 
@@ -332,8 +357,11 @@ private:
 
 ### Reading a Whole Stream via the Buffer
 ```cpp
+// cc: stmts
 #include <sstream>
 #include <fstream>
+#include <string>
+#include <ios>
 
 std::ifstream in("file.txt", std::ios::binary);
 std::ostringstream ss;
@@ -343,8 +371,10 @@ std::string contents = ss.str();
 
 ### Attaching a Stream to an Existing Buffer
 ```cpp
+// cc: stmts
 #include <fstream>
 #include <ostream>
+#include <ios>
 
 std::filebuf fb;
 if (fb.open("out.txt", std::ios::out)) {
@@ -356,19 +386,28 @@ if (fb.open("out.txt", std::ios::out)) {
 
 ### Character-Level Access
 ```cpp
-std::streambuf* sb = std::cin.rdbuf();
+#include <cstddef>
+#include <istream>
+#include <streambuf>
+#include <string>
 
-int_type c;
-while ((c = sb->sbumpc()) != std::char_traits<char>::eof()) {
-    char ch = std::char_traits<char>::to_char_type(c);
+std::size_t countNewlines(std::istream& in) {
+    using traits = std::char_traits<char>;
+    std::streambuf* sb = in.rdbuf();
+    std::size_t lines = 0;
+
+    traits::int_type c;
+    while ((c = sb->sbumpc()) != traits::eof()) {
+        char ch = traits::to_char_type(c);
+        if (ch == '\n') ++lines;
+    }
     // Bypasses the stream layer entirely — no sentry, no formatting, no state flags.
     // Fast, but you also lose the stream's error reporting.
+    return lines;
 }
 ```
 
----
-
-## IMPORTANT CONCEPTS
+## Key Concepts
 
 ### Which Virtuals You Actually Need
 For an **output-only** buffer: `overflow` (required) and `sync` (strongly recommended); `xsputn` if you want a fast bulk path. For an **input-only** buffer: `underflow` (required); `pbackfail` if putback must work past the buffer start; `showmanyc` for non-blocking reads. Everything else has a usable default.
@@ -403,11 +442,9 @@ The `imbue` virtual lets a buffer react to locale changes — `filebuf` uses it 
 ### `std::spanbuf` and `std::syncbuf` Cover Common Needs
 Before writing a custom buffer, check whether C++23's `spanbuf` (fixed external memory, no allocation) or C++20's `syncbuf` (thread-safe accumulation, atomic emit) already does what you want.
 
----
+## Minimum Viable Buffer Checklist
 
-## MINIMUM VIABLE BUFFER CHECKLIST
-
-```
+```text
 Output buffer                        Input buffer
 ────────────────────────────────     ────────────────────────────────
 [ ] overflow(int_type)               [ ] underflow()
@@ -418,9 +455,7 @@ Output buffer                        Input buffer
 [ ] non-copyable (base already is)   [ ] showmanyc() if non-blocking
 ```
 
----
-
-## BEST PRACTICES
+## Best Practices
 
 1. **Prefer composing existing buffers** — `filebuf`, `stringbuf`, `spanbuf`, `syncbuf` — over writing one
 2. **Use `os << in.rdbuf()`** for whole-stream copies
@@ -435,9 +470,7 @@ Output buffer                        Input buffer
 11. **Keep buffers non-copyable** — the base already deletes copy, don't re-enable it
 12. **Test the boundaries**: exactly-full buffer, single-character writes, flush with an empty buffer, putback at the buffer start
 
----
-
-## RELATED HEADERS
+## Related Headers
 
 ```cpp
 #include <streambuf>    // basic_streambuf
@@ -450,15 +483,16 @@ Output buffer                        Input buffer
 #include <locale>       // codecvt, used by filebuf for encoding conversion
 ```
 
----
+## Connections
 
-## EXTERNAL RESOURCES
+- **Hub:** [[Map — Standard Headers]]
+- **Concept notes (the why behind this card):** [[IO Streams Architecture]] · [[Virtual Functions]] · [[Type Erasure]] · [[RAII]]
+- **Sibling cards:** [[Header — iostream]] · [[Header — ios]] · [[Header — fstream]] · [[Header — sstream]]
 
-- **`std::basic_streambuf`**: https://en.cppreference.com/w/cpp/io/basic_streambuf
-- **`std::char_traits`**: https://en.cppreference.com/w/cpp/string/char_traits
+## Sources
+
+- Primer §8.1.3 "Managing the Output Buffer" (p. 314): when buffers flush, `tie`, `unitbuf`.
+- cppreference / web, *`std::basic_streambuf`*: https://en.cppreference.com/w/cpp/io/basic_streambuf
+- cppreference / web, *`std::char_traits`*: https://en.cppreference.com/w/cpp/string/char_traits
 - **Standard C++ IOStreams and Locales** (Langer & Kreft) — the definitive treatment of custom buffers
-
----
-
-**Standard**: C++11 baseline / C++20 (`syncbuf`) / C++23 (`spanbuf`)
-**Last Updated**: September 2026
+- Origin: the owner's reference sheet `STREAMBUF_REFERENCE` (September 2026), adopted into the Compendium on 2026-09-23 and maintained by the Builder and Editor since.

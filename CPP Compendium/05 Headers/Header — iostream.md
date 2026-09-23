@@ -1,15 +1,43 @@
-# IOSTREAM_REFERENCE
-
-## Core Definition
-**`<iostream>`** declares the standard stream objects (`cin`, `cout`, `cerr`, `clog` and wide equivalents) and pulls in `<istream>`/`<ostream>`. It is the entry point to the C++ stream hierarchy: formatted and unformatted character I/O layered over stream buffers, with per-stream state flags, formatting flags, and locale.
-
-**Tags**: #cpp #iostream #io #streams #cin #cout #formatted-io
-
+---
+id: hdr-iostream
+title: Header — iostream
+aliases:
+- <iostream>
+- iostream header
+type: header
+domain: HDR
+tier: 1
+status: draft
+standard: C++98
+related:
+- "[[IO Streams Architecture]]"
+- "[[Stream State and Robust Input]]"
+- "[[File IO]]"
+- "[[String Streams]]"
+tags:
+- type/header
+- domain/hdr
+- tier/1
+- header/iostream
+- tension/abstraction-vs-control
+- tension/safety-vs-performance
+created: '2026-09-23'
+updated: '2026-09-23'
+header: <iostream>
+origin: owner reference sheet IOSTREAM_REFERENCE (2026-09)
 ---
 
-## THE STREAM HIERARCHY
+# Header — iostream
 
-```
+> [!essence]
+> **`<iostream>`** declares the standard stream objects (`cin`, `cout`, `cerr`, `clog` and wide equivalents) and pulls in `<istream>`/`<ostream>`. It is the entry point to the C++ stream hierarchy: formatted and unformatted character I/O layered over stream buffers, with per-stream state flags, formatting flags, and locale.
+
+> [!standard] Versions
+> C++11 / C++14 / C++17 / C++20 / C++23 (version noted where relevant)
+
+## The Stream Hierarchy
+
+```text
 ios_base                          # non-template base: flags, precision, width, locale
   └── basic_ios<CharT>            # stream state, tie(), rdbuf(), fill()
         ├── basic_istream<CharT>  # >>, get, getline, read, seekg ...
@@ -22,13 +50,12 @@ Typedefs:  istream = basic_istream<char>     wistream = basic_istream<wchar_t>
            iostream = basic_iostream<char>   wiostream = basic_iostream<wchar_t>
 ```
 
----
-
-## COMPLETE IOSTREAM QUICK REFERENCE
+## Quick Reference
 
 ### STREAM OBJECTS, MEMBERS & OPERATORS — Target | Operation | Output
 
 ```cpp
+// cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // STANDARD STREAM OBJECTS
 // ═══════════════════════════════════════════════════════════════════════════
@@ -219,9 +246,7 @@ std::ios::pos_type                // streampos
 std::ios::off_type                // streamoff
 ```
 
----
-
-## COMMON IOSTREAM PATTERNS & EXAMPLES
+## Patterns
 
 ### Basic I/O
 ```cpp
@@ -266,6 +291,11 @@ int readInt(const char* prompt) {
 
 ### The `>>` then `getline` Trap
 ```cpp
+// cc: stmts
+#include <iostream>
+#include <string>
+#include <limits>
+
 int n;
 std::string line;
 
@@ -297,6 +327,9 @@ int main() {
 
 ### Checking Which Failure Occurred
 ```cpp
+// cc: stmts
+#include <iostream>
+
 int x;
 std::cin >> x;
 
@@ -401,15 +434,16 @@ int main() {
 
 ### Peeking Ahead
 ```cpp
+// cc: stmts
+#include <iostream>
+
 if (std::cin.peek() == '-') {
     std::cin.get();          // Consume the sign
     // handle negative case
 }
 ```
 
----
-
-## IMPORTANT CONCEPTS
+## Key Concepts
 
 ### Stream State Machine
 - `goodbit` (0) means all is well; any other flag stops further extraction.
@@ -419,6 +453,9 @@ if (std::cin.peek() == '-') {
 
 ### `eof()` Is Not a Loop Condition
 ```cpp
+// cc: fragment
+#include <iostream>
+
 while (!std::cin.eof()) { std::cin >> x; /* ... */ }   // WRONG: processes last item twice
 while (std::cin >> x)   { /* ... */ }                  // RIGHT: tests the read itself
 ```
@@ -446,11 +483,9 @@ Only unformatted input operations set `gcount()`. It is reset by the next unform
 ### Stream Copying Is Disabled
 Streams are non-copyable but movable (C++11). Pass by reference (`std::ostream&`), never by value.
 
----
+## Standard Stream Cheat Sheet
 
-## STANDARD STREAM CHEAT SHEET
-
-```
+```text
 Stream   Direction   Buffering        Default target   Typical use
 cin      input       buffered         stdin            User / piped input
 cout     output      buffered         stdout           Normal program output
@@ -458,9 +493,7 @@ cerr     output      unit-buffered    stderr           Errors — appears immedi
 clog     output      buffered         stderr           Logging — batched, less overhead
 ```
 
----
-
-## BEST PRACTICES
+## Best Practices
 
 1. **Test the read, not `eof()`** — `while (cin >> x)`, never `while (!cin.eof())`
 2. **`clear()` before `ignore()`** — ignore does nothing on a failed stream
@@ -475,9 +508,7 @@ clog     output      buffered         stderr           Logging — batched, less
 11. **Reserve exceptions for genuinely exceptional I/O**; flag checks are cheaper and more idiomatic
 12. **Commit-on-success** in custom `operator>>` — don't half-write the target on failure
 
----
-
-## RELATED HEADERS
+## Related Headers
 
 ```cpp
 #include <iostream>    // cin/cout/cerr/clog + <istream> + <ostream>
@@ -493,16 +524,18 @@ clog     output      buffered         stderr           Logging — batched, less
 #include <print>       // C++23: std::print, std::println
 ```
 
----
+## Connections
 
-## EXTERNAL RESOURCES
+- **Hub:** [[Map — Standard Headers]]
+- **Concept notes (the why behind this card):** [[IO Streams Architecture]] · [[Stream State and Robust Input]] · [[File IO]] · [[String Streams]] · [[format and print]]
+- **Sibling cards:** [[Header — ios]] · [[Header — iomanip]] · [[Header — fstream]] · [[Header — sstream]] · [[Header — streambuf]] · [[Header — Modern IO]]
 
-- **Input/Output library**: https://en.cppreference.com/w/cpp/io
-- **basic_istream**: https://en.cppreference.com/w/cpp/io/basic_istream
-- **basic_ostream**: https://en.cppreference.com/w/cpp/io/basic_ostream
-- **ios_base**: https://en.cppreference.com/w/cpp/io/ios_base
+## Sources
 
----
-
-**Standard**: C++11 / C++14 / C++17 / C++20 / C++23 (version noted where relevant)
-**Last Updated**: September 2026
+- Primer §8.1 "The IO Classes" (p. 310): the stream class hierarchy, no copying of streams, condition states.
+- Tour §11.2 "Output" (p. 138) and §11.3 "Input" (p. 139): the designer's short tour of `<<`, `>>` and `getline`.
+- cppreference / web, *Input/Output library*: https://en.cppreference.com/w/cpp/io
+- cppreference / web, *basic_istream*: https://en.cppreference.com/w/cpp/io/basic_istream
+- cppreference / web, *basic_ostream*: https://en.cppreference.com/w/cpp/io/basic_ostream
+- cppreference / web, *ios_base*: https://en.cppreference.com/w/cpp/io/ios_base
+- Origin: the owner's reference sheet `IOSTREAM_REFERENCE` (September 2026), adopted into the Compendium on 2026-09-23 and maintained by the Builder and Editor since.

@@ -1,15 +1,46 @@
-# CSTDIO_REFERENCE
-
-## Core Definition
-**`<cstdio>`** is the C++ wrapper for C's `<stdio.h>`: `FILE*`-based I/O — `printf`/`scanf` formatting, `fopen`/`fread`/`fwrite`, and the standard streams `stdin`/`stdout`/`stderr`. It coexists with C++ streams (they share buffers by default) and remains relevant for C interop, `snprintf`-style formatting into fixed buffers, and low-level file work.
-
-**Tags**: #cpp #cstdio #printf #scanf #FILE #c-io #fopen #legacy
-
+---
+id: hdr-cstdio
+title: Header — cstdio
+aliases:
+- <cstdio>
+- stdio.h
+- printf
+- FILE*
+type: header
+domain: HDR
+tier: 2
+status: draft
+standard: C++98
+related:
+- "[[format and print]]"
+- "[[File IO]]"
+- "[[RAII]]"
+- "[[Undefined Behavior]]"
+tags:
+- type/header
+- domain/hdr
+- tier/2
+- header/cstdio
+- tension/compatibility-vs-evolution
+- tension/safety-vs-performance
+created: '2026-09-23'
+updated: '2026-09-23'
+header: <cstdio>
+origin: owner reference sheet CSTDIO_REFERENCE (2026-09)
 ---
 
-## COMPLETE CSTDIO QUICK REFERENCE
+# Header — cstdio
+
+> [!essence]
+> **`<cstdio>`** is the C++ wrapper for C's `<stdio.h>`: `FILE*`-based I/O — `printf`/`scanf` formatting, `fopen`/`fread`/`fwrite`, and the standard streams `stdin`/`stdout`/`stderr`. It coexists with C++ streams (they share buffers by default) and remains relevant for C interop, `snprintf`-style formatting into fixed buffers, and low-level file work.
+
+> [!standard] Versions
+> C++11+ (C99/C11 library base); `gets` removed in C++14
+
+## Quick Reference
 
 ```cpp
+// cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // FILE ACCESS — Target | Operation | Output
 // ═══════════════════════════════════════════════════════════════════════════
@@ -115,11 +146,9 @@ NULL                              // Null pointer macro (prefer nullptr)
 std::FILE / std::fpos_t / std::size_t
 ```
 
----
+## printf Format Specifiers
 
-## PRINTF FORMAT SPECIFIERS
-
-```
+```text
 %[flags][width][.precision][length]conversion
 
 CONVERSIONS
@@ -151,9 +180,9 @@ COMMON COMBINATIONS
   %lld       long long                       %.*s    bounded string
 ```
 
-## SCANF FORMAT SPECIFIERS
+## scanf Format Specifiers
 
-```
+```text
   %d %i %u %o %x     integers (%i auto-detects base from 0x/0 prefix)
   %f %e %g           float     %lf %le %lg   double     %Lf   long double
   %c                 one char (NO whitespace skip, no null terminator added)
@@ -165,43 +194,48 @@ COMMON COMBINATIONS
   literal space      matches any amount of whitespace, including none
 ```
 
----
-
-## COMMON PATTERNS & EXAMPLES
+## Patterns
 
 ### Reading a File Line by Line
 ```cpp
 #include <cstdio>
+#include <cstring>
 
-std::FILE* f = std::fopen("data.txt", "r");
-if (!f) { std::perror("fopen"); return 1; }
+int printLines(const char* path) {
+    std::FILE* f = std::fopen(path, "r");
+    if (!f) { std::perror("fopen"); return 1; }
 
-char line[256];
-while (std::fgets(line, sizeof(line), f)) {
-    // fgets KEEPS the newline; strip it if you don't want it
-    line[std::strcspn(line, "\n")] = '\0';
-    std::printf("%s\n", line);
+    char line[256];
+    while (std::fgets(line, sizeof(line), f)) {
+        // fgets KEEPS the newline; strip it if you don't want it
+        line[std::strcspn(line, "\n")] = '\0';
+        std::printf("%s\n", line);
+    }
+
+    if (std::ferror(f)) std::fprintf(stderr, "read error\n");
+    std::fclose(f);
+    return 0;
 }
-
-if (std::ferror(f)) std::fprintf(stderr, "read error\n");
-std::fclose(f);
 ```
 
 ### Safe Formatting into a Buffer
 ```cpp
+#include <cstddef>
 #include <cstdio>
 
-char buf[64];
+// Returns true only if the whole text fit.
+bool formatPair(char* buf, std::size_t size, const char* key, int value) {
+    // UNSAFE — no bound:
+    // std::sprintf(buf, "%s=%d", key, value);
 
-// UNSAFE — no bound:
-// std::sprintf(buf, "%s=%d", key, value);
-
-// Bounded, and the return value tells you if it fit:
-int n = std::snprintf(buf, sizeof(buf), "%s=%d", key, value);
-if (n < 0) {
-    // encoding error
-} else if (static_cast<std::size_t>(n) >= sizeof(buf)) {
-    // TRUNCATED — n is the length it WOULD have needed
+    // Bounded, and the return value tells you if it fit:
+    int n = std::snprintf(buf, size, "%s=%d", key, value);
+    if (n < 0) {
+        return false;                                   // encoding error
+    } else if (static_cast<std::size_t>(n) >= size) {
+        return false;                                   // TRUNCATED — n is the length it WOULD have needed
+    }
+    return true;
 }
 ```
 > `snprintf` returns the length the full output *would* have had, not the number written. That is what makes the two-pass sizing idiom below work.
@@ -254,6 +288,7 @@ std::vector<Record> readAll(const char* path) {
 
 ### Parsing with `sscanf`
 ```cpp
+// cc: stmts
 #include <cstdio>
 
 const char* line = "widget 42 3.14";
@@ -269,6 +304,9 @@ if (matched != 3) { /* parse failed at field `matched` */ }
 
 ### The `scanf` Newline Trap
 ```cpp
+// cc: stmts
+#include <cstdio>
+
 int n;
 char line[128];
 
@@ -284,6 +322,9 @@ std::fgets(line, sizeof(line), stdin);
 
 ### Reading a Line Safely, Whole
 ```cpp
+// cc: stmts
+#include <cstdio>
+
 // %[^\n] with a width reads up to (but not including) the newline:
 char buf[256];
 if (std::scanf("%255[^\n]", buf) == 1) {
@@ -313,6 +354,7 @@ FilePtr openFile(const char* path, const char* mode) {
 
 ### Error Reporting
 ```cpp
+// cc: stmts
 #include <cstdio>
 #include <cerrno>
 #include <cstring>
@@ -327,6 +369,9 @@ if (!f) {
 
 ### Buffering Control
 ```cpp
+// cc: stmts
+#include <cstdio>
+
 std::setvbuf(stdout, nullptr, _IONBF, 0);        // Unbuffered — every write hits the device
 std::setvbuf(stdout, nullptr, _IOLBF, BUFSIZ);   // Line buffered
 char buf[8192];
@@ -336,8 +381,10 @@ std::setvbuf(stdout, buf, _IOFBF, sizeof(buf));  // Fully buffered with your own
 
 ### Mixing with C++ Streams
 ```cpp
+// cc: stmts
 #include <cstdio>
 #include <iostream>
+#include <ios>
 
 // SAFE by default: sync_with_stdio(true) keeps printf and cout in order
 std::printf("first\n");
@@ -347,15 +394,16 @@ std::cout << "second\n";
 // and output can interleave incorrectly. Pick one API per program.
 ```
 
----
-
-## IMPORTANT CONCEPTS
+## Key Concepts
 
 ### `printf` Is Not Type-Safe
 The format string is parsed at runtime; the arguments are passed through varargs with no checking. A `%d` with a `long long`, or a `%s` with a non-string, is undefined behavior — often a crash, sometimes a security hole. GCC and Clang catch many cases with `-Wformat -Wformat-security`, but only for literal format strings.
 
 ### Never Pass User Input as a Format String
 ```cpp
+// cc: fragment
+#include <cstdio>
+
 std::printf(userInput);              // FORMAT STRING VULNERABILITY
 std::printf("%s", userInput);        // Correct
 ```
@@ -372,6 +420,9 @@ Unlike `std::getline`, `fgets` stores the `'\n'` if it fit. Strip it explicitly.
 
 ### `feof()` Is Not a Loop Condition
 ```cpp
+// cc: fragment
+#include <cstdio>
+
 while (!std::feof(f)) { std::fgets(line, n, f); process(line); }  // Processes the last line twice
 while (std::fgets(line, n, f)) { process(line); }                 // Correct
 ```
@@ -392,11 +443,9 @@ In `printf`, `float` is promoted to `double`, so `%f` handles both and `%lf` is 
 ### The C++ Alternatives Are Better
 `std::format` (C++20) and `std::print` (C++23) give the same concise, positional style with compile-time checking, no varargs, and no buffer to size. `std::ostringstream` and `std::to_chars` cover the rest. Reach for `<cstdio>` when interfacing with C code, when you need `FILE*` specifically, or when a platform API hands you one.
 
----
+## printf ↔ Modern C++ Mapping
 
-## PRINTF ↔ MODERN C++ MAPPING
-
-```
+```text
 printf                              std::format (C++20)
 ────────────────────────────────────────────────────────────────
 "%d"                                "{}"
@@ -413,9 +462,7 @@ snprintf(buf, n, ...)               std::format_to_n(buf, n, ...)
 printf(...)                         std::print(...)      (C++23)
 ```
 
----
-
-## BEST PRACTICES
+## Best Practices
 
 1. **Use `snprintf`, never `sprintf`**; check the return against the buffer size
 2. **Always bound `%s` in `scanf`** — `%31s` for a `char[32]`
@@ -430,9 +477,7 @@ printf(...)                         std::print(...)      (C++23)
 11. **Don't mix `printf` and `cout`** after `sync_with_stdio(false)`
 12. **Prefer `std::format`/`std::print`** in new C++ code; keep `<cstdio>` for C boundaries
 
----
-
-## RELATED HEADERS
+## Related Headers
 
 ```cpp
 #include <cstdio>       // FILE*, printf, fopen, fread ...
@@ -447,15 +492,17 @@ printf(...)                         std::print(...)      (C++23)
 #include <filesystem>   // C++17: remove, rename, file_size, exists
 ```
 
----
+## Connections
 
-## EXTERNAL RESOURCES
+- **Hub:** [[Map — Standard Headers]]
+- **Concept notes (the why behind this card):** [[format and print]] · [[File IO]] · [[RAII]] · [[Undefined Behavior]] · [[unique_ptr]]
+- **Sibling cards:** [[Header — iostream]] · [[Header — fstream]] · [[Header — Modern IO]] · [[Header — cstring]]
 
-- **C I/O library**: https://en.cppreference.com/w/cpp/io/c
-- **`printf` format**: https://en.cppreference.com/w/cpp/io/c/fprintf
-- **`scanf` format**: https://en.cppreference.com/w/cpp/io/c/fscanf
+## Sources
 
----
-
-**Standard**: C++11+ (C99/C11 library base); `gets` removed in C++14
-**Last Updated**: September 2026
+- Tour §11.8 "C-style I/O" (p. 149): why `printf`-family I/O is not type-safe.
+- Tour §11.6 "Output Formatting" (p. 144): `printf`-style formatting and its modern replacement.
+- cppreference / web, *C I/O library*: https://en.cppreference.com/w/cpp/io/c
+- cppreference / web, *`printf` format*: https://en.cppreference.com/w/cpp/io/c/fprintf
+- cppreference / web, *`scanf` format*: https://en.cppreference.com/w/cpp/io/c/fscanf
+- Origin: the owner's reference sheet `CSTDIO_REFERENCE` (September 2026), adopted into the Compendium on 2026-09-23 and maintained by the Builder and Editor since.

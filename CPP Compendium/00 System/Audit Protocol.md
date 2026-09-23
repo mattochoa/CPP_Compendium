@@ -49,6 +49,8 @@ For each note: read it **completely**, as the target reader would. Then score se
 
 For archetypes that require no code (`map`, `guide`, `path`), score **code** as 3 when none is needed and any code shown is verified.
 
+For **Header Cards** (`header`): *first_principles* rewards a card that states each rule's reason in a sentence and links the Dossier that derives it; *depth* means the Quick Reference is complete for the header (every public member, version-labelled); *code* means every *Patterns* recipe compiles or runs. `// cc: fragment` belongs in *Quick Reference* listings, in short illustrative snippets inside *Key Concepts* (6 lines or fewer), and in code that cannot build on the owner's toolchain (Borland-only `conio`, POSIX-only APIs that Compiler Explorer also rejects). A Patterns fragment is a small defect: convert it (`// cc: stmts`, add a parameter, add a declaration) or return the card. Spot-check at least **three version labels** per card against cppreference's header page.
+
 **Accuracy is a veto.** Verify at least **two substantive claims per note** against cppreference or eel.is (WebFetch). Every day, choose **three notes for a deep review** in which you verify *every* normative claim, and name them in the Brief. Any core factual error means accuracy ≤ 1, and the note goes back.
 
 **Fix or return:**
@@ -99,3 +101,4 @@ Your final message is the Brief's *At a glance* section, plus the decisions need
 
 ## Protocol changelog
 - 2026-09-23: v1.0, initial protocol.
+- 2026-09-23: v1.1, rubric guidance for Header Cards (owner request: adopt the owner's std-header sheets as a product).

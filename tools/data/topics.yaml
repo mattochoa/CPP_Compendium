@@ -349,3 +349,66 @@
 - {id: path-course-companion, t: "Path — Course Companion", ty: path, d: PRX, tier: 1, w: 2}
 - {id: path-modern-fluency, t: "Path — Modern C++ Fluency", ty: path, d: PRX, tier: 2, w: 3}
 - {id: path-systems-performance, t: "Path — Systems & Performance", ty: path, d: PRX, tier: 3, w: 3}
+
+# ---------------------------------------------------------------- HDR Standard Headers (Header Cards)
+# One quick-reference card per standard header, in `05 Headers/`. Each card sits one wave after (or with)
+# the Dossier that explains its ideas (`pre:`), so the Builder writes the why before the lookup card.
+- {id: map-hdr, t: "Map — Standard Headers", ty: map, d: HDR, tier: 1, w: 0}
+- {id: hdr-iostream, t: "Header — iostream", ty: header, d: HDR, tier: 1, w: 2, pre: [iostreams], al: ["<iostream>", "iostream header"]}
+- {id: hdr-ios, t: "Header — ios", ty: header, d: HDR, tier: 2, w: 2, pre: [stream-state-and-input], al: ["<ios>", "ios_base", "basic_ios"]}
+- {id: hdr-iomanip, t: "Header — iomanip", ty: header, d: HDR, tier: 1, w: 2, pre: [iostreams], al: ["<iomanip>", "manipulators", "setw", "setprecision"]}
+- {id: hdr-fstream, t: "Header — fstream", ty: header, d: HDR, tier: 1, w: 2, pre: [file-io], al: ["<fstream>", "ifstream", "ofstream"]}
+- {id: hdr-sstream, t: "Header — sstream", ty: header, d: HDR, tier: 1, w: 3, pre: [string-streams], al: ["<sstream>", "stringstream", "istringstream", "ostringstream"]}
+- {id: hdr-streambuf, t: "Header — streambuf", ty: header, d: HDR, tier: 3, w: 3, pre: [iostreams], al: ["<streambuf>", "basic_streambuf"]}
+- {id: hdr-cstdio, t: "Header — cstdio", ty: header, d: HDR, tier: 2, w: 2, pre: [iostreams], al: ["<cstdio>", "stdio.h", "printf", "FILE*"]}
+- {id: hdr-modern-io, t: "Header — Modern IO", ty: header, d: HDR, tier: 2, w: 3, pre: [format-and-print], al: ["<format>", "<print>", "<syncstream>", "<spanstream>", "<iosfwd>", "std::format", "std::print"]}
+- {id: hdr-string, t: "Header — string", ty: header, d: HDR, tier: 1, w: 1, pre: [std-string], al: ["<string>", "std::string header"]}
+- {id: hdr-cstring, t: "Header — cstring", ty: header, d: HDR, tier: 2, w: 3, pre: [c-strings], al: ["<cstring>", "string.h", "strcpy", "memcpy"]}
+- {id: hdr-cctype, t: "Header — cctype", ty: header, d: HDR, tier: 1, w: 2, pre: [std-string], al: ["<cctype>", "ctype.h", "isalpha", "tolower"]}
+- {id: hdr-cmath, t: "Header — cmath", ty: header, d: HDR, tier: 1, w: 2, pre: [floating-point], al: ["<cmath>", "math.h", "<numbers>"]}
+- {id: hdr-conio, t: "Header — conio (non-standard)", ty: header, d: HDR, tier: 2, w: 2, al: ["<conio.h>", "conio.h", "getch", "kbhit"]}
+# planned cards
+- {id: hdr-vector, t: "Header — vector", ty: header, d: HDR, tier: 1, w: 1, pre: [std-vector], al: ["<vector>"]}
+- {id: hdr-array, t: "Header — array", ty: header, d: HDR, tier: 1, w: 2, pre: [std-array], al: ["<array>"]}
+- {id: hdr-algorithm, t: "Header — algorithm", ty: header, d: HDR, tier: 1, w: 2, pre: [algorithms], al: ["<algorithm>"]}
+- {id: hdr-numeric, t: "Header — numeric", ty: header, d: HDR, tier: 2, w: 2, pre: [algorithms], al: ["<numeric>"]}
+- {id: hdr-memory, t: "Header — memory", ty: header, d: HDR, tier: 1, w: 2, pre: [unique-ptr], al: ["<memory>"]}
+- {id: hdr-utility, t: "Header — utility", ty: header, d: HDR, tier: 1, w: 2, pre: [move-semantics], al: ["<utility>"]}
+- {id: hdr-map-set, t: "Header — map and set", ty: header, d: HDR, tier: 1, w: 2, pre: [associative-containers], al: ["<map>", "<set>"]}
+- {id: hdr-unordered, t: "Header — unordered_map and unordered_set", ty: header, d: HDR, tier: 2, w: 2, pre: [unordered-containers], al: ["<unordered_map>", "<unordered_set>"]}
+- {id: hdr-deque-list, t: "Header — deque, list and forward_list", ty: header, d: HDR, tier: 2, w: 2, pre: [sequence-containers], al: ["<deque>", "<list>", "<forward_list>"]}
+- {id: hdr-iterator, t: "Header — iterator", ty: header, d: HDR, tier: 2, w: 2, pre: [iterators], al: ["<iterator>"]}
+- {id: hdr-random, t: "Header — random", ty: header, d: HDR, tier: 1, w: 2, pre: [random-numbers], al: ["<random>"]}
+- {id: hdr-exception, t: "Header — exception and stdexcept", ty: header, d: HDR, tier: 1, w: 2, pre: [exceptions], al: ["<exception>", "<stdexcept>"]}
+- {id: hdr-cstdlib, t: "Header — cstdlib", ty: header, d: HDR, tier: 1, w: 2, al: ["<cstdlib>", "stdlib.h"]}
+- {id: hdr-cstdint, t: "Header — cstdint", ty: header, d: HDR, tier: 1, w: 2, pre: [fundamental-types], al: ["<cstdint>"]}
+- {id: hdr-limits, t: "Header — limits", ty: header, d: HDR, tier: 2, w: 2, pre: [fundamental-types], al: ["<limits>", "numeric_limits"]}
+- {id: hdr-cassert, t: "Header — cassert", ty: header, d: HDR, tier: 1, w: 2, pre: [assertions], al: ["<cassert>"]}
+- {id: hdr-queue-stack, t: "Header — queue and stack", ty: header, d: HDR, tier: 2, w: 3, pre: [container-adaptors], al: ["<queue>", "<stack>"]}
+- {id: hdr-optional-variant-any, t: "Header — optional, variant and any", ty: header, d: HDR, tier: 2, w: 3, pre: [optional], al: ["<optional>", "<variant>", "<any>"]}
+- {id: hdr-tuple, t: "Header — tuple", ty: header, d: HDR, tier: 2, w: 3, pre: [pair-and-tuple], al: ["<tuple>"]}
+- {id: hdr-functional, t: "Header — functional", ty: header, d: HDR, tier: 2, w: 3, pre: [callables-and-std-function], al: ["<functional>"]}
+- {id: hdr-chrono, t: "Header — chrono", ty: header, d: HDR, tier: 2, w: 3, pre: [chrono], al: ["<chrono>"]}
+- {id: hdr-span, t: "Header — span", ty: header, d: HDR, tier: 2, w: 3, pre: [span], al: ["<span>"]}
+- {id: hdr-charconv, t: "Header — charconv", ty: header, d: HDR, tier: 2, w: 3, pre: [std-string], al: ["<charconv>"]}
+- {id: hdr-ranges, t: "Header — ranges", ty: header, d: HDR, tier: 2, w: 3, pre: [ranges-and-views], al: ["<ranges>"]}
+- {id: hdr-filesystem, t: "Header — filesystem", ty: header, d: HDR, tier: 2, w: 3, pre: [file-io], al: ["<filesystem>"]}
+- {id: hdr-initializer-list, t: "Header — initializer_list", ty: header, d: HDR, tier: 2, w: 3, al: ["<initializer_list>"]}
+- {id: hdr-compare, t: "Header — compare", ty: header, d: HDR, tier: 2, w: 3, al: ["<compare>"]}
+- {id: hdr-expected, t: "Header — expected", ty: header, d: HDR, tier: 2, w: 3, pre: [std-expected], al: ["<expected>"]}
+- {id: hdr-bitset, t: "Header — bitset", ty: header, d: HDR, tier: 2, w: 3, pre: [bit-manipulation], al: ["<bitset>"]}
+- {id: hdr-bit, t: "Header — bit", ty: header, d: HDR, tier: 3, w: 3, pre: [bit-manipulation], al: ["<bit>"]}
+- {id: hdr-regex, t: "Header — regex", ty: header, d: HDR, tier: 3, w: 3, pre: [std-string], al: ["<regex>"]}
+- {id: hdr-type-traits, t: "Header — type_traits", ty: header, d: HDR, tier: 3, w: 3, pre: [type-traits], al: ["<type_traits>"]}
+- {id: hdr-concepts, t: "Header — concepts", ty: header, d: HDR, tier: 3, w: 3, pre: [concepts-and-constraints], al: ["<concepts>"]}
+- {id: hdr-thread, t: "Header — thread and stop_token", ty: header, d: HDR, tier: 2, w: 3, pre: [threads], al: ["<thread>", "<stop_token>"]}
+- {id: hdr-mutex, t: "Header — mutex and shared_mutex", ty: header, d: HDR, tier: 2, w: 3, pre: [mutexes-and-locks], al: ["<mutex>", "<shared_mutex>"]}
+- {id: hdr-condition-variable, t: "Header — condition_variable", ty: header, d: HDR, tier: 2, w: 3, pre: [condition-variables], al: ["<condition_variable>"]}
+- {id: hdr-future, t: "Header — future", ty: header, d: HDR, tier: 2, w: 3, pre: [futures-and-async], al: ["<future>"]}
+- {id: hdr-atomic, t: "Header — atomic", ty: header, d: HDR, tier: 3, w: 3, pre: [atomics], al: ["<atomic>"]}
+- {id: hdr-system-error, t: "Header — system_error", ty: header, d: HDR, tier: 3, w: 4, pre: [error-codes], al: ["<system_error>"]}
+- {id: hdr-new, t: "Header — new", ty: header, d: HDR, tier: 3, w: 4, al: ["<new>"]}
+- {id: hdr-locale, t: "Header — locale", ty: header, d: HDR, tier: 3, w: 4, pre: [characters-and-encodings], al: ["<locale>"]}
+- {id: hdr-complex-valarray, t: "Header — complex and valarray", ty: header, d: HDR, tier: 3, w: 4, al: ["<complex>", "<valarray>"]}
+- {id: hdr-source-location, t: "Header — source_location and stacktrace", ty: header, d: HDR, tier: 3, w: 4, al: ["<source_location>", "<stacktrace>"]}
+- {id: hdr-coroutine, t: "Header — coroutine", ty: header, d: HDR, tier: 4, w: 4, pre: [coroutines], al: ["<coroutine>"]}

@@ -64,7 +64,7 @@ Every design decision in C++ is a position taken on one or more of five permanen
 
 ## 4 · Product line
 
-The Compendium publishes **eleven products**. Each has a fixed anatomy (see [[Framework]]) and a place in the vault.
+The Compendium publishes **twelve products**. Each has a fixed anatomy (see [[Framework]]) and a place in the vault.
 
 | # | Product | Archetype | Purpose | Lives in |
 |---|---|---|---|---|
@@ -79,6 +79,7 @@ The Compendium publishes **eleven products**. Each has a fixed anatomy (see [[Fr
 | 9 | **Source Guides** | `guide` | How to read each book and reference, mapped to the Atlas | `03 Sources/` |
 | 10 | **Paths and the Continuum Bridge** | `path` | Ordered routes through the Atlas, joined to the 35 practice projects | `04 Practice/` |
 | 11 | **Management products** | system | Coverage, Ledger, Daily Brief, Directives, dashboards | `00 System/` |
+| 12 | **Header Cards** | `header` | Fast lookup for one standard header: signature listing, task recipes, key rules, practices, linked to the Dossiers that explain them. Grown from the owner's own reference sheets (2026-09) | `05 Headers/`, hub [[Map — Standard Headers]] |
 
 **Planned future product lines** (the Editor opens them once the core Atlas passes 60% coverage):
 - *Recall Decks*: export every `[!quiz]` into Anki-compatible decks for spaced repetition.

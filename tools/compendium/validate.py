@@ -135,7 +135,7 @@ def check(note: Note, topics_by_id: dict | None = None, file_idx: dict | None = 
     src = note.section("Sources")
     if "Sources" in note.headings:
         if not BOOK_CITE_RE.search(src):
-            W("sources", "no book citation with location (e.g. `Primer §13.6.2 (p. 532)`)")
+            W("sources", "no book citation with location (e.g. `Primer §13.6.1 (p. 532)`)")
         if not URL_RE.search(src):
             W("sources", "no web reference (cppreference / eel.is draft / Core Guidelines)")
         if len([ln for ln in src.splitlines() if ln.strip().startswith(("-", "*", "1", "|"))]) < 3 and ntype not in ("path",):
@@ -143,6 +143,8 @@ def check(note: Note, topics_by_id: dict | None = None, file_idx: dict | None = 
 
     for b in note.cpp_blocks():
         n = b.code.count("\n")
+        if ntype == "header" and "// cc: fragment" in b.code:
+            continue   # a Header Card's Quick Reference listing is long by design
         if n > 60:
             W("code", f"code block at line {b.line} is {n} lines; split or trim (≤ 40 preferred)")
 

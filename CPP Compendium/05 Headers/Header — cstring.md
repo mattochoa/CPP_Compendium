@@ -1,17 +1,48 @@
-# CSTRING_REFERENCE
-
-## Core Definition
-**`<cstring>`** is the C++ wrapper for C's `<string.h>`: null-terminated byte-string functions (`strlen`, `strcpy`, `strcmp`, ...) and raw memory functions (`memcpy`, `memset`, `memcmp`, ...). Names are available in namespace `std` (and usually the global namespace too). These functions do **no bounds checking** — the caller owns every buffer-size guarantee.
-
-**Tags**: #cpp #cstring #c-strings #memory #strcpy #memcpy #null-terminated #legacy
-
+---
+id: hdr-cstring
+title: Header — cstring
+aliases:
+- <cstring>
+- string.h
+- strcpy
+- memcpy
+type: header
+domain: HDR
+tier: 2
+status: draft
+standard: C++98
+related:
+- "[[C-Style Strings]]"
+- "[[string]]"
+- "[[Undefined Behavior]]"
+- "[[Memory Safety in C++ — Threats and Defenses]]"
+tags:
+- type/header
+- domain/hdr
+- tier/2
+- header/cstring
+- tension/compatibility-vs-evolution
+- tension/safety-vs-performance
+created: '2026-09-23'
+updated: '2026-09-23'
+header: <cstring>
+origin: owner reference sheet CSTRING_REFERENCE (2026-09)
 ---
 
-## COMPLETE CSTRING QUICK REFERENCE
+# Header — cstring
+
+> [!essence]
+> **`<cstring>`** is the C++ wrapper for C's `<string.h>`: null-terminated byte-string functions (`strlen`, `strcpy`, `strcmp`, ...) and raw memory functions (`memcpy`, `memset`, `memcmp`, ...). Names are available in namespace `std` (and usually the global namespace too). These functions do **no bounds checking** — the caller owns every buffer-size guarantee.
+
+> [!standard] Versions
+> C++11+ (C99/C11 library base) | POSIX and Annex K extensions noted where relevant
+
+## Quick Reference
 
 ### FUNCTIONS — Target | Operation | Output
 
 ```cpp
+// cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // LENGTH
 // ═══════════════════════════════════════════════════════════════════════════
@@ -85,6 +116,7 @@ NULL                              // C null-pointer macro — prefer nullptr in 
 ### WIDE-CHARACTER COUNTERPARTS — `<cwchar>`
 
 ```cpp
+// cc: fragment
 std::wcslen(ws)                   // wcslen ↔ strlen
 std::wcscpy / wcsncpy             // ↔ strcpy / strncpy
 std::wcscat / wcsncat             // ↔ strcat / strncat
@@ -96,13 +128,13 @@ std::wmemcpy / wmemmove           // ↔ memcpy / memmove (counts are wchar_t un
 std::wmemset / wmemcmp / wmemchr  // ↔ memset / memcmp / memchr
 ```
 
----
-
-## COMMON PATTERNS & EXAMPLES
+## Patterns
 
 ### Safe Copying (Fixed Buffers)
 ```cpp
+// cc: stmts
 #include <cstring>
+#include <cstddef>
 
 char dest[32];
 const char* src = "hello world";
@@ -127,6 +159,9 @@ if (len < sizeof(dest)) {
 
 ### The `strncpy` Trap
 ```cpp
+// cc: stmts
+#include <cstring>
+
 char buf[5];
 std::strncpy(buf, "hello", 5);   // Copies 'h','e','l','l','o' — NO terminator!
 // std::strlen(buf);             // UB — reads past the buffer
@@ -138,27 +173,33 @@ buf[sizeof(buf) - 1] = '\0';     // "hell"
 
 ### Safe Concatenation
 ```cpp
-char buf[64] = "Log: ";
+#include <cstddef>
+#include <cstring>
 
-// Remaining space = capacity - current length - 1 (for '\0')
-std::size_t used = std::strlen(buf);
-std::size_t room = sizeof(buf) - used - 1;
-std::strncat(buf, message, room);
-// strncat ALWAYS null-terminates, so no manual fixup is needed.
+// Usage:  char buf[64] = "Log: ";  appendMessage(buf, sizeof buf, message);
+void appendMessage(char* buf, std::size_t capacity, const char* message) {
+    // Remaining space = capacity - current length - 1 (for '\0')
+    std::size_t used = std::strlen(buf);
+    std::size_t room = capacity - used - 1;
+    std::strncat(buf, message, room);
+    // strncat ALWAYS null-terminates, so no manual fixup is needed.
+}
 ```
 
 ### Comparison and Sorting
 ```cpp
-#include <cstring>
 #include <algorithm>
+#include <cctype>
+#include <cstring>
+#include <iterator>
 
-const char* names[] = {"charlie", "alpha", "bravo"};
-
-std::sort(std::begin(names), std::end(names),
-          [](const char* a, const char* b) { return std::strcmp(a, b) < 0; });
+void sortNames() {
+    const char* names[] = {"charlie", "alpha", "bravo"};
+    std::sort(std::begin(names), std::end(names),
+              [](const char* a, const char* b) { return std::strcmp(a, b) < 0; });
+}
 
 // Case-insensitive comparison (portable version — strcasecmp is POSIX):
-#include <cctype>
 int ciCompare(const char* a, const char* b) {
     while (*a && *b) {
         int ca = std::tolower(static_cast<unsigned char>(*a));
@@ -172,6 +213,9 @@ int ciCompare(const char* a, const char* b) {
 
 ### Prefix / Suffix Checks
 ```cpp
+#include <cstddef>
+#include <cstring>
+
 bool startsWith(const char* s, const char* prefix) {
     return std::strncmp(s, prefix, std::strlen(prefix)) == 0;
 }
@@ -184,6 +228,9 @@ bool endsWith(const char* s, const char* suffix) {
 
 ### Searching
 ```cpp
+// cc: stmts
+#include <cstring>
+
 const char* path = "/usr/local/bin/tool.exe";
 
 const char* lastSlash = std::strrchr(path, '/');
@@ -200,8 +247,11 @@ const char* firstDigit = std::strpbrk(path, "0123456789");
 
 ### Tokenizing with `strtok` (and why to avoid it)
 ```cpp
+// cc: stmts
 #include <cstring>
 #include <cstdio>
+#include <string>
+#include <string_view>
 
 char line[] = "alpha,bravo,,charlie";   // MUST be modifiable — not a string literal
 
@@ -237,6 +287,9 @@ std::vector<std::string_view> split(std::string_view s, char delim) {
 
 ### `memcpy` vs `memmove`
 ```cpp
+// cc: stmts
+#include <cstring>
+
 char buf[] = "abcdefgh";
 
 // Non-overlapping — memcpy is fine and typically fastest:
@@ -249,6 +302,12 @@ std::memmove(buf + 2, buf, 6);   // buf → "ababcdef"
 
 ### Zeroing and Filling
 ```cpp
+// cc: stmts
+#include <string>
+#include <algorithm>
+#include <cstring>
+#include <iterator>
+
 int arr[100];
 std::memset(arr, 0, sizeof(arr));      // OK: all-zero-bits == 0 for integers
 
@@ -265,6 +324,8 @@ std::fill(std::begin(arr), std::end(arr), 1);   // Correct
 
 ### Binary Comparison
 ```cpp
+#include <cstring>
+
 struct Key { int a; int b; };
 
 // memcmp compares padding bytes too — only valid if the type has no padding
@@ -290,8 +351,10 @@ float bitsToFloat(std::uint32_t bits) {
 
 ### Bridging to `std::string`
 ```cpp
+// cc: stmts
 #include <cstring>
 #include <string>
+#include <cstddef>
 
 const char* c = "hello";
 std::string s = c;                     // Implicit conversion
@@ -308,9 +371,11 @@ buf[n] = '\0';
 
 ### Error Messages from `errno`
 ```cpp
+// cc: stmts
 #include <cstring>
 #include <cerrno>
 #include <cstdio>
+#include <system_error>
 
 std::FILE* f = std::fopen("missing.txt", "r");
 if (!f) {
@@ -319,9 +384,7 @@ if (!f) {
 // Modern C++: std::error_code / std::system_error carry the same information safely.
 ```
 
----
-
-## IMPORTANT CONCEPTS
+## Key Concepts
 
 ### No Bounds Checking, Anywhere
 Every function here trusts the caller. Buffer overflows from `strcpy`/`strcat`/`sprintf` are the classic C security bug class. The size guarantee must come from your code, not the library.
@@ -331,6 +394,9 @@ Every function here trusts the caller. Buffer overflows from `strcpy`/`strcat`/`
 
 ### Sizing: `sizeof` vs `strlen`
 ```cpp
+// cc: stmts
+#include <cstring>
+
 char arr[32] = "hi";
 const char* ptr = arr;
 
@@ -358,11 +424,9 @@ The `_s` bounds-checked variants are an optional C11 annex. MSVC implements them
 ### The C++ Answer Is Usually a Different Type
 For nearly every task in this header, `std::string` (owning, growable) or `std::string_view` (non-owning, cheap) is safer and no slower. Reach for `<cstring>` when interfacing with C APIs, doing genuinely raw byte work, or optimizing a measured hot path.
 
----
+## Safety Cheat Sheet
 
-## SAFETY CHEAT SHEET
-
-```
+```text
 Function      Risk                                Safer choice
 ────────────────────────────────────────────────────────────────────────────
 strcpy        Overflow, no size limit             std::string; or memcpy with a checked length
@@ -377,9 +441,7 @@ memset        Byte-fill only; UB on class types   std::fill; value-initializatio
 strerror      Not thread-safe                     strerror_r / strerror_s; std::system_error
 ```
 
----
-
-## BEST PRACTICES
+## Best Practices
 
 1. **Prefer `std::string` and `std::string_view`** — reach for `<cstring>` only at C boundaries
 2. **Never call `strcpy`/`strcat` into a buffer you did not size-check**
@@ -394,9 +456,7 @@ strerror      Not thread-safe                     strerror_r / strerror_s; std::
 11. **Prefer `std::string::c_str()`** over hand-managed buffers when calling C APIs
 12. **Enable `-Wall -Wextra -D_FORTIFY_SOURCE=2`** and run ASan/UBSan on code that uses these functions
 
----
-
-## RELATED HEADERS
+## Related Headers
 
 ```cpp
 #include <cstring>      // strlen, strcpy, memcpy, memset ...
@@ -413,15 +473,16 @@ strerror      Not thread-safe                     strerror_r / strerror_s; std::
 #include <algorithm>    // std::copy, std::fill, std::equal — type-aware replacements
 ```
 
----
+## Connections
 
-## EXTERNAL RESOURCES
+- **Hub:** [[Map — Standard Headers]]
+- **Concept notes (the why behind this card):** [[C-Style Strings]] · [[string]] · [[Undefined Behavior]] · [[Memory Safety in C++ — Threats and Defenses]] · [[Sanitizers — ASan, UBSan, TSan]]
+- **Sibling cards:** [[Header — string]] · [[Header — cctype]] · [[Header — cstdio]]
 
-- **Null-terminated byte strings**: https://en.cppreference.com/w/cpp/string/byte
-- **`<cstring>`**: https://en.cppreference.com/w/cpp/header/cstring
-- **C++ Core Guidelines, SL.str**: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#SS-string
+## Sources
 
----
-
-**Standard**: C++11+ (C99/C11 library base) | POSIX and Annex K extensions noted where relevant
-**Last Updated**: September 2026
+- Primer §3.5.4 "C-Style Character Strings" (p. 122): `strlen`, `strcmp`, `strcat`, `strcpy` and why they are dangerous.
+- cppreference / web, *Null-terminated byte strings*: https://en.cppreference.com/w/cpp/string/byte
+- cppreference / web, *`<cstring>`*: https://en.cppreference.com/w/cpp/header/cstring
+- *C++ Core Guidelines, SL.str*: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#SS-string
+- Origin: the owner's reference sheet `CSTRING_REFERENCE` (September 2026), adopted into the Compendium on 2026-09-23 and maintained by the Builder and Editor since.

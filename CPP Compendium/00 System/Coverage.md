@@ -8,20 +8,20 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 280 |
+| ○ planned | 324 |
 | ◌ stub | 0 |
-| ◐ draft | 6 |
+| ◐ draft | 20 |
 | ⟲ revise | 0 |
 | ● reviewed | 5 |
 | ★ evergreen | 0 |
 
-**Total topics:** 291
+**Total topics:** 349
 
-- Wave 0: `███████░░░░░░░░░░░░░` 6/17
-- Wave 1: `█░░░░░░░░░░░░░░░░░░░` 3/49
-- Wave 2: `░░░░░░░░░░░░░░░░░░░░` 2/99
-- Wave 3: `░░░░░░░░░░░░░░░░░░░░` 0/97
-- Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/29
+- Wave 0: `████████░░░░░░░░░░░░` 7/18
+- Wave 1: `██░░░░░░░░░░░░░░░░░░` 4/51
+- Wave 2: `██░░░░░░░░░░░░░░░░░░` 10/122
+- Wave 3: `█░░░░░░░░░░░░░░░░░░░` 4/123
+- Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
 ## D00 · What C++ Is
 
@@ -446,4 +446,69 @@ tags: [system/generated]
 | ○ | [[Path — Course Companion]] | path | 1 | 2 |  |
 | ○ | [[Path — Modern C++ Fluency]] | path | 2 | 3 |  |
 | ○ | [[Path — Systems & Performance]] | path | 3 | 3 |  |
+
+## HDR · Standard Headers
+
+*Where does each standard facility live, and what exactly does its header promise?*  `██░░░░░░░░` 14/58
+
+| | Topic | Type | Tier | Wave | Score |
+|---|---|---|---|---|---|
+| ◐ | [[Map — Standard Headers]] | map | 1 | 0 |  |
+| ◐ | [[Header — iostream]] | header | 1 | 2 |  |
+| ◐ | [[Header — ios]] | header | 2 | 2 |  |
+| ◐ | [[Header — iomanip]] | header | 1 | 2 |  |
+| ◐ | [[Header — fstream]] | header | 1 | 2 |  |
+| ◐ | [[Header — sstream]] | header | 1 | 3 |  |
+| ◐ | [[Header — streambuf]] | header | 3 | 3 |  |
+| ◐ | [[Header — cstdio]] | header | 2 | 2 |  |
+| ◐ | [[Header — Modern IO]] | header | 2 | 3 |  |
+| ◐ | [[Header — string]] | header | 1 | 1 |  |
+| ◐ | [[Header — cstring]] | header | 2 | 3 |  |
+| ◐ | [[Header — cctype]] | header | 1 | 2 |  |
+| ◐ | [[Header — cmath]] | header | 1 | 2 |  |
+| ◐ | [[Header — conio (non-standard)]] | header | 2 | 2 |  |
+| ○ | [[Header — vector]] | header | 1 | 1 |  |
+| ○ | [[Header — array]] | header | 1 | 2 |  |
+| ○ | [[Header — algorithm]] | header | 1 | 2 |  |
+| ○ | [[Header — numeric]] | header | 2 | 2 |  |
+| ○ | [[Header — memory]] | header | 1 | 2 |  |
+| ○ | [[Header — utility]] | header | 1 | 2 |  |
+| ○ | [[Header — map and set]] | header | 1 | 2 |  |
+| ○ | [[Header — unordered_map and unordered_set]] | header | 2 | 2 |  |
+| ○ | [[Header — deque, list and forward_list]] | header | 2 | 2 |  |
+| ○ | [[Header — iterator]] | header | 2 | 2 |  |
+| ○ | [[Header — random]] | header | 1 | 2 |  |
+| ○ | [[Header — exception and stdexcept]] | header | 1 | 2 |  |
+| ○ | [[Header — cstdlib]] | header | 1 | 2 |  |
+| ○ | [[Header — cstdint]] | header | 1 | 2 |  |
+| ○ | [[Header — limits]] | header | 2 | 2 |  |
+| ○ | [[Header — cassert]] | header | 1 | 2 |  |
+| ○ | [[Header — queue and stack]] | header | 2 | 3 |  |
+| ○ | [[Header — optional, variant and any]] | header | 2 | 3 |  |
+| ○ | [[Header — tuple]] | header | 2 | 3 |  |
+| ○ | [[Header — functional]] | header | 2 | 3 |  |
+| ○ | [[Header — chrono]] | header | 2 | 3 |  |
+| ○ | [[Header — span]] | header | 2 | 3 |  |
+| ○ | [[Header — charconv]] | header | 2 | 3 |  |
+| ○ | [[Header — ranges]] | header | 2 | 3 |  |
+| ○ | [[Header — filesystem]] | header | 2 | 3 |  |
+| ○ | [[Header — initializer_list]] | header | 2 | 3 |  |
+| ○ | [[Header — compare]] | header | 2 | 3 |  |
+| ○ | [[Header — expected]] | header | 2 | 3 |  |
+| ○ | [[Header — bitset]] | header | 2 | 3 |  |
+| ○ | [[Header — bit]] | header | 3 | 3 |  |
+| ○ | [[Header — regex]] | header | 3 | 3 |  |
+| ○ | [[Header — type_traits]] | header | 3 | 3 |  |
+| ○ | [[Header — concepts]] | header | 3 | 3 |  |
+| ○ | [[Header — thread and stop_token]] | header | 2 | 3 |  |
+| ○ | [[Header — mutex and shared_mutex]] | header | 2 | 3 |  |
+| ○ | [[Header — condition_variable]] | header | 2 | 3 |  |
+| ○ | [[Header — future]] | header | 2 | 3 |  |
+| ○ | [[Header — atomic]] | header | 3 | 3 |  |
+| ○ | [[Header — system_error]] | header | 3 | 4 |  |
+| ○ | [[Header — new]] | header | 3 | 4 |  |
+| ○ | [[Header — locale]] | header | 3 | 4 |  |
+| ○ | [[Header — complex and valarray]] | header | 3 | 4 |  |
+| ○ | [[Header — source_location and stacktrace]] | header | 3 | 4 |  |
+| ○ | [[Header — coroutine]] | header | 4 | 4 |  |
 

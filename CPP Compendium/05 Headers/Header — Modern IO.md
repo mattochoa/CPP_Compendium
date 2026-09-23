@@ -1,22 +1,57 @@
-# MODERN_IO_REFERENCE
-
-## Core Definition
-The C++20/C++23 additions to the I/O library, plus the small utility headers that round out `<cpp/io>`:
-
-- **`<syncstream>`** (C++20) — thread-safe output without interleaving
-- **`<spanstream>`** (C++23) — streams over a fixed external buffer, no allocation
-- **`<print>`** (C++23) — `std::print` / `std::println`, formatted output done right
-- **`<format>`** (C++20) — the formatting engine behind `<print>`
-- **`<iosfwd>`** — forward declarations only, for cheap header includes
-- **Removed/deprecated** — `<strstream>`, `std::codecvt`
-
-**Tags**: #cpp #cpp20 #cpp23 #print #format #syncstream #spanstream #iosfwd #threading
-
+---
+id: hdr-modern-io
+title: Header — Modern IO
+aliases:
+- <format>
+- <print>
+- <syncstream>
+- <spanstream>
+- <iosfwd>
+- "std::format"
+- "std::print"
+type: header
+domain: HDR
+tier: 2
+status: draft
+standard: C++20
+related:
+- "[[format and print]]"
+- "[[IO Streams Architecture]]"
+- "[[Data Races and Race Conditions]]"
+- "[[span]]"
+tags:
+- type/header
+- domain/hdr
+- tier/2
+- header/modern-io
+- tension/compatibility-vs-evolution
+- tension/safety-vs-performance
+created: '2026-09-23'
+updated: '2026-09-23'
+header: <format>
+origin: owner reference sheet MODERN_IO_REFERENCE (2026-09)
 ---
 
-## `<print>` — C++23
+# Header — Modern IO
+
+> [!essence]
+> The C++20/C++23 additions to the I/O library, plus the small utility headers that round out the I/O library:
+>
+> - **`<syncstream>`** (C++20) — thread-safe output without interleaving
+> - **`<spanstream>`** (C++23) — streams over a fixed external buffer, no allocation
+> - **`<print>`** (C++23) — `std::print` / `std::println`, formatted output done right
+> - **`<format>`** (C++20) — the formatting engine behind `<print>`
+> - **`<iosfwd>`** — forward declarations only, for cheap header includes
+> - **Removed/deprecated** — `<strstream>`, `std::codecvt`
+
+> [!standard] Versions
+> C++20 (`format`, `syncstream`) / C++23 (`print`, `spanstream`, range formatting) / C++26 (`runtime_format`, `println()`) **Compiler support:** `<format>` needs GCC 13+, Clang 17+, MSVC 19.29+. `<print>` needs GCC 14+, MSVC 19.37+; Clang routes through libc++ 18+.
+
+## Quick Reference
+### `<print>` — C++23
 
 ```cpp
+// cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // FUNCTIONS — Target | Operation | Output
 // ═══════════════════════════════════════════════════════════════════════════
@@ -33,6 +68,7 @@ std::vprint_nonunicode(...)       // runtime   | Type-erased, raw      | For wra
 ```
 
 ```cpp
+// cc: fragment
 #include <print>
 
 std::println("Hello, {}!", name);
@@ -42,11 +78,11 @@ std::println(stderr, "error: {}", msg);          // To a FILE*
 std::println(std::cout, "to a stream: {}", x);   // To an ostream
 ```
 
----
 
-## `<format>` — C++20
+### `<format>` — C++20
 
 ```cpp
+// cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // FUNCTIONS
 // ═══════════════════════════════════════════════════════════════════════════
@@ -131,13 +167,13 @@ struct std::formatter<Point> : std::formatter<std::string> {
 // This inherits the whole spec grammar — {:>20} on a Point then works.
 ```
 
----
 
-## `<syncstream>` — C++20
+### `<syncstream>` — C++20
 
 The problem it solves: two threads writing to `std::cout` produce correctly-typed but arbitrarily interleaved characters. `osyncstream` accumulates into a private buffer and transfers it to the destination atomically when destroyed (or on `emit()`).
 
 ```cpp
+// cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // CLASSES & FUNCTIONS
 // ═══════════════════════════════════════════════════════════════════════════
@@ -152,6 +188,7 @@ std::flush_emit                   // manipulator | Flush AND emit
 ```
 
 ```cpp
+// cc: fragment
 #include <syncstream>
 #include <iostream>
 #include <thread>
@@ -178,13 +215,13 @@ int main() {
 ```
 > Without `osyncstream`, `std::cout` writes are individually thread-safe (no data race, no corruption) but freely interleaved between insertions. `osyncstream` is what makes a multi-line message stay together. It does **not** order threads — only groups each thread's output.
 
----
 
-## `<spanstream>` — C++23
+### `<spanstream>` — C++23
 
 Streams over memory you already own. No allocation, no `std::string` — useful in embedded, real-time, and hot-path code, and as the modern replacement for the removed `<strstream>`.
 
 ```cpp
+// cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // CLASSES
 // ═══════════════════════════════════════════════════════════════════════════
@@ -199,6 +236,7 @@ os.span(sp)                       // span      | Rebind to new memory  | Returns
 ```
 
 ```cpp
+// cc: fragment
 #include <spanstream>
 #include <span>
 
@@ -216,13 +254,13 @@ is >> a >> b >> c;
 ```
 > Overflow does not grow the buffer — it sets `failbit`. Check the stream after writing.
 
----
 
-## `<iosfwd>`
+### `<iosfwd>`
 
 Forward declarations for every stream type, and nothing else. Include it in *headers* that only mention stream types in signatures; include the real header in the `.cpp`.
 
 ```cpp
+// cc: fragment
 // my_class.hpp
 #include <iosfwd>
 
@@ -238,28 +276,178 @@ std::ostream& operator<<(std::ostream&, const MyClass&);
 ```
 Declares: `basic_ios`, `basic_streambuf`, `basic_istream`, `basic_ostream`, `basic_iostream`, `basic_stringbuf`/`stringstream` family, `basic_filebuf`/`fstream` family, `basic_syncbuf`/`osyncstream`, `basic_spanbuf`/`spanstream` family, `fpos`, `streampos`, and all the `char`/`wchar_t` aliases.
 
----
+## Patterns
 
-## REMOVED AND DEPRECATED
+*Added by the Compendium on adoption: the owner's sheet showed these as fragments inside the reference listing; here each one compiles and runs, with its output checked.*
+
+### Print to the Console, `stderr` and Any Stream (C++23)
+```cpp
+// cc: std=c++23
+#include <cstdio>
+#include <iostream>
+#include <print>
+#include <string>
+
+int main() {
+    std::string name = "Ada";
+    double price = 3.5;
+    std::println("Hello, {}!", name);
+    std::println("{:>10} {:>8.2f}", "tea", price);
+    std::print("no newline, ");
+    std::println("then one");
+    std::println(stderr, "error: {}", 404);           // To a FILE*
+    std::println(std::cout, "to a stream: {}", 42);   // To an ostream
+}
+// expect: Hello, Ada!
+// expect: tea     3.50
+// expect: no newline, then one
+```
+
+### Format Specs, Checked
+```cpp
+#include <format>
+#include <iostream>
+
+int main() {
+    std::cout << std::format("[{:>8}]", "hi") << '\n';             // right-align in 8
+    std::cout << std::format("{:*^11}", "mid") << '\n';            // fill *, centre
+    std::cout << std::format("{:08.3f}", 3.14159) << '\n';         // zero-pad, 3 decimals
+    std::cout << std::format("{:#010b}", 42) << '\n';              // 0b prefix counts toward the width
+    std::cout << std::format("{:+}", 42) << '\n';                  // always show the sign
+    std::cout << std::format("<{:{}.{}f}>", 3.14159, 10, 2) << '\n';  // width and precision from arguments
+    std::cout << std::format("{1} {0}", "a", "b") << '\n';         // explicit indices
+}
+// expect: [      hi]
+// expect: ****mid****
+// expect: 0003.142
+// expect: 0b00101010
+// expect: +42
+// expect: <      3.14>
+// expect: b a
+```
+
+### Formatting Your Own Type
+```cpp
+#include <format>
+#include <iostream>
+#include <string>
+
+struct Point { int x, y; };
+
+// Delegate to the string formatter: the whole spec grammar ({:>10}, {:*^12}...) comes for free.
+template <>
+struct std::formatter<Point> : std::formatter<std::string> {
+    auto format(const Point& p, std::format_context& ctx) const {
+        return std::formatter<std::string>::format(std::format("({}, {})", p.x, p.y), ctx);
+    }
+};
+
+int main() {
+    std::cout << std::format("[{:>10}]", Point{1, 2}) << '\n';
+}
+// expect: [    (1, 2)]
+```
+
+### Formatting Containers (C++23)
+```cpp
+// cc: std=c++23
+#include <format>
+#include <iostream>
+#include <map>
+#include <vector>
+
+int main() {
+    std::cout << std::format("{}", std::vector{1, 2, 3}) << '\n';
+    std::cout << std::format("{}", std::map<int, int>{{1, 2}}) << '\n';
+    std::cout << std::format("{:n}", std::vector{1, 2, 3}) << '\n';     // n: no brackets
+    std::cout << std::format("{::>4}", std::vector{1, 2}) << '\n';      // spec after :: applies per element
+}
+// expect: [1, 2, 3]
+// expect: {1: 2}
+// expect: 1, 2, 3
+// expect: [   1,    2]
+```
+
+### A Runtime Format String
+```cpp
+#include <format>
+#include <iostream>
+#include <string>
+#include <string_view>
+
+// The format string arrives at run time (a config file, a translation table):
+std::string render(std::string_view fmt, int a, int b) {
+    return std::vformat(fmt, std::make_format_args(a, b));   // a and b are named lvalues
+}
+
+int main() { std::cout << render("{1}-{0}", 1, 2) << '\n'; }
+// expect: 2-1
+```
+
+### Whole Messages from Many Threads
+```cpp
+#include <iostream>
+#include <syncstream>
+#include <thread>
+#include <vector>
+
+void worker(int id) {
+    std::osyncstream(std::cout)                  // everything below lands as one block
+        << "thread " << id << " starting\n"
+        << "thread " << id << " done\n";
+}   // the temporary is destroyed here → one atomic transfer to cout
+
+int main() {
+    std::vector<std::jthread> threads;
+    for (int i = 0; i < 4; ++i) threads.emplace_back(worker, i);
+}   // jthreads join on destruction; thread order varies, but each pair of lines stays together
+```
+
+### Streams over Memory You Own (C++23)
+```cpp
+// cc: std=c++23
+#include <cstring>
+#include <iostream>
+#include <span>
+#include <spanstream>
+#include <string_view>
+
+int main() {
+    char buffer[128];
+    std::ospanstream os(std::span<char>{buffer});
+    os << "id=" << 42 << " ok";
+    std::span<char> written = os.span();                   // exactly the bytes produced
+    std::cout << std::string_view(written.data(), written.size()) << '\n';
+
+    const char* data = "10 20 30";                         // parse without copying
+    std::ispanstream is(std::span<const char>{data, std::strlen(data)});
+    int a, b, c;
+    is >> a >> b >> c;
+    std::cout << a + b + c << '\n';
+}
+// expect: id=42 ok
+// expect: 60
+```
+
+## Removed and Deprecated
 
 ```cpp
+// cc: fragment
 <strstream>                       // Deprecated C++98, REMOVED C++26
                                   //   strstreambuf, istrstream, ostrstream, strstream
                                   //   Replacement: <sstream>, or <spanstream> for fixed buffers
 
 std::codecvt<char16_t, char, mbstate_t>   // Deprecated C++20
-std::wstring_convert / wbuffer_convert    // Deprecated C++17
+std::wstring_convert / wbuffer_convert    // Deprecated C++17, REMOVED C++26
                                   //   No standard replacement; use ICU, iconv, or
                                   //   a library like simdutf / utfcpp for encoding conversion
 
 std::gets                         // <cstdio> — REMOVED in C++14 (unbounded overflow)
 ```
 
----
+## Choosing An Output Tool
 
-## CHOOSING AN OUTPUT TOOL
-
-```
+```text
 Situation                                   Use
 ────────────────────────────────────────────────────────────────────────
 Printing to the console, C++23 available    std::println("{}", x)
@@ -273,9 +461,7 @@ Interfacing with C code                     std::snprintf / FILE*
 Custom types through a generic API           operator<< (works everywhere)
 ```
 
----
-
-## IMPORTANT CONCEPTS
+## Key Concepts
 
 ### `std::print` Is Not Just `printf` with Braces
 The format string is a compile-time-checked `consteval` parameter. `std::println("{} {}", 1)` fails to compile. A type with no `formatter` specialization fails to compile. There are no varargs and no promotion surprises. To use a format string only known at runtime, go through `std::vformat` (or C++26's `std::runtime_format`).
@@ -285,6 +471,9 @@ On a Windows console, `std::print` writes UTF-8 correctly where `printf` and `co
 
 ### `make_format_args` Needs Named Values
 ```cpp
+// cc: fragment
+#include <format>
+
 std::vformat("{} {}", std::make_format_args(1, 2));       // Does NOT compile
 int a = 1, b = 2;
 std::vformat("{} {}", std::make_format_args(a, b));       // Correct
@@ -309,11 +498,9 @@ It is a fixed window into memory you provided. Writing past the end sets `failbi
 ### Including `<iostream>` Has a Side Effect
 It declares a static `std::ios_base::Init` object that constructs `cin`/`cout`/`cerr`/`clog`. That is why including `<iostream>` in a translation unit that never uses it still costs something at startup.
 
----
+## Migration Quick Table
 
-## MIGRATION QUICK TABLE
-
-```
+```text
 Old                                     New
 ──────────────────────────────────────────────────────────────────────────
 printf("%d\n", x)                       std::println("{}", x)
@@ -326,9 +513,7 @@ ostrstream over a char[]                std::ospanstream over a span
 mutex around cout in threads            std::osyncstream(std::cout)
 ```
 
----
-
-## BEST PRACTICES
+## Best Practices
 
 1. **Prefer `std::println` for console output** when C++23 is available — checked, Unicode-correct, concise
 2. **Prefer `std::format` over `ostringstream`** for building strings
@@ -342,9 +527,7 @@ mutex around cout in threads            std::osyncstream(std::cout)
 10. **Don't reach for `<strstream>`** — it is gone; `<spanstream>` is the replacement
 11. **Keep `operator<<` for your types** even when using `std::print` — it keeps them usable with every stream-based API; add a `formatter` alongside it
 
----
-
-## RELATED HEADERS
+## Related Headers
 
 ```cpp
 #include <print>        // C++23: print, println
@@ -358,18 +541,19 @@ mutex around cout in threads            std::osyncstream(std::cout)
 #include <thread>       // What makes syncstream necessary
 ```
 
----
+## Connections
 
-## EXTERNAL RESOURCES
+- **Hub:** [[Map — Standard Headers]]
+- **Concept notes (the why behind this card):** [[format and print]] · [[IO Streams Architecture]] · [[Data Races and Race Conditions]] · [[span]] · [[Variadic Templates and Fold Expressions]]
+- **Sibling cards:** [[Header — iostream]] · [[Header — cstdio]] · [[Header — iomanip]] · [[Header — sstream]]
 
-- **`<print>`**: https://en.cppreference.com/w/cpp/header/print
-- **Format specification**: https://en.cppreference.com/w/cpp/utility/format/spec
-- **`std::osyncstream`**: https://en.cppreference.com/w/cpp/io/basic_osyncstream
-- **`std::spanstream`**: https://en.cppreference.com/w/cpp/io/basic_spanstream
-- **`<iosfwd>`**: https://en.cppreference.com/w/cpp/header/iosfwd
+## Sources
 
----
-
-**Standard**: C++20 (`format`, `syncstream`) / C++23 (`print`, `spanstream`, range formatting) / C++26 (`runtime_format`, `println()`)
-**Compiler support**: `<format>` needs GCC 13+, Clang 17+, MSVC 19.29+. `<print>` needs GCC 14+, MSVC 19.37+; Clang routes through libc++ 18+.
-**Last Updated**: September 2026
+- Tour §11.6 "Output Formatting" (p. 144): `std::format` and format specifications.
+- Tour §11.7 "Streams" (pp. 148–149): synchronized streams and span streams.
+- cppreference / web, *`<print>`*: https://en.cppreference.com/w/cpp/header/print
+- cppreference / web, *Format specification*: https://en.cppreference.com/w/cpp/utility/format/spec
+- cppreference / web, *`std::osyncstream`*: https://en.cppreference.com/w/cpp/io/basic_osyncstream
+- cppreference / web, *`std::spanstream`*: https://en.cppreference.com/w/cpp/io/basic_spanstream
+- cppreference / web, *`<iosfwd>`*: https://en.cppreference.com/w/cpp/header/iosfwd
+- Origin: the owner's reference sheet `MODERN_IO_REFERENCE` (September 2026), adopted into the Compendium on 2026-09-23 and maintained by the Builder and Editor since.

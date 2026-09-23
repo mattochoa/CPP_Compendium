@@ -50,6 +50,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D16` | [[Map — Evolution of C++\|Evolution of C++]] | How did the language get here, and where is it going? | `░░░░░░░░` 0/10 |
 | `SRC` | Sources | What should be read, in what order, and for what? | `░░░░░░░░` 0/5 |
 | `PRX` | Practice | How does knowledge become skill? | `░░░░░░░░` 0/3 |
+| `HDR` | [[Map — Standard Headers\|Standard Headers]] | Where does each standard facility live, and what exactly does its header promise? | `██░░░░░░` 14/58 |
 <!-- cc:end -->
 
 ## Progress
@@ -57,9 +58,9 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 280 | 6 | 0 | 5 | 0 | 291 | 6 | 1 |
+| 324 | 20 | 0 | 5 | 0 | 349 | 6 | 1 |
 
-`█░░░░░░░░░░░░░░░░░░░` **4%** of the Atlas written · last build 2026-09-23
+`█░░░░░░░░░░░░░░░░░░░` **7%** of the Atlas written · last build 2026-09-23
 <!-- cc:end -->
 
 **Up next (Builder queue):**
@@ -74,16 +75,16 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
-- ● [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-23
-- ● [[RAII]] · *idiom* · updated 2026-09-23
-- ◐ [[Pointers vs References]] · *comparison* · updated 2026-09-23
-- ◐ [[Map — Types & Values]] · *map* · updated 2026-09-23
-- ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-23
-- ◐ [[Map — Program Structure & Build]] · *map* · updated 2026-09-23
-- ◐ [[Map — Inheritance & Polymorphism]] · *map* · updated 2026-09-23
-- ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-23
-- ● [[Dangling Pointers and References]] · *pitfall* · updated 2026-09-23
-- ● [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-23
+- ◐ [[Map — Standard Headers]] · *map* · updated 2026-09-23
+- ◐ [[Header — conio (non-standard)]] · *header* · updated 2026-09-23
+- ◐ [[Header — sstream]] · *header* · updated 2026-09-23
+- ◐ [[Header — ios]] · *header* · updated 2026-09-23
+- ◐ [[Header — fstream]] · *header* · updated 2026-09-23
+- ◐ [[Header — cstring]] · *header* · updated 2026-09-23
+- ◐ [[Header — cstdio]] · *header* · updated 2026-09-23
+- ◐ [[Header — cmath]] · *header* · updated 2026-09-23
+- ◐ [[Header — Modern IO]] · *header* · updated 2026-09-23
+- ◐ [[Header — iomanip]] · *header* · updated 2026-09-23
 <!-- cc:end -->
 
 ## Start here

@@ -1,17 +1,46 @@
-# IOS_REFERENCE
-
-## Core Definition
-**`<ios>`** defines the foundation of the stream hierarchy: `ios_base` (format flags, precision, width, locale, callbacks, extensible storage) and `basic_ios` (stream state, buffer association, fill character, tied stream). It also declares the unparameterized manipulators (`hex`, `fixed`, `boolalpha`, ...) and the `io_errc` error category.
-
-Every stream — file, string, console — inherits everything documented here. This is the layer that answers "what does `failbit` actually mean" and "where does `precision` live".
-
-**Tags**: #cpp #ios #ios_base #stream-state #fmtflags #iostate #openmode #locale
-
+---
+id: hdr-ios
+title: Header — ios
+aliases:
+- <ios>
+- ios_base
+- basic_ios
+type: header
+domain: HDR
+tier: 2
+status: draft
+standard: C++98
+related:
+- "[[Stream State and Robust Input]]"
+- "[[IO Streams Architecture]]"
+- "[[Exceptions]]"
+- "[[error_code and System Errors]]"
+tags:
+- type/header
+- domain/hdr
+- tier/2
+- header/ios
+- tension/safety-vs-performance
+created: '2026-09-23'
+updated: '2026-09-23'
+header: <ios>
+origin: owner reference sheet IOS_REFERENCE (2026-09)
 ---
 
-## COMPLETE IOS QUICK REFERENCE
+# Header — ios
+
+> [!essence]
+> **`<ios>`** defines the foundation of the stream hierarchy: `ios_base` (format flags, precision, width, locale, callbacks, extensible storage) and `basic_ios` (stream state, buffer association, fill character, tied stream). It also declares the unparameterized manipulators (`hex`, `fixed`, `boolalpha`, ...) and the `io_errc` error category.
+>
+> Every stream — file, string, console — inherits everything documented here. This is the layer that answers "what does `failbit` actually mean" and "where does `precision` live".
+
+> [!standard] Versions
+> C++11 (`io_errc`, `failure` : `system_error`) / C++23 (`noreplace`)
+
+## Quick Reference
 
 ```cpp
+// cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // FORMAT FLAGS — type ios_base::fmtflags
 // ═══════════════════════════════════════════════════════════════════════════
@@ -125,7 +154,7 @@ std::make_error_code(io_errc)     // → std::error_code
 std::make_error_condition(io_errc)// → std::error_condition
 
 // ═══════════════════════════════════════════════════════════════════════════
-// MANIPULATORS DECLARED HERE (see IOMANIP_REFERENCE for full coverage)
+// MANIPULATORS DECLARED HERE (see Header — iomanip for full coverage)
 // ═══════════════════════════════════════════════════════════════════════════
 boolalpha / noboolalpha           showbase / noshowbase
 showpoint / noshowpoint           showpos / noshowpos
@@ -144,41 +173,56 @@ std::fpos<State>                  // Position type template
 std::ios / std::wios              // = basic_ios<char> / basic_ios<wchar_t>
 ```
 
----
-
-## COMMON PATTERNS & EXAMPLES
+## Patterns
 
 ### Correct Flag Manipulation Within a Group
 ```cpp
 #include <iostream>
+#include <sstream>
 
-// WRONG — leaves dec set alongside hex; behavior is undefined
-os.setf(std::ios::hex);
+int main() {
+    std::ostringstream wrong, right;
 
-// RIGHT — clear the whole basefield first
-os.setf(std::ios::hex, std::ios::basefield);
-os.setf(std::ios::left, std::ios::adjustfield);
-os.setf(std::ios::fixed, std::ios::floatfield);
+    // WRONG — setf(hex) ORs hex into basefield next to the default dec. The combined
+    // value is neither exactly hex nor exactly oct, so the stream keeps printing decimal.
+    wrong.setf(std::ios::hex);
+    wrong << 255;
 
-// Or just use the manipulators, which do this for you:
-os << std::hex << std::left << std::fixed;
+    // RIGHT — the two-argument form clears the whole group first
+    right.setf(std::ios::hex, std::ios::basefield);
+    right.setf(std::ios::left, std::ios::adjustfield);
+    right.setf(std::ios::fixed, std::ios::floatfield);
+    right << 255;
+
+    std::cout << wrong.str() << ' ' << right.str() << '\n';
+    // Or just use the manipulators, which do this for you:  os << std::hex << std::left << std::fixed;
+}
+// expect: 255 ff
 ```
 
 ### Saving and Restoring All Formatting
 ```cpp
-// One-liner reset to defaults:
-os.copyfmt(std::ios(nullptr));
+#include <iomanip>
+#include <ios>
+#include <ostream>
 
-// Full save/restore via copyfmt:
-std::ios saved(nullptr);
-saved.copyfmt(os);          // Snapshot
-os << std::hex << std::setprecision(12) << value;
-os.copyfmt(saved);          // Restore
+void resetFormat(std::ostream& os) {
+    os.copyfmt(std::ios(nullptr));   // One-liner reset to defaults
+}
+
+void printHex(std::ostream& os, unsigned value) {
+    std::ios saved(nullptr);
+    saved.copyfmt(os);               // Snapshot
+    os << std::hex << std::setprecision(12) << value;
+    os.copyfmt(saved);               // Restore — the caller's formatting survives
+}
 ```
 `copyfmt` copies flags, precision, width, fill, locale, tied stream, exception mask, and all `iword`/`pword` slots. It does **not** copy the stream buffer or the error state.
 
 ### Interpreting Stream State
 ```cpp
+#include <ios>
+
 void report(const std::ios& s) {
     auto st = s.rdstate();
     if (st == std::ios::goodbit) { /* fine */ }
@@ -192,6 +236,11 @@ void report(const std::ios& s) {
 
 ### Exception Mode
 ```cpp
+// cc: stmts
+#include <fstream>
+#include <iostream>
+#include <ios>
+
 std::ifstream in;
 in.exceptions(std::ios::badbit);                    // Throw only on real errors
 // in.exceptions(std::ios::failbit | std::ios::badbit);  // Also on format errors
@@ -227,6 +276,10 @@ std::ostream& applyIndent(std::ostream& os) {
 
 ### A Callback for Cleanup
 ```cpp
+#include <ios>
+
+struct MyState { int depth = 0; };   // whatever the library hangs off pword(idx)
+
 void onEvent(std::ios_base::event ev, std::ios_base& s, int idx) {
     if (ev == std::ios_base::erase_event) {
         delete static_cast<MyState*>(s.pword(idx));   // Stream being destroyed
@@ -239,6 +292,8 @@ void onEvent(std::ios_base::event ev, std::ios_base& s, int idx) {
 
 ### `widen` / `narrow` for Character-Type-Generic Code
 ```cpp
+#include <ostream>
+
 template <typename CharT>
 void printLine(std::basic_ostream<CharT>& os, const char* ascii) {
     while (*ascii) os.put(os.widen(*ascii++));
@@ -248,6 +303,9 @@ void printLine(std::basic_ostream<CharT>& os, const char* ascii) {
 
 ### `unitbuf` for Crash-Safe Logging
 ```cpp
+// cc: stmts
+#include <fstream>
+
 std::ofstream log("app.log");
 log << std::unitbuf;        // Flush after every insertion — like cerr
 // Costs throughput; use only where losing the tail of the log matters.
@@ -255,15 +313,17 @@ log << std::unitbuf;        // Flush after every insertion — like cerr
 
 ### Untying for Speed
 ```cpp
+// cc: stmts
+#include <iostream>
+#include <ios>
+
 std::ios_base::sync_with_stdio(false);   // Decouple from C stdio buffers
 std::cin.tie(nullptr);                   // Don't flush cout before each cin read
 // After this, do not mix printf/scanf with cin/cout, and expect
 // prompts to appear only when cout is actually flushed.
 ```
 
----
-
-## IMPORTANT CONCEPTS
+## Key Concepts
 
 ### `ios_base` vs `basic_ios`
 `ios_base` is not a template: it holds everything independent of the character type — format flags, precision, width, locale, `iword`/`pword`, callbacks. `basic_ios<CharT>` adds what depends on the character type — the stream buffer pointer, the fill character, the tied stream, and the state flags with their conversion operators.
@@ -292,11 +352,9 @@ By default, C++ streams share buffers with C `stdio` so that `printf` and `cout`
 ### Locale Is Per-Stream
 `imbue` affects only that stream. `std::locale::global()` changes the default for streams constructed afterward and for `std::locale()`. Numeric parsing, decimal separators, digit grouping, and `put_money`/`put_time` all route through the imbued locale's facets.
 
----
+## State Flag Decision Table
 
-## STATE FLAG DECISION TABLE
-
-```
+```text
 Situation                                   good  eof   fail  bad
 ────────────────────────────────────────────────────────────────
 Fresh stream, nothing read                   1     0     0     0
@@ -308,9 +366,7 @@ open() on a missing file                     0     0     1     0
 Device/buffer failure                        0     0     1     1
 ```
 
----
-
-## BEST PRACTICES
+## Best Practices
 
 1. **Use `setf(flag, mask)`**, never bare `setf(flag)`, for flags in a group
 2. **Prefer manipulators** to raw flag manipulation in ordinary code
@@ -325,9 +381,7 @@ Device/buffer failure                        0     0     1     1
 11. **Use `widen`/`narrow`** in templates over character types
 12. **Reserve `unitbuf`** for logs where losing buffered output would matter
 
----
-
-## RELATED HEADERS
+## Related Headers
 
 ```cpp
 #include <ios>          // ios_base, basic_ios, flags, io_errc, streamsize
@@ -338,15 +392,17 @@ Device/buffer failure                        0     0     1     1
 #include <system_error> // error_code, system_error (base of ios_base::failure)
 ```
 
----
+## Connections
 
-## EXTERNAL RESOURCES
+- **Hub:** [[Map — Standard Headers]]
+- **Concept notes (the why behind this card):** [[Stream State and Robust Input]] · [[IO Streams Architecture]] · [[Exceptions]] · [[error_code and System Errors]]
+- **Sibling cards:** [[Header — iostream]] · [[Header — iomanip]] · [[Header — streambuf]]
 
-- **`std::ios_base`**: https://en.cppreference.com/w/cpp/io/ios_base
-- **`std::basic_ios`**: https://en.cppreference.com/w/cpp/io/basic_ios
-- **`<ios>`**: https://en.cppreference.com/w/cpp/header/ios
+## Sources
 
----
-
-**Standard**: C++11 (`io_errc`, `failure` : `system_error`) / C++23 (`noreplace`)
-**Last Updated**: September 2026
+- Primer §8.1.2 "Condition States" (p. 312): `good`/`eof`/`fail`/`bad`, `rdstate`, `clear`.
+- Tour §11.4 "I/O State" (p. 141): testing a stream and recovering from a failed read.
+- cppreference / web, *`std::ios_base`*: https://en.cppreference.com/w/cpp/io/ios_base
+- cppreference / web, *`std::basic_ios`*: https://en.cppreference.com/w/cpp/io/basic_ios
+- cppreference / web, *`<ios>`*: https://en.cppreference.com/w/cpp/header/ios
+- Origin: the owner's reference sheet `IOS_REFERENCE` (September 2026), adopted into the Compendium on 2026-09-23 and maintained by the Builder and Editor since.

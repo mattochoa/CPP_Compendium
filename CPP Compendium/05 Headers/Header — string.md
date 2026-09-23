@@ -1,15 +1,46 @@
-# STRING_REFERENCE
-
-## Core Definition
-**`<string>`** provides `std::basic_string` and its aliases (`string`, `wstring`, `u8string`, `u16string`, `u32string`) — owning, dynamically-sized, null-terminated character sequences with value semantics. It also supplies the numeric conversion functions (`stoi`, `to_string`) and the `""s` literal.
-
-**Tags**: #cpp #string #std-string #text #string-view #substr #find #conversion
-
+---
+id: hdr-string
+title: Header — string
+aliases:
+- <string>
+- "std::string header"
+type: header
+domain: HDR
+tier: 1
+status: draft
+standard: C++98
+related:
+- "[[string]]"
+- "[[string_view]]"
+- "[[Small String Optimization]]"
+- "[[Iterator Invalidation]]"
+tags:
+- type/header
+- domain/hdr
+- tier/1
+- header/string
+- tension/abstraction-vs-control
+- tension/safety-vs-performance
+created: '2026-09-23'
+updated: '2026-09-23'
+header: <string>
+origin: owner reference sheet STRING_REFERENCE (2026-09)
 ---
 
-## TYPE ALIASES
+# Header — string
+
+> [!essence]
+> **`<string>`** provides `std::basic_string` and its aliases (`string`, `wstring`, `u8string`, `u16string`, `u32string`) — owning, dynamically-sized, null-terminated character sequences with value semantics. It also supplies the numeric conversion functions (`stoi`, `to_string`) and the `""s` literal.
+
+> [!standard] Versions
+> C++11 (stoi, move) / C++14 (`""s`) / C++17 (string_view, charconv) / C++20 (starts_with, format) / C++23 (contains, resize_and_overwrite)
+
+## Type Aliases
 
 ```cpp
+// cc: fragment
+#include <string>
+
 std::string     = std::basic_string<char>       // The everyday one
 std::wstring    = std::basic_string<wchar_t>
 std::u8string   = std::basic_string<char8_t>    // C++20
@@ -18,13 +49,12 @@ std::u32string  = std::basic_string<char32_t>   // C++11
 std::pmr::string                                 // C++17: polymorphic allocator variant
 ```
 
----
-
-## COMPLETE STRING QUICK REFERENCE
+## Quick Reference
 
 ### MEMBER FUNCTIONS — Target | Operation | Output
 
 ```cpp
+// cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // CONSTRUCTION
 // ═══════════════════════════════════════════════════════════════════════════
@@ -190,6 +220,7 @@ using namespace std::string_view_literals;
 ### `std::string_view` — `<string_view>` (C++17)
 
 ```cpp
+// cc: fragment
 std::string_view sv = s;                // Non-owning view; no allocation, no copy
 std::string_view sv("literal");         // O(1) construction from a literal
 std::string_view sv(ptr, len);          // From pointer + length
@@ -208,14 +239,15 @@ std::string(sv)                         // Explicit copy into an owning string
 // CAUTION: the view does not own — never outlive the underlying buffer.
 ```
 
----
-
-## COMMON PATTERNS & EXAMPLES
+## Patterns
 
 ### Building Strings Efficiently
 ```cpp
 #include <string>
 #include <sstream>
+#include <vector>
+#include <format>
+#include <cstddef>
 
 // Repeated concatenation — reserve to avoid repeated reallocation
 std::string build(const std::vector<std::string>& parts) {
@@ -229,12 +261,14 @@ std::string build(const std::vector<std::string>& parts) {
 }
 
 // Mixed types — ostringstream or std::format
-std::ostringstream ss;
-ss << "id=" << 42 << " score=" << 3.14;
-std::string msg = ss.str();
+std::string describeWithStream(int id, double score) {
+    std::ostringstream ss;
+    ss << "id=" << id << " score=" << score;
+    return ss.str();
+}
 
 // C++20 — clearest of all:
-// std::string msg = std::format("id={} score={:.2f}", 42, 3.14);
+std::string describe(int id, double score) { return std::format("id={} score={:.2f}", id, score); }
 ```
 
 ### Splitting
@@ -278,6 +312,9 @@ std::vector<std::string_view> splitView(std::string_view s, char delim) {
 
 ### Joining
 ```cpp
+#include <string>
+#include <vector>
+
 std::string join(const std::vector<std::string>& parts, std::string_view sep) {
     std::string out;
     for (std::size_t i = 0; i < parts.size(); ++i) {
@@ -309,6 +346,7 @@ std::string trim(std::string s) { return ltrim(rtrim(std::move(s))); }
 ```cpp
 #include <algorithm>
 #include <cctype>
+#include <string>
 
 std::string toLower(std::string s) {
     std::transform(s.begin(), s.end(), s.begin(),
@@ -321,6 +359,8 @@ std::string toLower(std::string s) {
 
 ### Replace All Occurrences
 ```cpp
+#include <string>
+
 std::string replaceAll(std::string s, std::string_view from, std::string_view to) {
     if (from.empty()) return s;
     std::size_t pos = 0;
@@ -334,6 +374,11 @@ std::string replaceAll(std::string s, std::string_view from, std::string_view to
 
 ### Searching Idioms
 ```cpp
+// cc: stmts
+// cc: std=c++23
+#include <string>
+#include <cstddef>
+
 std::string s = "hello world";
 
 if (s.find("world") != std::string::npos) { /* found */ }
@@ -379,6 +424,11 @@ std::optional<int> parseIntFast(std::string_view s) {
 
 ### Reading Input
 ```cpp
+// cc: stmts
+#include <iostream>
+#include <string>
+#include <limits>
+
 std::string word, line;
 
 std::cin >> word;               // One whitespace-delimited token
@@ -393,14 +443,24 @@ std::getline(std::cin, line);
 
 ### Passing Strings to Functions
 ```cpp
+#include <string>
+#include <string_view>
+#include <utility>
+
+extern "C" void c_api(const char* text);   // some C library function
+
 // Read-only, may receive literals, string, or string_view — no allocation
 void log(std::string_view msg);
 
 // Needs an owning copy (stores it) — take by value and move
-void store(std::string s) { data_ = std::move(s); }
+class Config {
+    std::string data_;
+public:
+    void store(std::string s) { data_ = std::move(s); }
+};
 
 // Needs a null-terminated C string for a C API
-void callC(const std::string& s) { ::c_api(s.c_str()); }
+void callC(const std::string& s) { c_api(s.c_str()); }
 
 // Modifies in place
 void normalize(std::string& s);
@@ -408,6 +468,8 @@ void normalize(std::string& s);
 
 ### Small String Optimization (SSO)
 ```cpp
+#include <string>
+
 std::string tiny = "short";     // Typically stored inline — NO heap allocation
 std::string big(100, 'x');      // Heap allocated
 // libstdc++/libc++ inline capacity is ~15 chars for std::string on 64-bit.
@@ -416,28 +478,35 @@ std::string big(100, 'x');      // Heap allocated
 
 ### Interop with C
 ```cpp
-std::string s = "path/to/file";
+#include <cstddef>
+#include <cstdio>
+#include <string>
 
-std::FILE* f = std::fopen(s.c_str(), "r");    // c_str(): guaranteed '\0'
-// NOT sv.data() — string_view has no terminator guarantee
+extern "C" std::size_t read_into(char* buf, std::size_t capacity);   // a C API that fills a buffer
 
-// C buffer → string
-char buf[256];
-std::size_t n = ::read_into(buf, sizeof(buf));
-std::string result(buf, n);                   // Explicit length; handles embedded '\0'
+std::FILE* openFile(const std::string& path) {
+    return std::fopen(path.c_str(), "r");    // c_str(): guaranteed '\0'
+    // NOT sv.data() — string_view has no terminator guarantee
+}
+
+std::string fromC() {
+    char buf[256];                           // C buffer → string
+    std::size_t n = read_into(buf, sizeof(buf));
+    return std::string(buf, n);              // Explicit length; handles embedded '\0'
+}
 ```
 
 ### Embedded Null Characters
 ```cpp
+#include <string>
+
 std::string s("a\0b", 3);      // size() == 3 — the '\0' is real data
 std::string t = "a\0b";        // size() == 1 — stops at the first '\0'
 
 // std::string handles embedded nulls; C-string functions do not.
 ```
 
----
-
-## IMPORTANT CONCEPTS
+## Key Concepts
 
 ### `npos` Is the Sentinel
 `std::string::npos` is `static_cast<size_t>(-1)` — the largest `size_t`. Always compare `find()` results against it explicitly; never test for `> 0` or `!= 0`, since index 0 is a valid match.
@@ -447,6 +516,9 @@ std::string t = "a\0b";        // size() == 1 — stops at the first '\0'
 
 ### `string_view` Lifetime Is Your Job
 ```cpp
+#include <string_view>
+#include <string>
+
 std::string_view bad() {
     std::string tmp = "danger";
     return tmp;                  // DANGLING — tmp dies at return
@@ -479,11 +551,9 @@ It behaves like `printf("%f")`, so `to_string(0.1)` gives `"0.100000"` and large
 ### C++23 `resize_and_overwrite`
 Fills a buffer without paying for the zero-initialization `resize` normally performs — useful when handing the buffer to a C API that writes into it.
 
----
+## Performance Notes
 
-## PERFORMANCE NOTES
-
-```
+```text
 Operation                          Complexity        Note
 ────────────────────────────────────────────────────────────────────────────
 size(), empty(), operator[]        O(1)
@@ -497,9 +567,7 @@ comparison                         O(n)
 SSO short strings                  no allocation     ~15 chars typical on 64-bit
 ```
 
----
-
-## BEST PRACTICES
+## Best Practices
 
 1. **Take read-only string parameters as `std::string_view`** (C++17) — accepts everything, allocates nothing
 2. **Take by value and `std::move`** when the function stores the string
@@ -516,9 +584,7 @@ SSO short strings                  no allocation     ~15 chars typical on 64-bit
 13. **`empty()`, not `size() == 0`** — clearer, and guaranteed O(1)
 14. **Watch for iterator invalidation** after any growth operation
 
----
-
-## RELATED HEADERS
+## Related Headers
 
 ```cpp
 #include <string>        // std::string, stoi, to_string, ""s
@@ -534,16 +600,19 @@ SSO short strings                  no allocation     ~15 chars typical on 64-bit
 #include <locale>        // locale-aware conversion facets
 ```
 
----
+## Connections
 
-## EXTERNAL RESOURCES
+- **Hub:** [[Map — Standard Headers]]
+- **Concept notes (the why behind this card):** [[string]] · [[string_view]] · [[Small String Optimization]] · [[Iterator Invalidation]] · [[C-Style Strings]]
+- **Sibling cards:** [[Header — cstring]] · [[Header — sstream]] · [[Header — cctype]] · [[Header — Modern IO]]
 
-- **`std::basic_string`**: https://en.cppreference.com/w/cpp/string/basic_string
-- **`std::string_view`**: https://en.cppreference.com/w/cpp/string/basic_string_view
-- **`<charconv>`**: https://en.cppreference.com/w/cpp/header/charconv
-- **Core Guidelines, strings**: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#SS-string
+## Sources
 
----
-
-**Standard**: C++11 (stoi, move) / C++14 (`""s`) / C++17 (string_view, charconv) / C++20 (starts_with, format) / C++23 (contains, resize_and_overwrite)
-**Last Updated**: September 2026
+- Primer §3.2 "Library string Type" (p. 84); characters in a string on p. 90.
+- Primer §9.5.5 "Numeric Conversions" (p. 367): `to_string`, `stoi`, `stod`.
+- Tour §10.2 "Strings" (p. 125) and §10.3 "String Views" (p. 128).
+- cppreference / web, *`std::basic_string`*: https://en.cppreference.com/w/cpp/string/basic_string
+- cppreference / web, *`std::string_view`*: https://en.cppreference.com/w/cpp/string/basic_string_view
+- cppreference / web, *`<charconv>`*: https://en.cppreference.com/w/cpp/header/charconv
+- *Core Guidelines, strings*: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#SS-string
+- Origin: the owner's reference sheet `STRING_REFERENCE` (September 2026), adopted into the Compendium on 2026-09-23 and maintained by the Builder and Editor since.

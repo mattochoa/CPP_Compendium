@@ -1,17 +1,47 @@
-# IOMANIP_REFERENCE
-
-## Core Definition
-**Manipulators** are objects/functions inserted into a stream with `<<` or `>>` that change stream formatting state rather than transferring data. `<iomanip>` provides the *parameterized* ones (`setw`, `setprecision`, `setfill`, ...); the *unparameterized* ones (`hex`, `fixed`, `boolalpha`, ...) live in `<ios>` and `<ostream>` and arrive via `<iostream>`.
-
-**Tags**: #cpp #iomanip #manipulators #formatting #setw #setprecision #alignment
-
+---
+id: hdr-iomanip
+title: Header — iomanip
+aliases:
+- <iomanip>
+- manipulators
+- setw
+- setprecision
+type: header
+domain: HDR
+tier: 1
+status: draft
+standard: C++98
+related:
+- "[[IO Streams Architecture]]"
+- "[[format and print]]"
+- "[[RAII]]"
+- "[[Floating-Point Representation (IEEE 754)]]"
+tags:
+- type/header
+- domain/hdr
+- tier/1
+- header/iomanip
+- tension/abstraction-vs-control
+created: '2026-09-23'
+updated: '2026-09-23'
+header: <iomanip>
+origin: owner reference sheet IOMANIP_REFERENCE (2026-09)
 ---
 
-## COMPLETE MANIPULATOR QUICK REFERENCE
+# Header — iomanip
+
+> [!essence]
+> **Manipulators** are objects/functions inserted into a stream with `<<` or `>>` that change stream formatting state rather than transferring data. `<iomanip>` provides the *parameterized* ones (`setw`, `setprecision`, `setfill`, ...); the *unparameterized* ones (`hex`, `fixed`, `boolalpha`, ...) live in `<ios>` and `<ostream>` and arrive via `<iostream>`.
+
+> [!standard] Versions
+> C++11 / C++14 (`quoted`) / C++20 (`emit_on_flush`) / C++23 (`print`)
+
+## Quick Reference
 
 ### PARAMETERIZED MANIPULATORS — `<iomanip>`
 
 ```cpp
+// cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // FIELD WIDTH, FILL & PRECISION
 // ═══════════════════════════════════════════════════════════════════════════
@@ -50,6 +80,7 @@ std::get_money(mon, intl)     // +bool    | Parse international     | Input mani
 ### UNPARAMETERIZED MANIPULATORS — `<ios>` / `<ostream>` (via `<iostream>`)
 
 ```cpp
+// cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // NUMERIC BASE  (persistent; mutually exclusive)
 // ═══════════════════════════════════════════════════════════════════════════
@@ -106,11 +137,12 @@ std::emit_on_flush            // osyncstream: transmit on flush
 std::noemit_on_flush          // osyncstream: do not transmit on flush (DEFAULT)
 ```
 
----
-
-## FLAG MASK GROUPS
+## Flag Mask Groups
 
 ```cpp
+// cc: fragment
+#include <ios>
+
 std::ios::basefield    // = dec | oct | hex
 std::ios::floatfield   // = fixed | scientific
 std::ios::adjustfield  // = left | right | internal
@@ -121,11 +153,9 @@ os.setf(std::ios::left,  std::ios::adjustfield);
 os.setf(std::ios::fixed, std::ios::floatfield);
 ```
 
----
+## Stickiness Table — the single most common source of bugs
 
-## STICKINESS TABLE — the single most common source of bugs
-
-```
+```text
 Manipulator            Scope
 ─────────────────────────────────────────────────────────────────
 setw(n)                ONE operation, then resets to 0
@@ -139,9 +169,7 @@ showpos / showbase     Persistent
 endl / flush / ws      One-shot action, no state change
 ```
 
----
-
-## COMMON PATTERNS & EXAMPLES
+## Patterns
 
 ### Aligned Table Output
 ```cpp
@@ -175,6 +203,10 @@ int main() {
 
 ### Leading Zeros
 ```cpp
+// cc: stmts
+#include <iostream>
+#include <iomanip>
+
 std::cout << std::setfill('0') << std::setw(5) << 42 << '\n';   // 00042
 std::cout << std::setfill(' ');                                  // Reset — setfill is sticky!
 
@@ -204,6 +236,10 @@ void hexdump(const unsigned char* data, std::size_t n) {
 
 ### Precision: Significant Digits vs Decimals
 ```cpp
+// cc: stmts
+#include <iostream>
+#include <iomanip>
+
 double pi = 3.14159265358979;
 
 std::cout << std::setprecision(4) << pi << '\n';                  // 3.142  (4 significant digits)
@@ -214,6 +250,10 @@ std::cout << std::defaultfloat;                                    // Back to de
 
 ### Currency-Style Column
 ```cpp
+// cc: stmts
+#include <iostream>
+#include <iomanip>
+
 std::cout << std::fixed << std::setprecision(2)
           << std::right << std::setw(12) << 1234.5 << '\n';   //      1234.50
 
@@ -226,6 +266,7 @@ std::cout << std::internal << std::showpos << std::setfill('.')
 ```cpp
 #include <iostream>
 #include <ios>
+#include <iomanip>
 
 // Manual save/restore
 void printHex(std::ostream& os, int v) {
@@ -307,7 +348,7 @@ int main() {
 ```
 
 **Common `put_time` / `get_time` specifiers**
-```
+```text
 %Y  year (2026)        %m  month 01-12       %d  day 01-31
 %y  2-digit year       %B  full month name   %b  abbrev month
 %H  hour 00-23         %M  minute 00-59      %S  second 00-60
@@ -319,6 +360,9 @@ int main() {
 
 ### Boolean and Base Display
 ```cpp
+// cc: stmts
+#include <iostream>
+
 std::cout << std::boolalpha << (1 < 2) << '\n';                    // true
 std::cout << std::hex << std::showbase << std::uppercase << 255;   // 0XFF
 std::cout << std::dec << std::noshowbase << std::nouppercase;      // Restore
@@ -326,6 +370,9 @@ std::cout << std::dec << std::noshowbase << std::nouppercase;      // Restore
 
 ### Reading Whitespace-Sensitive Input
 ```cpp
+// cc: stmts
+#include <iostream>
+
 char c;
 std::cin >> std::noskipws;      // Now >> reads spaces and newlines too
 while (std::cin >> c) { /* process every character */ }
@@ -334,6 +381,11 @@ std::cin >> std::skipws;        // Restore
 
 ### Progress / Bar Rendering
 ```cpp
+#include <iomanip>
+#include <ios>
+#include <iostream>
+#include <ostream>
+
 void bar(double frac, int width = 40) {
     int filled = static_cast<int>(frac * width);
     std::cout << '[' << std::setfill('#') << std::setw(filled) << ""
@@ -344,12 +396,14 @@ void bar(double frac, int width = 40) {
 }
 ```
 
----
-
-## IMPORTANT CONCEPTS
+## Key Concepts
 
 ### `setw` Applies to the Next Item Only
 ```cpp
+// cc: stmts
+#include <iostream>
+#include <iomanip>
+
 std::cout << std::setw(10) << "a" << "b" << '\n';      //          ab
 std::cout << std::setw(10) << "a" << std::setw(10) << "b" << '\n';  //          a         b
 ```
@@ -367,11 +421,17 @@ It pads between the sign (or `0x`) and the digits — useful for aligning negati
 ### Manipulators Are Just Functions
 `std::hex` is a function taking and returning `ios_base&`. `operator<<` has an overload for such function pointers, which calls them on the stream. Writing your own is straightforward:
 ```cpp
+#include <iostream>
+
 std::ostream& tab(std::ostream& os) { return os << '\t'; }
-std::cout << 1 << tab << 2 << '\n';
+
+int main() { std::cout << 1 << tab << 2 << '\n'; }   // prints 1, a tab, 2
 ```
 A parameterized one needs a helper object with an `operator<<`:
 ```cpp
+#include <ostream>
+#include <iomanip>
+
 struct Indent { int n; };
 inline Indent indent(int n) { return Indent{n}; }
 inline std::ostream& operator<<(std::ostream& os, Indent i) {
@@ -385,18 +445,24 @@ inline std::ostream& operator<<(std::ostream& os, Indent i) {
 ### `<format>` and `<print>` Are the Modern Alternative
 For new code, C++20's `std::format` and C++23's `std::print` express the same intent far more readably and without sticky state:
 ```cpp
+// cc: std=c++23
 #include <format>
+#include <iostream>
 #include <print>            // C++23
-std::cout << std::format("{:<14}{:>6}{:>12.2f}\n", name, qty, price);
-std::println("{:#06x}", 255);   // 0x00ff
+#include <string>
+
+int main() {
+    std::string name = "widget"; int qty = 3; double price = 9.5;
+    std::cout << std::format("{:<14}{:>6}{:>12.2f}\n", name, qty, price);
+    std::println("{:#06x}", 255);   // 0x00ff
+}
+// expect: 0x00ff
 ```
 Manipulators remain necessary when interacting with existing stream-based APIs, custom `operator<<`, or when the target is any `std::ostream`.
 
----
+## Format Spec Quick Comparison (streams vs `std::format`)
 
-## FORMAT SPEC QUICK COMPARISON (streams vs `std::format`)
-
-```
+```text
 Intent                stream manipulators                     std::format
 ──────────────────────────────────────────────────────────────────────────────
 width 8, right        std::setw(8) << v                       "{:>8}"
@@ -409,9 +475,7 @@ bool as text          std::boolalpha                          "{}"  (default)
 sign always           std::showpos                            "{:+}"
 ```
 
----
-
-## BEST PRACTICES
+## Best Practices
 
 1. **Set `fixed` before `setprecision`** when you want N decimal places
 2. **Reset `setfill`** after using a non-space fill — it is sticky and will corrupt later output
@@ -424,9 +488,7 @@ sign always           std::showpos                            "{:+}"
 9. **`put_time` needs a valid `tm`** — zero-initialize (`std::tm t{};`) before `get_time`
 10. **Test alignment with real data widths**, not just short samples
 
----
-
-## RELATED HEADERS
+## Related Headers
 
 ```cpp
 #include <iomanip>     // setw, setfill, setprecision, quoted, put_time, put_money
@@ -438,15 +500,17 @@ sign always           std::showpos                            "{:+}"
 #include <locale>      // facets behind put_money/put_time
 ```
 
----
+## Connections
 
-## EXTERNAL RESOURCES
+- **Hub:** [[Map — Standard Headers]]
+- **Concept notes (the why behind this card):** [[IO Streams Architecture]] · [[format and print]] · [[RAII]] · [[Floating-Point Representation (IEEE 754)]]
+- **Sibling cards:** [[Header — ios]] · [[Header — iostream]] · [[Header — Modern IO]]
 
-- **`<iomanip>`**: https://en.cppreference.com/w/cpp/header/iomanip
-- **Manipulator list**: https://en.cppreference.com/w/cpp/io/manip
-- **`std::format` spec**: https://en.cppreference.com/w/cpp/utility/format/spec
+## Sources
 
----
-
-**Standard**: C++11 / C++14 (`quoted`) / C++20 (`emit_on_flush`) / C++23 (`print`)
-**Last Updated**: September 2026
+- Primer §17.5.1 "Formatted Input and Output" (p. 753): every manipulator and which ones are sticky.
+- Tour §11.6 "Output Formatting" (p. 143): stream manipulators next to `std::format`.
+- cppreference / web, *`<iomanip>`*: https://en.cppreference.com/w/cpp/header/iomanip
+- cppreference / web, *Manipulator list*: https://en.cppreference.com/w/cpp/io/manip
+- cppreference / web, *`std::format` spec*: https://en.cppreference.com/w/cpp/utility/format/spec
+- Origin: the owner's reference sheet `IOMANIP_REFERENCE` (September 2026), adopted into the Compendium on 2026-09-23 and maintained by the Builder and Editor since.

@@ -134,6 +134,16 @@ Maps come first because they are the frame everything else hangs on. A map must:
 - end the *Index* section with the auto-block: `<!-- cc:auto:domain-index:Dxx -->` / `<!-- cc:end -->`.
 Links to planned topics are fine: they mark the frontier.
 
+## 6b · Header Cards (`header`, in `05 Headers/`)
+
+Header Cards are the lookup layer ([[Framework]] §2, hub [[Map — Standard Headers]]). The first 13 came from the owner's own reference sheets. Match their voice and density, and read [[Header — sstream]] before writing a new card. A card enters the queue one wave after its Dossier (`pre:`), so link that Dossier for the *why* rather than re-deriving it.
+- **Quick Reference:** list *every* public member or function of the header, grouped under `═══` banner comments, one row each: `expression   // input | operation | result or note   (C++NN)`. These blocks carry `// cc: fragment`. Elsewhere a fragment is allowed only for a short Key Concepts illustration (6 lines or fewer) or for code the toolchain cannot build (Borland `conio`, POSIX-only APIs).
+- **Patterns:** 6–12 task recipes titled as tasks ("Read a whole file into a string"). Every recipe compiles: a function with its includes, a `main` with `// expect:`, or a statement sequence marked `// cc: stmts`. A recipe that needs data you don't want to show (a file, a socket) takes a parameter instead.
+- **Key Concepts:** one `###` per rule, each 2–4 sentences, citing the clause or cppreference page for anything normative.
+- **Version-label** every member added after C++98, and verify each label on cppreference's header page (`https://en.cppreference.com/w/cpp/header/<name>`).
+- **Integrate:** add the card to the *Where to look* table in [[Map — Standard Headers]] when it answers a common question, and link it from its Dossier's *Connections*.
+- After `finish`, export a fresh PDF for the owner: `python3 tools/cc.py export-pdf <id>` (lands in `__RESOURCES__/std-headers-pdf/`, git-ignored).
+
 ## 7 · When things go wrong
 
 | Situation | Action |
@@ -159,4 +169,5 @@ Next in queue: <id>, <id>
 ## Protocol changelog
 - 2026-09-23: v1.0, initial protocol.
 - 2026-09-23: v1.1, no-delete mount rule added (§0).
+- 2026-09-23: v1.3 (owner request), §6b Header Cards added: new `header` archetype, `// cc: stmts` directive, `cc.py export-pdf`.
 - 2026-09-23: v1.2 (Editor #1), sanitizer fallback for MinGW documented in §3.4 and §7; tooling fixed (`snippets.py` probes sanitizer support; `gitops.py` reads paths with `core.quotepath=false` so notes with "—" in the title reach the audit).

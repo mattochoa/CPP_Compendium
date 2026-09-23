@@ -1,15 +1,44 @@
-# FSTREAM_REFERENCE
-
-## Core Definition
-**`<fstream>`** provides file-based stream classes: `ifstream` (read), `ofstream` (write), and `fstream` (read/write), plus the underlying `filebuf`. They inherit the full `istream`/`ostream` interface, so every formatting flag, manipulator and state function from `<iostream>` applies unchanged — files just swap in a file-backed stream buffer.
-
-**Tags**: #cpp #fstream #files #io #ifstream #ofstream #binary-io #file-handling
-
+---
+id: hdr-fstream
+title: Header — fstream
+aliases:
+- <fstream>
+- ifstream
+- ofstream
+type: header
+domain: HDR
+tier: 1
+status: draft
+standard: C++98
+related:
+- "[[File IO]]"
+- "[[IO Streams Architecture]]"
+- "[[RAII]]"
+- "[[Stream State and Robust Input]]"
+tags:
+- type/header
+- domain/hdr
+- tier/1
+- header/fstream
+- tension/abstraction-vs-control
+- tension/safety-vs-performance
+created: '2026-09-23'
+updated: '2026-09-23'
+header: <fstream>
+origin: owner reference sheet FSTREAM_REFERENCE (2026-09)
 ---
 
-## CLASS HIERARCHY
+# Header — fstream
 
-```
+> [!essence]
+> **`<fstream>`** provides file-based stream classes: `ifstream` (read), `ofstream` (write), and `fstream` (read/write), plus the underlying `filebuf`. They inherit the full `istream`/`ostream` interface, so every formatting flag, manipulator and state function from `<iostream>` applies unchanged — files just swap in a file-backed stream buffer.
+
+> [!standard] Versions
+> C++11 (string paths, move) / C++17 (`filesystem::path`) / C++23 (`noreplace`)
+
+## Class Hierarchy
+
+```text
 basic_ios<CharT>
   ├── basic_istream ── basic_ifstream<CharT>     ifstream  / wifstream
   ├── basic_ostream ── basic_ofstream<CharT>     ofstream  / wofstream
@@ -18,13 +47,12 @@ basic_ios<CharT>
 basic_streambuf ── basic_filebuf<CharT>          filebuf   / wfilebuf
 ```
 
----
-
-## COMPLETE FSTREAM QUICK REFERENCE
+## Quick Reference
 
 ### CONSTRUCTION, OPENING & CLOSING — Target | Operation | Output
 
 ```cpp
+// cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // CONSTRUCTION
 // ═══════════════════════════════════════════════════════════════════════════
@@ -117,7 +145,7 @@ std::ios::cur                           // Offset from current position
 std::ios::end                           // Offset from end (use negative offsets)
 
 // ═══════════════════════════════════════════════════════════════════════════
-// STREAM STATE (inherited from basic_ios) — see IOSTREAM_REFERENCE
+// STREAM STATE (inherited from basic_ios) — see Header — iostream
 // ═══════════════════════════════════════════════════════════════════════════
 f.good() / f.eof() / f.fail() / f.bad() // State queries          | Returns bool
 f.rdstate() / f.clear() / f.setstate()  // State manipulation
@@ -139,9 +167,7 @@ fb.sgetc() / fb.sbumpc() / fb.sputc(c)  // Character-level buffer access
 std::ostream os(&fb);                   // Attach a stream to a filebuf
 ```
 
----
-
-## COMMON PATTERNS & EXAMPLES
+## Patterns
 
 ### Read a File Line by Line
 ```cpp
@@ -149,11 +175,11 @@ std::ostream os(&fb);                   // Attach a stream to a filebuf
 #include <iostream>
 #include <string>
 
-int main() {
-    std::ifstream in("data.txt");
+bool printNumbered(const std::string& path) {
+    std::ifstream in(path);
     if (!in) {                                   // Always check
-        std::cerr << "Cannot open data.txt\n";
-        return 1;
+        std::cerr << "Cannot open " << path << '\n';
+        return false;
     }
 
     std::string line;
@@ -163,6 +189,7 @@ int main() {
     }
 
     if (in.bad()) std::cerr << "I/O error while reading\n";
+    return true;
     // Destructor closes the file — no explicit close() needed
 }
 ```
@@ -184,6 +211,10 @@ int main() {
 
 ### Append Instead of Overwrite
 ```cpp
+// cc: stmts
+#include <fstream>
+#include <ios>
+
 std::ofstream log("app.log", std::ios::app);
 log << "[event] started\n";
 // With ios::app every write goes to the end, even after seekp.
@@ -264,6 +295,10 @@ std::vector<Record> readRecords(const char* path) {
 ### Random Access — Update a Record In Place
 ```cpp
 #include <fstream>
+#include <cstddef>
+#include <ios>
+
+struct Record { int id; double value; char name[32]; };   // as in the previous pattern
 
 void updateRecord(const char* path, std::size_t index, const Record& r) {
     std::fstream f(path, std::ios::in | std::ios::out | std::ios::binary);
@@ -275,12 +310,22 @@ void updateRecord(const char* path, std::size_t index, const Record& r) {
 
 ### File Size
 ```cpp
-std::ifstream in(path, std::ios::binary | std::ios::ate);
-std::streamsize size = in.tellg();       // ate → already at end
-in.seekg(0, std::ios::beg);              // Rewind before reading
+#include <cstdint>
+#include <filesystem>
+#include <fstream>
+#include <ios>
+#include <string>
 
-// C++17 preferred:
-// auto size = std::filesystem::file_size(path);
+std::streamsize sizeViaStream(const std::string& path) {
+    std::ifstream in(path, std::ios::binary | std::ios::ate);
+    if (!in) return -1;
+    std::streamsize size = in.tellg();   // ate → already at end
+    in.seekg(0, std::ios::beg);          // Rewind before reading
+    return size;
+}
+
+// C++17 preferred: no stream, no seek (throws filesystem_error if the file is missing)
+std::uintmax_t sizeViaFilesystem(const std::string& path) { return std::filesystem::file_size(path); }
 ```
 
 ### Parsing CSV
@@ -311,6 +356,10 @@ std::vector<std::vector<std::string>> readCSV(const std::string& path) {
 
 ### Reading Numbers Until EOF
 ```cpp
+// cc: stmts
+#include <fstream>
+#include <iostream>
+
 std::ifstream in("numbers.txt");
 double x, sum = 0;
 int n = 0;
@@ -322,13 +371,21 @@ std::cout << "Mean: " << (n ? sum / n : 0) << '\n';
 
 ### Reusing One Stream Object
 ```cpp
-std::ifstream in;
-for (const auto& path : paths) {
-    in.open(path);
-    if (!in) { in.clear(); continue; }   // clear() BEFORE the next open
-    // ... read ...
-    in.close();
-    in.clear();                          // Reset eofbit for the next iteration
+#include <fstream>
+#include <string>
+#include <vector>
+
+std::size_t countLines(const std::vector<std::string>& paths) {
+    std::size_t lines = 0;
+    std::ifstream in;
+    for (const auto& path : paths) {
+        in.open(path);
+        if (!in) { in.clear(); continue; }   // clear() BEFORE the next open
+        for (std::string line; std::getline(in, line); ) ++lines;
+        in.close();
+        in.clear();                          // Reset eofbit for the next iteration
+    }
+    return lines;
 }
 ```
 
@@ -341,18 +398,23 @@ int main() {
     std::ifstream in;
     in.exceptions(std::ios::failbit | std::ios::badbit);   // NOT eofbit
     try {
-        in.open("config.txt");
-        std::string key; int value;
-        while (in >> key >> value) { /* ... */ }
+        in.open("config.txt");                              // throws if the open fails
+        in.exceptions(std::ios::badbit);                    // then only real I/O errors throw: the last,
+        std::string key; int value;                         // failing >> at end-of-file sets failbit,
+        while (in >> key >> value) { /* ... */ }            // which would otherwise throw right here
     } catch (const std::ios_base::failure& e) {
         std::cerr << "Failed: " << e.what() << '\n';
     }
 }
 ```
-> Enabling `eofbit` in the exception mask makes normal end-of-file throw — almost never what you want.
+> Enabling `eofbit` in the exception mask makes normal end-of-file throw — almost never what you want. `failbit` has the same problem one step later: the extraction that *discovers* end-of-file also fails, so a read loop with `failbit` in the mask always ends in an exception. Keep `failbit` for the open, then narrow the mask to `badbit`.
 
 ### Temporary Redirection of `cout` to a File
 ```cpp
+// cc: stmts
+#include <fstream>
+#include <iostream>
+
 std::ofstream file("out.txt");
 auto* old = std::cout.rdbuf(file.rdbuf());
 std::cout << "captured\n";
@@ -362,28 +424,33 @@ std::cout.rdbuf(old);        // Restore — mandatory
 ### `std::filesystem` Companions (C++17)
 ```cpp
 #include <filesystem>
+#include <iostream>
 namespace fs = std::filesystem;
 
-fs::exists(p);                 // bool
-fs::file_size(p);              // uintmax_t
-fs::remove(p);                 // bool
-fs::rename(from, to);          // void
-fs::copy_file(from, to);       // bool
-fs::create_directories(p);     // bool
-fs::last_write_time(p);        // file_time_type
-fs::is_regular_file(p);        // bool
-for (const auto& e : fs::directory_iterator(dir)) { /* e.path() */ }
+// List the regular files in a directory with their sizes:
+void listDir(const fs::path& dir) {
+    for (const auto& e : fs::directory_iterator(dir))
+        if (e.is_regular_file())
+            std::cout << e.path().filename().string() << "  " << e.file_size() << " bytes\n";
+}
+
+// The rest of the everyday toolkit (all in namespace fs, all C++17):
+//   fs::exists(p) -> bool              fs::file_size(p) -> uintmax_t
+//   fs::remove(p) -> bool              fs::rename(from, to)
+//   fs::copy_file(from, to) -> bool    fs::create_directories(p) -> bool
+//   fs::last_write_time(p)             fs::is_regular_file(p) -> bool
 ```
 
----
-
-## IMPORTANT CONCEPTS
+## Key Concepts
 
 ### RAII: Files Close Themselves
 The destructor closes and flushes. Explicit `close()` is only needed when you want to release the handle early, check for close-time errors, or reuse the stream object.
 
 ### Always Check After Opening
 ```cpp
+// cc: stmts
+#include <fstream>
+
 std::ifstream in("maybe.txt");
 if (!in) { /* handle */ }        // Preferred
 if (!in.is_open()) { /* ... */ } // Equivalent for the open case
@@ -400,6 +467,7 @@ Constructing an `ifstream` on a missing file does not throw by default — it se
 ### Switching Direction on an `fstream`
 Between a read and a write (or vice versa) on the same `fstream`, you must intervene with a seek or a flush. Otherwise the behavior is undefined:
 ```cpp
+// cc: fragment
 f >> value;
 f.seekp(f.tellg());     // Reposition before writing
 f << newValue;
@@ -420,11 +488,9 @@ Data lives in the buffer until it is full, the stream is closed, or you flush. F
 ### Stream Sizes and Types
 Use `std::streamsize` for counts, `std::streamoff` for offsets and `std::streampos` for positions. Casting between them and `std::size_t` warrants an explicit cast.
 
----
+## Open Mode Matrix
 
-## OPEN MODE MATRIX
-
-```
+```text
 Mode combination                     File missing   Existing content   Position on open
 ────────────────────────────────────────────────────────────────────────────────────────
 in                                   fail           preserved          beginning
@@ -438,9 +504,7 @@ out | noreplace  (C++23)             created        fail               beginning
 any | binary                         (as above)     (as above)         no newline translation
 ```
 
----
-
-## BEST PRACTICES
+## Best Practices
 
 1. **Check the stream after opening** — `if (!in) { ... }`
 2. **Let RAII close the file**; call `close()` only for early release or reuse
@@ -457,9 +521,7 @@ any | binary                         (as above)     (as above)         no newlin
 13. **Use `std::filesystem::path`** for filenames (C++17) — handles Unicode paths correctly
 14. **Write to a temp file then rename** for atomic updates of important files
 
----
-
-## RELATED HEADERS
+## Related Headers
 
 ```cpp
 #include <fstream>      // ifstream, ofstream, fstream, filebuf
@@ -471,16 +533,19 @@ any | binary                         (as above)     (as above)         no newlin
 #include <span>         // C++20: view over raw buffers for read/write
 ```
 
----
+## Connections
 
-## EXTERNAL RESOURCES
+- **Hub:** [[Map — Standard Headers]]
+- **Concept notes (the why behind this card):** [[File IO]] · [[IO Streams Architecture]] · [[RAII]] · [[Stream State and Robust Input]]
+- **Sibling cards:** [[Header — iostream]] · [[Header — ios]] · [[Header — sstream]] · [[Header — cstdio]] · [[Header — streambuf]]
 
-- **`<fstream>`**: https://en.cppreference.com/w/cpp/header/fstream
-- **`basic_fstream`**: https://en.cppreference.com/w/cpp/io/basic_fstream
-- **`openmode`**: https://en.cppreference.com/w/cpp/io/ios_base/openmode
-- **`<filesystem>`**: https://en.cppreference.com/w/cpp/filesystem
+## Sources
 
----
-
-**Standard**: C++11 (string paths, move) / C++17 (`filesystem::path`) / C++23 (`noreplace`)
-**Last Updated**: September 2026
+- Primer §8.2 "File Input and Output" (p. 316); file modes on p. 319.
+- Primer §17.5.3 "Random Access to a Stream" (p. 763): `seekg`/`tellg`/`seekp`/`tellp`.
+- Tour §11.7 "Streams" (p. 147): file streams as RAII handles.
+- cppreference / web, *`<fstream>`*: https://en.cppreference.com/w/cpp/header/fstream
+- cppreference / web, *`basic_fstream`*: https://en.cppreference.com/w/cpp/io/basic_fstream
+- cppreference / web, *`openmode`*: https://en.cppreference.com/w/cpp/io/ios_base/openmode
+- cppreference / web, *`<filesystem>`*: https://en.cppreference.com/w/cpp/filesystem
+- Origin: the owner's reference sheet `FSTREAM_REFERENCE` (September 2026), adopted into the Compendium on 2026-09-23 and maintained by the Builder and Editor since.

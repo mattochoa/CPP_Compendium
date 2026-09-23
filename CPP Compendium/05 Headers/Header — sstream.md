@@ -91,7 +91,7 @@ ss << value / ss >> value               // Formatted I/O — all manipulators ap
 std::getline(ss, line[, delim])         // Line/field extraction
 ss.get / peek / ignore / read / write   // Unformatted I/O
 ss.tellg / seekg / tellp / seekp        // Positioning
-ss.good / eof / fail / bad / clear      // State — see IOSTREAM_REFERENCE
+ss.good / eof / fail / bad / clear      // State — see Header — iostream
 ```
 
 ## Patterns
@@ -131,9 +131,9 @@ bool parse(const std::string& line, Record& r) {
 
 ### Splitting on a Delimiter
 ```cpp
-// cc: fragment
 #include <vector>
 #include <string>
+#include <sstream>
 
 std::vector<std::string> split(const std::string& s, char delim) {
     std::vector<std::string> out;
@@ -182,16 +182,19 @@ std::string toStr(const T& v) {
 
 ### Reusing a Stream (the two-step reset)
 ```cpp
-// cc: fragment
-// cc: stmts
+#include <functional>
 #include <sstream>
+#include <string>
+#include <vector>
 
-std::ostringstream os;
-for (const auto& item : items) {
-    os.str("");        // Clear the contents
-    os.clear();        // Clear the state flags — BOTH are required
-    os << item;
-    send(os.str());
+void sendAll(const std::vector<double>& items, const std::function<void(const std::string&)>& send) {
+    std::ostringstream os;
+    for (const auto& item : items) {
+        os.str("");        // Clear the contents
+        os.clear();        // Clear the state flags — BOTH are required
+        os << item;
+        send(os.str());
+    }
 }
 // A fresh ostringstream per iteration is often clearer and, with SSO
 // and move semantics, rarely slower.
@@ -221,6 +224,7 @@ if (cmd == "SET") {
 #include <sstream>
 #include <string>
 #include <string_view>
+#include <utility>
 
 std::ostringstream os;
 os << "large payload ...";
@@ -247,16 +251,20 @@ std::string captureCout(void (*fn)()) {
 
 ### Hex / Binary Parsing
 ```cpp
-// cc: stmts
+#include <iostream>
 #include <sstream>
 
-unsigned value;
-std::istringstream is("1A2B");
-is >> std::hex >> value;           // 6699
+int main() {
+    unsigned value;
+    std::istringstream is("1A2B");
+    is >> std::hex >> value;              // 6699
 
-// With a 0x prefix, std::hex still parses it correctly:
-std::istringstream is2("0xFF");
-unsigned v2; is2 >> std::hex >> v2;   // 255
+    // With a 0x prefix, std::hex still parses it correctly:
+    std::istringstream is2("0xFF");
+    unsigned v2; is2 >> std::hex >> v2;   // 255
+    std::cout << value << ' ' << v2 << '\n';
+}
+// expect: 6699 255
 ```
 
 ### Reading a Whole Stream into a String
@@ -264,6 +272,7 @@ unsigned v2; is2 >> std::hex >> v2;   // 255
 // cc: stmts
 #include <fstream>
 #include <sstream>
+#include <string>
 
 std::ifstream in("file.txt");
 std::ostringstream ss;
@@ -273,20 +282,23 @@ std::string contents = ss.str();
 
 ### Nested Parsing (lines then fields)
 ```cpp
-// cc: fragment
-// cc: stmts
+#include <iostream>
 #include <sstream>
 #include <string>
 
-std::istringstream lines(text);
-std::string line;
-while (std::getline(lines, line)) {
-    std::istringstream fields(line);
-    std::string field;
-    while (std::getline(fields, field, ',')) {
-        // process field
+int main() {
+    const std::string text = "id,name\n7,ada\n9,,\n";
+    std::istringstream lines(text);
+    std::string line;
+    int fieldCount = 0;
+    while (std::getline(lines, line)) {
+        std::istringstream fields(line);
+        std::string field;
+        while (std::getline(fields, field, ',')) ++fieldCount;   // process field
     }
+    std::cout << fieldCount << '\n';   // "9,," yields 2 fields, not 3: a trailing empty field is lost
 }
+// expect: 6
 ```
 
 ### `stringstream` for Bidirectional Use

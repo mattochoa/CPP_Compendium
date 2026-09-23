@@ -147,16 +147,19 @@ def _run_local(code: str, d: dict, has_main: bool) -> tuple[bool, bool, str, str
         if has_main and not d.get("ill-formed"):
             out = os.path.join(tmp, "a.out")
             cmd = [exe, std, *BASE_FLAGS, *d["flags"], "-g", *_sanitizer_flags(), src, "-o", out, "-pthread"]
+            if os.name == "nt" and re.search(r"#include\s*<print>|std::v?print", code):
+                cmd.append("-lstdc++exp")   # MinGW libstdc++ keeps std::print's terminal support here
         else:
             cmd = [exe, std, *BASE_FLAGS, *d["flags"], "-c", src, "-o", os.path.join(tmp, "s.o")]
-        cp = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+        cp = subprocess.run(cmd, capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=120)
         if cp.returncode != 0:
             return False, False, "", cp.stderr
         if not has_main or d.get("norun") or d.get("ill-formed"):
             return True, True, "", cp.stderr
         env = dict(os.environ, ASAN_OPTIONS="detect_leaks=1", UBSAN_OPTIONS="print_stacktrace=1")
         try:
-            rp = subprocess.run([out], capture_output=True, text=True, timeout=15, input="", env=env)
+            rp = subprocess.run([out], capture_output=True, text=True, encoding="utf-8", errors="replace",
+                                timeout=15, input="", env=env, cwd=tmp)   # files a snippet creates stay in temp
         except subprocess.TimeoutExpired:
             return True, False, "", "timeout (15s) — add `// cc: norun` if intentional"
         return True, rp.returncode == 0 and "runtime error" not in rp.stderr, rp.stdout, rp.stderr

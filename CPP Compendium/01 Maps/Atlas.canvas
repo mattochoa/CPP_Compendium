@@ -2830,6 +2830,552 @@
 			"width": 250,
 			"height": 56,
 			"text": "○ [[Path — Systems & Performance]]\n*path · T3*"
+		},
+		{
+			"id": "g-HDR",
+			"type": "group",
+			"x": 2620,
+			"y": 4408,
+			"width": 1108,
+			"height": 2044,
+			"label": "HDR · Standard Headers",
+			"color": "#ca8a04"
+		},
+		{
+			"id": "m-HDR",
+			"type": "text",
+			"x": 2650,
+			"y": 4432,
+			"width": 1048,
+			"height": 36,
+			"color": "#ca8a04",
+			"text": "**[[Map — Standard Headers]]** ◐"
+		},
+		{
+			"id": "t-hdr-iostream",
+			"type": "text",
+			"x": 2650,
+			"y": 4478,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Header — iostream]]\n*header · T1*",
+			"color": "3"
+		},
+		{
+			"id": "t-hdr-iomanip",
+			"type": "text",
+			"x": 2650,
+			"y": 4550,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Header — iomanip]]\n*header · T1*",
+			"color": "3"
+		},
+		{
+			"id": "t-hdr-fstream",
+			"type": "text",
+			"x": 2650,
+			"y": 4622,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Header — fstream]]\n*header · T1*",
+			"color": "3"
+		},
+		{
+			"id": "t-hdr-sstream",
+			"type": "text",
+			"x": 2650,
+			"y": 4694,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Header — sstream]]\n*header · T1*",
+			"color": "3"
+		},
+		{
+			"id": "t-hdr-string",
+			"type": "text",
+			"x": 2650,
+			"y": 4766,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Header — string]]\n*header · T1*",
+			"color": "3"
+		},
+		{
+			"id": "t-hdr-cctype",
+			"type": "text",
+			"x": 2650,
+			"y": 4838,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Header — cctype]]\n*header · T1*",
+			"color": "3"
+		},
+		{
+			"id": "t-hdr-cmath",
+			"type": "text",
+			"x": 2650,
+			"y": 4910,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Header — cmath]]\n*header · T1*",
+			"color": "3"
+		},
+		{
+			"id": "t-hdr-vector",
+			"type": "text",
+			"x": 2650,
+			"y": 4982,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — vector]]\n*header · T1*"
+		},
+		{
+			"id": "t-hdr-array",
+			"type": "text",
+			"x": 2650,
+			"y": 5054,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — array]]\n*header · T1*"
+		},
+		{
+			"id": "t-hdr-algorithm",
+			"type": "text",
+			"x": 2650,
+			"y": 5126,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — algorithm]]\n*header · T1*"
+		},
+		{
+			"id": "t-hdr-memory",
+			"type": "text",
+			"x": 2650,
+			"y": 5198,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — memory]]\n*header · T1*"
+		},
+		{
+			"id": "t-hdr-utility",
+			"type": "text",
+			"x": 2650,
+			"y": 5270,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — utility]]\n*header · T1*"
+		},
+		{
+			"id": "t-hdr-map-set",
+			"type": "text",
+			"x": 2650,
+			"y": 5342,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — map and set]]\n*header · T1*"
+		},
+		{
+			"id": "t-hdr-random",
+			"type": "text",
+			"x": 2650,
+			"y": 5414,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — random]]\n*header · T1*"
+		},
+		{
+			"id": "t-hdr-exception",
+			"type": "text",
+			"x": 2650,
+			"y": 5486,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — exception and stdexcept]]\n*header · T1*"
+		},
+		{
+			"id": "t-hdr-cstdlib",
+			"type": "text",
+			"x": 2650,
+			"y": 5558,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — cstdlib]]\n*header · T1*"
+		},
+		{
+			"id": "t-hdr-cstdint",
+			"type": "text",
+			"x": 2650,
+			"y": 5630,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — cstdint]]\n*header · T1*"
+		},
+		{
+			"id": "t-hdr-cassert",
+			"type": "text",
+			"x": 2650,
+			"y": 5702,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — cassert]]\n*header · T1*"
+		},
+		{
+			"id": "t-hdr-ios",
+			"type": "text",
+			"x": 2916,
+			"y": 4478,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Header — ios]]\n*header · T2*",
+			"color": "3"
+		},
+		{
+			"id": "t-hdr-cstdio",
+			"type": "text",
+			"x": 2916,
+			"y": 4550,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Header — cstdio]]\n*header · T2*",
+			"color": "3"
+		},
+		{
+			"id": "t-hdr-modern-io",
+			"type": "text",
+			"x": 2916,
+			"y": 4622,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Header — Modern IO]]\n*header · T2*",
+			"color": "3"
+		},
+		{
+			"id": "t-hdr-cstring",
+			"type": "text",
+			"x": 2916,
+			"y": 4694,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Header — cstring]]\n*header · T2*",
+			"color": "3"
+		},
+		{
+			"id": "t-hdr-conio",
+			"type": "text",
+			"x": 2916,
+			"y": 4766,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Header — conio (non-standard)]]\n*header · T2*",
+			"color": "3"
+		},
+		{
+			"id": "t-hdr-numeric",
+			"type": "text",
+			"x": 2916,
+			"y": 4838,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — numeric]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-unordered",
+			"type": "text",
+			"x": 2916,
+			"y": 4910,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — unordered_map and unordered_set]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-deque-list",
+			"type": "text",
+			"x": 2916,
+			"y": 4982,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — deque, list and forward_list]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-iterator",
+			"type": "text",
+			"x": 2916,
+			"y": 5054,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — iterator]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-limits",
+			"type": "text",
+			"x": 2916,
+			"y": 5126,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — limits]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-queue-stack",
+			"type": "text",
+			"x": 2916,
+			"y": 5198,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — queue and stack]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-optional-variant-any",
+			"type": "text",
+			"x": 2916,
+			"y": 5270,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — optional, variant and any]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-tuple",
+			"type": "text",
+			"x": 2916,
+			"y": 5342,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — tuple]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-functional",
+			"type": "text",
+			"x": 2916,
+			"y": 5414,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — functional]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-chrono",
+			"type": "text",
+			"x": 2916,
+			"y": 5486,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — chrono]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-span",
+			"type": "text",
+			"x": 2916,
+			"y": 5558,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — span]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-charconv",
+			"type": "text",
+			"x": 2916,
+			"y": 5630,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — charconv]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-ranges",
+			"type": "text",
+			"x": 2916,
+			"y": 5702,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — ranges]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-filesystem",
+			"type": "text",
+			"x": 2916,
+			"y": 5774,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — filesystem]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-initializer-list",
+			"type": "text",
+			"x": 2916,
+			"y": 5846,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — initializer_list]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-compare",
+			"type": "text",
+			"x": 2916,
+			"y": 5918,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — compare]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-expected",
+			"type": "text",
+			"x": 2916,
+			"y": 5990,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — expected]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-bitset",
+			"type": "text",
+			"x": 2916,
+			"y": 6062,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — bitset]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-thread",
+			"type": "text",
+			"x": 2916,
+			"y": 6134,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — thread and stop_token]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-mutex",
+			"type": "text",
+			"x": 2916,
+			"y": 6206,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — mutex and shared_mutex]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-condition-variable",
+			"type": "text",
+			"x": 2916,
+			"y": 6278,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — condition_variable]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-future",
+			"type": "text",
+			"x": 2916,
+			"y": 6350,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — future]]\n*header · T2*"
+		},
+		{
+			"id": "t-hdr-streambuf",
+			"type": "text",
+			"x": 3182,
+			"y": 4478,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Header — streambuf]]\n*header · T3*",
+			"color": "3"
+		},
+		{
+			"id": "t-hdr-bit",
+			"type": "text",
+			"x": 3182,
+			"y": 4550,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — bit]]\n*header · T3*"
+		},
+		{
+			"id": "t-hdr-regex",
+			"type": "text",
+			"x": 3182,
+			"y": 4622,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — regex]]\n*header · T3*"
+		},
+		{
+			"id": "t-hdr-type-traits",
+			"type": "text",
+			"x": 3182,
+			"y": 4694,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — type_traits]]\n*header · T3*"
+		},
+		{
+			"id": "t-hdr-concepts",
+			"type": "text",
+			"x": 3182,
+			"y": 4766,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — concepts]]\n*header · T3*"
+		},
+		{
+			"id": "t-hdr-atomic",
+			"type": "text",
+			"x": 3182,
+			"y": 4838,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — atomic]]\n*header · T3*"
+		},
+		{
+			"id": "t-hdr-system-error",
+			"type": "text",
+			"x": 3182,
+			"y": 4910,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — system_error]]\n*header · T3*"
+		},
+		{
+			"id": "t-hdr-new",
+			"type": "text",
+			"x": 3182,
+			"y": 4982,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — new]]\n*header · T3*"
+		},
+		{
+			"id": "t-hdr-locale",
+			"type": "text",
+			"x": 3182,
+			"y": 5054,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — locale]]\n*header · T3*"
+		},
+		{
+			"id": "t-hdr-complex-valarray",
+			"type": "text",
+			"x": 3182,
+			"y": 5126,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — complex and valarray]]\n*header · T3*"
+		},
+		{
+			"id": "t-hdr-source-location",
+			"type": "text",
+			"x": 3182,
+			"y": 5198,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — source_location and stacktrace]]\n*header · T3*"
+		},
+		{
+			"id": "t-hdr-coroutine",
+			"type": "text",
+			"x": 3448,
+			"y": 4478,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Header — coroutine]]\n*header · T4*"
 		}
 	],
 	"edges": [
