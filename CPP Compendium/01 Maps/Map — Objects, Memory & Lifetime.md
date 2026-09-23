@@ -136,7 +136,7 @@ flowchart LR
 - ○ [[Dynamic Memory — new and delete]] · *mechanism*
 - ○ [[Reading Uninitialized Variables]] · *pitfall*
 - ○ [[Pointer Arithmetic and Arrays]] · *mechanism*
-- ● [[Pointers vs References]] · *comparison*
+- ◐ [[Pointers vs References]] · *comparison*
 - ○ [[nullptr and Null Pointers]] · *concept*
 - ○ [[Built-in Arrays and Array-to-Pointer Decay]] · *mechanism*
 - ○ [[Memory Leaks]] · *pitfall*

@@ -24,7 +24,7 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 06 | Function Library & Header Refactor | ◐ [[Map — Program Structure & Build]], ○ [[Headers and Include Guards]], ○ [[Declarations vs Definitions]], ○ [[References]], ● [[Pointers vs References]], ○ [[Parameter Passing — Value, Reference, Pointer]], ○ [[Function Overloading]], ○ [[assert and static_assert]] |
+| 06 | Function Library & Header Refactor | ◐ [[Map — Program Structure & Build]], ○ [[Headers and Include Guards]], ○ [[Declarations vs Definitions]], ○ [[References]], ◐ [[Pointers vs References]], ○ [[Parameter Passing — Value, Reference, Pointer]], ○ [[Function Overloading]], ○ [[assert and static_assert]] |
 | 07 | Word & Text Analyzer | ○ [[vector]], ○ [[string]], ○ [[Ordered Associative Containers — map and set]], ○ [[IO Streams Architecture]], ○ [[File IO]] |
 | 08 | Matrix Operations Toolkit | ○ [[Preconditions, Postconditions and Contracts]] |
 | 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ○ [[The Call Stack and Stack Frames]], ○ [[Recursion]] |
@@ -34,9 +34,9 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 11 | Pointer & Array Internals Lab | ● [[Map — Objects, Memory & Lifetime]], ○ [[Process Memory Layout — Stack, Heap, Static]], ○ [[Pointers]], ○ [[Pointer Arithmetic and Arrays]], ● [[Pointers vs References]], ○ [[Built-in Arrays and Array-to-Pointer Decay]], ● [[Dangling Pointers and References]], ○ [[Sanitizers — ASan, UBSan, TSan]] |
+| 11 | Pointer & Array Internals Lab | ● [[Map — Objects, Memory & Lifetime]], ○ [[Process Memory Layout — Stack, Heap, Static]], ○ [[Pointers]], ○ [[Pointer Arithmetic and Arrays]], ◐ [[Pointers vs References]], ○ [[Built-in Arrays and Array-to-Pointer Decay]], ● [[Dangling Pointers and References]], ○ [[Sanitizers — ASan, UBSan, TSan]] |
 | 12 | Build-Your-Own Dynamic Array | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Ownership & Move Semantics]], ○ [[Dynamic Memory — new and delete]], ○ [[Rule of Zero, Three and Five]], ○ [[Copy Semantics — Deep vs Shallow Copy]], ○ [[vector]], ○ [[How vector Grows — Capacity and Amortized Cost]] |
-| 13 | Singly & Doubly Linked List Library | ● [[Map — Objects, Memory & Lifetime]], ● [[Pointers vs References]], ● [[Dangling Pointers and References]] |
+| 13 | Singly & Doubly Linked List Library | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Pointers vs References]], ● [[Dangling Pointers and References]] |
 | 14 | Stack & Queue Library + Applications | ○ [[Container Adaptors — stack, queue, priority_queue]] |
 | 15 | Binary Search Tree Explorer | ○ [[Recursion]] |
 | 16 | Student Record System | ○ [[IO Streams Architecture]], ○ [[File IO]] |

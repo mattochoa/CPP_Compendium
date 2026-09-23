@@ -57,7 +57,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 280 | 5 | 0 | 6 | 0 | 291 | 5 | 1 |
+| 280 | 6 | 0 | 5 | 0 | 291 | 6 | 1 |
 
 `█░░░░░░░░░░░░░░░░░░░` **4%** of the Atlas written · last build 2026-09-23
 <!-- cc:end -->
@@ -74,16 +74,16 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ● [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-23
+- ● [[RAII]] · *idiom* · updated 2026-09-23
+- ◐ [[Pointers vs References]] · *comparison* · updated 2026-09-23
 - ◐ [[Map — Types & Values]] · *map* · updated 2026-09-23
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-23
 - ◐ [[Map — Program Structure & Build]] · *map* · updated 2026-09-23
 - ◐ [[Map — Inheritance & Polymorphism]] · *map* · updated 2026-09-23
 - ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-23
-- ● [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-23
-- ● [[RAII]] · *idiom* · updated 2026-09-23
 - ● [[Dangling Pointers and References]] · *pitfall* · updated 2026-09-23
 - ● [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-23
-- ● [[Value Categories]] · *concept* · updated 2026-09-23
 <!-- cc:end -->
 
 ## Start here

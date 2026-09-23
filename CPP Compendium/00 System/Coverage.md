@@ -10,9 +10,9 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 280 |
 | ◌ stub | 0 |
-| ◐ draft | 5 |
+| ◐ draft | 6 |
 | ⟲ revise | 0 |
-| ● reviewed | 6 |
+| ● reviewed | 5 |
 | ★ evergreen | 0 |
 
 **Total topics:** 291
@@ -133,7 +133,7 @@ tags: [system/generated]
 | ○ | [[The Forms of Initialization]] | comparison | 2 | 2 |  |
 | ○ | [[Reading Uninitialized Variables]] | pitfall | 1 | 2 |  |
 | ○ | [[Pointer Arithmetic and Arrays]] | mechanism | 1 | 2 |  |
-| ● | [[Pointers vs References]] | comparison | 1 | 2 | 19 |
+| ◐ | [[Pointers vs References]] | comparison | 1 | 2 |  |
 | ○ | [[nullptr and Null Pointers]] | concept | 1 | 2 |  |
 | ○ | [[Built-in Arrays and Array-to-Pointer Decay]] | mechanism | 1 | 2 |  |
 | ○ | [[Memory Leaks]] | pitfall | 1 | 2 |  |

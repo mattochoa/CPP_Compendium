@@ -21,7 +21,7 @@ from .util import load_yaml
 STATUSES = ["planned", "stub", "draft", "revise", "reviewed", "evergreen"]
 DONE = {"draft", "reviewed", "evergreen", "revise"}   # counts as "exists" for prerequisites
 GLYPH = {"planned": "○", "stub": "◌", "draft": "◐", "revise": "⟲", "reviewed": "●", "evergreen": "★"}
-TYPES = ["map", "concept", "mechanism", "idiom", "pitfall", "comparison", "evolution", "guide", "path"]
+TYPES = ["map", "concept", "mechanism", "idiom", "pitfall", "comparison", "evolution", "guide", "path", "header"]
 BAD_FILENAME = re.compile(r'[:/\\?*<>|"]')
 
 

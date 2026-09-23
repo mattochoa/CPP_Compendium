@@ -1,6 +1,6 @@
 {
-  "runs": 6,
-  "builder_runs": 5,
+  "runs": 7,
+  "builder_runs": 6,
   "editor_runs": 1,
   "history": [
     {
@@ -100,10 +100,23 @@
       "code": "0/0 0/0",
       "commit": "✓",
       "summary": "author: Map — Types & Values (D02) written from first principles (bits -> type as values x operations x representation), citing Primer/Tour/PPP/Pikus + cppreference + WG21 P0907R4 (C++20 two's-complement mandate); back-wove a forward link from Map — What C++ Is"
+    },
+    {
+      "when": "2026-09-23T12:20:05Z",
+      "run": 6,
+      "role": "builder",
+      "mode": "DEEPEN",
+      "items": [
+        "pointers-vs-references"
+      ],
+      "lint": "100–100",
+      "code": "3/3",
+      "commit": "✓",
+      "summary": "deepen: depth + integration — added [dcl.ref]/[class.copy.assign] clause citations (reference collapsing, deleted copy-assign for reference members, dangling-reference UB, one-past-the-end pointer arithmetic), an Under the Hood section with verified GCC asm (sum_ref vs sum_ptr identical at -O2) and sizeof evidence, a 3rd compiled ill-formed code example, and a backlink from RAII's Prevents bullet"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T07:21:03Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-23T11:28:50Z"
+  "last_builder": "2026-09-23T12:20:05Z"
 }

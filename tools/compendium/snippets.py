@@ -8,6 +8,8 @@ Directive comments anywhere in a block (one or more per line):
     // cc: std=c++23       language standard (default c++20)
     // cc: remote          force Compiler Explorer (newer GCC) instead of the local compiler
     // cc: flags=-O2       extra compiler flags
+    // cc: stmts           the block is a sequence of statements: the checker compiles and runs it
+                           as the body of `int main()` (#include / using lines stay at file scope)
     // expect: <text>      stdout must contain <text> (repeatable)
 
 Blocks with `main` are compiled, linked and run with ASan+UBSan. Blocks without
@@ -192,15 +194,24 @@ def _run_remote(code: str, d: dict, has_main: bool) -> tuple[bool, bool, str, st
     return True, r.get("code", 1) == 0 and "runtime error" not in err, out, err
 
 
+def wrap_stmts(code: str) -> str:
+    """`// cc: stmts` blocks: keep preprocessor/using lines at file scope, put the rest in main()."""
+    head, body = [], []
+    for ln in code.split("\n"):
+        (head if re.match(r"\s*(#|using\s+namespace\b)", ln) else body).append(ln)
+    return "\n".join(head) + "\nint main() {\n" + "\n".join(body) + "\n}\n"
+
+
 def check_block(i: int, b: CodeBlock) -> Result:
     d = directives(b.code)
     if d.get("fragment"):
         return Result(i, b.line, "SKIP", "-", "fragment")
-    has_main = bool(MAIN_RE.search(b.code))
-    remote = _needs_remote(b.code, d)
+    code = wrap_stmts(b.code) if d.get("stmts") else b.code
+    has_main = bool(MAIN_RE.search(code))
+    remote = _needs_remote(code, d)
     how = f"remote {REMOTE_COMPILER}" if remote else "local"
     try:
-        compiled, ran_ok, out, diag = (_run_remote if remote else _run_local)(b.code, d, has_main)
+        compiled, ran_ok, out, diag = (_run_remote if remote else _run_local)(code, d, has_main)
     except Exception as exc:
         return Result(i, b.line, "WARN", how, f"could not verify: {exc}")
     first = lambda s, n=6: "\n".join((s or "").strip().splitlines()[:n])   # noqa: E731

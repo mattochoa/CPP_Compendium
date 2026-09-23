@@ -728,8 +728,8 @@
 			"y": 1874,
 			"width": 250,
 			"height": 56,
-			"text": "● [[Pointers vs References]]\n*comparison · T1*",
-			"color": "4"
+			"text": "◐ [[Pointers vs References]]\n*comparison · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-nullptr",

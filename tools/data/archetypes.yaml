@@ -87,3 +87,15 @@ path:
   tables: 1
   code: 0
   quiz: 0
+
+# Header Card: a fast-lookup reference for one standard header (or a tight family of headers).
+# Shape inherited from the owner's original quick-reference sheets (2026-09): signature listing,
+# patterns, concepts, practices. Teaching depth lives in the Dossiers the card links to.
+header:
+  template: T-Header.md
+  sections: [Quick Reference, Patterns, Key Concepts, Best Practices, Related Headers, Connections, Sources]
+  min_words: 600
+  diagrams: 1
+  tables: 0
+  code: 3
+  quiz: 0

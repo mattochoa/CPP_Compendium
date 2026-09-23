@@ -7,7 +7,7 @@ aliases:
 type: comparison
 domain: D04
 tier: 1
-status: reviewed
+status: draft
 standard: C++98
 prereqs:
 - "[[Pointers]]"
@@ -18,6 +18,7 @@ related:
 - "[[nullptr and Null Pointers]]"
 - "[[Dangling Pointers and References]]"
 - "[[optional]]"
+- "[[Forwarding References and Reference Collapsing]]"
 practice:
 - 6
 - 11
@@ -30,16 +31,6 @@ tags:
 - tension/safety-vs-performance
 created: 2026-09-23
 updated: 2026-09-23
-reviewed: 2026-09-23
-score: 19
-rubric:
-  accuracy: 3
-  first_principles: 3
-  clarity: 3
-  depth: 2
-  visual: 3
-  code: 3
-  integration: 2
 ---
 
 # Pointers vs References
@@ -80,11 +71,35 @@ A reference is not a separate object with its own value. It is **another name** 
 
 `const T&` adds a special power: it binds to **temporaries** and extends their lifetime ([[Temporaries and Lifetime Extension]]). That's what makes `void print(const std::string&)` accept `print("hi")`. `T&&` binds only to rvalues and powers [[Move Semantics]].
 
+Because a reference is not an object, C++ forbids compounding it directly: there are no arrays of references, no pointers to references, and no references to references (`int& &r;` is ill-formed) — `[dcl.ref]` ¶5. The one loophole is indirect, through a `typedef` or a template parameter: form a "reference to a reference" that way and *reference collapsing* resolves it instead of rejecting it — every combination collapses to `T&` except `T&& &&`, which stays `T&&` (`[dcl.ref]` ¶7, since C++11). That single rule is what lets `std::forward` exist; see [[Forwarding References and Reference Collapsing]].
+
+A reference can never be null, but it can still **dangle**: if the object it names reaches the end of its lifetime, evaluating the reference afterward is undefined behavior, not a null-like sentinel (cppreference, *Reference declaration* §*Dangling references*). The reference doesn't know its referent is gone — the bytes may still be readable garbage — so the danger is silent. See [[Dangling Pointers and References]] for how this happens in real code.
+
+A reference member is also a promise the compiler cannot keep automatically. Copy-assigning an object would have to either reseat the member's binding (impossible: a reference is bound for life) or assign through it (silently rewriting an unrelated object) — so the language refuses to choose. A defaulted copy assignment operator is defined as **deleted** for any class with a non-static data member of reference type (`[class.copy.assign]` ¶7.2; Primer §13.1, p. 508–509) — *In Code* §3 compiles this and shows the exact diagnostic.
+
 ### Pointers: an object that stores an address
 
 A pointer is a full object. It has a value (an address, or null), it can be copied and assigned, it can be `const` itself (`T* const`) independently of its target (`const T*`) (see [[Top-Level vs Low-Level const]]), and it supports arithmetic *within an array*. These powers are exactly why pointers are riskier. Every pointer might be null, uninitialized, one past the end, or dangling, and the type system tracks none of this.
 
+Pointer arithmetic has one legal boundary: a pointer may address an array element or the single position one past the array's last element, and computing anything further than that is undefined behavior — "unlikely" for the compiler to catch, per the Primer (Primer §3.5, p. 120). Even the legal one-past-the-end pointer may only be compared, never dereferenced; that narrow contract is exactly what `end()` iterators rely on.
+
 In modern C++, **raw pointers should not own** (`delete` belongs to [[unique_ptr]] and friends). A raw `T*` therefore means "an optional, re-aimable observer", which keeps both types' meanings sharp.
+
+### Under the Hood: same address, different contract
+
+Compile a function taking `const Big&` against one taking `const Big*`, at `-O2`:
+
+```nasm
+sum_ref(Big const&):                sum_ptr(Big const*):
+  movdqu xmm1, [rdi+16]               movdqu xmm1, [rdi+16]
+  movdqu xmm0, [rdi]                  movdqu xmm0, [rdi]
+  paddq  xmm0, xmm1                   paddq  xmm0, xmm1
+  ...                                  ...
+  ret                                  ret
+```
+*(GCC, Compiler Explorer, `-O2 -std=c++20`; the two function bodies are byte-for-byte identical.)*
+
+Both parameters arrive in `rdi` as one 8-byte address, and neither prologue tests it for null: the compiler isn't allowed to doubt what the reference's contract already promised. The same equivalence shows up in layout. Whether a reference needs storage at all is **unspecified** (`[dcl.ref]` ¶4) — a local reference is often optimized away entirely — but as a *member*, the compiler must store the alias somewhere, and it costs precisely a pointer's worth: `sizeof(struct{int& r;})` equals `sizeof(struct{int* p;})` (8 bytes on a 64-bit ABI), because "a non-static data member of reference type usually increases the size of the class by the amount necessary to store a memory address" (cppreference, *Reference declaration*). Same bits, different rules about what you're allowed to do with them.
 
 ## Decision Guide
 
@@ -170,10 +185,28 @@ int main() {}
 4. Returning an *observer* into the caller's container. It dangles if the vector reallocates ([[Dangling Pointers and References]]).
 5. For a small value type, `optional` states "maybe" without any addresses.
 
+**3 · A reference member deletes copy assignment**
+
+```cpp
+// cc: ill-formed
+struct Binder {
+    int& target;   // ① bound once; nothing can rebind it
+};
+
+int main() {
+    int a = 1, b = 2;
+    Binder x{a};
+    Binder y{b};
+    x = y;         // ② error: use of deleted function Binder::operator=
+}
+```
+1. `target` is fixed for the object's whole life, exactly like any other reference.
+2. Copy-assigning `x` from `y` would have to reseat `target` (impossible) or write through it into `a` (silently changing an unrelated object, and not what "copy `x`" should mean). The compiler picks neither: it deletes `Binder::operator=` instead of guessing.
+
 ## Connections
 
 - **Prerequisites:** [[Pointers]] · [[References]].
-- **Deeper:** [[Parameter Passing — Value, Reference, Pointer]] · [[Owning vs Observing Pointers]] · [[Top-Level vs Low-Level const]] · [[nullptr and Null Pointers]].
+- **Deeper:** [[Parameter Passing — Value, Reference, Pointer]] · [[Owning vs Observing Pointers]] · [[Top-Level vs Low-Level const]] · [[nullptr and Null Pointers]] · [[Forwarding References and Reference Collapsing]] (what a "reference to a reference" collapses into).
 - **Hazards shared by both:** [[Dangling Pointers and References]].
 - **Alternatives:** [[optional]] · [[span]] (pointer + length) · [[unique_ptr]] (ownership).
 - **Domain:** [[Map — Objects, Memory & Lifetime]].
@@ -192,8 +225,9 @@ int main() {}
 
 ## Sources
 
-- Primer §2.3.1 "References" (p. 50) and §2.3.2 "Pointers" (p. 52): binding rules and pointer states.
+- Primer §2.3.1 "References" (p. 50) and §2.3.2 "Pointers" (p. 52): binding rules and pointer states. Primer §3.5 "Arrays" (p. 120): the one-past-the-end arithmetic limit. Primer §13.1 "Copy, Assign, and Destroy" (p. 508–509): why a reference (or `const`) member deletes copy assignment.
 - Tour §1.7 "Pointers, Arrays, and References" (p. 11): the designer's short comparison.
 - PPP §16.2 "Pointers and references" (ch. 16 "Arrays, Pointers, and References"): pointer vs reference from first principles.
-- cppreference, *Reference declaration*: https://en.cppreference.com/w/cpp/language/reference · *Pointer declaration*: https://en.cppreference.com/w/cpp/language/pointer
+- cppreference, *Reference declaration* (incl. §*Reference collapsing*, §*Dangling references*): https://en.cppreference.com/w/cpp/language/reference · *Pointer declaration*: https://en.cppreference.com/w/cpp/language/pointer · *Copy assignment operator*: https://en.cppreference.com/w/cpp/language/copy_assignment
+- Draft standard `[dcl.ref]` ¶4–7 (storage, no references to references, collapsing): https://eel.is/c++draft/dcl.ref · `[class.copy.assign]` ¶7.2 (deleted copy assignment): https://eel.is/c++draft/class.copy.assign
 - C++ Core Guidelines F.60, F.17, R.3: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines

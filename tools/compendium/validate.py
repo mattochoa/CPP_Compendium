@@ -46,7 +46,7 @@ def check(note: Note, topics_by_id: dict | None = None, file_idx: dict | None = 
     W = lambda c, m: issues.append(Issue("warn", c, m))    # noqa: E731
 
     fm = note.fm
-    content_dirs = (paths.MAPS, paths.NOTES, paths.SOURCES, paths.PRACTICE)
+    content_dirs = (paths.MAPS, paths.NOTES, paths.SOURCES, paths.PRACTICE, paths.HEADERS)
     in_content = any(note.path.resolve().is_relative_to(d.resolve()) for d in content_dirs)
     if not fm.get("type") and not in_content:
         return issues   # the owner's own free-form notes (e.g. RESOURCES.md) are not policed
@@ -99,7 +99,7 @@ def check(note: Note, topics_by_id: dict | None = None, file_idx: dict | None = 
     body_lines = [ln for ln in note.body.splitlines() if ln.strip()]
     if not any(re.match(r">\s*\[!essence\]", ln) for ln in body_lines[:ESSENCE_WINDOW]):
         E("essence", "no `> [!essence]` callout at the top of the note")
-    if ntype not in ("guide", "path", "evolution") and not any(c == "principle" for c, _ in note.callouts):
+    if ntype not in ("guide", "path", "evolution", "header") and not any(c == "principle" for c, _ in note.callouts):
         W("first-principles", "no `> [!principle]` callout (derive the idea from constraints)")
     if note.word_count < spec["min_words"]:
         E("depth", f"{note.word_count} words < {spec['min_words']} minimum for {ntype}")

@@ -116,3 +116,9 @@
   folder: 04 Practice
   color: "#15803d"
   question: How does knowledge become skill?
+
+- code: HDR
+  name: Standard Headers
+  folder: 05 Headers
+  color: "#ca8a04"
+  question: Where does each standard facility live, and what exactly does its header promise?
