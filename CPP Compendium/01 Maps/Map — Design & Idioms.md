@@ -22,7 +22,7 @@ tags:
 - tension/compile-time-vs-run-time
 - tension/abstraction-vs-control
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-09-24
 ---
 
 # Map — Design & Idioms
@@ -164,3 +164,4 @@ flowchart LR
 - Primer §15.4 "Abstract Base Classes" (p. 609): pure virtual functions and abstract base classes, in C++11 terms.
 - C++ Core Guidelines, I.25 "Prefer empty abstract classes as interfaces to class hierarchies": https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ri-abstract
 - C++ Core Guidelines, I.3 "Avoid singletons": https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ri-singleton
+- See [[Guide — A Tour of C++ (3rd ed)]] for how this domain's Tour citations fit the book's own chapter-ending Advice apparatus and its `[CG: …]` cross-references into the Core Guidelines.

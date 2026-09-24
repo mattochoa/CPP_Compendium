@@ -48,7 +48,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D14` | [[Map — Tooling & Engineering\|Tooling & Engineering]] | Which tools turn correct-looking code into verified, maintainable software? | `█░░░░░░░` 1/11 |
 | `D15` | [[Map — Design & Idioms\|Design & Idioms]] | Which recurring shapes of solution survive contact with real programs? | `█░░░░░░░` 1/14 |
 | `D16` | [[Map — Evolution of C++\|Evolution of C++]] | How did the language get here, and where is it going? | `█░░░░░░░` 1/10 |
-| `SRC` | Sources | What should be read, in what order, and for what? | `███░░░░░` 2/5 |
+| `SRC` | Sources | What should be read, in what order, and for what? | `█████░░░` 3/5 |
 | `PRX` | Practice | How does knowledge become skill? | `██░░░░░░` 1/4 |
 | `HDR` | [[Map — Standard Headers\|Standard Headers]] | Where does each standard facility live, and what exactly does its header promise? | `██░░░░░░` 18/58 |
 <!-- cc:end -->
@@ -58,9 +58,9 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 307 | 39 | 0 | 4 | 0 | 350 | 26 | 1 |
+| 306 | 40 | 0 | 4 | 0 | 350 | 27 | 1 |
 
-`██░░░░░░░░░░░░░░░░░░` **12%** of the Atlas written · last build 2026-09-24
+`███░░░░░░░░░░░░░░░░░` **13%** of the Atlas written · last build 2026-09-24
 <!-- cc:end -->
 
 **Up next (Builder queue):**
@@ -75,6 +75,9 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — Design & Idioms]] · *map* · updated 2026-09-24
+- ◐ [[Map — Evolution of C++]] · *map* · updated 2026-09-24
+- ◐ [[Guide — A Tour of C++ (3rd ed)]] · *guide* · updated 2026-09-24
 - ◐ [[Map — Standard Headers]] · *map* · updated 2026-09-24
 - ● [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-24
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-24
@@ -82,9 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Header — vector]] · *header* · updated 2026-09-24
 - ◐ [[Guide — cppreference, the Draft Standard and the Core Guidelines]] · *guide* · updated 2026-09-24
 - ◐ [[Dangling Pointers and References]] · *pitfall* · updated 2026-09-24
-- ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-24
-- ◐ [[Map — Evolution of C++]] · *map* · updated 2026-09-24
-- ● [[Value Categories]] · *concept* · updated 2026-09-24
 <!-- cc:end -->
 
 ## Start here

@@ -1,6 +1,6 @@
 {
-  "runs": 27,
-  "builder_runs": 26,
+  "runs": 28,
+  "builder_runs": 27,
   "editor_runs": 1,
   "history": [
     {
@@ -383,10 +383,25 @@
       "code": "0/0 0/0 0/0",
       "commit": "✓",
       "summary": "Guide — C++ Primer (5th ed): source guide covering the book's structure (Parts I-IV + Appendix A), pedagogical apparatus (margin icons, KEY CONCEPT sidebars), and its C++11 ceiling vs later standards. Woven into Map — What C++ Is and Map — Objects, Memory & Lifetime."
+    },
+    {
+      "when": "2026-09-24T21:18:24Z",
+      "run": 27,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "guide-tour",
+        "map-d15",
+        "map-d16"
+      ],
+      "lint": "100–100",
+      "code": "0/0 0/0 0/0",
+      "commit": "✓",
+      "summary": "Wrote Guide — A Tour of C++ (3rd ed) (guide-tour), the last of the three wave-1 Source Guides per Directive item 7: covers the book's chapter structure (19 ch. + App. A Module std), its Advice/Core-Guidelines cross-reference apparatus, and its deliberate compatibility-vs-evolution choice to present C++20 as one integrated design rather than dating features inline (history concentrated in Ch.19). Woven into via existing forward links from Guide — C++ Primer (5th ed) and Guide — cppreference/Draft Standard/Core Guidelines (both already wikilinked it); added return links from Map — Design & Idioms and Map — Evolution of C++ Sources."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-24T20:15:47Z"
+  "last_builder": "2026-09-24T21:18:24Z"
 }

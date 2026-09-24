@@ -133,3 +133,4 @@ flowchart LR
 - PPP §0.3 "ISO standard C++": portability and guarantees framed for a learner meeting the Standard for the first time.
 - cppreference, *History of C++*: https://en.cppreference.com/w/cpp/language/history — confirms the C++98/03/11/14/17/20/23 final-draft dates and records C++26's final draft (n5050, 2026-06-01) and the in-progress C++29 draft (n5054, 2026-07-16).
 - Draft standard, Annex D "Compatibility features" (deprecated features): https://eel.is/c++draft/depr
+- See [[Guide — A Tour of C++ (3rd ed)]] for why this domain leans on Chapter 19 specifically: the Tour's main chapters deliberately avoid dating individual features, concentrating that bookkeeping in the one chapter this map cites throughout.

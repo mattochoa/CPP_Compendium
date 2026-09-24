@@ -2776,7 +2776,8 @@
 			"y": 4622,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Guide — A Tour of C++ (3rd ed)]]\n*guide · T1*"
+			"text": "◐ [[Guide — A Tour of C++ (3rd ed)]]\n*guide · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-guide-ppp",
