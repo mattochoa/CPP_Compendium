@@ -61,14 +61,14 @@ tags: [system/generated, practice]
 | 25 | Smart Pointer Refactor Lab | ◐ [[Map — Ownership & Move Semantics]], ● [[Value Categories]], ● [[Dangling Pointers and References]], ● [[RAII]], ○ [[unique_ptr]], ○ [[shared_ptr and Reference Counting]], ○ [[weak_ptr and Reference Cycles]] |
 | 26 | Custom Exception Hierarchy & Robust CSV Parser | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Errors & Contracts]], ● [[RAII]], ○ [[Exception Safety Guarantees]], ○ [[Exceptions]], ○ [[Designing Exception Hierarchies]] |
 | 27 | Task Manager with Lambdas & std::function | ◐ [[Map — Functions]], ○ [[Lambda Expressions]], ○ [[Callables and std-function]] |
-| 28 | Mini JSON Parser / Key-Value Store Engine | ○ [[variant and visit]], ○ [[Designing Interfaces — Easy to Use Correctly]], ○ [[Visitor — Classic vs variant]] |
+| 28 | Mini JSON Parser / Key-Value Store Engine | ◐ [[Map — Design & Idioms]], ○ [[variant and visit]], ○ [[Designing Interfaces — Easy to Use Correctly]], ○ [[Visitor — Classic vs variant]] |
 
 ## Tier 6: Advanced & Systems Programming
 
 | # | Project | Concepts it exercises |
 |---|---|---|
 | 29 | Multithreaded Producer-Consumer Simulation | ◐ [[Map — Concurrency]], ◐ [[Map — Tooling & Engineering]], ○ [[Threads — thread and jthread]], ○ [[Data Races and Race Conditions]], ○ [[Mutexes and Lock Guards]], ○ [[Condition Variables]], ○ [[Sanitizers — ASan, UBSan, TSan]], ◐ [[Kit — Background Worker (C++14-17)]] |
-| 30 | Design Patterns Toolkit | ○ [[Strategy Pattern]], ○ [[Observer Pattern]], ○ [[Factory Patterns]], ○ [[Singleton — and Why to Avoid It]] |
+| 30 | Design Patterns Toolkit | ◐ [[Map — Design & Idioms]], ○ [[Strategy Pattern]], ○ [[Observer Pattern]], ○ [[Factory Patterns]], ○ [[Singleton — and Why to Avoid It]] |
 | 31 | TCP Chat Client/Server | ● [[RAII]] |
 | 32 | Performance Profiling & Optimization Challenge | ◐ [[Map — Performance & the Machine]], ○ [[chrono — Durations, Clocks, Time Points]], ○ [[Performance — Measure, Don't Guess]], ○ [[The Memory Hierarchy and Caches]], ○ [[Benchmarking Correctly]], ○ [[Profiling]], ○ [[Data Locality and Access Patterns]] |
 

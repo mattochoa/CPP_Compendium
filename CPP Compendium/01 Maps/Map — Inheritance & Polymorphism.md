@@ -11,6 +11,7 @@ prereqs:
 related:
 - "[[Map — Ownership & Move Semantics]]"
 - "[[Map — Generic Programming]]"
+- "[[Map — Design & Idioms]]"
 practice:
 - 18
 - 20
@@ -96,7 +97,7 @@ flowchart LR
 
 ## Key Ideas
 
-1. **Public inheritance means "is-a", and only public inheritance should mean that.** Anywhere a `Shape&` is accepted, any publicly-derived `Circle` must behave like one (the Liskov substitution principle), because the caller holds only the base interface and has no way to check further.
+1. **Public inheritance means "is-a", and only public inheritance should mean that.** Anywhere a `Shape&` is accepted, any publicly-derived `Circle` must behave like one (the Liskov substitution principle), because the caller holds only the base interface and has no way to check further. The recurring, named ways of putting that interface together — [[Strategy Pattern]], [[Observer Pattern]], [[Non-Virtual Interface]] among them — are [[Map — Design & Idioms|the next domain's]] subject.
 2. **A virtual call is resolved through the object's own vptr, not through the pointer's or reference's declared type.** The declared type only fixes which *slot* the call reads; the object's vptr — set by its own constructor — decides which address sits in that slot, so the same call site dispatches differently for every dynamic type that flows through it ([[Virtual Dispatch — vptr and vtable]]).
 3. **Only a pointer or reference carries dynamic type across a call; a value slices it away.** Assigning or passing a `Circle` into a `Shape` invokes `Shape`'s copy constructor, which builds a `Shape` object with `Shape`'s own vptr — the derived part, and the behavior that came with it, is gone ([[Object Slicing]]).
 4. **Deleting a base pointer through a non-virtual destructor is undefined behavior.** `delete` must run the destructor chain for the object's actual dynamic type, and only a *virtual* destructor is looked up through the vtable at the delete site rather than baked in as a fixed address ([[Virtual Destructors]]).

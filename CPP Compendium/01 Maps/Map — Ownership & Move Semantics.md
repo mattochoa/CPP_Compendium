@@ -12,6 +12,7 @@ prereqs:
 related:
 - "[[Map — Inheritance & Polymorphism]]"
 - "[[Map — Generic Programming]]"
+- "[[Map — Design & Idioms]]"
 practice:
 - 12
 - 20
@@ -102,7 +103,7 @@ flowchart LR
 
 ## Key Ideas
 
-1. **Every resource has exactly one release event, so it must have exactly one owner at a time.** Two owners racing to release the same resource is a double free; zero owners is a leak — [[Ownership — Who Releases What]] makes that owner explicit in the type rather than a convention in someone's head.
+1. **Every resource has exactly one release event, so it must have exactly one owner at a time.** Two owners racing to release the same resource is a double free; zero owners is a leak — [[Ownership — Who Releases What]] makes that owner explicit in the type rather than a convention in someone's head. That same discipline, generalized beyond one resource to an arbitrary cleanup action, is [[Scope Guards|the simplest idiom]] in [[Map — Design & Idioms|the design domain]].
 2. **Copying and moving are different operations with different costs, and something has to tell the compiler which one applies.** A copy duplicates state so both copies are independent; a move transfers state and empties the source, which is why moving a `std::vector<int>` is O(1) while copying it is O(*n*).
 3. **An rvalue reference doesn't mean "temporary" — it means "provably has no other user."** [[Rvalue References]] bind to such expressions and license [[Move Semantics]] to steal their resources instead of copying them, whether the expression is a literal temporary or an lvalue cast with `std::move`.
 4. **A moved-from object is not destroyed, only emptied.** Its lifetime continues and its destructor still runs later, but the library guarantees only "a valid but unspecified state," so [[The Moved-From State]] limits what you may do with it in between to destruction and reassignment.

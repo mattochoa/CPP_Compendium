@@ -1,6 +1,6 @@
 {
-  "runs": 21,
-  "builder_runs": 20,
+  "runs": 22,
+  "builder_runs": 21,
   "editor_runs": 1,
   "history": [
     {
@@ -279,10 +279,25 @@
       "code": "0/0 0/0 0/0",
       "commit": "✓",
       "summary": "wave 0: authored Map — Tooling & Engineering (D14), the 15th of 17 domain maps; wove it into Map — Errors & Contracts and Map — Program Structure & Build (Tooling was already a frontier link from Map — Performance & the Machine)"
+    },
+    {
+      "when": "2026-09-24T00:19:09Z",
+      "run": 21,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "map-d15",
+        "map-d07",
+        "map-d08"
+      ],
+      "lint": "100–100",
+      "code": "0/0 0/0 0/0",
+      "commit": "✓",
+      "summary": "Map — Design & Idioms written (wave 0): SOLID/patterns vs CRTP/policy-based design as the compile-time/run-time tension, NVI/Pimpl as the abstraction/control tension; 13-item learning route and index covering all registered D15 topics. Back-wove into Map — Ownership & Move Semantics and Map — Inheritance & Polymorphism (related: + one forward-pointing sentence each)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-23T23:21:04Z"
+  "last_builder": "2026-09-24T00:19:09Z"
 }

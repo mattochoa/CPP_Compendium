@@ -8,16 +8,16 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 312 |
+| ○ planned | 311 |
 | ◌ stub | 0 |
-| ◐ draft | 33 |
+| ◐ draft | 34 |
 | ⟲ revise | 0 |
 | ● reviewed | 5 |
 | ★ evergreen | 0 |
 
 **Total topics:** 350
 
-- Wave 0: `██████████████████░░` 16/18
+- Wave 0: `███████████████████░` 17/18
 - Wave 1: `██░░░░░░░░░░░░░░░░░░` 4/51
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 11/123
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 7/123
@@ -389,11 +389,11 @@ tags: [system/generated]
 
 ## D15 · Design & Idioms
 
-*Which recurring shapes of solution survive contact with real programs?*  `░░░░░░░░░░` 0/14
+*Which recurring shapes of solution survive contact with real programs?*  `█░░░░░░░░░` 1/14
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ○ | [[Map — Design & Idioms]] | map | 1 | 0 |  |
+| ◐ | [[Map — Design & Idioms]] | map | 1 | 0 |  |
 | ○ | [[Designing Interfaces — Easy to Use Correctly]] | concept | 2 | 2 |  |
 | ○ | [[Scope Guards]] | idiom | 2 | 3 |  |
 | ○ | [[SOLID in C++]] | concept | 2 | 3 |  |
