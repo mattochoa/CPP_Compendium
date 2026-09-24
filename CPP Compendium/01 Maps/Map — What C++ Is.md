@@ -18,7 +18,7 @@ tags:
 - tension/abstraction-vs-control
 - tension/safety-vs-performance
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-09-24
 ---
 
 # Map — What C++ Is
@@ -121,3 +121,4 @@ flowchart LR
 - Primer §2.1 "Primitive Built-in Types" (p. 36): the caution against relying on implementation-defined behavior, and what "nonportable" costs in practice.
 - cppreference, *Undefined behavior* · *The as-if rule*: https://en.cppreference.com/w/cpp/language/ub · https://en.cppreference.com/w/cpp/language/as_if
 - Draft standard `[intro.abstract]` — the abstract machine, the as-if rule (footnote), observable behavior: https://eel.is/c++draft/intro.abstract
+- See [[Guide — cppreference, the Draft Standard and the Core Guidelines]] for how to navigate cppreference and the draft Standard directly, and for the precedence order to use when they and a book disagree.

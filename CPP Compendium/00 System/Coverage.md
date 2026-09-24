@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 310 |
+| ○ planned | 309 |
 | ◌ stub | 0 |
-| ◐ draft | 36 |
+| ◐ draft | 37 |
 | ⟲ revise | 0 |
 | ● reviewed | 4 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 350
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `██░░░░░░░░░░░░░░░░░░` 4/51
+- Wave 1: `██░░░░░░░░░░░░░░░░░░` 5/51
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 11/123
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 7/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -427,11 +427,11 @@ tags: [system/generated]
 
 ## SRC · Sources
 
-*What should be read, in what order, and for what?*  `░░░░░░░░░░` 0/5
+*What should be read, in what order, and for what?*  `██░░░░░░░░` 1/5
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ○ | [[Guide — cppreference, the Draft Standard and the Core Guidelines]] | guide | 1 | 1 |  |
+| ◐ | [[Guide — cppreference, the Draft Standard and the Core Guidelines]] | guide | 1 | 1 |  |
 | ○ | [[Guide — C++ Primer (5th ed)]] | guide | 1 | 1 |  |
 | ○ | [[Guide — A Tour of C++ (3rd ed)]] | guide | 1 | 1 |  |
 | ○ | [[Guide — Programming Principles and Practice (3rd ed)]] | guide | 1 | 2 |  |

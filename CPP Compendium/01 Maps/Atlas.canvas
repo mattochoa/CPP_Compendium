@@ -2756,7 +2756,8 @@
 			"y": 4478,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Guide — cppreference, the Draft Standard and the Core Guidelines]]\n*guide · T1*"
+			"text": "◐ [[Guide — cppreference, the Draft Standard and the Core Guidelines]]\n*guide · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-guide-primer",

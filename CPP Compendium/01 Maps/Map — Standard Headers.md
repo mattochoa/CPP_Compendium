@@ -1,19 +1,31 @@
 ---
 id: map-hdr
 title: Map — Standard Headers
-aliases: [Header Cards, Standard Header Cards, CPP Reference Index]
+aliases:
+- Header Cards
+- Standard Header Cards
+- CPP Reference Index
 type: map
 domain: HDR
 tier: 1
 status: draft
 standard: C++98
-prereqs: ["[[Map — Standard Library]]"]
-related: ["[[Map — Program Structure & Build]]", "[[Map — Standard Library]]"]
-tags: [type/map, domain/hdr, tier/1, tension/compatibility-vs-evolution, tension/abstraction-vs-control]
-origin: owner reference index CPP_REFERENCE_INDEX (2026-09)
+prereqs:
+- "[[Map — Standard Library]]"
+related:
+- "[[Map — Program Structure & Build]]"
+- "[[Map — Standard Library]]"
+tags:
+- type/map
+- domain/hdr
+- tier/1
+- tension/compatibility-vs-evolution
+- tension/abstraction-vs-control
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-09-24
+origin: owner reference index CPP_REFERENCE_INDEX (2026-09)
 ---
+
 # Map — Standard Headers
 
 > [!essence]
@@ -223,4 +235,5 @@ C++26   strstream removed; println() with no arguments; runtime_format
 - Draft standard `[headers]` (library headers, the `<cname>` vs `<name.h>` rule): https://eel.is/c++draft/headers
 - P2465R3, *Standard Library Modules std and std.compat*: https://wg21.link/p2465r3
 - cppreference, *Compiler support*: https://en.cppreference.com/w/cpp/compiler_support
+- See [[Guide — cppreference, the Draft Standard and the Core Guidelines]] for how the header index and the compiler-support pages are organized, and for the version-label-verification step every card's Quick Reference relies on.
 - Origin: the owner's `CPP_REFERENCE_INDEX` (September 2026), expanded into this Domain Map.
