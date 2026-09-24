@@ -121,6 +121,11 @@ The stream family is one architecture seen at three layers: [[Header — streamb
 | "How do I count from many threads without a mutex?" | [[Header — atomic]] | counter incremented from many threads |
 | "How long did this take?" | [[Header — chrono]] | measuring how long something takes |
 | "How do I convert milliseconds to seconds?" | [[Header — chrono]] | converting between units · rounding |
+| "Why did my reference into a `vector` suddenly hold garbage?" | [[Header — vector]] | iterator invalidation table |
+| "How do I remove items from a `vector` while looping?" | [[Header — vector]] | erase while looping · `erase_if` |
+| "Why does `vector<int> v{5, 7}` hold two elements, not five?" | [[Header — vector]] | braces vs parentheses |
+| "`reserve` or `resize`?" | [[Header — vector]] | `size()` vs `capacity()` |
+| "How do I pass a `vector` to a C function?" | [[Header — vector]] | hand the buffer to a C API |
 | "What's the difference between `fail` and `bad`?" | [[Header — ios]] | state flag decision table |
 | "How do I reset a `stringstream`?" | [[Header — sstream]] | the two-step reset |
 | "How do I make `cout` write to a socket?" | [[Header — streambuf]] | custom buffers |
@@ -167,7 +172,7 @@ C++26   strstream removed; println() with no arguments; runtime_format
 - ◐ [[Header — string]] · *header*
 - ◐ [[Header — cctype]] · *header*
 - ◐ [[Header — cmath]] · *header*
-- ○ [[Header — vector]] · *header*
+- ◐ [[Header — vector]] · *header*
 - ○ [[Header — array]] · *header*
 - ○ [[Header — algorithm]] · *header*
 - ○ [[Header — memory]] · *header*
@@ -224,7 +229,7 @@ C++26   strstream removed; println() with no arguments; runtime_format
 **Tier 4 · Expert**
 - ○ [[Header — coroutine]] · *header*
 
-`███░░░░░░░` 17/58 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███░░░░░░░` 18/58 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
