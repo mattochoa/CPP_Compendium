@@ -765,8 +765,8 @@
 			"y": 2162,
 			"width": 250,
 			"height": 56,
-			"text": "● [[Dangling Pointers and References]]\n*pitfall · T1*",
-			"color": "4"
+			"text": "◐ [[Dangling Pointers and References]]\n*pitfall · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-value-categories",

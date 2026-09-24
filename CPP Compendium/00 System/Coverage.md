@@ -10,9 +10,9 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 310 |
 | ◌ stub | 0 |
-| ◐ draft | 35 |
+| ◐ draft | 36 |
 | ⟲ revise | 0 |
-| ● reviewed | 5 |
+| ● reviewed | 4 |
 | ★ evergreen | 0 |
 
 **Total topics:** 350
@@ -137,7 +137,7 @@ tags: [system/generated]
 | ○ | [[nullptr and Null Pointers]] | concept | 1 | 2 |  |
 | ○ | [[Built-in Arrays and Array-to-Pointer Decay]] | mechanism | 1 | 2 |  |
 | ○ | [[Memory Leaks]] | pitfall | 1 | 2 |  |
-| ● | [[Dangling Pointers and References]] | pitfall | 1 | 2 | 19 |
+| ◐ | [[Dangling Pointers and References]] | pitfall | 1 | 2 | 19 |
 | ○ | [[Double Free and Mismatched new-delete]] | pitfall | 2 | 2 |  |
 | ○ | [[Temporaries and Lifetime Extension]] | mechanism | 2 | 2 |  |
 | ○ | [[C-Style Strings]] | concept | 2 | 3 |  |

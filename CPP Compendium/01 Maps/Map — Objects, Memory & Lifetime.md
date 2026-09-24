@@ -141,7 +141,7 @@ flowchart LR
 - ○ [[nullptr and Null Pointers]] · *concept*
 - ○ [[Built-in Arrays and Array-to-Pointer Decay]] · *mechanism*
 - ○ [[Memory Leaks]] · *pitfall*
-- ● [[Dangling Pointers and References]] · *pitfall*
+- ◐ [[Dangling Pointers and References]] · *pitfall*
 
 **Tier 2 · Proficient**
 - ● [[Value Categories]] · *concept*

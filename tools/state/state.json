@@ -1,6 +1,6 @@
 {
-  "runs": 24,
-  "builder_runs": 23,
+  "runs": 25,
+  "builder_runs": 24,
   "editor_runs": 1,
   "history": [
     {
@@ -309,10 +309,24 @@
       "code": "0/0 4/4 0/0",
       "commit": "✓",
       "summary": "Wrote Map — Evolution of C++ (map-d16), the last unwritten wave-0 Domain Map: derives the compatibility-vs-evolution tension from first principles, timelines C++98 through the March-2026 C++26 ratification with precise Tour citations, and back-weaves into Value Categories' Evolution section and Map — Ownership & Move Semantics' C++11 mention."
+    },
+    {
+      "when": "2026-09-24T15:19:52Z",
+      "run": 24,
+      "role": "builder",
+      "mode": "DEEPEN",
+      "items": [
+        "dangling-pointers-and-references",
+        "map-d07"
+      ],
+      "lint": "100–100",
+      "code": "4/4 0/0",
+      "commit": "✓",
+      "summary": "deepen: dangling-pointers-and-references visual+integration — added a Visual-Language box diagram (STACK/HEAP, owning vs dangling pointer) grounding the vector-reallocation Minimal Reproduction in concrete memory blocks; back-wove a new inbound link from Map — Ownership & Move Semantics Key Idea 6 (observer outliving its owner)"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-24T14:43:54Z"
+  "last_builder": "2026-09-24T15:19:52Z"
 }

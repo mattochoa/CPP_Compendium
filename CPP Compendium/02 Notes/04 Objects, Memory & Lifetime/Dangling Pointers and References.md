@@ -9,7 +9,7 @@ aliases:
 type: pitfall
 domain: D04
 tier: 1
-status: reviewed
+status: draft
 standard: C++98
 prereqs:
 - "[[Object Lifetime]]"
@@ -31,7 +31,7 @@ tags:
 - tier/1
 - tension/safety-vs-performance
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-09-24
 reviewed: 2026-09-23
 score: 19
 rubric:
@@ -109,6 +109,22 @@ int main() {
 1. `best` refers to an element, and the element lives in a heap block the vector owns.
 2. `push_back` beyond capacity allocates a new block, moves the elements, and frees the old block. See [[How vector Grows — Capacity and Amortized Cost]] and [[Iterator Invalidation]].
 3. ASan reports `heap-use-after-free`. Without it, this often prints `90` *by accident*.
+
+The instant after line ②, `scores` and `best` disagree about where the data is:
+
+```text
+ STACK (automatic)               HEAP (dynamic)
+┌───────────────────────────┐     
+│ best : int&               │ ╌╌▶ ┌────────────────────────┐
+│                           │     │ old block   ✝ freed    │
+│ scores : vector<int>      │     │ [ 90 | 85 ]  (stale)   │
+├───────────────────────────┤     └────────────────────────┘
+│  data ●                   │ ──▶ ┌────────────────────────┐
+│  size = 3, cap = 4        │     │ new block  (current)   │
+└───────────────────────────┘     │ [ 90 | 85 | 70 |  ]    │
+                                  └────────────────────────┘
+```
+`data` (owning) was repointed at the new block by `push_back` itself. `best` (observing) was never told: it still aims at the freed old block's address. The `╌╌▶` line is the same "dangling" edge from the *Root Cause* diagram above, now grounded in this example's own blocks and values. Line ③'s read walks that dangling edge.
 
 **2 · A view of a temporary** (the modern classic)
 
