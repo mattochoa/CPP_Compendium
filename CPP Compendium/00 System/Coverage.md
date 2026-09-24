@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 309 |
+| ○ planned | 307 |
 | ◌ stub | 0 |
-| ◐ draft | 37 |
+| ◐ draft | 39 |
 | ⟲ revise | 0 |
 | ● reviewed | 4 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 350
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `██░░░░░░░░░░░░░░░░░░` 5/51
+- Wave 1: `███░░░░░░░░░░░░░░░░░` 7/51
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 11/123
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 7/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -427,12 +427,12 @@ tags: [system/generated]
 
 ## SRC · Sources
 
-*What should be read, in what order, and for what?*  `██░░░░░░░░` 1/5
+*What should be read, in what order, and for what?*  `████░░░░░░` 2/5
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Guide — cppreference, the Draft Standard and the Core Guidelines]] | guide | 1 | 1 |  |
-| ○ | [[Guide — C++ Primer (5th ed)]] | guide | 1 | 1 |  |
+| ◐ | [[Guide — C++ Primer (5th ed)]] | guide | 1 | 1 |  |
 | ○ | [[Guide — A Tour of C++ (3rd ed)]] | guide | 1 | 1 |  |
 | ○ | [[Guide — Programming Principles and Practice (3rd ed)]] | guide | 1 | 2 |  |
 | ○ | [[Guide — The Art of Writing Efficient Programs]] | guide | 2 | 2 |  |
@@ -450,7 +450,7 @@ tags: [system/generated]
 
 ## HDR · Standard Headers
 
-*Where does each standard facility live, and what exactly does its header promise?*  `███░░░░░░░` 17/58
+*Where does each standard facility live, and what exactly does its header promise?*  `███░░░░░░░` 18/58
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -468,7 +468,7 @@ tags: [system/generated]
 | ◐ | [[Header — cctype]] | header | 1 | 2 |  |
 | ◐ | [[Header — cmath]] | header | 1 | 2 |  |
 | ◐ | [[Header — conio (non-standard)]] | header | 2 | 2 |  |
-| ○ | [[Header — vector]] | header | 1 | 1 |  |
+| ◐ | [[Header — vector]] | header | 1 | 1 |  |
 | ○ | [[Header — array]] | header | 1 | 2 |  |
 | ○ | [[Header — algorithm]] | header | 1 | 2 |  |
 | ○ | [[Header — numeric]] | header | 2 | 2 |  |

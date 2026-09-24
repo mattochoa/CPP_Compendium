@@ -1,6 +1,6 @@
 {
-  "runs": 26,
-  "builder_runs": 25,
+  "runs": 27,
+  "builder_runs": 26,
   "editor_runs": 1,
   "history": [
     {
@@ -338,10 +338,55 @@
       "code": "0/0 0/0 0/0",
       "commit": "✓",
       "summary": "author: Guide — cppreference, the Draft Standard and the Core Guidelines (guide-web-references); wave-1 kickoff per Directive item 7. Wave 0 domain maps confirmed complete on disk (all 17 D-maps + HDR map exist, status draft) despite stale pin in Directives.md — followed the live WORK QUEUE instead. Back-wove into Map — What C++ Is and Map — Standard Headers."
+    },
+    {
+      "when": "2026-09-24T20:14:56Z",
+      "run": 26,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "guide-primer",
+        "map-d00",
+        "map-d04"
+      ],
+      "lint": "100–100",
+      "code": "0/0 0/0 0/0",
+      "commit": "✓",
+      "summary": "Guide — C++ Primer (5th ed): source guide covering the book's structure (Parts I-IV + Appendix A), pedagogical apparatus (margin icons, KEY CONCEPT sidebars), and its C++11 ceiling vs later standards. Woven into Map — What C++ Is and Map — Objects, Memory & Lifetime."
+    },
+    {
+      "when": "2026-09-24T20:15:11Z",
+      "run": "?",
+      "role": "builder",
+      "mode": "?",
+      "items": [
+        "guide-primer",
+        "map-d00",
+        "map-d04"
+      ],
+      "lint": "100–100",
+      "code": "0/0 0/0 0/0",
+      "commit": "✓",
+      "summary": "Guide — C++ Primer (5th ed): source guide covering the book's structure (Parts I-IV + Appendix A), pedagogical apparatus (margin icons, KEY CONCEPT sidebars), and its C++11 ceiling vs later standards. Woven into Map — What C++ Is and Map — Objects, Memory & Lifetime."
+    },
+    {
+      "when": "2026-09-24T20:15:47Z",
+      "run": "?",
+      "role": "builder",
+      "mode": "?",
+      "items": [
+        "guide-primer",
+        "map-d00",
+        "map-d04"
+      ],
+      "lint": "100–100",
+      "code": "0/0 0/0 0/0",
+      "commit": "✓",
+      "summary": "Guide — C++ Primer (5th ed): source guide covering the book's structure (Parts I-IV + Appendix A), pedagogical apparatus (margin icons, KEY CONCEPT sidebars), and its C++11 ceiling vs later standards. Woven into Map — What C++ Is and Map — Objects, Memory & Lifetime."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-24T16:24:56Z"
+  "last_builder": "2026-09-24T20:15:47Z"
 }

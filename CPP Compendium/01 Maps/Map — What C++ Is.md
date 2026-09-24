@@ -122,3 +122,4 @@ flowchart LR
 - cppreference, *Undefined behavior* · *The as-if rule*: https://en.cppreference.com/w/cpp/language/ub · https://en.cppreference.com/w/cpp/language/as_if
 - Draft standard `[intro.abstract]` — the abstract machine, the as-if rule (footnote), observable behavior: https://eel.is/c++draft/intro.abstract
 - See [[Guide — cppreference, the Draft Standard and the Core Guidelines]] for how to navigate cppreference and the draft Standard directly, and for the precedence order to use when they and a book disagree.
+- See [[Guide — C++ Primer (5th ed)]] for where this domain's C++11-era citations sit in the book and which of its claims need a modern-standard check first.

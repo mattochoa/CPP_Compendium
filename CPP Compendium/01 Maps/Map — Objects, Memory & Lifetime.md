@@ -24,7 +24,7 @@ tags:
 - tension/safety-vs-performance
 - tension/value-vs-identity
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-09-24
 reviewed: 2026-09-23
 score: 19
 rubric:
@@ -171,3 +171,4 @@ flowchart LR
 - Pikus ch. 4 "Memory Architecture and Performance" (p. 113): what the storage choice costs on real hardware.
 - cppreference, *Object* · *Lifetime* · *Storage duration*: https://en.cppreference.com/w/cpp/language/object · https://en.cppreference.com/w/cpp/language/lifetime · https://en.cppreference.com/w/cpp/language/storage_duration
 - Draft standard `[intro.object]`, `[basic.life]`, `[basic.stc]`: https://eel.is/c++draft/basic.life
+- See [[Guide — C++ Primer (5th ed)]] for how this domain's Primer citations (ch. 2 and ch. 12) sit in the book, and which of its C++11-era claims about lifetime and dynamic memory need a modern-standard check first.

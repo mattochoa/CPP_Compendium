@@ -2766,7 +2766,8 @@
 			"y": 4550,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Guide — C++ Primer (5th ed)]]\n*guide · T1*"
+			"text": "◐ [[Guide — C++ Primer (5th ed)]]\n*guide · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-guide-tour",
@@ -2939,7 +2940,8 @@
 			"y": 4982,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Header — vector]]\n*header · T1*"
+			"text": "◐ [[Header — vector]]\n*header · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-hdr-array",
