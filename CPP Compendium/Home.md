@@ -47,7 +47,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D13` | [[Map — Performance & the Machine\|Performance & the Machine]] | What does the hardware actually do with our code, and how do we make it fast? | `█░░░░░░░` 1/15 |
 | `D14` | [[Map — Tooling & Engineering\|Tooling & Engineering]] | Which tools turn correct-looking code into verified, maintainable software? | `█░░░░░░░` 1/11 |
 | `D15` | [[Map — Design & Idioms\|Design & Idioms]] | Which recurring shapes of solution survive contact with real programs? | `█░░░░░░░` 1/14 |
-| `D16` | [[Map — Evolution of C++\|Evolution of C++]] | How did the language get here, and where is it going? | `░░░░░░░░` 0/10 |
+| `D16` | [[Map — Evolution of C++\|Evolution of C++]] | How did the language get here, and where is it going? | `█░░░░░░░` 1/10 |
 | `SRC` | Sources | What should be read, in what order, and for what? | `░░░░░░░░` 0/5 |
 | `PRX` | Practice | How does knowledge become skill? | `██░░░░░░` 1/4 |
 | `HDR` | [[Map — Standard Headers\|Standard Headers]] | Where does each standard facility live, and what exactly does its header promise? | `██░░░░░░` 17/58 |
@@ -58,33 +58,33 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 311 | 34 | 0 | 5 | 0 | 350 | 21 | 1 |
+| 310 | 35 | 0 | 5 | 0 | 350 | 23 | 1 |
 
-`██░░░░░░░░░░░░░░░░░░` **11%** of the Atlas written · last build 2026-09-23
+`██░░░░░░░░░░░░░░░░░░` **11%** of the Atlas written · last build 2026-09-24
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Map — Evolution of C++]] · *map* · `D16` — wave 0
-2. [[Guide — cppreference, the Draft Standard and the Core Guidelines]] · *guide* · `SRC` — wave 1
-3. [[Guide — C++ Primer (5th ed)]] · *guide* · `SRC` — wave 1
-4. [[Guide — A Tour of C++ (3rd ed)]] · *guide* · `SRC` — wave 1
-5. [[STL Architecture — Containers, Iterators, Algorithms]] · *concept* · `D10` — wave 1
-6. [[vector]] · *concept* · `D10` — wave 1
+1. [[Guide — cppreference, the Draft Standard and the Core Guidelines]] · *guide* · `SRC` — wave 1
+2. [[Guide — C++ Primer (5th ed)]] · *guide* · `SRC` — wave 1
+3. [[Guide — A Tour of C++ (3rd ed)]] · *guide* · `SRC` — wave 1
+4. [[STL Architecture — Containers, Iterators, Algorithms]] · *concept* · `D10` — wave 1
+5. [[vector]] · *concept* · `D10` — wave 1
+6. [[Iterators]] · *concept* · `D10` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — Evolution of C++]] · *map* · updated 2026-09-24
+- ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-24
+- ● [[Value Categories]] · *concept* · updated 2026-09-24
 - ◐ [[Map — Design & Idioms]] · *map* · updated 2026-09-23
 - ◐ [[Map — Inheritance & Polymorphism]] · *map* · updated 2026-09-23
-- ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-23
 - ◐ [[Map — Tooling & Engineering]] · *map* · updated 2026-09-23
 - ◐ [[Map — Program Structure & Build]] · *map* · updated 2026-09-23
 - ◐ [[Map — Errors & Contracts]] · *map* · updated 2026-09-23
 - ◐ [[Map — Performance & the Machine]] · *map* · updated 2026-09-23
 - ● [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-23
-- ◐ [[Map — Concurrency]] · *map* · updated 2026-09-23
-- ● [[RAII]] · *idiom* · updated 2026-09-23
 <!-- cc:end -->
 
 ## Start here

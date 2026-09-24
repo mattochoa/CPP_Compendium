@@ -26,7 +26,7 @@ tags:
 - tension/value-vs-identity
 - tension/safety-vs-performance
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-09-24
 ---
 
 # Map — Ownership & Move Semantics
@@ -42,7 +42,7 @@ updated: 2026-09-23
 > 1. **Constraint.** [[RAII]] ties release to a destructor call, and a program can copy an object as freely as it likes — `Buffer b2 = b1;` compiles for almost any class with no special work.
 > 2. **Consequence.** If copying a `Buffer` just copies its raw pointer member, `b1` and `b2` now both believe they own the same heap block. Both destructors will call `delete` on it: the second call is a **double free**, undefined behavior ([basic.life]). If instead the compiler suppressed the copy, moving data between functions and containers would require an explicit, deep-copying escape hatch everywhere, even where the source object was about to be destroyed anyway and copying it was pure waste.
 > 3. **Requirement.** The language needs two distinct operations where it used to have one: a *duplicate* that produces a fully independent second resource, and a *transfer* that hands the existing resource to a new owner and leaves the old one empty. And it needs a way to tell, at the call site, which one applies — ideally for free, without the programmer writing `std::move` everywhere by hand.
-> 4. **Design.** C++11 splits **copy** from **move** as distinct, separately-defined operations ([[Copy Semantics — Deep vs Shallow Copy]], [[Move Semantics]]), and gives the compiler a way to *see* which one an expression calls for: an **rvalue reference** ([[Rvalue References]]) binds only to expressions that provably have no other user, so overload resolution silently prefers the move constructor whenever the source is about to disappear anyway — a temporary, or an object passed through `std::move`. Ownership itself becomes a type: [[unique_ptr]] embodies "exactly one owner", [[shared_ptr and Reference Counting]] embodies "however many owners agree to share, tracked by a count".
+> 4. **Design.** C++11 ([[Map — Evolution of C++|the standard that reset the language]]) splits **copy** from **move** as distinct, separately-defined operations ([[Copy Semantics — Deep vs Shallow Copy]], [[Move Semantics]]), and gives the compiler a way to *see* which one an expression calls for: an **rvalue reference** ([[Rvalue References]]) binds only to expressions that provably have no other user, so overload resolution silently prefers the move constructor whenever the source is about to disappear anyway — a temporary, or an object passed through `std::move`. Ownership itself becomes a type: [[unique_ptr]] embodies "exactly one owner", [[shared_ptr and Reference Counting]] embodies "however many owners agree to share, tracked by a count".
 > 5. **Price.** Every class with a resource member must now decide what its copy means (deep copy, or forbid it) and what its move means (steal the resource, leave the source in [[The Moved-From State|a valid-but-empty state]]). Shared ownership buys flexibility at the cost of an atomic increment/decrement per copy and the risk of a reference cycle that never reaches zero ([[weak_ptr and Reference Cycles]]).
 
 ## The Core Tension

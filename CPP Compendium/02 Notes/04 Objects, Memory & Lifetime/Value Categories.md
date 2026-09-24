@@ -33,7 +33,7 @@ tags:
 - std/c++11
 - std/c++17
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-09-24
 reviewed: 2026-09-23
 score: 20
 rubric:
@@ -274,6 +274,8 @@ Allowing this would let `edit` modify a temporary that dies at the semicolon. Th
 > After `T y = std::move(x);`, `x` is in a *valid but unspecified* state for standard types: use only operations that have no preconditions, such as assigning to it, destroying it, or calling `clear()` or `size()`. Never assume its value. See [[The Moved-From State]].
 
 ## Evolution
+
+See [[Map — Evolution of C++]] for how this fits the language's broader standard-by-standard timeline.
 
 | Standard | Change | Why |
 |---|---|---|

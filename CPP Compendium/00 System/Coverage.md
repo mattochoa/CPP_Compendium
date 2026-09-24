@@ -8,16 +8,16 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 311 |
+| ○ planned | 310 |
 | ◌ stub | 0 |
-| ◐ draft | 34 |
+| ◐ draft | 35 |
 | ⟲ revise | 0 |
 | ● reviewed | 5 |
 | ★ evergreen | 0 |
 
 **Total topics:** 350
 
-- Wave 0: `███████████████████░` 17/18
+- Wave 0: `████████████████████` 18/18
 - Wave 1: `██░░░░░░░░░░░░░░░░░░` 4/51
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 11/123
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 7/123
@@ -410,11 +410,11 @@ tags: [system/generated]
 
 ## D16 · Evolution of C++
 
-*How did the language get here, and where is it going?*  `░░░░░░░░░░` 0/10
+*How did the language get here, and where is it going?*  `█░░░░░░░░░` 1/10
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ○ | [[Map — Evolution of C++]] | map | 1 | 0 |  |
+| ◐ | [[Map — Evolution of C++]] | map | 1 | 0 |  |
 | ○ | [[A History of C++]] | evolution | 1 | 2 |  |
 | ○ | [[C++11 — The Modern Reboot]] | evolution | 1 | 2 |  |
 | ○ | [[C++20 — The Big Four]] | evolution | 2 | 2 |  |
