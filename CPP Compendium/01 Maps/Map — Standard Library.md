@@ -134,7 +134,7 @@ flowchart LR
 **Tier 1 · Foundational**
 - ◐ [[STL Architecture — Containers, Iterators, Algorithms]] · *concept*
 - ○ [[vector]] · *concept*
-- ○ [[Iterators]] · *concept*
+- ◐ [[Iterators]] · *concept*
 - ○ [[string]] · *concept*
 - ○ [[array]] · *concept*
 - ○ [[Ordered Associative Containers — map and set]] · *concept*
@@ -151,7 +151,7 @@ flowchart LR
 - ○ [[Hash Tables — unordered_map and unordered_set]] · *mechanism*
 - ○ [[Iterator Invalidation]] · *pitfall*
 - ○ [[Container Adaptors — stack, queue, priority_queue]] · *concept*
-- ○ [[Iterator Categories and Concepts]] · *concept*
+- ◐ [[Iterator Categories and Concepts]] · *concept*
 - ○ [[Erase-Remove and erase_if]] · *idiom*
 - ○ [[Ranges and Views]] · *concept*
 - ○ [[string_view]] · *concept*
@@ -166,7 +166,7 @@ flowchart LR
 - ○ [[Small String Optimization]] · *mechanism*
 - ○ [[any]] · *concept*
 
-`█░░░░░░░░░` 2/30 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`█░░░░░░░░░` 4/30 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

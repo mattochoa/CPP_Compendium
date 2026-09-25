@@ -1,6 +1,6 @@
 {
-  "runs": 29,
-  "builder_runs": 28,
+  "runs": 31,
+  "builder_runs": 30,
   "editor_runs": 1,
   "history": [
     {
@@ -412,10 +412,23 @@
       "code": "3/3 0/0",
       "commit": "✓",
       "summary": "AUTHOR: STL Architecture — Containers, Iterators, Algorithms (D10 hub note); wove forward link from Map — Generic Programming"
+    },
+    {
+      "when": "2026-09-25T19:19:34Z",
+      "run": 30,
+      "role": "builder",
+      "mode": "DEEPEN",
+      "items": [
+        "map-d04"
+      ],
+      "lint": "100–100",
+      "code": "0/0",
+      "commit": "✓",
+      "summary": "deepen: map-d04 depth (directive #2, rubric dim: depth, was 2/3) — expanded all 7 Key Ideas with a mechanism-level supporting sentence each (basic.life/basic.stc clause citations, registered-topic links), distinguishing lifetime-end from storage-release per the lifetime-vocabulary directive; no structural or scope changes"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-25T17:21:52Z"
+  "last_builder": "2026-09-25T19:19:34Z"
 }

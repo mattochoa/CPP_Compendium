@@ -24,7 +24,7 @@ tags:
 - tension/safety-vs-performance
 - tension/value-vs-identity
 created: 2026-09-23
-updated: 2026-09-24
+updated: 2026-09-25
 reviewed: 2026-09-23
 score: 19
 rubric:
@@ -107,13 +107,13 @@ flowchart LR
 
 ## Key Ideas
 
-1. **An object is not its bytes.** Storage can exist before an object's lifetime begins and after it ends. Only inside the lifetime may the value be used.
-2. **Storage duration picks the *where*, scope or ownership picks the *when*.** Automatic objects die at `}`; dynamic ones die when an owner says so.
-3. **Every pointer or reference is an unchecked claim that its target is alive.** Keep observers inside the lifetime of what they observe.
-4. **Ownership must be singular and visible.** Exactly one party releases each resource, and the type system should show who ([[unique_ptr]]).
-5. **Lifetime errors are undefined behavior.** They don't fail predictably. Find them with ASan and design them out structurally.
-6. **Categories are about expressions, lifetimes are about objects.** [[Value Categories]] describe whether an *expression's* object may be reused; they never change when the object dies.
-7. **Most memory management should be invisible.** Containers, smart pointers and RAII types hold the `new` and `delete`. Application code rarely writes either.
+1. **An object's lifetime and its storage are governed by two different clocks.** [[Object Lifetime|An object's lifetime]] begins once storage of the right size and alignment exists *and* initialization completes, and ends when a class type's destructor call starts or a non-class object is destroyed (`[basic.life]`); its *storage* is reclaimed only later — at scope exit, at `delete`, or at program end (`[basic.stc.general]`) — so a stale pointer can still address allocated-but-dead bytes for a while after its target's lifetime is already over.
+2. **Storage duration picks the *where*; scope or ownership picks the *when*.** [[Storage Duration]] names exactly four categories — automatic, static, thread and dynamic (`[basic.stc]`) — and it is the automatic/dynamic pair that competes in most designs: automatic objects are destroyed, in reverse construction order, at the end of their block, while a dynamic object dies at whatever moment the owning code chooses to call `delete`.
+3. **Every pointer or reference is an unchecked claim that its target is alive.** Dereferencing one after its referent's lifetime has ended is undefined behavior the instant it happens, independent of whether the underlying *storage* has actually been reused yet ([[Dangling Pointers and References]]); the language performs no liveness check at all, so the claim is kept honest only by the programmer nesting the observer's scope inside the observed object's.
+4. **Ownership must be singular and visible.** Exactly one party may call `delete` on — or let a destructor run over — a given resource; [[unique_ptr]] turns that party into a compile-time-checked type instead of a comment, which is why code that merely *looks* at an object should take a raw observer ([[Owning vs Observing Pointers]]) rather than a smart pointer that implies it might delete.
+5. **Lifetime errors are undefined behavior, not a checked failure.** Once code dereferences past a lifetime's end, the abstract machine imposes zero requirements on the rest of the execution ([[Undefined Behavior]] — the same contract [[Map — What C++ Is|the previous domain]] derives); the bug typically doesn't fail at the point of the mistake, which is why sanitizers (ASan's `heap-use-after-free`, `stack-use-after-scope`) catch far more than reading the code ever will, and why this domain prefers designing the error out structurally over catching it at run time.
+6. **Categories are about expressions; lifetimes are about objects.** [[Value Categories]] classify an *expression*, at compile time, as a glvalue, prvalue or xvalue — a statement about whether the object it denotes may safely be moved from — and that classification is fixed by the expression's grammatical form alone, never revised by anything that happens to the denoted object's lifetime while the program runs.
+7. **Most memory management should be invisible.** A `std::vector`, a [[unique_ptr]] or a [[shared_ptr and Reference Counting|shared_ptr]] each wrap exactly one `new`/`delete` pair (or allocator call) inside their own constructor and destructor, so code that composes these types calls neither directly — [[RAII]] applied specifically to memory, and this domain's general safety-versus-performance answer made concrete.
 
 | Idea | Developed in |
 |---|---|

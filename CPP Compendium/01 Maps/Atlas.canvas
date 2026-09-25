@@ -1736,7 +1736,8 @@
 			"y": 2598,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Iterators]]\n*concept · T1*"
+			"text": "◐ [[Iterators]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-std-string",
@@ -1871,7 +1872,8 @@
 			"y": 2814,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Iterator Categories and Concepts]]\n*concept · T2*"
+			"text": "◐ [[Iterator Categories and Concepts]]\n*concept · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-erase-remove",
@@ -3119,7 +3121,8 @@
 			"y": 5054,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Header — iterator]]\n*header · T2*"
+			"text": "◐ [[Header — iterator]]\n*header · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-hdr-limits",

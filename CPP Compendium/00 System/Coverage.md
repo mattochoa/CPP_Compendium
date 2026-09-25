@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 305 |
+| ○ planned | 302 |
 | ◌ stub | 0 |
-| ◐ draft | 41 |
+| ◐ draft | 44 |
 | ⟲ revise | 0 |
 | ● reviewed | 4 |
 | ★ evergreen | 0 |
@@ -18,9 +18,9 @@ tags: [system/generated]
 **Total topics:** 350
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `████░░░░░░░░░░░░░░░░` 9/51
-- Wave 2: `██░░░░░░░░░░░░░░░░░░` 11/123
-- Wave 3: `█░░░░░░░░░░░░░░░░░░░` 7/123
+- Wave 1: `████░░░░░░░░░░░░░░░░` 10/51
+- Wave 2: `██░░░░░░░░░░░░░░░░░░` 12/123
+- Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
 ## D00 · What C++ Is
@@ -270,14 +270,14 @@ tags: [system/generated]
 
 ## D10 · Standard Library
 
-*Which solved problems ship with the language, and how are they composed?*  `█░░░░░░░░░` 2/30
+*Which solved problems ship with the language, and how are they composed?*  `█░░░░░░░░░` 4/30
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Standard Library]] | map | 1 | 0 |  |
 | ◐ | [[STL Architecture — Containers, Iterators, Algorithms]] | concept | 1 | 1 |  |
 | ○ | [[vector]] | concept | 1 | 1 |  |
-| ○ | [[Iterators]] | concept | 1 | 1 |  |
+| ◐ | [[Iterators]] | concept | 1 | 1 |  |
 | ○ | [[string]] | concept | 1 | 1 |  |
 | ○ | [[array]] | concept | 1 | 2 |  |
 | ○ | [[Ordered Associative Containers — map and set]] | concept | 1 | 2 |  |
@@ -292,7 +292,7 @@ tags: [system/generated]
 | ○ | [[Iterator Invalidation]] | pitfall | 2 | 2 |  |
 | ○ | [[String Streams]] | concept | 1 | 3 |  |
 | ○ | [[Container Adaptors — stack, queue, priority_queue]] | concept | 2 | 3 |  |
-| ○ | [[Iterator Categories and Concepts]] | concept | 2 | 3 |  |
+| ◐ | [[Iterator Categories and Concepts]] | concept | 2 | 3 |  |
 | ○ | [[Erase-Remove and erase_if]] | idiom | 2 | 3 |  |
 | ○ | [[Ranges and Views]] | concept | 2 | 3 |  |
 | ○ | [[string_view]] | concept | 2 | 3 |  |
@@ -450,7 +450,7 @@ tags: [system/generated]
 
 ## HDR · Standard Headers
 
-*Where does each standard facility live, and what exactly does its header promise?*  `███░░░░░░░` 18/58
+*Where does each standard facility live, and what exactly does its header promise?*  `███░░░░░░░` 19/58
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -477,7 +477,7 @@ tags: [system/generated]
 | ○ | [[Header — map and set]] | header | 1 | 2 |  |
 | ○ | [[Header — unordered_map and unordered_set]] | header | 2 | 2 |  |
 | ○ | [[Header — deque, list and forward_list]] | header | 2 | 2 |  |
-| ○ | [[Header — iterator]] | header | 2 | 2 |  |
+| ◐ | [[Header — iterator]] | header | 2 | 2 |  |
 | ○ | [[Header — random]] | header | 1 | 2 |  |
 | ○ | [[Header — exception and stdexcept]] | header | 1 | 2 |  |
 | ○ | [[Header — cstdlib]] | header | 1 | 2 |  |

@@ -198,7 +198,7 @@ C++26   strstream removed; println() with no arguments; runtime_format
 - ○ [[Header — numeric]] · *header*
 - ○ [[Header — unordered_map and unordered_set]] · *header*
 - ○ [[Header — deque, list and forward_list]] · *header*
-- ○ [[Header — iterator]] · *header*
+- ◐ [[Header — iterator]] · *header*
 - ○ [[Header — limits]] · *header*
 - ○ [[Header — queue and stack]] · *header*
 - ○ [[Header — optional, variant and any]] · *header*
@@ -234,7 +234,7 @@ C++26   strstream removed; println() with no arguments; runtime_format
 **Tier 4 · Expert**
 - ○ [[Header — coroutine]] · *header*
 
-`███░░░░░░░` 18/58 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███░░░░░░░` 19/58 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

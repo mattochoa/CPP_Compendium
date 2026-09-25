@@ -41,7 +41,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `█░░░░░░░` 2/19 |
 | `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `█░░░░░░░` 2/15 |
 | `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `░░░░░░░░` 1/16 |
-| `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `█░░░░░░░` 2/30 |
+| `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `█░░░░░░░` 4/30 |
 | `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `█░░░░░░░` 1/11 |
 | `D12` | [[Map — Concurrency\|Concurrency]] | How do multiple threads of execution share memory without corrupting it? | `░░░░░░░░` 1/17 |
 | `D13` | [[Map — Performance & the Machine\|Performance & the Machine]] | What does the hardware actually do with our code, and how do we make it fast? | `█░░░░░░░` 1/15 |
@@ -50,7 +50,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D16` | [[Map — Evolution of C++\|Evolution of C++]] | How did the language get here, and where is it going? | `█░░░░░░░` 1/10 |
 | `SRC` | Sources | What should be read, in what order, and for what? | `█████░░░` 3/5 |
 | `PRX` | Practice | How does knowledge become skill? | `██░░░░░░` 1/4 |
-| `HDR` | [[Map — Standard Headers\|Standard Headers]] | Where does each standard facility live, and what exactly does its header promise? | `██░░░░░░` 18/58 |
+| `HDR` | [[Map — Standard Headers\|Standard Headers]] | Where does each standard facility live, and what exactly does its header promise? | `███░░░░░` 19/58 |
 <!-- cc:end -->
 
 ## Progress
@@ -58,9 +58,9 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 305 | 41 | 0 | 4 | 0 | 350 | 28 | 1 |
+| 302 | 44 | 0 | 4 | 0 | 350 | 30 | 1 |
 
-`███░░░░░░░░░░░░░░░░░` **13%** of the Atlas written · last build 2026-09-25
+`███░░░░░░░░░░░░░░░░░` **14%** of the Atlas written · last build 2026-09-25
 <!-- cc:end -->
 
 **Up next (Builder queue):**
@@ -75,16 +75,16 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
-- ◐ [[Map — Generic Programming]] · *map* · updated 2026-09-25
+- ● [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-25
+- ◐ [[Header — iterator]] · *header* · updated 2026-09-25
 - ◐ [[STL Architecture — Containers, Iterators, Algorithms]] · *concept* · updated 2026-09-25
+- ◐ [[Iterator Categories and Concepts]] · *concept* · updated 2026-09-25
+- ◐ [[Iterators]] · *concept* · updated 2026-09-25
+- ◐ [[Map — Generic Programming]] · *map* · updated 2026-09-25
+- ◐ [[Map — Standard Headers]] · *map* · updated 2026-09-24
+- ◐ [[Header — vector]] · *header* · updated 2026-09-24
 - ◐ [[Map — Design & Idioms]] · *map* · updated 2026-09-24
 - ◐ [[Map — Evolution of C++]] · *map* · updated 2026-09-24
-- ◐ [[Guide — A Tour of C++ (3rd ed)]] · *guide* · updated 2026-09-24
-- ◐ [[Map — Standard Headers]] · *map* · updated 2026-09-24
-- ● [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-24
-- ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-24
-- ◐ [[Guide — C++ Primer (5th ed)]] · *guide* · updated 2026-09-24
-- ◐ [[Header — vector]] · *header* · updated 2026-09-24
 <!-- cc:end -->
 
 ## Start here
