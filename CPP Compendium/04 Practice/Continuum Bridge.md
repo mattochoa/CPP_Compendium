@@ -45,7 +45,7 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 17 | Bank Account Simulator | ◐ [[Map — Types & Values]], ◐ [[Map — Classes & Encapsulation]], ○ [[const and Const-Correctness]], ○ [[Classes as User-Defined Types]], ○ [[Encapsulation and Class Invariants]] |
+| 17 | Bank Account Simulator | ◐ [[Map — Types & Values]], ◐ [[Map — Classes & Encapsulation]], ○ [[const and Const-Correctness]], ◐ [[Classes as User-Defined Types]], ○ [[Encapsulation and Class Invariants]] |
 | 18 | Shape Hierarchy & Polymorphic Area Calculator | ◐ [[Map — Inheritance & Polymorphism]], ○ [[Inheritance]], ○ [[Virtual Functions]], ● [[Virtual Dispatch — vptr and vtable]], ○ [[Abstract Classes and Interfaces]], ○ [[Virtual Destructors]] |
 | 19 | Complex Number & Vector Math Library | ◐ [[Map — Types & Values]], ◐ [[Map — Classes & Encapsulation]], ○ [[const and Const-Correctness]], ○ [[Operator Overloading]], ○ [[Value Semantics]] |
 | 20 | Employee Management System | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Inheritance & Polymorphism]], ○ [[Owning vs Observing Pointers]], ○ [[Inheritance]], ○ [[Composition vs Inheritance]] |

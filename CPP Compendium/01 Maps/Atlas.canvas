@@ -1051,7 +1051,8 @@
 			"y": 1226,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Classes as User-Defined Types]]\n*concept · T1*"
+			"text": "◐ [[Classes as User-Defined Types]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-encapsulation-and-invariants",
