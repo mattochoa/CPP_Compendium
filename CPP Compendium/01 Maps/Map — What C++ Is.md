@@ -18,7 +18,7 @@ tags:
 - tension/abstraction-vs-control
 - tension/safety-vs-performance
 created: 2026-09-23
-updated: 2026-09-24
+updated: 2026-09-25
 ---
 
 # Map — What C++ Is
@@ -81,8 +81,8 @@ flowchart LR
 1. **The Standard defines a machine, not a computer.** [[The C++ Abstract Machine]] is a hypothetical, parameterized interpreter (`[intro.abstract]`); any real CPU running your program is only ever one "corresponding instance" of it, so a rule stated for the abstract machine binds every conforming implementation at once.
 2. **Only observable behavior is contractual.** The Standard enumerates exactly what a conforming compiler must reproduce — `volatile` accesses, and the data and prompts exchanged with the outside world — and nothing else; where a variable actually lives, which register holds it, and whether a loop is literally executed iteration by iteration are all left open.
 3. **The as-if rule is what makes zero overhead *legal*, not merely desirable.** [[The As-If Rule]] permits any transformation — inlining, reordering, deleting a computation whose result is never used — provided the reproduced observable behavior still matches; without this rule, "execute the code as written" would forbid nearly every optimization that exists.
-4. **Undefined behavior is an absent precondition, not a punishment.** [[Undefined Behavior]] means the Standard imposes zero requirements on the rest of the execution once an unstated precondition is broken (signed overflow, dereferencing a stale pointer); compilers exploit exactly this by assuming, during optimization, that the violating path is unreachable.
-5. **"Unpredictable" comes in three legally distinct sizes.** [[Implementation-Defined, Unspecified and Undefined Behavior]] separates behavior a compiler must fix and document (`sizeof(int)`), behavior it may vary silently among a bounded menu of outcomes (argument evaluation order), and behavior with no defined outcome at all — treating the first two like the third overstates the danger, and the reverse understates it.
+4. **Undefined behavior is an absent precondition, not a punishment.** [[Undefined Behavior]] is defined as “behavior for which this document imposes no requirements” (`[defns.undefined]`) — the Standard falls silent rather than turning hostile, and compilers exploit exactly that silence by assuming, during optimization, that a path violating an unstated precondition (signed overflow, dereferencing a stale pointer) can never be reached; that assumption is why the miscompiled result can look unrelated to the broken line itself.
+5. **“Unpredictable” comes in three legally distinct sizes — soon four.** [[Implementation-Defined, Unspecified and Undefined Behavior]] separates behavior a compiler must fix and document (`sizeof(int)`, `[defns.impl.defined]`), behavior it may vary silently among a bounded menu of outcomes (argument evaluation order, `[defns.unspecified]`), and behavior with no defined outcome at all (`[defns.undefined]`) — treating the first two like the third overstates the danger, and the reverse understates it. C++26 (`P2795R5`) adds a fourth category, *erroneous behavior* (`[defns.erroneous]`): reading an uninitialized `int` is no longer undefined but merely erroneous — it now yields a specified, if suspect, value that an implementation is recommended but not required to diagnose — a deliberate move to retire specific undefined-behavior cases without paying for a mandatory run-time check.
 6. **Zero overhead is a promise about the feature you didn't use.** [[Zero-Overhead Principle]] binds every abstraction the language adds: if you don't use it, you pay nothing for its existence; if you do, you could not have hand-coded the equivalent noticeably better. It is a constraint enforced on new features, not an average observed after the fact.
 7. **The Standard and the compiler are separate authorities, and each can be wrong.** [[The ISO Standard, Compilers and Conformance]] means "does this compile on GCC" and "is this legal C++" are different questions with different answers — every mainstream compiler ships documented extensions, and each has shipped, and later fixed, genuine conformance bugs.
 
@@ -121,5 +121,7 @@ flowchart LR
 - Primer §2.1 "Primitive Built-in Types" (p. 36): the caution against relying on implementation-defined behavior, and what "nonportable" costs in practice.
 - cppreference, *Undefined behavior* · *The as-if rule*: https://en.cppreference.com/w/cpp/language/ub · https://en.cppreference.com/w/cpp/language/as_if
 - Draft standard `[intro.abstract]` — the abstract machine, the as-if rule (footnote), observable behavior: https://eel.is/c++draft/intro.abstract
+- Draft standard `[intro.defs]` §3.66 `[defns.undefined]`, §3.27 `[defns.impl.defined]`, §3.67 `[defns.unspecified]`, and (C++26) §3.21 `[defns.erroneous]` — the exact definitions behind the behavior taxonomy: https://eel.is/c++draft/intro.defs
+- cppreference, *Undefined behavior*, §“Erroneous behavior (since C++26)”: https://en.cppreference.com/w/cpp/language/ub — confirms the C++26 addition and its uninitialized-scalar example.
 - See [[Guide — cppreference, the Draft Standard and the Core Guidelines]] for how to navigate cppreference and the draft Standard directly, and for the precedence order to use when they and a book disagree.
 - See [[Guide — C++ Primer (5th ed)]] for where this domain's C++11-era citations sit in the book and which of its claims need a modern-standard check first.

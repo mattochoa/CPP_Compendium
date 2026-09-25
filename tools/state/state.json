@@ -1,6 +1,6 @@
 {
-  "runs": 32,
-  "builder_runs": 31,
+  "runs": 34,
+  "builder_runs": 33,
   "editor_runs": 1,
   "history": [
     {
@@ -439,10 +439,23 @@
       "code": "3/3 0/0",
       "commit": "✓",
       "summary": "Author What a Type Is (D02 root Dossier): values×operations×representation triple, bit_cast vs reinterpret_cast UB, GCC asm contrast. Wove into Map D02 and Map D04."
+    },
+    {
+      "when": "2026-09-25T22:17:17Z",
+      "run": 33,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "map-d00"
+      ],
+      "lint": "100–100",
+      "code": "0/0",
+      "commit": "✓",
+      "summary": "deepen: Map — What C++ Is — added draft-standard clause citations ([defns.undefined], [defns.impl.defined], [defns.unspecified]) to the UB/taxonomy Key Ideas and documented the new C++26 erroneous-behavior category ([defns.erroneous], P2795R5), verified against eel.is/c++draft/intro.defs and cppreference's UB page (directive #2 depth, #6 currency-vs-cppreference)"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-25T20:25:32Z"
+  "last_builder": "2026-09-25T22:17:17Z"
 }
