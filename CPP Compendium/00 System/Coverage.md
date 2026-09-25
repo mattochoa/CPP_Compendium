@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 306 |
+| ○ planned | 305 |
 | ◌ stub | 0 |
-| ◐ draft | 40 |
+| ◐ draft | 41 |
 | ⟲ revise | 0 |
 | ● reviewed | 4 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 350
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `███░░░░░░░░░░░░░░░░░` 8/51
+- Wave 1: `████░░░░░░░░░░░░░░░░` 9/51
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 11/123
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 7/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -270,12 +270,12 @@ tags: [system/generated]
 
 ## D10 · Standard Library
 
-*Which solved problems ship with the language, and how are they composed?*  `░░░░░░░░░░` 1/30
+*Which solved problems ship with the language, and how are they composed?*  `█░░░░░░░░░` 2/30
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Standard Library]] | map | 1 | 0 |  |
-| ○ | [[STL Architecture — Containers, Iterators, Algorithms]] | concept | 1 | 1 |  |
+| ◐ | [[STL Architecture — Containers, Iterators, Algorithms]] | concept | 1 | 1 |  |
 | ○ | [[vector]] | concept | 1 | 1 |  |
 | ○ | [[Iterators]] | concept | 1 | 1 |  |
 | ○ | [[string]] | concept | 1 | 1 |  |

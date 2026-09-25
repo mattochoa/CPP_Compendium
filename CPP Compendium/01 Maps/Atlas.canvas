@@ -1717,7 +1717,8 @@
 			"y": 2454,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[STL Architecture — Containers, Iterators, Algorithms]]\n*concept · T1*"
+			"text": "◐ [[STL Architecture — Containers, Iterators, Algorithms]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-std-vector",

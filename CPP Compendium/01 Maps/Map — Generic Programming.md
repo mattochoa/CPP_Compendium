@@ -20,7 +20,7 @@ tags:
 - tension/compile-time-vs-run-time
 - tension/abstraction-vs-control
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-09-25
 ---
 
 # Map — Generic Programming
@@ -93,7 +93,7 @@ flowchart LR
 12. [[Type Traits]]: compile-time predicates and transformations on types, the vocabulary constraints and metaprogramming are built from.
 13. [[SFINAE and enable_if]]: the pre-concepts idiom for constraining a template — and the reason concepts were worth adding.
 14. [[Two-Phase Lookup and Dependent Names]]: how a compiler can type-check a template body before it knows the template arguments, and why `typename` and `template` sometimes have to say so explicitly.
-15. [[Compile-Time Programming — From TMP to constexpr]]: closes the domain by naming the whole spectrum — ordinary templates, traits, SFINAE and concepts are all instances of computing something before the program runs.
+15. [[Compile-Time Programming — From TMP to constexpr]]: closes the domain by naming the whole spectrum — ordinary templates, traits, SFINAE and concepts are all instances of computing something before the program runs. Where this machinery pays off first: [[STL Architecture — Containers, Iterators, Algorithms]], which is nothing but function and class templates disciplined into containers, iterators and algorithms.
 
 ## Key Ideas
 

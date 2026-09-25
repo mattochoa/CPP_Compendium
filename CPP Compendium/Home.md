@@ -41,7 +41,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `█░░░░░░░` 2/19 |
 | `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `█░░░░░░░` 2/15 |
 | `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `░░░░░░░░` 1/16 |
-| `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `░░░░░░░░` 1/30 |
+| `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `█░░░░░░░` 2/30 |
 | `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `█░░░░░░░` 1/11 |
 | `D12` | [[Map — Concurrency\|Concurrency]] | How do multiple threads of execution share memory without corrupting it? | `░░░░░░░░` 1/17 |
 | `D13` | [[Map — Performance & the Machine\|Performance & the Machine]] | What does the hardware actually do with our code, and how do we make it fast? | `█░░░░░░░` 1/15 |
@@ -58,23 +58,25 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 306 | 40 | 0 | 4 | 0 | 350 | 27 | 1 |
+| 305 | 41 | 0 | 4 | 0 | 350 | 28 | 1 |
 
-`███░░░░░░░░░░░░░░░░░` **13%** of the Atlas written · last build 2026-09-24
+`███░░░░░░░░░░░░░░░░░` **13%** of the Atlas written · last build 2026-09-25
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[STL Architecture — Containers, Iterators, Algorithms]] · *concept* · `D10` — wave 1
-2. [[vector]] · *concept* · `D10` — wave 1
-3. [[Iterators]] · *concept* · `D10` — wave 1
-4. [[string]] · *concept* · `D10` — wave 1
-5. [[What a Type Is]] · *concept* · `D02` — wave 1
-6. [[const and Const-Correctness]] · *concept* · `D02` — wave 1
+1. [[What a Type Is]] · *concept* · `D02` — wave 1
+2. [[const and Const-Correctness]] · *concept* · `D02` — wave 1
+3. [[Classes as User-Defined Types]] · *concept* · `D06` — wave 1
+4. [[Encapsulation and Class Invariants]] · *concept* · `D06` — wave 1
+5. [[Constructors]] · *concept* · `D06` — wave 1
+6. [[The Compilation Pipeline]] · *mechanism* · `D01` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — Generic Programming]] · *map* · updated 2026-09-25
+- ◐ [[STL Architecture — Containers, Iterators, Algorithms]] · *concept* · updated 2026-09-25
 - ◐ [[Map — Design & Idioms]] · *map* · updated 2026-09-24
 - ◐ [[Map — Evolution of C++]] · *map* · updated 2026-09-24
 - ◐ [[Guide — A Tour of C++ (3rd ed)]] · *guide* · updated 2026-09-24
@@ -83,8 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-24
 - ◐ [[Guide — C++ Primer (5th ed)]] · *guide* · updated 2026-09-24
 - ◐ [[Header — vector]] · *header* · updated 2026-09-24
-- ◐ [[Guide — cppreference, the Draft Standard and the Core Guidelines]] · *guide* · updated 2026-09-24
-- ◐ [[Dangling Pointers and References]] · *pitfall* · updated 2026-09-24
 <!-- cc:end -->
 
 ## Start here
