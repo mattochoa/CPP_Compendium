@@ -126,6 +126,11 @@ The stream family is one architecture seen at three layers: [[Header — streamb
 | "Why does `vector<int> v{5, 7}` hold two elements, not five?" | [[Header — vector]] | braces vs parentheses |
 | "`reserve` or `resize`?" | [[Header — vector]] | `size()` vs `capacity()` |
 | "How do I pass a `vector` to a C function?" | [[Header — vector]] | hand the buffer to a C API |
+| "How do I copy into an empty vector without a crash?" | [[Header — iterator]] | fill an empty container (`back_inserter`) |
+| "How do I read all the numbers from a file in one line?" | [[Header — iterator]] | read numbers from a stream |
+| "Why does `rbegin().base()` erase the wrong element?" | [[Header — iterator]] | search backwards, then convert back |
+| "Why can't I write `it + 3` on a `list`?" | [[Header — iterator]] | move around a list · categories |
+| "How do I write my own iterator?" | [[Header — iterator]] | write your own forward iterator |
 | "What's the difference between `fail` and `bad`?" | [[Header — ios]] | state flag decision table |
 | "How do I reset a `stringstream`?" | [[Header — sstream]] | the two-step reset |
 | "How do I make `cout` write to a socket?" | [[Header — streambuf]] | custom buffers |

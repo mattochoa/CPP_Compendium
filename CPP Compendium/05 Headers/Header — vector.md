@@ -453,7 +453,7 @@ Bits                                              std::bitset / vector<bool> (wi
 - **Hub:** [[Map — Standard Headers]]
 - **Concept notes (the why behind this card):** [[vector]] · [[How vector Grows — Capacity and Amortized Cost]] · [[Iterator Invalidation]] · [[Sequence Containers Compared]] · [[Erase-Remove and erase_if]] · [[Move Semantics]] · [[span]]
 - **Hazards:** [[Dangling Pointers and References]] (the reallocation example) · [[Mixing Signed and Unsigned]]
-- **Sibling cards:** [[Header — string]] · [[Header — algorithm]]
+- **Sibling cards:** [[Header — string]] · [[Header — algorithm]] · [[Header — iterator]]
 - **Practice:** *Continuum #12 Build-Your-Own Dynamic Array* (reimplement this card's layout diagram) · *#7 Word & Text Analyzer* · *#23 STL Container & Algorithm Playground*
 
 ## Sources

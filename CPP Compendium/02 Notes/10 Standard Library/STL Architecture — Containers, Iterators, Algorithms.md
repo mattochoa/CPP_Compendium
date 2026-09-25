@@ -106,7 +106,7 @@ Every algorithm operates on a **range**: a half-open pair `[begin, end)`, the fi
 | Forward | read/write, `++` only, multi-pass | `replace` | `forward_list` |
 | Bidirectional | + `--` | `reverse` | `list`, `map`, `set` |
 | Random-access | + `+`, `-`, `<`, `[]` in O(1) | `sort`, `binary_search` | `vector`, `deque`, `array`, `string` |
-| Contiguous (C++20) | + guaranteed adjacent storage | `data()`-based APIs | `vector`, `array`, `string` |
+| Contiguous (C++17; concept C++20) | + guaranteed adjacent storage | `data()`-based APIs | `vector`, `array`, `string` |
 
 A category higher in the table supplies every operation of the categories below it (`[iterator.requirements.general]` ¶4), so an algorithm that only asks for a forward iterator happily accepts a random-access one.
 
