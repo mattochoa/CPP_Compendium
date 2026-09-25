@@ -33,7 +33,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 |---|---|---|---|
 | `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `█░░░░░░░` 1/9 |
 | `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `░░░░░░░░` 1/18 |
-| `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `░░░░░░░░` 1/25 |
+| `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `█░░░░░░░` 2/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `█░░░░░░░` 1/12 |
 | `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `█░░░░░░░` 4/26 |
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `░░░░░░░░` 1/16 |
@@ -58,24 +58,25 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 302 | 44 | 0 | 4 | 0 | 350 | 30 | 1 |
+| 301 | 45 | 0 | 4 | 0 | 350 | 31 | 1 |
 
 `███░░░░░░░░░░░░░░░░░` **14%** of the Atlas written · last build 2026-09-25
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[What a Type Is]] · *concept* · `D02` — wave 1
-2. [[const and Const-Correctness]] · *concept* · `D02` — wave 1
-3. [[Classes as User-Defined Types]] · *concept* · `D06` — wave 1
-4. [[Encapsulation and Class Invariants]] · *concept* · `D06` — wave 1
-5. [[Constructors]] · *concept* · `D06` — wave 1
-6. [[The Compilation Pipeline]] · *mechanism* · `D01` — wave 1
+1. [[Classes as User-Defined Types]] · *concept* · `D06` — wave 1
+2. [[Encapsulation and Class Invariants]] · *concept* · `D06` — wave 1
+3. [[Constructors]] · *concept* · `D06` — wave 1
+4. [[The Compilation Pipeline]] · *mechanism* · `D01` — wave 1
+5. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
+6. [[Scope]] · *concept* · `D01` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
 - ● [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-25
+- ◐ [[What a Type Is]] · *concept* · updated 2026-09-25
 - ◐ [[Header — iterator]] · *header* · updated 2026-09-25
 - ◐ [[STL Architecture — Containers, Iterators, Algorithms]] · *concept* · updated 2026-09-25
 - ◐ [[Iterator Categories and Concepts]] · *concept* · updated 2026-09-25
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Map — Standard Headers]] · *map* · updated 2026-09-24
 - ◐ [[Header — vector]] · *header* · updated 2026-09-24
 - ◐ [[Map — Design & Idioms]] · *map* · updated 2026-09-24
-- ◐ [[Map — Evolution of C++]] · *map* · updated 2026-09-24
 <!-- cc:end -->
 
 ## Start here

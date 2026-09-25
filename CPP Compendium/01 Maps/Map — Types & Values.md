@@ -118,7 +118,7 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D02 -->
 **Tier 1 · Foundational**
-- ○ [[What a Type Is]] · *concept*
+- ◐ [[What a Type Is]] · *concept*
 - ○ [[Fundamental Types]] · *concept*
 - ○ [[const and Const-Correctness]] · *concept*
 - ○ [[Integer Representation and Two's Complement]] · *mechanism*
@@ -147,7 +147,7 @@ flowchart LR
 - ○ [[Strong Types]] · *idiom*
 - ○ [[volatile — What It Does Not Mean]] · *pitfall*
 
-`░░░░░░░░░░` 1/25 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`█░░░░░░░░░` 2/25 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

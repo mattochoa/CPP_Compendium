@@ -292,7 +292,8 @@
 			"y": 70,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[What a Type Is]]\n*concept · T1*"
+			"text": "◐ [[What a Type Is]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-fundamental-types",
