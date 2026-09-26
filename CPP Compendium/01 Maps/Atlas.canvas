@@ -1473,8 +1473,8 @@
 			"y": 2454,
 			"width": 250,
 			"height": 56,
-			"text": "● [[Virtual Dispatch — vptr and vtable]]\n*mechanism · T2*",
-			"color": "4"
+			"text": "◐ [[Virtual Dispatch — vptr and vtable]]\n*mechanism · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-composition-vs-inheritance",

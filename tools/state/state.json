@@ -1,6 +1,6 @@
 {
-  "runs": 41,
-  "builder_runs": 40,
+  "runs": 43,
+  "builder_runs": 42,
   "editor_runs": 1,
   "history": [
     {
@@ -533,10 +533,25 @@
       "code": "3/3 0/0",
       "commit": "✓",
       "summary": "AUTHOR: Concurrency vs Parallelism (D12, wave 1) — the domain's first tier-1 note, distinguishing structure (concurrency) from execution (parallelism) via the Standard's own forward-progress-guarantee hierarchy ([intro.progress]: concurrent > parallel > weakly parallel), mapped onto thread/jthread vs execution::par/par_unseq; verified against cppreference execution_policy_tag_t and eel.is. 3 compiled examples incl. a norun UB demo of locking under par_unseq. Wove into Map — Performance & the Machine's vectorization Key Idea; already linked from Map — Concurrency's Learning Route (frontier link now resolved)."
+    },
+    {
+      "when": "2026-09-26T07:20:55Z",
+      "run": 42,
+      "role": "builder",
+      "mode": "DEEPEN",
+      "items": [
+        "virtual-dispatch",
+        "why-templates",
+        "map-d08"
+      ],
+      "lint": "100–100",
+      "code": "3/3 4/4 0/0",
+      "commit": "✓",
+      "summary": "deepen: virtual-dispatch integration (rubric dim: integration, was 2/3) — the compile-time-alternative mention pointed only at Map — Generic Programming as a placeholder for the not-yet-written Templates note; now that Templates — Code That Writes Code exists (authored run 39), wove it in both directions: virtual-dispatch's tension callout, Alternatives and related: now link the note directly; Templates' tension callout, Siblings and related: link back to Virtual Dispatch; fixed the same stale placeholder link in Map — Inheritance & Polymorphism. No structural or code changes; all three re-checked clean (100/100, 3/3 + 4/4 code PASS)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-26T05:22:13Z"
+  "last_builder": "2026-09-26T07:20:55Z"
 }

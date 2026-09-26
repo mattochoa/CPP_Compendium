@@ -11,6 +11,7 @@ related:
 - "[[Function Templates]]"
 - "[[Class Templates]]"
 - "[[Template Instantiation]]"
+- "[[Virtual Dispatch — vptr and vtable]]"
 - "[[Static vs Dynamic Polymorphism]]"
 - "[[Why Templates Live in Headers]]"
 practice: []
@@ -22,7 +23,7 @@ tags:
 - tension/abstraction-vs-control
 - std/c++98
 created: 2026-09-25
-updated: 2026-09-25
+updated: 2026-09-26
 ---
 
 # Templates — Code That Writes Code
@@ -42,7 +43,7 @@ A `sort` needs to work on `int`, on `std::string`, and on a `Matrix` class inven
 > 5. **Price.** Because the substitution happens purely at compile time, nothing about "which type" survives into the running program: no tag, no branch, no indirection. The cost moves entirely to compile time and to the size of the compiled binary — *N* distinct instantiations are *N* separate, unshared bodies. And because the compiler needs the template's actual body, not merely its declaration, wherever it performs a substitution, that body typically has to be visible in every translation unit that instantiates it — usually by living in a header ([[Why Templates Live in Headers]]).
 
 > [!tension] compile time ⟷ run time
-> [[Map — Inheritance & Polymorphism|Virtual dispatch]] answers "one algorithm, many types" by resolving the type while the program *runs*, through an indirect call read off a vptr. A template answers the same question earlier — while the program is *built* — generating a separate, fully concrete definition per type actually used, so nothing is left to resolve once execution starts. [[Static vs Dynamic Polymorphism]] compares the two prices directly.
+> [[Virtual Dispatch — vptr and vtable|Virtual dispatch]] answers "one algorithm, many types" by resolving the type while the program *runs*, through an indirect call read off a vptr. A template answers the same question earlier — while the program is *built* — generating a separate, fully concrete definition per type actually used, so nothing is left to resolve once execution starts. [[Static vs Dynamic Polymorphism]] compares the two prices directly.
 
 ## Mental Model
 
@@ -216,7 +217,7 @@ int main() {
 
 - **Prerequisites:** none registered; the note assumes only ordinary [[Map — Functions|functions]] and [[Map — Classes & Encapsulation|classes]].
 - **Enables:** [[Function Templates]] → [[Class Templates]] → [[Template Instantiation]] → [[Concepts and Constraints]].
-- **Siblings:** [[Static vs Dynamic Polymorphism]] (the same problem, resolved at run time instead) · [[Why Templates Live in Headers]] (this note's Price, worked through in full).
+- **Siblings:** [[Virtual Dispatch — vptr and vtable]] (the same one-code-many-types problem, resolved at run time instead) · [[Static vs Dynamic Polymorphism]] (compares the two directly) · [[Why Templates Live in Headers]] (this note's Price, worked through in full).
 - **Domain:** [[Map — Generic Programming]].
 - **Practice:** *Continuum #24 Generic Container Library* begins here — see [[Function Templates]] and [[Class Templates]] for where the project picks it up.
 

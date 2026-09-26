@@ -23,7 +23,7 @@ tags:
 - tension/compile-time-vs-run-time
 - tension/value-vs-identity
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-09-26
 ---
 
 # Map — Inheritance & Polymorphism
@@ -45,7 +45,7 @@ updated: 2026-09-23
 ## The Core Tension
 
 > [!tension] compile time ⟷ run time
-> This domain is C++'s **run-time** answer to "one piece of code, many types": decide, for each call, which override to run by reading the object's own vptr while the program executes ([[Virtual Dispatch — vptr and vtable]]). [[Map — Generic Programming|Templates]] are the **compile-time** answer: generate a separate, fully specialized function per type before the program ever runs. [[Static vs Dynamic Polymorphism]] compares them directly; most real C++ code needs both, for different reasons.
+> This domain is C++'s **run-time** answer to "one piece of code, many types": decide, for each call, which override to run by reading the object's own vptr while the program executes ([[Virtual Dispatch — vptr and vtable]]). [[Templates — Code That Writes Code|Templates]] (see also [[Map — Generic Programming]]) are the **compile-time** answer: generate a separate, fully specialized function per type before the program ever runs. [[Static vs Dynamic Polymorphism]] compares them directly; most real C++ code needs both, for different reasons.
 
 > [!tension] value ⟷ identity
 > A `Shape` object is polymorphic only through its **identity** — an address the vptr can be read from. Copy a `Circle` into a `Shape` *value* and only the `Shape` part comes along: the constructor that runs is `Shape`'s, and the result's vptr says `Shape` ([[Object Slicing]]). [[Map — Objects, Memory & Lifetime|The value/identity split]] that governs ordinary objects has a sharp edge here — polymorphism survives only through a pointer or reference to the *same* object, never through a copy.
@@ -128,7 +128,7 @@ flowchart LR
 - ○ [[override and final]] · *concept*
 
 **Tier 2 · Proficient**
-- ● [[Virtual Dispatch — vptr and vtable]] · *mechanism*
+- ◐ [[Virtual Dispatch — vptr and vtable]] · *mechanism*
 - ○ [[Composition vs Inheritance]] · *comparison*
 - ○ [[Public, Protected and Private Inheritance]] · *comparison*
 - ○ [[RTTI and dynamic_cast]] · *mechanism*

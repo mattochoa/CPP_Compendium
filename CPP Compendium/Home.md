@@ -58,7 +58,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 296 | 50 | 0 | 4 | 0 | 350 | 40 | 1 |
+| 296 | 51 | 0 | 3 | 0 | 350 | 42 | 1 |
 
 `███░░░░░░░░░░░░░░░░░` **15%** of the Atlas written · last build 2026-09-26
 <!-- cc:end -->
@@ -75,16 +75,16 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — Inheritance & Polymorphism]] · *map* · updated 2026-09-26
+- ◐ [[Templates — Code That Writes Code]] · *concept* · updated 2026-09-26
+- ◐ [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-26
 - ◐ [[Map — Performance & the Machine]] · *map* · updated 2026-09-26
 - ◐ [[Concurrency vs Parallelism]] · *comparison* · updated 2026-09-26
 - ◐ [[Map — Generic Programming]] · *map* · updated 2026-09-25
-- ◐ [[Templates — Code That Writes Code]] · *concept* · updated 2026-09-25
 - ◐ [[Anatomy of a Function]] · *concept* · updated 2026-09-25
 - ◐ [[Classes as User-Defined Types]] · *concept* · updated 2026-09-25
 - ◐ [[The Compilation Pipeline]] · *mechanism* · updated 2026-09-25
 - ◐ [[Pointers vs References]] · *comparison* · updated 2026-09-25
-- ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-25
-- ● [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-25
 <!-- cc:end -->
 
 ## Start here

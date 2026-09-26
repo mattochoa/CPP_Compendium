@@ -10,9 +10,9 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 296 |
 | ◌ stub | 0 |
-| ◐ draft | 50 |
+| ◐ draft | 51 |
 | ⟲ revise | 0 |
-| ● reviewed | 4 |
+| ● reviewed | 3 |
 | ★ evergreen | 0 |
 
 **Total topics:** 350
@@ -232,7 +232,7 @@ tags: [system/generated]
 | ◐ | [[Map — Inheritance & Polymorphism]] | map | 1 | 0 |  |
 | ○ | [[Inheritance]] | concept | 1 | 1 |  |
 | ○ | [[Virtual Functions]] | concept | 1 | 1 |  |
-| ● | [[Virtual Dispatch — vptr and vtable]] | mechanism | 2 | 1 | 20 |
+| ◐ | [[Virtual Dispatch — vptr and vtable]] | mechanism | 2 | 1 | 20 |
 | ○ | [[Abstract Classes and Interfaces]] | concept | 1 | 2 |  |
 | ○ | [[Virtual Destructors]] | pitfall | 1 | 2 |  |
 | ○ | [[Object Slicing]] | pitfall | 1 | 2 |  |

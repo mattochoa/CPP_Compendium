@@ -10,7 +10,7 @@ aliases:
 type: mechanism
 domain: D08
 tier: 2
-status: reviewed
+status: draft
 standard: C++98
 prereqs:
 - "[[Virtual Functions]]"
@@ -18,6 +18,7 @@ prereqs:
 - "[[Pointers]]"
 related:
 - "[[Static vs Dynamic Polymorphism]]"
+- "[[Templates — Code That Writes Code]]"
 - "[[Virtual Destructors]]"
 - "[[Virtual Calls in Constructors and Destructors]]"
 - "[[Object Slicing]]"
@@ -33,7 +34,7 @@ tags:
 - tension/compile-time-vs-run-time
 - tension/abstraction-vs-control
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-09-26
 reviewed: 2026-09-23
 score: 20
 rubric:
@@ -63,7 +64,7 @@ A function like `double total_area(const std::vector<Shape*>&)` is compiled **on
 > 5. **Price:** A pointer per object (8 bytes on 64-bit targets), a table per class, an indirect branch per call, and usually the loss of inlining, which is the bigger cost.
 
 > [!tension] compile time ⟷ run time
-> Virtual dispatch is C++'s *run-time* answer to "one code path, many types". Templates are its *compile-time* answer. The vtable is the price of deciding late. See [[Static vs Dynamic Polymorphism]].
+> Virtual dispatch is C++'s *run-time* answer to "one code path, many types". [[Templates — Code That Writes Code|Templates]] are its *compile-time* answer: the same problem, resolved by generating a separate concrete definition per type instead of an indirect call. The vtable is the price of deciding late. See [[Static vs Dynamic Polymorphism]] for the direct cost comparison.
 
 The Standard specifies only the *behavior* of virtual functions (`[class.virtual]`), not vtables. But GCC and Clang (following the Itanium C++ ABI) and MSVC all use this design. The details below are Itanium ABI on x86-64 and were checked with GCC 13.
 
@@ -248,7 +249,7 @@ The mechanism explains a whole family of C++ rules and failures:
 - **Explains:** [[Virtual Destructors]] · [[Object Slicing]] · [[Virtual Calls in Constructors and Destructors]] · [[RTTI and dynamic_cast]].
 - **Access path:** [[Pointers vs References]] — this mechanism fires identically through a `Base&` and a `Base*` bound to the same object; only a by-value copy loses the dynamic type.
 - **Extends to:** [[Multiple and Virtual Inheritance]] (thunks, several vptrs) · [[Type Erasure]] (hand-built vtables).
-- **Alternatives:** [[Static vs Dynamic Polymorphism]] · [[variant and visit]] · [[CRTP]].
+- **Alternatives:** [[Templates — Code That Writes Code]] (resolves the same one-code-many-types problem at compile time instead) · [[Static vs Dynamic Polymorphism]] · [[variant and visit]] · [[CRTP]].
 - **Machine level:** [[Branch Prediction]] · [[What Optimizers Do]].
 - **Domain:** [[Map — Inheritance & Polymorphism]].
 - **Practice:** *Continuum #18 Shape Hierarchy* (print `sizeof` of your shapes and explain each byte) · *#21 Game Entity System* (multiple inheritance: find the thunks with `-fdump-lang-class`).
