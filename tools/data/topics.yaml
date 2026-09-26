@@ -376,7 +376,8 @@
 - {id: hdr-utility, t: "Header — utility", ty: header, d: HDR, tier: 1, w: 2, pre: [move-semantics], al: ["<utility>"]}
 - {id: hdr-map-set, t: "Header — map and set", ty: header, d: HDR, tier: 1, w: 2, pre: [associative-containers], al: ["<map>", "<set>"]}
 - {id: hdr-unordered, t: "Header — unordered_map and unordered_set", ty: header, d: HDR, tier: 2, w: 2, pre: [unordered-containers], al: ["<unordered_map>", "<unordered_set>"]}
-- {id: hdr-deque-list, t: "Header — deque, list and forward_list", ty: header, d: HDR, tier: 2, w: 2, pre: [sequence-containers], al: ["<deque>", "<list>", "<forward_list>"]}
+- {id: hdr-deque-list, t: "Header — deque and forward_list", ty: header, d: HDR, tier: 2, w: 2, pre: [sequence-containers], al: ["<deque>", "<forward_list>"]}
+- {id: hdr-list, t: "Header — list", ty: header, d: HDR, tier: 2, w: 2, pre: [sequence-containers], al: ["<list>", "std::list"]}
 - {id: hdr-iterator, t: "Header — iterator", ty: header, d: HDR, tier: 2, w: 2, pre: [iterators], al: ["<iterator>"]}
 - {id: hdr-random, t: "Header — random", ty: header, d: HDR, tier: 1, w: 2, pre: [random-numbers], al: ["<random>"]}
 - {id: hdr-exception, t: "Header — exception and stdexcept", ty: header, d: HDR, tier: 1, w: 2, pre: [exceptions], al: ["<exception>", "<stdexcept>"]}

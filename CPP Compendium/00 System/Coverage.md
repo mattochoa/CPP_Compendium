@@ -10,16 +10,16 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 287 |
 | ◌ stub | 0 |
-| ◐ draft | 61 |
+| ◐ draft | 62 |
 | ⟲ revise | 0 |
 | ● reviewed | 3 |
 | ★ evergreen | 0 |
 
-**Total topics:** 351
+**Total topics:** 352
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `██████████░░░░░░░░░░` 26/52
-- Wave 2: `██░░░░░░░░░░░░░░░░░░` 12/123
+- Wave 2: `██░░░░░░░░░░░░░░░░░░` 13/124
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -451,7 +451,7 @@ tags: [system/generated]
 
 ## HDR · Standard Headers
 
-*Where does each standard facility live, and what exactly does its header promise?*  `███░░░░░░░` 19/58
+*Where does each standard facility live, and what exactly does its header promise?*  `███░░░░░░░` 20/59
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -477,7 +477,8 @@ tags: [system/generated]
 | ○ | [[Header — utility]] | header | 1 | 2 |  |
 | ○ | [[Header — map and set]] | header | 1 | 2 |  |
 | ○ | [[Header — unordered_map and unordered_set]] | header | 2 | 2 |  |
-| ○ | [[Header — deque, list and forward_list]] | header | 2 | 2 |  |
+| ○ | [[Header — deque and forward_list]] | header | 2 | 2 |  |
+| ◐ | [[Header — list]] | header | 2 | 2 |  |
 | ◐ | [[Header — iterator]] | header | 2 | 2 |  |
 | ○ | [[Header — random]] | header | 1 | 2 |  |
 | ○ | [[Header — exception and stdexcept]] | header | 1 | 2 |  |

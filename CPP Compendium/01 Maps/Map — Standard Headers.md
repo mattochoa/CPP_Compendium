@@ -131,6 +131,9 @@ The stream family is one architecture seen at three layers: [[Header — streamb
 | "Why does `rbegin().base()` erase the wrong element?" | [[Header — iterator]] | search backwards, then convert back |
 | "Why can't I write `it + 3` on a `list`?" | [[Header — iterator]] | move around a list · categories |
 | "How do I write my own iterator?" | [[Header — iterator]] | write your own forward iterator |
+| "When should I use a `list` instead of a `vector`?" | [[Header — list]] | choosing a tool · iterators that stay valid |
+| "Why won't `std::sort` compile on my `list`?" | [[Header — list]] | sort a list (member `sort`) |
+| "How do I build an LRU cache?" | [[Header — list]] | `splice` + `unordered_map` of iterators |
 | "What's the difference between `fail` and `bad`?" | [[Header — ios]] | state flag decision table |
 | "How do I reset a `stringstream`?" | [[Header — sstream]] | the two-step reset |
 | "How do I make `cout` write to a socket?" | [[Header — streambuf]] | custom buffers |
@@ -197,7 +200,8 @@ C++26   strstream removed; println() with no arguments; runtime_format
 - ◐ [[Header — conio (non-standard)]] · *header*
 - ○ [[Header — numeric]] · *header*
 - ○ [[Header — unordered_map and unordered_set]] · *header*
-- ○ [[Header — deque, list and forward_list]] · *header*
+- ○ [[Header — deque and forward_list]] · *header*
+- ◐ [[Header — list]] · *header*
 - ◐ [[Header — iterator]] · *header*
 - ○ [[Header — limits]] · *header*
 - ○ [[Header — queue and stack]] · *header*
@@ -234,7 +238,7 @@ C++26   strstream removed; println() with no arguments; runtime_format
 **Tier 4 · Expert**
 - ○ [[Header — coroutine]] · *header*
 
-`███░░░░░░░` 19/58 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███░░░░░░░` 20/59 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
