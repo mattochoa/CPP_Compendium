@@ -109,7 +109,7 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D11 -->
 **Tier 1 · Foundational**
-- ○ [[Error Handling Strategies Compared]] · *comparison*
+- ◐ [[Error Handling Strategies Compared]] · *comparison*
 - ○ [[Exceptions]] · *concept*
 - ○ [[assert and static_assert]] · *concept*
 
@@ -124,7 +124,7 @@ flowchart LR
 - ○ [[error_code and System Errors]] · *concept*
 - ○ [[The Cost of Exceptions]] · *mechanism*
 
-`█░░░░░░░░░` 1/11 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 2/11 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

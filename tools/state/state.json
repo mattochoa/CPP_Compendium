@@ -1,6 +1,6 @@
 {
-  "runs": 47,
-  "builder_runs": 46,
+  "runs": 48,
+  "builder_runs": 47,
   "editor_runs": 1,
   "history": [
     {
@@ -600,10 +600,24 @@
       "code": "0/0",
       "commit": "✓",
       "summary": "DEEPEN (Directive 1, wave-0 maps): Map — Ownership & Move Semantics. Verified every Primer/Tour/Pikus page citation with cc.py src find (all accurate; the flagged Primer-13.6.2/p.532 error does not recur here). Sharpened two Key Ideas with real mechanism instead of slogan: (5) unique_ptr's zero cost vs shared_ptr's control block + atomic strong/weak counts; (8) distinguished NRVO (still merely permitted, every standard) from C++17 mandatory prvalue elision (verified via cppreference, [class.copy.elision], __cpp_guaranteed_copy_elision) — the type need not have an accessible move ctor at all in the mandatory case. Added the copy-elision cppreference citation to Sources. check: 0 errors. Next pinned map: Map — Inheritance & Polymorphism was already deepened today (#42); root Map — What C++ Is done in #45 — all three pinned maps now touched today."
+    },
+    {
+      "when": "2026-09-26T12:27:40Z",
+      "run": 47,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "error-handling-strategies",
+        "raii"
+      ],
+      "lint": "100–100",
+      "code": "3/4 3/3",
+      "commit": "✓",
+      "summary": "AUTHOR: Error Handling Strategies Compared — decision framework for exceptions vs error codes vs assertions vs terminate, with the noexcept-terminate clause verified against [except.terminate]. Woven into RAII's Connections and the D11 map (already linked pre-write)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-26T11:17:10Z"
+  "last_builder": "2026-09-26T12:27:40Z"
 }

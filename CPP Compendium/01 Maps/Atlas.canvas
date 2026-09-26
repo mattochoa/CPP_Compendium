@@ -2008,7 +2008,8 @@
 			"y": 2454,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Error Handling Strategies Compared]]\n*comparison · T1*"
+			"text": "◐ [[Error Handling Strategies Compared]]\n*comparison · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-exceptions",
