@@ -119,7 +119,7 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D12 -->
 **Tier 1 · Foundational**
-- ○ [[Concurrency vs Parallelism]] · *comparison*
+- ◐ [[Concurrency vs Parallelism]] · *comparison*
 
 **Tier 2 · Proficient**
 - ○ [[Threads — thread and jthread]] · *concept*
@@ -142,7 +142,7 @@ flowchart LR
 - ○ [[Lock-Free Programming Basics]] · *concept*
 - ○ [[Coroutines]] · *mechanism*
 
-`█░░░░░░░░░` 1/17 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`█░░░░░░░░░` 2/17 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

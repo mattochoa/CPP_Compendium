@@ -21,7 +21,7 @@ tags:
 - tension/abstraction-vs-control
 - tension/safety-vs-performance
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-09-26
 ---
 
 # Map — Performance & the Machine
@@ -100,7 +100,7 @@ flowchart LR
 5. **The compiler optimizes under the as-if rule, not the code as literally written.** It may reorder, fuse, or delete operations as long as the result matches some execution of the abstract machine — which is exactly why undefined behavior gives it license to assume the impossible path is never taken.
 6. **Layout shapes cache behavior more than algorithm choice does.** An array of structs scatters the one field a loop actually touches across cache lines full of fields it doesn't need; a structure of arrays makes every byte fetched relevant, which is why a "worse" algorithm on the right layout regularly beats a "better" one on the wrong layout.
 7. **Dynamic allocation costs more than its instruction count suggests.** A single `new` may take a lock, walk a free list and touch memory that is cold in the cache, so allocating inside a hot loop hides contention and cache-miss costs that a cycle count of the call itself won't show.
-8. **Vectorization requires proving independence, not requesting it.** The compiler emits SIMD instructions only when it can show that loop iterations don't alias and don't depend on each other, which is why auto-vectorization silently fails on ordinary-looking code that a human can see is parallel.
+8. **Vectorization requires proving independence, not requesting it.** The compiler emits SIMD instructions only when it can show that loop iterations don't alias and don't depend on each other, which is why auto-vectorization silently fails on ordinary-looking code that a human can see is parallel — and it is parallel without being concurrent: one thread, several data lanes at once ([[Concurrency vs Parallelism]]).
 
 | Idea | Developed in |
 |---|---|
