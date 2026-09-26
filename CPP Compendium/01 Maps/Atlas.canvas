@@ -1067,7 +1067,8 @@
 			"y": 1298,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Encapsulation and Class Invariants]]\n*concept · T1*"
+			"text": "◐ [[Encapsulation and Class Invariants]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-constructors",

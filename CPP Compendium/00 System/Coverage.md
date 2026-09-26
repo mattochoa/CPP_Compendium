@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 290 |
+| ○ planned | 289 |
 | ◌ stub | 0 |
-| ◐ draft | 57 |
+| ◐ draft | 58 |
 | ⟲ revise | 0 |
 | ● reviewed | 3 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 350
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `█████████░░░░░░░░░░░` 22/51
+- Wave 1: `█████████░░░░░░░░░░░` 23/51
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 12/123
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -173,13 +173,13 @@ tags: [system/generated]
 
 ## D06 · Classes & Encapsulation
 
-*How do we build new types that protect their own invariants?*  `█░░░░░░░░░` 2/19
+*How do we build new types that protect their own invariants?*  `██░░░░░░░░` 3/19
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Classes & Encapsulation]] | map | 1 | 0 |  |
 | ◐ | [[Classes as User-Defined Types]] | concept | 1 | 1 |  |
-| ○ | [[Encapsulation and Class Invariants]] | concept | 1 | 1 |  |
+| ◐ | [[Encapsulation and Class Invariants]] | concept | 1 | 1 |  |
 | ○ | [[Constructors]] | concept | 1 | 1 |  |
 | ○ | [[Destructors]] | concept | 1 | 1 |  |
 | ○ | [[struct vs class]] | comparison | 1 | 2 |  |

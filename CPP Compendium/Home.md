@@ -37,7 +37,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `█░░░░░░░` 2/12 |
 | `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `█░░░░░░░` 4/26 |
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `█░░░░░░░` 2/16 |
-| `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `█░░░░░░░` 2/19 |
+| `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `█░░░░░░░` 3/19 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `█░░░░░░░` 2/19 |
 | `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `█░░░░░░░` 2/15 |
 | `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `█░░░░░░░` 2/16 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 290 | 57 | 0 | 3 | 0 | 350 | 51 | 1 |
+| 289 | 58 | 0 | 3 | 0 | 350 | 52 | 1 |
 
 `███░░░░░░░░░░░░░░░░░` **17%** of the Atlas written · last build 2026-09-26
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Encapsulation and Class Invariants]] · *concept* · `D06` — wave 1
-2. [[Constructors]] · *concept* · `D06` — wave 1
-3. [[Ownership — Who Releases What]] · *concept* · `D07` — wave 1
-4. [[const and Const-Correctness]] · *concept* · `D02` — wave 1
-5. [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · `D05` — wave 1
-6. [[Inheritance]] · *concept* · `D08` — wave 1
+1. [[Ownership — Who Releases What]] · *concept* · `D07` — wave 1
+2. [[const and Const-Correctness]] · *concept* · `D02` — wave 1
+3. [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · `D05` — wave 1
+4. [[Inheritance]] · *concept* · `D08` — wave 1
+5. [[Virtual Functions]] · *concept* · `D08` — wave 1
+6. [[vector]] · *concept* · `D10` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Encapsulation and Class Invariants]] · *concept* · updated 2026-09-26
 - ◐ [[Translation Units]] · *concept* · updated 2026-09-26
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-26
 - ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-26
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ● [[RAII]] · *idiom* · updated 2026-09-26
 - ◐ [[Error Handling Strategies Compared]] · *comparison* · updated 2026-09-26
 - ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-26
-- ◐ [[Anatomy of an Expression]] · *concept* · updated 2026-09-26
 <!-- cc:end -->
 
 ## Start here

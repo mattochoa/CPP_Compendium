@@ -125,7 +125,7 @@ flowchart LR
 <!-- cc:auto:domain-index:D06 -->
 **Tier 1 · Foundational**
 - ◐ [[Classes as User-Defined Types]] · *concept*
-- ○ [[Encapsulation and Class Invariants]] · *concept*
+- ◐ [[Encapsulation and Class Invariants]] · *concept*
 - ○ [[Constructors]] · *concept*
 - ○ [[Destructors]] · *concept*
 - ○ [[struct vs class]] · *comparison*
@@ -147,7 +147,7 @@ flowchart LR
 **Tier 3 · Advanced**
 - ○ [[When the Compiler Generates Special Members]] · *mechanism*
 
-`█░░░░░░░░░` 2/19 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 3/19 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
