@@ -1566,7 +1566,8 @@
 			"y": 2454,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Templates — Code That Writes Code]]\n*concept · T1*"
+			"text": "◐ [[Templates — Code That Writes Code]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-function-templates",

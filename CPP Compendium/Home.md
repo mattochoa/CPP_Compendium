@@ -40,7 +40,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `█░░░░░░░` 2/19 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `█░░░░░░░` 2/19 |
 | `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `█░░░░░░░` 2/15 |
-| `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `░░░░░░░░` 1/16 |
+| `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `█░░░░░░░` 2/16 |
 | `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `█░░░░░░░` 4/30 |
 | `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `█░░░░░░░` 1/11 |
 | `D12` | [[Map — Concurrency\|Concurrency]] | How do multiple threads of execution share memory without corrupting it? | `░░░░░░░░` 1/17 |
@@ -58,23 +58,25 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 298 | 48 | 0 | 4 | 0 | 350 | 38 | 1 |
+| 297 | 49 | 0 | 4 | 0 | 350 | 39 | 1 |
 
 `███░░░░░░░░░░░░░░░░░` **15%** of the Atlas written · last build 2026-09-25
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Templates — Code That Writes Code]] · *concept* · `D09` — wave 1
-2. [[Concurrency vs Parallelism]] · *comparison* · `D12` — wave 1
-3. [[Fundamental Types]] · *concept* · `D02` — wave 1
-4. [[const and Const-Correctness]] · *concept* · `D02` — wave 1
-5. [[Anatomy of an Expression]] · *concept* · `D03` — wave 1
-6. [[Control Flow — Selection and Iteration]] · *concept* · `D03` — wave 1
+1. [[Concurrency vs Parallelism]] · *comparison* · `D12` — wave 1
+2. [[Fundamental Types]] · *concept* · `D02` — wave 1
+3. [[const and Const-Correctness]] · *concept* · `D02` — wave 1
+4. [[Anatomy of an Expression]] · *concept* · `D03` — wave 1
+5. [[Control Flow — Selection and Iteration]] · *concept* · `D03` — wave 1
+6. [[Error Handling Strategies Compared]] · *comparison* · `D11` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — Generic Programming]] · *map* · updated 2026-09-25
+- ◐ [[Templates — Code That Writes Code]] · *concept* · updated 2026-09-25
 - ◐ [[Anatomy of a Function]] · *concept* · updated 2026-09-25
 - ◐ [[Classes as User-Defined Types]] · *concept* · updated 2026-09-25
 - ◐ [[The Compilation Pipeline]] · *mechanism* · updated 2026-09-25
@@ -83,8 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ● [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-25
 - ◐ [[What a Type Is]] · *concept* · updated 2026-09-25
 - ◐ [[Header — iterator]] · *header* · updated 2026-09-25
-- ◐ [[STL Architecture — Containers, Iterators, Algorithms]] · *concept* · updated 2026-09-25
-- ◐ [[Iterator Categories and Concepts]] · *concept* · updated 2026-09-25
 <!-- cc:end -->
 
 ## Start here
