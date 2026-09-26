@@ -1,6 +1,6 @@
 {
-  "runs": 35,
-  "builder_runs": 34,
+  "runs": 37,
+  "builder_runs": 36,
   "editor_runs": 1,
   "history": [
     {
@@ -465,10 +465,23 @@
       "code": "4/4",
       "commit": "✓",
       "summary": "AUTHOR: Classes as User-Defined Types — first D06 concept note, showing how a class supplies the values×operations×representation triple from What a Type Is; verified with real GCC asm proof that member vs free-function calls compile identically."
+    },
+    {
+      "when": "2026-09-26T01:48:57Z",
+      "run": 36,
+      "role": "builder",
+      "mode": "DEEPEN",
+      "items": [
+        "pointers-vs-references"
+      ],
+      "lint": "100–100",
+      "code": "4/4",
+      "commit": "✓",
+      "summary": "deepen: visual (added box diagram of reference/pointer member layout to Under the Hood) + citation precision (Primer 508 not 508-509 for the deleted-copy-assignment claim)"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-25T23:25:42Z"
+  "last_builder": "2026-09-26T01:48:57Z"
 }

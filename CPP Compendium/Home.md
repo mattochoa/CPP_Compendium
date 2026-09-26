@@ -58,7 +58,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 300 | 46 | 0 | 4 | 0 | 350 | 34 | 1 |
+| 300 | 46 | 0 | 4 | 0 | 350 | 36 | 1 |
 
 `███░░░░░░░░░░░░░░░░░` **14%** of the Atlas written · last build 2026-09-25
 <!-- cc:end -->
@@ -75,6 +75,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Pointers vs References]] · *comparison* · updated 2026-09-25
 - ◐ [[Classes as User-Defined Types]] · *concept* · updated 2026-09-25
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-25
 - ● [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-25
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Iterator Categories and Concepts]] · *concept* · updated 2026-09-25
 - ◐ [[Iterators]] · *concept* · updated 2026-09-25
 - ◐ [[Map — Generic Programming]] · *map* · updated 2026-09-25
-- ◐ [[Map — Standard Headers]] · *map* · updated 2026-09-24
 <!-- cc:end -->
 
 ## Start here

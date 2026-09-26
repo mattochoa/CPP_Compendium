@@ -32,7 +32,7 @@ tags:
 - tension/value-vs-identity
 - tension/safety-vs-performance
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-09-25
 ---
 
 # Pointers vs References
@@ -77,7 +77,7 @@ Because a reference is not an object, C++ forbids compounding it directly: there
 
 A reference can never be null, but it can still **dangle**: if the object it names reaches the end of its lifetime, evaluating the reference afterward is undefined behavior, not a null-like sentinel (cppreference, *Reference declaration* §*Dangling references*). The reference doesn't know its referent is gone — the bytes may still be readable garbage — so the danger is silent. See [[Dangling Pointers and References]] for how this happens in real code.
 
-A reference member is also a promise the compiler cannot keep automatically. Copy-assigning an object would have to either reseat the member's binding (impossible: a reference is bound for life) or assign through it (silently rewriting an unrelated object) — so the language refuses to choose. A defaulted copy assignment operator is defined as **deleted** for any class with a non-static data member of reference type (`[class.copy.assign]` ¶7.2; Primer §13.1, p. 508–509) — *In Code* §3 compiles this and shows the exact diagnostic.
+A reference member is also a promise the compiler cannot keep automatically. Copy-assigning an object would have to either reseat the member's binding (impossible: a reference is bound for life) or assign through it (silently rewriting an unrelated object) — so the language refuses to choose. A defaulted copy assignment operator is defined as **deleted** for any class with a non-static data member of reference type — the Standard names this exact case, alongside a `const` member, as one of the two triggers (`[class.copy.assign]` ¶7.2; Primer §13.1, p. 508) — *In Code* §3 compiles this and shows the exact diagnostic.
 
 ### Pointers: an object that stores an address
 
@@ -102,6 +102,23 @@ sum_ref(Big const&):                sum_ptr(Big const*):
 *(GCC, Compiler Explorer, `-O2 -std=c++20`; the two function bodies are byte-for-byte identical.)*
 
 Both parameters arrive in `rdi` as one 8-byte address, and neither prologue tests it for null: the compiler isn't allowed to doubt what the reference's contract already promised. The same equivalence shows up in layout. Whether a reference needs storage at all is **unspecified** (`[dcl.ref]` ¶4) — a local reference is often optimized away entirely — but as a *member*, the compiler must store the alias somewhere, and it costs precisely a pointer's worth: `sizeof(struct{int& r;})` equals `sizeof(struct{int* p;})` (8 bytes on a 64-bit ABI), because "a non-static data member of reference type usually increases the size of the class by the amount necessary to store a memory address" (cppreference, *Reference declaration*). Same bits, different rules about what you're allowed to do with them.
+
+That equal `sizeof` is not a coincidence of one compiler: it is what "unspecified storage, but a member must live somewhere" cashes out to on any ABI with a flat address space. Both members are, physically, one address-sized slot next to the object's other data:
+
+```text
+ STACK (automatic)                                8 bytes, either member
+┌────────────────────────┐
+│ Binder{ int& r; }      │
+│  r ●───────────────┐   │
+└─────────────────────┼──┘        ┌────────────┐
+                       ├─────────▶│ x : int    │
+┌─────────────────────┼──┐        │   = 42     │
+│  p ●───────────────┘   │        └────────────┘
+│ Holder{ int* p; }      │
+└────────────────────────┘
+```
+
+`Binder::r` and `Holder::p` are wired identically to `x`. The difference the type system enforces — `r` can never be re-aimed or read as null, `p` can be either — lives entirely in what the compiler *lets you write next*, not in what either slot *is*.
 
 ### Corner Cases: same address, sharper edges
 
@@ -273,7 +290,7 @@ int main() {
 
 ## Sources
 
-- Primer §2.3.1 "References" (p. 50) and §2.3.2 "Pointers" (p. 52): binding rules and pointer states. Primer §3.5 "Arrays" (p. 120): the one-past-the-end arithmetic limit. Primer §13.1 "Copy, Assign, and Destroy" (p. 508–509): why a reference (or `const`) member deletes copy assignment. Primer §15.3 "Virtual Functions" (p. 605) and *Defined Terms* (p. 650): polymorphism defined by the dynamic type of a reference *or* pointer.
+- Primer §2.3.1 "References" (p. 50) and §2.3.2 "Pointers" (p. 52): binding rules and pointer states. Primer §3.5 "Arrays" (p. 120): the one-past-the-end arithmetic limit. Primer §13.1 "Copy, Assign, and Destroy" (p. 508): why a reference (or `const`) member deletes copy assignment. Primer §15.3 "Virtual Functions" (p. 605) and *Defined Terms* (p. 650): polymorphism defined by the dynamic type of a reference *or* pointer.
 - Tour §1.7 "Pointers, Arrays, and References" (p. 11): the designer's short comparison.
 - PPP §16.2 "Pointers and references" (ch. 16 "Arrays, Pointers, and References"): pointer vs reference from first principles.
 - cppreference, *Reference declaration* (incl. §*Reference collapsing*, §*Dangling references*): https://en.cppreference.com/w/cpp/language/reference · *Pointer declaration*: https://en.cppreference.com/w/cpp/language/pointer · *Copy assignment operator*: https://en.cppreference.com/w/cpp/language/copy_assignment · *`virtual` function specifier* §Explanation (dispatch through `Base&` and `Base*` alike): https://en.cppreference.com/w/cpp/language/virtual · *`std::less`* (implementation-defined strict total order over pointers): https://en.cppreference.com/w/cpp/utility/functional/less
