@@ -416,3 +416,4 @@
 # ---------------------------------------------------------------- ADDITIONS
 # Appended by `cc.py registry add`; the Editor files them into their domain sections.
 - {id: kit-background-worker, t: "Kit — Background Worker (C++14-17)", ty: guide, d: PRX, tier: 2, w: 2, pr: [29,35], kw: ["std::thread", "stop_token", "jthread", "background worker"]}
+- {id: functions-and-parameters, t: "Functions and Parameters — The Complete Picture", ty: concept, d: D05, tier: 1, w: 1, pre: [function-anatomy], pr: [5,6,9,27], kw: ["varargs", "va_list", "initializer_list", "argc"]}

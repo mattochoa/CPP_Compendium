@@ -18,16 +18,16 @@ tags: [system/generated, practice]
 | 02 | Unit & Temperature Converter Suite | ◐ [[Map — Types & Values]], ◐ [[Map — Expressions & Control]], ◐ [[Fundamental Types]], ◐ [[Anatomy of an Expression]], ○ [[Control Flow — Selection and Iteration]], ○ [[switch and Fallthrough]] |
 | 03 | Number Guessing Game | ◐ [[Map — Expressions & Control]], ◐ [[Anatomy of an Expression]], ○ [[Control Flow — Selection and Iteration]], ○ [[Stream State and Robust Input]], ○ [[Random Number Generation]] |
 | 04 | Grade & GPA Calculator | ○ [[array]] |
-| 05 | Console Calculator REPL | ◐ [[Map — Functions]], ◐ [[Anatomy of a Function]], ○ [[Function Overloading]], ○ [[Stream State and Robust Input]], ○ [[String Streams]], ○ [[Exceptions]] |
+| 05 | Console Calculator REPL | ◐ [[Map — Functions]], ◐ [[Anatomy of a Function]], ○ [[Function Overloading]], ○ [[Stream State and Robust Input]], ○ [[String Streams]], ○ [[Exceptions]], ◐ [[Functions and Parameters — The Complete Picture]] |
 
 ## Tier 2: Core Programming
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 06 | Function Library & Header Refactor | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Functions]], ◐ [[Translation Units]], ○ [[Headers and Include Guards]], ○ [[Declarations vs Definitions]], ○ [[References]], ◐ [[Pointers vs References]], ◐ [[Anatomy of a Function]], ○ [[Parameter Passing — Value, Reference, Pointer]], ○ [[Function Overloading]], ○ [[assert and static_assert]] |
+| 06 | Function Library & Header Refactor | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Functions]], ◐ [[Translation Units]], ○ [[Headers and Include Guards]], ○ [[Declarations vs Definitions]], ○ [[References]], ◐ [[Pointers vs References]], ◐ [[Anatomy of a Function]], ○ [[Parameter Passing — Value, Reference, Pointer]], ○ [[Function Overloading]], ○ [[assert and static_assert]], ◐ [[Functions and Parameters — The Complete Picture]] |
 | 07 | Word & Text Analyzer | ◐ [[Map — Standard Library]], ○ [[vector]], ○ [[string]], ○ [[Ordered Associative Containers — map and set]], ○ [[IO Streams Architecture]], ○ [[File IO]] |
 | 08 | Matrix Operations Toolkit | ○ [[Preconditions, Postconditions and Contracts]] |
-| 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ◐ [[Map — Functions]], ◐ [[Anatomy of a Function]], ○ [[The Call Stack and Stack Frames]], ○ [[Recursion]] |
+| 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ◐ [[Map — Functions]], ◐ [[Anatomy of a Function]], ○ [[The Call Stack and Stack Frames]], ○ [[Recursion]], ◐ [[Functions and Parameters — The Complete Picture]] |
 | 10 | Caesar & Vigenere Cipher Toolkit | ◐ [[Map — Types & Values]], ○ [[Bitwise Operations and the bit Header]], ○ [[File IO]] |
 
 ## Tier 3: Memory & Data Structures
@@ -60,7 +60,7 @@ tags: [system/generated, practice]
 | 24 | Generic Data Structure Library | ◐ [[Map — Generic Programming]], ○ [[Function Templates]], ○ [[Class Templates]], ○ [[Concepts and Constraints]], ○ [[Full and Partial Specialization]], ◐ [[Iterator Categories and Concepts]] |
 | 25 | Smart Pointer Refactor Lab | ◐ [[Map — Ownership & Move Semantics]], ● [[Value Categories]], ◐ [[Dangling Pointers and References]], ◐ [[Ownership — Who Releases What]], ● [[RAII]], ○ [[unique_ptr]], ○ [[shared_ptr and Reference Counting]], ○ [[weak_ptr and Reference Cycles]] |
 | 26 | Custom Exception Hierarchy & Robust CSV Parser | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Errors & Contracts]], ◐ [[Ownership — Who Releases What]], ● [[RAII]], ○ [[Exception Safety Guarantees]], ◐ [[Error Handling Strategies Compared]], ○ [[Exceptions]], ○ [[Designing Exception Hierarchies]] |
-| 27 | Task Manager with Lambdas & std::function | ◐ [[Map — Functions]], ○ [[Lambda Expressions]], ○ [[Callables and std-function]] |
+| 27 | Task Manager with Lambdas & std::function | ◐ [[Map — Functions]], ○ [[Lambda Expressions]], ○ [[Callables and std-function]], ◐ [[Functions and Parameters — The Complete Picture]] |
 | 28 | Mini JSON Parser / Key-Value Store Engine | ◐ [[Map — Design & Idioms]], ○ [[variant and visit]], ○ [[Designing Interfaces — Easy to Use Correctly]], ○ [[Visitor — Classic vs variant]] |
 
 ## Tier 6: Advanced & Systems Programming

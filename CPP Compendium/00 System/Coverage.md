@@ -10,15 +10,15 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 288 |
 | ◌ stub | 0 |
-| ◐ draft | 59 |
+| ◐ draft | 60 |
 | ⟲ revise | 0 |
 | ● reviewed | 3 |
 | ★ evergreen | 0 |
 
-**Total topics:** 350
+**Total topics:** 351
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `█████████░░░░░░░░░░░` 24/51
+- Wave 1: `██████████░░░░░░░░░░` 25/52
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 12/123
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -150,7 +150,7 @@ tags: [system/generated]
 
 ## D05 · Functions
 
-*How is computation named, parameterised, reused and passed around?*  `█░░░░░░░░░` 2/16
+*How is computation named, parameterised, reused and passed around?*  `██░░░░░░░░` 3/17
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -170,6 +170,7 @@ tags: [system/generated]
 | ○ | [[Inlining — Compiler Reality vs the Keyword]] | mechanism | 2 | 3 |  |
 | ○ | [[Attributes — nodiscard, maybe_unused, likely]] | concept | 2 | 3 |  |
 | ○ | [[Overload Resolution]] | mechanism | 3 | 3 |  |
+| ◐ | [[Functions and Parameters — The Complete Picture]] | concept | 1 | 1 |  |
 
 ## D06 · Classes & Encapsulation
 

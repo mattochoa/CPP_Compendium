@@ -880,7 +880,7 @@
 			"x": 1228,
 			"y": 1156,
 			"width": 842,
-			"height": 604,
+			"height": 676,
 			"label": "D05 · Functions",
 			"color": "#f97316"
 		},
@@ -957,6 +957,16 @@
 			"width": 250,
 			"height": 56,
 			"text": "○ [[Lambda Expressions]]\n*concept · T1*"
+		},
+		{
+			"id": "t-functions-and-parameters",
+			"type": "text",
+			"x": 1258,
+			"y": 1730,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Functions and Parameters — The Complete Picture]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-return-values",
@@ -4042,6 +4052,13 @@
 			"fromNode": "t-compiler-optimizations",
 			"fromSide": "right",
 			"toNode": "t-ub-and-optimization",
+			"toSide": "left"
+		},
+		{
+			"id": "e-function-anatomy-functions-and-parameters",
+			"fromNode": "t-function-anatomy",
+			"fromSide": "right",
+			"toNode": "t-functions-and-parameters",
 			"toSide": "left"
 		}
 	]

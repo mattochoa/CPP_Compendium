@@ -118,6 +118,7 @@ flowchart LR
 | The stack as a control-flow tool | [[Recursion]] |
 | Functions as values | [[Lambda Expressions]] · [[Lambda Captures and Closure Objects]] · [[Function Pointers]] · [[Callables and std-function]] |
 | Compile time vs. the optimizer's judgment | [[constexpr and consteval Functions]] · [[Inlining — Compiler Reality vs the Keyword]] · [[Attributes — nodiscard, maybe_unused, likely]] |
+| The whole domain on one page, including a variable number of arguments decided at run time | [[Functions and Parameters — The Complete Picture]] |
 
 ## Index
 
@@ -130,6 +131,7 @@ flowchart LR
 - ○ [[Default Arguments]] · *concept*
 - ○ [[Recursion]] · *concept*
 - ○ [[Lambda Expressions]] · *concept*
+- ◐ [[Functions and Parameters — The Complete Picture]] · *concept*
 
 **Tier 2 · Proficient**
 - ○ [[Returning Values — Copies, References and RVO]] · *concept*
@@ -143,7 +145,7 @@ flowchart LR
 **Tier 3 · Advanced**
 - ○ [[Overload Resolution]] · *mechanism*
 
-`█░░░░░░░░░` 2/16 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 3/17 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
