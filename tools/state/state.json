@@ -1,6 +1,6 @@
 {
-  "runs": 45,
-  "builder_runs": 44,
+  "runs": 46,
+  "builder_runs": 45,
   "editor_runs": 1,
   "history": [
     {
@@ -574,10 +574,23 @@
       "code": "3/3",
       "commit": "✓",
       "summary": "AUTHOR: Anatomy of an Expression (D03 T1 W1) — expression as operand+operator->(type, value category); primary vs subexpression vs full-expression; expression-statement/discarded-value; verified asm via cc.py asm (corrected an initial fabricated ordering claim before finishing)."
+    },
+    {
+      "when": "2026-09-26T10:17:36Z",
+      "run": 45,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "map-d00"
+      ],
+      "lint": "100–100",
+      "code": "0/0",
+      "commit": "✓",
+      "summary": "deepen: map-d00 — sharpened Key Idea 5 with the [intro.abstract] ¶6-7 distinction (UB's unbounded rest-of-execution license vs erroneous behavior's diagnose-or-terminate bound), the real teeth of the C++26 category; fixed Pikus p.55/56 citation precision (term introduced p.55, defined with the as-if rule on p.56, not both on p.55)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-26T09:24:17Z"
+  "last_builder": "2026-09-26T10:17:36Z"
 }

@@ -58,7 +58,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 294 | 53 | 0 | 3 | 0 | 350 | 44 | 1 |
+| 294 | 53 | 0 | 3 | 0 | 350 | 45 | 1 |
 
 `███░░░░░░░░░░░░░░░░░` **16%** of the Atlas written · last build 2026-09-26
 <!-- cc:end -->
@@ -75,6 +75,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-26
 - ◐ [[Anatomy of an Expression]] · *concept* · updated 2026-09-26
 - ◐ [[Fundamental Types]] · *concept* · updated 2026-09-26
 - ◐ [[Map — Inheritance & Polymorphism]] · *map* · updated 2026-09-26
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Concurrency vs Parallelism]] · *comparison* · updated 2026-09-26
 - ◐ [[Map — Generic Programming]] · *map* · updated 2026-09-25
 - ◐ [[Anatomy of a Function]] · *concept* · updated 2026-09-25
-- ◐ [[Classes as User-Defined Types]] · *concept* · updated 2026-09-25
 <!-- cc:end -->
 
 ## Start here
