@@ -31,7 +31,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-domains -->
 | | Domain | The question it answers | Progress |
 |---|---|---|---|
-| `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `█░░░░░░░` 1/9 |
+| `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `██░░░░░░` 2/9 |
 | `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `█░░░░░░░` 2/18 |
 | `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `█░░░░░░░` 3/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `█░░░░░░░` 2/12 |
@@ -58,33 +58,33 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 292 | 55 | 0 | 3 | 0 | 350 | 49 | 1 |
+| 291 | 56 | 0 | 3 | 0 | 350 | 50 | 1 |
 
 `███░░░░░░░░░░░░░░░░░` **17%** of the Atlas written · last build 2026-09-26
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[The C++ Design Philosophy]] · *concept* · `D00` — wave 1
-2. [[The C++ Abstract Machine]] · *concept* · `D00` — wave 1
-3. [[Translation Units]] · *concept* · `D01` — wave 1
-4. [[The Preprocessor]] · *mechanism* · `D01` — wave 1
-5. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
-6. [[Scope]] · *concept* · `D01` — wave 1
+1. [[Translation Units]] · *concept* · `D01` — wave 1
+2. [[The Preprocessor]] · *mechanism* · `D01` — wave 1
+3. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
+4. [[Scope]] · *concept* · `D01` — wave 1
+5. [[Encapsulation and Class Invariants]] · *concept* · `D06` — wave 1
+6. [[Constructors]] · *concept* · `D06` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-26
+- ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-26
 - ◐ [[Dangling Pointers and References]] · *pitfall* · updated 2026-09-26
 - ◐ [[The Compilation Pipeline]] · *mechanism* · updated 2026-09-26
 - ◐ [[Compilers and Essential Flags]] · *guide* · updated 2026-09-26
 - ● [[RAII]] · *idiom* · updated 2026-09-26
 - ◐ [[Error Handling Strategies Compared]] · *comparison* · updated 2026-09-26
 - ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-26
-- ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-26
 - ◐ [[Anatomy of an Expression]] · *concept* · updated 2026-09-26
 - ◐ [[Fundamental Types]] · *concept* · updated 2026-09-26
-- ◐ [[Map — Inheritance & Polymorphism]] · *map* · updated 2026-09-26
 <!-- cc:end -->
 
 ## Start here

@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 292 |
+| ○ planned | 291 |
 | ◌ stub | 0 |
-| ◐ draft | 55 |
+| ◐ draft | 56 |
 | ⟲ revise | 0 |
 | ● reviewed | 3 |
 | ★ evergreen | 0 |
@@ -18,19 +18,19 @@ tags: [system/generated]
 **Total topics:** 350
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `████████░░░░░░░░░░░░` 20/51
+- Wave 1: `████████░░░░░░░░░░░░` 21/51
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 12/123
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
 ## D00 · What C++ Is
 
-*What contract does C++ make between the programmer, the compiler and the machine?*  `█░░░░░░░░░` 1/9
+*What contract does C++ make between the programmer, the compiler and the machine?*  `██░░░░░░░░` 2/9
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — What C++ Is]] | map | 1 | 0 |  |
-| ○ | [[The C++ Design Philosophy]] | concept | 1 | 1 |  |
+| ◐ | [[The C++ Design Philosophy]] | concept | 1 | 1 |  |
 | ○ | [[Zero-Overhead Principle]] | concept | 1 | 1 |  |
 | ○ | [[Levels of Abstraction — From Bits to Libraries]] | concept | 1 | 1 |  |
 | ○ | [[The C++ Abstract Machine]] | concept | 1 | 1 |  |
