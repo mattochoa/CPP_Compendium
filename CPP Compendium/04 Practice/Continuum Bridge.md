@@ -14,7 +14,7 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 01 | Hello, Compiler | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Tooling & Engineering]], ○ [[The Compilation Pipeline]], ○ [[Compilers and Essential Flags]], ○ [[CMake Fundamentals]] |
+| 01 | Hello, Compiler | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Tooling & Engineering]], ◐ [[The Compilation Pipeline]], ○ [[Compilers and Essential Flags]], ○ [[CMake Fundamentals]] |
 | 02 | Unit & Temperature Converter Suite | ◐ [[Map — Types & Values]], ◐ [[Map — Expressions & Control]], ○ [[Fundamental Types]], ○ [[Control Flow — Selection and Iteration]], ○ [[switch and Fallthrough]] |
 | 03 | Number Guessing Game | ◐ [[Map — Expressions & Control]], ○ [[Control Flow — Selection and Iteration]], ○ [[Stream State and Robust Input]], ○ [[Random Number Generation]] |
 | 04 | Grade & GPA Calculator | ○ [[array]] |

@@ -32,7 +32,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | | Domain | The question it answers | Progress |
 |---|---|---|---|
 | `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `█░░░░░░░` 1/9 |
-| `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `░░░░░░░░` 1/18 |
+| `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `█░░░░░░░` 2/18 |
 | `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `█░░░░░░░` 2/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `█░░░░░░░` 1/12 |
 | `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `█░░░░░░░` 4/26 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 300 | 46 | 0 | 4 | 0 | 350 | 36 | 1 |
+| 299 | 47 | 0 | 4 | 0 | 350 | 37 | 1 |
 
-`███░░░░░░░░░░░░░░░░░` **14%** of the Atlas written · last build 2026-09-25
+`███░░░░░░░░░░░░░░░░░` **15%** of the Atlas written · last build 2026-09-25
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[The Compilation Pipeline]] · *mechanism* · `D01` — wave 1
-2. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
-3. [[Scope]] · *concept* · `D01` — wave 1
-4. [[Anatomy of a Function]] · *concept* · `D05` — wave 1
-5. [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · `D05` — wave 1
-6. [[Templates — Code That Writes Code]] · *concept* · `D09` — wave 1
+1. [[Anatomy of a Function]] · *concept* · `D05` — wave 1
+2. [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · `D05` — wave 1
+3. [[Templates — Code That Writes Code]] · *concept* · `D09` — wave 1
+4. [[Concurrency vs Parallelism]] · *comparison* · `D12` — wave 1
+5. [[Fundamental Types]] · *concept* · `D02` — wave 1
+6. [[const and Const-Correctness]] · *concept* · `D02` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[The Compilation Pipeline]] · *mechanism* · updated 2026-09-25
 - ◐ [[Pointers vs References]] · *comparison* · updated 2026-09-25
 - ◐ [[Classes as User-Defined Types]] · *concept* · updated 2026-09-25
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-25
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[STL Architecture — Containers, Iterators, Algorithms]] · *concept* · updated 2026-09-25
 - ◐ [[Iterator Categories and Concepts]] · *concept* · updated 2026-09-25
 - ◐ [[Iterators]] · *concept* · updated 2026-09-25
-- ◐ [[Map — Generic Programming]] · *map* · updated 2026-09-25
 <!-- cc:end -->
 
 ## Start here

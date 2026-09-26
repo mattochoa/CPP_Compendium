@@ -121,7 +121,7 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D01 -->
 **Tier 1 · Foundational**
-- ○ [[The Compilation Pipeline]] · *mechanism*
+- ◐ [[The Compilation Pipeline]] · *mechanism*
 - ○ [[Translation Units]] · *concept*
 - ○ [[The Preprocessor]] · *mechanism*
 - ○ [[Headers and Include Guards]] · *idiom*
@@ -143,7 +143,7 @@ flowchart LR
 - ○ [[Static Initialization Order Fiasco]] · *pitfall*
 - ○ [[Modules (C++20)]] · *concept*
 
-`█░░░░░░░░░` 1/18 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`█░░░░░░░░░` 2/18 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

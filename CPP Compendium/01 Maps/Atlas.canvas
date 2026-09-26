@@ -119,7 +119,8 @@
 			"y": 70,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[The Compilation Pipeline]]\n*mechanism · T1*"
+			"text": "◐ [[The Compilation Pipeline]]\n*mechanism · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-translation-units",

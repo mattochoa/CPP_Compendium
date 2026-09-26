@@ -1,6 +1,6 @@
 {
-  "runs": 37,
-  "builder_runs": 36,
+  "runs": 38,
+  "builder_runs": 37,
   "editor_runs": 1,
   "history": [
     {
@@ -478,10 +478,23 @@
       "code": "4/4",
       "commit": "✓",
       "summary": "deepen: visual (added box diagram of reference/pointer member layout to Under the Hood) + citation precision (Primer 508 not 508-509 for the deleted-copy-assignment claim)"
+    },
+    {
+      "when": "2026-09-26T02:25:08Z",
+      "run": 37,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "compilation-pipeline"
+      ],
+      "lint": "100–100",
+      "code": "4/4",
+      "commit": "✓",
+      "summary": "AUTHOR: The Compilation Pipeline — mechanism note for D01 (wave 1), first note in the domain after wave-0 maps and source guides completed; verified preprocess/compile/assemble/link with real g++/nm/ld output (32,262-line #include expansion, symbol table T/U trace, undefined-reference and multiple-definition errors)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-26T01:48:57Z"
+  "last_builder": "2026-09-26T02:25:08Z"
 }
