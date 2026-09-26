@@ -32,7 +32,7 @@ tags:
 - tension/value-vs-identity
 - tension/safety-vs-performance
 created: 2026-09-23
-updated: 2026-09-25
+updated: 2026-09-26
 ---
 
 # Pointers vs References
@@ -84,6 +84,22 @@ A reference member is also a promise the compiler cannot keep automatically. Cop
 A pointer is a full object. It has a value (an address, or null), it can be copied and assigned, it can be `const` itself (`T* const`) independently of its target (`const T*`) (see [[Top-Level vs Low-Level const]]), and it supports arithmetic *within an array*. These powers are exactly why pointers are riskier. Every pointer might be null, uninitialized, one past the end, or dangling, and the type system tracks none of this.
 
 Pointer arithmetic has one legal boundary: a pointer may address an array element or the single position one past the array's last element, and computing anything further than that is undefined behavior — "unlikely" for the compiler to catch, per the Primer (Primer §3.5, p. 120). Even the legal one-past-the-end pointer may only be compared, never dereferenced; that narrow contract is exactly what `end()` iterators rely on.
+
+> [!ub] Forming the pointer is already the violation
+> The Standard doesn't wait for a dereference. For a pointer `P` into an array of `n` elements at index `i`, `[expr.add]` ¶4.3 defines `P + J` only when `0 ≤ i+j ≤ n`; "otherwise, the behavior is undefined" (`[expr.add]` ¶4.3) the moment the addition is *evaluated*, whether or not the result is ever read.
+
+```cpp
+int main() {
+    int scores[3] = {10, 20, 30};
+    int* end  = scores + 3;    // ① i = n = 3: one past the end, legal
+    int* over = scores + 5;    // ② i = 5 > n: forming this pointer is already UB
+    (void)end;
+    (void)over;
+}
+// cc: ub
+```
+1. The one legal boundary: comparable (`cur != end`) but never dereferenceable.
+2. No dereference, no comparison, no output — just *computing* this address is undefined behavior. Compiled locally under `-fsanitize=undefined`, this program builds clean and exits `0`: the checker has nothing to instrument, because nothing here reads memory. That silence is the Primer's "unlikely for the compiler to catch", made concrete — and a bug class a reference cannot have, because a reference does no arithmetic on what it names.
 
 In modern C++, **raw pointers should not own** (`delete` belongs to [[unique_ptr]] and friends). A raw `T*` therefore means "an optional, re-aimable observer", which keeps both types' meanings sharp.
 
@@ -288,11 +304,14 @@ int main() {
 > [!quiz]- Is `p < q` for two `int*` pointing into unrelated arrays undefined behavior?
 > No — the Standard calls the result *unspecified* (`[expr.rel]` ¶5): no diagnostic is required, but nothing catastrophic is licensed either, unlike a true UB construct. `std::less<int*>` gives a consistent, implementation-defined total order over any pointers of that type, which is what ordered containers such as `std::set<int*>` actually rely on.
 
+> [!quiz]- `int a[3]; int* p = a + 5;` never dereferences `p`. Is the program already broken?
+> Yes. `[expr.add]` ¶4.3 makes *computing* a pointer outside `0 ≤ i ≤ n` undefined behavior, not merely using it — there is no dereference requirement. Built locally under `-fsanitize=undefined`, the program exits cleanly with no diagnostic, because nothing reads memory for the checker to instrument. A reference cannot produce this failure mode: it has no arithmetic to misuse in the first place.
+
 ## Sources
 
 - Primer §2.3.1 "References" (p. 50) and §2.3.2 "Pointers" (p. 52): binding rules and pointer states. Primer §3.5 "Arrays" (p. 120): the one-past-the-end arithmetic limit. Primer §13.1 "Copy, Assign, and Destroy" (p. 508): why a reference (or `const`) member deletes copy assignment. Primer §15.3 "Virtual Functions" (p. 605) and *Defined Terms* (p. 650): polymorphism defined by the dynamic type of a reference *or* pointer.
 - Tour §1.7 "Pointers, Arrays, and References" (p. 11): the designer's short comparison.
 - PPP §16.2 "Pointers and references" (ch. 16 "Arrays, Pointers, and References"): pointer vs reference from first principles.
 - cppreference, *Reference declaration* (incl. §*Reference collapsing*, §*Dangling references*): https://en.cppreference.com/w/cpp/language/reference · *Pointer declaration*: https://en.cppreference.com/w/cpp/language/pointer · *Copy assignment operator*: https://en.cppreference.com/w/cpp/language/copy_assignment · *`virtual` function specifier* §Explanation (dispatch through `Base&` and `Base*` alike): https://en.cppreference.com/w/cpp/language/virtual · *`std::less`* (implementation-defined strict total order over pointers): https://en.cppreference.com/w/cpp/utility/functional/less
-- Draft standard `[dcl.ref]` ¶4–7 (storage, no references to references, collapsing): https://eel.is/c++draft/dcl.ref · `[class.copy.assign]` ¶7.2 (deleted copy assignment): https://eel.is/c++draft/class.copy.assign · `[expr.rel]` ¶4–5 (same-array pointer ordering is defined; unrelated-object ordering is unspecified, not undefined): https://eel.is/c++draft/expr.rel
+- Draft standard `[dcl.ref]` ¶4–7 (storage, no references to references, collapsing): https://eel.is/c++draft/dcl.ref · `[class.copy.assign]` ¶7.2 (deleted copy assignment): https://eel.is/c++draft/class.copy.assign · `[expr.rel]` ¶4–5 (same-array pointer ordering is defined; unrelated-object ordering is unspecified, not undefined): https://eel.is/c++draft/expr.rel · `[expr.add]` ¶4.3 (pointer arithmetic outside the array bound is undefined the instant it's computed, dereferenced or not): https://eel.is/c++draft/expr.add
 - C++ Core Guidelines F.60, F.17, R.3: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines

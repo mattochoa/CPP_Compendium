@@ -58,7 +58,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 288 | 60 | 0 | 3 | 0 | 351 | 53 | 1 |
+| 288 | 60 | 0 | 3 | 0 | 351 | 54 | 1 |
 
 `████░░░░░░░░░░░░░░░░` **18%** of the Atlas written · last build 2026-09-26
 <!-- cc:end -->
@@ -75,6 +75,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Pointers vs References]] · *comparison* · updated 2026-09-26
 - ◐ [[Functions and Parameters — The Complete Picture]] · *concept* · updated 2026-09-26
 - ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-26
 - ◐ [[Ownership — Who Releases What]] · *concept* · updated 2026-09-26
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-26
 - ◐ [[Dangling Pointers and References]] · *pitfall* · updated 2026-09-26
 - ◐ [[The Compilation Pipeline]] · *mechanism* · updated 2026-09-26
-- ◐ [[Compilers and Essential Flags]] · *guide* · updated 2026-09-26
 <!-- cc:end -->
 
 ## Start here
