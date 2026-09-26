@@ -363,6 +363,7 @@
 - {id: hdr-cstdio, t: "Header — cstdio", ty: header, d: HDR, tier: 2, w: 2, pre: [iostreams], al: ["<cstdio>", "stdio.h", "printf", "FILE*"]}
 - {id: hdr-modern-io, t: "Header — Modern IO", ty: header, d: HDR, tier: 2, w: 3, pre: [format-and-print], al: ["<format>", "<print>", "<syncstream>", "<spanstream>", "<iosfwd>", "std::format", "std::print"]}
 - {id: hdr-string, t: "Header — string", ty: header, d: HDR, tier: 1, w: 1, pre: [std-string], al: ["<string>", "std::string header"]}
+- {id: hdr-string-view, t: "Header — string_view", ty: header, d: HDR, tier: 2, w: 2, pre: [string-view], al: ["<string_view>", "std::string_view"]}
 - {id: hdr-cstring, t: "Header — cstring", ty: header, d: HDR, tier: 2, w: 3, pre: [c-strings], al: ["<cstring>", "string.h", "strcpy", "memcpy"]}
 - {id: hdr-cctype, t: "Header — cctype", ty: header, d: HDR, tier: 1, w: 2, pre: [std-string], al: ["<cctype>", "ctype.h", "isalpha", "tolower"]}
 - {id: hdr-cmath, t: "Header — cmath", ty: header, d: HDR, tier: 1, w: 2, pre: [floating-point], al: ["<cmath>", "math.h", "<numbers>"]}

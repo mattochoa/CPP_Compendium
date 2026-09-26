@@ -134,6 +134,10 @@ The stream family is one architecture seen at three layers: [[Header — streamb
 | "When should I use a `list` instead of a `vector`?" | [[Header — list]] | choosing a tool · iterators that stay valid |
 | "Why won't `std::sort` compile on my `list`?" | [[Header — list]] | sort a list (member `sort`) |
 | "How do I build an LRU cache?" | [[Header — list]] | `splice` + `unordered_map` of iterators |
+| "Should my function take `const std::string&` or `std::string_view`?" | [[Header — string_view]] | one parameter type for every kind of string |
+| "Why does my `string_view` print garbage?" | [[Header — string_view]] | the dangling view |
+| "Can I pass `sv.data()` to `fopen` or `printf`?" | [[Header — string_view]] | `data()` is not a C string |
+| "How do I split or trim a string without copying?" | [[Header — string_view]] | split without allocating · trim |
 | "What's the difference between `fail` and `bad`?" | [[Header — ios]] | state flag decision table |
 | "How do I reset a `stringstream`?" | [[Header — sstream]] | the two-step reset |
 | "How do I make `cout` write to a socket?" | [[Header — streambuf]] | custom buffers |
@@ -196,6 +200,7 @@ C++26   strstream removed; println() with no arguments; runtime_format
 - ◐ [[Header — ios]] · *header*
 - ◐ [[Header — cstdio]] · *header*
 - ◐ [[Header — Modern IO]] · *header*
+- ◐ [[Header — string_view]] · *header*
 - ◐ [[Header — cstring]] · *header*
 - ◐ [[Header — conio (non-standard)]] · *header*
 - ○ [[Header — numeric]] · *header*
@@ -238,7 +243,7 @@ C++26   strstream removed; println() with no arguments; runtime_format
 **Tier 4 · Expert**
 - ○ [[Header — coroutine]] · *header*
 
-`███░░░░░░░` 20/59 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`████░░░░░░` 21/60 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

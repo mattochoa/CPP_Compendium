@@ -50,7 +50,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D16` | [[Map — Evolution of C++\|Evolution of C++]] | How did the language get here, and where is it going? | `█░░░░░░░` 1/10 |
 | `SRC` | Sources | What should be read, in what order, and for what? | `█████░░░` 3/5 |
 | `PRX` | Practice | How does knowledge become skill? | `██░░░░░░` 1/4 |
-| `HDR` | [[Map — Standard Headers\|Standard Headers]] | Where does each standard facility live, and what exactly does its header promise? | `███░░░░░` 20/59 |
+| `HDR` | [[Map — Standard Headers\|Standard Headers]] | Where does each standard facility live, and what exactly does its header promise? | `███░░░░░` 21/60 |
 <!-- cc:end -->
 
 ## Progress
@@ -58,9 +58,9 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 287 | 62 | 0 | 3 | 0 | 352 | 55 | 1 |
+| 287 | 63 | 0 | 3 | 0 | 353 | 55 | 1 |
 
-`████░░░░░░░░░░░░░░░░` **18%** of the Atlas written · last build 2026-09-26
+`████░░░░░░░░░░░░░░░░` **19%** of the Atlas written · last build 2026-09-26
 <!-- cc:end -->
 
 **Up next (Builder queue):**
@@ -75,6 +75,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Header — string_view]] · *header* · updated 2026-09-26
 - ◐ [[Header — list]] · *header* · updated 2026-09-26
 - ◐ [[Fundamental Types]] · *concept* · updated 2026-09-26
 - ◐ [[const and Const-Correctness]] · *concept* · updated 2026-09-26
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Ownership — Who Releases What]] · *concept* · updated 2026-09-26
 - ◐ [[Encapsulation and Class Invariants]] · *concept* · updated 2026-09-26
 - ◐ [[Translation Units]] · *concept* · updated 2026-09-26
-- ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-26
 <!-- cc:end -->
 
 ## Start here

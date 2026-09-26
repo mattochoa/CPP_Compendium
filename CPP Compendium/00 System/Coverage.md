@@ -10,16 +10,16 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 287 |
 | ◌ stub | 0 |
-| ◐ draft | 62 |
+| ◐ draft | 63 |
 | ⟲ revise | 0 |
 | ● reviewed | 3 |
 | ★ evergreen | 0 |
 
-**Total topics:** 352
+**Total topics:** 353
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `██████████░░░░░░░░░░` 26/52
-- Wave 2: `██░░░░░░░░░░░░░░░░░░` 13/124
+- Wave 2: `██░░░░░░░░░░░░░░░░░░` 14/125
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -451,7 +451,7 @@ tags: [system/generated]
 
 ## HDR · Standard Headers
 
-*Where does each standard facility live, and what exactly does its header promise?*  `███░░░░░░░` 20/59
+*Where does each standard facility live, and what exactly does its header promise?*  `████░░░░░░` 21/60
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -465,6 +465,7 @@ tags: [system/generated]
 | ◐ | [[Header — cstdio]] | header | 2 | 2 |  |
 | ◐ | [[Header — Modern IO]] | header | 2 | 3 |  |
 | ◐ | [[Header — string]] | header | 1 | 1 |  |
+| ◐ | [[Header — string_view]] | header | 2 | 2 |  |
 | ◐ | [[Header — cstring]] | header | 2 | 3 |  |
 | ◐ | [[Header — cctype]] | header | 1 | 2 |  |
 | ◐ | [[Header — cmath]] | header | 1 | 2 |  |
