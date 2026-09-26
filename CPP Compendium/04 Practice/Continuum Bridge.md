@@ -18,16 +18,16 @@ tags: [system/generated, practice]
 | 02 | Unit & Temperature Converter Suite | ◐ [[Map — Types & Values]], ◐ [[Map — Expressions & Control]], ○ [[Fundamental Types]], ○ [[Control Flow — Selection and Iteration]], ○ [[switch and Fallthrough]] |
 | 03 | Number Guessing Game | ◐ [[Map — Expressions & Control]], ○ [[Control Flow — Selection and Iteration]], ○ [[Stream State and Robust Input]], ○ [[Random Number Generation]] |
 | 04 | Grade & GPA Calculator | ○ [[array]] |
-| 05 | Console Calculator REPL | ◐ [[Map — Functions]], ○ [[Function Overloading]], ○ [[Stream State and Robust Input]], ○ [[String Streams]], ○ [[Exceptions]] |
+| 05 | Console Calculator REPL | ◐ [[Map — Functions]], ◐ [[Anatomy of a Function]], ○ [[Function Overloading]], ○ [[Stream State and Robust Input]], ○ [[String Streams]], ○ [[Exceptions]] |
 
 ## Tier 2: Core Programming
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 06 | Function Library & Header Refactor | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Functions]], ○ [[Headers and Include Guards]], ○ [[Declarations vs Definitions]], ○ [[References]], ◐ [[Pointers vs References]], ○ [[Parameter Passing — Value, Reference, Pointer]], ○ [[Function Overloading]], ○ [[assert and static_assert]] |
+| 06 | Function Library & Header Refactor | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Functions]], ○ [[Headers and Include Guards]], ○ [[Declarations vs Definitions]], ○ [[References]], ◐ [[Pointers vs References]], ◐ [[Anatomy of a Function]], ○ [[Parameter Passing — Value, Reference, Pointer]], ○ [[Function Overloading]], ○ [[assert and static_assert]] |
 | 07 | Word & Text Analyzer | ◐ [[Map — Standard Library]], ○ [[vector]], ○ [[string]], ○ [[Ordered Associative Containers — map and set]], ○ [[IO Streams Architecture]], ○ [[File IO]] |
 | 08 | Matrix Operations Toolkit | ○ [[Preconditions, Postconditions and Contracts]] |
-| 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ◐ [[Map — Functions]], ○ [[The Call Stack and Stack Frames]], ○ [[Recursion]] |
+| 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ◐ [[Map — Functions]], ◐ [[Anatomy of a Function]], ○ [[The Call Stack and Stack Frames]], ○ [[Recursion]] |
 | 10 | Caesar & Vigenere Cipher Toolkit | ◐ [[Map — Types & Values]], ○ [[Bitwise Operations and the bit Header]], ○ [[File IO]] |
 
 ## Tier 3: Memory & Data Structures

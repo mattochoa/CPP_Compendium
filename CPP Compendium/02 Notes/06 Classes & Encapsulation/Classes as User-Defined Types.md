@@ -82,7 +82,7 @@ Nothing here is a new kind of thing. It is the same triple, filled in by a class
 |---|---|---|
 | Declaring the type | `class Name { members };` or `struct Name { members };` introduces `Name` as a type; the two keywords differ only in default member access, not in kind (full comparison in [[struct vs class]]) | `class Account { ... };` |
 | Data members | Fix the representation leg: `sizeof(T)` is at least the sum of the non-static data members' sizes, plus any alignment padding between them | `long number_; double balance_;` → `sizeof(Account) == 16` |
-| Member functions | Fix the operations leg: only a declared member (or `friend`) may follow `.` on an object of the type; anything else is rejected, whatever the hardware could physically do | `a.deposit(50.0);` compiles; `a.frobnicate();` does not, if undeclared |
+| Member functions | Fix the operations leg: only a declared member (or `friend`) may follow `.` on an object of the type; anything else is rejected, whatever the hardware could physically do. "Declared" here means what it means for any function — a name plus a fixed type ([[Anatomy of a Function]]) | `a.deposit(50.0);` compiles; `a.frobnicate();` does not, if undeclared |
 | No user-declared constructor, no private data, no virtual functions | The class is an **aggregate**: it declares no operations beyond what the compiler always supplies, and can be initialized member by member with `{}` | `struct Point { double x, y; }; Point p{1.0, 2.0};` — full rule in [[Aggregates and Designated Initializers]] |
 | Using the finished type | `Name` is now usable everywhere a type name is: as a variable, a parameter or return type, an array element type, a template argument | `std::vector<Account> ledger;` |
 
