@@ -39,7 +39,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `█░░░░░░░` 3/17 |
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `█░░░░░░░` 3/19 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `█░░░░░░░` 3/19 |
-| `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `█░░░░░░░` 2/15 |
+| `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `██░░░░░░` 3/15 |
 | `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `█░░░░░░░` 2/16 |
 | `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `█░░░░░░░` 4/30 |
 | `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `█░░░░░░░` 2/11 |
@@ -58,33 +58,33 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 287 | 63 | 0 | 3 | 0 | 353 | 55 | 1 |
+| 286 | 64 | 0 | 3 | 0 | 353 | 56 | 1 |
 
 `████░░░░░░░░░░░░░░░░` **19%** of the Atlas written · last build 2026-09-26
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Inheritance]] · *concept* · `D08` — wave 1
-2. [[Virtual Functions]] · *concept* · `D08` — wave 1
-3. [[vector]] · *concept* · `D10` — wave 1
-4. [[string]] · *concept* · `D10` — wave 1
-5. [[Process Memory Layout — Stack, Heap, Static]] · *mechanism* · `D04` — wave 1
-6. [[References]] · *concept* · `D04` — wave 1
+1. [[vector]] · *concept* · `D10` — wave 1
+2. [[string]] · *concept* · `D10` — wave 1
+3. [[Process Memory Layout — Stack, Heap, Static]] · *mechanism* · `D04` — wave 1
+4. [[References]] · *concept* · `D04` — wave 1
+5. [[Pointers]] · *concept* · `D04` — wave 1
+6. [[Constructors]] · *concept* · `D06` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — Inheritance & Polymorphism]] · *map* · updated 2026-09-26
+- ◐ [[Classes as User-Defined Types]] · *concept* · updated 2026-09-26
+- ◐ [[Encapsulation and Class Invariants]] · *concept* · updated 2026-09-26
+- ◐ [[Inheritance]] · *concept* · updated 2026-09-26
 - ◐ [[Header — string_view]] · *header* · updated 2026-09-26
 - ◐ [[Header — list]] · *header* · updated 2026-09-26
 - ◐ [[Fundamental Types]] · *concept* · updated 2026-09-26
 - ◐ [[const and Const-Correctness]] · *concept* · updated 2026-09-26
 - ◐ [[Pointers vs References]] · *comparison* · updated 2026-09-26
 - ◐ [[Functions and Parameters — The Complete Picture]] · *concept* · updated 2026-09-26
-- ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-26
-- ◐ [[Ownership — Who Releases What]] · *concept* · updated 2026-09-26
-- ◐ [[Encapsulation and Class Invariants]] · *concept* · updated 2026-09-26
-- ◐ [[Translation Units]] · *concept* · updated 2026-09-26
 <!-- cc:end -->
 
 ## Start here

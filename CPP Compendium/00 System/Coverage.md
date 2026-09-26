@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 287 |
+| ○ planned | 286 |
 | ◌ stub | 0 |
-| ◐ draft | 63 |
+| ◐ draft | 64 |
 | ⟲ revise | 0 |
 | ● reviewed | 3 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 353
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `██████████░░░░░░░░░░` 26/52
+- Wave 1: `██████████░░░░░░░░░░` 27/52
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 14/125
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -226,12 +226,12 @@ tags: [system/generated]
 
 ## D08 · Inheritance & Polymorphism
 
-*How can one piece of code work with many types chosen at run time?*  `█░░░░░░░░░` 2/15
+*How can one piece of code work with many types chosen at run time?*  `██░░░░░░░░` 3/15
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Inheritance & Polymorphism]] | map | 1 | 0 |  |
-| ○ | [[Inheritance]] | concept | 1 | 1 |  |
+| ◐ | [[Inheritance]] | concept | 1 | 1 |  |
 | ○ | [[Virtual Functions]] | concept | 1 | 1 |  |
 | ◐ | [[Virtual Dispatch — vptr and vtable]] | mechanism | 2 | 1 | 20 |
 | ○ | [[Abstract Classes and Interfaces]] | concept | 1 | 2 |  |

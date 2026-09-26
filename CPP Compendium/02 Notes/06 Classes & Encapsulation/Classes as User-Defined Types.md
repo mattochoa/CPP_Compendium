@@ -22,7 +22,7 @@ tags:
 - tier/1
 - tension/abstraction-vs-control
 created: 2026-09-25
-updated: 2026-09-25
+updated: 2026-09-26
 ---
 
 # Classes as User-Defined Types
@@ -237,7 +237,7 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 ## Connections
 
 - **Prerequisites:** [[What a Type Is]] — the values × operations × representation triple this note shows a class supplying.
-- **Enables:** [[Encapsulation and Class Invariants]] (restricting *which* values are reachable, not just which shape) · [[Constructors]] · [[The this Pointer and Member Function Calls]] (names the hidden argument *Under the Hood* proved is real) · [[Static Members]] · [[Operator Overloading]].
+- **Enables:** [[Encapsulation and Class Invariants]] (restricting *which* values are reachable, not just which shape) · [[Constructors]] · [[The this Pointer and Member Function Calls]] (names the hidden argument *Under the Hood* proved is real) · [[Static Members]] · [[Operator Overloading]] · [[Inheritance]] (a second class reuses and extends this one's interface instead of declaring its own from scratch).
 - **Siblings:** [[struct vs class]] (the one mechanical difference between the two keywords) · [[Aggregates and Designated Initializers]] (the class that declares no operations at all).
 - **Domain:** [[Map — Classes & Encapsulation]].
 - **Practice:** *Continuum #17 Bank Account Simulator* — build `Account` past this note's version: it should refuse the invalid states Pitfalls calls out, which means adding the invariant this note deliberately leaves open.

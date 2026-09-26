@@ -1,6 +1,6 @@
 {
-  "runs": 56,
-  "builder_runs": 55,
+  "runs": 57,
+  "builder_runs": 56,
   "editor_runs": 1,
   "history": [
     {
@@ -708,10 +708,25 @@
       "code": "5/5 5/5",
       "commit": "✓",
       "summary": "const and Const-Correctness: top-level/low-level split, const member functions & this, mutable/logical constness, zero-cost verified via asm; back-linked from Fundamental Types"
+    },
+    {
+      "when": "2026-09-26T22:27:19Z",
+      "run": 56,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "inheritance",
+        "classes-as-types",
+        "encapsulation-and-invariants"
+      ],
+      "lint": "100–100",
+      "code": "4/4 4/4 4/4",
+      "commit": "✓",
+      "summary": "AUTHOR: Inheritance (D08 concept) — derivation list, base subobjects, construction/destruction order, is-a via public derivation, non-virtual name hiding as a teaser for Virtual Functions next; woven into Classes as User-Defined Types and Encapsulation and Class Invariants"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-26T21:24:55Z"
+  "last_builder": "2026-09-26T22:27:19Z"
 }
