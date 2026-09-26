@@ -1,6 +1,6 @@
 {
-  "runs": 51,
-  "builder_runs": 50,
+  "runs": 52,
+  "builder_runs": 51,
   "editor_runs": 1,
   "history": [
     {
@@ -642,10 +642,23 @@
       "code": "5/5",
       "commit": "✓",
       "summary": "Wrote The C++ Design Philosophy (concept, D00): first written note in wave 1, root of the Atlas. Derives the two pillars (direct hardware mapping; zero-overhead abstraction) and the trust-the-programmer/opt-in-safety price from first principles; verified with real GCC asm (identical codegen for direct vs wrapped field access) and 5 compiled/UB-checked code blocks; sourced from PPP §0.2, Tour §1.9 (p.16), cppreference History of C++, and C++ Core Guidelines In.aims/P.1/P.4/P.5."
+    },
+    {
+      "when": "2026-09-26T16:27:20Z",
+      "run": 51,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "translation-units"
+      ],
+      "lint": "100–100",
+      "code": "3/3",
+      "commit": "✓",
+      "summary": "AUTHOR: Translation Units — precise TU/ODR boundary, real 2-TU inline+internal-linkage ODR-violation demo (GCC 11)"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-26T15:24:19Z"
+  "last_builder": "2026-09-26T16:27:20Z"
 }

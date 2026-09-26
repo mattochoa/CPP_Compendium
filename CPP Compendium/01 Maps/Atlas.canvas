@@ -130,7 +130,8 @@
 			"y": 142,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Translation Units]]\n*concept · T1*"
+			"text": "◐ [[Translation Units]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-preprocessor",
