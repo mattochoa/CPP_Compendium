@@ -45,7 +45,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `█░░░░░░░` 2/11 |
 | `D12` | [[Map — Concurrency\|Concurrency]] | How do multiple threads of execution share memory without corrupting it? | `█░░░░░░░` 2/17 |
 | `D13` | [[Map — Performance & the Machine\|Performance & the Machine]] | What does the hardware actually do with our code, and how do we make it fast? | `█░░░░░░░` 1/15 |
-| `D14` | [[Map — Tooling & Engineering\|Tooling & Engineering]] | Which tools turn correct-looking code into verified, maintainable software? | `█░░░░░░░` 1/11 |
+| `D14` | [[Map — Tooling & Engineering\|Tooling & Engineering]] | Which tools turn correct-looking code into verified, maintainable software? | `█░░░░░░░` 2/11 |
 | `D15` | [[Map — Design & Idioms\|Design & Idioms]] | Which recurring shapes of solution survive contact with real programs? | `█░░░░░░░` 1/14 |
 | `D16` | [[Map — Evolution of C++\|Evolution of C++]] | How did the language get here, and where is it going? | `█░░░░░░░` 1/10 |
 | `SRC` | Sources | What should be read, in what order, and for what? | `█████░░░` 3/5 |
@@ -58,23 +58,26 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 293 | 54 | 0 | 3 | 0 | 350 | 47 | 1 |
+| 292 | 55 | 0 | 3 | 0 | 350 | 49 | 1 |
 
-`███░░░░░░░░░░░░░░░░░` **16%** of the Atlas written · last build 2026-09-26
+`███░░░░░░░░░░░░░░░░░` **17%** of the Atlas written · last build 2026-09-26
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Compilers and Essential Flags]] · *guide* · `D14` — wave 1
-2. [[The C++ Design Philosophy]] · *concept* · `D00` — wave 1
-3. [[The C++ Abstract Machine]] · *concept* · `D00` — wave 1
-4. [[Translation Units]] · *concept* · `D01` — wave 1
-5. [[The Preprocessor]] · *mechanism* · `D01` — wave 1
-6. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
+1. [[The C++ Design Philosophy]] · *concept* · `D00` — wave 1
+2. [[The C++ Abstract Machine]] · *concept* · `D00` — wave 1
+3. [[Translation Units]] · *concept* · `D01` — wave 1
+4. [[The Preprocessor]] · *mechanism* · `D01` — wave 1
+5. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
+6. [[Scope]] · *concept* · `D01` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Dangling Pointers and References]] · *pitfall* · updated 2026-09-26
+- ◐ [[The Compilation Pipeline]] · *mechanism* · updated 2026-09-26
+- ◐ [[Compilers and Essential Flags]] · *guide* · updated 2026-09-26
 - ● [[RAII]] · *idiom* · updated 2026-09-26
 - ◐ [[Error Handling Strategies Compared]] · *comparison* · updated 2026-09-26
 - ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-26
@@ -82,9 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Anatomy of an Expression]] · *concept* · updated 2026-09-26
 - ◐ [[Fundamental Types]] · *concept* · updated 2026-09-26
 - ◐ [[Map — Inheritance & Polymorphism]] · *map* · updated 2026-09-26
-- ◐ [[Templates — Code That Writes Code]] · *concept* · updated 2026-09-26
-- ◐ [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-26
-- ◐ [[Map — Performance & the Machine]] · *map* · updated 2026-09-26
 <!-- cc:end -->
 
 ## Start here

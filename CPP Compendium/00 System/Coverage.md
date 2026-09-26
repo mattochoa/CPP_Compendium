@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 293 |
+| ○ planned | 292 |
 | ◌ stub | 0 |
-| ◐ draft | 54 |
+| ◐ draft | 55 |
 | ⟲ revise | 0 |
 | ● reviewed | 3 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 350
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `███████░░░░░░░░░░░░░` 19/51
+- Wave 1: `████████░░░░░░░░░░░░` 20/51
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 12/123
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -371,12 +371,12 @@ tags: [system/generated]
 
 ## D14 · Tooling & Engineering
 
-*Which tools turn correct-looking code into verified, maintainable software?*  `█░░░░░░░░░` 1/11
+*Which tools turn correct-looking code into verified, maintainable software?*  `██░░░░░░░░` 2/11
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Tooling & Engineering]] | map | 1 | 0 |  |
-| ○ | [[Compilers and Essential Flags]] | guide | 1 | 1 |  |
+| ◐ | [[Compilers and Essential Flags]] | guide | 1 | 1 |  |
 | ○ | [[Warnings as Guardrails]] | idiom | 1 | 2 |  |
 | ○ | [[CMake Fundamentals]] | guide | 1 | 2 |  |
 | ○ | [[Debugging with a Debugger]] | guide | 1 | 2 |  |

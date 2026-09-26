@@ -31,7 +31,7 @@ tags:
 - tier/1
 - tension/safety-vs-performance
 created: 2026-09-23
-updated: 2026-09-24
+updated: 2026-09-26
 reviewed: 2026-09-23
 score: 19
 rubric:
@@ -223,6 +223,7 @@ int main() {
 - **Special cases with their own files:** [[Iterator Invalidation]] · [[Temporaries and Lifetime Extension]] · [[The Moved-From State]] · [[Double Free and Mismatched new-delete]].
 - **Structural cures:** [[RAII]] (who releases) · [[Owning vs Observing Pointers]] (who merely looks) · [[weak_ptr and Reference Cycles]] (an observer that can check).
 - **Siblings:** [[Pointers vs References]] (both can dangle) · [[string_view]] · [[span]].
+- **Tooling:** [[Compilers and Essential Flags]] (what `-Wall`, `-Wextra` and `-fsanitize=address` actually turn on).
 - **Domain:** [[Map — Objects, Memory & Lifetime]].
 - **Practice:** *Continuum #11 Pointer & Array Internals Lab* (reproduce all three bugs under ASan) · *#13 Linked List Library* · *#25 Smart Pointer Refactor Lab*.
 

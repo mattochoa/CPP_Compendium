@@ -25,7 +25,7 @@ tags:
 - tier/1
 - tension/compatibility-vs-evolution
 created: 2026-09-26
-updated: 2026-09-25
+updated: 2026-09-26
 ---
 
 # The Compilation Pipeline
@@ -193,6 +193,7 @@ int main() {}
 
 - **Prerequisites:** none — this is the domain's entry point.
 - **Enables:** [[Translation Units]] (names the artifact phase 4 produces) · [[Declarations vs Definitions]] · [[The Preprocessor]] · [[What the Linker Does]] · [[main, Program Startup and Termination]] · [[Modules (C++20)]].
+- **Siblings:** [[Compilers and Essential Flags]] (this note shows the compiler's stages; that one shows which flags to pass at each of them).
 - **Domain:** [[Map — Program Structure & Build]].
 - **Practice:** *Continuum #1 Hello, Compiler* — run `g++ -E`, `-S`, `-c` and a plain link separately on the same file and read each intermediate artifact before letting the driver hide them.
 

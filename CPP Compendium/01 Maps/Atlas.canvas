@@ -2430,7 +2430,8 @@
 			"y": 3754,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Compilers and Essential Flags]]\n*guide · T1*"
+			"text": "◐ [[Compilers and Essential Flags]]\n*guide · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-warnings-as-guardrails",

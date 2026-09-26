@@ -1,6 +1,6 @@
 {
-  "runs": 48,
-  "builder_runs": 47,
+  "runs": 50,
+  "builder_runs": 49,
   "editor_runs": 1,
   "history": [
     {
@@ -614,10 +614,25 @@
       "code": "3/4 3/3",
       "commit": "✓",
       "summary": "AUTHOR: Error Handling Strategies Compared — decision framework for exceptions vs error codes vs assertions vs terminate, with the noexcept-terminate clause verified against [except.terminate]. Woven into RAII's Connections and the D11 map (already linked pre-write)."
+    },
+    {
+      "when": "2026-09-26T14:48:42Z",
+      "run": 49,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "compilers-and-flags",
+        "compilation-pipeline",
+        "dangling-pointers-and-references"
+      ],
+      "lint": "100–100",
+      "code": "1/1 4/4 4/4",
+      "commit": "✓",
+      "summary": "AUTHOR: Compilers and Essential Flags (guide, D14) — first wave-1 note after all 16 Domain Maps and the three Source Guides; woven into The Compilation Pipeline and Dangling Pointers and References."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-26T12:27:40Z"
+  "last_builder": "2026-09-26T14:48:42Z"
 }
