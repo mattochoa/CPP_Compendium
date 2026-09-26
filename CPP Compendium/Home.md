@@ -33,7 +33,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 |---|---|---|---|
 | `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `██░░░░░░` 2/9 |
 | `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `█░░░░░░░` 3/18 |
-| `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `█░░░░░░░` 3/25 |
+| `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `█░░░░░░░` 4/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `█░░░░░░░` 2/12 |
 | `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `█░░░░░░░` 4/26 |
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `█░░░░░░░` 3/17 |
@@ -58,23 +58,25 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 288 | 60 | 0 | 3 | 0 | 351 | 54 | 1 |
+| 287 | 61 | 0 | 3 | 0 | 351 | 55 | 1 |
 
 `████░░░░░░░░░░░░░░░░` **18%** of the Atlas written · last build 2026-09-26
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[const and Const-Correctness]] · *concept* · `D02` — wave 1
-2. [[Inheritance]] · *concept* · `D08` — wave 1
-3. [[Virtual Functions]] · *concept* · `D08` — wave 1
-4. [[vector]] · *concept* · `D10` — wave 1
-5. [[string]] · *concept* · `D10` — wave 1
-6. [[Process Memory Layout — Stack, Heap, Static]] · *mechanism* · `D04` — wave 1
+1. [[Inheritance]] · *concept* · `D08` — wave 1
+2. [[Virtual Functions]] · *concept* · `D08` — wave 1
+3. [[vector]] · *concept* · `D10` — wave 1
+4. [[string]] · *concept* · `D10` — wave 1
+5. [[Process Memory Layout — Stack, Heap, Static]] · *mechanism* · `D04` — wave 1
+6. [[References]] · *concept* · `D04` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Fundamental Types]] · *concept* · updated 2026-09-26
+- ◐ [[const and Const-Correctness]] · *concept* · updated 2026-09-26
 - ◐ [[Pointers vs References]] · *comparison* · updated 2026-09-26
 - ◐ [[Functions and Parameters — The Complete Picture]] · *concept* · updated 2026-09-26
 - ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-26
@@ -83,8 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Translation Units]] · *concept* · updated 2026-09-26
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-26
 - ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-26
-- ◐ [[Dangling Pointers and References]] · *pitfall* · updated 2026-09-26
-- ◐ [[The Compilation Pipeline]] · *mechanism* · updated 2026-09-26
 <!-- cc:end -->
 
 ## Start here

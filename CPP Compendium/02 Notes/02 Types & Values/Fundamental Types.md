@@ -229,7 +229,7 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 ## Connections
 
 - **Prerequisites:** [[What a Type Is]] — the values/operations/representation triple this note fills in with the language's own built-in vocabulary.
-- **Enables:** [[Integer Representation and Two's Complement]] (the real-machine picture behind every integer type here) · [[Implicit Conversions and Promotions]] (how the compiler moves values between this zoo's members) · [[Floating-Point Representation (IEEE 754)]] (the real-machine picture behind `float`/`double`) · [[sizeof, alignof and Alignment]] (what each type costs in bytes and placement).
+- **Enables:** [[Integer Representation and Two's Complement]] (the real-machine picture behind every integer type here) · [[Implicit Conversions and Promotions]] (how the compiler moves values between this zoo's members) · [[Floating-Point Representation (IEEE 754)]] (the real-machine picture behind `float`/`double`) · [[sizeof, alignof and Alignment]] (what each type costs in bytes and placement) · [[const and Const-Correctness]] (qualifying any of these types with a compile-time, zero-cost read-only promise).
 - **Siblings:** [[Classes as User-Defined Types]] — a user-defined type builds the identical triple by declaration; a fundamental type gets it from the language definition instead. Same shape, different author.
 - **Hazards:** [[Signed Integer Overflow]] · [[Mixing Signed and Unsigned]] · [[Characters, Encodings and the char Types]].
 - **Domain:** [[Map — Types & Values]].

@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 288 |
+| ○ planned | 287 |
 | ◌ stub | 0 |
-| ◐ draft | 60 |
+| ◐ draft | 61 |
 | ⟲ revise | 0 |
 | ● reviewed | 3 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 351
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `██████████░░░░░░░░░░` 25/52
+- Wave 1: `██████████░░░░░░░░░░` 26/52
 - Wave 2: `██░░░░░░░░░░░░░░░░░░` 12/123
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -66,14 +66,14 @@ tags: [system/generated]
 
 ## D02 · Types & Values
 
-*How are meaning and operations attached to raw bits?*  `█░░░░░░░░░` 3/25
+*How are meaning and operations attached to raw bits?*  `██░░░░░░░░` 4/25
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Types & Values]] | map | 1 | 0 |  |
 | ◐ | [[What a Type Is]] | concept | 1 | 1 |  |
 | ◐ | [[Fundamental Types]] | concept | 1 | 1 |  |
-| ○ | [[const and Const-Correctness]] | concept | 1 | 1 |  |
+| ◐ | [[const and Const-Correctness]] | concept | 1 | 1 |  |
 | ○ | [[Integer Representation and Two's Complement]] | mechanism | 1 | 2 |  |
 | ○ | [[Implicit Conversions and Promotions]] | mechanism | 1 | 2 |  |
 | ○ | [[Narrowing Conversions and Brace Initialization]] | concept | 1 | 2 |  |

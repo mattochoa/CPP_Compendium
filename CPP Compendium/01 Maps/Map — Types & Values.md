@@ -120,7 +120,7 @@ flowchart LR
 **Tier 1 · Foundational**
 - ◐ [[What a Type Is]] · *concept*
 - ◐ [[Fundamental Types]] · *concept*
-- ○ [[const and Const-Correctness]] · *concept*
+- ◐ [[const and Const-Correctness]] · *concept*
 - ○ [[Integer Representation and Two's Complement]] · *mechanism*
 - ○ [[Implicit Conversions and Promotions]] · *mechanism*
 - ○ [[Narrowing Conversions and Brace Initialization]] · *concept*
@@ -147,7 +147,7 @@ flowchart LR
 - ○ [[Strong Types]] · *idiom*
 - ○ [[volatile — What It Does Not Mean]] · *pitfall*
 
-`█░░░░░░░░░` 3/25 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 4/25 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
