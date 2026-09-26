@@ -531,7 +531,8 @@
 			"y": 70,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Anatomy of an Expression]]\n*concept · T1*"
+			"text": "◐ [[Anatomy of an Expression]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-operator-precedence",
