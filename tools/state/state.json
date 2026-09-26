@@ -1,6 +1,6 @@
 {
-  "runs": 43,
-  "builder_runs": 42,
+  "runs": 44,
+  "builder_runs": 43,
   "editor_runs": 1,
   "history": [
     {
@@ -548,10 +548,23 @@
       "code": "3/3 4/4 0/0",
       "commit": "✓",
       "summary": "deepen: virtual-dispatch integration (rubric dim: integration, was 2/3) — the compile-time-alternative mention pointed only at Map — Generic Programming as a placeholder for the not-yet-written Templates note; now that Templates — Code That Writes Code exists (authored run 39), wove it in both directions: virtual-dispatch's tension callout, Alternatives and related: now link the note directly; Templates' tension callout, Siblings and related: link back to Virtual Dispatch; fixed the same stale placeholder link in Map — Inheritance & Polymorphism. No structural or code changes; all three re-checked clean (100/100, 3/3 + 4/4 code PASS)."
+    },
+    {
+      "when": "2026-09-26T08:28:45Z",
+      "run": 43,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "fundamental-types"
+      ],
+      "lint": "100–100",
+      "code": "5/5",
+      "commit": "✓",
+      "summary": "AUTHOR: Fundamental Types (concept, D02, wave 1) — the built-in values/operations/representation vocabulary (bool, char family, integer family, float family, void); minimum-width guarantees vs. actual sizes, char/bool arithmetic pitfalls, C++98/11/20/23 evolution"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-26T07:20:55Z"
+  "last_builder": "2026-09-26T08:28:45Z"
 }
