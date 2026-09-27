@@ -1,6 +1,6 @@
 {
-  "runs": 71,
-  "builder_runs": 69,
+  "runs": 73,
+  "builder_runs": 71,
   "editor_runs": 2,
   "history": [
     {
@@ -903,10 +903,23 @@
       "code": "4/4",
       "commit": "✓",
       "summary": "Author Storage Duration (concept, D04): the four-way abstract-machine vocabulary (static/thread/automatic/dynamic), the linkage-vs-duration distinction verified with nm, and TLS access cost verified with -fPIC vs non-PIC asm. Second note in the pinned object-to-RAII spine (Editor directive #1)."
+    },
+    {
+      "when": "2026-09-27T17:23:21Z",
+      "run": 71,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "object-lifetime"
+      ],
+      "lint": "100–100",
+      "code": "3/3",
+      "commit": "✓",
+      "summary": "AUTHOR: Object Lifetime (concept, D04) — pinned chain step 4/8 (Abstract Machine -> Object Model -> Storage Duration -> Object Lifetime). Derives lifetime as a second clock nested inside storage duration; Mechanics table covers non-class/class/reference/reused-storage/under-construction cases with basic.life + class.cdtor citations. Under the Hood shows GCC's real vptr-rewrite-per-destructor-level (observed asm, -O0) as the concrete mechanism behind class.cdtor's own-class-view rule. 3 verified examples: (1) virtual call from ~Base() resolves to Base, matching asm evidence; (2) well-defined placement-new reuse + transparently-replaceable pointer rule; (3) cc:ub demo of skipping a non-trivial destructor before reuse, observed SIGSEGV under ASan. Back-links 3 reviewed notes that already pointed at this title as a frontier link (Dangling Pointers and References, Value Categories, plus forward frontier links to Virtual Functions/Constructors, next in the pinned chain)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-27T15:24:07Z"
+  "last_builder": "2026-09-27T17:23:21Z"
 }

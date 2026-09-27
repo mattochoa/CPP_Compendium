@@ -131,7 +131,7 @@ flowchart LR
 - ◐ [[The C++ Object Model — What an Object Is]] · *concept*
 - ● [[Process Memory Layout — Stack, Heap, Static]] · *mechanism*
 - ◐ [[Storage Duration]] · *concept*
-- ○ [[Object Lifetime]] · *concept*
+- ◐ [[Object Lifetime]] · *concept*
 - ○ [[References]] · *concept*
 - ○ [[Pointers]] · *concept*
 - ○ [[Dynamic Memory — new and delete]] · *mechanism*
@@ -160,7 +160,7 @@ flowchart LR
 **Tier 4 · Expert**
 - ○ [[Allocators and pmr Memory Resources]] · *concept*
 
-`███░░░░░░░` 7/26 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███░░░░░░░` 8/26 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

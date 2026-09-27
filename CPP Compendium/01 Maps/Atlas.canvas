@@ -687,7 +687,8 @@
 			"y": 1442,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Object Lifetime]]\n*concept · T1*"
+			"text": "◐ [[Object Lifetime]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-references",
