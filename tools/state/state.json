@@ -1,6 +1,6 @@
 {
-  "runs": 62,
-  "builder_runs": 61,
+  "runs": 63,
+  "builder_runs": 62,
   "editor_runs": 1,
   "history": [
     {
@@ -776,10 +776,23 @@
       "code": "3/3 4/4",
       "commit": "✓",
       "summary": "AUTHOR: Process Memory Layout — Stack, Heap, Static (mechanism, D04). Derives static/stack/heap from the four storage durations vs the abstract machine's silence on implementation; box + sequence diagrams; 3 verified code examples (static local, automatic-vs-dynamic contrast, recursion showing LIFO frames); woven into Map D04 (already linked) and Dangling Pointers and References (added backlink + connection)."
+    },
+    {
+      "when": "2026-09-27T07:26:18Z",
+      "run": 62,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "preprocessor"
+      ],
+      "lint": "100–100",
+      "code": "3/3",
+      "commit": "✓",
+      "summary": "AUTHOR: The Preprocessor (mechanism, D01) — macro substitution/argument-eval semantics, #/## operators, __VA_ARGS__/__VA_OPT__, rescanning-recursion guard; verified against draft standard [cpp.replace] and g++ -E output"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-27T06:15:22Z"
+  "last_builder": "2026-09-27T07:26:18Z"
 }

@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 283 |
+| ○ planned | 282 |
 | ◌ stub | 0 |
-| ◐ draft | 68 |
+| ◐ draft | 69 |
 | ⟲ revise | 0 |
 | ● reviewed | 3 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 354
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `███████████░░░░░░░░░` 29/52
+- Wave 1: `████████████░░░░░░░░` 30/52
 - Wave 2: `███░░░░░░░░░░░░░░░░░` 16/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -41,14 +41,14 @@ tags: [system/generated]
 
 ## D01 · Program Structure & Build
 
-*How does text in many files become one running program?*  `██░░░░░░░░` 3/18
+*How does text in many files become one running program?*  `██░░░░░░░░` 4/18
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Program Structure & Build]] | map | 1 | 0 |  |
 | ◐ | [[The Compilation Pipeline]] | mechanism | 1 | 1 |  |
 | ◐ | [[Translation Units]] | concept | 1 | 1 |  |
-| ○ | [[The Preprocessor]] | mechanism | 1 | 1 |  |
+| ◐ | [[The Preprocessor]] | mechanism | 1 | 1 |  |
 | ○ | [[Headers and Include Guards]] | idiom | 1 | 1 |  |
 | ○ | [[Declarations vs Definitions]] | comparison | 1 | 1 |  |
 | ○ | [[Scope]] | concept | 1 | 1 |  |
