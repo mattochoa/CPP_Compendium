@@ -1784,7 +1784,8 @@
 			"y": 2670,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[string]]\n*concept · T1*"
+			"text": "◐ [[string]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-std-array",

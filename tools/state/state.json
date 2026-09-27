@@ -1,6 +1,6 @@
 {
-  "runs": 64,
-  "builder_runs": 63,
+  "runs": 66,
+  "builder_runs": 65,
   "editor_runs": 1,
   "history": [
     {
@@ -802,10 +802,24 @@
       "code": "4/4",
       "commit": "✓",
       "summary": "Author Precedence and Associativity (D03, concept): derives the precedence/associativity hierarchy from [expr.compound]'s clause ordering and left/right-recursive grammar shapes rather than a stated table; covers the bitwise-vs-equality historical mistake (Ritchie), overload-preserves-precedence, and unary/postfix associativity via *p++ vs (*p)++. 4/4 code blocks PASS."
+    },
+    {
+      "when": "2026-09-27T10:25:17Z",
+      "run": 65,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "std-string",
+        "std-vector"
+      ],
+      "lint": "100–100",
+      "code": "5/5 3/3",
+      "commit": "✓",
+      "summary": "AUTHOR: string (concept, D10) — the vector handle-and-buffer model specialized to text, with the mandatory contiguity/null-terminator guarantee and SSO; verified sanitizer-silent-vs-fired UB pair for the same off-by-one on short vs heap-allocated strings. Back-wove vector's Siblings line."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-27T08:24:52Z"
+  "last_builder": "2026-09-27T10:25:17Z"
 }
