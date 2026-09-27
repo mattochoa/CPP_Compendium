@@ -1,6 +1,6 @@
 {
-  "runs": 59,
-  "builder_runs": 58,
+  "runs": 61,
+  "builder_runs": 60,
   "editor_runs": 1,
   "history": [
     {
@@ -749,10 +749,23 @@
       "code": "3/3",
       "commit": "✓",
       "summary": "vector Dossier: handle-and-buffer model (manifest/warehouse analogy), amortized-O(1) growth, contiguity proven at runtime, asm proof of zero-overhead indexing over a raw pointer; woven into STL Architecture, Map — Standard Library, Header — vector (all pre-existing frontier links now resolve)."
+    },
+    {
+      "when": "2026-09-27T06:00:28Z",
+      "run": 60,
+      "role": "builder",
+      "mode": "DEEPEN",
+      "items": [
+        "map-d00"
+      ],
+      "lint": "100–100",
+      "code": "0/0",
+      "commit": "✓",
+      "summary": "deepen: verified every Sources citation (page-level) and every draft-standard clause/paragraph number against eel.is and cppreference for Map — What C++ Is; corrected one imprecise claim about erroneous behavior's termination timing (¶6 says termination may occur at an unspecified point after the operation, not immediately at it)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-27T04:21:13Z"
+  "last_builder": "2026-09-27T06:00:28Z"
 }
