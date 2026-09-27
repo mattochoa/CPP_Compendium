@@ -707,7 +707,8 @@
 			"y": 1586,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Pointers]]\n*concept · T1*"
+			"text": "◐ [[Pointers]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-dynamic-memory",

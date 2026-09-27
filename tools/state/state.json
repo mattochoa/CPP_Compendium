@@ -1,6 +1,6 @@
 {
-  "runs": 76,
-  "builder_runs": 74,
+  "runs": 77,
+  "builder_runs": 75,
   "editor_runs": 2,
   "history": [
     {
@@ -929,10 +929,23 @@
       "code": "4/4",
       "commit": "✓",
       "summary": "Author References (concept, D04): the alias-not-object derivation, binding/lifetime-extension mechanics, reference-vs-value-parameter asm evidence, and the spine link Object Lifetime -> References -> Pointers."
+    },
+    {
+      "when": "2026-09-27T21:24:39Z",
+      "run": 75,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "pointers"
+      ],
+      "lint": "100–100",
+      "code": "4/4",
+      "commit": "✓",
+      "summary": "AUTHOR: Pointers (concept, D04, T1) — next link in the object-to-RAII spine after References. Derives T* from first principles (why an alias alone isn't enough), the four-state pointer-value model with the invalid-vs-indeterminate distinction (basic.compound ¶3/¶6, verified against the current working draft), void*'s guaranteed char*-representation, and nullptr/operator<=> Evolution rows. Back-linked from/to Pointers vs References, Process Memory Layout, Virtual Dispatch, Dangling Pointers and References, const and Const-Correctness. 4/4 code blocks PASS."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-27T20:20:42Z"
+  "last_builder": "2026-09-27T21:24:39Z"
 }

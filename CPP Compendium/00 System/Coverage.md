@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 275 |
+| ○ planned | 274 |
 | ◌ stub | 0 |
-| ◐ draft | 56 |
+| ◐ draft | 57 |
 | ⟲ revise | 0 |
 | ● reviewed | 23 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 354
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `██████████████░░░░░░` 37/52
+- Wave 1: `███████████████░░░░░` 38/52
 - Wave 2: `███░░░░░░░░░░░░░░░░░` 16/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -117,7 +117,7 @@ tags: [system/generated]
 
 ## D04 · Objects, Memory & Lifetime
 
-*Where does an object live, how long does it live, and who can reach it?*  `███░░░░░░░` 9/26
+*Where does an object live, how long does it live, and who can reach it?*  `████░░░░░░` 10/26
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -127,7 +127,7 @@ tags: [system/generated]
 | ◐ | [[Storage Duration]] | concept | 1 | 1 |  |
 | ◐ | [[Object Lifetime]] | concept | 1 | 1 |  |
 | ◐ | [[References]] | concept | 1 | 1 |  |
-| ○ | [[Pointers]] | concept | 1 | 1 |  |
+| ◐ | [[Pointers]] | concept | 1 | 1 |  |
 | ○ | [[Dynamic Memory — new and delete]] | mechanism | 1 | 1 |  |
 | ● | [[Value Categories]] | concept | 2 | 1 | 20 |
 | ○ | [[The Forms of Initialization]] | comparison | 2 | 2 |  |

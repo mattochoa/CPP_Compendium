@@ -133,7 +133,7 @@ flowchart LR
 - ◐ [[Storage Duration]] · *concept*
 - ◐ [[Object Lifetime]] · *concept*
 - ◐ [[References]] · *concept*
-- ○ [[Pointers]] · *concept*
+- ◐ [[Pointers]] · *concept*
 - ○ [[Dynamic Memory — new and delete]] · *mechanism*
 - ○ [[Reading Uninitialized Variables]] · *pitfall*
 - ○ [[Pointer Arithmetic and Arrays]] · *mechanism*
@@ -160,7 +160,7 @@ flowchart LR
 **Tier 4 · Expert**
 - ○ [[Allocators and pmr Memory Resources]] · *concept*
 
-`███░░░░░░░` 9/26 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`████░░░░░░` 10/26 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
