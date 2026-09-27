@@ -58,7 +58,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 280 | 71 | 0 | 3 | 0 | 354 | 65 | 1 |
+| 280 | 71 | 0 | 3 | 0 | 354 | 66 | 1 |
 
 `████░░░░░░░░░░░░░░░░` **21%** of the Atlas written · last build 2026-09-27
 <!-- cc:end -->
@@ -75,6 +75,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Pointers vs References]] · *comparison* · updated 2026-09-27
 - ◐ [[vector]] · *concept* · updated 2026-09-27
 - ◐ [[string]] · *concept* · updated 2026-09-27
 - ◐ [[Precedence and Associativity]] · *concept* · updated 2026-09-27
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-27
 - ◐ [[Function Overloading]] · *concept* · updated 2026-09-26
 - ◐ [[Overloading in Classes — Constructors, Members and Operators]] · *concept* · updated 2026-09-26
-- ◐ [[Map — Inheritance & Polymorphism]] · *map* · updated 2026-09-26
 <!-- cc:end -->
 
 ## Start here

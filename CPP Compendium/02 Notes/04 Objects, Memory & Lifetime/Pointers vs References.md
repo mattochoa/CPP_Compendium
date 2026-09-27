@@ -32,7 +32,7 @@ tags:
 - tension/value-vs-identity
 - tension/safety-vs-performance
 created: 2026-09-23
-updated: 2026-09-26
+updated: 2026-09-27
 ---
 
 # Pointers vs References
@@ -141,6 +141,8 @@ That equal `sizeof` is not a coincidence of one compiler: it is what "unspecifie
 **Dynamic dispatch doesn't care which one you used.** A common misreading of "pointers enable polymorphism" is that only a pointer can reach a derived class's override. That can't be right: a virtual call dispatches on the object's **dynamic type**, and a reference tracks the dynamic type exactly like a pointer does — only a **by-value** parameter loses it, by copying just the base slice ([[Object Slicing]]). cppreference's own worked example for the `virtual` specifier calls through both a `Base&` and a `Base*` bound to the same `Derived` object and gets the derived override either way (*virtual function specifier* §Explanation). The Primer's own definition of polymorphism names both access paths without favoring either: type-specific behavior chosen by the object's dynamic type, reached through a reference *or* a pointer (Primer §15.3, p. 605; *Defined Terms*, p. 650) — the mechanism could just as well have been called "reference dispatch" as "pointer dispatch". See [[Virtual Dispatch — vptr and vtable]] for what either access path actually triggers.
 
 **Comparing references compares values, not identity.** `p1 == p2` on two pointers asks "same address?" for free, because a pointer *is* an address. A reference has no `operator==` of its own: `r1 == r2` calls the *referent* type's `operator==` (or fails to compile if there isn't one), because a reference reads exactly like the object it names. To ask "do `r1` and `r2` name the same object?", compare addresses explicitly — `&r1 == &r2` — which is the "is an object" row of *At a Glance* showing up at a call site instead of in a table.
+
+**That `&r1 == &r2` identity check has its own trap: `&x` is not guaranteed to be `x`'s address.** `operator&` is an ordinary overloadable operator, legal to redefine since before C++98 (rare, but real — some smart-pointer-like wrappers overload it to return a different type entirely, e.g. for an output-parameter pattern). When a class does that, unary `&` on an lvalue of that type calls the overload instead of the compiler's built-in address-of, and it does so identically whether you write `&r` or `T* p = &x;` — both are "apply unary `&` to an lvalue of type `T`," so both reach the same overload if one exists. `std::addressof(x)` (`<memory>`, C++11; `constexpr` since C++17) walks past any overload and returns the object's true address, which is exactly why generic code that cannot assume `T` behaves normally reaches for it instead of raw `&` (cppreference, *std::addressof*). *In Code* §5 makes the difference concrete.
 
 **Pointer ordering across unrelated objects is *unspecified*, not undefined.** `p < q` for pointers into the same array is well-defined: the higher subscript is required to compare greater (`[expr.rel]` ¶4.1). For pointers into unrelated objects — the common assumption is that this is UB — the current working draft says the result is merely **unspecified**: some unstated but non-catastrophic answer, not licence for anything to happen (`[expr.rel]` ¶5). That is exactly why ordered containers of raw pointers are still well-defined: `std::less<T*>` is specified to follow an "implementation-defined strict total order over pointers" that stays consistent for the program's run (cppreference, *std::less*; guaranteed since the LWG 2562 defect report), so `std::set<T*>` and `std::map<T*, ...>` don't rely on `<` meaning anything for `p` and `q` on its own.
 
@@ -277,6 +279,31 @@ int main() {
 3. A reference to the base, bound to a derived object: the dynamic type is `Circle`, not `Shape`.
 4. Same object, same dynamic type, same dispatch — the two access paths are interchangeable for this purpose. What *would* lose the dynamic type is `Shape s = c;` (a by-value copy: see [[Object Slicing]]).
 
+**5 · `&x` is not always this object's address**
+
+```cpp
+#include <cstdio>
+#include <memory>
+
+struct Proxy {
+    int pad = 0;                          // ① keeps value's address distinct from the object's own
+    int value = 0;
+    int* operator&() { return &value; }   // ② legal: operator& can be overloaded like any other
+};
+
+int main() {
+    Proxy p;
+    Proxy* obj_addr    = std::addressof(p);   // ③ the object's real address; ignores the overload
+    int*   member_addr = &p;                  // ④ calls Proxy::operator&, not "address of p"
+    std::printf("%d\n", static_cast<void*>(obj_addr) == static_cast<void*>(member_addr));
+}
+// expect: 0
+```
+1. Without a leading member, the object's address and `value`'s address would coincide by accident and hide the point.
+2. `Proxy` is contrived, but the shape is real: some output-parameter and mocking idioms overload `operator&` this way.
+3. `std::addressof` bypasses any overload — this is exactly what an identity check like `&r1 == &r2` is silently trusting.
+4. Same rule reached through a pointer initializer as through `&r`: unary `&` calls the overload first, whichever access path asked for it.
+
 ## Connections
 
 - **Prerequisites:** [[Pointers]] · [[References]].
@@ -307,11 +334,14 @@ int main() {
 > [!quiz]- `int a[3]; int* p = a + 5;` never dereferences `p`. Is the program already broken?
 > Yes. `[expr.add]` ¶4.3 makes *computing* a pointer outside `0 ≤ i ≤ n` undefined behavior, not merely using it — there is no dereference requirement. Built locally under `-fsanitize=undefined`, the program exits cleanly with no diagnostic, because nothing reads memory for the checker to instrument. A reference cannot produce this failure mode: it has no arithmetic to misuse in the first place.
 
+> [!quiz]- A class overloads `operator&`. What does `std::addressof(x)` give you that plain `&x` does not, and does it matter whether `x` is accessed through a pointer or a reference?
+> `std::addressof(x)` always returns `x`'s real address, walking past any overloaded `operator&`. Plain `&x` calls the overload instead, silently returning something else — a different type or a different address. It doesn't matter which access path you used: `&r` and `T* p = &x;` both spell "apply unary `&` to an lvalue of type `T`," so both call the same overload if one exists.
+
 ## Sources
 
 - Primer §2.3.1 "References" (p. 50) and §2.3.2 "Pointers" (p. 52): binding rules and pointer states. Primer §3.5 "Arrays" (p. 120): the one-past-the-end arithmetic limit. Primer §13.1 "Copy, Assign, and Destroy" (p. 508): why a reference (or `const`) member deletes copy assignment. Primer §15.3 "Virtual Functions" (p. 605) and *Defined Terms* (p. 650): polymorphism defined by the dynamic type of a reference *or* pointer.
 - Tour §1.7 "Pointers, Arrays, and References" (p. 11): the designer's short comparison.
 - PPP §16.2 "Pointers and references" (ch. 16 "Arrays, Pointers, and References"): pointer vs reference from first principles.
-- cppreference, *Reference declaration* (incl. §*Reference collapsing*, §*Dangling references*): https://en.cppreference.com/w/cpp/language/reference · *Pointer declaration*: https://en.cppreference.com/w/cpp/language/pointer · *Copy assignment operator*: https://en.cppreference.com/w/cpp/language/copy_assignment · *`virtual` function specifier* §Explanation (dispatch through `Base&` and `Base*` alike): https://en.cppreference.com/w/cpp/language/virtual · *`std::less`* (implementation-defined strict total order over pointers): https://en.cppreference.com/w/cpp/utility/functional/less
+- cppreference, *Reference declaration* (incl. §*Reference collapsing*, §*Dangling references*): https://en.cppreference.com/w/cpp/language/reference · *Pointer declaration*: https://en.cppreference.com/w/cpp/language/pointer · *Copy assignment operator*: https://en.cppreference.com/w/cpp/language/copy_assignment · *`virtual` function specifier* §Explanation (dispatch through `Base&` and `Base*` alike): https://en.cppreference.com/w/cpp/language/virtual · *`std::less`* (implementation-defined strict total order over pointers): https://en.cppreference.com/w/cpp/utility/functional/less · *`std::addressof`* (C++11; ignores any overloaded `operator&`; `constexpr` since C++17): https://en.cppreference.com/w/cpp/memory/addressof
 - Draft standard `[dcl.ref]` ¶4–7 (storage, no references to references, collapsing): https://eel.is/c++draft/dcl.ref · `[class.copy.assign]` ¶7.2 (deleted copy assignment): https://eel.is/c++draft/class.copy.assign · `[expr.rel]` ¶4–5 (same-array pointer ordering is defined; unrelated-object ordering is unspecified, not undefined): https://eel.is/c++draft/expr.rel · `[expr.add]` ¶4.3 (pointer arithmetic outside the array bound is undefined the instant it's computed, dereferenced or not): https://eel.is/c++draft/expr.add
 - C++ Core Guidelines F.60, F.17, R.3: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines

@@ -1,6 +1,6 @@
 {
-  "runs": 66,
-  "builder_runs": 65,
+  "runs": 67,
+  "builder_runs": 66,
   "editor_runs": 1,
   "history": [
     {
@@ -816,10 +816,23 @@
       "code": "5/5 3/3",
       "commit": "✓",
       "summary": "AUTHOR: string (concept, D10) — the vector handle-and-buffer model specialized to text, with the mandatory contiguity/null-terminator guarantee and SSO; verified sanitizer-silent-vs-fired UB pair for the same off-by-one on short vs heap-allocated strings. Back-wove vector's Siblings line."
+    },
+    {
+      "when": "2026-09-27T11:20:00Z",
+      "run": 66,
+      "role": "builder",
+      "mode": "DEEPEN",
+      "items": [
+        "pointers-vs-references"
+      ],
+      "lint": "100–100",
+      "code": "6/6",
+      "commit": "✓",
+      "summary": "deepen: added the operator&-overload / std::addressof corner case (identity comparison via &r1==&r2 assumed no overload; now names the trap, cites cppreference, adds a compiled In Code #5 proving obj address != member address, and a quiz)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-27T10:25:17Z"
+  "last_builder": "2026-09-27T11:20:01Z"
 }
