@@ -930,7 +930,8 @@
 			"y": 1442,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Function Overloading]]\n*concept · T1*"
+			"text": "◐ [[Function Overloading]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-default-arguments",
@@ -1172,10 +1173,20 @@
 			"text": "○ [[Operator Overloading]]\n*concept · T2*"
 		},
 		{
-			"id": "t-value-semantics",
+			"id": "t-class-overloading",
 			"type": "text",
 			"x": 2486,
 			"y": 1442,
+			"width": 250,
+			"height": 56,
+			"text": "◐ [[Overloading in Classes — Constructors, Members and Operators]]\n*concept · T2*",
+			"color": "3"
+		},
+		{
+			"id": "t-value-semantics",
+			"type": "text",
+			"x": 2486,
+			"y": 1514,
 			"width": 250,
 			"height": 56,
 			"text": "○ [[Value Semantics]]\n*concept · T2*"
@@ -1184,7 +1195,7 @@
 			"id": "t-friends",
 			"type": "text",
 			"x": 2486,
-			"y": 1514,
+			"y": 1586,
 			"width": 250,
 			"height": 56,
 			"text": "○ [[Friends]]\n*concept · T2*"
@@ -1193,7 +1204,7 @@
 			"id": "t-comparisons-and-spaceship",
 			"type": "text",
 			"x": 2486,
-			"y": 1586,
+			"y": 1658,
 			"width": 250,
 			"height": 56,
 			"text": "○ [[Comparisons and the Spaceship Operator]]\n*concept · T2*"
@@ -1202,7 +1213,7 @@
 			"id": "t-conversion-operators-and-explicit",
 			"type": "text",
 			"x": 2486,
-			"y": 1658,
+			"y": 1730,
 			"width": 250,
 			"height": 56,
 			"text": "○ [[Conversion Operators and explicit]]\n*concept · T2*"
@@ -1211,7 +1222,7 @@
 			"id": "t-aggregates-and-designated-init",
 			"type": "text",
 			"x": 2486,
-			"y": 1730,
+			"y": 1802,
 			"width": 250,
 			"height": 56,
 			"text": "○ [[Aggregates and Designated Initializers]]\n*concept · T2*"
@@ -3878,6 +3889,13 @@
 			"fromNode": "t-special-member-functions",
 			"fromSide": "right",
 			"toNode": "t-rule-of-zero-three-five",
+			"toSide": "left"
+		},
+		{
+			"id": "e-classes-as-types-class-overloading",
+			"fromNode": "t-classes-as-types",
+			"fromSide": "right",
+			"toNode": "t-class-overloading",
 			"toSide": "left"
 		},
 		{

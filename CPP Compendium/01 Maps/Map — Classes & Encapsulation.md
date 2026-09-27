@@ -138,6 +138,7 @@ flowchart LR
 - ○ [[The Special Member Functions]] · *concept*
 - ○ [[Rule of Zero, Three and Five]] · *idiom*
 - ○ [[Operator Overloading]] · *concept*
+- ◐ [[Overloading in Classes — Constructors, Members and Operators]] · *concept*
 - ○ [[Value Semantics]] · *concept*
 - ○ [[Friends]] · *concept*
 - ○ [[Comparisons and the Spaceship Operator]] · *concept*
@@ -147,7 +148,7 @@ flowchart LR
 **Tier 3 · Advanced**
 - ○ [[When the Compiler Generates Special Members]] · *mechanism*
 
-`██░░░░░░░░` 3/19 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 4/20 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

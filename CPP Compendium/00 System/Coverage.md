@@ -8,18 +8,18 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 286 |
+| ○ planned | 285 |
 | ◌ stub | 0 |
-| ◐ draft | 64 |
+| ◐ draft | 66 |
 | ⟲ revise | 0 |
 | ● reviewed | 3 |
 | ★ evergreen | 0 |
 
-**Total topics:** 353
+**Total topics:** 354
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `██████████░░░░░░░░░░` 27/52
-- Wave 2: `██░░░░░░░░░░░░░░░░░░` 14/125
+- Wave 2: `███░░░░░░░░░░░░░░░░░` 16/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -150,7 +150,7 @@ tags: [system/generated]
 
 ## D05 · Functions
 
-*How is computation named, parameterised, reused and passed around?*  `██░░░░░░░░` 3/17
+*How is computation named, parameterised, reused and passed around?*  `██░░░░░░░░` 4/17
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -158,7 +158,7 @@ tags: [system/generated]
 | ◐ | [[Anatomy of a Function]] | concept | 1 | 1 |  |
 | ○ | [[The Call Stack and Stack Frames]] | mechanism | 1 | 1 |  |
 | ○ | [[Parameter Passing — Value, Reference, Pointer]] | comparison | 1 | 1 |  |
-| ○ | [[Function Overloading]] | concept | 1 | 2 |  |
+| ◐ | [[Function Overloading]] | concept | 1 | 2 |  |
 | ○ | [[Default Arguments]] | concept | 1 | 2 |  |
 | ○ | [[Recursion]] | concept | 1 | 2 |  |
 | ○ | [[Lambda Expressions]] | concept | 1 | 2 |  |
@@ -174,7 +174,7 @@ tags: [system/generated]
 
 ## D06 · Classes & Encapsulation
 
-*How do we build new types that protect their own invariants?*  `██░░░░░░░░` 3/19
+*How do we build new types that protect their own invariants?*  `██░░░░░░░░` 4/20
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -191,6 +191,7 @@ tags: [system/generated]
 | ○ | [[The Special Member Functions]] | concept | 2 | 2 |  |
 | ○ | [[Rule of Zero, Three and Five]] | idiom | 2 | 2 |  |
 | ○ | [[Operator Overloading]] | concept | 2 | 2 |  |
+| ◐ | [[Overloading in Classes — Constructors, Members and Operators]] | concept | 2 | 2 |  |
 | ○ | [[Value Semantics]] | concept | 2 | 2 |  |
 | ○ | [[Friends]] | concept | 2 | 3 |  |
 | ○ | [[Comparisons and the Spaceship Operator]] | concept | 2 | 3 |  |
