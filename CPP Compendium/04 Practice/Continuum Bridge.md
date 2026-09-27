@@ -34,7 +34,7 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 11 | Pointer & Array Internals Lab | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Tooling & Engineering]], ○ [[Process Memory Layout — Stack, Heap, Static]], ○ [[Pointers]], ○ [[Pointer Arithmetic and Arrays]], ◐ [[Pointers vs References]], ○ [[Built-in Arrays and Array-to-Pointer Decay]], ◐ [[Dangling Pointers and References]], ○ [[Sanitizers — ASan, UBSan, TSan]] |
+| 11 | Pointer & Array Internals Lab | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Tooling & Engineering]], ◐ [[Process Memory Layout — Stack, Heap, Static]], ○ [[Pointers]], ○ [[Pointer Arithmetic and Arrays]], ◐ [[Pointers vs References]], ○ [[Built-in Arrays and Array-to-Pointer Decay]], ◐ [[Dangling Pointers and References]], ○ [[Sanitizers — ASan, UBSan, TSan]] |
 | 12 | Build-Your-Own Dynamic Array | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Standard Library]], ○ [[Dynamic Memory — new and delete]], ○ [[Rule of Zero, Three and Five]], ○ [[Copy Semantics — Deep vs Shallow Copy]], ◐ [[vector]], ○ [[How vector Grows — Capacity and Amortized Cost]] |
 | 13 | Singly & Doubly Linked List Library | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Pointers vs References]], ◐ [[Dangling Pointers and References]] |
 | 14 | Stack & Queue Library + Applications | ○ [[Container Adaptors — stack, queue, priority_queue]] |

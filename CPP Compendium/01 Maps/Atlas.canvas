@@ -663,7 +663,8 @@
 			"y": 1298,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Process Memory Layout — Stack, Heap, Static]]\n*mechanism · T1*"
+			"text": "◐ [[Process Memory Layout — Stack, Heap, Static]]\n*mechanism · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-storage-duration",

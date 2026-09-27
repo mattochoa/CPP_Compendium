@@ -35,7 +35,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `█░░░░░░░` 3/18 |
 | `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `█░░░░░░░` 4/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `█░░░░░░░` 2/12 |
-| `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `█░░░░░░░` 4/26 |
+| `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `██░░░░░░` 5/26 |
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `██░░░░░░` 4/17 |
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `██░░░░░░` 4/20 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `█░░░░░░░` 3/19 |
@@ -58,23 +58,25 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 284 | 67 | 0 | 3 | 0 | 354 | 60 | 1 |
+| 283 | 68 | 0 | 3 | 0 | 354 | 61 | 1 |
 
 `████░░░░░░░░░░░░░░░░` **20%** of the Atlas written · last build 2026-09-27
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Process Memory Layout — Stack, Heap, Static]] · *mechanism* · `D04` — wave 1
-2. [[References]] · *concept* · `D04` — wave 1
-3. [[Pointers]] · *concept* · `D04` — wave 1
-4. [[The Preprocessor]] · *mechanism* · `D01` — wave 1
-5. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
-6. [[Scope]] · *concept* · `D01` — wave 1
+1. [[The Preprocessor]] · *mechanism* · `D01` — wave 1
+2. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
+3. [[Scope]] · *concept* · `D01` — wave 1
+4. [[Precedence and Associativity]] · *concept* · `D03` — wave 1
+5. [[Control Flow — Selection and Iteration]] · *concept* · `D03` — wave 1
+6. [[string]] · *concept* · `D10` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Dangling Pointers and References]] · *pitfall* · updated 2026-09-27
+- ◐ [[Process Memory Layout — Stack, Heap, Static]] · *mechanism* · updated 2026-09-27
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-27
 - ◐ [[vector]] · *concept* · updated 2026-09-26
 - ◐ [[Function Overloading]] · *concept* · updated 2026-09-26
@@ -83,8 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Classes as User-Defined Types]] · *concept* · updated 2026-09-26
 - ◐ [[Encapsulation and Class Invariants]] · *concept* · updated 2026-09-26
 - ◐ [[Inheritance]] · *concept* · updated 2026-09-26
-- ◐ [[Header — string_view]] · *header* · updated 2026-09-26
-- ◐ [[Header — list]] · *header* · updated 2026-09-26
 <!-- cc:end -->
 
 ## Start here

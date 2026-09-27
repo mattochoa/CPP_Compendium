@@ -31,7 +31,7 @@ tags:
 - tier/1
 - tension/safety-vs-performance
 created: 2026-09-23
-updated: 2026-09-26
+updated: 2026-09-27
 reviewed: 2026-09-23
 score: 19
 rubric:
@@ -160,7 +160,7 @@ int main() {
 }
 ```
 1. Parameters are local objects of the callee. Whether a parameter dies when the function returns or at the end of the caller's full-expression is implementation-defined (`[expr.call]`). Either way it is gone before `r` is next used. GCC warns (`-Wreturn-local-addr`).
-2. The stack slot is reused by the next call (here, the `operator<<` machinery), so the value is garbage or the program crashes.
+2. The stack slot is reused by the next call (here, the `operator<<` machinery), so the value is garbage or the program crashes. See [[Process Memory Layout — Stack, Heap, Static]] for why that reuse happens: a popped frame's storage is simply free again, with no promise about what (if anything) overwrites it next.
 
 ## Detection
 
@@ -219,7 +219,7 @@ int main() {
 
 ## Connections
 
-- **Root concept:** [[Object Lifetime]] · [[Storage Duration]] · [[Undefined Behavior]].
+- **Root concept:** [[Object Lifetime]] · [[Storage Duration]] · [[Undefined Behavior]] · [[Process Memory Layout — Stack, Heap, Static]] (why freed storage gets reused).
 - **Special cases with their own files:** [[Iterator Invalidation]] · [[Temporaries and Lifetime Extension]] · [[The Moved-From State]] · [[Double Free and Mismatched new-delete]].
 - **Structural cures:** [[RAII]] (who releases) · [[Owning vs Observing Pointers]] (who merely looks) · [[weak_ptr and Reference Cycles]] (an observer that can check).
 - **Siblings:** [[Pointers vs References]] (both can dangle) · [[string_view]] · [[span]].
