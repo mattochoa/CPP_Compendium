@@ -163,6 +163,7 @@
 - {id: special-member-functions, t: "The Special Member Functions", ty: concept, d: D06, tier: 2, w: 2, pre: [constructors, destructors]}
 - {id: rule-of-zero-three-five, t: "Rule of Zero, Three and Five", ty: idiom, d: D06, tier: 2, w: 2, pre: [special-member-functions], pr: [12, 22]}
 - {id: operator-overloading, t: "Operator Overloading", ty: concept, d: D06, tier: 2, w: 2, pr: [19]}
+- {id: class-overloading, t: "Overloading in Classes — Constructors, Members and Operators", ty: concept, d: D06, tier: 2, w: 2, pre: [function-overloading, classes-as-types], pr: [17, 19], kw: [decorator, mixin, "const overload", "ref-qualifier"]}
 - {id: value-semantics, t: "Value Semantics", ty: concept, d: D06, tier: 2, w: 2, pr: [19]}
 - {id: friends, t: "Friends", ty: concept, d: D06, tier: 2, w: 3}
 - {id: comparisons-and-spaceship, t: "Comparisons and the Spaceship Operator", ty: concept, d: D06, tier: 2, w: 3, pre: [operator-overloading]}
