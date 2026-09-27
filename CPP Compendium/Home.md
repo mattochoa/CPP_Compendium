@@ -31,7 +31,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-domains -->
 | | Domain | The question it answers | Progress |
 |---|---|---|---|
-| `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `██░░░░░░` 2/9 |
+| `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `███░░░░░` 3/9 |
 | `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `██░░░░░░` 4/18 |
 | `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `█░░░░░░░` 4/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `██░░░░░░` 3/12 |
@@ -58,24 +58,25 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 280 | 51 | 0 | 23 | 0 | 354 | 66 | 2 |
+| 279 | 52 | 0 | 23 | 0 | 354 | 67 | 2 |
 
 `████░░░░░░░░░░░░░░░░` **21%** of the Atlas written · last build 2026-09-27
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[The C++ Abstract Machine]] · *concept* · `D00` — pinned by Editor
-2. [[The C++ Object Model — What an Object Is]] · *concept* · `D04` — pinned by Editor
-3. [[Storage Duration]] · *concept* · `D04` — pinned by Editor
-4. [[Object Lifetime]] · *concept* · `D04` — pinned by Editor
-5. [[References]] · *concept* · `D04` — pinned by Editor
-6. [[Pointers]] · *concept* · `D04` — pinned by Editor
+1. [[The C++ Object Model — What an Object Is]] · *concept* · `D04` — pinned by Editor
+2. [[Storage Duration]] · *concept* · `D04` — pinned by Editor
+3. [[Object Lifetime]] · *concept* · `D04` — pinned by Editor
+4. [[References]] · *concept* · `D04` — pinned by Editor
+5. [[Pointers]] · *concept* · `D04` — pinned by Editor
+6. [[Virtual Functions]] · *concept* · `D08` — pinned by Editor
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-27
+- ◐ [[The C++ Abstract Machine]] · *concept* · updated 2026-09-27
 - ● [[string]] · *concept* · updated 2026-09-27
 - ● [[Process Memory Layout — Stack, Heap, Static]] · *mechanism* · updated 2026-09-27
 - ● [[Precedence and Associativity]] · *concept* · updated 2026-09-27
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ● [[Pointers vs References]] · *comparison* · updated 2026-09-27
 - ◐ [[vector]] · *concept* · updated 2026-09-27
 - ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-26
-- ◐ [[Map — Inheritance & Polymorphism]] · *map* · updated 2026-09-26
 <!-- cc:end -->
 
 ## Start here

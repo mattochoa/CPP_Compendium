@@ -55,7 +55,8 @@
 			"y": 286,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[The C++ Abstract Machine]]\n*concept · T1*"
+			"text": "◐ [[The C++ Abstract Machine]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-undefined-behavior",

@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 280 |
+| ○ planned | 279 |
 | ◌ stub | 0 |
-| ◐ draft | 51 |
+| ◐ draft | 52 |
 | ⟲ revise | 0 |
 | ● reviewed | 23 |
 | ★ evergreen | 0 |
@@ -18,14 +18,14 @@ tags: [system/generated]
 **Total topics:** 354
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `████████████░░░░░░░░` 32/52
+- Wave 1: `█████████████░░░░░░░` 33/52
 - Wave 2: `███░░░░░░░░░░░░░░░░░` 16/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
 ## D00 · What C++ Is
 
-*What contract does C++ make between the programmer, the compiler and the machine?*  `██░░░░░░░░` 2/9
+*What contract does C++ make between the programmer, the compiler and the machine?*  `███░░░░░░░` 3/9
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -33,7 +33,7 @@ tags: [system/generated]
 | ● | [[The C++ Design Philosophy]] | concept | 1 | 1 | 18 |
 | ○ | [[Zero-Overhead Principle]] | concept | 1 | 1 |  |
 | ○ | [[Levels of Abstraction — From Bits to Libraries]] | concept | 1 | 1 |  |
-| ○ | [[The C++ Abstract Machine]] | concept | 1 | 1 |  |
+| ◐ | [[The C++ Abstract Machine]] | concept | 1 | 1 |  |
 | ○ | [[Undefined Behavior]] | concept | 1 | 1 |  |
 | ○ | [[The As-If Rule]] | mechanism | 2 | 2 |  |
 | ○ | [[Implementation-Defined, Unspecified and Undefined Behavior]] | comparison | 2 | 2 |  |
