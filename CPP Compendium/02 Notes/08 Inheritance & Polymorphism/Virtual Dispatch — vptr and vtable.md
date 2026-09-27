@@ -10,7 +10,7 @@ aliases:
 type: mechanism
 domain: D08
 tier: 2
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Virtual Functions]]"
@@ -35,8 +35,8 @@ tags:
 - tension/abstraction-vs-control
 created: 2026-09-23
 updated: 2026-09-26
-reviewed: 2026-09-23
-score: 20
+reviewed: 2026-09-27
+score: 21
 rubric:
   accuracy: 3
   first_principles: 3
@@ -44,7 +44,7 @@ rubric:
   depth: 3
   visual: 3
   code: 3
-  integration: 2
+  integration: 3
 ---
 
 # Virtual Dispatch — vptr and vtable

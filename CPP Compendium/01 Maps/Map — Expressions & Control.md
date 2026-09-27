@@ -114,8 +114,8 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D03 -->
 **Tier 1 · Foundational**
-- ◐ [[Anatomy of an Expression]] · *concept*
-- ◐ [[Precedence and Associativity]] · *concept*
+- ● [[Anatomy of an Expression]] · *concept*
+- ● [[Precedence and Associativity]] · *concept*
 - ○ [[Control Flow — Selection and Iteration]] · *concept*
 - ○ [[Short-Circuit Evaluation]] · *concept*
 - ○ [[Prefix vs Postfix Increment]] · *comparison*

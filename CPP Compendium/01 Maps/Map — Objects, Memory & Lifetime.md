@@ -129,7 +129,7 @@ flowchart LR
 <!-- cc:auto:domain-index:D04 -->
 **Tier 1 · Foundational**
 - ○ [[The C++ Object Model — What an Object Is]] · *concept*
-- ◐ [[Process Memory Layout — Stack, Heap, Static]] · *mechanism*
+- ● [[Process Memory Layout — Stack, Heap, Static]] · *mechanism*
 - ○ [[Storage Duration]] · *concept*
 - ○ [[Object Lifetime]] · *concept*
 - ○ [[References]] · *concept*
@@ -137,11 +137,11 @@ flowchart LR
 - ○ [[Dynamic Memory — new and delete]] · *mechanism*
 - ○ [[Reading Uninitialized Variables]] · *pitfall*
 - ○ [[Pointer Arithmetic and Arrays]] · *mechanism*
-- ◐ [[Pointers vs References]] · *comparison*
+- ● [[Pointers vs References]] · *comparison*
 - ○ [[nullptr and Null Pointers]] · *concept*
 - ○ [[Built-in Arrays and Array-to-Pointer Decay]] · *mechanism*
 - ○ [[Memory Leaks]] · *pitfall*
-- ◐ [[Dangling Pointers and References]] · *pitfall*
+- ● [[Dangling Pointers and References]] · *pitfall*
 
 **Tier 2 · Proficient**
 - ● [[Value Categories]] · *concept*

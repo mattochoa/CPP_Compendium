@@ -4,7 +4,7 @@ title: Process Memory Layout — Stack, Heap, Static
 type: mechanism
 domain: D04
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs: []
 related:
@@ -21,6 +21,16 @@ tags:
 - tension/abstraction-vs-control
 created: 2026-09-27
 updated: 2026-09-27
+reviewed: 2026-09-27
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 3
+  code: 2
+  integration: 3
 ---
 
 # Process Memory Layout — Stack, Heap, Static
@@ -165,7 +175,7 @@ int main() {
 2. Returning `p` moves ownership out; the `int` is still alive in `main` — dynamic storage was never scope-bound to begin with.
 3. `a` is an ordinary local: automatic storage duration.
 4. The closing brace ends `a`'s lifetime and releases its storage — deterministically, unlike dynamic storage's programmer-chosen release.
-5. `b` is a *different* object that may or may not occupy the same bytes `a` used; the Standard makes no promise either way, which is exactly the point.
+5. `b` is a *different* object that may or may not occupy the same bytes `a` used; the Standard makes no promise either way, which is exactly the point. Note that the comparison itself is already on thin ice: once `a`'s storage duration ended, `first_addr` holds an *invalid pointer value*, and any use of one other than indirection or deallocation (both UB) has implementation-defined behavior (`[basic.stc.general]` ¶4 in C++20; `[basic.compound]` in the current draft). Mainstream compilers just compare the bits, which is why the line prints at all, but this is a demonstration, not a technique.
 6. The heap object, in contrast, is untouched by any of the stack activity around it.
 
 **3 · Recursion makes the stack's LIFO discipline visible**

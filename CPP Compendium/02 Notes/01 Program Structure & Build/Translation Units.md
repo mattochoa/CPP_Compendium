@@ -4,7 +4,7 @@ title: Translation Units
 type: concept
 domain: D01
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[The Compilation Pipeline]]"
@@ -27,6 +27,16 @@ tags:
 - std/c++20
 created: 2026-09-26
 updated: 2026-09-26
+reviewed: 2026-09-27
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 3
+  code: 2
+  integration: 3
 ---
 
 # Translation Units
@@ -88,7 +98,7 @@ flowchart TB
 
 ## Under the Hood
 
-> [!machine] An "own copy per translation unit" that quietly isn't (GCC 11, this vault's toolchain)
+> [!machine] An "own copy per translation unit" that quietly isn't (GCC 11, two-file build)
 > `counter.hpp` hides a namespace-scope variable with internal linkage inside an `inline` function:
 > ```cpp
 > namespace { int call_count = 0; }                 // internal linkage

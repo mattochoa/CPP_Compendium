@@ -9,7 +9,7 @@ aliases:
 type: mechanism
 domain: D01
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[The Compilation Pipeline]]"
@@ -28,12 +28,22 @@ tags:
 - tension/compatibility-vs-evolution
 created: 2026-09-27
 updated: 2026-09-27
+reviewed: 2026-09-27
+score: 20
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 3
+  code: 3
+  integration: 3
 ---
 
 # The Preprocessor
 
 > [!essence]
-> The preprocessor is a separate, dumber pass that runs before a single rule of C++ grammar exists: it can cut, paste and substitute tokens, but it cannot see a type, a scope, or an expression. Every well-known quirk of `#define` — that a macro evaluates its argument as many times as it appears, that `assert(x)` can print the very source text of `x` it never parsed, that two unrelated macros with the same name collide across a whole program — falls out of that one restriction.
+> The preprocessor is a separate, dumber pass that runs before a single rule of C++ grammar exists: it can cut, paste and substitute tokens, but it cannot see a type, a scope, or an expression. Every well-known quirk of `#define` — that a macro evaluates its argument as many times as it appears, that `assert(x)` can print the very source text of `x` it never parsed, that two unrelated macros with the same name collide across every header pasted into the same translation unit — falls out of that one restriction.
 
 ## The Problem
 
@@ -109,7 +119,7 @@ flowchart TD
 
 ## Under the Hood
 
-> [!machine] `g++ -E` on a "correctly parenthesized" macro (GCC 11, this vault's toolchain)
+> [!machine] `g++ -E` on a "correctly parenthesized" macro (GCC 11)
 > ```cpp
 > #define MAX(a, b) ((a) > (b) ? (a) : (b))
 > int y = MAX(x++, 10);
@@ -138,7 +148,7 @@ int main() {
 }
 // expect: y=21 x=22
 ```
-1. Wrapping every use of `a` and `b` in parentheses is the standard fix for operator-precedence surprises (see [[The Compilation Pipeline]] for the `SQUARE(2) + 3` version of that bug) — but it fixes precedence, not repetition.
+1. Wrapping every use of `a` and `b` in parentheses is the standard fix for operator-precedence surprises (see [[The Compilation Pipeline]] for the `SQUARE_NAIVE(2 + 3)` version of that bug) — but it fixes precedence, not repetition.
 2. `x++` is evaluated once inside the condition (`x` becomes 21, the compared value is 20) and, because `20 > 10` is true, a **second** time in the true-branch (`x` becomes 22, `y` is set to 21). A real function `int max(int a, int b)` would evaluate `x++` exactly once, no matter which branch its *body* takes, because binding an argument to a parameter is not the same operation as pasting text into a template.
 
 **2 · `#` stringizes, `##` pastes — both operate on tokens the parser has not seen yet**
@@ -185,7 +195,7 @@ int main() {
 | Observed rule or failure | Explained by |
 |---|---|
 | A macro argument with a side effect (`x++`, a function call) can run more times than it appears to | Substitution pastes the argument's *text* everywhere the parameter name occurs in the replacement list — there is no single evaluation site to share (*Under the Hood*, *In Code* #1) |
-| Two macros with the same name anywhere in a translation unit collide, even across unrelated headers | Macro names live in **one flat, program-wide namespace** with no notion of scope (`[cpp.replace.general]` ¶8) — the reason library headers reserve all-uppercase names and the reserved-name rule forbids `#define`-ing a standard library identifier |
+| Two macros with the same name anywhere in a translation unit collide, even across unrelated headers | Macro names live in **one flat name space** with no notion of C++ scope (`[cpp.replace.general]` ¶8); it spans the whole translation unit from the `#define` onward (until `#undef`), though not other translation units, which never see this unit's macros — the reason library headers reserve all-uppercase names and the reserved-name rule forbids `#define`-ing a standard library identifier |
 | `assert(expr)` can print the exact text of the condition it "checked" | `#expr` stringizes the *unexpanded* argument spelling before phase 7 ever parses it as an expression (*In Code* #2; Primer §6.5.3, p. 241) |
 | A header pasted into 101 translation units is reparsed 101 times, in full | `#include` is textual splicing at phase 4, not a shared compiled artifact — the domain-wide cost this note's prerequisite quantifies with `g++ -E` ([[The Compilation Pipeline]]) |
 | `#define SQUARE(x) x*x` silently changes meaning depending on the caller's expression, but parenthesizing every use fixes it | Blind textual substitution has no notion of operator precedence unless parentheses supply it by hand ([[The Compilation Pipeline]]) |
@@ -208,7 +218,7 @@ int main() {
 > `assert` is a function-like macro whose replacement list uses the `#` operator on its argument. `#` doesn't evaluate or parse the argument — it stringizes the *raw token sequence* the caller wrote, before any parser has run. The printed text is a direct copy of your source characters, not a description the library computed.
 
 > [!quiz]- Predict: what does `#define TWICE(x) x x` followed by `TWICE(f())` expand to, and what's wrong with calling it "the function `f` runs twice, just like calling it twice by hand"?
-> It expands to `f() f()` — two separate statements, or a compile error if used where only one expression is legal (e.g., inside `int r = TWICE(f());` this becomes `int r = f() f();`, which is ill-formed). Textual repetition is not equivalent to "calling it twice": there is no shared expression context, and if `TWICE` is used as a *sub-expression* rather than a full statement, the second `f()` is very often not where a reader expects a second call to be legal at all.
+> It expands to `f() f()`: two expressions with no operator or `;` between them, which is ill-formed wherever it lands (`TWICE(f());` becomes `f() f();`, and `int r = TWICE(f());` becomes `int r = f() f();`). The preprocessor produced it without complaint because it never checks that its output is valid C++; phase 7 rejects it, and reports the error at the expanded tokens rather than at `TWICE`'s definition. Textual repetition is not "calling it twice": there is no statement or expression structure in the paste at all, only tokens.
 
 ## Sources
 
@@ -217,4 +227,4 @@ int main() {
 - Tour §16.5 "source_location" (p. 222): `std::source_location::current()` as the C++20, type-safe replacement for `__FILE__`/`__LINE__`-based logging macros.
 - cppreference, *Preprocessor* · *Replacing text macros*: confirms object-like vs. function-like macros, the `#`/`##` operators, `__VA_ARGS__`/`__VA_OPT__` (C++20), the reserved-macro-name rule, and that preprocessing runs at translation phase 4: https://en.cppreference.com/w/cpp/preprocessor · https://en.cppreference.com/w/cpp/preprocessor/replace
 - Draft standard `[cpp.replace.general]` (the `max(a,b)` double-evaluation example, ¶15, is the Standard's own), `[cpp.subst]`, `[cpp.stringize]`, `[cpp.concat]`, `[cpp.rescan]`: https://eel.is/c++draft/cpp.replace
-- See [[The Compilation Pipeline]] for the `g++ -E` header-expansion measurement and the `SQUARE(2) + 3` precedence pitfall this note builds on rather than repeats.
+- See [[The Compilation Pipeline]] for the `g++ -E` header-expansion measurement and the `SQUARE_NAIVE(2 + 3)` precedence pitfall this note builds on rather than repeats.

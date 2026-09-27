@@ -1,31 +1,34 @@
 ---
 type: system
 tags: [system/directives]
-pin: [map-d00, map-d07, map-d08]
-focus: []
+pin: [abstract-machine, object-model, storage-duration, object-lifetime, references, pointers, virtual-functions, constructors]
+focus: [D04, D07, D08]
 hold: []
-deepen: [pointers-vs-references, dangling-pointers-and-references]
-updated: 2026-09-23
+deepen: [cpp-design-philosophy, anatomy-of-an-expression, what-a-type-is]
+updated: 2026-09-27
 ---
 # Directives: Editor → Builder
 
 > [!essence] The Editor's standing instructions to the hourly Builder. The frontmatter steers the work queue (`pin` ids first, `focus` domains favoured, `hold` ids skipped, `deepen` ids used on DEEPEN runs). The sections below steer *how* to write. The Builder reads this every run; the Editor rewrites it every morning.
 
 ## Active Directives
-1. **Phase 1 · Frame.** Finish all 16 remaining Domain Maps (wave 0) today. Start with the pinned three: [[Map — What C++ Is]] (the root every map links to), then [[Map — Ownership & Move Semantics]] and [[Map — Inheritance & Polymorphism]], which the reviewed notes [[RAII]] and [[Virtual Dispatch — vptr and vtable]] already point to. Each map derives its question from first principles and draws its concept map with *registered* titles only.
-2. **Use [[Map — Objects, Memory & Lifetime]] as the map exemplar** (19/21). Beat it on *depth*: every Key Idea gets one supporting sentence that states a mechanism, not a slogan.
-3. **Cite the page where the point is made**, not only where the section starts: `Primer §12.1.2 (p. 463)`, not `(p. 458)`. Verify every page with `cc.py src find` before writing it. The PPP edition has no printed pages: cite `PPP §17.4`, never a bare chapter. (The old house example `Primer 13.6.2 (p. 532)` was wrong; the Style Guide is corrected.)
-4. **Precision on lifetime vocabulary.** *Lifetime* ends when the destructor starts; *storage* is released when its storage duration ends (scope exit, `delete`, program end), which can be later. Don't conflate them, and quote the clause (`[basic.life]`, `[basic.stc.general]`) when the difference matters.
-5. **Code verification changed today.** Local g++ (MinGW) has no ASan/UBSan runtime; `cc.py code` now falls back to UBSan trap mode automatically. Never write "ASan reports X" as if the check had observed it: say what ASan reports *on Linux/macOS* and keep the block `// cc: ub`.
-6. Every note names at least one of the Five Tensions (tag `tension/...` plus a `[!tension]` or `[!principle]` callout), and every C++14+ behavior is checked against cppreference: the Primer is C++11.
-7. **After wave 0**, begin wave 1 with the Source Guides (`guide-primer`, `guide-tour`, `guide-web-references`) before the concept notes. **New product: Header Cards** (`05 Headers/`, hub [[Map — Standard Headers]]). The owner's 13 reference sheets were adopted today as drafts, and 44 more cards are registered one wave after their Dossiers. Write them per [[Run Protocol]] §6b. When you write `map-d10` or any I/O or string Dossier, link the matching card.
+1. **Phase 2 · Spine: build the object-to-RAII walk.** Phase 1 is done (all 17 Domain Maps and the Standard Headers hub exist as drafts). Write the pinned chain in dependency order: [[The C++ Abstract Machine]] → [[The C++ Object Model — What an Object Is]] → [[Storage Duration]] → [[Object Lifetime]], then [[References]], [[Pointers]], [[Virtual Functions]], [[Constructors]]. Many written notes already link to these titles as frontier links; each new note must resolve them and back-link at least two of the reviewed notes that point at it.
+2. **Say which standard a rule holds for** (Style Guide §4.6, new today). Three of today's errors were true in one standard and false in another: `i = i++ + 1` (UB only through C++14), out-of-range signed conversion (never UB; modulo 2^N since C++20), the translation phases (eight in the C++26 draft that eel.is shows, nine through C++23). Before writing "UB", "nine", "since", or a ¶ number, check the rule's history on cppreference.
+3. **Label tool evidence honestly** (Style Guide §4.7, new today). Name compiler, version and platform for every asm listing, `nm` or `-E` count. "This vault's toolchain" means only the local MinGW g++. Sanitizer results you did not observe are reported behavior ("on Linux/macOS, ASan reports…"). UBSan does not check strict aliasing.
+4. **Label implementation-specific layouts** (Style Guide §4.8). `sizeof(long)` is 4 on 64-bit Windows; SSO layout and the short/long test are libstdc++ facts, not `std::string` facts.
+5. **Make every example demonstrate its claim.** A pitfall example must fail the naive expectation. Today's `SQUARE(2) + 3` example "proved" textual substitution with output a function would also produce; it is now `SQUARE_NAIVE(2 + 3)` → 11.
+6. **Keep citing the page where the point is made, and verify it** with `cc.py src find` (unchanged from 09-23: the precision is much better now; one wrong section label today, Primer §15.7 for a p. 598 point that is §15.2.2).
+7. **Stop growing already-long notes on DEEPEN runs.** [[Pointers vs References]] is 3,400 words after three deepens. The DEEPEN queue is the three lowest-scoring notes above; improve the named weak dimension (Brief lists them), and prefer tightening to appending.
 
 ## Quality Watchlist
-- **Citation locations are imprecise** (4 of 6 exemplars fixed today): section-start pages instead of the page of the point, PPP cited by chapter only, one Tour passage attributed to the wrong section. Example: [[RAII]] cited Tour "§4.3, p. 45"; the passage is in §4.2.
-- **Integration is the weakest rubric dimension** (2/3 on all six reviewed notes). New notes must add inbound links from ≥ 2 written notes (Run Protocol §3.6) and cite ≥ 3 sources with exact locations.
-- **Library mechanics described loosely.** Example: [[Dangling Pointers and References]] said `string_view`'s *constructor* takes the temporary; it is `std::string`'s conversion operator. Name the exact function that does the work.
+- **Rules that changed between standards stated for one standard only.** Examples: [[Anatomy of an Expression]] (`i = i++ + 1` called UB in C++17), [[Fundamental Types]] (signed out-of-range conversion called UB, following the Primer), [[The Compilation Pipeline]] (nine phases cited against the eight-phase C++26 draft). All fixed today.
+- **Tool evidence overstated or mislabelled.** Examples: [[What a Type Is]] (claimed UBSan reports type punning), [[string]] ("verified on this Linux toolchain"), [[Dangling Pointers and References]] ("ASan reports", unobserved), three D01 notes labelled GCC 11 output "this vault's toolchain". All fixed today.
+- **Platform-specific layouts drawn as universal.** Examples: [[Classes as User-Defined Types]] and [[Encapsulation and Class Invariants]] (8-byte `long`), [[string]] (libstdc++'s SSO test presented as the only design). Fixed today.
+- **Library mechanics described loosely** (from 09-23; one recurrence today: [[Encapsulation and Class Invariants]] said a throwing constructor leaves "nothing to destroy"; fully built members are destroyed, `[except.ctor]`).
+- Retired: *citation locations imprecise* (1 of 20 notes today) and *integration weakest dimension* (now 3/3 on 16 of 20 notes).
 
 ## Directive log
 - 2026-09-23: initial directives (setup).
 - 2026-09-23 (Editor #1): pinned map-d00/d07/d08; deepen queue set; citation, lifetime-vocabulary and sanitizer directives added; Watchlist opened with 3 items.
 - 2026-09-23 (owner request, human run): Header Cards product opened. 13 owner sheets migrated to `05 Headers/` (status draft, for tomorrow's audit), hub map written, 44 cards registered (HDR domain); `// cc: stmts` and `cc.py export-pdf` added.
+- 2026-09-27 (Editor #2): Phase 1 closed, Phase 2 pins set to the object-model → lifetime chain plus references/pointers/virtual functions/constructors; focus D04/D07/D08; deepen queue replaced; Style Guide §4.6–4.8 added; Watchlist rewritten (3 new items, 2 retired).

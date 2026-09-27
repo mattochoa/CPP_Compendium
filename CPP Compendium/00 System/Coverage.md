@@ -10,9 +10,9 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 280 |
 | ◌ stub | 0 |
-| ◐ draft | 71 |
+| ◐ draft | 51 |
 | ⟲ revise | 0 |
-| ● reviewed | 3 |
+| ● reviewed | 23 |
 | ★ evergreen | 0 |
 
 **Total topics:** 354
@@ -30,7 +30,7 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — What C++ Is]] | map | 1 | 0 |  |
-| ◐ | [[The C++ Design Philosophy]] | concept | 1 | 1 |  |
+| ● | [[The C++ Design Philosophy]] | concept | 1 | 1 | 18 |
 | ○ | [[Zero-Overhead Principle]] | concept | 1 | 1 |  |
 | ○ | [[Levels of Abstraction — From Bits to Libraries]] | concept | 1 | 1 |  |
 | ○ | [[The C++ Abstract Machine]] | concept | 1 | 1 |  |
@@ -46,9 +46,9 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Program Structure & Build]] | map | 1 | 0 |  |
-| ◐ | [[The Compilation Pipeline]] | mechanism | 1 | 1 |  |
-| ◐ | [[Translation Units]] | concept | 1 | 1 |  |
-| ◐ | [[The Preprocessor]] | mechanism | 1 | 1 |  |
+| ● | [[The Compilation Pipeline]] | mechanism | 1 | 1 | 20 |
+| ● | [[Translation Units]] | concept | 1 | 1 | 20 |
+| ● | [[The Preprocessor]] | mechanism | 1 | 1 | 20 |
 | ○ | [[Headers and Include Guards]] | idiom | 1 | 1 |  |
 | ○ | [[Declarations vs Definitions]] | comparison | 1 | 1 |  |
 | ○ | [[Scope]] | concept | 1 | 1 |  |
@@ -71,9 +71,9 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Types & Values]] | map | 1 | 0 |  |
-| ◐ | [[What a Type Is]] | concept | 1 | 1 |  |
-| ◐ | [[Fundamental Types]] | concept | 1 | 1 |  |
-| ◐ | [[const and Const-Correctness]] | concept | 1 | 1 |  |
+| ● | [[What a Type Is]] | concept | 1 | 1 | 19 |
+| ● | [[Fundamental Types]] | concept | 1 | 1 | 20 |
+| ● | [[const and Const-Correctness]] | concept | 1 | 1 | 20 |
 | ○ | [[Integer Representation and Two's Complement]] | mechanism | 1 | 2 |  |
 | ○ | [[Implicit Conversions and Promotions]] | mechanism | 1 | 2 |  |
 | ○ | [[Narrowing Conversions and Brace Initialization]] | concept | 1 | 2 |  |
@@ -103,8 +103,8 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Expressions & Control]] | map | 1 | 0 |  |
-| ◐ | [[Anatomy of an Expression]] | concept | 1 | 1 |  |
-| ◐ | [[Precedence and Associativity]] | concept | 1 | 1 |  |
+| ● | [[Anatomy of an Expression]] | concept | 1 | 1 | 19 |
+| ● | [[Precedence and Associativity]] | concept | 1 | 1 | 20 |
 | ○ | [[Control Flow — Selection and Iteration]] | concept | 1 | 1 |  |
 | ○ | [[Evaluation Order and Sequencing]] | mechanism | 2 | 2 |  |
 | ○ | [[Short-Circuit Evaluation]] | concept | 1 | 2 |  |
@@ -123,7 +123,7 @@ tags: [system/generated]
 |---|---|---|---|---|---|
 | ● | [[Map — Objects, Memory & Lifetime]] | map | 1 | 0 | 19 |
 | ○ | [[The C++ Object Model — What an Object Is]] | concept | 1 | 1 |  |
-| ◐ | [[Process Memory Layout — Stack, Heap, Static]] | mechanism | 1 | 1 |  |
+| ● | [[Process Memory Layout — Stack, Heap, Static]] | mechanism | 1 | 1 | 20 |
 | ○ | [[Storage Duration]] | concept | 1 | 1 |  |
 | ○ | [[Object Lifetime]] | concept | 1 | 1 |  |
 | ○ | [[References]] | concept | 1 | 1 |  |
@@ -133,11 +133,11 @@ tags: [system/generated]
 | ○ | [[The Forms of Initialization]] | comparison | 2 | 2 |  |
 | ○ | [[Reading Uninitialized Variables]] | pitfall | 1 | 2 |  |
 | ○ | [[Pointer Arithmetic and Arrays]] | mechanism | 1 | 2 |  |
-| ◐ | [[Pointers vs References]] | comparison | 1 | 2 |  |
+| ● | [[Pointers vs References]] | comparison | 1 | 2 | 20 |
 | ○ | [[nullptr and Null Pointers]] | concept | 1 | 2 |  |
 | ○ | [[Built-in Arrays and Array-to-Pointer Decay]] | mechanism | 1 | 2 |  |
 | ○ | [[Memory Leaks]] | pitfall | 1 | 2 |  |
-| ◐ | [[Dangling Pointers and References]] | pitfall | 1 | 2 | 19 |
+| ● | [[Dangling Pointers and References]] | pitfall | 1 | 2 | 20 |
 | ○ | [[Double Free and Mismatched new-delete]] | pitfall | 2 | 2 |  |
 | ○ | [[Temporaries and Lifetime Extension]] | mechanism | 2 | 2 |  |
 | ○ | [[C-Style Strings]] | concept | 2 | 3 |  |
@@ -155,7 +155,7 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Functions]] | map | 1 | 0 |  |
-| ◐ | [[Anatomy of a Function]] | concept | 1 | 1 |  |
+| ● | [[Anatomy of a Function]] | concept | 1 | 1 | 20 |
 | ○ | [[The Call Stack and Stack Frames]] | mechanism | 1 | 1 |  |
 | ○ | [[Parameter Passing — Value, Reference, Pointer]] | comparison | 1 | 1 |  |
 | ◐ | [[Function Overloading]] | concept | 1 | 2 |  |
@@ -179,8 +179,8 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Classes & Encapsulation]] | map | 1 | 0 |  |
-| ◐ | [[Classes as User-Defined Types]] | concept | 1 | 1 |  |
-| ◐ | [[Encapsulation and Class Invariants]] | concept | 1 | 1 |  |
+| ● | [[Classes as User-Defined Types]] | concept | 1 | 1 | 20 |
+| ● | [[Encapsulation and Class Invariants]] | concept | 1 | 1 | 20 |
 | ○ | [[Constructors]] | concept | 1 | 1 |  |
 | ○ | [[Destructors]] | concept | 1 | 1 |  |
 | ○ | [[struct vs class]] | comparison | 1 | 2 |  |
@@ -206,7 +206,7 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Ownership & Move Semantics]] | map | 1 | 0 |  |
-| ◐ | [[Ownership — Who Releases What]] | concept | 1 | 1 |  |
+| ● | [[Ownership — Who Releases What]] | concept | 1 | 1 | 20 |
 | ● | [[RAII]] | idiom | 1 | 1 | 20 |
 | ○ | [[Copy Semantics — Deep vs Shallow Copy]] | comparison | 1 | 2 |  |
 | ○ | [[Owning vs Observing Pointers]] | comparison | 2 | 2 |  |
@@ -232,9 +232,9 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Inheritance & Polymorphism]] | map | 1 | 0 |  |
-| ◐ | [[Inheritance]] | concept | 1 | 1 |  |
+| ● | [[Inheritance]] | concept | 1 | 1 | 20 |
 | ○ | [[Virtual Functions]] | concept | 1 | 1 |  |
-| ◐ | [[Virtual Dispatch — vptr and vtable]] | mechanism | 2 | 1 | 20 |
+| ● | [[Virtual Dispatch — vptr and vtable]] | mechanism | 2 | 1 | 21 |
 | ○ | [[Abstract Classes and Interfaces]] | concept | 1 | 2 |  |
 | ○ | [[Virtual Destructors]] | pitfall | 1 | 2 |  |
 | ○ | [[Object Slicing]] | pitfall | 1 | 2 |  |
@@ -254,7 +254,7 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Generic Programming]] | map | 1 | 0 |  |
-| ◐ | [[Templates — Code That Writes Code]] | concept | 1 | 1 |  |
+| ● | [[Templates — Code That Writes Code]] | concept | 1 | 1 | 20 |
 | ○ | [[Function Templates]] | concept | 1 | 2 |  |
 | ○ | [[Class Templates]] | concept | 2 | 2 |  |
 | ○ | [[Template Instantiation]] | mechanism | 2 | 2 |  |
@@ -280,7 +280,7 @@ tags: [system/generated]
 | ◐ | [[STL Architecture — Containers, Iterators, Algorithms]] | concept | 1 | 1 |  |
 | ◐ | [[vector]] | concept | 1 | 1 |  |
 | ◐ | [[Iterators]] | concept | 1 | 1 |  |
-| ◐ | [[string]] | concept | 1 | 1 |  |
+| ● | [[string]] | concept | 1 | 1 | 20 |
 | ○ | [[array]] | concept | 1 | 2 |  |
 | ○ | [[Ordered Associative Containers — map and set]] | concept | 1 | 2 |  |
 | ○ | [[The Algorithms Library]] | concept | 1 | 2 |  |

@@ -8,7 +8,7 @@ aliases:
 type: mechanism
 domain: D01
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs: []
 related:
@@ -26,6 +26,16 @@ tags:
 - tension/compatibility-vs-evolution
 created: 2026-09-26
 updated: 2026-09-26
+reviewed: 2026-09-27
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 2
+  depth: 3
+  visual: 3
+  code: 3
+  integration: 3
 ---
 
 # The Compilation Pipeline
@@ -41,7 +51,7 @@ updated: 2026-09-26
 > 1. **Constraint.** A CPU executes machine instructions for its own instruction set; it has no notion of `double`, `circle_area`, or a header file. C++ source text, meanwhile, is written to be read by a person and organized into files that are compiled independently, often by different people, sometimes years apart, and combined with library code whose source may not exist on the machine doing the building at all.
 > 2. **Consequence.** Turning that text into instructions can't be one operation. Macro text has to be expanded before anything can be parsed as C++ grammar; a file has to be checked for type and syntax errors before it means anything at all; and a name used in one file but defined in another can only be resolved once *every* separately-produced piece is finally gathered in one place.
 > 3. **Requirement.** The tooling needs distinct stages, each consuming exactly what the previous stage could produce and producing exactly what the next stage needs: something that turns raw text plus `#include`s into one flat, self-contained token stream; something that turns that stream into real machine instructions *for one file at a time*, tolerating names it can't yet resolve; and something that gathers every such file's instructions — plus whatever prebuilt libraries are needed — and turns the unresolved names into real addresses.
-> 4. **Design.** C++ inherits a four-stage pipeline from C: the **preprocessor** expands `#include`s and macros into a **translation unit**; the **compiler** parses and type-checks that translation unit and emits **assembly**; the **assembler** turns assembly mnemonics into an **object file** — real machine code, but with a *symbol table* listing which names it defines and which it still needs; the **linker** collects every object file and library the program needs and rewrites every needed name into the address of exactly one defining name. The Standard describes this as nine **translation phases** ending in phase 7 ("Compiling"), phase 8 ("Instantiating templates") and phase 9 ("Linking") — `[lex.phases]` — but the four-tool, four-artifact shape is what every mainstream toolchain actually ships.
+> 4. **Design.** C++ inherits a four-stage pipeline from C: the **preprocessor** expands `#include`s and macros into a **translation unit**; the **compiler** parses and type-checks that translation unit and emits **assembly**; the **assembler** turns assembly mnemonics into an **object file** — real machine code, but with a *symbol table* listing which names it defines and which it still needs; the **linker** collects every object file and library the program needs and rewrites every needed name into the address of exactly one defining name. The Standard describes this as numbered **translation phases** (`[lex.phases]`): through C++23 there are nine, ending in phase 7 (translation of the tokens), phase 8 (template instantiation) and phase 9 (resolving external references and linking) — cppreference labels them "Compiling", "Instantiating templates" and "Linking". The C++26 working draft folds instantiation into phase 7, leaving **eight** phases with linking as phase 8. Either way, the four-tool, four-artifact shape is what every mainstream toolchain actually ships.
 > 5. **Price.** Each boundary is a place where information is deliberately dropped. After preprocessing, macros and `#include`s are gone — the compiler never sees them, which is exactly why a macro-expansion bug is reported at the *expanded* location, not the macro's definition. After compiling one translation unit, the compiler has forgotten that unit exists by the time it compiles the next, so it cannot inline or optimize across files without extra help. After assembling, an object file carries names and addresses but no types — the one stage that ever sees the *whole* program, the linker, is also the one stage that can no longer tell a `double` from an `int`.
 
 > [!tension] compatibility ⟷ evolution
@@ -92,13 +102,13 @@ sequenceDiagram
 ```
 
 1. **Preprocess.** Input: one source file plus every file it `#include`s, recursively — each included file is itself run through phases 1–4 before being pasted in (`[lex.phases]`, phase 4). Transformation: macro expansion, textual inclusion, and conditional-compilation blocks (`#ifdef`/`#endif`) are resolved; by the end, every preprocessor directive is gone from the text. Output: one flat sequence of tokens — the **translation unit** — that no longer mentions `#include` or `#define` at all.
-2. **Compile.** Input: the translation unit's token stream. Transformation: lexing, parsing against C++ grammar, full semantic analysis (type-checking every expression, resolving overloads and templates — phase 8, "Instantiating templates"), then optimization. A call to a function that is only *declared* here type-checks fine; the compiler does not require the body, only the checked type that declaration carries (see [[Anatomy of a Function]] for exactly what that type is and isn't). Output: assembly code for the target instruction set — still human-readable text, now describing registers and instructions instead of `double`s and function calls.
+2. **Compile.** Input: the translation unit's token stream. Transformation: lexing, parsing against C++ grammar, full semantic analysis (type-checking every expression, resolving overloads and instantiating templates — phase 8 through C++23, part of phase 7 in the C++26 draft), then optimization. A call to a function that is only *declared* here type-checks fine; the compiler does not require the body, only the checked type that declaration carries (see [[Anatomy of a Function]] for exactly what that type is and isn't). Output: assembly code for the target instruction set — still human-readable text, now describing registers and instructions instead of `double`s and function calls.
 3. **Assemble.** Input: assembly text. Transformation: each mnemonic is encoded into its binary instruction; every name the assembly still refers to but doesn't define locally is recorded, not resolved. Output: an **object file** (`.o` / `.obj`) — real machine code, plus a *symbol table* splitting every name the file mentions into **defined** (this file provides code or data for it) and **undefined** (some other file must).
-4. **Link.** Input: every object file the program needs, plus any static or shared libraries. Transformation: for every undefined symbol in every object file, find exactly one object or library that defines it, and patch the instruction that referenced it with that definition's real address (`[lex.phases]`, phase 9: "Translation units, instantiation units, and library components needed to satisfy external references are collected into a program image"). Output: one executable — the first artifact in the whole pipeline that has no unresolved names left, and the first that the operating system can actually run (see [[main, Program Startup and Termination]] for what happens the instant it does).
+4. **Link.** Input: every object file the program needs, plus any static or shared libraries. Transformation: for every undefined symbol in every object file, find exactly one object or library that defines it, and patch the instruction that referenced it with that definition's real address (`[lex.phases]`, phase 9 through C++23 and phase 8 in the C++26 draft: external references are resolved, library components are linked to satisfy them, and all translator output is collected into a program image). Output: one executable — the first artifact in the whole pipeline that has no unresolved names left, and the first that the operating system can actually run (see [[main, Program Startup and Termination]] for what happens the instant it does).
 
 ## Under the Hood
 
-> [!machine] `#include` really does paste text (GCC 11, this vault's toolchain)
+> [!machine] `#include` really does paste text (GCC 11, x86-64 Linux; exact counts vary by compiler version and standard library)
 > A five-line `main.cpp` that only writes `#include <iostream>` and one `std::cout` line preprocesses (`g++ -E main.cpp`) to **32,262 lines** before phase 7 ever runs. Nothing about `<iostream>`'s declarations changed; the entire header (and everything *it* includes) was pasted in, character for character. Do this once with `g++ -E yourfile.cpp | wc -l` and the "reparsed per translation unit" cost in *The Problem* stops being an abstraction.
 
 The object-file boundary is where "declared" and "defined" become visible as two different, checkable things. Compiling `area.cpp` (which defines `circle_area`) and `main.cpp` (which only declares it, via a shared header) separately and inspecting each object file's symbol table with `nm` shows exactly what phase 7 knew and didn't know:
@@ -157,15 +167,20 @@ int main() {
 ```cpp
 #include <iostream>
 
-#define SQUARE(x) ((x) * (x))                // ① pure text substitution, phase 4
+#define SQUARE_NAIVE(x) x * x                  // ① pure text substitution, phase 4
+#define SQUARE(x) ((x) * (x))                  // ② the parentheses are a *textual* repair
 
 int main() {
-    std::cout << SQUARE(2 + 3) << '\n';      // ② expands to ((2 + 3) * (2 + 3)) = 25
+    std::cout << SQUARE_NAIVE(2 + 3) << '\n';  // ③ expands to 2 + 3 * 2 + 3
+    std::cout << SQUARE(2 + 3) << '\n';        // ④ expands to ((2 + 3) * (2 + 3))
 }
+// expect: 11
 // expect: 25
 ```
-1. `SQUARE` has no type, no scope, and no idea what an expression is — the preprocessor only ever manipulates tokens, before phase 7's parser exists to disagree.
-2. A learner expecting "square of `2 + 3`" to mean "square of 5" (answer 25 either way, by luck) should instead try `SQUARE(2) + 3`: it expands to `((2) * (2)) + 3 = 7`, not `SQUARE(5) = 25` — proof that substitution is textual, not a function call.
+1. `SQUARE_NAIVE` has no type, no scope, and no idea what an expression is — the preprocessor only ever manipulates tokens, before phase 7's parser exists to disagree.
+2. Wrapping each use of `x` and the whole body in parentheses doesn't make the macro a function; it just makes the pasted text parse the way a function call would have evaluated.
+3. The tokens `2 + 3` are pasted in verbatim, and only *then* does phase 7 apply precedence: `2 + (3 * 2) + 3 = 11`, not 25. A function `square(2 + 3)` would have evaluated its argument to 5 first — proof that macro substitution is textual, not a call.
+4. The same argument through the parenthesized macro gives `25`, because the added parentheses survive the paste.
 
 **4 · What phase 7 alone can catch**
 
@@ -186,8 +201,8 @@ int main() {}
 | "undefined reference to X" surfaces only at the very end of the build, never mid-compile | The compiler accepts any name backed by a matching *declaration*; only the linker, which runs last, checks that a *definition* actually exists anywhere: [[What the Linker Does]] |
 | The identical duplicate-definition mistake is `redefinition of X` in one file but `multiple definition of X` across two | Phase 7 only ever sees one translation unit at a time; the promise that a name is defined exactly once program-wide is enforced across files only by the linker: [[The One Definition Rule]] |
 | A function defined in another `.cpp` usually can't be inlined at its call site | Ordinary compilation optimizes one translation unit at a time — the callee's body isn't present to inline unless link-time optimization reopens several object files together: [[What Optimizers Do]] |
-| A template's definition must be visible everywhere it's used, unlike an ordinary function's | Phase 8 ("Instantiating templates") needs the full definition inside the *same* translation unit that names the type it's instantiated for: [[Templates — Code That Writes Code]] |
-| Two independently compiled object files can be linked with neither side ever seeing the other's source | Phase 9 needs only symbol names, addresses and relocations, not source text — the basis for shipping precompiled libraries: [[Static vs Shared Libraries]] |
+| A template's definition must be visible everywhere it's used, unlike an ordinary function's | Template instantiation (phase 8 through C++23; folded into phase 7 in the C++26 draft) needs the full definition inside the *same* translation unit that names the type it's instantiated for: [[Templates — Code That Writes Code]] |
+| Two independently compiled object files can be linked with neither side ever seeing the other's source | Linking (the last translation phase) needs only symbol names, addresses and relocations, not source text — the basis for shipping precompiled libraries: [[Static vs Shared Libraries]] |
 
 ## Connections
 
@@ -208,8 +223,8 @@ int main() {}
 > [!quiz]- Predict: a header declares `int scale(int);` and is `#include`d in `main.cpp`, but no `.cpp` file anywhere defines `scale`. What happens at each stage?
 > Preprocessing succeeds (it's just text). Compiling `main.cpp` succeeds — the declaration is enough to type-check any call to `scale`. Linking fails with `undefined reference to 'scale(int)'`, because no object file's symbol table has a `T` entry to match `main.o`'s `U` entry.
 
-> [!quiz]- `SQUARE(x)` is defined as `((x) * (x))`. Why does `SQUARE(2) + 3` print `7` rather than `25`?
-> Macro expansion is blind text substitution, not a function call: `SQUARE(2) + 3` expands to `((2) * (2)) + 3`, which evaluates left to right as `4 + 3 = 7`. Getting `25` would require the preprocessor to understand that "the whole expression" should be squared — but the preprocessor has no concept of "the whole expression," only tokens.
+> [!quiz]- `SQUARE_NAIVE(x)` is defined as `x * x`. Why does `SQUARE_NAIVE(2 + 3)` print `11` rather than `25`?
+> Macro expansion is blind text substitution, not a function call: the argument tokens `2 + 3` are pasted in place of each `x`, giving `2 + 3 * 2 + 3`. Only afterwards does phase 7 parse it, and `*` binds tighter than `+`, so the result is `2 + 6 + 3 = 11`. A function would have evaluated `2 + 3` to `5` first; the preprocessor has no concept of "the argument's value", only tokens.
 
 ## Sources
 
@@ -221,4 +236,4 @@ int main() {}
 - Primer §6.1.3 "Separate Compilation" (pp. 207–208): declaring functions in headers, defining them in source files, and the actual `CC -c` / link command sequence.
 - Primer §2.6 "Defining Our Own Data Structures" (p. 77): the preprocessor as "a program that runs before the compiler and changes the source text," using `#include` as the example.
 - cppreference, *Phases of translation*, §"Phase 7: Compiling" / §"Phase 9: Linking": https://en.cppreference.com/w/cpp/language/translation_phases
-- Draft standard `[lex.phases]` — the nine translation phases: https://eel.is/c++draft/lex.phases
+- Draft standard `[lex.phases]` — the translation phases (nine through C++23; eight in the C++26 working draft, which folds template instantiation into phase 7): https://eel.is/c++draft/lex.phases

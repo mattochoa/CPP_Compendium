@@ -120,7 +120,7 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D08 -->
 **Tier 1 · Foundational**
-- ◐ [[Inheritance]] · *concept*
+- ● [[Inheritance]] · *concept*
 - ○ [[Virtual Functions]] · *concept*
 - ○ [[Abstract Classes and Interfaces]] · *concept*
 - ○ [[Virtual Destructors]] · *pitfall*
@@ -128,7 +128,7 @@ flowchart LR
 - ○ [[override and final]] · *concept*
 
 **Tier 2 · Proficient**
-- ◐ [[Virtual Dispatch — vptr and vtable]] · *mechanism*
+- ● [[Virtual Dispatch — vptr and vtable]] · *mechanism*
 - ○ [[Composition vs Inheritance]] · *comparison*
 - ○ [[Public, Protected and Private Inheritance]] · *comparison*
 - ○ [[RTTI and dynamic_cast]] · *mechanism*

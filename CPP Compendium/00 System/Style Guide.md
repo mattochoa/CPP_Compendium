@@ -44,7 +44,10 @@ Put the derivation in a `[!principle]` callout. If you cannot derive a rule, you
 2. **Version-label** features: "(C++17)" at first mention, and in the *Evolution* section.
 3. **Compile every claim.** "This compiles", "this prints 3", "this is UB": each needs a verified block (see Code rules). `cc.py code` must pass.
 4. **When sources disagree**, prefer: the Standard > cppreference > Stroustrup (Tour/PPP) > Primer (it predates C++14) > others, and say so in a `[!standard]` callout.
-5. **The Primer is C++11.** Anything it says about later behavior (guaranteed copy elision, `auto` deduction for braces, etc.) must be checked against modern sources.
+5. **The Primer is C++11.** Anything it says about later behavior (guaranteed copy elision, `auto` deduction for braces, etc.) must be checked against modern sources. It is also loose in places even for C++11 (it calls out-of-range conversion to a signed type "undefined"; the Standard never did).
+6. **Say which standard a rule holds for when the rule has moved.** Evaluation order (`i = i++ + 1` is UB only through C++14), out-of-range signed conversion (implementation-defined through C++17, modulo 2^N since C++20), the translation phases (nine through C++23, eight in the C++26 draft), copy elision (permitted vs. mandatory). eel.is tracks the *current working draft* (C++26 content and later), not C++23: when a paragraph number or phase count differs from C++23, give both.
+7. **Label tool evidence honestly.** Every asm listing, `nm`/`-E` count or sanitizer result names compiler, version and platform ("GCC 14, x86-64 Linux, Compiler Explorer"). "This vault's toolchain" means only the local MinGW g++ that `cc.py code` runs. Say *observed* only for what `cc.py` or Compiler Explorer actually produced; everything else is reported behavior ("on Linux/macOS, ASan reports…"). Never claim a tool catches a bug class its documentation doesn't cover: UBSan does not check strict aliasing, and ASan cannot see an overrun that stays inside an object's own SSO buffer.
+8. **Label implementation-specific layouts.** `sizeof`, member offsets, SSO capacity and mode bits, vtable layout: name the ABI or library (LP64 vs. LLP64; libstdc++ vs. libc++ vs. MSVC STL; Itanium vs. MSVC ABI). A diagram that assumes `long` is 8 bytes is wrong on 64-bit Windows.
 
 ## 5 · Using the books (copyright)
 
@@ -77,3 +80,4 @@ Mix three kinds: **recall** (definition), **reasoning** (why/what-if), **predict
 
 ## Protocol changelog
 - 2026-09-23 (Editor #1): §5 citation examples corrected (§13.6.2 starts on p. 534, not 532; Pikus ch. 4 starts on p. 113); PPP section-only citation made explicit; "cite the page where the point is made" added.
+- 2026-09-27 (Editor #2): §4 rules 6–8 added (version span for rules that moved between standards; honest tool-evidence labelling; ABI/library labels for layouts), after the same defect classes appeared in 11 of 20 audited notes. §4.5 notes the Primer's signed-conversion error.

@@ -4,7 +4,7 @@ title: The C++ Design Philosophy
 type: concept
 domain: D00
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs: []
 related:
@@ -23,6 +23,16 @@ tags:
 - std/c++98
 created: 2026-09-26
 updated: 2026-09-26
+reviewed: 2026-09-27
+score: 18
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 2
+  visual: 2
+  code: 3
+  integration: 2
 ---
 
 # The C++ Design Philosophy
@@ -233,7 +243,7 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 | 1979–1985 ("C with Classes" → Cfront) | Classes, virtual functions, references — translated straight into C source | Prove abstraction could be added without leaving C's compile, link and hardware model |
 | **C++98** | First ISO standard: templates, exceptions, destructor-driven cleanup formalized as language rules | Fix the two pillars as guarantees every conforming compiler must honor identically, not one vendor's habit |
 | C++11 | Move semantics; `constexpr` | Extend zero overhead to resource *transfer* (no copy-then-destroy tax) and push more computation to compile time |
-| C++17 | Guaranteed copy elision | Remove even an *elidable* copy's cost — a case the as-if rule alone had only permitted, not required |
+| C++17 | Guaranteed copy elision | Remove even an *elidable* copy's cost for prvalues — elision had previously been only *permitted*, as an explicit exception to the as-if rule (`[class.copy.elision]`), not required |
 | C++20 | Concepts | Move more interface-precondition checking into the compiler (P.5) without adding a runtime cost |
 
 ## Connections

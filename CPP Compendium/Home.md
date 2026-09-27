@@ -58,33 +58,33 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 280 | 71 | 0 | 3 | 0 | 354 | 66 | 1 |
+| 280 | 51 | 0 | 23 | 0 | 354 | 66 | 2 |
 
 `████░░░░░░░░░░░░░░░░` **21%** of the Atlas written · last build 2026-09-27
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Exceptions]] · *concept* · `D11` — wave 1
-2. [[References]] · *concept* · `D04` — wave 1
-3. [[Pointers]] · *concept* · `D04` — wave 1
-4. [[Constructors]] · *concept* · `D06` — wave 1
-5. [[Virtual Functions]] · *concept* · `D08` — wave 1
-6. [[Zero-Overhead Principle]] · *concept* · `D00` — wave 1
+1. [[The C++ Abstract Machine]] · *concept* · `D00` — pinned by Editor
+2. [[The C++ Object Model — What an Object Is]] · *concept* · `D04` — pinned by Editor
+3. [[Storage Duration]] · *concept* · `D04` — pinned by Editor
+4. [[Object Lifetime]] · *concept* · `D04` — pinned by Editor
+5. [[References]] · *concept* · `D04` — pinned by Editor
+6. [[Pointers]] · *concept* · `D04` — pinned by Editor
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
-- ◐ [[Pointers vs References]] · *comparison* · updated 2026-09-27
-- ◐ [[vector]] · *concept* · updated 2026-09-27
-- ◐ [[string]] · *concept* · updated 2026-09-27
-- ◐ [[Precedence and Associativity]] · *concept* · updated 2026-09-27
-- ◐ [[The Preprocessor]] · *mechanism* · updated 2026-09-27
-- ◐ [[Dangling Pointers and References]] · *pitfall* · updated 2026-09-27
-- ◐ [[Process Memory Layout — Stack, Heap, Static]] · *mechanism* · updated 2026-09-27
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-27
-- ◐ [[Function Overloading]] · *concept* · updated 2026-09-26
-- ◐ [[Overloading in Classes — Constructors, Members and Operators]] · *concept* · updated 2026-09-26
+- ● [[string]] · *concept* · updated 2026-09-27
+- ● [[Process Memory Layout — Stack, Heap, Static]] · *mechanism* · updated 2026-09-27
+- ● [[Precedence and Associativity]] · *concept* · updated 2026-09-27
+- ● [[The Preprocessor]] · *mechanism* · updated 2026-09-27
+- ● [[Dangling Pointers and References]] · *pitfall* · updated 2026-09-27
+- ● [[Pointers vs References]] · *comparison* · updated 2026-09-27
+- ◐ [[vector]] · *concept* · updated 2026-09-27
+- ◐ [[Map — Ownership & Move Semantics]] · *map* · updated 2026-09-26
+- ◐ [[Map — Inheritance & Polymorphism]] · *map* · updated 2026-09-26
 <!-- cc:end -->
 
 ## Start here

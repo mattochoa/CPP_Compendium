@@ -4,7 +4,7 @@ title: Inheritance
 type: concept
 domain: D08
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Classes as User-Defined Types]]"
@@ -26,6 +26,16 @@ tags:
 - std/c++11
 created: 2026-09-26
 updated: 2026-09-26
+reviewed: 2026-09-27
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Inheritance
@@ -75,7 +85,7 @@ A function such as `render(const Shape&)` is translated once, and from that poin
 | Direct vs. indirect base | A class named in the derivation list is a *direct* base; a direct base's own bases are *indirect* bases of the derived class | `struct B{}; struct C:B{}; struct D:C{};` — `B` is indirect to `D` — Primer §15.2.2 (p. 600) |
 | What is inherited | Every accessible member of the base (as governed by the derivation's access specifier) becomes a member of the derived class, as if declared there | `Circle` gets `Shape::name()` without redeclaring it — Primer §15.2 (p. 596–597) |
 | Object layout | The derived object contains one subobject per base plus a subobject for its own members; the Standard leaves the exact offsets and allocation order unspecified | Primer, Fig. 15.1 (p. 597); `[class.derived.general]` ¶3, ¶5 |
-| Construction order | Base subobject(s) are initialized first, in derivation-list order; then the derived class's own members, in declaration order; then the derived constructor's body runs | Primer §15.7 (p. 598): the base part comes into existence before any part that is specific to the derived class. |
+| Construction order | Base subobject(s) are initialized first, in derivation-list order; then the derived class's own members, in declaration order; then the derived constructor's body runs | Primer §15.2.2 (p. 598): the base part comes into existence before any part that is specific to the derived class. |
 | Destruction order | The exact reverse: the derived destructor's body runs, then its own members are destroyed, then the base subobject(s) | Primer §18.3 (p. 805): teardown always undoes construction from the most-derived part backward to the oldest base. |
 | `is-a` via public derivation | A pointer or reference to `Derived` converts implicitly to a pointer or reference to an accessible, unambiguous base | `const Shape& r = circle;` — cppreference, *Derived classes*, §Public inheritance; `[conv.ptr]`, `[dcl.init.ref]` |
 
@@ -215,7 +225,7 @@ int main() {
 > [!trap] A copy is not a reference
 > The *is-a* relationship holds only through a pointer or reference to the original object. `Shape s = circle;` compiles without complaint and runs `Shape`'s copy constructor on a `Circle` argument — only the `Shape` subobject is copied, and the result has no `radius_` at all. This is [[Object Slicing]], and it exists precisely because a derived object always *contains* a complete, self-sufficient base subobject that can be copied on its own.
 
-> [!trap] A derived class must be defined before it can act as a base
+> [!trap] A class must be defined before it can act as a base
 > `class Shape;` followed by `class Circle : public Shape {};` fails to compile (`error: invalid use of incomplete type`), because building `Circle`'s layout and inheriting `Shape`'s members both require knowing exactly what `Shape` contains. An incomplete type has no known members and no known size yet.
 
 > [!trap] "Overriding" a non-virtual function is name hiding, not polymorphism

@@ -4,7 +4,7 @@ title: Ownership — Who Releases What
 type: concept
 domain: D07
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[RAII]]"
@@ -24,6 +24,16 @@ tags:
 - std/c++11
 created: 2026-09-26
 updated: 2026-09-26
+reviewed: 2026-09-27
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Ownership — Who Releases What

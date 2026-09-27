@@ -135,7 +135,7 @@ flowchart LR
 - ◐ [[STL Architecture — Containers, Iterators, Algorithms]] · *concept*
 - ◐ [[vector]] · *concept*
 - ◐ [[Iterators]] · *concept*
-- ◐ [[string]] · *concept*
+- ● [[string]] · *concept*
 - ○ [[array]] · *concept*
 - ○ [[Ordered Associative Containers — map and set]] · *concept*
 - ○ [[The Algorithms Library]] · *concept*

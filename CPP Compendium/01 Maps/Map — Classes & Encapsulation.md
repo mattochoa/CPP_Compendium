@@ -124,8 +124,8 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D06 -->
 **Tier 1 · Foundational**
-- ◐ [[Classes as User-Defined Types]] · *concept*
-- ◐ [[Encapsulation and Class Invariants]] · *concept*
+- ● [[Classes as User-Defined Types]] · *concept*
+- ● [[Encapsulation and Class Invariants]] · *concept*
 - ○ [[Constructors]] · *concept*
 - ○ [[Destructors]] · *concept*
 - ○ [[struct vs class]] · *comparison*

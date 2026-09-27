@@ -6,7 +6,7 @@ aliases:
 type: concept
 domain: D10
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[STL Architecture — Containers, Iterators, Algorithms]]"
@@ -31,6 +31,16 @@ tags:
 - std/c++23
 created: 2026-09-27
 updated: 2026-09-27
+reviewed: 2026-09-27
+score: 20
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 3
+  code: 3
+  integration: 3
 ---
 
 # string
@@ -71,7 +81,7 @@ A `std::string` object is a fixed-size handle — on a typical 64-bit implementa
 ```
 
 > [!model] The business card with room on the back
-> A short string is a business card with a short note written directly on the back — the card *is* the storage, nothing else to manage. A long string is a card that says "see attached," stapled to a separate sheet; the card itself only holds that sheet's location. **Where it breaks:** nothing on the card is a labelled "short/long" flag. The object doesn't store a bit that says which mode it's in — it decides by comparing where `data()` points to its own address, every time. *Under the Hood* shows the actual comparison a compiler emits for that question.
+> A short string is a business card with a short note written directly on the back — the card *is* the storage, nothing else to manage. A long string is a card that says "see attached," stapled to a separate sheet; the card itself only holds that sheet's location. **Where it breaks:** nothing on the card is a labelled "short/long" flag. In libstdc++ (GCC's library) the object doesn't store a bit that says which mode it's in — it decides by comparing where `data()` points to its own address, every time. (Other libraries choose differently: libc++ does keep a mode bit. The Standard mandates none of this.) *Under the Hood* shows the actual comparison a compiler emits for that question.
 
 ## Mechanics
 
@@ -197,7 +207,7 @@ int main() {
 }
 ```
 1. `s[3]` is `'\0'` by rule.
-2. `s[4]` is one past the terminator and undefined — yet because the inline buffer has slack out to index 14, ASan has nothing to flag: **the sanitizer stays silent**, not because the read is safe, but because it landed inside memory the object already owned. Compare with the next example.
+2. `s[4]` is one past the terminator and undefined — yet because the inline buffer has slack out to index 14, AddressSanitizer (on Linux/macOS) has nothing to flag: **the sanitizer stays silent**, not because the read is safe, but because it landed inside memory the object already owned. Compare with the next example.
 
 > [!ub] The same mistake on a heap-allocated string is caught
 
@@ -211,7 +221,7 @@ int main() {
     (void)c;
 }
 ```
-With no SSO slack to hide behind, the identical off-by-one reads past the actual heap allocation, and AddressSanitizer reports a `heap-buffer-overflow` (verified on this Linux toolchain; sanitizer behavior on other platforms can differ, but the underlying read is UB regardless of whether any tool catches it). **The lesson:** passing under a sanitizer is not proof of correctness — it only proves nothing was caught *this run, on this input, in this buffer's current shape*.
+With no SSO slack to hide behind, the identical off-by-one reads past the actual heap allocation, and AddressSanitizer on Linux/macOS reports a `heap-buffer-overflow`. (The Compendium's local MinGW toolchain has no ASan runtime, so both blocks are marked `// cc: ub` and were not observed failing locally; the underlying read is UB regardless of whether any tool catches it.) **The lesson:** passing under a sanitizer is not proof of correctness — it only proves nothing was caught *this run, on this input, in this buffer's current shape*.
 
 > [!trap] `find()` and friends return `npos`, not `-1` or `0`
 > `std::string::npos` is `static_cast<size_t>(-1)` — the *largest* possible `size_t`, so `find() > 0` is a bug wherever a match at index 0 is possible. Always compare with `== npos` / `!= npos`. See [[Header — string]] for the full search family.
@@ -226,7 +236,7 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 | Standard | Change | Why |
 |---|---|---|
 | C++98 | `basic_string<char>` alias; value semantics; no guaranteed contiguity or null-terminated `data()` | text needed an owning, RAII sequence type from day one, replacing raw `char*` handling |
-| **C++11** | Move constructor/assignment (`O(1)`, cppreference *Complexity*); contiguous storage and a null-terminated `data()` formally mandated ([basic.string] general); `stoi`/`to_string` and friends | move semantics made returning strings by value cheap; the new contiguity guarantee let every implementation converge on the same SSO-based design described above |
+| **C++11** | Move constructor/assignment (`O(1)`, cppreference *Complexity*); contiguous storage and a null-terminated `data()` formally mandated ([basic.string] general); `stoi`/`to_string` and friends | move semantics made returning strings by value cheap; C++11's invalidation and complexity rules also ruled out copy-on-write strings, which pushed the major libraries (libstdc++ from GCC 5) to the SSO-based design described above |
 | C++14 | `""s` literal | write a `std::string` literal without spelling out a constructor call |
 | **C++17** | [[string_view]]; non-`const` `data()` overload; construct from anything `string_view`-like | pass or slice text without allocating, and mutate through `data()` directly |
 | C++20 | `starts_with`/`ends_with`; `<=>` three-way comparison | common prefix/suffix checks without a `find()` + `npos` dance |
@@ -240,12 +250,12 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 - **Hazards:** [[Iterator Invalidation]] · [[C-Style Strings]] (embedded nulls, interop) · [[Dangling Pointers and References]].
 - **Lookup layer:** [[Header — string]] for the full member reference, task recipes (splitting, joining, trimming, numeric conversion) and detailed performance tables.
 - **Domain:** [[Map — Standard Library]].
-- **Practice:** *Continuum #7 Word & Text Analyzer* — build a tokenizer and frequency counter over `std::string`, then watch which operations allocate under `-fsanitize=address` and which stay inline.
+- **Practice:** *Continuum #7 Word & Text Analyzer* — build a tokenizer and frequency counter over `std::string`, then count which operations allocate (a replaced global `operator new` that increments a counter is enough) and which stay inline.
 
 ## Check Yourself
 
 > [!quiz]- What does a `std::string` object store directly, versus what it merely points to?
-> Directly: a data pointer, a size, and a 16-byte union that holds either the capacity (long strings) or up to 15 inline characters (short strings) — about 32 bytes total, always. A long string's actual characters live in a separate heap allocation the object only points to; a short string's characters live inside that union, inside the object itself.
+> In libstdc++ (layouts are implementation-specific): directly, a data pointer, a size, and a 16-byte union that holds either the capacity (long strings) or up to 15 inline characters (short strings) — about 32 bytes total, always. A long string's actual characters live in a separate heap allocation the object only points to; a short string's characters live inside that union, inside the object itself.
 
 > [!quiz]- Why does `s[s.size() + 1]` sometimes pass under AddressSanitizer and sometimes get caught?
 > Because the read is undefined behavior either way, but whether it lands inside memory the object still owns depends on slack capacity. A short string has up to 15 bytes of inline buffer beyond a small `size()`, so a small overrun often stays inside that buffer and the sanitizer sees nothing wrong. A heap-allocated string with `capacity() == size()` has no slack, so the identical overrun reads past the actual allocation and AddressSanitizer reports `heap-buffer-overflow`. Passing is never proof the code is correct.

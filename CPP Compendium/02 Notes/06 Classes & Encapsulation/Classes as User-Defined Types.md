@@ -4,7 +4,7 @@ title: Classes as User-Defined Types
 type: concept
 domain: D06
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[What a Type Is]]"
@@ -23,6 +23,16 @@ tags:
 - tension/abstraction-vs-control
 created: 2026-09-25
 updated: 2026-09-26
+reviewed: 2026-09-27
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 2
+  visual: 3
+  code: 3
+  integration: 3
 ---
 
 # Classes as User-Defined Types
@@ -117,6 +127,7 @@ The representation leg is equally literal. `Account` lays its two members out in
 └──────────────────────────┘
  no padding needed: both members are already 8-byte aligned
 ```
+That picture is the LP64 layout (Linux, macOS). On 64-bit Windows (LLP64) `long` is only 4 bytes, so the compiler inserts 4 bytes of padding after `number_` to keep `balance_` 8-byte aligned: the offsets are the same and `sizeof(Account)` is still 16, but a quarter of the object is now padding (see [[Fundamental Types]] for why `long`'s width varies).
 
 ## In Code
 

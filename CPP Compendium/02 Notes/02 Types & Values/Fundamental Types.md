@@ -4,7 +4,7 @@ title: Fundamental Types
 type: concept
 domain: D02
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[What a Type Is]]"
@@ -27,6 +27,16 @@ tags:
 - std/c++23
 created: 2026-09-26
 updated: 2026-09-26
+reviewed: 2026-09-27
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 3
+  code: 3
+  integration: 2
 ---
 
 # Fundamental Types
@@ -211,8 +221,8 @@ int main() {
 > [!trap] Plain `char` is not "a small signed integer" or "a small unsigned integer" — it's whichever the compiler picked
 > Two compilers, or the same compiler on two platforms, may give `char` opposite signedness, so a computation that overflows, compares, or sign-extends a plain `char` can silently produce different results on different machines. If you need a byte-sized number rather than text, name `signed char` or `unsigned char` explicitly — never plain `char`. See [[Characters, Encodings and the char Types]] for the full hazard, including why this matters most at the boundary with `<cctype>` functions.
 
-> [!ub] Assigning an out-of-range value behaves differently for signed and unsigned types
-> An out-of-range value assigned to an **unsigned** type wraps by taking the value modulo 2^N — well-defined, if occasionally surprising. The same assignment to a **signed** type is undefined behavior: the Standard imposes no requirement on the result at all (Primer p. 35). This is the entry point to [[Signed Integer Overflow]] and to [[Mixing Signed and Unsigned]], both of which this note only opens the door to.
+> [!ub] Out-of-range *conversion* is defined; signed *overflow* is not
+> An out-of-range value assigned to an **unsigned** type wraps by taking the value modulo 2^N — well-defined in every standard. Assigning (converting) an out-of-range value to a **signed** type is *not* undefined behavior: it was implementation-defined through C++17, and since C++20 it is also defined as modulo 2^N (`[conv.integral]`; cppreference, *Implicit conversions* §Integral conversions). The Primer (C++11) calls this case "undefined" (p. 35); that is looser than even the C++11 wording. What *is* undefined is signed **arithmetic overflow**, such as `INT_MAX + 1` computed in `int`: no conversion happens there, and the Standard imposes no requirement on the result. This is the entry point to [[Signed Integer Overflow]] and to [[Mixing Signed and Unsigned]], both of which this note only opens the door to.
 
 ## Evolution
 
@@ -251,7 +261,7 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 
 ## Sources
 
-- Primer §2.1.1 "Primitive Built-in Types" (p. 32): arithmetic types split into integral and floating-point, and Table 2.1's minimum-size guarantees. (p. 33): byte/word representation, and floating types' minimum significant-digit guarantees. (p. 34): the signed/unsigned split, the three distinct character types, and the guaranteed ±127 range of an 8-bit `signed char`. (p. 35): out-of-range assignment — modulo wraparound for unsigned, undefined behavior for signed.
+- Primer §2.1.1 "Primitive Built-in Types" (p. 32): arithmetic types split into integral and floating-point, and Table 2.1's minimum-size guarantees. (p. 33): byte/word representation, and floating types' minimum significant-digit guarantees. (p. 34): the signed/unsigned split, the three distinct character types, and the guaranteed ±127 range of an 8-bit `signed char`. (p. 35): out-of-range assignment — modulo wraparound for unsigned; the Primer calls the signed case undefined, which the Standard does not (implementation-defined through C++17, modulo 2^N since C++20: `[conv.integral]`, https://eel.is/c++draft/conv.integral).
 - Primer §4.2 "Arithmetic Operators" (p. 140): unary `-` promotes `bool` to `int` before negating, so `-b` on `true` converts back to `true`.
 - Tour §1.4 "Types, Variables, and Arithmetic" (p. 6): the "small zoo" of fundamental types and their examples; implementation-defined sizes obtained via `sizeof`; fixed-width aliases via §17.8.
 - PPP §8.1 "User-defined types": a built-in type is one whose representation and legal operations the compiler already knows, without any programmer declaration — the contrast this note draws between the language's vocabulary and a programmer's own.

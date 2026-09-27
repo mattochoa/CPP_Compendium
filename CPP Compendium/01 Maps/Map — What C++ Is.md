@@ -98,7 +98,7 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D00 -->
 **Tier 1 · Foundational**
-- ◐ [[The C++ Design Philosophy]] · *concept*
+- ● [[The C++ Design Philosophy]] · *concept*
 - ○ [[Zero-Overhead Principle]] · *concept*
 - ○ [[Levels of Abstraction — From Bits to Libraries]] · *concept*
 - ○ [[The C++ Abstract Machine]] · *concept*

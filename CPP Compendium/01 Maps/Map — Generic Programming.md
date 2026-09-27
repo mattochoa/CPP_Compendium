@@ -120,7 +120,7 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D09 -->
 **Tier 1 · Foundational**
-- ◐ [[Templates — Code That Writes Code]] · *concept*
+- ● [[Templates — Code That Writes Code]] · *concept*
 - ○ [[Function Templates]] · *concept*
 
 **Tier 2 · Proficient**

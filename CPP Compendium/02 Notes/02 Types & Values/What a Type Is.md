@@ -4,7 +4,7 @@ title: What a Type Is
 type: concept
 domain: D02
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs: []
 related:
@@ -21,6 +21,16 @@ tags:
 - tension/safety-vs-performance
 created: 2026-09-25
 updated: 2026-09-25
+reviewed: 2026-09-27
+score: 19
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 2
+  visual: 3
+  code: 3
+  integration: 2
 ---
 
 # What a Type Is
@@ -60,8 +70,8 @@ A CPU moves and stores fixed-width groups of bits. Nothing about a byte at some 
   │  built into the language    │         │  nothing else — no *, no << │
   ├─────────────────────────────┤         ├─────────────────────────────┤
   │ REPRESENTATION               │        │ REPRESENTATION               │
-  │  4 bytes, two's complement  │         │  8 bytes: one double member  │
-  │  (mandatory since C++20)    │         │  (sizeof(Meters) == 8)       │
+  │  4 bytes (typical), two's   │         │  8 bytes: one double member  │
+  │  complement (req'd C++20)   │         │  (sizeof(Meters) == 8)       │
   └─────────────────────────────┘         └─────────────────────────────┘
 ```
 
@@ -103,7 +113,7 @@ Two very different types, one identical shape: a fixed set of legal values, a fi
 ```text
  one 4-byte word in memory, address 0x1000
 ┌──────────┬──────────┬──────────┬──────────┐
-│ 0xDB     │ 0x0F     │ 0x49     │ 0x40     │   ← the bits never change
+│ 0xD0     │ 0x0F     │ 0x49     │ 0x40     │   ← the bits never change (little-endian 0x40490FD0)
 └──────────┴──────────┴──────────┴──────────┘
         read through an `int*`                read through a `float*`
               │                                      │
@@ -175,7 +185,7 @@ int main() {
 ## Pitfalls
 
 > [!ub] Reading bits through the wrong type's lens is undefined behavior
-> Take Example 1's `float f` and, instead of `std::bit_cast`, write `*reinterpret_cast<std::int32_t*>(&f)`. It compiles without complaint (GCC still warns: *"dereferencing type-punned pointer will break strict-aliasing rules"*), but reading an object through a glvalue whose type is not the object's own type — nor `char`/`unsigned char`/`std::byte` — is undefined behavior (`[expr.reinterpret.cast]`, the *type-accessibility* rule, sometimes called "strict aliasing"). The Standard permits the compiler to assume a `float*` and an `int32_t*` never point at the same bytes, and optimizes on that assumption; on Linux or macOS, `-fsanitize=undefined` reports this as a type-punning violation at the point of the read. The local Windows/MinGW toolchain has no UBSan runtime, so this pitfall is verified only by confirming it compiles and draws the compiler's own strict-aliasing warning, never by an actual sanitizer trap. `std::bit_cast` (or `std::memcpy`) is the defined way to do the same thing — see [[Strict Aliasing and Type Punning]] for the full reproduction and detection table.
+> Take Example 1's `float f` and, instead of `std::bit_cast`, write `*reinterpret_cast<std::int32_t*>(&f)`. It compiles without complaint (GCC still warns: *"dereferencing type-punned pointer will break strict-aliasing rules"*), but reading an object through a glvalue whose type is not the object's own type (or a type similar to it), nor its signed/unsigned counterpart, nor `char`/`unsigned char`/`std::byte`, is undefined behavior (`[basic.lval]` ¶11, the *type-accessibility* rule, sometimes called "strict aliasing"; cppreference covers it under `reinterpret_cast` §Type aliasing). The Standard permits the compiler to assume a `float*` and an `int32_t*` never point at the same bytes, and optimizes on that assumption. No sanitizer in the `-fsanitize=undefined` family checks this rule on any platform; only Clang's separate, newer TypeSanitizer (`-fsanitize=type`) targets it. In practice the compiler's own strict-aliasing warning (`-Wstrict-aliasing`, enabled by `-Wall` at `-O2`) is the usual first line of detection, and that is all this pitfall was verified against locally. `std::bit_cast` (or `std::memcpy`) is the defined way to do the same thing — see [[Strict Aliasing and Type Punning]] for the full reproduction and detection table.
 
 > [!trap] Same representation does not mean same type
 > `int` and `float` are both 4 bytes on essentially every mainstream platform, and `sizeof` reports the same number for both — but their value sets and operation sets are completely different (compare the *Mechanics* table). `sizeof(a) == sizeof(b)` says nothing about whether `a` and `b` may be compared, assigned, or reinterpreted as one another; only their *types* decide that. See [[Strict Aliasing and Type Punning]] for the general hazard this enables.
@@ -207,7 +217,7 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 > Because the whole benefit of having a type system is that operations like integer `+` compile down to a single instruction with no runtime check. If every operation had to re-confirm its operands' types while running, that cost would apply to every `+` in every program, defeating the point of a statically typed, zero-overhead language.
 
 > [!quiz]- Predict the output of Example 1 if `f` were `1.0f` instead of `3.14159f`, and explain why `std::bit_cast` is safe where the Pitfalls callout's `reinterpret_cast` is not.
-> `1065353216` then `1`. `bit_cast` is a *defined* operation specified to copy the object representation into a value of the target type (given equal size and trivial copyability) — the compiler must make it work correctly. `reinterpret_cast<int32_t*>(&f)` followed by a dereference instead reads through an lvalue of the wrong type, which is exactly what `[expr.reinterpret.cast]`'s type-accessibility rule forbids.
+> `1065353216` then `1`. `bit_cast` is a *defined* operation specified to copy the object representation into a value of the target type (given equal size and trivial copyability) — the compiler must make it work correctly. `reinterpret_cast<int32_t*>(&f)` followed by a dereference instead reads through an lvalue of the wrong type, which is exactly what the type-accessibility rule (`[basic.lval]` ¶11) forbids.
 
 > [!quiz]- `struct Meters { double value; Meters operator+(Meters) const; };` — why does `Meters{1.0} * 2.0` fail to compile, even though a `double` and a `Meters` both ultimately hold one 8-byte floating-point number?
 > Because `operator*` was never declared for `Meters`. The representation (a `double`'s worth of bits) says nothing about which operations are legal; only the type's declared operation set does, and here that set contains only `operator+`.
@@ -219,6 +229,6 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 - PPP §8.1 "User-defined types": the representation/operations framing of what a type supplies, and the built-in-vs-user-defined distinction.
 - cppreference, *Fundamental types*: `void` as "type with an empty set of values"; `bool` as "capable of holding one of the two values true or false": https://en.cppreference.com/w/cpp/language/types
 - cppreference, *reinterpret_cast conversion* §Type aliasing: the type-accessibility rule and the `std::bit_cast`/`std::memcpy` alternative: https://en.cppreference.com/w/cpp/language/reinterpret_cast
-- Draft standard `[basic.types.general]` (object/value representation): https://eel.is/c++draft/basic.types.general · `[expr.reinterpret.cast]` (type-accessibility / strict aliasing): https://eel.is/c++draft/expr.reinterpret.cast
+- Draft standard `[basic.types.general]` (object/value representation): https://eel.is/c++draft/basic.types.general · `[basic.lval]` ¶11 (type-accessibility / strict aliasing): https://eel.is/c++draft/basic.lval
 - WG21 P0907R4, *Signed Integers are Two's Complement*: https://wg21.link/p0907r4 — mandates the representation leg for signed integers as of C++20.
 - WG21 P0476R2, *bit_cast: A type-safe bitwise cast*: https://wg21.link/p0476r2

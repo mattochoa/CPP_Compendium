@@ -4,7 +4,7 @@ title: Encapsulation and Class Invariants
 type: concept
 domain: D06
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Classes as User-Defined Types]]"
@@ -26,6 +26,16 @@ tags:
 - std/c++11
 created: 2026-09-26
 updated: 2026-09-26
+reviewed: 2026-09-27
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Encapsulation and Class Invariants
@@ -116,6 +126,7 @@ The representation itself is laid out exactly as [[Classes as User-Defined Types
 └──────────────────────────┘
  the walls exist only in the compiler's access-checking pass — the bytes themselves
  are exactly as reachable via a raw pointer or memcpy as if both were public
+ (LP64 layout shown; on 64-bit Windows `long` is 4 bytes plus 4 of padding — same offsets)
 ```
 
 The only *run-time* cost this note adds is the one a human wrote on purpose: the branch inside a constructor or a mutating member function that tests whether the invariant would still hold. That branch is ordinary, visible code — it can be found by reading the class, not by consulting the compiler's internals.
@@ -156,7 +167,7 @@ int main() {
 1. The member initializer list runs before the body, in declaration order — both members already hold *some* value by the time the check runs.
 2. The body's entire job is to check the value it was about to accept and refuse it if the invariant can't hold. This is the constructor's whole responsibility, not an afterthought to initialization.
 3. `bad` never comes into existence: throwing from a constructor means the object's lifetime never began.
-4. Because no `Account` object was ever created, nothing needs destroying — there is no partially-built `bad` to clean up.
+4. Because no `Account` object was ever created, `Account`'s destructor never runs for `bad`. The members the initializer list had already built *are* destroyed automatically as the exception leaves the constructor (`[except.ctor]`); here both are plain scalars, so that cleanup is invisible, but for members of class type (a `std::string`, a `std::unique_ptr`) it is exactly what keeps a throwing constructor from leaking — see [[RAII]].
 
 **2 · A member function that maintains the invariant on exit, not just on entry**
 

@@ -7,7 +7,7 @@ aliases:
 type: concept
 domain: D05
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs: []
 related:
@@ -29,6 +29,16 @@ tags:
 - std/c++23
 created: 2026-09-25
 updated: 2026-09-25
+reviewed: 2026-09-27
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Anatomy of a Function
@@ -146,7 +156,7 @@ double describe(int value);  // error: same name, same parameter type, different
 
 int main() {}
 ```
-Function overloading is resolved from the *parameter*-type-list; the return type plays no part in choosing between candidates ([dcl.fct] ¶13; see [[Overload Resolution]]). Two declarations that agree on parameters but disagree on return type aren't a legal overload set — they're two conflicting descriptions of one function, and the compiler rejects the second as ill-formed.
+Function overloading is resolved from the *parameter*-type-list; the return type plays no part in choosing between candidates. Two function declarations in the same scope whose parameter lists correspond declare the *same* function (`[basic.scope.scope]`), and every declaration of one function must give it the same type (`[basic.link]`) — and the return type *is* part of that type (`[dcl.fct]` ¶13). See [[Overload Resolution]]. Two declarations that agree on parameters but disagree on return type aren't a legal overload set — they're two conflicting descriptions of one function, and the compiler rejects the second as ill-formed.
 
 **4 · Parameter names are not part of the type**
 

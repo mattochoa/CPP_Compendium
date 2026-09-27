@@ -4,7 +4,7 @@ title: Precedence and Associativity
 type: concept
 domain: D03
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Anatomy of an Expression]]"
@@ -23,6 +23,16 @@ tags:
 - std/c++20
 created: 2026-09-27
 updated: 2026-09-27
+reviewed: 2026-09-27
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Precedence and Associativity
@@ -38,7 +48,7 @@ Source code is written flat: `total = base + rate * hours`. Nothing in that line
 > 1. **Constraint.** [[Anatomy of an Expression|An expression]] is built by nesting smaller expressions inside larger ones, but the surface syntax doesn't require parentheses to mark that nesting. `a + b * c` is legal with none at all.
 > 2. **Consequence.** The same flat token sequence is compatible with more than one nesting. `a + b * c` could mean "add, then multiply" or "multiply, then add," and the two groupings generally produce different values — worse, for operands of class type, they can call entirely different overloaded functions, so an unresolved grouping isn't just a wrong number, it's a program with no fixed meaning at all.
 > 3. **Requirement.** The grammar needs a **total, fixed ordering** over every pair of operators that can appear next to each other: for any two, it must say unambiguously which one's operands are grouped first (precedence), and for two occurrences of operators tied at the same level, which side gets grouped first (associativity). "Total" is the operative word — the rule can leave *when* something runs unsettled ([[Evaluation Order and Sequencing]]), but it cannot leave *how it's grouped* unsettled for even one combination, or parsing itself would be ambiguous.
-> 4. **Design.** C++ doesn't publish precedence as a rule in its own right. `[expr.compound]` lays out the expression grammar as twenty subclauses, from postfix expressions (`[expr.post]`) down to the comma operator (`[expr.comma]`), and each subclause's grammar production takes the *next-tighter* subclause as its operand — a multiplicative expression is built from additive... no, from pm-expressions (pointer-to-member level) combined with `*`, `/`, `%`; an additive expression is built from multiplicative expressions combined with `+`, `-`; and so on, all the way out to comma. Precedence is nothing but this hierarchy: an operator "has higher precedence" than another exactly when its clause sits closer to the postfix end of that chain. Associativity is a property of how each clause's own grammar rule recurses: a rule that recurses on its *own* left (`multiplicative-expression: multiplicative-expression * pm-expression`) groups repeated operators left to right; a rule shaped to recurse through its right operand instead (assignment's right side is itself allowed to be another assignment) groups right to left. Neither is a separately stated law — both are read off the shape of the grammar.
+> 4. **Design.** C++ doesn't publish precedence as a rule in its own right. `[expr.compound]` lays out the expression grammar as twenty subclauses, from postfix expressions (`[expr.post]`) down to the comma operator (`[expr.comma]`), and each subclause's grammar production takes the *next-tighter* subclause as its operand — a multiplicative expression is built from pm-expressions (the pointer-to-member level) combined with `*`, `/`, `%`; an additive expression is built from multiplicative expressions combined with `+`, `-`; and so on, all the way out to comma. Precedence is nothing but this hierarchy: an operator "has higher precedence" than another exactly when its clause sits closer to the postfix end of that chain. Associativity is a property of how each clause's own grammar rule recurses: a rule that recurses on its *own* left (`multiplicative-expression: multiplicative-expression * pm-expression`) groups repeated operators left to right; a rule shaped to recurse through its right operand instead (assignment's right side is itself allowed to be another assignment) groups right to left. Neither is a separately stated law — both are read off the shape of the grammar.
 > 5. **Price.** Because the hierarchy was fixed once, mostly inherited from C, a few relative orderings that read like accidents of history rather than a considered ranking are now effectively permanent. Bitwise AND, XOR and OR bind *looser* than equality and the relational operators — the opposite of what the "AND is like multiplication, OR is like addition" arithmetic analogy would suggest. Fixing it would not make old programs fail to compile; it would make them compile to something *different*, silently, which is a strictly worse failure mode than a compile error. So C++ has never revisited a call C made before `&&` and `||` even existed to tell bitwise `&` apart from logical `&`.
 
 > [!tension] compatibility ⟷ evolution
@@ -131,7 +141,7 @@ int main() {
 2. The explicit parentheses spell out exactly the grouping precedence already produced — same value, same parse tree, as confirmed under the hood.
 3. Forcing addition before multiplication changes which numbers combine with which, and the result is nowhere close: `106 * 19`, not `100 + 24 + 15`.
 
-**2 · Prefix increment groups with the operator next to it, not the whole expression**
+**2 · Postfix `++` binds tighter than unary `*`, so `*p++` moves the pointer**
 
 ```cpp
 #include <iostream>

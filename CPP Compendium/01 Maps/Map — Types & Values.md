@@ -118,9 +118,9 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D02 -->
 **Tier 1 · Foundational**
-- ◐ [[What a Type Is]] · *concept*
-- ◐ [[Fundamental Types]] · *concept*
-- ◐ [[const and Const-Correctness]] · *concept*
+- ● [[What a Type Is]] · *concept*
+- ● [[Fundamental Types]] · *concept*
+- ● [[const and Const-Correctness]] · *concept*
 - ○ [[Integer Representation and Two's Complement]] · *mechanism*
 - ○ [[Implicit Conversions and Promotions]] · *mechanism*
 - ○ [[Narrowing Conversions and Brace Initialization]] · *concept*

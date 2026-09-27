@@ -8,7 +8,7 @@ aliases:
 type: concept
 domain: D02
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Fundamental Types]]"
@@ -29,6 +29,16 @@ tags:
 - std/c++98
 created: 2026-09-26
 updated: 2026-09-26
+reviewed: 2026-09-27
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # const and Const-Correctness
@@ -91,7 +101,7 @@ A reference has no top-level column: a reference is not an object, so there is n
 | Copying past low-level const | Never ignored without an explicit cast — a plain pointer cannot be initialized from a pointer to const | `int *p = pc;` where `pc` is `const int*` — error |
 
 > [!standard] What "top-level" actually means, and what doesn't have a Standard name
-> `[basic.type.qualifier]` ¶6 defines the term precisely: for a type "*cv* T", the **top-level cv-qualifiers** are the ones denoted by *cv* itself, not any qualifier buried inside T. `const int *const` has the top-level qualifier `const` (the pointer); `const int&` has *no* top-level qualifier — the reference type itself is never cv-qualified, only what it refers to. "Low-level const" is Primer's teaching term for the complementary case (a qualifier that survives *through* an indirection); the Standard doesn't name it separately, but the behavior — that it is never dropped silently on assignment or copy — is exactly what `[basic.type.qualifier]`'s ordering on cv-qualifiers enforces at every level of a compound type.
+> `[basic.type.qualifier]` ¶6 defines the term precisely: for a type "*cv* T", the **top-level cv-qualifiers** are the ones denoted by *cv* itself, not any qualifier buried inside T. `const int *const` has the top-level qualifier `const` (the pointer); `const int&` has *no* top-level qualifier — the reference type itself is never cv-qualified, only what it refers to. "Low-level const" is Primer's teaching term for the complementary case (a qualifier that survives *through* an indirection); the Standard doesn't name it separately, but the behavior — that it is never dropped silently on assignment or copy — comes from the qualification-conversion rules (`[conv.qual]`), which let an implicit conversion *add* cv-qualifiers below the top level of a pointer type but never remove one; `[basic.type.qualifier]` ¶5 supplies the "more cv-qualified" ordering those rules are stated in.
 
 **Const member functions and `this`.** Only a member function can be marked `const`, because only a member function has an implicit object to protect — free functions must say the same thing explicitly, with a `const` parameter type.
 

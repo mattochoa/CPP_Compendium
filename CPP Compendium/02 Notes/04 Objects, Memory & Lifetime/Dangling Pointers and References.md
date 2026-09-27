@@ -9,7 +9,7 @@ aliases:
 type: pitfall
 domain: D04
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Object Lifetime]]"
@@ -32,16 +32,16 @@ tags:
 - tension/safety-vs-performance
 created: 2026-09-23
 updated: 2026-09-27
-reviewed: 2026-09-23
-score: 19
+reviewed: 2026-09-27
+score: 20
 rubric:
   accuracy: 3
   first_principles: 3
   clarity: 3
-  depth: 3
-  visual: 2
+  depth: 2
+  visual: 3
   code: 3
-  integration: 2
+  integration: 3
 ---
 
 # Dangling Pointers and References
@@ -108,7 +108,7 @@ int main() {
 ```
 1. `best` refers to an element, and the element lives in a heap block the vector owns.
 2. `push_back` beyond capacity allocates a new block, moves the elements, and frees the old block. See [[How vector Grows — Capacity and Amortized Cost]] and [[Iterator Invalidation]].
-3. ASan reports `heap-use-after-free`. Without it, this often prints `90` *by accident*.
+3. On Linux/macOS, ASan (`-fsanitize=address`) reports `heap-use-after-free` here; the local MinGW toolchain has no ASan runtime, so this block is marked `// cc: ub` rather than observed failing. Without a sanitizer, this often prints `90` *by accident*.
 
 The instant after line ②, `scores` and `best` disagree about where the data is:
 
@@ -142,7 +142,7 @@ int main() {
 }
 ```
 1. `string_view` is a non-owning (pointer, length) pair. Initializing it from a temporary `std::string` does **not** extend the string's lifetime: lifetime extension applies only when a *reference* binds directly to the temporary ([[Temporaries and Lifetime Extension]]).
-2. A heap-allocated buffer (40+ characters: beyond the small-string buffer) makes ASan report the bug deterministically.
+2. A heap-allocated buffer (40+ characters: beyond the small-string buffer) is what lets ASan on Linux/macOS report the bug deterministically; a string short enough for the small-string buffer would keep its characters inside the dead temporary itself, so heap poisoning never applies and detection would depend on stack-scope instrumentation instead.
 
 **3 · Returning a reference to a local** (stack use-after-return)
 

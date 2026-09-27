@@ -39,7 +39,7 @@ updated: 2026-09-23
 > 1. **Constraint.** A C++ compiler processes one **translation unit** at a time — the token sequence left after preprocessing a single source file (`[lex.phases]`, phase 7, "Compiling"). It has no memory of any other file it has compiled before or will compile after. Real software, meanwhile, is too large for one file, written by more than one person, and reuses code (the standard library, other libraries) that was compiled somewhere else entirely, at another time.
 > 2. **Consequence.** If translation unit `A.cpp` calls a function whose body lives in `B.cpp`, the compiler pass over `A.cpp` cannot see that body — it may not even see `B.cpp` exist. Yet `A.cpp` must still type-check the call, and the finished program must still contain exactly one machine-code implementation of that function for `A.cpp`'s call to land on.
 > 3. **Requirement.** The language needs: a way to tell one translation unit that a name exists and what its type is, without showing its implementation (a **declaration**); a rule guaranteeing that a name with real effect has exactly one implementation across the *whole program*, not per file (the **One Definition Rule**); a visibility mechanism so independently written units don't collide on ordinary names (**scope**, **namespaces**, **linkage**); and a late-stage tool that stitches separately compiled object files into one executable by matching every unresolved reference to exactly one definition's address (**the linker**).
-> 4. **Design.** C++ splits every name's story into a *declaration* (what the compiler needs to check a use) and a *definition* (what creates the thing) — "declared many times, defined exactly once" (Primer §2.2.2, p. 45). Translation units share declarations by literally pasting header text into each other through the **preprocessor** (Primer §2.6, p. 77), a mechanism inherited from C and older than C++ itself. **Linkage** decides which other translation units may even see a name; the **One Definition Rule** then binds every unit that does see it to agree. Phase 9, "Linking" (`[lex.phases]`), collects every translation unit's object code and resolves every cross-unit reference into one program image.
+> 4. **Design.** C++ splits every name's story into a *declaration* (what the compiler needs to check a use) and a *definition* (what creates the thing) — "declared many times, defined exactly once" (Primer §2.2.2, p. 45). Translation units share declarations by literally pasting header text into each other through the **preprocessor** (Primer §2.6, p. 77), a mechanism inherited from C and older than C++ itself. **Linkage** decides which other translation units may even see a name; the **One Definition Rule** then binds every unit that does see it to agree. The last translation phase, linking (`[lex.phases]`: phase 9 through C++23, phase 8 in the C++26 draft), collects every translation unit's object code and resolves every cross-unit reference into one program image.
 > 5. **Price.** Because `#include` is blind text substitution, not a C++-aware import, a header pasted into 101 translation units is *reparsed* 101 times (Tour §3.2, p. 32), and two headers can silently change each other's meaning depending on which is `#include`d first. The One Definition Rule is a promise the compiler mostly cannot check by itself — violating it across translation units is undefined behavior, not a caught error. C++20 Modules exist because the preprocessor's price finally outgrew its simplicity.
 
 ## The Core Tension
@@ -121,9 +121,9 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D01 -->
 **Tier 1 · Foundational**
-- ◐ [[The Compilation Pipeline]] · *mechanism*
-- ◐ [[Translation Units]] · *concept*
-- ◐ [[The Preprocessor]] · *mechanism*
+- ● [[The Compilation Pipeline]] · *mechanism*
+- ● [[Translation Units]] · *concept*
+- ● [[The Preprocessor]] · *mechanism*
 - ○ [[Headers and Include Guards]] · *idiom*
 - ○ [[Declarations vs Definitions]] · *comparison*
 - ○ [[Scope]] · *concept*
@@ -153,4 +153,4 @@ flowchart LR
 - PPP ch. 1 §1.3 "Compilation" and §1.4 "Linking": the compiler/linker pipeline built up from the first program a reader compiles.
 - PPP ch. 4 §4.4 "Link-time errors" and §4.7 "Avoiding and finding errors": where in the pipeline a missing or duplicate definition actually surfaces.
 - cppreference, *Phases of translation* · *Definitions and ODR* · *Scope*: https://en.cppreference.com/w/cpp/language/translation_phases · https://en.cppreference.com/w/cpp/language/definition · https://en.cppreference.com/w/cpp/language/scope
-- Draft standard `[lex.phases]` (the nine translation phases, phase 9 = linking), `[basic.def.odr]` (the One Definition Rule), `[basic.link]` (linkage): https://eel.is/c++draft/lex.phases
+- Draft standard `[lex.phases]` (the translation phases: nine through C++23 with phase 9 = linking; eight in the C++26 draft, which folds instantiation into phase 7), `[basic.def.odr]` (the One Definition Rule), `[basic.link]` (linkage): https://eel.is/c++draft/lex.phases

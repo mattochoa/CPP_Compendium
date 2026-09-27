@@ -1,7 +1,7 @@
 {
-  "runs": 67,
+  "runs": 68,
   "builder_runs": 66,
-  "editor_runs": 1,
+  "editor_runs": 2,
   "history": [
     {
       "when": "2026-09-23T07:21:03Z",
@@ -829,10 +829,43 @@
       "code": "6/6",
       "commit": "✓",
       "summary": "deepen: added the operator&-overload / std::addressof corner case (identity comparison via &r1==&r2 assumed no overload; now names the trap, cites cppreference, adds a compiled In Code #5 proving obj address != member address, and a quiz)."
+    },
+    {
+      "when": "2026-09-27T12:32:48Z",
+      "run": 2,
+      "role": "editor",
+      "mode": "AUDIT",
+      "items": [
+        "pointers-vs-references",
+        "dangling-pointers-and-references",
+        "virtual-dispatch",
+        "cpp-design-philosophy",
+        "compilation-pipeline",
+        "translation-units",
+        "preprocessor",
+        "what-a-type-is",
+        "fundamental-types",
+        "const-correctness",
+        "anatomy-of-an-expression",
+        "operator-precedence",
+        "process-memory-layout",
+        "function-anatomy",
+        "classes-as-types",
+        "encapsulation-and-invariants",
+        "ownership-model",
+        "inheritance",
+        "why-templates",
+        "std-string",
+        "map-d01"
+      ],
+      "lint": "100–100",
+      "code": "6/6 4/4 3/3 5/5 4/4 3/3 3/3 3/3 5/5 5/5 3/3 4/4 3/3 4/4 4/4 4/4 5/5 4/4 4/4 5/5 0/0",
+      "commit": "✓",
+      "summary": "audit: 20 scored, 20 pass, 0 revise, 17 fixed (+map-d01); 51 carried; Style Guide 4.6-4.8; health 84"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
-  "last_editor": "2026-09-23T08:31:45Z",
+  "last_editor": "2026-09-27T12:32:48Z",
   "last_builder": "2026-09-27T11:20:01Z"
 }

@@ -4,7 +4,7 @@ title: Anatomy of an Expression
 type: concept
 domain: D03
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs: []
 related:
@@ -22,6 +22,16 @@ tags:
 - tension/safety-vs-performance
 created: 2026-09-26
 updated: 2026-09-26
+reviewed: 2026-09-27
+score: 19
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 2
+  visual: 3
+  code: 3
+  integration: 2
 ---
 
 # Anatomy of an Expression
@@ -74,14 +84,14 @@ Reading bottom-up: `price` and `qty` are primary expressions (identifiers); `pri
 
 | Situation | Rule | Example |
 |---|---|---|
-| Any expression, however small | Has exactly two independent properties: a type and a value category ([intro.execution], cppreference *Expressions*) | `price` is `int`, lvalue; `price * qty` is `int`, prvalue |
+| Any expression, however small | Has exactly two independent properties: a type and a value category (`[basic.lval]` ¶2 for the value category, `[expr.type]` for the type; cppreference *Expressions*) | `price` is `int`, lvalue; `price * qty` is `int`, prvalue |
 | Operand of an operator | Is itself either a **primary expression** (a literal, an identifier, `this`, or a parenthesized expression) or a **subexpression** built from smaller ones | in `1 + 2 * 3`, `+`'s operands are the primary expression `1` and the subexpression `2 * 3` |
 | A parenthesized expression | Is itself classified as a primary expression, and preserves the value, type and value category of what it wraps | `(price)` has the exact same type and value category as `price`; parentheses exist only to force a different grouping, never a different kind of result |
 | **Full-expression** | An expression that is not a subexpression of any other expression (plus a few named cases: declarator initializers, a destructor call at the end of an object's lifetime, and — since C++14 — the default member initializers used while building an aggregate) | in `total = price * qty + shipping();`, the whole assignment is the full-expression; `price * qty` and `shipping()` are subexpressions of it, not full-expressions themselves |
 | **Expression-statement** | An expression followed by `;`; if the expression yields a result, that result is a *discarded-value expression* — computed, then thrown away, and evaluated only for whatever side effect it has | `qty + 1;` computes one more than `qty` and keeps nothing; `++qty;` has the identical statement shape but is written for its side effect |
 
 > [!standard] Where this is defined
-> The Standard fixes an expression's two properties and the primary/subexpression/full-expression vocabulary in `[intro.execution]`; cppreference's *Expressions* page (`en.cppreference.com/w/cpp/language/expressions`) restates it without the legal phrasing. Neither source ties any of this to a particular evaluation order — that is a separate rule set, in [[Evaluation Order and Sequencing]].
+> The Standard fixes the subexpression/full-expression vocabulary in `[intro.execution]`, the value-category half of an expression's two properties in `[basic.lval]`, its type in `[expr.type]`, and primary expressions in `[expr.prim]`; cppreference's *Expressions* page (`en.cppreference.com/w/cpp/language/expressions`) restates it without the legal phrasing. Neither source ties any of this to a particular evaluation order — that is a separate rule set, in [[Evaluation Order and Sequencing]].
 
 ## Under the Hood
 
@@ -158,7 +168,7 @@ int main() {
 > `f(a(), b())` guarantees only that `a()` and `b()` each finish evaluating before the call happens — not that `a()` runs before `b()`. Code that silently depends on one has no defense when a different compiler, or a different optimization level, picks the other. See [[Evaluation Order and Sequencing]] for exactly which four operators are exceptions to this.
 
 > [!ub] Modifying and reading the same object with nothing sequencing the two
-> `i = i++ + 1;` has no defined result at all: nothing in the expression sequences `i++`'s write to `i` against the read `+ 1` performs on the same object. This is not "compiler-dependent but legal" — it is undefined behavior ([[Undefined Behavior]]), and the compiler is entitled to assume it never happens while optimizing everything around it.
+> `n = ++i + i;` has no defined result at all: the operands of `+` are unsequenced, so nothing orders `++i`'s write to `i` against the plain read of `i` in the right operand. This is not "compiler-dependent but legal" — it is undefined behavior in every standard ([[Undefined Behavior]]), and the compiler is entitled to assume it never happens while optimizing everything around it. Beware the textbook example `i = i++ + 1;`: it was undefined through C++14, but C++17 sequences an assignment's right operand (including its side effects) before the assignment itself, so it is now well-defined (cppreference, *Order of evaluation* §Undefined behavior). Code that relies on that is still a bad idea — it is UB under any `-std=c++14` build.
 
 ## Evolution
 

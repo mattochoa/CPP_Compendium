@@ -7,7 +7,7 @@ aliases:
 type: comparison
 domain: D04
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Pointers]]"
@@ -33,6 +33,16 @@ tags:
 - tension/safety-vs-performance
 created: 2026-09-23
 updated: 2026-09-27
+reviewed: 2026-09-27
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 2
+  depth: 3
+  visual: 3
+  code: 3
+  integration: 3
 ---
 
 # Pointers vs References
@@ -86,7 +96,7 @@ A pointer is a full object. It has a value (an address, or null), it can be copi
 Pointer arithmetic has one legal boundary: a pointer may address an array element or the single position one past the array's last element, and computing anything further than that is undefined behavior — "unlikely" for the compiler to catch, per the Primer (Primer §3.5, p. 120). Even the legal one-past-the-end pointer may only be compared, never dereferenced; that narrow contract is exactly what `end()` iterators rely on.
 
 > [!ub] Forming the pointer is already the violation
-> The Standard doesn't wait for a dereference. For a pointer `P` into an array of `n` elements at index `i`, `[expr.add]` ¶4.3 defines `P + J` only when `0 ≤ i+j ≤ n`; "otherwise, the behavior is undefined" (`[expr.add]` ¶4.3) the moment the addition is *evaluated*, whether or not the result is ever read.
+> The Standard doesn't wait for a dereference. For a pointer `P` into an array of `n` elements at index `i`, `[expr.add]` ¶4.2 defines `P + J` only when `0 ≤ i+j ≤ n`; "otherwise, the behavior is undefined" (`[expr.add]` ¶4.3) the moment the addition is *evaluated*, whether or not the result is ever read.
 
 ```cpp
 int main() {
