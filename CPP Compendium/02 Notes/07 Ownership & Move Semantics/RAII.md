@@ -13,6 +13,7 @@ standard: C++98
 prereqs:
 - "[[Object Lifetime]]"
 - "[[Destructors]]"
+- "[[Constructors]]"
 related:
 - "[[unique_ptr]]"
 - "[[Stack Unwinding]]"
@@ -30,7 +31,7 @@ tags:
 - tension/safety-vs-performance
 - tension/abstraction-vs-control
 created: 2026-09-23
-updated: 2026-09-26
+updated: 2026-09-27
 reviewed: 2026-09-23
 score: 20
 rubric:
@@ -250,7 +251,7 @@ int main() {
 
 ## Connections
 
-- **Prerequisites:** [[Object Lifetime]] (when destructors run) · [[Destructors]].
+- **Prerequisites:** [[Object Lifetime]] (when destructors run) · [[Destructors]] · [[Constructors]] (what a throwing constructor leaves for the compiler to unwind — only fully-constructed members, never the object's own destructor).
 - **Builds on it:** [[unique_ptr]] · [[Rule of Zero, Three and Five]] · [[Exception Safety Guarantees]] · [[Stack Unwinding]] · [[Scope Guards]] · [[Ownership — Who Releases What]].
 - **Prevents:** [[Memory Leaks]] · [[Double Free and Mismatched new-delete]] · [[Dangling Pointers and References]] (partly: it fixes *who* releases, not *who still looks* — for that, see how [[Pointers vs References]] separates owning from observing access).
 - **Domain:** [[Map — Ownership & Move Semantics]] · see also [[Map — Errors & Contracts]] and [[Error Handling Strategies Compared]] for the channels (exceptions, error codes, `expected`) that RAII is built to survive.

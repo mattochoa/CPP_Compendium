@@ -1098,7 +1098,8 @@
 			"y": 1370,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Constructors]]\n*concept · T1*"
+			"text": "◐ [[Constructors]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-destructors",

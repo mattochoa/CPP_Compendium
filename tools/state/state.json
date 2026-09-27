@@ -1,6 +1,6 @@
 {
-  "runs": 78,
-  "builder_runs": 76,
+  "runs": 79,
+  "builder_runs": 77,
   "editor_runs": 2,
   "history": [
     {
@@ -956,10 +956,24 @@
       "code": "4/4 4/4",
       "commit": "✓",
       "summary": "Author Virtual Functions (D08 concept): the declaration-level half of polymorphism, derived from Inheritance's non-virtual-call gap; defers dispatch mechanism to Virtual Dispatch and pure-virtual/abstract to Abstract Classes and Interfaces. Back-links Inheritance and Virtual Dispatch (both reviewed); added a forward link from Pointers."
+    },
+    {
+      "when": "2026-09-27T23:23:56Z",
+      "run": 77,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "constructors",
+        "raii"
+      ],
+      "lint": "100–100",
+      "code": "4/4 3/3",
+      "commit": "✓",
+      "summary": "author: Constructors (D06) — completes the pinned object-to-RAII spine chain (directive 1); establishes the invariant-checking job, fixed base/member init order, deleted-default-ctor conditions, delegating-ctor lifetime rule, and the throw-unwinds-only-what-was-built guarantee RAII depends on. Back-linked RAII's prereqs/Connections to it (3rd reviewed-note backlink, beyond the 2 that already pointed at it)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-27T22:24:32Z"
+  "last_builder": "2026-09-27T23:23:56Z"
 }

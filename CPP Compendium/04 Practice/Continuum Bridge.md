@@ -35,7 +35,7 @@ tags: [system/generated, practice]
 | # | Project | Concepts it exercises |
 |---|---|---|
 | 11 | Pointer & Array Internals Lab | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Tooling & Engineering]], ● [[Process Memory Layout — Stack, Heap, Static]], ◐ [[Storage Duration]], ◐ [[Object Lifetime]], ◐ [[Pointers]], ○ [[Pointer Arithmetic and Arrays]], ● [[Pointers vs References]], ○ [[Built-in Arrays and Array-to-Pointer Decay]], ● [[Dangling Pointers and References]], ○ [[Sanitizers — ASan, UBSan, TSan]] |
-| 12 | Build-Your-Own Dynamic Array | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Standard Library]], ○ [[Dynamic Memory — new and delete]], ○ [[Rule of Zero, Three and Five]], ○ [[Copy Semantics — Deep vs Shallow Copy]], ◐ [[vector]], ○ [[How vector Grows — Capacity and Amortized Cost]] |
+| 12 | Build-Your-Own Dynamic Array | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Standard Library]], ○ [[Dynamic Memory — new and delete]], ◐ [[Constructors]], ○ [[Rule of Zero, Three and Five]], ○ [[Copy Semantics — Deep vs Shallow Copy]], ◐ [[vector]], ○ [[How vector Grows — Capacity and Amortized Cost]] |
 | 13 | Singly & Doubly Linked List Library | ● [[Map — Objects, Memory & Lifetime]], ● [[Pointers vs References]], ● [[Dangling Pointers and References]] |
 | 14 | Stack & Queue Library + Applications | ○ [[Container Adaptors — stack, queue, priority_queue]] |
 | 15 | Binary Search Tree Explorer | ○ [[Recursion]] |
@@ -45,7 +45,7 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 17 | Bank Account Simulator | ◐ [[Map — Types & Values]], ◐ [[Map — Classes & Encapsulation]], ● [[const and Const-Correctness]], ● [[Classes as User-Defined Types]], ● [[Encapsulation and Class Invariants]], ◐ [[Overloading in Classes — Constructors, Members and Operators]] |
+| 17 | Bank Account Simulator | ◐ [[Map — Types & Values]], ◐ [[Map — Classes & Encapsulation]], ● [[const and Const-Correctness]], ● [[Classes as User-Defined Types]], ● [[Encapsulation and Class Invariants]], ◐ [[Constructors]], ◐ [[Overloading in Classes — Constructors, Members and Operators]] |
 | 18 | Shape Hierarchy & Polymorphic Area Calculator | ◐ [[Map — Inheritance & Polymorphism]], ● [[Inheritance]], ◐ [[Virtual Functions]], ● [[Virtual Dispatch — vptr and vtable]], ○ [[Abstract Classes and Interfaces]], ○ [[Virtual Destructors]] |
 | 19 | Complex Number & Vector Math Library | ◐ [[Map — Types & Values]], ◐ [[Map — Classes & Encapsulation]], ● [[const and Const-Correctness]], ○ [[Operator Overloading]], ◐ [[Overloading in Classes — Constructors, Members and Operators]], ○ [[Value Semantics]] |
 | 20 | Employee Management System | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Inheritance & Polymorphism]], ○ [[Owning vs Observing Pointers]], ● [[Inheritance]], ○ [[Composition vs Inheritance]] |
