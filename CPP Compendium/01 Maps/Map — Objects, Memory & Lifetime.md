@@ -132,7 +132,7 @@ flowchart LR
 - ● [[Process Memory Layout — Stack, Heap, Static]] · *mechanism*
 - ◐ [[Storage Duration]] · *concept*
 - ◐ [[Object Lifetime]] · *concept*
-- ○ [[References]] · *concept*
+- ◐ [[References]] · *concept*
 - ○ [[Pointers]] · *concept*
 - ○ [[Dynamic Memory — new and delete]] · *mechanism*
 - ○ [[Reading Uninitialized Variables]] · *pitfall*
@@ -160,7 +160,7 @@ flowchart LR
 **Tier 4 · Expert**
 - ○ [[Allocators and pmr Memory Resources]] · *concept*
 
-`███░░░░░░░` 8/26 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███░░░░░░░` 9/26 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

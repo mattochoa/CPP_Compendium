@@ -697,7 +697,8 @@
 			"y": 1514,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[References]]\n*concept · T1*"
+			"text": "◐ [[References]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-pointers",
