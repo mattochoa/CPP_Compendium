@@ -130,7 +130,7 @@ flowchart LR
 **Tier 1 · Foundational**
 - ◐ [[The C++ Object Model — What an Object Is]] · *concept*
 - ● [[Process Memory Layout — Stack, Heap, Static]] · *mechanism*
-- ○ [[Storage Duration]] · *concept*
+- ◐ [[Storage Duration]] · *concept*
 - ○ [[Object Lifetime]] · *concept*
 - ○ [[References]] · *concept*
 - ○ [[Pointers]] · *concept*
@@ -160,7 +160,7 @@ flowchart LR
 **Tier 4 · Expert**
 - ○ [[Allocators and pmr Memory Resources]] · *concept*
 
-`██░░░░░░░░` 6/26 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███░░░░░░░` 7/26 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
