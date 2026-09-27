@@ -1,6 +1,6 @@
 {
-  "runs": 63,
-  "builder_runs": 62,
+  "runs": 64,
+  "builder_runs": 63,
   "editor_runs": 1,
   "history": [
     {
@@ -789,10 +789,23 @@
       "code": "3/3",
       "commit": "✓",
       "summary": "AUTHOR: The Preprocessor (mechanism, D01) — macro substitution/argument-eval semantics, #/## operators, __VA_ARGS__/__VA_OPT__, rescanning-recursion guard; verified against draft standard [cpp.replace] and g++ -E output"
+    },
+    {
+      "when": "2026-09-27T08:24:52Z",
+      "run": 63,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "operator-precedence"
+      ],
+      "lint": "100–100",
+      "code": "4/4",
+      "commit": "✓",
+      "summary": "Author Precedence and Associativity (D03, concept): derives the precedence/associativity hierarchy from [expr.compound]'s clause ordering and left/right-recursive grammar shapes rather than a stated table; covers the bitwise-vs-equality historical mistake (Ritchie), overload-preserves-precedence, and unary/postfix associativity via *p++ vs (*p)++. 4/4 code blocks PASS."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-27T07:26:18Z"
+  "last_builder": "2026-09-27T08:24:52Z"
 }

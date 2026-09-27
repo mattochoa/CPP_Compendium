@@ -545,7 +545,8 @@
 			"y": 142,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Precedence and Associativity]]\n*concept · T1*"
+			"text": "◐ [[Precedence and Associativity]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-control-flow",

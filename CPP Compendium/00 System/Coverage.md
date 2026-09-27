@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 282 |
+| ○ planned | 281 |
 | ◌ stub | 0 |
-| ◐ draft | 69 |
+| ◐ draft | 70 |
 | ⟲ revise | 0 |
 | ● reviewed | 3 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 354
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `████████████░░░░░░░░` 30/52
+- Wave 1: `████████████░░░░░░░░` 31/52
 - Wave 2: `███░░░░░░░░░░░░░░░░░` 16/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -98,13 +98,13 @@ tags: [system/generated]
 
 ## D03 · Expressions & Control
 
-*How does a program compute a value and decide what to do next?*  `██░░░░░░░░` 2/12
+*How does a program compute a value and decide what to do next?*  `██░░░░░░░░` 3/12
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Expressions & Control]] | map | 1 | 0 |  |
 | ◐ | [[Anatomy of an Expression]] | concept | 1 | 1 |  |
-| ○ | [[Precedence and Associativity]] | concept | 1 | 1 |  |
+| ◐ | [[Precedence and Associativity]] | concept | 1 | 1 |  |
 | ○ | [[Control Flow — Selection and Iteration]] | concept | 1 | 1 |  |
 | ○ | [[Evaluation Order and Sequencing]] | mechanism | 2 | 2 |  |
 | ○ | [[Short-Circuit Evaluation]] | concept | 1 | 2 |  |

@@ -115,7 +115,7 @@ flowchart LR
 <!-- cc:auto:domain-index:D03 -->
 **Tier 1 · Foundational**
 - ◐ [[Anatomy of an Expression]] · *concept*
-- ○ [[Precedence and Associativity]] · *concept*
+- ◐ [[Precedence and Associativity]] · *concept*
 - ○ [[Control Flow — Selection and Iteration]] · *concept*
 - ○ [[Short-Circuit Evaluation]] · *concept*
 - ○ [[Prefix vs Postfix Increment]] · *comparison*
@@ -128,7 +128,7 @@ flowchart LR
 - ○ [[Structured Bindings]] · *mechanism*
 - ○ [[The Conditional and Comma Operators]] · *concept*
 
-`██░░░░░░░░` 2/12 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 3/12 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
