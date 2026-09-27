@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 279 |
+| ○ planned | 278 |
 | ◌ stub | 0 |
-| ◐ draft | 52 |
+| ◐ draft | 53 |
 | ⟲ revise | 0 |
 | ● reviewed | 23 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 354
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `█████████████░░░░░░░` 33/52
+- Wave 1: `█████████████░░░░░░░` 34/52
 - Wave 2: `███░░░░░░░░░░░░░░░░░` 16/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -117,12 +117,12 @@ tags: [system/generated]
 
 ## D04 · Objects, Memory & Lifetime
 
-*Where does an object live, how long does it live, and who can reach it?*  `██░░░░░░░░` 5/26
+*Where does an object live, how long does it live, and who can reach it?*  `██░░░░░░░░` 6/26
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ● | [[Map — Objects, Memory & Lifetime]] | map | 1 | 0 | 19 |
-| ○ | [[The C++ Object Model — What an Object Is]] | concept | 1 | 1 |  |
+| ◐ | [[The C++ Object Model — What an Object Is]] | concept | 1 | 1 |  |
 | ● | [[Process Memory Layout — Stack, Heap, Static]] | mechanism | 1 | 1 | 20 |
 | ○ | [[Storage Duration]] | concept | 1 | 1 |  |
 | ○ | [[Object Lifetime]] | concept | 1 | 1 |  |

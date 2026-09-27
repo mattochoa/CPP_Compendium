@@ -211,6 +211,7 @@ int main() {
 
 ## Connections
 
+- **Prerequisites:** [[The C++ Object Model — What an Object Is]] — this note answers *where* the objects that note defines actually live; "storage duration" here is that note's *storage duration* property, made concrete.
 - **Domain:** [[Map — Objects, Memory & Lifetime]] — the real-machine picture the rest of the domain's abstract rules attach to.
 - **Enables:** [[Storage Duration]] (the Standard's four-way vocabulary this note gives a machine to run on) · [[Object Lifetime]] (lifetime vs. storage: lifetime ends when a destructor starts running; the underlying *storage* may be released later still, at scope exit, at `delete`, or at program end — `[basic.life]` ¶2 versus `[basic.stc.general]` ¶1).
 - **Explains:** [[Dangling Pointers and References]] (stack-slot and heap-block reuse) · [[Dynamic Memory — new and delete]] (the free store this note treats from the outside).

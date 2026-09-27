@@ -657,7 +657,8 @@
 			"y": 1226,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[The C++ Object Model — What an Object Is]]\n*concept · T1*"
+			"text": "◐ [[The C++ Object Model — What an Object Is]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-process-memory-layout",

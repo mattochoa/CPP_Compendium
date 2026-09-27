@@ -1,6 +1,6 @@
 {
-  "runs": 69,
-  "builder_runs": 67,
+  "runs": 70,
+  "builder_runs": 68,
   "editor_runs": 2,
   "history": [
     {
@@ -875,10 +875,25 @@
       "code": "3/3",
       "commit": "✓",
       "summary": "AUTHOR: The C++ Abstract Machine (concept, D00), item 1 of the pinned spine chain. Derives the abstract machine from first principles (hardware heterogeneity -> need for one hardware-independent, checkable contract), covers observable behavior / parameters / unspecified / undefined as [intro.abstract] p2-4, the as-if rule as footnote 5 (not a separate mechanism), and a [!standard] callout distinguishing the through-C++23 vs C++26-draft (observable checkpoints / defined prefix) wording per Style Guide S4.6. Under the Hood shows real GCC 11.4 x86-64 -O2 asm (labelled, no sanitizers) for a discarded-vs-observable checksum, honestly distinguished from example 3's sanitizer-run UB block. 3/3 code blocks PASS. Back-links: the two existing reviewed/draft notes that already frontier-linked this title (The C++ Design Philosophy, Map - What C++ Is) now resolve; this was the only reviewed note in D00 pointing at it, so directive 1's '>=2 reviewed notes' back-link could only be satisfied with 1 (Map counted as the 2nd, per Framework S5.4's usual pattern of prereq-Connections + Domain Map)."
+    },
+    {
+      "when": "2026-09-27T14:27:00Z",
+      "run": 68,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "object-model",
+        "abstract-machine",
+        "process-memory-layout"
+      ],
+      "lint": "100–100",
+      "code": "4/4 3/3 3/3",
+      "commit": "✓",
+      "summary": "author: The C++ Object Model — What an Object Is (D04 T1 concept, first note of the pinned object-to-RAII spine). Back-wove links from The C++ Abstract Machine and Process Memory Layout — Stack, Heap, Static."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-27T13:26:27Z"
+  "last_builder": "2026-09-27T14:27:00Z"
 }

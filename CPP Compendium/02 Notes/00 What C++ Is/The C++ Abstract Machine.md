@@ -218,7 +218,7 @@ int main() {
 ## Connections
 
 - **Prerequisites:** none — this is one of the two roots of [[Map — What C++ Is]], alongside [[The C++ Design Philosophy]], which motivates *why* a hardware-independent contract is needed before this note defines *what* it is.
-- **Enables:** [[The As-If Rule]] (the permission the contract already implies) · [[Undefined Behavior]] (what the contract deliberately leaves unsaid) · [[Implementation-Defined, Unspecified and Undefined Behavior]] (the three-way split behind "not pinned down").
+- **Enables:** [[The As-If Rule]] (the permission the contract already implies) · [[Undefined Behavior]] (what the contract deliberately leaves unsaid) · [[Implementation-Defined, Unspecified and Undefined Behavior]] (the three-way split behind "not pinned down") · [[The C++ Object Model — What an Object Is]] (the unit — object, storage, type — that every rule stated "about the abstract machine" is actually a rule about).
 - **Siblings:** [[The C++ Design Philosophy]] (the values this machine exists to serve) · [[The ISO Standard, Compilers and Conformance]] (who is bound by it, and how a real compiler can still get it wrong).
 - **Domain:** [[Map — What C++ Is]].
 - **Practice:** no Continuum project is registered against this note yet; it underlies the reasoning behind all of them.
