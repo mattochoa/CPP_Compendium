@@ -1,6 +1,6 @@
 {
-  "runs": 77,
-  "builder_runs": 75,
+  "runs": 78,
+  "builder_runs": 76,
   "editor_runs": 2,
   "history": [
     {
@@ -942,10 +942,24 @@
       "code": "4/4",
       "commit": "✓",
       "summary": "AUTHOR: Pointers (concept, D04, T1) — next link in the object-to-RAII spine after References. Derives T* from first principles (why an alias alone isn't enough), the four-state pointer-value model with the invalid-vs-indeterminate distinction (basic.compound ¶3/¶6, verified against the current working draft), void*'s guaranteed char*-representation, and nullptr/operator<=> Evolution rows. Back-linked from/to Pointers vs References, Process Memory Layout, Virtual Dispatch, Dangling Pointers and References, const and Const-Correctness. 4/4 code blocks PASS."
+    },
+    {
+      "when": "2026-09-27T22:24:32Z",
+      "run": 76,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "virtual-functions",
+        "pointers"
+      ],
+      "lint": "100–100",
+      "code": "4/4 4/4",
+      "commit": "✓",
+      "summary": "Author Virtual Functions (D08 concept): the declaration-level half of polymorphism, derived from Inheritance's non-virtual-call gap; defers dispatch mechanism to Virtual Dispatch and pure-virtual/abstract to Abstract Classes and Interfaces. Back-links Inheritance and Virtual Dispatch (both reviewed); added a forward link from Pointers."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-27T21:24:39Z"
+  "last_builder": "2026-09-27T22:24:32Z"
 }

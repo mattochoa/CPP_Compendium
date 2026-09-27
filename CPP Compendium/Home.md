@@ -39,7 +39,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `██░░░░░░` 4/17 |
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `██░░░░░░` 4/20 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `█░░░░░░░` 3/19 |
-| `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `██░░░░░░` 3/15 |
+| `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `██░░░░░░` 4/15 |
 | `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `█░░░░░░░` 2/16 |
 | `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `██░░░░░░` 6/30 |
 | `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `█░░░░░░░` 2/11 |
@@ -58,24 +58,25 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 274 | 57 | 0 | 23 | 0 | 354 | 75 | 2 |
+| 273 | 58 | 0 | 23 | 0 | 354 | 76 | 2 |
 
 `█████░░░░░░░░░░░░░░░` **23%** of the Atlas written · last build 2026-09-27
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Virtual Functions]] · *concept* · `D08` — pinned by Editor
-2. [[Constructors]] · *concept* · `D06` — pinned by Editor
-3. [[Dynamic Memory — new and delete]] · *mechanism* · `D04` — wave 1 · focus
-4. [[Exceptions]] · *concept* · `D11` — wave 1
-5. [[Destructors]] · *concept* · `D06` — wave 1
-6. [[Headers and Include Guards]] · *idiom* · `D01` — wave 1
+1. [[Constructors]] · *concept* · `D06` — pinned by Editor
+2. [[Dynamic Memory — new and delete]] · *mechanism* · `D04` — wave 1 · focus
+3. [[Exceptions]] · *concept* · `D11` — wave 1
+4. [[Destructors]] · *concept* · `D06` — wave 1
+5. [[Headers and Include Guards]] · *idiom* · `D01` — wave 1
+6. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
 - ◐ [[Pointers]] · *concept* · updated 2026-09-27
+- ◐ [[Virtual Functions]] · *concept* · updated 2026-09-27
 - ◐ [[References]] · *concept* · updated 2026-09-27
 - ◐ [[Object Lifetime]] · *concept* · updated 2026-09-27
 - ◐ [[Storage Duration]] · *concept* · updated 2026-09-27
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[The C++ Object Model — What an Object Is]] · *concept* · updated 2026-09-27
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-27
 - ● [[string]] · *concept* · updated 2026-09-27
-- ● [[Precedence and Associativity]] · *concept* · updated 2026-09-27
 <!-- cc:end -->
 
 ## Start here
