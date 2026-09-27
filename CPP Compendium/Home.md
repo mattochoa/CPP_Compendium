@@ -41,7 +41,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `█░░░░░░░` 3/19 |
 | `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `██░░░░░░` 3/15 |
 | `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `█░░░░░░░` 2/16 |
-| `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `█░░░░░░░` 4/30 |
+| `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `█░░░░░░░` 5/30 |
 | `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `█░░░░░░░` 2/11 |
 | `D12` | [[Map — Concurrency\|Concurrency]] | How do multiple threads of execution share memory without corrupting it? | `█░░░░░░░` 2/17 |
 | `D13` | [[Map — Performance & the Machine\|Performance & the Machine]] | What does the hardware actually do with our code, and how do we make it fast? | `█░░░░░░░` 1/15 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 285 | 66 | 0 | 3 | 0 | 354 | 57 | 1 |
+| 284 | 67 | 0 | 3 | 0 | 354 | 58 | 1 |
 
-`████░░░░░░░░░░░░░░░░` **19%** of the Atlas written · last build 2026-09-26
+`████░░░░░░░░░░░░░░░░` **20%** of the Atlas written · last build 2026-09-26
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[vector]] · *concept* · `D10` — wave 1
-2. [[string]] · *concept* · `D10` — wave 1
-3. [[Process Memory Layout — Stack, Heap, Static]] · *mechanism* · `D04` — wave 1
-4. [[References]] · *concept* · `D04` — wave 1
-5. [[Pointers]] · *concept* · `D04` — wave 1
-6. [[The Preprocessor]] · *mechanism* · `D01` — wave 1
+1. [[Process Memory Layout — Stack, Heap, Static]] · *mechanism* · `D04` — wave 1
+2. [[References]] · *concept* · `D04` — wave 1
+3. [[Pointers]] · *concept* · `D04` — wave 1
+4. [[The Preprocessor]] · *mechanism* · `D01` — wave 1
+5. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
+6. [[Scope]] · *concept* · `D01` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[vector]] · *concept* · updated 2026-09-26
 - ◐ [[Function Overloading]] · *concept* · updated 2026-09-26
 - ◐ [[Overloading in Classes — Constructors, Members and Operators]] · *concept* · updated 2026-09-26
 - ◐ [[Map — Inheritance & Polymorphism]] · *map* · updated 2026-09-26
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Header — string_view]] · *header* · updated 2026-09-26
 - ◐ [[Header — list]] · *header* · updated 2026-09-26
 - ◐ [[Fundamental Types]] · *concept* · updated 2026-09-26
-- ◐ [[const and Const-Correctness]] · *concept* · updated 2026-09-26
 <!-- cc:end -->
 
 ## Start here

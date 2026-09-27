@@ -1,6 +1,6 @@
 {
-  "runs": 58,
-  "builder_runs": 57,
+  "runs": 59,
+  "builder_runs": 58,
   "editor_runs": 1,
   "history": [
     {
@@ -736,10 +736,23 @@
       "code": "7/7",
       "commit": "✓",
       "summary": "AUTHOR: Function Overloading (D05 concept) — overload sets, conversion ranking, name mangling under the hood, Python-decorator comparison via higher-order function templates; woven into Anatomy of a Function, Functions and Parameters, Map — Functions"
+    },
+    {
+      "when": "2026-09-27T04:21:13Z",
+      "run": 58,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "std-vector"
+      ],
+      "lint": "100–100",
+      "code": "3/3",
+      "commit": "✓",
+      "summary": "vector Dossier: handle-and-buffer model (manifest/warehouse analogy), amortized-O(1) growth, contiguity proven at runtime, asm proof of zero-overhead indexing over a raw pointer; woven into STL Architecture, Map — Standard Library, Header — vector (all pre-existing frontier links now resolve)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-23T08:31:45Z",
-  "last_builder": "2026-09-27T03:40:54Z"
+  "last_builder": "2026-09-27T04:21:13Z"
 }

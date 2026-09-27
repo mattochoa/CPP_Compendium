@@ -25,7 +25,7 @@ tags: [system/generated, practice]
 | # | Project | Concepts it exercises |
 |---|---|---|
 | 06 | Function Library & Header Refactor | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Functions]], ◐ [[Translation Units]], ○ [[Headers and Include Guards]], ○ [[Declarations vs Definitions]], ○ [[References]], ◐ [[Pointers vs References]], ◐ [[Anatomy of a Function]], ○ [[Parameter Passing — Value, Reference, Pointer]], ◐ [[Function Overloading]], ○ [[assert and static_assert]], ◐ [[Functions and Parameters — The Complete Picture]] |
-| 07 | Word & Text Analyzer | ◐ [[Map — Standard Library]], ○ [[vector]], ○ [[string]], ○ [[Ordered Associative Containers — map and set]], ○ [[IO Streams Architecture]], ○ [[File IO]] |
+| 07 | Word & Text Analyzer | ◐ [[Map — Standard Library]], ◐ [[vector]], ○ [[string]], ○ [[Ordered Associative Containers — map and set]], ○ [[IO Streams Architecture]], ○ [[File IO]] |
 | 08 | Matrix Operations Toolkit | ○ [[Preconditions, Postconditions and Contracts]] |
 | 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ◐ [[Map — Functions]], ◐ [[Anatomy of a Function]], ○ [[The Call Stack and Stack Frames]], ○ [[Recursion]], ◐ [[Functions and Parameters — The Complete Picture]] |
 | 10 | Caesar & Vigenere Cipher Toolkit | ◐ [[Map — Types & Values]], ○ [[Bitwise Operations and the bit Header]], ○ [[File IO]] |
@@ -35,7 +35,7 @@ tags: [system/generated, practice]
 | # | Project | Concepts it exercises |
 |---|---|---|
 | 11 | Pointer & Array Internals Lab | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Tooling & Engineering]], ○ [[Process Memory Layout — Stack, Heap, Static]], ○ [[Pointers]], ○ [[Pointer Arithmetic and Arrays]], ◐ [[Pointers vs References]], ○ [[Built-in Arrays and Array-to-Pointer Decay]], ◐ [[Dangling Pointers and References]], ○ [[Sanitizers — ASan, UBSan, TSan]] |
-| 12 | Build-Your-Own Dynamic Array | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Standard Library]], ○ [[Dynamic Memory — new and delete]], ○ [[Rule of Zero, Three and Five]], ○ [[Copy Semantics — Deep vs Shallow Copy]], ○ [[vector]], ○ [[How vector Grows — Capacity and Amortized Cost]] |
+| 12 | Build-Your-Own Dynamic Array | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Standard Library]], ○ [[Dynamic Memory — new and delete]], ○ [[Rule of Zero, Three and Five]], ○ [[Copy Semantics — Deep vs Shallow Copy]], ◐ [[vector]], ○ [[How vector Grows — Capacity and Amortized Cost]] |
 | 13 | Singly & Doubly Linked List Library | ● [[Map — Objects, Memory & Lifetime]], ◐ [[Pointers vs References]], ◐ [[Dangling Pointers and References]] |
 | 14 | Stack & Queue Library + Applications | ○ [[Container Adaptors — stack, queue, priority_queue]] |
 | 15 | Binary Search Tree Explorer | ○ [[Recursion]] |

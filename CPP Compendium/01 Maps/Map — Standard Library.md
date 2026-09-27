@@ -133,7 +133,7 @@ flowchart LR
 <!-- cc:auto:domain-index:D10 -->
 **Tier 1 · Foundational**
 - ◐ [[STL Architecture — Containers, Iterators, Algorithms]] · *concept*
-- ○ [[vector]] · *concept*
+- ◐ [[vector]] · *concept*
 - ◐ [[Iterators]] · *concept*
 - ○ [[string]] · *concept*
 - ○ [[array]] · *concept*
@@ -166,7 +166,7 @@ flowchart LR
 - ○ [[Small String Optimization]] · *mechanism*
 - ○ [[any]] · *concept*
 
-`█░░░░░░░░░` 4/30 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 5/30 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
