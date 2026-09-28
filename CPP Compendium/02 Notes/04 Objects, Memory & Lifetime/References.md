@@ -28,7 +28,7 @@ tags:
 - tension/safety-vs-performance
 - std/c++98
 created: 2026-09-27
-updated: 2026-09-27
+updated: 2026-09-28
 ---
 
 # References
@@ -211,7 +211,7 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 ## Connections
 
 - **Prerequisites:** [[Object Lifetime]] — a reference's own "lifetime" is defined only by analogy to an object's, and every binding is a claim that the referent's lifetime hasn't ended.
-- **Enables:** [[Pointers]] → [[Pointers vs References]] (the full decision between them) → [[Virtual Functions]] (a reference is one of the two ways to get dynamic dispatch without slicing) → [[Constructors]] (member-initializer-list binding for reference members).
+- **Enables:** [[Pointers]] → [[Pointers vs References]] (the full decision between them) → [[Parameter Passing — Value, Reference, Pointer]] (binding is exactly what makes `T&`/`const T&` the "in-out" and "cheap read-only" parameter forms) → [[Virtual Functions]] (a reference is one of the two ways to get dynamic dispatch without slicing) → [[Constructors]] (member-initializer-list binding for reference members).
 - **Siblings:** [[Value Categories]] (which expressions a plain `T&` versus a `const T&`/`T&&` may bind to) · [[Temporaries and Lifetime Extension]] (the full rule behind Example 3) · [[const and Const-Correctness]] (the const half of a reference's contract).
 - **Explains:** [[Dangling Pointers and References]] (why a returned reference to a local always dangles) · [[Process Memory Layout — Stack, Heap, Static]] (where the extended temporary in Example 3 actually lives).
 - **Domain:** [[Map — Objects, Memory & Lifetime]].

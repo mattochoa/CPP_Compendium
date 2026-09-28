@@ -935,7 +935,8 @@
 			"y": 1370,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Parameter Passing — Value, Reference, Pointer]]\n*comparison · T1*"
+			"text": "◐ [[Parameter Passing — Value, Reference, Pointer]]\n*comparison · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-function-overloading",

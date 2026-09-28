@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 265 |
+| ○ planned | 264 |
 | ◌ stub | 0 |
-| ◐ draft | 68 |
+| ◐ draft | 69 |
 | ⟲ revise | 0 |
 | ● reviewed | 21 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 354
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `██████████████████░░` 47/52
+- Wave 1: `██████████████████░░` 48/52
 - Wave 2: `███░░░░░░░░░░░░░░░░░` 16/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -150,14 +150,14 @@ tags: [system/generated]
 
 ## D05 · Functions
 
-*How is computation named, parameterised, reused and passed around?*  `███░░░░░░░` 5/17
+*How is computation named, parameterised, reused and passed around?*  `████░░░░░░` 6/17
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Functions]] | map | 1 | 0 |  |
 | ● | [[Anatomy of a Function]] | concept | 1 | 1 | 20 |
 | ◐ | [[The Call Stack and Stack Frames]] | mechanism | 1 | 1 |  |
-| ○ | [[Parameter Passing — Value, Reference, Pointer]] | comparison | 1 | 1 |  |
+| ◐ | [[Parameter Passing — Value, Reference, Pointer]] | comparison | 1 | 1 |  |
 | ◐ | [[Function Overloading]] | concept | 1 | 2 |  |
 | ○ | [[Default Arguments]] | concept | 1 | 2 |  |
 | ○ | [[Recursion]] | concept | 1 | 2 |  |

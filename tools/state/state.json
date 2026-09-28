@@ -1,6 +1,6 @@
 {
-  "runs": 92,
-  "builder_runs": 90,
+  "runs": 93,
+  "builder_runs": 91,
   "editor_runs": 2,
   "history": [
     {
@@ -1109,10 +1109,25 @@
       "code": "3/3 4/4",
       "commit": "✓",
       "summary": "deepen: anatomy-of-an-expression depth+integration (rubric dims: depth 2/3, integration 2/3, per 2026-09-27 Daily Brief DEEPEN queue) — added the unevaluated-operand Mechanics row (decltype/sizeof/noexcept/requires never execute their operand but still count as a full-expression, [expr.context] p1) plus the typeid exception (evaluated only for a glvalue of polymorphic class type, [expr.typeid] p4-5); tied both new In Code annotations back to the existing decltype example instead of adding a new one. Back-wove Destructors' Mechanics table (the 'end of the full-expression' row now links here) and linked forward from this note's In Code SS2 to Destructors for the exact call that boundary triggers. check 0 errors, code 3/3 PASS (unchanged, no new blocks)."
+    },
+    {
+      "when": "2026-09-28T18:20:30Z",
+      "run": 91,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "parameter-passing",
+        "pointers",
+        "references"
+      ],
+      "lint": "100–100",
+      "code": "4/4 4/4 4/4",
+      "commit": "✓",
+      "summary": "author: Parameter Passing — Value, Reference, Pointer (comparison, D05); back-wove into Pointers and References"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-28T17:17:56Z"
+  "last_builder": "2026-09-28T18:20:30Z"
 }
