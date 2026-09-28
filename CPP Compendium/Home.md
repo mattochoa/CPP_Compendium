@@ -58,7 +58,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 265 | 67 | 0 | 22 | 0 | 354 | 89 | 2 |
+| 265 | 68 | 0 | 21 | 0 | 354 | 90 | 2 |
 
 `█████░░░░░░░░░░░░░░░` **25%** of the Atlas written · last build 2026-09-28
 <!-- cc:end -->
@@ -75,16 +75,16 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Destructors]] · *concept* · updated 2026-09-28
+- ◐ [[Anatomy of an Expression]] · *concept* · updated 2026-09-28
 - ◐ [[Declarations vs Definitions]] · *comparison* · updated 2026-09-28
 - ● [[RAII]] · *idiom* · updated 2026-09-28
-- ◐ [[Destructors]] · *concept* · updated 2026-09-28
 - ● [[Precedence and Associativity]] · *concept* · updated 2026-09-28
 - ◐ [[Control Flow — Selection and Iteration]] · *concept* · updated 2026-09-28
 - ◐ [[The Call Stack and Stack Frames]] · *mechanism* · updated 2026-09-28
 - ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-28
 - ● [[Translation Units]] · *concept* · updated 2026-09-27
 - ◐ [[Headers and Include Guards]] · *idiom* · updated 2026-09-27
-- ◐ [[Constructors]] · *concept* · updated 2026-09-27
 <!-- cc:end -->
 
 ## Start here

@@ -10,9 +10,9 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 265 |
 | ◌ stub | 0 |
-| ◐ draft | 67 |
+| ◐ draft | 68 |
 | ⟲ revise | 0 |
-| ● reviewed | 22 |
+| ● reviewed | 21 |
 | ★ evergreen | 0 |
 
 **Total topics:** 354
@@ -103,7 +103,7 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Expressions & Control]] | map | 1 | 0 |  |
-| ● | [[Anatomy of an Expression]] | concept | 1 | 1 | 19 |
+| ◐ | [[Anatomy of an Expression]] | concept | 1 | 1 | 19 |
 | ● | [[Precedence and Associativity]] | concept | 1 | 1 | 20 |
 | ◐ | [[Control Flow — Selection and Iteration]] | concept | 1 | 1 |  |
 | ○ | [[Evaluation Order and Sequencing]] | mechanism | 2 | 2 |  |

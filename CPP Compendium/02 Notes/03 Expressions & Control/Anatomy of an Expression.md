@@ -4,7 +4,7 @@ title: Anatomy of an Expression
 type: concept
 domain: D03
 tier: 1
-status: reviewed
+status: draft
 standard: C++98
 prereqs: []
 related:
@@ -21,7 +21,7 @@ tags:
 - tier/1
 - tension/safety-vs-performance
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-09-28
 reviewed: 2026-09-27
 score: 19
 rubric:
@@ -89,9 +89,12 @@ Reading bottom-up: `price` and `qty` are primary expressions (identifiers); `pri
 | A parenthesized expression | Is itself classified as a primary expression, and preserves the value, type and value category of what it wraps | `(price)` has the exact same type and value category as `price`; parentheses exist only to force a different grouping, never a different kind of result |
 | **Full-expression** | An expression that is not a subexpression of any other expression (plus a few named cases: declarator initializers, a destructor call at the end of an object's lifetime, and — since C++14 — the default member initializers used while building an aggregate) | in `total = price * qty + shipping();`, the whole assignment is the full-expression; `price * qty` and `shipping()` are subexpressions of it, not full-expressions themselves |
 | **Expression-statement** | An expression followed by `;`; if the expression yields a result, that result is a *discarded-value expression* — computed, then thrown away, and evaluated only for whatever side effect it has | `qty + 1;` computes one more than `qty` and keeps nothing; `++qty;` has the identical statement shape but is written for its side effect |
+| **Unevaluated operand** | The operand of `decltype`, `sizeof`, `noexcept`, or a `requires`-expression is parsed and type-checked but never executed — reading it costs nothing at run time, though the Standard still counts it as a full-expression in its own right (`[expr.context]` ¶1) | `decltype(price)` names `price`'s type without running any code that reads `price`'s value; `sizeof(f())` never calls `f` |
+
+`typeid` is the one exception that proves the rule: its operand is unevaluated for an ordinary expression, but genuinely *evaluated* when the operand is a glvalue of polymorphic class type — determining the dynamic type takes an actual run-time lookup through the object's vptr, so there is no way to answer without running the expression that names the object (`[expr.typeid]` ¶4–5).
 
 > [!standard] Where this is defined
-> The Standard fixes the subexpression/full-expression vocabulary in `[intro.execution]`, the value-category half of an expression's two properties in `[basic.lval]`, its type in `[expr.type]`, and primary expressions in `[expr.prim]`; cppreference's *Expressions* page (`en.cppreference.com/w/cpp/language/expressions`) restates it without the legal phrasing. Neither source ties any of this to a particular evaluation order — that is a separate rule set, in [[Evaluation Order and Sequencing]].
+> The Standard fixes the subexpression/full-expression vocabulary in `[intro.execution]`, the value-category half of an expression's two properties in `[basic.lval]`, its type in `[expr.type]`, primary expressions in `[expr.prim]`, and discarded-value and unevaluated operands in `[expr.context]`; cppreference's *Expressions* page (`en.cppreference.com/w/cpp/language/expressions`) restates it without the legal phrasing. Neither source ties any of this to a particular evaluation order — that is a separate rule set, in [[Evaluation Order and Sequencing]].
 
 ## Under the Hood
 
@@ -126,7 +129,7 @@ int main() {
     std::cout << total << "\n"; // expect: 12
 }
 ```
-① `decltype` on the bare identifier reports its declared type, `int`. ② `decltype` on the *parenthesized* identifier reports `int&` instead: `(price)` is an lvalue expression denoting `price`, not merely a stand-in for its name, and `decltype` makes that value-category difference visible as a type. ③ `price * qty` is a subexpression with type `int` and value category prvalue: a freshly computed number, not an alias to any existing object.
+① `decltype` on the bare identifier reports its declared type, `int`. ② `decltype` on the *parenthesized* identifier reports `int&` instead: `(price)` is an lvalue expression denoting `price`, not merely a stand-in for its name, and `decltype` makes that value-category difference visible as a type. Neither operand actually runs — both `price` and `(price)` are unevaluated operands (Mechanics), so line ① and ② read no value from `price` at all; `decltype` only inspects the type and value category every expression already has. ③ `price * qty` is a subexpression with type `int` and value category prvalue: a freshly computed number, not an alias to any existing object.
 
 ```cpp
 #include <cstdio>
@@ -147,7 +150,7 @@ int main() {
 // expect: die
 // expect: after
 ```
-① The entire statement `use(Loud{});` is one full-expression. The temporary `Loud{}` is a subexpression of it, so it lives through the whole call — it is not destroyed the instant `use` starts running, only when the full-expression ends. ② Because the full-expression's end is also where the temporary's lifetime ends, `"after"` cannot print until `"die"` already has: the ordering is guaranteed, not coincidental (Primer §13.1, p. 502).
+① The entire statement `use(Loud{});` is one full-expression. The temporary `Loud{}` is a subexpression of it, so it lives through the whole call — it is not destroyed the instant `use` starts running, only when the full-expression ends (see [[Destructors]] for exactly which call that end-of-full-expression boundary triggers). ② Because the full-expression's end is also where the temporary's lifetime ends, `"after"` cannot print until `"die"` already has: the ordering is guaranteed, not coincidental (Primer §13.1, p. 502).
 
 ```cpp
 #include <iostream>
@@ -201,4 +204,6 @@ int main() {
 - cppreference, *Expressions*: https://en.cppreference.com/w/cpp/language/expressions — the definition used here for primary expressions, full-expressions and discarded-value expressions; confirms the C++14 extension to default member initializers.
 - cppreference, *Order of evaluation*: https://en.cppreference.com/w/cpp/language/eval_order — the C++17 defect-report-driven changes to specific operand orderings cited in Evolution.
 - Draft standard `[intro.execution]`: https://eel.is/c++draft/intro.execution — the normative definitions of full-expression, subexpression and discarded-value expression.
+- Draft standard `[expr.context]`: https://eel.is/c++draft/expr.context — ¶1 lists the unevaluated-operand contexts (`decltype`, `sizeof`, `noexcept`, `requires`-expressions) and states that an unevaluated operand is still a full-expression; ¶2 defines discarded-value expression precisely.
+- Draft standard `[expr.typeid]`: https://eel.is/c++draft/expr.typeid — ¶4–5, the source for `typeid`'s split behavior (evaluated only for a glvalue of polymorphic class type).
 - See [[Guide — cppreference, the Draft Standard and the Core Guidelines]] for how to navigate `[intro.execution]` directly.

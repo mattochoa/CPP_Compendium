@@ -1,6 +1,6 @@
 {
-  "runs": 91,
-  "builder_runs": 89,
+  "runs": 92,
+  "builder_runs": 90,
   "editor_runs": 2,
   "history": [
     {
@@ -1095,10 +1095,24 @@
       "code": "7/7",
       "commit": "✓",
       "summary": "AUTHOR: Declarations vs Definitions (comparison, D01) — the declaration/definition split via [basic.def], forward-declared incomplete types, static-member in-class vs out-of-class definition; verified with real nm/ld evidence (GCC 11.4.0 local)."
+    },
+    {
+      "when": "2026-09-28T17:17:56Z",
+      "run": 90,
+      "role": "builder",
+      "mode": "DEEPEN",
+      "items": [
+        "anatomy-of-an-expression",
+        "destructors"
+      ],
+      "lint": "100–100",
+      "code": "3/3 4/4",
+      "commit": "✓",
+      "summary": "deepen: anatomy-of-an-expression depth+integration (rubric dims: depth 2/3, integration 2/3, per 2026-09-27 Daily Brief DEEPEN queue) — added the unevaluated-operand Mechanics row (decltype/sizeof/noexcept/requires never execute their operand but still count as a full-expression, [expr.context] p1) plus the typeid exception (evaluated only for a glvalue of polymorphic class type, [expr.typeid] p4-5); tied both new In Code annotations back to the existing decltype example instead of adding a new one. Back-wove Destructors' Mechanics table (the 'end of the full-expression' row now links here) and linked forward from this note's In Code SS2 to Destructors for the exact call that boundary triggers. check 0 errors, code 3/3 PASS (unchanged, no new blocks)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-28T16:23:24Z"
+  "last_builder": "2026-09-28T17:17:56Z"
 }

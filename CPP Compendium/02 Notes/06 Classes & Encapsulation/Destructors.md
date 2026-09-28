@@ -79,7 +79,7 @@ flowchart TB
 | Static-duration object | At program termination, in reverse order of completion of construction |
 | Thread-duration object | At thread exit |
 | Automatic-duration object | When the block it was declared in exits, by any route |
-| Temporary | At the end of its lifetime — usually the end of the full-expression that created it |
+| Temporary | At the end of its lifetime — usually the end of the full-expression ([[Anatomy of an Expression]]) that created it |
 | Dynamically allocated (`new`) object | When a `delete`-expression runs on it |
 | Member or base subobject | Automatically, as part of destroying the object it belongs to |
 | Container or array element | Automatically, as part of destroying the container (Primer p. 502) |
