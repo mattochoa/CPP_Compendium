@@ -58,7 +58,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 272 | 59 | 0 | 23 | 0 | 354 | 77 | 2 |
+| 272 | 60 | 0 | 22 | 0 | 354 | 78 | 2 |
 
 `█████░░░░░░░░░░░░░░░` **23%** of the Atlas written · last build 2026-09-27
 <!-- cc:end -->
@@ -75,6 +75,9 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-27
+- ● [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-27
+- ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-27
 - ● [[RAII]] · *idiom* · updated 2026-09-27
 - ◐ [[Constructors]] · *concept* · updated 2026-09-27
 - ◐ [[Pointers]] · *concept* · updated 2026-09-27
@@ -82,9 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[References]] · *concept* · updated 2026-09-27
 - ◐ [[Object Lifetime]] · *concept* · updated 2026-09-27
 - ◐ [[Storage Duration]] · *concept* · updated 2026-09-27
-- ● [[Process Memory Layout — Stack, Heap, Static]] · *mechanism* · updated 2026-09-27
-- ◐ [[The C++ Abstract Machine]] · *concept* · updated 2026-09-27
-- ◐ [[The C++ Object Model — What an Object Is]] · *concept* · updated 2026-09-27
 <!-- cc:end -->
 
 ## Start here

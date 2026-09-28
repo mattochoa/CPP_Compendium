@@ -4,7 +4,7 @@ title: The C++ Design Philosophy
 type: concept
 domain: D00
 tier: 1
-status: reviewed
+status: draft
 standard: C++98
 prereqs: []
 related:
@@ -22,7 +22,7 @@ tags:
 - tension/compatibility-vs-evolution
 - std/c++98
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-09-27
 reviewed: 2026-09-27
 score: 18
 rubric:
@@ -90,6 +90,30 @@ rubric:
 | A rule could be enforced by the compiler or left to convention | Prefer compile-time checking to run-time checking wherever both are possible | Overload resolution and `static_assert` run before the program does |
 | A new feature versus an existing C construct | Keep C's translation-unit, build and object-layout model even where it constrains the new feature | Ordinary classes carry no hidden vtable unless a `virtual` function asks for one |
 
+The four rows above are one recurring decision, not four unrelated ones. Every time a feature needs a precondition enforced, C++ asks the same question:
+
+```mermaid
+flowchart TD
+    Q1{"Can the property be proven<br/>before the program runs?"}
+    Q2{"Must every violation be<br/>diagnosable at run time?"}
+    A["Resolve at compile time:<br/>overloads &middot; templates &middot; concepts &middot; static_assert"]
+    B["Pay for a checked interface:<br/>bounds-checked access &middot; checked downcast &middot; exceptions"]
+    C["Leave unchecked:<br/>raw indexing &middot; raw dereference<br/>violation is UB"]
+    Q1 -->|yes| A
+    Q1 -->|no| Q2
+    Q2 -->|yes, some caller may not know| B
+    Q2 -->|no, callers already guarantee it| C
+
+    classDef good  fill:#14532d,stroke:#4ade80,color:#f0fdf4
+    classDef mech  fill:#134e4a,stroke:#2dd4bf,color:#f0fdfa
+    classDef danger fill:#7f1d1d,stroke:#f87171,color:#fef2f2
+    class A good
+    class B mech
+    class C danger
+```
+
+Green is cheapest (settled before the program runs, so it costs nothing at all); teal still runs, but only because an interface explicitly asked for the check; red is the unchecked default, priced in [[Undefined Behavior]] rather than in cycles. Nothing routes to red by default — a caller has to *pick* the unchecked interface, the same way `.at()` and `operator[]` are two different functions, not two modes of one function.
+
 > [!standard] The zero-overhead principle, in the language the C++ Core Guidelines use to state it
 > "What you don't use, you don't pay for" — and, symmetrically, what you do use, you get at least as cheaply as if you had hand-coded it with lower-level constructs (C++ Core Guidelines, *In.aims*). This is a design constraint checked against every proposed feature, not an empirical average measured after the fact — see [[Zero-Overhead Principle]] for the mechanism that makes it enforceable rather than aspirational.
 
@@ -117,6 +141,33 @@ Zero-overhead abstractions are legal to *optimize into nothing* specifically bec
 >   ret
 > ```
 > The two functions are byte-for-byte identical. `Wrapper::getX()` did not compile to a call, a bounds check, or an extra load: the abstraction is entirely a compile-time fiction that the optimizer erased once it did its job of naming the operation for the reader.
+
+> [!machine] Pillar 2, the hard case: exceptions cost nothing until thrown
+> `log_value` is declared but not defined, so the compiler cannot know whether it throws or inline around it. One function calls it with a `try`/`catch`, one without. GCC 14.2, Compiler Explorer, x86-64 Linux, `-O2`:
+> ```nasm
+> no_try(int):
+>   push rbx
+>   mov  ebx, edi
+>   call log_value(int)
+>   lea  eax, [rbx+rbx]
+>   pop  rbx
+>   ret
+> with_try(int):
+>   push rbx
+>   mov  ebx, edi
+>   call log_value(int)
+>   lea  eax, [rbx+rbx]
+>   pop  rbx
+>   ret
+> ; --- everything below is moved to a separate .cold partition,
+> ; --- reached only if log_value actually threw ---
+>   call __cxa_begin_catch
+>   call __cxa_end_catch
+>   or   eax, -1
+>   ret
+>   call _Unwind_Resume
+> ```
+> `no_try` and `with_try` are identical on the path every call actually takes: same six instructions, same registers. The `catch` clause's code is relocated to a `.cold` section the CPU never fetches unless `log_value` really throws. This is the table-based ("zero-cost") exception model used by the Itanium C++ ABI's exception-handling convention — GCC, Clang and (in its `/EHsc` mode) MSVC all build it this way, though the Standard mandates only the *behavior* of `try`/`catch`, not this mechanism. Pillar 2 holds exactly on the path that doesn't use the feature: adding a `catch` did not cost `with_try` one instruction on its non-throwing return. The price is paid elsewhere — in binary size (the `.cold` code and its unwind tables exist whether or not anything ever throws) and in the throwing path itself, which is far slower than the `return` it replaces. "Zero overhead" names *which* path is free, not that the feature has no cost anywhere.
 
 ## In Code
 
@@ -250,7 +301,7 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 
 - **Prerequisites:** none. This is the root of [[Map — What C++ Is]] and of the Atlas: every later derivation in the Compendium eventually traces back to one of these two pillars.
 - **Enables:** [[The C++ Abstract Machine]] (the formal object the Standard defines to make "direct mapping" and "zero overhead" checkable claims rather than slogans) · [[Zero-Overhead Principle]] (the testable version of pillar 2) · [[Levels of Abstraction — From Bits to Libraries]] (how the philosophy is delivered in layers) · [[The ISO Standard, Compilers and Conformance]] (who is bound by these rules, and how).
-- **Siblings:** none yet written in D00.
+- **Siblings:** [[The C++ Abstract Machine]] (draft) — the next link in the spine, and the formal object that makes "direct mapping" and "zero overhead" checkable claims about a defined machine rather than slogans about hardware in general.
 - **Domain:** [[Map — What C++ Is]].
 - **Practice:** no Continuum project is registered against this note yet; it underlies the reasoning behind all of them.
 
@@ -265,6 +316,9 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 > [!quiz]- In the `wrapped_access` / `direct_access` assembly, what would you expect to change if `Wrapper::getX()` were declared `virtual`, and which pillar does that change illustrate?
 > The identical single `mov` would be replaced by an indirect call through the object's vtable pointer — extra memory access and a load-then-jump instead of one instruction. That's pillar 2 working correctly in the other direction: virtual dispatch costs something *because you asked for it* (dynamic behavior), and the language never pretends otherwise.
 
+> [!quiz]- `no_try` and `with_try` both call a function that might throw. Why is their assembly on the returned-normally path identical, and where did the `catch` clause's code go?
+> Table-based ("zero-cost") exception handling puts nothing on the normal return path: no flag to test, no branch to skip. The `catch` clause's code — restoring the exception object, running the handler, returning `-1` — is emitted in a separate `.cold` section that the CPU reaches only if the unwinder redirects control there after an actual throw. The feature is free exactly where it isn't used; the table itself still costs binary space, and it's a design choice of the Itanium ABI, not something the Standard requires.
+
 ## Sources
 
 - PPP §0.2 "A philosophy of teaching and learning": states the two pillars — efficient direct access to machine resources, and zero-overhead abstraction mechanisms — as the foundation the whole book teaches from.
@@ -273,4 +327,5 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 - C++ Core Guidelines, *In.aims*: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#ss-aims — the zero-overhead principle, stated as a design constraint the guidelines themselves are held to.
 - C++ Core Guidelines, P.1 "Express ideas directly in code," P.4 "Ideally, a program should be statically type safe," P.5 "Prefer compile-time checking to run-time checking": https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-direct · #rp-typesafe · #rp-compile-time
 - Draft standard `[intro.abstract]` (the as-if rule): https://eel.is/c++draft/intro.abstract — the license that makes a zero-overhead compilation of a used abstraction legal, not merely likely.
+- Itanium C++ ABI, *Exception Handling*: https://itanium-cxx-abi.github.io/cxx-abi/abi-eh.html — the table-based unwinding convention GCC and Clang use, which is why a non-throwing call path costs nothing extra for having a `catch` nearby; the C++ Standard itself specifies only `try`/`catch` behavior, not this mechanism.
 - See [[Guide — A Tour of C++ (3rd ed)]] and [[Guide — cppreference, the Draft Standard and the Core Guidelines]] for how these sources fit the rest of the Atlas.

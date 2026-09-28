@@ -10,9 +10,9 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 272 |
 | ◌ stub | 0 |
-| ◐ draft | 59 |
+| ◐ draft | 60 |
 | ⟲ revise | 0 |
-| ● reviewed | 23 |
+| ● reviewed | 22 |
 | ★ evergreen | 0 |
 
 **Total topics:** 354
@@ -30,7 +30,7 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — What C++ Is]] | map | 1 | 0 |  |
-| ● | [[The C++ Design Philosophy]] | concept | 1 | 1 | 18 |
+| ◐ | [[The C++ Design Philosophy]] | concept | 1 | 1 | 18 |
 | ○ | [[Zero-Overhead Principle]] | concept | 1 | 1 |  |
 | ○ | [[Levels of Abstraction — From Bits to Libraries]] | concept | 1 | 1 |  |
 | ◐ | [[The C++ Abstract Machine]] | concept | 1 | 1 |  |

@@ -27,8 +27,8 @@
 			"y": 70,
 			"width": 250,
 			"height": 56,
-			"text": "● [[The C++ Design Philosophy]]\n*concept · T1*",
-			"color": "4"
+			"text": "◐ [[The C++ Design Philosophy]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-zero-overhead-principle",

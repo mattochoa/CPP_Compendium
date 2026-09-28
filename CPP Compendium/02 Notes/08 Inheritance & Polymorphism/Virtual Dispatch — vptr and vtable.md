@@ -34,7 +34,7 @@ tags:
 - tension/compile-time-vs-run-time
 - tension/abstraction-vs-control
 created: 2026-09-23
-updated: 2026-09-26
+updated: 2026-09-27
 reviewed: 2026-09-27
 score: 21
 rubric:
@@ -64,7 +64,7 @@ A function like `double total_area(const std::vector<Shape*>&)` is compiled **on
 > 5. **Price:** A pointer per object (8 bytes on 64-bit targets), a table per class, an indirect branch per call, and usually the loss of inlining, which is the bigger cost.
 
 > [!tension] compile time ⟷ run time
-> Virtual dispatch is C++'s *run-time* answer to "one code path, many types". [[Templates — Code That Writes Code|Templates]] are its *compile-time* answer: the same problem, resolved by generating a separate concrete definition per type instead of an indirect call. The vtable is the price of deciding late. See [[Static vs Dynamic Polymorphism]] for the direct cost comparison.
+> Virtual dispatch is C++'s *run-time* answer to "one code path, many types". [[Templates — Code That Writes Code|Templates]] are its *compile-time* answer: the same problem, resolved by generating a separate concrete definition per type instead of an indirect call. The vtable is the price of deciding late, and only classes that ask for it (via `virtual`) pay it — see [[The C++ Design Philosophy]] for why C++ prices features this way instead of building the check into every class. See [[Static vs Dynamic Polymorphism]] for the direct cost comparison.
 
 The Standard specifies only the *behavior* of virtual functions (`[class.virtual]`), not vtables. But GCC and Clang (following the Itanium C++ ABI) and MSVC all use this design. The details below are Itanium ABI on x86-64 and were checked with GCC 13.
 
