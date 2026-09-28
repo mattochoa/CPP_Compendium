@@ -99,7 +99,7 @@ flowchart LR
 <!-- cc:auto:domain-index:D00 -->
 **Tier 1 · Foundational**
 - ◐ [[The C++ Design Philosophy]] · *concept*
-- ○ [[Zero-Overhead Principle]] · *concept*
+- ◐ [[Zero-Overhead Principle]] · *concept*
 - ○ [[Levels of Abstraction — From Bits to Libraries]] · *concept*
 - ◐ [[The C++ Abstract Machine]] · *concept*
 - ○ [[Undefined Behavior]] · *concept*
@@ -109,7 +109,7 @@ flowchart LR
 - ○ [[The As-If Rule]] · *mechanism*
 - ○ [[Implementation-Defined, Unspecified and Undefined Behavior]] · *comparison*
 
-`███░░░░░░░` 3/9 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`████░░░░░░` 4/9 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

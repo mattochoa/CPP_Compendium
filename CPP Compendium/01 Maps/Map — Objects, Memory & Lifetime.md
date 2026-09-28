@@ -151,6 +151,7 @@ flowchart LR
 - ○ [[C-Style Strings]] · *concept*
 - ○ [[Object Representation, Padding and Layout]] · *mechanism*
 - ○ [[Memory Safety in C++ — Threats and Defenses]] · *concept*
+- ○ [[Empty Base Optimization]] · *mechanism*
 
 **Tier 3 · Advanced**
 - ○ [[Strict Aliasing and Type Punning]] · *pitfall*
@@ -160,7 +161,7 @@ flowchart LR
 **Tier 4 · Expert**
 - ○ [[Allocators and pmr Memory Resources]] · *concept*
 
-`████░░░░░░` 11/26 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`████░░░░░░` 11/27 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

@@ -10,28 +10,28 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 264 |
 | ◌ stub | 0 |
-| ◐ draft | 69 |
+| ◐ draft | 70 |
 | ⟲ revise | 0 |
 | ● reviewed | 21 |
 | ★ evergreen | 0 |
 
-**Total topics:** 354
+**Total topics:** 355
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `██████████████████░░` 48/52
+- Wave 1: `███████████████████░` 49/52
 - Wave 2: `███░░░░░░░░░░░░░░░░░` 16/126
-- Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
+- Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/124
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
 ## D00 · What C++ Is
 
-*What contract does C++ make between the programmer, the compiler and the machine?*  `███░░░░░░░` 3/9
+*What contract does C++ make between the programmer, the compiler and the machine?*  `████░░░░░░` 4/9
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — What C++ Is]] | map | 1 | 0 |  |
 | ◐ | [[The C++ Design Philosophy]] | concept | 1 | 1 | 18 |
-| ○ | [[Zero-Overhead Principle]] | concept | 1 | 1 |  |
+| ◐ | [[Zero-Overhead Principle]] | concept | 1 | 1 |  |
 | ○ | [[Levels of Abstraction — From Bits to Libraries]] | concept | 1 | 1 |  |
 | ◐ | [[The C++ Abstract Machine]] | concept | 1 | 1 |  |
 | ○ | [[Undefined Behavior]] | concept | 1 | 1 |  |
@@ -117,7 +117,7 @@ tags: [system/generated]
 
 ## D04 · Objects, Memory & Lifetime
 
-*Where does an object live, how long does it live, and who can reach it?*  `████░░░░░░` 11/26
+*Where does an object live, how long does it live, and who can reach it?*  `████░░░░░░` 11/27
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -147,6 +147,7 @@ tags: [system/generated]
 | ○ | [[Trivial, Standard-Layout and Aggregate Types]] | concept | 3 | 3 |  |
 | ○ | [[Placement new and Manual Lifetime]] | mechanism | 3 | 4 |  |
 | ○ | [[Allocators and pmr Memory Resources]] | concept | 4 | 4 |  |
+| ○ | [[Empty Base Optimization]] | mechanism | 2 | 3 |  |
 
 ## D05 · Functions
 

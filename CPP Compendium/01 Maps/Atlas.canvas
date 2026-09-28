@@ -37,7 +37,8 @@
 			"y": 142,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Zero-Overhead Principle]]\n*concept · T1*"
+			"text": "◐ [[Zero-Overhead Principle]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-abstraction-layers",
@@ -851,6 +852,15 @@
 			"width": 250,
 			"height": 56,
 			"text": "○ [[Memory Safety in C++ — Threats and Defenses]]\n*concept · T2*"
+		},
+		{
+			"id": "t-empty-base-optimization",
+			"type": "text",
+			"x": 296,
+			"y": 1730,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Empty Base Optimization]]\n*mechanism · T2*"
 		},
 		{
 			"id": "t-strict-aliasing",
@@ -4120,6 +4130,13 @@
 			"fromNode": "t-function-anatomy",
 			"fromSide": "right",
 			"toNode": "t-functions-and-parameters",
+			"toSide": "left"
+		},
+		{
+			"id": "e-object-representation-empty-base-optimization",
+			"fromNode": "t-object-representation",
+			"fromSide": "right",
+			"toNode": "t-empty-base-optimization",
 			"toSide": "left"
 		}
 	]

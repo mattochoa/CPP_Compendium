@@ -31,11 +31,11 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-domains -->
 | | Domain | The question it answers | Progress |
 |---|---|---|---|
-| `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `███░░░░░` 3/9 |
+| `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `████░░░░` 4/9 |
 | `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `███░░░░░` 6/18 |
 | `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `█░░░░░░░` 4/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `███░░░░░` 4/12 |
-| `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `███░░░░░` 11/26 |
+| `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `███░░░░░` 11/27 |
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `███░░░░░` 6/17 |
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `██░░░░░░` 6/20 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `█░░░░░░░` 3/19 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 264 | 69 | 0 | 21 | 0 | 354 | 91 | 2 |
+| 264 | 70 | 0 | 21 | 0 | 355 | 92 | 2 |
 
-`█████░░░░░░░░░░░░░░░` **25%** of the Atlas written · last build 2026-09-28
+`█████░░░░░░░░░░░░░░░` **26%** of the Atlas written · last build 2026-09-28
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Zero-Overhead Principle]] · *concept* · `D00` — wave 1
+1. [[Scope]] · *concept* · `D01` — wave 1
 2. [[Levels of Abstraction — From Bits to Libraries]] · *concept* · `D00` — wave 1
 3. [[Undefined Behavior]] · *concept* · `D00` — wave 1
-4. [[Scope]] · *concept* · `D01` — wave 1
-5. [[Copy Semantics — Deep vs Shallow Copy]] · *comparison* · `D07` — wave 2 · focus
-6. [[Owning vs Observing Pointers]] · *comparison* · `D07` — wave 2 · focus
+4. [[Copy Semantics — Deep vs Shallow Copy]] · *comparison* · `D07` — wave 2 · focus
+5. [[Owning vs Observing Pointers]] · *comparison* · `D07` — wave 2 · focus
+6. [[unique_ptr]] · *concept* · `D07` — wave 2 · focus
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Zero-Overhead Principle]] · *concept* · updated 2026-09-28
 - ◐ [[References]] · *concept* · updated 2026-09-28
 - ◐ [[Pointers]] · *concept* · updated 2026-09-28
 - ◐ [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · updated 2026-09-28
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ● [[RAII]] · *idiom* · updated 2026-09-28
 - ● [[Precedence and Associativity]] · *concept* · updated 2026-09-28
 - ◐ [[Control Flow — Selection and Iteration]] · *concept* · updated 2026-09-28
-- ◐ [[The Call Stack and Stack Frames]] · *mechanism* · updated 2026-09-28
 <!-- cc:end -->
 
 ## Start here
