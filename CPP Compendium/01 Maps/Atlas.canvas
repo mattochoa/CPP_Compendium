@@ -1112,7 +1112,8 @@
 			"y": 1442,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Destructors]]\n*concept · T1*"
+			"text": "◐ [[Destructors]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-struct-vs-class",

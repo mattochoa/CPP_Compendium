@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 267 |
+| ○ planned | 266 |
 | ◌ stub | 0 |
-| ◐ draft | 65 |
+| ◐ draft | 66 |
 | ⟲ revise | 0 |
 | ● reviewed | 22 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 354
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `█████████████████░░░` 45/52
+- Wave 1: `██████████████████░░` 46/52
 - Wave 2: `███░░░░░░░░░░░░░░░░░` 16/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -174,7 +174,7 @@ tags: [system/generated]
 
 ## D06 · Classes & Encapsulation
 
-*How do we build new types that protect their own invariants?*  `██░░░░░░░░` 5/20
+*How do we build new types that protect their own invariants?*  `███░░░░░░░` 6/20
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -182,7 +182,7 @@ tags: [system/generated]
 | ● | [[Classes as User-Defined Types]] | concept | 1 | 1 | 20 |
 | ● | [[Encapsulation and Class Invariants]] | concept | 1 | 1 | 20 |
 | ◐ | [[Constructors]] | concept | 1 | 1 |  |
-| ○ | [[Destructors]] | concept | 1 | 1 |  |
+| ◐ | [[Destructors]] | concept | 1 | 1 |  |
 | ○ | [[struct vs class]] | comparison | 1 | 2 |  |
 | ○ | [[Member Initializer Lists and Initialization Order]] | mechanism | 1 | 2 |  |
 | ○ | [[The this Pointer and Member Function Calls]] | mechanism | 1 | 2 |  |

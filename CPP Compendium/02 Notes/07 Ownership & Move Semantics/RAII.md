@@ -31,7 +31,7 @@ tags:
 - tension/safety-vs-performance
 - tension/abstraction-vs-control
 created: 2026-09-23
-updated: 2026-09-27
+updated: 2026-09-28
 reviewed: 2026-09-23
 score: 20
 rubric:
@@ -178,7 +178,7 @@ int main() {
 // expect: caught: midway failure
 ```
 1. The constructor either acquires the resource or throws, so a `File` object *always* owns an open handle (its **invariant**).
-2. Destructors are implicitly `noexcept` (C++11). Release must not fail loudly; ignore or log errors.
+2. Destructors are implicitly `noexcept` (C++11) even without writing the specifier yourself — see [[Destructors]] for exactly which member "poisons" that guarantee, and why throwing here anyway calls `std::terminate` rather than reaching the `catch` below. Release must not fail loudly; ignore or log errors.
 3. Copying would give two owners and a double `fclose`, so copying is deleted. See [[Rule of Zero, Three and Five]].
 4. Moving transfers ownership and leaves the source empty, which is why the destructor checks for `nullptr`.
 5. The throw unwinds the `try` block. `f`'s destructor runs **before** the handler: the output is `closed`, then `caught: …`.

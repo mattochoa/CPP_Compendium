@@ -37,7 +37,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `███░░░░░` 4/12 |
 | `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `███░░░░░` 11/26 |
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `██░░░░░░` 5/17 |
-| `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `██░░░░░░` 5/20 |
+| `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `██░░░░░░` 6/20 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `█░░░░░░░` 3/19 |
 | `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `██░░░░░░` 4/15 |
 | `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `█░░░░░░░` 2/16 |
@@ -58,23 +58,25 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 267 | 65 | 0 | 22 | 0 | 354 | 86 | 2 |
+| 266 | 66 | 0 | 22 | 0 | 354 | 88 | 2 |
 
 `█████░░░░░░░░░░░░░░░` **25%** of the Atlas written · last build 2026-09-28
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Destructors]] · *concept* · `D06` — wave 1
-2. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
-3. [[Scope]] · *concept* · `D01` — wave 1
-4. [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · `D05` — wave 1
-5. [[Zero-Overhead Principle]] · *concept* · `D00` — wave 1
-6. [[Levels of Abstraction — From Bits to Libraries]] · *concept* · `D00` — wave 1
+1. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
+2. [[Scope]] · *concept* · `D01` — wave 1
+3. [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · `D05` — wave 1
+4. [[Zero-Overhead Principle]] · *concept* · `D00` — wave 1
+5. [[Levels of Abstraction — From Bits to Libraries]] · *concept* · `D00` — wave 1
+6. [[Undefined Behavior]] · *concept* · `D00` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ● [[RAII]] · *idiom* · updated 2026-09-28
+- ◐ [[Destructors]] · *concept* · updated 2026-09-28
 - ● [[Precedence and Associativity]] · *concept* · updated 2026-09-28
 - ◐ [[Control Flow — Selection and Iteration]] · *concept* · updated 2026-09-28
 - ◐ [[The Call Stack and Stack Frames]] · *mechanism* · updated 2026-09-28
@@ -82,9 +84,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ● [[Translation Units]] · *concept* · updated 2026-09-27
 - ◐ [[Headers and Include Guards]] · *idiom* · updated 2026-09-27
 - ◐ [[Constructors]] · *concept* · updated 2026-09-27
-- ● [[RAII]] · *idiom* · updated 2026-09-27
 - ◐ [[Exceptions]] · *concept* · updated 2026-09-27
-- ◐ [[Dynamic Memory — new and delete]] · *mechanism* · updated 2026-09-27
 <!-- cc:end -->
 
 ## Start here
