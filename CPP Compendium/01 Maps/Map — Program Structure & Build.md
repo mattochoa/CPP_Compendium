@@ -124,7 +124,7 @@ flowchart LR
 - ● [[The Compilation Pipeline]] · *mechanism*
 - ● [[Translation Units]] · *concept*
 - ● [[The Preprocessor]] · *mechanism*
-- ○ [[Headers and Include Guards]] · *idiom*
+- ◐ [[Headers and Include Guards]] · *idiom*
 - ○ [[Declarations vs Definitions]] · *comparison*
 - ○ [[Scope]] · *concept*
 - ○ [[Namespaces]] · *concept*
@@ -143,7 +143,7 @@ flowchart LR
 - ○ [[Static Initialization Order Fiasco]] · *pitfall*
 - ○ [[Modules (C++20)]] · *concept*
 
-`██░░░░░░░░` 4/18 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███░░░░░░░` 5/18 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

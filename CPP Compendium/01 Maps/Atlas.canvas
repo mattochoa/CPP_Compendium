@@ -151,7 +151,8 @@
 			"y": 286,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Headers and Include Guards]]\n*idiom · T1*"
+			"text": "◐ [[Headers and Include Guards]]\n*idiom · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-declarations-vs-definitions",

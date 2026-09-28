@@ -26,7 +26,7 @@ tags:
 - std/c++17
 - std/c++20
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-09-27
 reviewed: 2026-09-27
 score: 20
 rubric:
@@ -188,7 +188,7 @@ See [[Map — Evolution of C++]] for the language-wide timeline this fits into.
 ## Connections
 
 - **Prerequisites:** [[The Compilation Pipeline]] — names the pipeline stage (phase 4) that produces the artifact this note is about.
-- **Enables:** [[Declarations vs Definitions]] (the two things a translation unit's declaration sequence is built from) · [[The Preprocessor]] (how a header's text actually gets pasted in) · [[Linkage — Internal, External, None]] (the mechanism this note leans on throughout) · [[The One Definition Rule]] (its full statement and exceptions) · [[Namespaces]].
+- **Enables:** [[Declarations vs Definitions]] (the two things a translation unit's declaration sequence is built from) · [[The Preprocessor]] (how a header's text actually gets pasted in) · [[Headers and Include Guards]] (keeping the same header's text from landing twice in one translation unit) · [[Linkage — Internal, External, None]] (the mechanism this note leans on throughout) · [[The One Definition Rule]] (its full statement and exceptions) · [[Namespaces]].
 - **Siblings:** [[Modules (C++20)]] — the domain's own rewrite of "share an interface across translation units."
 - **Domain:** [[Map — Program Structure & Build]].
 - **Practice:** *Continuum #1 Hello, Compiler* — preprocess, compile and link one file by hand before letting the driver hide the stages. *Continuum #6 Function Library & Header Refactor*: split working code across a header and several `.cpp` files, and check which names genuinely need external linkage and which are quietly getting duplicated.
