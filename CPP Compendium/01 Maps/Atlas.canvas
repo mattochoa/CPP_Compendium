@@ -557,7 +557,8 @@
 			"y": 214,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Control Flow — Selection and Iteration]]\n*concept · T1*"
+			"text": "◐ [[Control Flow — Selection and Iteration]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-short-circuit-evaluation",

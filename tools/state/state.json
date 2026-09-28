@@ -1,6 +1,6 @@
 {
-  "runs": 87,
-  "builder_runs": 85,
+  "runs": 88,
+  "builder_runs": 86,
   "editor_runs": 2,
   "history": [
     {
@@ -1054,10 +1054,24 @@
       "code": "3/3",
       "commit": "✓",
       "summary": "AUTHOR: The Call Stack and Stack Frames — activation records, LIFO push/pop, tail-call elimination vs -O0, ABI contrast (System V vs MS x64), Annex B constexpr-recursion limit vs no run-time limit. Woven from existing frontier links in Process Memory Layout, Anatomy of a Function, Exceptions, Map — Functions."
+    },
+    {
+      "when": "2026-09-28T08:24:03Z",
+      "run": 86,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "control-flow",
+        "operator-precedence"
+      ],
+      "lint": "100–100",
+      "code": "4/4 4/4",
+      "commit": "✓",
+      "summary": "AUTHOR: Control Flow — Selection and Iteration (unifies if/switch/while/do-while/for as one test-and-branch primitive; dangling-else and switch-fallthrough proven with real GCC -Wdangling-else/-Wimplicit-fallthrough evidence; for-vs-while divergence via continue verified against Primer's continue-statement rule; while/for shown to emit identical GCC -O1 asm). Back-wove a link from Precedence and Associativity."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-28T07:25:27Z"
+  "last_builder": "2026-09-28T08:24:03Z"
 }

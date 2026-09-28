@@ -12,6 +12,7 @@ related:
 - "[[Evaluation Order and Sequencing]]"
 - "[[Prefix vs Postfix Increment]]"
 - "[[Operator Overloading]]"
+- "[[Control Flow — Selection and Iteration]]"
 practice:
 - 2
 - 3
@@ -22,7 +23,7 @@ tags:
 - tension/compatibility-vs-evolution
 - std/c++20
 created: 2026-09-27
-updated: 2026-09-27
+updated: 2026-09-28
 reviewed: 2026-09-27
 score: 20
 rubric:
@@ -216,7 +217,7 @@ int main() {
 ## Connections
 
 - **Prerequisites:** [[Anatomy of an Expression]] — this note answers the *shape* half of "every expression has a type and a value category, and combines with others somehow"; the *when* half is [[Evaluation Order and Sequencing]].
-- **Enables:** [[Evaluation Order and Sequencing]] (now that grouping is fixed, timing is the only open question left) · [[Prefix vs Postfix Increment]] (built entirely on the unary-vs-postfix associativity split shown in example 2) · [[Operator Overloading]] (must preserve the built-in precedence and associativity shown in the Mechanics table).
+- **Enables:** [[Evaluation Order and Sequencing]] (now that grouping is fixed, timing is the only open question left) · [[Prefix vs Postfix Increment]] (built entirely on the unary-vs-postfix associativity split shown in example 2) · [[Operator Overloading]] (must preserve the built-in precedence and associativity shown in the Mechanics table) · [[Control Flow — Selection and Iteration]] (an `if`, `while`, or `for` condition is an ordinary expression, so a compound condition like `a < b < c` is parsed by exactly this table before it is ever tested).
 - **Siblings:** [[Map — Expressions & Control]], the domain hub this note belongs to.
 - **Practice:** CPP Project Continuum #2–#3 — any compound expression written without parentheses is a chance to write out its silent-parenthesizer form before trusting the output.
 
