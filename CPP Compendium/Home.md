@@ -36,7 +36,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `█░░░░░░░` 4/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `██░░░░░░` 3/12 |
 | `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `███░░░░░` 11/26 |
-| `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `██░░░░░░` 4/17 |
+| `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `██░░░░░░` 5/17 |
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `██░░░░░░` 5/20 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `█░░░░░░░` 3/19 |
 | `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `██░░░░░░` 4/15 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 269 | 63 | 0 | 22 | 0 | 354 | 84 | 2 |
+| 268 | 64 | 0 | 22 | 0 | 354 | 85 | 2 |
 
 `█████░░░░░░░░░░░░░░░` **24%** of the Atlas written · last build 2026-09-28
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[The Call Stack and Stack Frames]] · *mechanism* · `D05` — finish stub
-2. [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · `D05` — wave 1
-3. [[Control Flow — Selection and Iteration]] · *concept* · `D03` — wave 1
-4. [[Destructors]] · *concept* · `D06` — wave 1
-5. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
-6. [[Scope]] · *concept* · `D01` — wave 1
+1. [[Control Flow — Selection and Iteration]] · *concept* · `D03` — wave 1
+2. [[Destructors]] · *concept* · `D06` — wave 1
+3. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
+4. [[Scope]] · *concept* · `D01` — wave 1
+5. [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · `D05` — wave 1
+6. [[Zero-Overhead Principle]] · *concept* · `D00` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[The Call Stack and Stack Frames]] · *mechanism* · updated 2026-09-28
 - ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-28
 - ● [[Translation Units]] · *concept* · updated 2026-09-27
 - ◐ [[Headers and Include Guards]] · *idiom* · updated 2026-09-27
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Dynamic Memory — new and delete]] · *mechanism* · updated 2026-09-27
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-27
 - ● [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-27
-- ◐ [[Pointers]] · *concept* · updated 2026-09-27
 <!-- cc:end -->
 
 ## Start here

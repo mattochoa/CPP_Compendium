@@ -125,7 +125,7 @@ flowchart LR
 <!-- cc:auto:domain-index:D05 -->
 **Tier 1 · Foundational**
 - ● [[Anatomy of a Function]] · *concept*
-- ◌ [[The Call Stack and Stack Frames]] · *mechanism*
+- ◐ [[The Call Stack and Stack Frames]] · *mechanism*
 - ○ [[Parameter Passing — Value, Reference, Pointer]] · *comparison*
 - ◐ [[Function Overloading]] · *concept*
 - ○ [[Default Arguments]] · *concept*
@@ -145,7 +145,7 @@ flowchart LR
 **Tier 3 · Advanced**
 - ○ [[Overload Resolution]] · *mechanism*
 
-`██░░░░░░░░` 4/17 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███░░░░░░░` 5/17 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

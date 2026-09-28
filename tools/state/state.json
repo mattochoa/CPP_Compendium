@@ -1,6 +1,6 @@
 {
-  "runs": 86,
-  "builder_runs": 84,
+  "runs": 87,
+  "builder_runs": 85,
   "editor_runs": 2,
   "history": [
     {
@@ -1041,10 +1041,23 @@
       "code": "5/5",
       "commit": "✓",
       "summary": "deepen: depth/visual/integration — redrew the two-pillars diagram as a dependency (pillar 2 rests on pillar 1, matching the model callout), added an RTTI/-fno-rtti pitfall (GCC-cited corner case: unused-capability metadata is not automatically zero-cost), and back-linked RAII + Virtual Dispatch at the exact points their examples illustrate the same pillars."
+    },
+    {
+      "when": "2026-09-28T07:25:27Z",
+      "run": 85,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "call-stack"
+      ],
+      "lint": "100–100",
+      "code": "3/3",
+      "commit": "✓",
+      "summary": "AUTHOR: The Call Stack and Stack Frames — activation records, LIFO push/pop, tail-call elimination vs -O0, ABI contrast (System V vs MS x64), Annex B constexpr-recursion limit vs no run-time limit. Woven from existing frontier links in Process Memory Layout, Anatomy of a Function, Exceptions, Map — Functions."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-28T06:19:09Z"
+  "last_builder": "2026-09-28T07:25:27Z"
 }
