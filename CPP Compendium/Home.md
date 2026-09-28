@@ -58,14 +58,14 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 269 | 63 | 0 | 22 | 0 | 354 | 81 | 2 |
+| 269 | 63 | 0 | 22 | 0 | 354 | 84 | 2 |
 
-`█████░░░░░░░░░░░░░░░` **24%** of the Atlas written · last build 2026-09-27
+`█████░░░░░░░░░░░░░░░` **24%** of the Atlas written · last build 2026-09-28
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[The Call Stack and Stack Frames]] · *mechanism* · `D05` — wave 1
+1. [[The Call Stack and Stack Frames]] · *mechanism* · `D05` — finish stub
 2. [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · `D05` — wave 1
 3. [[Control Flow — Selection and Iteration]] · *concept* · `D03` — wave 1
 4. [[Destructors]] · *concept* · `D06` — wave 1
@@ -75,6 +75,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-28
 - ● [[Translation Units]] · *concept* · updated 2026-09-27
 - ◐ [[Headers and Include Guards]] · *idiom* · updated 2026-09-27
 - ◐ [[Constructors]] · *concept* · updated 2026-09-27
@@ -83,7 +84,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Dynamic Memory — new and delete]] · *mechanism* · updated 2026-09-27
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-27
 - ● [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-27
-- ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-27
 - ◐ [[Pointers]] · *concept* · updated 2026-09-27
 <!-- cc:end -->
 

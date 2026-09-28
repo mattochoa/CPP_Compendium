@@ -8,8 +8,8 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 269 |
-| ◌ stub | 0 |
+| ○ planned | 268 |
+| ◌ stub | 1 |
 | ◐ draft | 63 |
 | ⟲ revise | 0 |
 | ● reviewed | 22 |
@@ -156,7 +156,7 @@ tags: [system/generated]
 |---|---|---|---|---|---|
 | ◐ | [[Map — Functions]] | map | 1 | 0 |  |
 | ● | [[Anatomy of a Function]] | concept | 1 | 1 | 20 |
-| ○ | [[The Call Stack and Stack Frames]] | mechanism | 1 | 1 |  |
+| ◌ | [[The Call Stack and Stack Frames]] | mechanism | 1 | 1 |  |
 | ○ | [[Parameter Passing — Value, Reference, Pointer]] | comparison | 1 | 1 |  |
 | ◐ | [[Function Overloading]] | concept | 1 | 2 |  |
 | ○ | [[Default Arguments]] | concept | 1 | 2 |  |

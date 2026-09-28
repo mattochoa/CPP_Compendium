@@ -22,7 +22,7 @@ tags:
 - tension/compatibility-vs-evolution
 - std/c++98
 created: 2026-09-26
-updated: 2026-09-27
+updated: 2026-09-28
 reviewed: 2026-09-27
 score: 18
 rubric:
@@ -58,28 +58,30 @@ rubric:
 ## Mental Model
 
 ```text
-        ┌───────────────────────────────────────────────────┐
-        │   what you write: classes · templates · RAII ·      │
-        │   exceptions · containers · (later) concepts        │
-        └───────────────────────────────────────────────────┘
-                 ▲                                 ▲
-                 │                                 │
-     ┌───────────┴───────────┐         ┌───────────┴────────────┐
-     │  PILLAR 1               │         │  PILLAR 2                │
-     │  direct, efficient       │         │  zero-overhead            │
-     │  mapping to hardware     │         │  abstraction               │
-     │  (Tour §1.9)             │         │  (PPP §0.2; Core           │
-     │                          │         │   Guidelines In.aims)      │
-     └───────────┬───────────┘         └───────────┬────────────┘
-                 │                                 │
-        ┌────────┴─────────────────────────────────┴────────┐
-        │        the machine C already targeted:              │
-        │        registers, memory, one instruction at a time  │
-        └───────────────────────────────────────────────────┘
+   what you write: classes · templates · RAII · exceptions · concepts
+                             ▲
+                ┌────────────┴────────────┐
+                │ PILLAR 2 — zero-overhead │
+                │ "no more than the hand-  │
+                │  written equivalent"     │
+                │  (PPP §0.2; Core Guide-  │
+                │  lines In.aims)          │
+                └────────────┬────────────┘
+                             │ stated IN TERMS OF pillar 1:
+                             │ remove it, and "no more
+                             │ expensive than ___" has
+                             │ nothing left to compare to
+                ┌────────────┴────────────┐
+                │ PILLAR 1 — direct map to │
+                │ hardware (Tour §1.9)     │
+                └────────────┬────────────┘
+                             ▼
+     the machine C already targeted: registers, memory,
+                one instruction at a time
 ```
 
-> [!model] Two pylons under one deck, and where the picture breaks
-> Picture a bridge deck — the abstractions you're allowed to write — held up by two pylons sunk into the same bedrock. Each pylon is engineered to add no sway of its own: cross the deck and you never feel which pylon is doing the work. **Where it breaks:** real pylons are structurally independent — remove one and the other still stands. These two are not. Zero-overhead abstraction is only meaningful *because* pillar 1 already fixes a baseline: "no more expensive than the hand-written equivalent" presupposes there is a hand-written, direct-to-hardware equivalent to be measured against. Pillar 2 is a promise stated *in terms of* pillar 1, not a second, separate foundation.
+> [!model] A promise stated in terms of another promise, not two pillars side by side
+> The diagram is a dependency, not two independent supports: pillar 2 rests directly on pillar 1. "No more expensive than the hand-written equivalent" means something only because pillar 1 already guarantees a hand-written, direct-to-hardware equivalent exists to measure against. **Where a two-pylons picture would mislead:** real pylons are structurally independent — knock one out and the other still stands. Knock out pillar 1 and pillar 2's promise has nothing left to compare itself to; it does not stand alone.
 
 ## Mechanics
 
@@ -235,6 +237,8 @@ int main() {
 2. Construction happens exactly where the object is defined.
 3. Destruction happens exactly at scope exit, in reverse order of construction. The point in the source text *is* the point in the machine's execution.
 
+`LoggedResource` is the pattern in miniature; see [[RAII]] for the full idiom, including how it survives exceptions and moves.
+
 **3 · Prefer compile-time checking: a strong type turns a mistake into a compile error**
 
 ```cpp
@@ -287,6 +291,9 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 > [!trap] "Direct mapping to hardware" is not a portability guarantee
 > The mapping is direct relative to *the abstract machine's* model of memory and instructions — but the concrete machine, `int`'s width, and the exact instructions chosen are still implementation-defined or unspecified. "Runs close to the metal" and "behaves identically on every metal" are different claims. See [[The C++ Abstract Machine]] and [[The ISO Standard, Compilers and Conformance]].
 
+> [!trap] "Nothing until used" is a per-call-site promise, not a whole-binary one
+> GCC's own documentation justifies `-fno-rtti` as a way to "save some space": the `typeinfo` metadata that `dynamic_cast` and `typeid` need is generated for every class with virtual functions, whether or not the program ever calls either operation on it. The same shape of cost appears in the exceptions example above — the unwind tables exist for every function that could throw, not only the ones a given run does throw from. Zero overhead is a promise about the path actually *executed*; whether the *metadata* for an unused capability ships in the binary at all is a coarser, compiler-level decision, which is why `-fno-rtti` and `-fno-exceptions` exist as explicit opt-outs rather than happening automatically. (GCC only — Clang and MSVC expose the equivalent trade under different flag names.)
+
 ## Evolution
 
 | Standard | Change | Why |
@@ -301,6 +308,7 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 
 - **Prerequisites:** none. This is the root of [[Map — What C++ Is]] and of the Atlas: every later derivation in the Compendium eventually traces back to one of these two pillars.
 - **Enables:** [[The C++ Abstract Machine]] (the formal object the Standard defines to make "direct mapping" and "zero overhead" checkable claims rather than slogans) · [[Zero-Overhead Principle]] (the testable version of pillar 2) · [[Levels of Abstraction — From Bits to Libraries]] (how the philosophy is delivered in layers) · [[The ISO Standard, Compilers and Conformance]] (who is bound by these rules, and how).
+- **Illustrated by:** [[RAII]] and [[Virtual Dispatch — vptr and vtable]] — both reviewed notes that already link back to this one; this note now links forward to each at the point its own example demonstrates the same pillar (RAII in *In Code* §2, virtual dispatch in *Check Yourself* Q3).
 - **Siblings:** [[The C++ Abstract Machine]] (draft) — the next link in the spine, and the formal object that makes "direct mapping" and "zero overhead" checkable claims about a defined machine rather than slogans about hardware in general.
 - **Domain:** [[Map — What C++ Is]].
 - **Practice:** no Continuum project is registered against this note yet; it underlies the reasoning behind all of them.
@@ -314,7 +322,7 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 > Static type safety everywhere would mean the language rejects or checks every operation whose safety can't be proven at compile time — which means charging every caller for checks, including the ones who already know their code is correct. "Trust the programmer" resolves the conflict by making safety an interface choice (`.at()` vs `operator[]`) rather than a language-wide mandate, so P.4 is an ideal to reach for at each interface, not a guarantee C++ itself provides.
 
 > [!quiz]- In the `wrapped_access` / `direct_access` assembly, what would you expect to change if `Wrapper::getX()` were declared `virtual`, and which pillar does that change illustrate?
-> The identical single `mov` would be replaced by an indirect call through the object's vtable pointer — extra memory access and a load-then-jump instead of one instruction. That's pillar 2 working correctly in the other direction: virtual dispatch costs something *because you asked for it* (dynamic behavior), and the language never pretends otherwise.
+> The identical single `mov` would be replaced by an indirect call through the object's vtable pointer — extra memory access and a load-then-jump instead of one instruction. That's pillar 2 working correctly in the other direction: virtual dispatch costs something *because you asked for it* (dynamic behavior), and the language never pretends otherwise. See [[Virtual Dispatch — vptr and vtable]] for exactly what that indirect call costs and why.
 
 > [!quiz]- `no_try` and `with_try` both call a function that might throw. Why is their assembly on the returned-normally path identical, and where did the `catch` clause's code go?
 > Table-based ("zero-cost") exception handling puts nothing on the normal return path: no flag to test, no branch to skip. The `catch` clause's code — restoring the exception object, running the handler, returning `-1` — is emitted in a separate `.cold` section that the CPU reaches only if the unwinder redirects control there after an actual throw. The feature is free exactly where it isn't used; the table itself still costs binary space, and it's a design choice of the Itanium ABI, not something the Standard requires.
@@ -328,4 +336,5 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 - C++ Core Guidelines, P.1 "Express ideas directly in code," P.4 "Ideally, a program should be statically type safe," P.5 "Prefer compile-time checking to run-time checking": https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#rp-direct · #rp-typesafe · #rp-compile-time
 - Draft standard `[intro.abstract]` (the as-if rule): https://eel.is/c++draft/intro.abstract — the license that makes a zero-overhead compilation of a used abstraction legal, not merely likely.
 - Itanium C++ ABI, *Exception Handling*: https://itanium-cxx-abi.github.io/cxx-abi/abi-eh.html — the table-based unwinding convention GCC and Clang use, which is why a non-throwing call path costs nothing extra for having a `catch` nearby; the C++ Standard itself specifies only `try`/`catch` behavior, not this mechanism.
+- GCC, *C++ Dialect Options*, `-fno-rtti`: https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-fno-rtti — states plainly that RTTI metadata is generated "for use by" `dynamic_cast`/`typeid` for every class with virtual functions, and that disabling it "saves some space" precisely because that metadata is otherwise unconditional; the source for the fourth Pitfall.
 - See [[Guide — A Tour of C++ (3rd ed)]] and [[Guide — cppreference, the Draft Standard and the Core Guidelines]] for how these sources fit the rest of the Atlas.
