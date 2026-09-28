@@ -18,7 +18,7 @@ tags: [system/generated, practice]
 | 02 | Unit & Temperature Converter Suite | ◐ [[Map — Types & Values]], ◐ [[Map — Expressions & Control]], ● [[Fundamental Types]], ● [[Anatomy of an Expression]], ● [[Precedence and Associativity]], ○ [[Control Flow — Selection and Iteration]], ○ [[switch and Fallthrough]] |
 | 03 | Number Guessing Game | ◐ [[Map — Expressions & Control]], ● [[Anatomy of an Expression]], ● [[Precedence and Associativity]], ○ [[Control Flow — Selection and Iteration]], ○ [[Stream State and Robust Input]], ○ [[Random Number Generation]] |
 | 04 | Grade & GPA Calculator | ○ [[array]] |
-| 05 | Console Calculator REPL | ◐ [[Map — Functions]], ● [[Anatomy of a Function]], ◐ [[Function Overloading]], ○ [[Stream State and Robust Input]], ○ [[String Streams]], ○ [[Exceptions]], ◐ [[Functions and Parameters — The Complete Picture]] |
+| 05 | Console Calculator REPL | ◐ [[Map — Functions]], ● [[Anatomy of a Function]], ◐ [[Function Overloading]], ○ [[Stream State and Robust Input]], ○ [[String Streams]], ◐ [[Exceptions]], ◐ [[Functions and Parameters — The Complete Picture]] |
 
 ## Tier 2: Core Programming
 
@@ -59,7 +59,7 @@ tags: [system/generated, practice]
 | 23 | STL Container & Algorithm Playground | ◐ [[Map — Functions]], ◐ [[Map — Standard Library]], ○ [[Lambda Expressions]], ◐ [[STL Architecture — Containers, Iterators, Algorithms]], ◐ [[Iterators]], ○ [[The Algorithms Library]], ◐ [[Iterator Categories and Concepts]] |
 | 24 | Generic Data Structure Library | ◐ [[Map — Generic Programming]], ○ [[Function Templates]], ○ [[Class Templates]], ○ [[Concepts and Constraints]], ○ [[Full and Partial Specialization]], ◐ [[Iterator Categories and Concepts]] |
 | 25 | Smart Pointer Refactor Lab | ◐ [[Map — Ownership & Move Semantics]], ● [[Value Categories]], ● [[Dangling Pointers and References]], ● [[Ownership — Who Releases What]], ● [[RAII]], ○ [[unique_ptr]], ○ [[shared_ptr and Reference Counting]], ○ [[weak_ptr and Reference Cycles]] |
-| 26 | Custom Exception Hierarchy & Robust CSV Parser | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Errors & Contracts]], ● [[Ownership — Who Releases What]], ● [[RAII]], ○ [[Exception Safety Guarantees]], ◐ [[Error Handling Strategies Compared]], ○ [[Exceptions]], ○ [[Designing Exception Hierarchies]] |
+| 26 | Custom Exception Hierarchy & Robust CSV Parser | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Errors & Contracts]], ● [[Ownership — Who Releases What]], ● [[RAII]], ○ [[Exception Safety Guarantees]], ◐ [[Error Handling Strategies Compared]], ◐ [[Exceptions]], ○ [[Designing Exception Hierarchies]] |
 | 27 | Task Manager with Lambdas & std::function | ◐ [[Map — Functions]], ○ [[Lambda Expressions]], ○ [[Callables and std-function]], ◐ [[Functions and Parameters — The Complete Picture]] |
 | 28 | Mini JSON Parser / Key-Value Store Engine | ◐ [[Map — Design & Idioms]], ○ [[variant and visit]], ○ [[Designing Interfaces — Easy to Use Correctly]], ○ [[Visitor — Classic vs variant]] |
 

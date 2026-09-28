@@ -1,6 +1,6 @@
 {
-  "runs": 81,
-  "builder_runs": 79,
+  "runs": 82,
+  "builder_runs": 80,
   "editor_runs": 2,
   "history": [
     {
@@ -999,10 +999,25 @@
       "code": "2/2 3/3",
       "commit": "✓",
       "summary": "AUTHOR: Dynamic Memory — new and delete (mechanism, D04); wove a backlink from RAII's Problem section to close the pair."
+    },
+    {
+      "when": "2026-09-28T02:48:04Z",
+      "run": 80,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "exceptions",
+        "raii",
+        "constructors"
+      ],
+      "lint": "100–100",
+      "code": "4/4 3/3 4/4",
+      "commit": "✓",
+      "summary": "AUTHOR: Exceptions (concept, D11) — throw/catch mechanics, handler matching order, exception-object copy-init, rethrow vs re-slicing, terminate on no-match/throwing-destructor; woven back into RAII and Constructors"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-28T01:30:02Z"
+  "last_builder": "2026-09-28T02:48:05Z"
 }

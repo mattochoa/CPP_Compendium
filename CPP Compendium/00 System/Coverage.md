@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 271 |
+| ○ planned | 270 |
 | ◌ stub | 0 |
-| ◐ draft | 61 |
+| ◐ draft | 62 |
 | ⟲ revise | 0 |
 | ● reviewed | 22 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 354
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `████████████████░░░░` 41/52
+- Wave 1: `████████████████░░░░` 42/52
 - Wave 2: `███░░░░░░░░░░░░░░░░░` 16/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -309,13 +309,13 @@ tags: [system/generated]
 
 ## D11 · Errors & Contracts
 
-*What happens when an operation cannot do what it promised?*  `██░░░░░░░░` 2/11
+*What happens when an operation cannot do what it promised?*  `███░░░░░░░` 3/11
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Errors & Contracts]] | map | 1 | 0 |  |
 | ◐ | [[Error Handling Strategies Compared]] | comparison | 1 | 1 |  |
-| ○ | [[Exceptions]] | concept | 1 | 1 |  |
+| ◐ | [[Exceptions]] | concept | 1 | 1 |  |
 | ○ | [[assert and static_assert]] | concept | 1 | 2 |  |
 | ○ | [[Stack Unwinding]] | mechanism | 2 | 2 |  |
 | ○ | [[Designing Exception Hierarchies]] | idiom | 2 | 3 |  |

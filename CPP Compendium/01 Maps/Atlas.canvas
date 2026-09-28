@@ -2059,7 +2059,8 @@
 			"y": 2526,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Exceptions]]\n*concept · T1*"
+			"text": "◐ [[Exceptions]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-assertions",

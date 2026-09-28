@@ -260,7 +260,7 @@ int main() {
 ## Check Yourself
 
 > [!quiz]- Why does RAII need *exceptions* in order to make sense of constructor failure?
-> A constructor has no return value to report failure. Throwing is the only way to refuse to create the object. Because a throwing constructor means the object never existed, its destructor never runs. That is exactly right, since nothing was acquired.
+> A constructor has no return value to report failure. [[Exceptions|Throwing]] is the only way to refuse to create the object. Because a throwing constructor means the object never existed, its destructor never runs. That is exactly right, since nothing was acquired.
 
 > [!quiz]- A class acquires two raw resources in its constructor body: `a_ = open(); b_ = open();`. The second `open` throws. What leaks, and what is the fix?
 > `a_` leaks. The object never finished construction, so `~Class()` never runs, and raw handles have no destructors of their own. Fix: make each member an RAII handle (e.g. `FilePtr a_, b_;`). Fully constructed *members* are destroyed when a later initialization throws.

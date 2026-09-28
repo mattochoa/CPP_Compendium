@@ -244,7 +244,7 @@ int main() {
 // expect: caught: failed: B
 ```
 1. `a_` finishes constructing; `b_` throws mid-construction; `c_` is never reached.
-2. `[except.ctor]` requires the destructor of every subobject "known to be initialized" — here, `a_` — to run, in reverse order of completion. `b_` itself never finished, so its destructor does not run for it; `c_` never started, so it has nothing to destroy; and `Machine::~Machine` never runs at all, because no `Machine` object was ever completed. This is exactly the guarantee [[RAII]] is built on: a partially constructed object leaks nothing, provided each resource is owned by a member whose own constructor/destructor pair handles it.
+2. `[except.ctor]` requires the destructor of every subobject "known to be initialized" — here, `a_` — to run, in reverse order of completion. `b_` itself never finished, so its destructor does not run for it; `c_` never started, so it has nothing to destroy; and `Machine::~Machine` never runs at all, because no `Machine` object was ever completed. This is exactly the guarantee [[RAII]] is built on: a partially constructed object leaks nothing, provided each resource is owned by a member whose own constructor/destructor pair handles it. The `throw` itself, and how far it searches before landing in `main`'s `catch`, is [[Exceptions]].
 
 ## Pitfalls
 

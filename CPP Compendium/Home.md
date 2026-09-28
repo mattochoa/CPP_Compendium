@@ -42,7 +42,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `██░░░░░░` 4/15 |
 | `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `█░░░░░░░` 2/16 |
 | `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `██░░░░░░` 6/30 |
-| `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `█░░░░░░░` 2/11 |
+| `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `██░░░░░░` 3/11 |
 | `D12` | [[Map — Concurrency\|Concurrency]] | How do multiple threads of execution share memory without corrupting it? | `█░░░░░░░` 2/17 |
 | `D13` | [[Map — Performance & the Machine\|Performance & the Machine]] | What does the hardware actually do with our code, and how do we make it fast? | `█░░░░░░░` 1/15 |
 | `D14` | [[Map — Tooling & Engineering\|Tooling & Engineering]] | Which tools turn correct-looking code into verified, maintainable software? | `█░░░░░░░` 2/11 |
@@ -58,33 +58,33 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 271 | 61 | 0 | 22 | 0 | 354 | 79 | 2 |
+| 270 | 62 | 0 | 22 | 0 | 354 | 80 | 2 |
 
-`█████░░░░░░░░░░░░░░░` **23%** of the Atlas written · last build 2026-09-27
+`█████░░░░░░░░░░░░░░░` **24%** of the Atlas written · last build 2026-09-27
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Exceptions]] · *concept* · `D11` — wave 1
-2. [[Headers and Include Guards]] · *idiom* · `D01` — wave 1
-3. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
-4. [[Scope]] · *concept* · `D01` — wave 1
-5. [[The Call Stack and Stack Frames]] · *mechanism* · `D05` — wave 1
-6. [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · `D05` — wave 1
+1. [[Headers and Include Guards]] · *idiom* · `D01` — wave 1
+2. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
+3. [[Scope]] · *concept* · `D01` — wave 1
+4. [[The Call Stack and Stack Frames]] · *mechanism* · `D05` — wave 1
+5. [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · `D05` — wave 1
+6. [[Control Flow — Selection and Iteration]] · *concept* · `D03` — wave 1
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Constructors]] · *concept* · updated 2026-09-27
 - ● [[RAII]] · *idiom* · updated 2026-09-27
+- ◐ [[Exceptions]] · *concept* · updated 2026-09-27
 - ◐ [[Dynamic Memory — new and delete]] · *mechanism* · updated 2026-09-27
 - ◐ [[Map — What C++ Is]] · *map* · updated 2026-09-27
 - ● [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-27
 - ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-27
-- ◐ [[Constructors]] · *concept* · updated 2026-09-27
 - ◐ [[Pointers]] · *concept* · updated 2026-09-27
 - ◐ [[Virtual Functions]] · *concept* · updated 2026-09-27
 - ◐ [[References]] · *concept* · updated 2026-09-27
-- ◐ [[Object Lifetime]] · *concept* · updated 2026-09-27
 <!-- cc:end -->
 
 ## Start here
