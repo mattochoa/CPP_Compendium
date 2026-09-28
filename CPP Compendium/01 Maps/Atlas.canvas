@@ -172,7 +172,8 @@
 			"y": 430,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Scope]]\n*concept · T1*"
+			"text": "◐ [[Scope]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-namespaces",

@@ -126,7 +126,7 @@ flowchart LR
 - ● [[The Preprocessor]] · *mechanism*
 - ◐ [[Headers and Include Guards]] · *idiom*
 - ◐ [[Declarations vs Definitions]] · *comparison*
-- ○ [[Scope]] · *concept*
+- ◐ [[Scope]] · *concept*
 - ○ [[Namespaces]] · *concept*
 
 **Tier 2 · Proficient**
@@ -143,7 +143,7 @@ flowchart LR
 - ○ [[Static Initialization Order Fiasco]] · *pitfall*
 - ○ [[Modules (C++20)]] · *concept*
 
-`███░░░░░░░` 6/18 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`████░░░░░░` 7/18 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
