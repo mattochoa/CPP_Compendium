@@ -55,7 +55,7 @@ Make it *impossible to forget* to release a resource, by making release a conseq
 
 ## The Problem
 
-A **resource** is anything that must be given back: heap memory, a file handle, a mutex lock, a socket, a database transaction, a GPU buffer. Each must be released **exactly once**. Zero releases is a leak; two is a double free or a double unlock.
+A **resource** is anything that must be given back: heap memory, a file handle, a mutex lock, a socket, a database transaction, a GPU buffer. Each must be released **exactly once**. Zero releases is a leak; two is a double free or a double unlock. The most common instance of the pattern is exactly the one [[Dynamic Memory — new and delete|new/delete]] leaves manual: an object obtained by `new` must be matched with one `delete`, on every path, and the language enforces none of it.
 
 > [!principle] Constraint → Consequence → Design
 > 1. **Constraint:** A function has many exits: every `return`, `break`, `continue`, `goto`, and every *invisible* exit, where any call can throw.

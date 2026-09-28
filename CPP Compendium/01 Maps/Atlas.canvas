@@ -717,7 +717,8 @@
 			"y": 1658,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Dynamic Memory — new and delete]]\n*mechanism · T1*"
+			"text": "◐ [[Dynamic Memory — new and delete]]\n*mechanism · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-uninitialized-variables",
