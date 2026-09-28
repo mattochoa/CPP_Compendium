@@ -32,7 +32,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | | Domain | The question it answers | Progress |
 |---|---|---|---|
 | `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `███░░░░░` 3/9 |
-| `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `██░░░░░░` 5/18 |
+| `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `███░░░░░` 6/18 |
 | `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `█░░░░░░░` 4/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `███░░░░░` 4/12 |
 | `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `███░░░░░` 11/26 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 266 | 66 | 0 | 22 | 0 | 354 | 88 | 2 |
+| 265 | 67 | 0 | 22 | 0 | 354 | 89 | 2 |
 
 `█████░░░░░░░░░░░░░░░` **25%** of the Atlas written · last build 2026-09-28
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Declarations vs Definitions]] · *comparison* · `D01` — wave 1
-2. [[Scope]] · *concept* · `D01` — wave 1
-3. [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · `D05` — wave 1
-4. [[Zero-Overhead Principle]] · *concept* · `D00` — wave 1
-5. [[Levels of Abstraction — From Bits to Libraries]] · *concept* · `D00` — wave 1
-6. [[Undefined Behavior]] · *concept* · `D00` — wave 1
+1. [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · `D05` — wave 1
+2. [[Zero-Overhead Principle]] · *concept* · `D00` — wave 1
+3. [[Levels of Abstraction — From Bits to Libraries]] · *concept* · `D00` — wave 1
+4. [[Undefined Behavior]] · *concept* · `D00` — wave 1
+5. [[Scope]] · *concept* · `D01` — wave 1
+6. [[Copy Semantics — Deep vs Shallow Copy]] · *comparison* · `D07` — wave 2 · focus
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Declarations vs Definitions]] · *comparison* · updated 2026-09-28
 - ● [[RAII]] · *idiom* · updated 2026-09-28
 - ◐ [[Destructors]] · *concept* · updated 2026-09-28
 - ● [[Precedence and Associativity]] · *concept* · updated 2026-09-28
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ● [[Translation Units]] · *concept* · updated 2026-09-27
 - ◐ [[Headers and Include Guards]] · *idiom* · updated 2026-09-27
 - ◐ [[Constructors]] · *concept* · updated 2026-09-27
-- ◐ [[Exceptions]] · *concept* · updated 2026-09-27
 <!-- cc:end -->
 
 ## Start here

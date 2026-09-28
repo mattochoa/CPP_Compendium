@@ -161,7 +161,8 @@
 			"y": 358,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Declarations vs Definitions]]\n*comparison · T1*"
+			"text": "◐ [[Declarations vs Definitions]]\n*comparison · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-scope",

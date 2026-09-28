@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 266 |
+| ○ planned | 265 |
 | ◌ stub | 0 |
-| ◐ draft | 66 |
+| ◐ draft | 67 |
 | ⟲ revise | 0 |
 | ● reviewed | 22 |
 | ★ evergreen | 0 |
@@ -18,7 +18,7 @@ tags: [system/generated]
 **Total topics:** 354
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `██████████████████░░` 46/52
+- Wave 1: `██████████████████░░` 47/52
 - Wave 2: `███░░░░░░░░░░░░░░░░░` 16/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/123
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
@@ -41,7 +41,7 @@ tags: [system/generated]
 
 ## D01 · Program Structure & Build
 
-*How does text in many files become one running program?*  `███░░░░░░░` 5/18
+*How does text in many files become one running program?*  `███░░░░░░░` 6/18
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -50,7 +50,7 @@ tags: [system/generated]
 | ● | [[Translation Units]] | concept | 1 | 1 | 20 |
 | ● | [[The Preprocessor]] | mechanism | 1 | 1 | 20 |
 | ◐ | [[Headers and Include Guards]] | idiom | 1 | 1 |  |
-| ○ | [[Declarations vs Definitions]] | comparison | 1 | 1 |  |
+| ◐ | [[Declarations vs Definitions]] | comparison | 1 | 1 |  |
 | ○ | [[Scope]] | concept | 1 | 1 |  |
 | ○ | [[Namespaces]] | concept | 1 | 2 |  |
 | ○ | [[Linkage — Internal, External, None]] | concept | 2 | 2 |  |
