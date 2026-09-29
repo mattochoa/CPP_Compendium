@@ -1373,7 +1373,8 @@
 			"y": 1442,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[shared_ptr and Reference Counting]]\n*mechanism · T2*"
+			"text": "◌ [[shared_ptr and Reference Counting]]\n*mechanism · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-move-and-forward",

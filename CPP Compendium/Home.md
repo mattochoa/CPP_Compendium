@@ -58,14 +58,14 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 253 | 83 | 0 | 20 | 0 | 356 | 111 | 2 |
+| 253 | 83 | 0 | 20 | 0 | 356 | 114 | 2 |
 
 `██████░░░░░░░░░░░░░░` **29%** of the Atlas written · last build 2026-09-29
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[shared_ptr and Reference Counting]] · *mechanism* · `D07` — wave 2 · focus
+1. [[shared_ptr and Reference Counting]] · *mechanism* · `D07` — finish stub
 2. [[Reading Uninitialized Variables]] · *pitfall* · `D04` — wave 2 · focus
 3. [[Pointer Arithmetic and Arrays]] · *mechanism* · `D04` — wave 2 · focus
 4. [[nullptr and Null Pointers]] · *concept* · `D04` — wave 2 · focus
@@ -75,6 +75,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-29
 - ◐ [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-29
 - ◐ [[Dynamic Memory — new and delete]] · *mechanism* · updated 2026-09-29
 - ◐ [[Constructors]] · *concept* · updated 2026-09-29
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Move Semantics]] · *concept* · updated 2026-09-29
 - ◐ [[Virtual Destructors]] · *pitfall* · updated 2026-09-29
 - ◐ [[Rvalue References]] · *concept* · updated 2026-09-29
-- ● [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-29
 <!-- cc:end -->
 
 ## Start here

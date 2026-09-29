@@ -22,7 +22,7 @@ tags:
 - tension/compatibility-vs-evolution
 - std/c++98
 created: 2026-09-26
-updated: 2026-09-28
+updated: 2026-09-29
 reviewed: 2026-09-27
 score: 18
 rubric:
@@ -114,7 +114,7 @@ flowchart TD
     class C danger
 ```
 
-Green is cheapest (settled before the program runs, so it costs nothing at all); teal still runs, but only because an interface explicitly asked for the check; red is the unchecked default, priced in [[Undefined Behavior]] rather than in cycles. Nothing routes to red by default — a caller has to *pick* the unchecked interface, the same way `.at()` and `operator[]` are two different functions, not two modes of one function.
+Green is cheapest (settled before the program runs); teal runs, but only because an interface asked for the check; red is the unchecked default, priced in [[Undefined Behavior]] rather than in cycles. Nothing routes to red by default — a caller has to *pick* the unchecked interface, the same way `.at()` and `operator[]` are two functions, not two modes of one.
 
 > [!standard] The zero-overhead principle, in the language the C++ Core Guidelines use to state it
 > "What you don't use, you don't pay for" — and, symmetrically, what you do use, you get at least as cheaply as if you had hand-coded it with lower-level constructs (C++ Core Guidelines, *In.aims*). This is a design constraint checked against every proposed feature, not an empirical average measured after the fact — see [[Zero-Overhead Principle]] for the mechanism that makes it enforceable rather than aspirational.
@@ -169,7 +169,18 @@ Zero-overhead abstractions are legal to *optimize into nothing* specifically bec
 >   ret
 >   call _Unwind_Resume
 > ```
-> `no_try` and `with_try` are identical on the path every call actually takes: same six instructions, same registers. The `catch` clause's code is relocated to a `.cold` section the CPU never fetches unless `log_value` really throws. This is the table-based ("zero-cost") exception model used by the Itanium C++ ABI's exception-handling convention — GCC, Clang and (in its `/EHsc` mode) MSVC all build it this way, though the Standard mandates only the *behavior* of `try`/`catch`, not this mechanism. Pillar 2 holds exactly on the path that doesn't use the feature: adding a `catch` did not cost `with_try` one instruction on its non-throwing return. The price is paid elsewhere — in binary size (the `.cold` code and its unwind tables exist whether or not anything ever throws) and in the throwing path itself, which is far slower than the `return` it replaces. "Zero overhead" names *which* path is free, not that the feature has no cost anywhere.
+> `no_try` and `with_try` are identical on the path every call actually takes: same six instructions, same registers. The `catch` clause's code moves to a `.cold` section the CPU never fetches unless `log_value` throws. GCC, Clang and MSVC's `/EHsc` mode all build this table-based ("zero-cost") model, though the Standard mandates only `try`/`catch` *behavior*, not this mechanism (Itanium ABI, *Exception Handling*). Pillar 2 holds on the path that doesn't use the feature: adding a `catch` cost `with_try` nothing. The price moves elsewhere — unwind tables that exist whether or not anything throws, and a throwing path far slower than the `return` it replaces.
+
+> [!machine] Pillar 2's other price: one copy of the code per type
+> A template is a recipe, not a function: the compiler emits one specialization *per type actually used*, each optimal for that type but each its own copy. `triple<T>` called with `int` and with `double` (GCC 11.4, `-O2`, `-c`, symbols demangled):
+> ```text
+>  ONE DEFINITION                        TWO OBJECT-FILE BODIES
+>  template<typename T>                  triple<int>(int)        8 bytes
+>  T triple(T x)          ───T=int──────▶  leal (%rdi,%rdi,2),%eax
+>    { return x + x + x; }               triple<double>(double) 11 bytes
+>  (never itself compiled)──T=double────▶  addsd/movapd (SSE)
+> ```
+> `nm` reports both as weak (`W`) symbols the linker may fold across translation units but never across types: `int`'s body uses one integer `lea`; `double`'s uses SSE addition, because that is what each type's `+` actually compiles to. Neither instantiation is slower than a hand-written `triple_int`/`triple_double` would be — pillar 2 holds per call — but a template used with ten types ships (up to) ten function bodies where a single dynamically-typed routine would ship one. The cost pillar 2 promises not to charge is *runtime* cost; compile time and binary size were never part of the bargain (Pikus, *Function inlining* p. 352, on the sibling trade-off of weighing inlined code bloat against call overhead).
 
 ## In Code
 
@@ -292,7 +303,10 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 > The mapping is direct relative to *the abstract machine's* model of memory and instructions — but the concrete machine, `int`'s width, and the exact instructions chosen are still implementation-defined or unspecified. "Runs close to the metal" and "behaves identically on every metal" are different claims. See [[The C++ Abstract Machine]] and [[The ISO Standard, Compilers and Conformance]].
 
 > [!trap] "Nothing until used" is a per-call-site promise, not a whole-binary one
-> GCC's own documentation justifies `-fno-rtti` as a way to "save some space": the `typeinfo` metadata that `dynamic_cast` and `typeid` need is generated for every class with virtual functions, whether or not the program ever calls either operation on it. The same shape of cost appears in the exceptions example above — the unwind tables exist for every function that could throw, not only the ones a given run does throw from. Zero overhead is a promise about the path actually *executed*; whether the *metadata* for an unused capability ships in the binary at all is a coarser, compiler-level decision, which is why `-fno-rtti` and `-fno-exceptions` exist as explicit opt-outs rather than happening automatically. (GCC only — Clang and MSVC expose the equivalent trade under different flag names.)
+> GCC's own documentation justifies `-fno-rtti` as a way to "save some space": the `typeinfo` metadata that `dynamic_cast` and `typeid` need is generated for every class with virtual functions, whether or not the program ever calls either operation on it. The same shape of cost appears in the exceptions example above — the unwind tables exist for every function that could throw, not only the ones a given run does throw from. Zero overhead is a promise about the path actually *executed*; whether the *metadata* for an unused capability ships in the binary at all is a coarser, compiler-level decision, which is why `-fno-rtti` and `-fno-exceptions` exist as explicit opt-outs rather than happening automatically (GCC's names; Clang and MSVC expose the same trade differently).
+
+> [!trap] "Templates cost nothing" conflates two different currencies
+> Pillar 2 promises a *runtime-cost* bargain, and a template specialization keeps it — `triple<int>` is exactly the instruction a hand-written `int` version would be. It says nothing about *compile time or binary size*: each type instantiated adds another compiled copy (see the `nm` evidence in Under the Hood). A template used across many types can grow a binary in a way a single non-template or runtime-dispatched routine never would. "Costs nothing" and "the specific thing it costs nothing in" are not the same claim.
 
 ## Evolution
 
@@ -308,10 +322,10 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 
 - **Prerequisites:** none. This is the root of [[Map — What C++ Is]] and of the Atlas: every later derivation in the Compendium eventually traces back to one of these two pillars.
 - **Enables:** [[The C++ Abstract Machine]] (the formal object the Standard defines to make "direct mapping" and "zero overhead" checkable claims rather than slogans) · [[Zero-Overhead Principle]] (the testable version of pillar 2) · [[Levels of Abstraction — From Bits to Libraries]] (how the philosophy is delivered in layers) · [[The ISO Standard, Compilers and Conformance]] (who is bound by these rules, and how).
-- **Illustrated by:** [[RAII]] and [[Virtual Dispatch — vptr and vtable]] — both reviewed notes that already link back to this one; this note now links forward to each at the point its own example demonstrates the same pillar (RAII in *In Code* §2, virtual dispatch in *Check Yourself* Q3).
+- **Illustrated by:** [[RAII]] and [[Virtual Dispatch — vptr and vtable]] — reviewed notes that link back here, and that this note links forward to at the point its own example demonstrates the same pillar (RAII in *In Code* §2, virtual dispatch in *Check Yourself* Q3).
 - **Siblings:** [[The C++ Abstract Machine]] (draft) — the next link in the spine, and the formal object that makes "direct mapping" and "zero overhead" checkable claims about a defined machine rather than slogans about hardware in general.
 - **Domain:** [[Map — What C++ Is]].
-- **Practice:** no Continuum project is registered against this note yet; it underlies the reasoning behind all of them.
+- **Practice:** no Continuum project isolates this note's claim; it is the reasoning every project already relies on.
 
 ## Check Yourself
 
@@ -325,7 +339,10 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 > The identical single `mov` would be replaced by an indirect call through the object's vtable pointer — extra memory access and a load-then-jump instead of one instruction. That's pillar 2 working correctly in the other direction: virtual dispatch costs something *because you asked for it* (dynamic behavior), and the language never pretends otherwise. See [[Virtual Dispatch — vptr and vtable]] for exactly what that indirect call costs and why.
 
 > [!quiz]- `no_try` and `with_try` both call a function that might throw. Why is their assembly on the returned-normally path identical, and where did the `catch` clause's code go?
-> Table-based ("zero-cost") exception handling puts nothing on the normal return path: no flag to test, no branch to skip. The `catch` clause's code — restoring the exception object, running the handler, returning `-1` — is emitted in a separate `.cold` section that the CPU reaches only if the unwinder redirects control there after an actual throw. The feature is free exactly where it isn't used; the table itself still costs binary space, and it's a design choice of the Itanium ABI, not something the Standard requires.
+> Table-based ("zero-cost") exception handling puts nothing on the normal return path: no flag to test, no branch to skip. The `catch` clause's code — restoring the exception object, running the handler, returning `-1` — moves to a separate `.cold` section the CPU reaches only after an actual throw. The feature is free where it isn't used; the table itself still costs binary space, and it's an ABI design choice, not something the Standard requires.
+
+> [!quiz]- `triple<T>` is instantiated with `int` and `double` in the same program. Does shipping two compiled bodies for one template definition contradict pillar 2?
+> No — pillar 2 is a promise about the cost of *using* an abstraction on the path that runs, and each body is exactly what a programmer would have hand-written for that one type: nothing is slower for existing as a template. What it never promised was *one* copy: compile time and binary size sit outside the bargain, which is why a template instantiated across many types can still bloat a binary that a single non-generic function wouldn't.
 
 ## Sources
 
@@ -337,4 +354,5 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 - Draft standard `[intro.abstract]` (the as-if rule): https://eel.is/c++draft/intro.abstract — the license that makes a zero-overhead compilation of a used abstraction legal, not merely likely.
 - Itanium C++ ABI, *Exception Handling*: https://itanium-cxx-abi.github.io/cxx-abi/abi-eh.html — the table-based unwinding convention GCC and Clang use, which is why a non-throwing call path costs nothing extra for having a `catch` nearby; the C++ Standard itself specifies only `try`/`catch` behavior, not this mechanism.
 - GCC, *C++ Dialect Options*, `-fno-rtti`: https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-fno-rtti — states plainly that RTTI metadata is generated "for use by" `dynamic_cast`/`typeid` for every class with virtual functions, and that disabling it "saves some space" precisely because that metadata is otherwise unconditional; the source for the fourth Pitfall.
+- Pikus, *Function inlining* (p. 352): the compiler weighs inlined code bloat against call overhead — the same shape of trade-off as one compiled body per template instantiation, the source for the fifth Pitfall and its `Under the Hood` evidence.
 - See [[Guide — A Tour of C++ (3rd ed)]] and [[Guide — cppreference, the Draft Standard and the Core Guidelines]] for how these sources fit the rest of the Atlas.

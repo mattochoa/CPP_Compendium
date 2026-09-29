@@ -135,7 +135,7 @@ flowchart LR
 - ◐ [[Owning vs Observing Pointers]] · *comparison*
 - ◐ [[Rvalue References]] · *concept*
 - ◐ [[Move Semantics]] · *concept*
-- ○ [[shared_ptr and Reference Counting]] · *mechanism*
+- ◌ [[shared_ptr and Reference Counting]] · *mechanism*
 - ○ [[move and forward — Casts, Not Actions]] · *mechanism*
 - ○ [[The Moved-From State]] · *pitfall*
 - ○ [[Copy Elision and RVO]] · *mechanism*
