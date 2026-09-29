@@ -122,7 +122,7 @@ flowchart LR
 **Tier 1 · Foundational**
 - ● [[Inheritance]] · *concept*
 - ◐ [[Virtual Functions]] · *concept*
-- ○ [[Abstract Classes and Interfaces]] · *concept*
+- ◐ [[Abstract Classes and Interfaces]] · *concept*
 - ○ [[Virtual Destructors]] · *pitfall*
 - ○ [[Object Slicing]] · *pitfall*
 - ○ [[override and final]] · *concept*
@@ -139,7 +139,7 @@ flowchart LR
 - ○ [[Multiple and Virtual Inheritance]] · *mechanism*
 - ○ [[Static vs Dynamic Polymorphism]] · *comparison*
 
-`███░░░░░░░` 4/15 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███░░░░░░░` 5/15 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

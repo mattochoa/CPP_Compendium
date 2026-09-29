@@ -34,7 +34,7 @@ tags:
 - tension/compile-time-vs-run-time
 - tension/abstraction-vs-control
 created: 2026-09-23
-updated: 2026-09-27
+updated: 2026-09-29
 reviewed: 2026-09-27
 score: 21
 rubric:
@@ -240,13 +240,14 @@ The mechanism explains a whole family of C++ rules and failures:
 | Copying a `Derived` into a `Base` value loses the behavior | The `Base` copy constructor stamps *Base's* vptr: [[Object Slicing]] |
 | Linker error *"undefined reference to vtable for X"* | The vtable is emitted in the TU defining the class's **key function** (first non-inline, non-pure virtual). If that function has no definition, no TU emits the table: [[What the Linker Does]] |
 | `dynamic_cast` and `typeid` work only on polymorphic types | They read the typeinfo pointer stored in the vtable header: [[RTTI and dynamic_cast]] |
+| A pure virtual's slot is never empty | It holds `__cxa_pure_virtual`, a real runtime trap, until an override fills it: [[Abstract Classes and Interfaces]] |
 | Polymorphic objects are not "trivially copyable" and not C-layout-compatible | The hidden vptr member: [[Trivial, Standard-Layout and Aggregate Types]] |
 | Templates beat virtual calls in hot inner loops | Direct calls can be inlined and vectorized: [[Static vs Dynamic Polymorphism]] |
 
 ## Connections
 
 - **Prerequisites:** [[Virtual Functions]] (the behavior) · [[Inheritance]] · [[Pointers]].
-- **Explains:** [[Virtual Destructors]] · [[Object Slicing]] · [[Virtual Calls in Constructors and Destructors]] · [[RTTI and dynamic_cast]].
+- **Explains:** [[Virtual Destructors]] · [[Object Slicing]] · [[Virtual Calls in Constructors and Destructors]] · [[RTTI and dynamic_cast]] · [[Abstract Classes and Interfaces]] (what fills, or fails to fill, a vtable slot).
 - **Access path:** [[Pointers vs References]] — this mechanism fires identically through a `Base&` and a `Base*` bound to the same object; only a by-value copy loses the dynamic type.
 - **Extends to:** [[Multiple and Virtual Inheritance]] (thunks, several vptrs) · [[Type Erasure]] (hand-built vtables).
 - **Alternatives:** [[Templates — Code That Writes Code]] (resolves the same one-code-many-types problem at compile time instead) · [[Static vs Dynamic Polymorphism]] · [[variant and visit]] · [[CRTP]].

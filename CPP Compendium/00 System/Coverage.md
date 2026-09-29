@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 258 |
+| ○ planned | 257 |
 | ◌ stub | 0 |
-| ◐ draft | 76 |
+| ◐ draft | 77 |
 | ⟲ revise | 0 |
 | ● reviewed | 21 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `███░░░░░░░░░░░░░░░░░` 19/126
+- Wave 2: `███░░░░░░░░░░░░░░░░░` 20/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/124
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -228,7 +228,7 @@ tags: [system/generated]
 
 ## D08 · Inheritance & Polymorphism
 
-*How can one piece of code work with many types chosen at run time?*  `███░░░░░░░` 4/15
+*How can one piece of code work with many types chosen at run time?*  `███░░░░░░░` 5/15
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -236,7 +236,7 @@ tags: [system/generated]
 | ● | [[Inheritance]] | concept | 1 | 1 | 20 |
 | ◐ | [[Virtual Functions]] | concept | 1 | 1 |  |
 | ● | [[Virtual Dispatch — vptr and vtable]] | mechanism | 2 | 1 | 21 |
-| ○ | [[Abstract Classes and Interfaces]] | concept | 1 | 2 |  |
+| ◐ | [[Abstract Classes and Interfaces]] | concept | 1 | 2 |  |
 | ○ | [[Virtual Destructors]] | pitfall | 1 | 2 |  |
 | ○ | [[Object Slicing]] | pitfall | 1 | 2 |  |
 | ○ | [[override and final]] | concept | 1 | 2 |  |

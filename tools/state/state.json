@@ -1,6 +1,6 @@
 {
-  "runs": 105,
-  "builder_runs": 103,
+  "runs": 106,
+  "builder_runs": 104,
   "editor_runs": 2,
   "history": [
     {
@@ -1230,10 +1230,24 @@
       "code": "5/5",
       "commit": "✓",
       "summary": "AUTHOR unique_ptr: derives the type from Ownership's headcount rule, verifies moved-from-is-null, incomplete-type/Pimpl support, base-class-conversion UB, and deleter-size cost (compiled static_asserts, GCC 11.4.0); covers the twin-new exception-safety history (pre/post C++17, P0145) through C++23 constexpr."
+    },
+    {
+      "when": "2026-09-29T08:26:27Z",
+      "run": 104,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "abstract-classes",
+        "virtual-dispatch"
+      ],
+      "lint": "100–100",
+      "code": "5/5 3/3",
+      "commit": "✓",
+      "summary": "author: Abstract Classes and Interfaces (D08 concept) — pure virtual = 0, instantiation ban, [class.abstract] ¶2-¶6, GCC-observed __cxa_pure_virtual vtable slot; wove into Virtual Dispatch's Consequences/Connections"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-29T07:25:28Z"
+  "last_builder": "2026-09-29T08:26:27Z"
 }

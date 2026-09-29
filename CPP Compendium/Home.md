@@ -39,7 +39,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `███░░░░░` 6/17 |
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `██░░░░░░` 6/20 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `███░░░░░` 6/19 |
-| `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `██░░░░░░` 4/15 |
+| `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `███░░░░░` 5/15 |
 | `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `█░░░░░░░` 2/16 |
 | `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `██░░░░░░` 6/30 |
 | `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `██░░░░░░` 3/11 |
@@ -58,23 +58,25 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 258 | 76 | 0 | 21 | 0 | 355 | 103 | 2 |
+| 257 | 77 | 0 | 21 | 0 | 355 | 104 | 2 |
 
-`█████░░░░░░░░░░░░░░░` **27%** of the Atlas written · last build 2026-09-29
+`██████░░░░░░░░░░░░░░` **28%** of the Atlas written · last build 2026-09-29
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Abstract Classes and Interfaces]] · *concept* · `D08` — wave 2 · focus
-2. [[Virtual Destructors]] · *pitfall* · `D08` — wave 2 · focus
-3. [[Object Slicing]] · *pitfall* · `D08` — wave 2 · focus
-4. [[override and final]] · *concept* · `D08` — wave 2 · focus
-5. [[Composition vs Inheritance]] · *comparison* · `D08` — wave 2 · focus
-6. [[Rvalue References]] · *concept* · `D07` — wave 2 · focus
+1. [[Rvalue References]] · *concept* · `D07` — wave 2 · focus
+2. [[shared_ptr and Reference Counting]] · *mechanism* · `D07` — wave 2 · focus
+3. [[Virtual Destructors]] · *pitfall* · `D08` — wave 2 · focus
+4. [[Object Slicing]] · *pitfall* · `D08` — wave 2 · focus
+5. [[override and final]] · *concept* · `D08` — wave 2 · focus
+6. [[Composition vs Inheritance]] · *comparison* · `D08` — wave 2 · focus
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ● [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-29
+- ◐ [[Abstract Classes and Interfaces]] · *concept* · updated 2026-09-29
 - ◐ [[unique_ptr]] · *concept* · updated 2026-09-29
 - ◐ [[Owning vs Observing Pointers]] · *comparison* · updated 2026-09-29
 - ● [[RAII]] · *idiom* · updated 2026-09-28
@@ -83,8 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Levels of Abstraction — From Bits to Libraries]] · *concept* · updated 2026-09-28
 - ● [[const and Const-Correctness]] · *concept* · updated 2026-09-28
 - ● [[What a Type Is]] · *concept* · updated 2026-09-28
-- ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-28
-- ◐ [[Scope]] · *concept* · updated 2026-09-28
 <!-- cc:end -->
 
 ## Start here

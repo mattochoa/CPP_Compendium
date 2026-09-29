@@ -1500,7 +1500,8 @@
 			"y": 2598,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Abstract Classes and Interfaces]]\n*concept · T1*"
+			"text": "◐ [[Abstract Classes and Interfaces]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-virtual-destructors",
