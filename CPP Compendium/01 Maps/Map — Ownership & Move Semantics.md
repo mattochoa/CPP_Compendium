@@ -132,7 +132,7 @@ flowchart LR
 - ○ [[unique_ptr]] · *concept*
 
 **Tier 2 · Proficient**
-- ○ [[Owning vs Observing Pointers]] · *comparison*
+- ◐ [[Owning vs Observing Pointers]] · *comparison*
 - ○ [[Rvalue References]] · *concept*
 - ○ [[Move Semantics]] · *concept*
 - ○ [[shared_ptr and Reference Counting]] · *mechanism*
@@ -149,7 +149,7 @@ flowchart LR
 - ○ [[Copy-and-Swap]] · *idiom*
 - ○ [[noexcept and Why Move Must Not Throw]] · *mechanism*
 
-`██░░░░░░░░` 4/19 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███░░░░░░░` 5/19 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

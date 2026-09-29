@@ -1332,7 +1332,8 @@
 			"y": 1226,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Owning vs Observing Pointers]]\n*comparison · T2*"
+			"text": "◐ [[Owning vs Observing Pointers]]\n*comparison · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-rvalue-references",
