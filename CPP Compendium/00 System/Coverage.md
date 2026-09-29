@@ -10,9 +10,9 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 255 |
 | ◌ stub | 0 |
-| ◐ draft | 79 |
+| ◐ draft | 80 |
 | ⟲ revise | 0 |
-| ● reviewed | 21 |
+| ● reviewed | 20 |
 | ★ evergreen | 0 |
 
 **Total topics:** 355
@@ -121,7 +121,7 @@ tags: [system/generated]
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ● | [[Map — Objects, Memory & Lifetime]] | map | 1 | 0 | 19 |
+| ◐ | [[Map — Objects, Memory & Lifetime]] | map | 1 | 0 | 19 |
 | ◐ | [[The C++ Object Model — What an Object Is]] | concept | 1 | 1 |  |
 | ● | [[Process Memory Layout — Stack, Heap, Static]] | mechanism | 1 | 1 | 20 |
 | ◐ | [[Storage Duration]] | concept | 1 | 1 |  |

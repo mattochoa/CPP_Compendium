@@ -58,7 +58,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 255 | 79 | 0 | 21 | 0 | 355 | 107 | 2 |
+| 255 | 80 | 0 | 20 | 0 | 355 | 108 | 2 |
 
 `██████░░░░░░░░░░░░░░` **28%** of the Atlas written · last build 2026-09-29
 <!-- cc:end -->
@@ -75,6 +75,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-29
 - ◐ [[Virtual Destructors]] · *pitfall* · updated 2026-09-29
 - ◐ [[Rvalue References]] · *concept* · updated 2026-09-29
 - ● [[Virtual Dispatch — vptr and vtable]] · *mechanism* · updated 2026-09-29
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ● [[RAII]] · *idiom* · updated 2026-09-28
 - ◐ [[Copy Semantics — Deep vs Shallow Copy]] · *comparison* · updated 2026-09-28
 - ◐ [[Undefined Behavior]] · *concept* · updated 2026-09-28
-- ◐ [[Levels of Abstraction — From Bits to Libraries]] · *concept* · updated 2026-09-28
 <!-- cc:end -->
 
 ## Start here

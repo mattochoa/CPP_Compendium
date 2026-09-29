@@ -1,6 +1,6 @@
 {
-  "runs": 109,
-  "builder_runs": 107,
+  "runs": 110,
+  "builder_runs": 108,
   "editor_runs": 2,
   "history": [
     {
@@ -1270,10 +1270,23 @@
       "code": "3/3",
       "commit": "✓",
       "summary": "AUTHOR: Virtual Destructors — pitfall on deleting a derived object through a non-virtual base destructor; two ASan-verified UB repros (raw delete + unique_ptr), verified UBSan blind spot, protected-non-virtual C.35 alternative verified to fail at compile time"
+    },
+    {
+      "when": "2026-09-29T12:19:01Z",
+      "run": 108,
+      "role": "builder",
+      "mode": "DEEPEN",
+      "items": [
+        "map-d04"
+      ],
+      "lint": "100–100",
+      "code": "0/0",
+      "commit": "✓",
+      "summary": "deepen: map-d04 depth+integration (rubric dims: depth 2/3, integration 2/3 per last audit) — sharpened Key Idea 1 with the concrete vptr-rewrite assembly evidence from Object Lifetime's Under the Hood (the real [class.cdtor] mechanism, not just the declared [basic.life] boundary); added Key Idea 8 closing the implicit-object-creation gap (C++20 P0593R6, std::memcpy into a raw buffer creating an object with no declaration or new-expression) — a genuine content gap since both Object Lifetime and Storage Duration independently cite this same WG21 paper in their own Evolution tables but the map never mentioned it; added the matching Index-table row. Verified all 5 existing Sources citations (Primer p.449/205, Tour p.9/195, Pikus p.113) against cc.py src find/read — all accurate, no fix needed (directive 6). Confirmed all 10 written D04 notes already back-link this map (integration was likely scored stale, before the object-to-RAII spine chain — runs #67-77 — was authored). Did not touch Learning Route, Concept Map or Sources: tightened rather than appended, per directive 7's DEEPEN guidance."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-29T11:24:56Z"
+  "last_builder": "2026-09-29T12:19:01Z"
 }
