@@ -1511,7 +1511,8 @@
 			"y": 2670,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Virtual Destructors]]\n*pitfall · T1*"
+			"text": "◐ [[Virtual Destructors]]\n*pitfall · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-object-slicing",

@@ -1,6 +1,6 @@
 {
-  "runs": 108,
-  "builder_runs": 106,
+  "runs": 109,
+  "builder_runs": 107,
   "editor_runs": 2,
   "history": [
     {
@@ -1257,10 +1257,23 @@
       "code": "3/3",
       "commit": "✓",
       "summary": "AUTHOR: Rvalue References — T&& as a distinct, non-const reference type that binds only to rvalues; binding-rule table, reference collapsing, named-rvalue-reference-is-an-lvalue pitfall, asm evidence that T& and T&& cost the same nothing."
+    },
+    {
+      "when": "2026-09-29T11:24:56Z",
+      "run": 107,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "virtual-destructors"
+      ],
+      "lint": "100–100",
+      "code": "3/3",
+      "commit": "✓",
+      "summary": "AUTHOR: Virtual Destructors — pitfall on deleting a derived object through a non-virtual base destructor; two ASan-verified UB repros (raw delete + unique_ptr), verified UBSan blind spot, protected-non-virtual C.35 alternative verified to fail at compile time"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-29T10:24:01Z"
+  "last_builder": "2026-09-29T11:24:56Z"
 }
