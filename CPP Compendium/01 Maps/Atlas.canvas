@@ -1323,7 +1323,8 @@
 			"y": 1442,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[unique_ptr]]\n*concept · T1*"
+			"text": "◐ [[unique_ptr]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-owning-vs-observing-pointers",

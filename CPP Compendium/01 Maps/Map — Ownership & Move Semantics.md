@@ -129,7 +129,7 @@ flowchart LR
 - ● [[Ownership — Who Releases What]] · *concept*
 - ● [[RAII]] · *idiom*
 - ◐ [[Copy Semantics — Deep vs Shallow Copy]] · *comparison*
-- ○ [[unique_ptr]] · *concept*
+- ◐ [[unique_ptr]] · *concept*
 
 **Tier 2 · Proficient**
 - ◐ [[Owning vs Observing Pointers]] · *comparison*
@@ -149,7 +149,7 @@ flowchart LR
 - ○ [[Copy-and-Swap]] · *idiom*
 - ○ [[noexcept and Why Move Must Not Throw]] · *mechanism*
 
-`███░░░░░░░` 5/19 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███░░░░░░░` 6/19 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

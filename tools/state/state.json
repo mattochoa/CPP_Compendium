@@ -1,6 +1,6 @@
 {
-  "runs": 103,
-  "builder_runs": 101,
+  "runs": 105,
+  "builder_runs": 103,
   "editor_runs": 2,
   "history": [
     {
@@ -1217,10 +1217,23 @@
       "code": "4/4",
       "commit": "✓",
       "summary": "AUTHOR: Owning vs Observing Pointers — Decision Guide contrasting the two roles a raw T* can play; specializes the general Ownership model to raw pointers, adds the gsl::owner<T*> marking idiom and a factory-function contrast, woven into Pointers, Ownership — Who Releases What, and Dangling Pointers and References (pre-existing frontier links now resolved)."
+    },
+    {
+      "when": "2026-09-29T07:25:28Z",
+      "run": 103,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "unique-ptr"
+      ],
+      "lint": "100–100",
+      "code": "5/5",
+      "commit": "✓",
+      "summary": "AUTHOR unique_ptr: derives the type from Ownership's headcount rule, verifies moved-from-is-null, incomplete-type/Pimpl support, base-class-conversion UB, and deleter-size cost (compiled static_asserts, GCC 11.4.0); covers the twin-new exception-safety history (pre/post C++17, P0145) through C++23 constexpr."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-29T05:25:51Z"
+  "last_builder": "2026-09-29T07:25:28Z"
 }
