@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 257 |
+| ○ planned | 256 |
 | ◌ stub | 0 |
-| ◐ draft | 77 |
+| ◐ draft | 78 |
 | ⟲ revise | 0 |
 | ● reviewed | 21 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `███░░░░░░░░░░░░░░░░░` 20/126
+- Wave 2: `███░░░░░░░░░░░░░░░░░` 21/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/124
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -202,7 +202,7 @@ tags: [system/generated]
 
 ## D07 · Ownership & Move Semantics
 
-*Who is responsible for releasing a resource, and how does responsibility transfer?*  `███░░░░░░░` 6/19
+*Who is responsible for releasing a resource, and how does responsibility transfer?*  `████░░░░░░` 7/19
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -212,7 +212,7 @@ tags: [system/generated]
 | ◐ | [[Copy Semantics — Deep vs Shallow Copy]] | comparison | 1 | 2 |  |
 | ◐ | [[Owning vs Observing Pointers]] | comparison | 2 | 2 |  |
 | ◐ | [[unique_ptr]] | concept | 1 | 2 |  |
-| ○ | [[Rvalue References]] | concept | 2 | 2 |  |
+| ◐ | [[Rvalue References]] | concept | 2 | 2 |  |
 | ○ | [[Move Semantics]] | concept | 2 | 2 |  |
 | ○ | [[shared_ptr and Reference Counting]] | mechanism | 2 | 2 |  |
 | ○ | [[move and forward — Casts, Not Actions]] | mechanism | 2 | 3 |  |

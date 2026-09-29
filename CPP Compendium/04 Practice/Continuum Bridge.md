@@ -50,7 +50,7 @@ tags: [system/generated, practice]
 | 19 | Complex Number & Vector Math Library | ◐ [[Map — Types & Values]], ◐ [[Map — Classes & Encapsulation]], ● [[const and Const-Correctness]], ○ [[Operator Overloading]], ◐ [[Overloading in Classes — Constructors, Members and Operators]], ○ [[Value Semantics]] |
 | 20 | Employee Management System | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Inheritance & Polymorphism]], ◐ [[Owning vs Observing Pointers]], ● [[Inheritance]], ○ [[Composition vs Inheritance]] |
 | 21 | Game Entity System | ◐ [[Map — Inheritance & Polymorphism]], ● [[Virtual Dispatch — vptr and vtable]], ◐ [[Abstract Classes and Interfaces]], ○ [[RTTI and dynamic_cast]], ○ [[Multiple and Virtual Inheritance]] |
-| 22 | Rule-of-Five Resource Manager | ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ● [[Value Categories]], ○ [[Rule of Zero, Three and Five]], ○ [[Move Semantics]], ○ [[noexcept and Why Move Must Not Throw]], ○ [[Benchmarking Correctly]] |
+| 22 | Rule-of-Five Resource Manager | ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ● [[Value Categories]], ○ [[Rule of Zero, Three and Five]], ◐ [[Rvalue References]], ○ [[Move Semantics]], ○ [[noexcept and Why Move Must Not Throw]], ○ [[Benchmarking Correctly]] |
 
 ## Tier 5: Modern C++ & the STL
 

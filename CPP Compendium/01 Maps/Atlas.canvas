@@ -1343,7 +1343,8 @@
 			"y": 1298,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Rvalue References]]\n*concept · T2*"
+			"text": "◐ [[Rvalue References]]\n*concept · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-move-semantics",
