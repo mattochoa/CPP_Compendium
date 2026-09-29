@@ -134,7 +134,7 @@ flowchart LR
 **Tier 2 · Proficient**
 - ◐ [[Owning vs Observing Pointers]] · *comparison*
 - ◐ [[Rvalue References]] · *concept*
-- ○ [[Move Semantics]] · *concept*
+- ◐ [[Move Semantics]] · *concept*
 - ○ [[shared_ptr and Reference Counting]] · *mechanism*
 - ○ [[move and forward — Casts, Not Actions]] · *mechanism*
 - ○ [[The Moved-From State]] · *pitfall*
@@ -149,7 +149,7 @@ flowchart LR
 - ○ [[Copy-and-Swap]] · *idiom*
 - ○ [[noexcept and Why Move Must Not Throw]] · *mechanism*
 
-`████░░░░░░` 7/19 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`████░░░░░░` 8/19 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

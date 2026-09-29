@@ -1353,7 +1353,8 @@
 			"y": 1370,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Move Semantics]]\n*concept · T2*"
+			"text": "◐ [[Move Semantics]]\n*concept · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-shared-ptr",
