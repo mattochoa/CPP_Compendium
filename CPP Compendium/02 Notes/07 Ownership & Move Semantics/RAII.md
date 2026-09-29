@@ -20,6 +20,7 @@ related:
 - "[[Exception Safety Guarantees]]"
 - "[[Rule of Zero, Three and Five]]"
 - "[[Scope Guards]]"
+- "[[Copy Semantics — Deep vs Shallow Copy]]"
 practice:
 - 25
 - 26
@@ -62,7 +63,7 @@ A **resource** is anything that must be given back: heap memory, a file handle, 
 > 2. **Consequence:** With manual `acquire(); … release();` pairs, each exit path needs its own cleanup. *M* resources and *N* exits need up to *M × N* cleanup statements. One missing statement on one rare path (usually the error path) is a leak nobody notices until production.
 > 3. **Requirement:** Release must be tied to something the language itself executes on **every** exit path, including exceptions, without the programmer enumerating the paths.
 > 4. **Design:** C++ already has such a thing. The **destructor** of an automatic object runs when its scope ends, by any route (`[stmt.jump]`, `[except.ctor]`). So wrap each resource in a class: the constructor acquires, the destructor releases. Scope exit *is* cleanup.
-> 5. **Price:** Every kind of resource needs a wrapper type. Its copy and move behavior must be designed (who owns it after a copy?). Destructors must not throw.
+> 5. **Price:** Every kind of resource needs a wrapper type. Its copy and move behavior must be designed (who owns it after a copy? — see [[Copy Semantics — Deep vs Shallow Copy]] for why the compiler's own default answer is usually wrong). Destructors must not throw.
 
 > [!tension] safety ⟷ performance, resolved without compromise
 > Garbage-collected languages make memory safe by deferring release to a collector, which costs run time and loses *determinism*: a file closes "eventually". RAII makes release **safe and immediate**, and it compiles to the same instructions you would have written by hand. That is the [[Zero-Overhead Principle]] in its purest form — the same bargain [[Map — What C++ Is|the language as a whole]] makes; see [[The C++ Design Philosophy]] for where that bargain is derived from first principles.
@@ -252,7 +253,7 @@ int main() {
 ## Connections
 
 - **Prerequisites:** [[Object Lifetime]] (when destructors run) · [[Destructors]] · [[Constructors]] (what a throwing constructor leaves for the compiler to unwind — only fully-constructed members, never the object's own destructor).
-- **Builds on it:** [[unique_ptr]] · [[Rule of Zero, Three and Five]] · [[Exception Safety Guarantees]] · [[Stack Unwinding]] · [[Scope Guards]] · [[Ownership — Who Releases What]].
+- **Builds on it:** [[unique_ptr]] · [[Rule of Zero, Three and Five]] · [[Exception Safety Guarantees]] · [[Stack Unwinding]] · [[Scope Guards]] · [[Ownership — Who Releases What]] · [[Copy Semantics — Deep vs Shallow Copy]] (the copy/move design every wrapper type owes an answer to, per this note's own Price).
 - **Prevents:** [[Memory Leaks]] · [[Double Free and Mismatched new-delete]] · [[Dangling Pointers and References]] (partly: it fixes *who* releases, not *who still looks* — for that, see how [[Pointers vs References]] separates owning from observing access).
 - **Domain:** [[Map — Ownership & Move Semantics]] · see also [[Map — Errors & Contracts]] and [[Error Handling Strategies Compared]] for the channels (exceptions, error codes, `expected`) that RAII is built to survive.
 - **Practice:** *Continuum #25 Smart Pointer Refactor Lab* (replace every `delete`) · *#26 Custom Exception Hierarchy & Robust CSV Parser* (RAII under exceptions) · *#31 TCP Chat Client/Server* (RAII for sockets).

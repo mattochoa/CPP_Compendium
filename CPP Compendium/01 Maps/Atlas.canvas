@@ -1313,7 +1313,8 @@
 			"y": 1370,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Copy Semantics — Deep vs Shallow Copy]]\n*comparison · T1*"
+			"text": "◐ [[Copy Semantics — Deep vs Shallow Copy]]\n*comparison · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-unique-ptr",

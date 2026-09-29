@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 261 |
+| ○ planned | 260 |
 | ◌ stub | 0 |
-| ◐ draft | 73 |
+| ◐ draft | 74 |
 | ⟲ revise | 0 |
 | ● reviewed | 21 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `███░░░░░░░░░░░░░░░░░` 16/126
+- Wave 2: `███░░░░░░░░░░░░░░░░░` 17/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/124
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -202,14 +202,14 @@ tags: [system/generated]
 
 ## D07 · Ownership & Move Semantics
 
-*Who is responsible for releasing a resource, and how does responsibility transfer?*  `██░░░░░░░░` 3/19
+*Who is responsible for releasing a resource, and how does responsibility transfer?*  `██░░░░░░░░` 4/19
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Ownership & Move Semantics]] | map | 1 | 0 |  |
 | ● | [[Ownership — Who Releases What]] | concept | 1 | 1 | 20 |
 | ● | [[RAII]] | idiom | 1 | 1 | 20 |
-| ○ | [[Copy Semantics — Deep vs Shallow Copy]] | comparison | 1 | 2 |  |
+| ◐ | [[Copy Semantics — Deep vs Shallow Copy]] | comparison | 1 | 2 |  |
 | ○ | [[Owning vs Observing Pointers]] | comparison | 2 | 2 |  |
 | ○ | [[unique_ptr]] | concept | 1 | 2 |  |
 | ○ | [[Rvalue References]] | concept | 2 | 2 |  |

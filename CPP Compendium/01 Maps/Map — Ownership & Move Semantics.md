@@ -128,7 +128,7 @@ flowchart LR
 **Tier 1 · Foundational**
 - ● [[Ownership — Who Releases What]] · *concept*
 - ● [[RAII]] · *idiom*
-- ○ [[Copy Semantics — Deep vs Shallow Copy]] · *comparison*
+- ◐ [[Copy Semantics — Deep vs Shallow Copy]] · *comparison*
 - ○ [[unique_ptr]] · *concept*
 
 **Tier 2 · Proficient**
@@ -149,7 +149,7 @@ flowchart LR
 - ○ [[Copy-and-Swap]] · *idiom*
 - ○ [[noexcept and Why Move Must Not Throw]] · *mechanism*
 
-`██░░░░░░░░` 3/19 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 4/19 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

@@ -1,6 +1,6 @@
 {
-  "runs": 100,
-  "builder_runs": 98,
+  "runs": 102,
+  "builder_runs": 100,
   "editor_runs": 2,
   "history": [
     {
@@ -1190,10 +1190,24 @@
       "code": "6/6",
       "commit": "✓",
       "summary": "AUTHOR: Undefined Behavior — the abstract machine's fourth bucket (concept), standard-dated the i=i++ +1 and signed-conversion cases per today's directive, real GCC evidence for null-check elision and optimization-level-dependent uninitialized-bool output."
+    },
+    {
+      "when": "2026-09-29T04:23:14Z",
+      "run": 100,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "copy-semantics",
+        "raii"
+      ],
+      "lint": "100–100",
+      "code": "4/4 3/3",
+      "commit": "✓",
+      "summary": "AUTHOR: Copy Semantics — Deep vs Shallow Copy (D07 comparison, wave-2 focus) — first note of the live queue after the pinned object-to-RAII spine (directive 1) completed in runs #67-77. Derives shallow-vs-deep from [class.copy.ctor] p15's memberwise-copy rule (direct-init copies a raw pointer's address, not its referent); real GCC 11.4.0/Ubuntu 22.04 ASan evidence for both UB demos (double-free from an unmodified default copy; self-assignment use-after-free in a naive deep-copy assignment), plus a 4th block proving the Rule of Zero via a std::string member. Back-linked from RAII's Price bullet, related: and Connections (2nd reviewed note alongside the pre-existing Ownership - Who Releases What link)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-29T02:25:20Z"
+  "last_builder": "2026-09-29T04:23:14Z"
 }
