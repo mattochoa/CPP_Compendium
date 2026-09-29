@@ -28,7 +28,7 @@ tags:
 - tension/safety-vs-performance
 - std/c++98
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-09-28
 reviewed: 2026-09-27
 score: 20
 rubric:
@@ -54,7 +54,7 @@ A program is full of names that must never be written through at a particular po
 > 1. **Constraint.** Many names in a program refer to objects that a given function, or a given piece of code, must only read. The compiler cannot infer this from the object's type alone — `int` supports both reading and writing, and nothing distinguishes "this int must not change here" from any other `int`.
 > 2. **Consequence.** Left unstated, that intent is enforced only by the programmer remembering it. A stray `=` where `==` was meant, a refactor that adds a write three call-frames deep, or a caller who assumes a function won't touch its argument (and is wrong) — none of these are caught, because nothing in the type system was ever told the rule.
 > 3. **Requirement.** The language needs a promise that (a) is checked by the compiler rather than trusted to convention, (b) costs nothing at run time, since the underlying object is exactly as mutable as it always was, and (c) attaches at every layer where "read-only from here" can be said: a variable, a reference, a pointer, and the implicit object a member function operates on.
-> 4. **Design.** `const` qualifies a type, producing a distinct const-qualified version of it (`[basic.type.qualifier]`). A const object may not be modified through an expression of that type; a reference or pointer to a const-qualified type may not be used to write to what it refers to; and a member function marked `const` receives a const-qualified `this`, so it cannot write to the object's non-`mutable` members. One qualifier, applied uniformly, closes off every ordinary write path.
+> 4. **Design.** `const` qualifies a type, producing a distinct const-qualified version of it (`[basic.type.qualifier]`) — a different point in [[What a Type Is|the values/operations/representation triple]], even though the bits and the value set are untouched. A const object may not be modified through an expression of that type; a reference or pointer to a const-qualified type may not be used to write to what it refers to; and a member function marked `const` receives a const-qualified `this`, so it cannot write to the object's non-`mutable` members. One qualifier, applied uniformly, closes off every ordinary write path.
 > 5. **Price.** The promise is purely about what you may do *through a given expression*, not a fact about the referred-to storage — so `const` does not, by itself, mean the bytes are frozen (see Pitfalls). And because the promise is contagious — a function can only pass a `const T&` on to something that itself promises not to write — committing to it in one place tends to require restating it everywhere that value flows. That discipline, applied consistently across a whole interface, is what "const-correctness" names.
 
 > [!tension] safety ⟷ performance
@@ -268,7 +268,7 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 
 - **Prerequisites:** [[Fundamental Types]] — `const` qualifies exactly the values/operations/representation triple that note establishes.
 - **Enables:** [[Top-Level vs Low-Level const]] (the comparison this note's Mental Model previews) → [[constexpr Variables and Constant Expressions]] (asking the compiler to *prove* a value, not just freeze a name).
-- **Siblings:** [[References]] and [[Pointers]] — const's rules are stated in terms of both; [[The Named Casts]] — `const_cast` is the only sanctioned way to remove a const qualifier, and only ever safe when the underlying object was never const to begin with.
+- **Siblings:** [[What a Type Is]] — cv-qualification is a change to the operations leg of the triple, sufficient by itself to produce a distinct type; [[References]] and [[Pointers]] — const's rules are stated in terms of both; [[The Named Casts]] — `const_cast` is the only sanctioned way to remove a const qualifier, and only ever safe when the underlying object was never const to begin with.
 - **Domain:** [[Map — Types & Values]].
 - **Practice:** *Continuum #17 Bank Account Simulator*: mark every accessor `const` and watch which callers now fail to compile until they stop trying to mutate through a read-only reference. *Continuum #19 Complex Number & Vector Math Library*: operator overloads that only read their operands should take `const&` parameters and be `const` member functions themselves.
 

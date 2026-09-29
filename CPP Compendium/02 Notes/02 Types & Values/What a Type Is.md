@@ -20,7 +20,7 @@ tags:
 - tension/compile-time-vs-run-time
 - tension/safety-vs-performance
 created: 2026-09-25
-updated: 2026-09-25
+updated: 2026-09-28
 reviewed: 2026-09-27
 score: 19
 rubric:
@@ -95,6 +95,9 @@ Two very different types, one identical shape: a fixed set of legal values, a fi
 **Built-in vs. user-defined is a difference in who supplies the triple, not in the shape of the triple.** For a built-in type like `int`, the compiler already knows the representation and the legal operations without being told: they are baked into the language itself, with no source-code declaration required to teach the compiler what `int` means (PPP §8.1). For a user-defined type like `Meters` or `std::string`, the *class declaration itself* is what fixes the triple: data members fix the representation, member and friend functions fix the legal operations, and the constructors and any invariant the class maintains fix which values are ever actually reachable ([[Classes as User-Defined Types]], [[Encapsulation and Class Invariants]]). The mechanism is identical; only the source of the answer changes.
 
 **A type is attached to a *name or expression*, once, and does not change.** Declaring `int n;` fixes `n`'s type for every later use of `n` in that scope; nothing in ordinary C++ lets a name's declared type mutate mid-program (templates and `auto` still pick one fixed type per instantiation — they don't defer the choice to run time).
+
+> [!standard] A corner case the triple has to account for: qualifying a type produces a *different* type
+> `const int` and `int` occupy the same bits and admit the same underlying values — nothing about the *representation* leg changes. What changes is the *operations* leg: `const int` drops every operation that would write to the object (`[basic.type.qualifier]` ¶1, ¶4). That is enough, on its own, for the Standard to treat `const int` as a genuinely distinct type from `int` — not a restricted mode of the same type, but a different point in the triple, with `std::is_same_v<int, const int>` evaluating to `false`. [[const and Const-Correctness]] derives the qualifier itself from first principles; the narrower point here is that *any* change to even one leg — including one that only removes operations, without touching representation or which values fit — is sufficient to leave the triple, and therefore the type, changed.
 
 ## Under the Hood
 
@@ -181,6 +184,32 @@ int main() {
 }
 ```
 `a` and `b` are, underneath, just two doubles — the CPU has a multiply instruction ready. The compiler rejects the line anyway, because `Meters`'s type never declared `operator*`. This is the operations leg of the triple enforced at compile time, independent of what the representation would physically allow.
+
+**4 · Qualifying only the operations leg is still enough to change the type**
+
+```cpp
+#include <iostream>
+#include <type_traits>
+
+template <typename T>
+void report() {
+    if constexpr (std::is_const_v<T>) {
+        std::cout << "const-qualified\n";       // ①
+    } else {
+        std::cout << "not const-qualified\n";
+    }
+}
+
+int main() {
+    static_assert(!std::is_same_v<int, const int>);   // ②
+    report<int>();
+    report<const int>();
+}
+// expect: not const-qualified
+// expect: const-qualified
+```
+1. `T = int` and `T = const int` instantiate `report` twice, as two unrelated types — the compiler never treats the second as "the first, but frozen."
+2. `is_same_v` names the fact the Mechanics callout above derives: identical bits, identical value set, yet `false`. Qualifying away *some* operations was enough by itself to leave the triple, with nothing else changed.
 
 ## Pitfalls
 

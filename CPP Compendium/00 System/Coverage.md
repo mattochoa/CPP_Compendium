@@ -8,8 +8,8 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 263 |
-| ◌ stub | 0 |
+| ○ planned | 262 |
+| ◌ stub | 1 |
 | ◐ draft | 71 |
 | ⟲ revise | 0 |
 | ● reviewed | 21 |
@@ -32,7 +32,7 @@ tags: [system/generated]
 | ◐ | [[Map — What C++ Is]] | map | 1 | 0 |  |
 | ◐ | [[The C++ Design Philosophy]] | concept | 1 | 1 | 18 |
 | ◐ | [[Zero-Overhead Principle]] | concept | 1 | 1 |  |
-| ○ | [[Levels of Abstraction — From Bits to Libraries]] | concept | 1 | 1 |  |
+| ◌ | [[Levels of Abstraction — From Bits to Libraries]] | concept | 1 | 1 |  |
 | ◐ | [[The C++ Abstract Machine]] | concept | 1 | 1 |  |
 | ○ | [[Undefined Behavior]] | concept | 1 | 1 |  |
 | ○ | [[The As-If Rule]] | mechanism | 2 | 2 |  |

@@ -1,6 +1,6 @@
 {
-  "runs": 96,
-  "builder_runs": 94,
+  "runs": 98,
+  "builder_runs": 96,
   "editor_runs": 2,
   "history": [
     {
@@ -1150,10 +1150,24 @@
       "code": "5/5",
       "commit": "✓",
       "summary": "AUTHOR: Scope (concept, D01) — scope-kind taxonomy, point-of-declaration/hiding rules, scope-vs-lifetime contrast (static locals), stack-slot-reuse asm evidence, 5 verified code blocks incl. UB point-of-declaration trap and C++17 if-init scoping."
+    },
+    {
+      "when": "2026-09-29T00:47:32Z",
+      "run": 96,
+      "role": "builder",
+      "mode": "DEEPEN",
+      "items": [
+        "what-a-type-is",
+        "const-correctness"
+      ],
+      "lint": "100–100",
+      "code": "4/4 5/5",
+      "commit": "✓",
+      "summary": "deepen: what-a-type-is depth+integration (rubric dims: depth 2/3, integration 2/3, per 2026-09-27 Daily Brief DEEPEN queue) — added a Mechanics corner case (cv-qualification changes only the operations leg yet still produces a distinct type per [basic.type.qualifier], proven with is_same_v<int,const int>==false and a 4th In Code example using if-constexpr/is_const_v); closed the one missing reciprocal link among What a Type Is's 4 related notes by back-linking const and Const-Correctness's Design step and Siblings line. check 0 errors both notes, code 4/4 + 5/5 PASS."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-28T21:22:11Z"
+  "last_builder": "2026-09-29T00:47:32Z"
 }

@@ -58,14 +58,14 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 263 | 71 | 0 | 21 | 0 | 355 | 94 | 2 |
+| 263 | 71 | 0 | 21 | 0 | 355 | 96 | 2 |
 
 `█████░░░░░░░░░░░░░░░` **26%** of the Atlas written · last build 2026-09-28
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Levels of Abstraction — From Bits to Libraries]] · *concept* · `D00` — wave 1
+1. [[Levels of Abstraction — From Bits to Libraries]] · *concept* · `D00` — finish stub
 2. [[Undefined Behavior]] · *concept* · `D00` — wave 1
 3. [[Copy Semantics — Deep vs Shallow Copy]] · *comparison* · `D07` — wave 2 · focus
 4. [[Owning vs Observing Pointers]] · *comparison* · `D07` — wave 2 · focus
@@ -75,6 +75,9 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ● [[const and Const-Correctness]] · *concept* · updated 2026-09-28
+- ● [[What a Type Is]] · *concept* · updated 2026-09-28
+- ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-28
 - ◐ [[Scope]] · *concept* · updated 2026-09-28
 - ◐ [[Zero-Overhead Principle]] · *concept* · updated 2026-09-28
 - ◐ [[References]] · *concept* · updated 2026-09-28
@@ -82,9 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · updated 2026-09-28
 - ◐ [[Destructors]] · *concept* · updated 2026-09-28
 - ◐ [[Anatomy of an Expression]] · *concept* · updated 2026-09-28
-- ◐ [[Declarations vs Definitions]] · *comparison* · updated 2026-09-28
-- ● [[RAII]] · *idiom* · updated 2026-09-28
-- ● [[Precedence and Associativity]] · *concept* · updated 2026-09-28
 <!-- cc:end -->
 
 ## Start here
