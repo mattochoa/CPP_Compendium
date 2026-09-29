@@ -1,6 +1,6 @@
 {
-  "runs": 112,
-  "builder_runs": 110,
+  "runs": 113,
+  "builder_runs": 111,
   "editor_runs": 2,
   "history": [
     {
@@ -1309,10 +1309,26 @@
       "code": "4/4",
       "commit": "✓",
       "summary": "AUTHOR: Object Slicing — pitfall note (D08). Derived-to-base copy/assignment/by-value loses the derived part and its vptr; distinguished explicitly from UB (fully-defined, just wrong). Two verified repros (assignment, vector<Shape>), detection table (no default GCC/Clang warning for the general case; clang-tidy cppcoreguidelines-slicing reported), fix via owning pointers + protected-copy/clone (Core Guidelines C.67/C.145/ES.63, verified compiles and the protected-ctor variant verified as a compile error). Already back-linked from 8 existing notes (Inheritance, Virtual Functions, Virtual Destructors, Virtual Dispatch, Abstract Classes and Interfaces, Pointers vs References, vector, Exceptions) that had it as a frontier link."
+    },
+    {
+      "when": "2026-09-29T15:24:58Z",
+      "run": 111,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "initialization-forms",
+        "object-lifetime",
+        "constructors",
+        "dynamic-memory"
+      ],
+      "lint": "100–100",
+      "code": "6/6 3/3 4/4 2/2",
+      "commit": "✓",
+      "summary": "AUTHOR: The Forms of Initialization (D04 comparison, wave-2 focus) — the six named forms (default/value/direct/copy/list/aggregate) derived from C's inherited spellings plus constructors' need for a call syntax; version-scoped the value-initialization user-provided-vs-declared split (CWG 1368), the moving definition of 'aggregate' (C++11/17/20), and C++20's parenthesized aggregate init (P1975R0) verified directly against -std=c++17 failing the same program. 6/6 code PASS incl. a paired ill-formed/std=c++17 block proving the version boundary. Registered most-vexing-parse (pitfall, D04) as a discovered gap. Back-linked Object Lifetime, Constructors and Dynamic Memory — new and delete (all 3 already discussed initialization informally); Map — Objects, Memory & Lifetime's pre-existing frontier link now resolves too."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-29T14:22:57Z"
+  "last_builder": "2026-09-29T15:24:59Z"
 }

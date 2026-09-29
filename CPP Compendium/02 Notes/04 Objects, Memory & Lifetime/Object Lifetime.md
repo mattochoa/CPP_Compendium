@@ -28,7 +28,7 @@ tags:
 - std/c++98
 - std/c++20
 created: 2026-09-27
-updated: 2026-09-27
+updated: 2026-09-29
 ---
 
 # Object Lifetime
@@ -85,7 +85,7 @@ The four moments are independent in principle. In an ordinary automatic variable
 | Ending a non-trivially-destructible object's lifetime without calling its destructor | Defined only if another object of the *original* type occupies that storage before the implicit destructor call would fire; otherwise undefined behavior (`[basic.life]` ¶11) | Example 3 |
 
 > [!standard] Lifetime begins after initialization completes, not after storage exists
-> `[basic.life]` ¶2 is explicit: the lifetime of an object of type `T` begins only once "storage with the proper alignment and size for type `T` is obtained, **and** its initialization (if any) is complete." Even a scalar with no initializer at all — `int n;` — still counts, via *vacuous initialization*: default-initializing a type with a trivial constructor performs no action but is still "complete" the instant the declaration is reached. The one carve-out is a union member, whose lifetime begins only once it becomes the union's active member (`[class.union]`).
+> `[basic.life]` ¶2 is explicit: the lifetime of an object of type `T` begins only once "storage with the proper alignment and size for type `T` is obtained, **and** its initialization (if any) is complete." Even a scalar with no initializer at all — `int n;` — still counts, via *vacuous initialization*: default-initializing a type with a trivial constructor performs no action but is still "complete" the instant the declaration is reached. The one carve-out is a union member, whose lifetime begins only once it becomes the union's active member (`[class.union]`). Which of the six named forms an initializer takes — default, value, direct, copy, list or aggregate — is exactly what [[The Forms of Initialization]] works out; each one satisfies this same "initialization is complete" clause, just by a different route.
 
 > [!standard] `[class.cdtor]`'s own-class view during construction and destruction
 > `[class.cdtor]` ¶4: when a virtual function is called — directly or through another function — from a constructor or destructor of an object currently under construction or destruction, "the function called is the final overrider in the constructor's or destructor's class and not one overriding it in a more-derived class." This is not a quirk of one compiler: it is what the Standard requires, because the more-derived part's lifetime has either not started yet (during construction) or has already ended (during destruction) at that point. [[Virtual Functions]] and [[Constructors]] develop the mechanism this rule protects; this note only fixes *why* the rule has to exist.

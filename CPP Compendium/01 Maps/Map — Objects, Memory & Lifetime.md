@@ -147,7 +147,7 @@ flowchart LR
 
 **Tier 2 · Proficient**
 - ● [[Value Categories]] · *concept*
-- ○ [[The Forms of Initialization]] · *comparison*
+- ◐ [[The Forms of Initialization]] · *comparison*
 - ○ [[Double Free and Mismatched new-delete]] · *pitfall*
 - ○ [[Temporaries and Lifetime Extension]] · *mechanism*
 - ○ [[C-Style Strings]] · *concept*
@@ -159,11 +159,12 @@ flowchart LR
 - ○ [[Strict Aliasing and Type Punning]] · *pitfall*
 - ○ [[Trivial, Standard-Layout and Aggregate Types]] · *concept*
 - ○ [[Placement new and Manual Lifetime]] · *mechanism*
+- ○ [[The Most Vexing Parse]] · *pitfall*
 
 **Tier 4 · Expert**
 - ○ [[Allocators and pmr Memory Resources]] · *concept*
 
-`████░░░░░░` 11/27 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`████░░░░░░` 12/28 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

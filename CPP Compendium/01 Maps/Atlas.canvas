@@ -809,7 +809,8 @@
 			"y": 1298,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[The Forms of Initialization]]\n*comparison · T2*"
+			"text": "◐ [[The Forms of Initialization]]\n*comparison · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-double-free-and-mismatched-delete",
@@ -891,6 +892,15 @@
 			"width": 250,
 			"height": 56,
 			"text": "○ [[Placement new and Manual Lifetime]]\n*mechanism · T3*"
+		},
+		{
+			"id": "t-most-vexing-parse",
+			"type": "text",
+			"x": 562,
+			"y": 1442,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[The Most Vexing Parse]]\n*pitfall · T3*"
 		},
 		{
 			"id": "t-allocators-and-pmr",
@@ -4148,6 +4158,13 @@
 			"fromNode": "t-object-representation",
 			"fromSide": "right",
 			"toNode": "t-empty-base-optimization",
+			"toSide": "left"
+		},
+		{
+			"id": "e-initialization-forms-most-vexing-parse",
+			"fromNode": "t-initialization-forms",
+			"fromSide": "right",
+			"toNode": "t-most-vexing-parse",
 			"toSide": "left"
 		}
 	]
