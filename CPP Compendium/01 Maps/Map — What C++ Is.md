@@ -102,14 +102,14 @@ flowchart LR
 - ◐ [[Zero-Overhead Principle]] · *concept*
 - ◐ [[Levels of Abstraction — From Bits to Libraries]] · *concept*
 - ◐ [[The C++ Abstract Machine]] · *concept*
-- ○ [[Undefined Behavior]] · *concept*
+- ◐ [[Undefined Behavior]] · *concept*
 - ○ [[The ISO Standard, Compilers and Conformance]] · *concept*
 
 **Tier 2 · Proficient**
 - ○ [[The As-If Rule]] · *mechanism*
 - ○ [[Implementation-Defined, Unspecified and Undefined Behavior]] · *comparison*
 
-`██████░░░░` 5/9 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███████░░░` 6/9 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

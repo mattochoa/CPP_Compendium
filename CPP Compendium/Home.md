@@ -31,7 +31,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-domains -->
 | | Domain | The question it answers | Progress |
 |---|---|---|---|
-| `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `████░░░░` 5/9 |
+| `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `█████░░░` 6/9 |
 | `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `███░░░░░` 7/18 |
 | `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `█░░░░░░░` 4/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `███░░░░░` 4/12 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 262 | 72 | 0 | 21 | 0 | 355 | 97 | 2 |
+| 261 | 73 | 0 | 21 | 0 | 355 | 98 | 2 |
 
 `█████░░░░░░░░░░░░░░░` **26%** of the Atlas written · last build 2026-09-28
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Undefined Behavior]] · *concept* · `D00` — wave 1
-2. [[Copy Semantics — Deep vs Shallow Copy]] · *comparison* · `D07` — wave 2 · focus
-3. [[Owning vs Observing Pointers]] · *comparison* · `D07` — wave 2 · focus
-4. [[unique_ptr]] · *concept* · `D07` — wave 2 · focus
-5. [[Rvalue References]] · *concept* · `D07` — wave 2 · focus
-6. [[shared_ptr and Reference Counting]] · *mechanism* · `D07` — wave 2 · focus
+1. [[Copy Semantics — Deep vs Shallow Copy]] · *comparison* · `D07` — wave 2 · focus
+2. [[Owning vs Observing Pointers]] · *comparison* · `D07` — wave 2 · focus
+3. [[unique_ptr]] · *concept* · `D07` — wave 2 · focus
+4. [[Rvalue References]] · *concept* · `D07` — wave 2 · focus
+5. [[shared_ptr and Reference Counting]] · *mechanism* · `D07` — wave 2 · focus
+6. [[Abstract Classes and Interfaces]] · *concept* · `D08` — wave 2 · focus
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Undefined Behavior]] · *concept* · updated 2026-09-28
 - ◐ [[Levels of Abstraction — From Bits to Libraries]] · *concept* · updated 2026-09-28
 - ● [[const and Const-Correctness]] · *concept* · updated 2026-09-28
 - ● [[What a Type Is]] · *concept* · updated 2026-09-28
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[References]] · *concept* · updated 2026-09-28
 - ◐ [[Pointers]] · *concept* · updated 2026-09-28
 - ◐ [[Parameter Passing — Value, Reference, Pointer]] · *comparison* · updated 2026-09-28
-- ◐ [[Destructors]] · *concept* · updated 2026-09-28
 <!-- cc:end -->
 
 ## Start here

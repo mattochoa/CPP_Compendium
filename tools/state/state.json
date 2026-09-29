@@ -1,6 +1,6 @@
 {
-  "runs": 99,
-  "builder_runs": 97,
+  "runs": 100,
+  "builder_runs": 98,
   "editor_runs": 2,
   "history": [
     {
@@ -1177,10 +1177,23 @@
       "code": "3/3",
       "commit": "✓",
       "summary": "AUTHOR: Levels of Abstraction — From Bits to Libraries (concept, D00, T1) — first note of the domain's tier-1 span after the design philosophy. Derives the hardware->machine-code->assembly->core-language->abstraction-mechanisms->libraries tower from the constraint that no one can write or read a program in raw binary; the relay-of-translators model states its own limit (levels are erased at build time, not structurally independent like real translators). Mechanics table assigns each level to whoever fixes its rules and a [!standard] callout pins the Standard's jurisdiction to the core language upward (cites [intro.abstract]). Under the Hood uses real GCC 11.4.0/Ubuntu 22.04 x86-64 -O2 evidence (asm + objdump raw bytes for the same add(int,int)) to show assembly and machine code are one fact in two notations. 3 verified code examples: two levels coexisting in one line, sizeof(long) as a deliberate leak (8 on this LP64 toolchain, labelled vs LLP64), and a hand-built TinyStack proving libraries have no privileged access (cites PPP's own from-scratch Vector construction, ch.15). 3/3 code PASS, check 0 errors. Resolves 2 pre-existing frontier links (The C++ Design Philosophy's Enables list; Map — What C++ Is's Concept Map/Learning Route/Key Ideas)."
+    },
+    {
+      "when": "2026-09-29T02:25:20Z",
+      "run": 98,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "undefined-behavior"
+      ],
+      "lint": "100–100",
+      "code": "6/6",
+      "commit": "✓",
+      "summary": "AUTHOR: Undefined Behavior — the abstract machine's fourth bucket (concept), standard-dated the i=i++ +1 and signed-conversion cases per today's directive, real GCC evidence for null-check elision and optimization-level-dependent uninitialized-bool output."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-29T01:22:15Z"
+  "last_builder": "2026-09-29T02:25:20Z"
 }

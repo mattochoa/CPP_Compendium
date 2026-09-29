@@ -67,7 +67,8 @@
 			"y": 358,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Undefined Behavior]]\n*concept · T1*"
+			"text": "◐ [[Undefined Behavior]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-standard-and-compilers",

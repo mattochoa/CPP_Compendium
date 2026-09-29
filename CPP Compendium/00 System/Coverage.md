@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 262 |
+| ○ planned | 261 |
 | ◌ stub | 0 |
-| ◐ draft | 72 |
+| ◐ draft | 73 |
 | ⟲ revise | 0 |
 | ● reviewed | 21 |
 | ★ evergreen | 0 |
@@ -18,14 +18,14 @@ tags: [system/generated]
 **Total topics:** 355
 
 - Wave 0: `████████████████████` 18/18
-- Wave 1: `████████████████████` 51/52
+- Wave 1: `████████████████████` 52/52
 - Wave 2: `███░░░░░░░░░░░░░░░░░` 16/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/124
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
 ## D00 · What C++ Is
 
-*What contract does C++ make between the programmer, the compiler and the machine?*  `██████░░░░` 5/9
+*What contract does C++ make between the programmer, the compiler and the machine?*  `███████░░░` 6/9
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -34,7 +34,7 @@ tags: [system/generated]
 | ◐ | [[Zero-Overhead Principle]] | concept | 1 | 1 |  |
 | ◐ | [[Levels of Abstraction — From Bits to Libraries]] | concept | 1 | 1 |  |
 | ◐ | [[The C++ Abstract Machine]] | concept | 1 | 1 |  |
-| ○ | [[Undefined Behavior]] | concept | 1 | 1 |  |
+| ◐ | [[Undefined Behavior]] | concept | 1 | 1 |  |
 | ○ | [[The As-If Rule]] | mechanism | 2 | 2 |  |
 | ○ | [[Implementation-Defined, Unspecified and Undefined Behavior]] | comparison | 2 | 2 |  |
 | ○ | [[The ISO Standard, Compilers and Conformance]] | concept | 1 | 2 |  |
