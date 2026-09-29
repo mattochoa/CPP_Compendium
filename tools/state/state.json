@@ -1,6 +1,6 @@
 {
-  "runs": 98,
-  "builder_runs": 96,
+  "runs": 99,
+  "builder_runs": 97,
   "editor_runs": 2,
   "history": [
     {
@@ -1164,10 +1164,23 @@
       "code": "4/4 5/5",
       "commit": "✓",
       "summary": "deepen: what-a-type-is depth+integration (rubric dims: depth 2/3, integration 2/3, per 2026-09-27 Daily Brief DEEPEN queue) — added a Mechanics corner case (cv-qualification changes only the operations leg yet still produces a distinct type per [basic.type.qualifier], proven with is_same_v<int,const int>==false and a 4th In Code example using if-constexpr/is_const_v); closed the one missing reciprocal link among What a Type Is's 4 related notes by back-linking const and Const-Correctness's Design step and Siblings line. check 0 errors both notes, code 4/4 + 5/5 PASS."
+    },
+    {
+      "when": "2026-09-29T01:22:15Z",
+      "run": 97,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "abstraction-layers"
+      ],
+      "lint": "100–100",
+      "code": "3/3",
+      "commit": "✓",
+      "summary": "AUTHOR: Levels of Abstraction — From Bits to Libraries (concept, D00, T1) — first note of the domain's tier-1 span after the design philosophy. Derives the hardware->machine-code->assembly->core-language->abstraction-mechanisms->libraries tower from the constraint that no one can write or read a program in raw binary; the relay-of-translators model states its own limit (levels are erased at build time, not structurally independent like real translators). Mechanics table assigns each level to whoever fixes its rules and a [!standard] callout pins the Standard's jurisdiction to the core language upward (cites [intro.abstract]). Under the Hood uses real GCC 11.4.0/Ubuntu 22.04 x86-64 -O2 evidence (asm + objdump raw bytes for the same add(int,int)) to show assembly and machine code are one fact in two notations. 3 verified code examples: two levels coexisting in one line, sizeof(long) as a deliberate leak (8 on this LP64 toolchain, labelled vs LLP64), and a hand-built TinyStack proving libraries have no privileged access (cites PPP's own from-scratch Vector construction, ch.15). 3/3 code PASS, check 0 errors. Resolves 2 pre-existing frontier links (The C++ Design Philosophy's Enables list; Map — What C++ Is's Concept Map/Learning Route/Key Ideas)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-29T00:47:32Z"
+  "last_builder": "2026-09-29T01:22:15Z"
 }
