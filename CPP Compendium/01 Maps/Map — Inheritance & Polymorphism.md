@@ -124,7 +124,7 @@ flowchart LR
 - ◐ [[Virtual Functions]] · *concept*
 - ◐ [[Abstract Classes and Interfaces]] · *concept*
 - ◐ [[Virtual Destructors]] · *pitfall*
-- ○ [[Object Slicing]] · *pitfall*
+- ◐ [[Object Slicing]] · *pitfall*
 - ○ [[override and final]] · *concept*
 
 **Tier 2 · Proficient**
@@ -139,7 +139,7 @@ flowchart LR
 - ○ [[Multiple and Virtual Inheritance]] · *mechanism*
 - ○ [[Static vs Dynamic Polymorphism]] · *comparison*
 
-`████░░░░░░` 6/15 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`█████░░░░░` 7/15 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

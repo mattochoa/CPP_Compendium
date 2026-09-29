@@ -1522,7 +1522,8 @@
 			"y": 2742,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Object Slicing]]\n*pitfall · T1*"
+			"text": "◐ [[Object Slicing]]\n*pitfall · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-override-and-final",

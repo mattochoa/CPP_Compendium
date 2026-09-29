@@ -1,6 +1,6 @@
 {
-  "runs": 111,
-  "builder_runs": 109,
+  "runs": 112,
+  "builder_runs": 110,
   "editor_runs": 2,
   "history": [
     {
@@ -1296,10 +1296,23 @@
       "code": "3/3",
       "commit": "✓",
       "summary": "AUTHOR: Move Semantics — move ctor/assign contracts, the Rule-of-Five synthesis asymmetry (declaring move deletes implicit copy), self-move-assignment, and noexcept's effect on vector reallocation (move_if_noexcept), all with compiled/GCC-verified evidence."
+    },
+    {
+      "when": "2026-09-29T14:22:57Z",
+      "run": 110,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "object-slicing"
+      ],
+      "lint": "100–100",
+      "code": "4/4",
+      "commit": "✓",
+      "summary": "AUTHOR: Object Slicing — pitfall note (D08). Derived-to-base copy/assignment/by-value loses the derived part and its vptr; distinguished explicitly from UB (fully-defined, just wrong). Two verified repros (assignment, vector<Shape>), detection table (no default GCC/Clang warning for the general case; clang-tidy cppcoreguidelines-slicing reported), fix via owning pointers + protected-copy/clone (Core Guidelines C.67/C.145/ES.63, verified compiles and the protected-ctor variant verified as a compile error). Already back-linked from 8 existing notes (Inheritance, Virtual Functions, Virtual Destructors, Virtual Dispatch, Abstract Classes and Interfaces, Pointers vs References, vector, Exceptions) that had it as a frontier link."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-29T13:22:49Z"
+  "last_builder": "2026-09-29T14:22:57Z"
 }
