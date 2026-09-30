@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 250 |
+| ○ planned | 249 |
 | ◌ stub | 0 |
-| ◐ draft | 87 |
+| ◐ draft | 88 |
 | ⟲ revise | 0 |
 | ● reviewed | 20 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `█████░░░░░░░░░░░░░░░` 29/126
+- Wave 2: `█████░░░░░░░░░░░░░░░` 30/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/126
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -117,7 +117,7 @@ tags: [system/generated]
 
 ## D04 · Objects, Memory & Lifetime
 
-*Where does an object live, how long does it live, and who can reach it?*  `█████░░░░░` 14/29
+*Where does an object live, how long does it live, and who can reach it?*  `█████░░░░░` 15/29
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -134,7 +134,7 @@ tags: [system/generated]
 | ◐ | [[Reading Uninitialized Variables]] | pitfall | 1 | 2 |  |
 | ◐ | [[Pointer Arithmetic and Arrays]] | mechanism | 1 | 2 |  |
 | ● | [[Pointers vs References]] | comparison | 1 | 2 | 20 |
-| ○ | [[nullptr and Null Pointers]] | concept | 1 | 2 |  |
+| ◐ | [[nullptr and Null Pointers]] | concept | 1 | 2 |  |
 | ○ | [[Built-in Arrays and Array-to-Pointer Decay]] | mechanism | 1 | 2 |  |
 | ○ | [[Memory Leaks]] | pitfall | 1 | 2 |  |
 | ● | [[Dangling Pointers and References]] | pitfall | 1 | 2 | 20 |

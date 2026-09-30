@@ -36,7 +36,7 @@ tags:
 - std/c++11
 - std/c++20
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-09-30
 ---
 
 # Function Overloading
@@ -192,7 +192,7 @@ int main() {
 // expect: bool int pointer copy move
 ```
 1. A string literal is `const char[6]`, which decays to `const char*`, which converts to `bool` by a *standard* conversion. Reaching `std::string` needs a *user-defined* conversion, which ranks lower. Add a `label(const char*)` or `label(std::string_view)` overload.
-2. This is why `nullptr` (C++11) replaced `0` and `NULL` for null pointers: `0` prefers integer overloads.
+2. This is why [[nullptr and Null Pointers|`nullptr`]] (C++11) replaced `0` and `NULL` for null pointers: `0` prefers integer overloads.
 3. Overloading on `const T&` vs `T&&` is how containers and constructors distinguish "copy from this" and "you may steal from this" ([[Move Semantics]]).
 
 **4 · Blocking conversions with `= delete`, and templates vs non-templates**

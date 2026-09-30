@@ -764,7 +764,8 @@
 			"y": 1946,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[nullptr and Null Pointers]]\n*concept · T1*"
+			"text": "◐ [[nullptr and Null Pointers]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-arrays-and-decay",
