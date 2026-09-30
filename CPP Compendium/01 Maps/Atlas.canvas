@@ -1576,7 +1576,8 @@
 			"y": 2526,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Composition vs Inheritance]]\n*comparison · T2*"
+			"text": "◐ [[Composition vs Inheritance]]\n*comparison · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-access-in-inheritance",
@@ -4068,6 +4069,13 @@
 			"fromNode": "t-virtual-functions",
 			"fromSide": "right",
 			"toNode": "t-override-and-final",
+			"toSide": "left"
+		},
+		{
+			"id": "e-inheritance-composition-vs-inheritance",
+			"fromNode": "t-inheritance",
+			"fromSide": "right",
+			"toNode": "t-composition-vs-inheritance",
 			"toSide": "left"
 		},
 		{

@@ -1,6 +1,6 @@
 {
-  "runs": 123,
-  "builder_runs": 121,
+  "runs": 124,
+  "builder_runs": 122,
   "editor_runs": 2,
   "history": [
     {
@@ -1434,10 +1434,23 @@
       "code": "4/4 4/4",
       "commit": "✓",
       "summary": "author: Built-in Arrays and Array-to-Pointer Decay (mechanism, D04) — the [conv.array] conversion and the separate [dcl.fct] parameter-adjustment rule, decay's zero cost vs its lost-N price, what doesn't decay (&arr, sizeof, decltype, ref-to-array/template deduction, multidim), the Circle/Shape+Object-Slicing hazard. Wove a backlink from Pointers."
+    },
+    {
+      "when": "2026-09-30T23:22:27Z",
+      "run": 122,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "composition-vs-inheritance"
+      ],
+      "lint": "100–100",
+      "code": "4/4",
+      "commit": "✓",
+      "summary": "AUTHOR: Composition vs Inheritance (D08 comparison, wave-2 focus item 1) — is-a (public inheritance, licenses the derived-to-base conversion and the Liskov substitutability promise) vs has-a (composition, no conversion, no promise); derives why both exist from Primer's own is-a/has-a key concept (p.637). Deep Dive: a Rectangle/Square substitutability trap (compiled, prints the caller-surprising 16 instead of 20) adapted from the isocpp.org Circle/Ellipse FAQ; a BadStack-publicly-inherits-vector vs GoodStack-composes-vector contrast pair (compiled ✗, and ✓ with a cc:ill-formed proof that the leaked std::vector::insert is truly inaccessible through composition) built from Pikus's mt_stack interface-design argument (ch.7 p.242, 'prefer composition over inheritance'); an Under-the-Hood sizeof check (GCC 11.4.0, x86-64 Linux/Ubuntu 22.04 — labelled honestly per Style Guide S4.7, not claimed as 'this vault's toolchain') proving composition costs the same 24 bytes as inheritance here. Cites C++ Core Guidelines C.120/C.129 (fetched and verified exact wording, not assumed). Registered pre:[inheritance] on the topic (was empty). Back-links resolve on both existing frontier-linkers: Inheritance.md (reviewed) and Map — Inheritance & Polymorphism (D08 domain map) — both re-checked clean (100) after this note landed. check 100/100, code 4/4 PASS."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-30T22:18:18Z"
+  "last_builder": "2026-09-30T23:22:27Z"
 }

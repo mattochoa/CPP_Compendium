@@ -129,7 +129,7 @@ flowchart LR
 
 **Tier 2 · Proficient**
 - ● [[Virtual Dispatch — vptr and vtable]] · *mechanism*
-- ○ [[Composition vs Inheritance]] · *comparison*
+- ◐ [[Composition vs Inheritance]] · *comparison*
 - ○ [[Public, Protected and Private Inheritance]] · *comparison*
 - ○ [[RTTI and dynamic_cast]] · *mechanism*
 - ○ [[Name Hiding in Derived Classes]] · *pitfall*
@@ -139,7 +139,7 @@ flowchart LR
 - ○ [[Multiple and Virtual Inheritance]] · *mechanism*
 - ○ [[Static vs Dynamic Polymorphism]] · *comparison*
 
-`█████░░░░░` 8/15 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██████░░░░` 9/15 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

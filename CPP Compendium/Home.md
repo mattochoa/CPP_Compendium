@@ -39,7 +39,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `███░░░░░` 6/17 |
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `██░░░░░░` 6/20 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `████░░░░` 9/19 |
-| `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `████░░░░` 8/15 |
+| `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `█████░░░` 9/15 |
 | `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `█░░░░░░░` 2/16 |
 | `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `██░░░░░░` 6/30 |
 | `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `██░░░░░░` 3/11 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 248 | 89 | 0 | 20 | 0 | 357 | 121 | 2 |
+| 247 | 90 | 0 | 20 | 0 | 357 | 122 | 2 |
 
 `██████░░░░░░░░░░░░░░` **31%** of the Atlas written · last build 2026-09-30
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Composition vs Inheritance]] · *comparison* · `D08` — wave 2 · focus
-2. [[Memory Leaks]] · *pitfall* · `D04` — wave 2 · focus
-3. [[Double Free and Mismatched new-delete]] · *pitfall* · `D04` — wave 2 · focus
-4. [[Temporaries and Lifetime Extension]] · *mechanism* · `D04` — wave 2 · focus
-5. [[Performance — Measure, Don't Guess]] · *concept* · `D13` — wave 2
-6. [[The Memory Hierarchy and Caches]] · *mechanism* · `D13` — wave 2
+1. [[Memory Leaks]] · *pitfall* · `D04` — wave 2 · focus
+2. [[Double Free and Mismatched new-delete]] · *pitfall* · `D04` — wave 2 · focus
+3. [[Temporaries and Lifetime Extension]] · *mechanism* · `D04` — wave 2 · focus
+4. [[Performance — Measure, Don't Guess]] · *concept* · `D13` — wave 2
+5. [[The Memory Hierarchy and Caches]] · *mechanism* · `D13` — wave 2
+6. [[Designing Interfaces — Easy to Use Correctly]] · *concept* · `D15` — wave 2
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Composition vs Inheritance]] · *comparison* · updated 2026-09-30
 - ◐ [[Pointers]] · *concept* · updated 2026-09-30
 - ◐ [[Built-in Arrays and Array-to-Pointer Decay]] · *mechanism* · updated 2026-09-30
 - ● [[What a Type Is]] · *concept* · updated 2026-09-30
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[override and final]] · *concept* · updated 2026-09-30
 - ◐ [[Pointer Arithmetic and Arrays]] · *mechanism* · updated 2026-09-30
 - ◐ [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-29
-- ◐ [[Undefined Behavior]] · *concept* · updated 2026-09-29
 <!-- cc:end -->
 
 ## Start here

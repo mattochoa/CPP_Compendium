@@ -199,7 +199,7 @@
 - {id: virtual-destructors, t: "Virtual Destructors", ty: pitfall, d: D08, tier: 1, w: 2, pr: [18]}
 - {id: object-slicing, t: "Object Slicing", ty: pitfall, d: D08, tier: 1, w: 2}
 - {id: override-and-final, t: "override and final", ty: concept, d: D08, tier: 1, w: 2, pre: [virtual-functions]}
-- {id: composition-vs-inheritance, t: "Composition vs Inheritance", ty: comparison, d: D08, tier: 2, w: 2, pr: [20]}
+- {id: composition-vs-inheritance, t: "Composition vs Inheritance", ty: comparison, d: D08, tier: 2, w: 2, pre: [inheritance], pr: [20]}
 - {id: access-in-inheritance, t: "Public, Protected and Private Inheritance", ty: comparison, d: D08, tier: 2, w: 3}
 - {id: rtti-and-dynamic-cast, t: "RTTI and dynamic_cast", ty: mechanism, d: D08, tier: 2, w: 3, pr: [21]}
 - {id: name-hiding, t: "Name Hiding in Derived Classes", ty: pitfall, d: D08, tier: 2, w: 3}
