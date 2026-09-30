@@ -774,7 +774,8 @@
 			"y": 2018,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Built-in Arrays and Array-to-Pointer Decay]]\n*mechanism · T1*"
+			"text": "◐ [[Built-in Arrays and Array-to-Pointer Decay]]\n*mechanism · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-memory-leaks",

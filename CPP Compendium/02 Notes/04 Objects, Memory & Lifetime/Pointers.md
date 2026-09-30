@@ -33,7 +33,7 @@ tags:
 - std/c++11
 - std/c++20
 created: 2026-09-27
-updated: 2026-09-28
+updated: 2026-09-30
 ---
 
 # Pointers
@@ -238,7 +238,7 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 ## Connections
 
 - **Prerequisites:** [[The C++ Object Model — What an Object Is]] — an address is a property of where an object's storage lives · [[Object Lifetime]] — a pointer's "points to an object" state is a claim about lifetime the language never checks for you.
-- **Enables:** [[Pointers vs References]] (the full contrast with the other access path) → [[Parameter Passing — Value, Reference, Pointer]] (this note's "an object holding an address" is exactly the third parameter form, the one that can be null) → [[Virtual Functions]] (dynamic dispatch is only reachable through a pointer or a reference — never through the object's own name) → [[Dynamic Memory — new and delete]] (a pointer is exactly what `new` returns and `delete` consumes) → [[Pointer Arithmetic and Arrays]] (the one-past-the-end rule this note only states) → [[nullptr and Null Pointers]] (the null-pointer-constant story in full) → [[Owning vs Observing Pointers]] (who, if anyone, may `delete` through one).
+- **Enables:** [[Pointers vs References]] (the full contrast with the other access path) → [[Parameter Passing — Value, Reference, Pointer]] (this note's "an object holding an address" is exactly the third parameter form, the one that can be null) → [[Virtual Functions]] (dynamic dispatch is only reachable through a pointer or a reference — never through the object's own name) → [[Dynamic Memory — new and delete]] (a pointer is exactly what `new` returns and `delete` consumes) → [[Pointer Arithmetic and Arrays]] (the one-past-the-end rule this note only states) → [[Built-in Arrays and Array-to-Pointer Decay]] (the standard conversion that manufactures a pointer like this one out of an array, for free, everywhere an array appears) → [[nullptr and Null Pointers]] (the null-pointer-constant story in full) → [[Owning vs Observing Pointers]] (who, if anyone, may `delete` through one).
 - **Siblings:** [[References]] (no separate storage, can't be null, can't reseat — everything a pointer can do that a reference can't, and the reverse) · [[const and Const-Correctness]] (pointer-to-`const` vs. `const` pointer, read right-to-left) · [[Process Memory Layout — Stack, Heap, Static]] (the regions the addresses a pointer actually holds belong to).
 - **Explains:** [[Virtual Dispatch — vptr and vtable]] — the vptr every polymorphic object carries is, physically, a hidden pointer member, laid out and rewritten exactly as this note's Under the Hood describes for any other pointer.
 - **Hazards:** [[Dangling Pointers and References]] · [[Reading Uninitialized Variables]] · [[Strict Aliasing and Type Punning]].
