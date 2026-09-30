@@ -58,7 +58,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 249 | 88 | 0 | 20 | 0 | 357 | 119 | 2 |
+| 249 | 88 | 0 | 20 | 0 | 357 | 120 | 2 |
 
 `██████░░░░░░░░░░░░░░` **30%** of the Atlas written · last build 2026-09-30
 <!-- cc:end -->
@@ -75,6 +75,8 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ● [[What a Type Is]] · *concept* · updated 2026-09-30
+- ◐ [[Anatomy of an Expression]] · *concept* · updated 2026-09-30
 - ◐ [[Function Overloading]] · *concept* · updated 2026-09-30
 - ◐ [[nullptr and Null Pointers]] · *concept* · updated 2026-09-30
 - ◐ [[override and final]] · *concept* · updated 2026-09-30
@@ -83,8 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Undefined Behavior]] · *concept* · updated 2026-09-29
 - ◐ [[The Forms of Initialization]] · *comparison* · updated 2026-09-29
 - ◐ [[Reading Uninitialized Variables]] · *pitfall* · updated 2026-09-29
-- ◐ [[shared_ptr and Reference Counting]] · *mechanism* · updated 2026-09-29
-- ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-29
 <!-- cc:end -->
 
 ## Start here

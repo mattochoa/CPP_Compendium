@@ -6,7 +6,8 @@ domain: D03
 tier: 1
 status: draft
 standard: C++98
-prereqs: []
+prereqs:
+- "[[What a Type Is]]"
 related:
 - "[[Precedence and Associativity]]"
 - "[[Evaluation Order and Sequencing]]"
@@ -21,7 +22,7 @@ tags:
 - tier/1
 - tension/safety-vs-performance
 created: 2026-09-26
-updated: 2026-09-28
+updated: 2026-09-30
 reviewed: 2026-09-27
 score: 19
 rubric:
@@ -90,6 +91,7 @@ Reading bottom-up: `price` and `qty` are primary expressions (identifiers); `pri
 | **Full-expression** | An expression that is not a subexpression of any other expression (plus a few named cases: declarator initializers, a destructor call at the end of an object's lifetime, and — since C++14 — the default member initializers used while building an aggregate) | in `total = price * qty + shipping();`, the whole assignment is the full-expression; `price * qty` and `shipping()` are subexpressions of it, not full-expressions themselves |
 | **Expression-statement** | An expression followed by `;`; if the expression yields a result, that result is a *discarded-value expression* — computed, then thrown away, and evaluated only for whatever side effect it has | `qty + 1;` computes one more than `qty` and keeps nothing; `++qty;` has the identical statement shape but is written for its side effect |
 | **Unevaluated operand** | The operand of `decltype`, `sizeof`, `noexcept`, or a `requires`-expression is parsed and type-checked but never executed — reading it costs nothing at run time, though the Standard still counts it as a full-expression in its own right (`[expr.context]` ¶1) | `decltype(price)` names `price`'s type without running any code that reads `price`'s value; `sizeof(f())` never calls `f` |
+| A **braced-init-list**: `{1, 2, 3}` | Is not an expression at all: it has neither a type nor a value category of its own. It is a distinct grammar production, legal only in the positions `[dcl.init.list]` names — an initializer, a function argument, a `return`, a subscript, and a few others | `decltype({1, 2})` and `sizeof({1, 2, 3})` are both ill-formed: there is no expression there for either operator to inspect |
 
 `typeid` is the one exception that proves the rule: its operand is unevaluated for an ordinary expression, but genuinely *evaluated* when the operand is a glvalue of polymorphic class type — determining the dynamic type takes an actual run-time lookup through the object's vptr, so there is no way to answer without running the expression that names the object (`[expr.typeid]` ¶4–5).
 
@@ -165,7 +167,36 @@ int main() {
 ```
 ① A legal expression-statement: `hits + 1` is computed and its result is a discarded-value expression — thrown away with no side effect, which is exactly why a compiler warns about it (`-Wunused-value`). ② The identical statement *shape* — an expression followed by `;` — but this one is written for its side effect (incrementing `hits`), not its discarded result.
 
+**✓ A braced-init-list bound through `auto`:**
+
+```cpp
+#include <initializer_list>
+#include <iostream>
+#include <type_traits>
+
+int main() {
+    auto lst = {1, 2, 3};    // ①
+    static_assert(std::is_same_v<decltype(lst), std::initializer_list<int>>);
+    std::cout << lst.size() << "\n";   // ②
+}
+// expect: 3
+```
+① `{1, 2, 3}` is a braced-init-list, not an expression — but `auto` deduction carries a named exception (`[dcl.spec.auto]`) that treats a braced-init-list initializer as naming `std::initializer_list<int>`. ② Once the deduction has happened and `lst` exists, the *name* `lst` is an ordinary lvalue expression like any other, with the type and value category every expression has.
+
+**✗ The braced-init-list itself, asked for directly:**
+
+```cpp
+// cc: ill-formed
+int main() {
+    auto x = decltype({1, 2})();
+}
+```
+`decltype`'s operand must be an expression or a type-id; `{1, 2}` is neither. This is not "wrong type" — it never parses, because a braced-init-list was never eligible to fill that grammar slot.
+
 ## Pitfalls
+
+> [!trap] `{1, 2, 3}` looks like an operand, but it is not an expression
+> Every *expression* has a type and a value category (Mechanics) — that is this note's whole claim. A braced-init-list is the exception that proves it by not being one: reach for `decltype` or `sizeof` on `{1, 2, 3}` directly and both are ill-formed, because there is no expression there to inspect (`[dcl.init.list]`). `auto x = {1, 2, 3};` is not a counterexample — `auto` carries a special carve-out (`[dcl.spec.auto]`) that treats the braced-init-list as naming `std::initializer_list<int>`; the deduction is the exception, not proof that a braced-init-list has a type of its own.
 
 > [!trap] Treating "unspecified" as "whichever order I read it in"
 > `f(a(), b())` guarantees only that `a()` and `b()` each finish evaluating before the call happens — not that `a()` runs before `b()`. Code that silently depends on one has no defense when a different compiler, or a different optimization level, picks the other. See [[Evaluation Order and Sequencing]] for exactly which four operators are exceptions to this.
@@ -182,7 +213,7 @@ int main() {
 | C++17 | A handful of previously-unspecified operand pairs were pinned to a guaranteed order (e.g. a subscript expression's array operand before its index, an assignment's right-hand side before its left) | removed some of the most common accidentally-UB expressions without changing what "full-expression" or "subexpression" mean — see [[Evaluation Order and Sequencing]] for the complete list |
 
 ## Connections
-- **Prerequisites:** none beyond [[What a Type Is]] — this note assumes only that a value has a type; the *value category* half of the story is developed in full by [[Value Categories]].
+- **Prerequisites:** [[What a Type Is]] — this note assumes only that a value has a type; the *value category* half of the story is developed in full by [[Value Categories]].
 - **Enables:** [[Precedence and Associativity]] (fixes the shape question exactly), [[Evaluation Order and Sequencing]] (fixes how little the timing question is answered), [[Value Categories]] (the value-category half of an expression's two properties, at full depth), [[Control Flow — Selection and Iteration]] (statements that decide which expressions run).
 - **Siblings:** [[Map — Expressions & Control]], the domain hub this note opens.
 - **Practice:** CPP Project Continuum #2–#3 — any expression-heavy line in early exercises is an opportunity to name its type and value category before trusting what it prints.
@@ -193,6 +224,9 @@ int main() {
 
 > [!quiz]- Why is `(price)` classified as a *primary* expression rather than just a parenthesized reference to `price`?
 > Because primary expressions are what operators are allowed to take as operands without further reduction, and parentheses need to slot into that same role — a parenthesized expression has to be usable anywhere a literal or identifier is, which is exactly what classifying it as primary guarantees. It preserves `price`'s value, type and value category unchanged; its only effect is overriding the grouping the surrounding operators would otherwise impose.
+
+> [!quiz]- Does `{1, 2, 3}` have a type and a value category, the way `price * qty` does?
+> No. A braced-init-list is not an expression — it's a separate grammar production, legal only where list-initialization names it. That's why `decltype({1, 2})` and `sizeof({1, 2, 3})` are both ill-formed: neither operator has an expression to inspect. `auto lst = {1, 2, 3};` isn't a counterexample; it's a named carve-out in `auto` deduction, not evidence that the braced-init-list itself carries a type.
 
 > [!quiz]- `int i = 0; int r = (i = 5) + (i = 6);` — is `r`'s value defined?
 > No. Both assignments modify `i`, and nothing sequences one assignment's side effect against the other's value computation or side effect — this is exactly the "side effect on a memory location unsequenced relative to another side effect on the same location" case, which is undefined behavior. It has nothing to do with `+`'s own operand-evaluation order; even a hypothetical language that fixed left-to-right evaluation here would still need a rule for *this* clash, and C++ simply doesn't provide one.
@@ -206,4 +240,5 @@ int main() {
 - Draft standard `[intro.execution]`: https://eel.is/c++draft/intro.execution — the normative definitions of full-expression, subexpression and discarded-value expression.
 - Draft standard `[expr.context]`: https://eel.is/c++draft/expr.context — ¶1 lists the unevaluated-operand contexts (`decltype`, `sizeof`, `noexcept`, `requires`-expressions) and states that an unevaluated operand is still a full-expression; ¶2 defines discarded-value expression precisely.
 - Draft standard `[expr.typeid]`: https://eel.is/c++draft/expr.typeid — ¶4–5, the source for `typeid`'s split behavior (evaluated only for a glvalue of polymorphic class type).
+- Draft standard `[dcl.init.list]`: https://eel.is/c++draft/dcl.init.list — list-initialization from a `braced-init-list`, the grammar term (`[dcl.init.general]`) that is not part of the `expression` production; the source for the braced-init-list Mechanics row and Pitfall. cppreference, *List-initialization*: https://en.cppreference.com/w/cpp/language/list_initialization — states plainly that a braced-init-list has no type of its own and that `decltype` cannot be applied to one directly.
 - See [[Guide — cppreference, the Draft Standard and the Core Guidelines]] for how to navigate `[intro.execution]` directly.

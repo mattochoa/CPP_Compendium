@@ -1,6 +1,6 @@
 {
-  "runs": 121,
-  "builder_runs": 119,
+  "runs": 122,
+  "builder_runs": 120,
   "editor_runs": 2,
   "history": [
     {
@@ -1406,10 +1406,24 @@
       "code": "5/5 7/7",
       "commit": "✓",
       "summary": "Authored nullptr and Null Pointers (D04 concept): null pointer constant vs null pointer value, 0/NULL/nullptr contrasted via overload resolution and template deduction, GCC asm evidence for zero-cost codegen and for a null-check the optimizer deletes (Pikus p.382, reproduced). Backlinked from Pointers, Pointers vs References, Owning vs Observing Pointers, and Function Overloading."
+    },
+    {
+      "when": "2026-09-30T22:07:00Z",
+      "run": 120,
+      "role": "builder",
+      "mode": "DEEPEN",
+      "items": [
+        "anatomy-of-an-expression",
+        "what-a-type-is"
+      ],
+      "lint": "100–100",
+      "code": "5/5 4/4",
+      "commit": "✓",
+      "summary": "deepen: anatomy-of-an-expression depth+integration (rubric dims: depth 2/3, integration 2/3, per 2026-09-27 Daily Brief DEEPEN queue; cpp-design-philosophy skipped this run — already deepened 3x since that audit with no re-score, and is 3.9k words, against Directive 7's stop-growing-long-notes guidance) — added the braced-init-list corner case: a Mechanics row, a Pitfalls trap and a predict/explain quiz all tied to the note's own essence claim ('every expression has a type and a value category'), verified with 2 new compiled blocks (auto+initializer_list deduction carve-out PASS; decltype({1,2}) cc:ill-formed PASS) against GCC 11.4/Ubuntu 22.04 locally and cited to [dcl.init.list]/[dcl.spec.auto] and cppreference's List-initialization page. Synced frontmatter prereqs:[] -> [What a Type Is] to match the existing Connections prose, and back-wove the reciprocal link from What a Type Is's Enables list (was a one-way link). check 0 errors both notes, code 5/5 PASS."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-30T18:24:59Z"
+  "last_builder": "2026-09-30T22:07:00Z"
 }

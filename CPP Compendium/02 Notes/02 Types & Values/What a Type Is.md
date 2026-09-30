@@ -20,7 +20,7 @@ tags:
 - tension/compile-time-vs-run-time
 - tension/safety-vs-performance
 created: 2026-09-25
-updated: 2026-09-28
+updated: 2026-09-30
 reviewed: 2026-09-27
 score: 19
 rubric:
@@ -232,7 +232,7 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 ## Connections
 
 - **Prerequisites:** none — this is the root of [[Map — Types & Values]]; everything else in the domain assumes this vocabulary.
-- **Enables:** [[Fundamental Types]] (the built-in vocabulary of values/operations/representations) · [[Classes as User-Defined Types]] (supplying the triple yourself) · [[const and Const-Correctness]] (a compile-time restriction layered on top of a type) · [[Implicit Conversions and Promotions]] (moving a value from one triple to another under a fixed rule).
+- **Enables:** [[Fundamental Types]] (the built-in vocabulary of values/operations/representations) · [[Classes as User-Defined Types]] (supplying the triple yourself) · [[const and Const-Correctness]] (a compile-time restriction layered on top of a type) · [[Implicit Conversions and Promotions]] (moving a value from one triple to another under a fixed rule) · [[Anatomy of an Expression]] (every expression's type is one of the two properties that note builds on; a `braced-init-list` is the case where there is no type, because there is no expression at all).
 - **Siblings:** [[The C++ Object Model — What an Object Is]] — an *object* is a region of storage that holds a value *of* a type; this note is about the type side of that pair.
 - **Hazards:** [[Strict Aliasing and Type Punning]] (the general form of this note's UB pitfall) · [[Undefined Behavior]] (what "the contract is broken" means language-wide).
 - **Domain:** [[Map — Types & Values]].
