@@ -266,7 +266,7 @@ Compiled locally at `-std=c++17` (GCC 11.4.0): this fails with exactly the "no m
 - **Prerequisite:** [[Object Lifetime]] — initialization completing is the second half of what starts an object's lifetime; every form above is one way to satisfy that half.
 - **What runs underneath:** [[Constructors]] (direct-, copy-, value-, and non-empty aggregate-initialization all eventually resolve to a constructor call, or to none at all for a true aggregate).
 - **Interacts with:** [[Value Categories]] and [[Copy Elision and RVO]] (C++17's guaranteed elision when direct-initializing from a same-type prvalue) · [[Conversion Operators and explicit]] (exactly which conversions copy-initialization is allowed to use) · [[Storage Duration]] (zero-initialization of non-local static/thread-duration objects) · [[Undefined Behavior]] (reading a default-initialized scalar's indeterminate value) · [[Dynamic Memory — new and delete]] (a `new`-expression direct-initializes the object it allocates for).
-- **Named trap:** [[The Most Vexing Parse]] — direct-initialization's parenthesized form, misread by the grammar as a function declaration.
+- **Named trap:** [[The Most Vexing Parse]] — direct-initialization's parenthesized form, misread by the grammar as a function declaration. [[Reading Uninitialized Variables]] is the full treatment of what default-initialization's "does nothing" leaves behind.
 - **Domain:** [[Map — Objects, Memory & Lifetime]].
 
 ## Check Yourself

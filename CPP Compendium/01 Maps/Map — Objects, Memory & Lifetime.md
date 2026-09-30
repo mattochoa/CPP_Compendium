@@ -137,7 +137,7 @@ flowchart LR
 - ◐ [[References]] · *concept*
 - ◐ [[Pointers]] · *concept*
 - ◐ [[Dynamic Memory — new and delete]] · *mechanism*
-- ○ [[Reading Uninitialized Variables]] · *pitfall*
+- ◐ [[Reading Uninitialized Variables]] · *pitfall*
 - ○ [[Pointer Arithmetic and Arrays]] · *mechanism*
 - ● [[Pointers vs References]] · *comparison*
 - ○ [[nullptr and Null Pointers]] · *concept*
@@ -164,7 +164,7 @@ flowchart LR
 **Tier 4 · Expert**
 - ○ [[Allocators and pmr Memory Resources]] · *concept*
 
-`████░░░░░░` 12/28 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`█████░░░░░` 13/28 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

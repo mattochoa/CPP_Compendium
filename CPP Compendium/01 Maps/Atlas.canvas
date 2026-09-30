@@ -734,7 +734,8 @@
 			"y": 1730,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Reading Uninitialized Variables]]\n*pitfall · T1*"
+			"text": "◐ [[Reading Uninitialized Variables]]\n*pitfall · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-pointer-arithmetic",

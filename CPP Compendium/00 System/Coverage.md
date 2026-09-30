@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 252 |
+| ○ planned | 251 |
 | ◌ stub | 0 |
-| ◐ draft | 84 |
+| ◐ draft | 85 |
 | ⟲ revise | 0 |
 | ● reviewed | 20 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `████░░░░░░░░░░░░░░░░` 26/126
+- Wave 2: `████░░░░░░░░░░░░░░░░` 27/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/125
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -117,7 +117,7 @@ tags: [system/generated]
 
 ## D04 · Objects, Memory & Lifetime
 
-*Where does an object live, how long does it live, and who can reach it?*  `████░░░░░░` 12/28
+*Where does an object live, how long does it live, and who can reach it?*  `█████░░░░░` 13/28
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -131,7 +131,7 @@ tags: [system/generated]
 | ◐ | [[Dynamic Memory — new and delete]] | mechanism | 1 | 1 |  |
 | ● | [[Value Categories]] | concept | 2 | 1 | 20 |
 | ◐ | [[The Forms of Initialization]] | comparison | 2 | 2 |  |
-| ○ | [[Reading Uninitialized Variables]] | pitfall | 1 | 2 |  |
+| ◐ | [[Reading Uninitialized Variables]] | pitfall | 1 | 2 |  |
 | ○ | [[Pointer Arithmetic and Arrays]] | mechanism | 1 | 2 |  |
 | ● | [[Pointers vs References]] | comparison | 1 | 2 | 20 |
 | ○ | [[nullptr and Null Pointers]] | concept | 1 | 2 |  |

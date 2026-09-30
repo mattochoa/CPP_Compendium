@@ -35,7 +35,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `███░░░░░` 7/18 |
 | `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `█░░░░░░░` 4/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `███░░░░░` 4/12 |
-| `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `███░░░░░` 12/28 |
+| `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `████░░░░` 13/28 |
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `███░░░░░` 6/17 |
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `██░░░░░░` 6/20 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `████░░░░` 9/19 |
@@ -58,33 +58,33 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 252 | 84 | 0 | 20 | 0 | 356 | 115 | 2 |
+| 251 | 85 | 0 | 20 | 0 | 356 | 116 | 2 |
 
 `██████░░░░░░░░░░░░░░` **29%** of the Atlas written · last build 2026-09-29
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Reading Uninitialized Variables]] · *pitfall* · `D04` — wave 2 · focus
-2. [[Pointer Arithmetic and Arrays]] · *mechanism* · `D04` — wave 2 · focus
-3. [[nullptr and Null Pointers]] · *concept* · `D04` — wave 2 · focus
-4. [[Built-in Arrays and Array-to-Pointer Decay]] · *mechanism* · `D04` — wave 2 · focus
-5. [[Memory Leaks]] · *pitfall* · `D04` — wave 2 · focus
-6. [[Double Free and Mismatched new-delete]] · *pitfall* · `D04` — wave 2 · focus
+1. [[Pointer Arithmetic and Arrays]] · *mechanism* · `D04` — wave 2 · focus
+2. [[nullptr and Null Pointers]] · *concept* · `D04` — wave 2 · focus
+3. [[Built-in Arrays and Array-to-Pointer Decay]] · *mechanism* · `D04` — wave 2 · focus
+4. [[Memory Leaks]] · *pitfall* · `D04` — wave 2 · focus
+5. [[Double Free and Mismatched new-delete]] · *pitfall* · `D04` — wave 2 · focus
+6. [[Temporaries and Lifetime Extension]] · *mechanism* · `D04` — wave 2 · focus
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-29
+- ◐ [[Undefined Behavior]] · *concept* · updated 2026-09-29
+- ◐ [[The Forms of Initialization]] · *comparison* · updated 2026-09-29
+- ◐ [[Reading Uninitialized Variables]] · *pitfall* · updated 2026-09-29
 - ◐ [[shared_ptr and Reference Counting]] · *mechanism* · updated 2026-09-29
 - ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-29
-- ◐ [[Map — Objects, Memory & Lifetime]] · *map* · updated 2026-09-29
 - ◐ [[Dynamic Memory — new and delete]] · *mechanism* · updated 2026-09-29
 - ◐ [[Constructors]] · *concept* · updated 2026-09-29
 - ◐ [[Object Lifetime]] · *concept* · updated 2026-09-29
-- ◐ [[The Forms of Initialization]] · *comparison* · updated 2026-09-29
 - ◐ [[Object Slicing]] · *pitfall* · updated 2026-09-29
-- ◐ [[Move Semantics]] · *concept* · updated 2026-09-29
-- ◐ [[Virtual Destructors]] · *pitfall* · updated 2026-09-29
 <!-- cc:end -->
 
 ## Start here

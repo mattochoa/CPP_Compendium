@@ -27,7 +27,7 @@ tags:
 - std/c++20
 - std/c++26
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-09-29
 ---
 
 # Undefined Behavior
@@ -210,7 +210,7 @@ int main(int argc, char**) {
 
 - **Prerequisites:** [[The C++ Abstract Machine]] — the four-way taxonomy (observable, implementation-defined, unspecified, undefined) that this note zooms into.
 - **Enables:** [[The As-If Rule]] (the same "assume it never happens" license, used for optimization rather than for danger) · [[Implementation-Defined, Unspecified and Undefined Behavior]] (places UB next to its two safer siblings) · [[Compilers and Essential Flags]] (the tools that catch some, never all, of it).
-- **Hazards built on this note:** [[Dangling Pointers and References]] · [[Object Lifetime]] · [[Process Memory Layout — Stack, Heap, Static]].
+- **Hazards built on this note:** [[Dangling Pointers and References]] · [[Reading Uninitialized Variables]] (the `ready` example above and that note's Example 1 are the same failure, one bool, one int) · [[Object Lifetime]] · [[Process Memory Layout — Stack, Heap, Static]].
 - **Domain:** [[Map — What C++ Is]].
 - **Practice:** no Continuum project is registered against this note yet; every project that touches raw pointers, arrays, or concurrency depends on the reasoning here.
 
