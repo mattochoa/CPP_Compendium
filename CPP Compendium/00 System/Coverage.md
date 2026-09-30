@@ -10,17 +10,17 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 251 |
 | ◌ stub | 0 |
-| ◐ draft | 85 |
+| ◐ draft | 86 |
 | ⟲ revise | 0 |
 | ● reviewed | 20 |
 | ★ evergreen | 0 |
 
-**Total topics:** 356
+**Total topics:** 357
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `████░░░░░░░░░░░░░░░░` 27/126
-- Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/125
+- Wave 2: `████░░░░░░░░░░░░░░░░` 28/126
+- Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/126
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
 ## D00 · What C++ Is
@@ -117,7 +117,7 @@ tags: [system/generated]
 
 ## D04 · Objects, Memory & Lifetime
 
-*Where does an object live, how long does it live, and who can reach it?*  `█████░░░░░` 13/28
+*Where does an object live, how long does it live, and who can reach it?*  `█████░░░░░` 14/29
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -132,7 +132,7 @@ tags: [system/generated]
 | ● | [[Value Categories]] | concept | 2 | 1 | 20 |
 | ◐ | [[The Forms of Initialization]] | comparison | 2 | 2 |  |
 | ◐ | [[Reading Uninitialized Variables]] | pitfall | 1 | 2 |  |
-| ○ | [[Pointer Arithmetic and Arrays]] | mechanism | 1 | 2 |  |
+| ◐ | [[Pointer Arithmetic and Arrays]] | mechanism | 1 | 2 |  |
 | ● | [[Pointers vs References]] | comparison | 1 | 2 | 20 |
 | ○ | [[nullptr and Null Pointers]] | concept | 1 | 2 |  |
 | ○ | [[Built-in Arrays and Array-to-Pointer Decay]] | mechanism | 1 | 2 |  |
@@ -149,6 +149,7 @@ tags: [system/generated]
 | ○ | [[Allocators and pmr Memory Resources]] | concept | 4 | 4 |  |
 | ○ | [[Empty Base Optimization]] | mechanism | 2 | 3 |  |
 | ○ | [[The Most Vexing Parse]] | pitfall | 3 | 3 |  |
+| ○ | [[Buffer Overruns and Out-of-Bounds Access]] | pitfall | 2 | 3 |  |
 
 ## D05 · Functions
 

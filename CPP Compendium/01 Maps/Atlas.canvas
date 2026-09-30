@@ -744,7 +744,8 @@
 			"y": 1802,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Pointer Arithmetic and Arrays]]\n*mechanism · T1*"
+			"text": "◐ [[Pointer Arithmetic and Arrays]]\n*mechanism · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-pointers-vs-references",
@@ -866,6 +867,15 @@
 			"width": 250,
 			"height": 56,
 			"text": "○ [[Empty Base Optimization]]\n*mechanism · T2*"
+		},
+		{
+			"id": "t-buffer-overruns",
+			"type": "text",
+			"x": 296,
+			"y": 1802,
+			"width": 250,
+			"height": 56,
+			"text": "○ [[Buffer Overruns and Out-of-Bounds Access]]\n*pitfall · T2*"
 		},
 		{
 			"id": "t-strict-aliasing",
@@ -4167,6 +4177,20 @@
 			"fromNode": "t-initialization-forms",
 			"fromSide": "right",
 			"toNode": "t-most-vexing-parse",
+			"toSide": "left"
+		},
+		{
+			"id": "e-pointer-arithmetic-buffer-overruns",
+			"fromNode": "t-pointer-arithmetic",
+			"fromSide": "right",
+			"toNode": "t-buffer-overruns",
+			"toSide": "left"
+		},
+		{
+			"id": "e-arrays-and-decay-buffer-overruns",
+			"fromNode": "t-arrays-and-decay",
+			"fromSide": "right",
+			"toNode": "t-buffer-overruns",
 			"toSide": "left"
 		}
 	]

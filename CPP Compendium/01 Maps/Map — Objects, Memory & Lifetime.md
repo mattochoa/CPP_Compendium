@@ -138,7 +138,7 @@ flowchart LR
 - ◐ [[Pointers]] · *concept*
 - ◐ [[Dynamic Memory — new and delete]] · *mechanism*
 - ◐ [[Reading Uninitialized Variables]] · *pitfall*
-- ○ [[Pointer Arithmetic and Arrays]] · *mechanism*
+- ◐ [[Pointer Arithmetic and Arrays]] · *mechanism*
 - ● [[Pointers vs References]] · *comparison*
 - ○ [[nullptr and Null Pointers]] · *concept*
 - ○ [[Built-in Arrays and Array-to-Pointer Decay]] · *mechanism*
@@ -154,6 +154,7 @@ flowchart LR
 - ○ [[Object Representation, Padding and Layout]] · *mechanism*
 - ○ [[Memory Safety in C++ — Threats and Defenses]] · *concept*
 - ○ [[Empty Base Optimization]] · *mechanism*
+- ○ [[Buffer Overruns and Out-of-Bounds Access]] · *pitfall*
 
 **Tier 3 · Advanced**
 - ○ [[Strict Aliasing and Type Punning]] · *pitfall*
@@ -164,7 +165,7 @@ flowchart LR
 **Tier 4 · Expert**
 - ○ [[Allocators and pmr Memory Resources]] · *concept*
 
-`█████░░░░░` 13/28 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`█████░░░░░` 14/29 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

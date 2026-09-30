@@ -1,6 +1,6 @@
 {
-  "runs": 118,
-  "builder_runs": 116,
+  "runs": 119,
+  "builder_runs": 117,
   "editor_runs": 2,
   "history": [
     {
@@ -1366,10 +1366,23 @@
       "code": "3/3 6/6 6/6",
       "commit": "✓",
       "summary": "AUTHOR: Reading Uninitialized Variables (pitfall, D04) — derived indeterminate-value UB from first principles, verified a branch-dependent read diverges 15 vs 115 across -O0/-O1+ on this vault's GCC 11.4.0 with -Wall -Wextra and ASan/UBSan all silent (asm shows the optimizer legally unifying both branches on the constant), covered the C++26 P2795 erroneous-behavior split via eel.is/cppreference, and wove it into Undefined Behavior, The Forms of Initialization, Pointers, the D04 map and Continuum #11."
+    },
+    {
+      "when": "2026-09-30T16:24:43Z",
+      "run": 117,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "pointer-arithmetic"
+      ],
+      "lint": "100–100",
+      "code": "5/5",
+      "commit": "✓",
+      "summary": "New mechanism note: Pointer Arithmetic and Arrays. Derives the element-scaled add/subtract rule from first principles, verified against Primer §3.5.3, PPP §16.1, Pikus ch.11, and eel.is [expr.add]/[expr.sub]/[basic.lval]. Under the Hood reproduces (not just reports) GCC 11.4.0 asm for pointer scaling, ptrdiff_t subtraction, the signed-vs-unsigned loop-index codegen difference, and the exact boundary where -fsanitize=bounds/pointer-overflow stops catching an out-of-range pointer (decay/arithmetic erase the static array type). Registered a missing pitfall topic (buffer-overruns) the research surfaced and linked it in. Resolves frontier links already present in Pointers.md, Iterators.md and Map D04."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-30T03:27:44Z"
+  "last_builder": "2026-09-30T16:24:43Z"
 }
