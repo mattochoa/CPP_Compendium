@@ -1,6 +1,6 @@
 {
-  "runs": 116,
-  "builder_runs": 114,
+  "runs": 117,
+  "builder_runs": 115,
   "editor_runs": 2,
   "history": [
     {
@@ -1338,10 +1338,23 @@
       "code": "5/5",
       "commit": "✓",
       "summary": "deepen: depth+visual — added a verified template-instantiation cost (nm/asm evidence from GCC 11.4 + a box diagram: one definition, two compiled bodies) as a genuine corner case orthogonal to pillar 2's runtime-cost promise; new trap and quiz demonstrate it; tightened several verbose passages (exceptions callout, RTTI trap, mechanics paragraph, connections) to offset the addition"
+    },
+    {
+      "when": "2026-09-30T02:29:15Z",
+      "run": 115,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "shared-ptr"
+      ],
+      "lint": "100–100",
+      "code": "3/3",
+      "commit": "✓",
+      "summary": "AUTHOR: shared_ptr and Reference Counting — control block, atomic strong/weak counts, make_shared single-allocation proof, twin-control-block double-free pitfall, aliasing constructor"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-29T20:31:46Z"
+  "last_builder": "2026-09-30T02:29:15Z"
 }
