@@ -1,6 +1,6 @@
 {
-  "runs": 119,
-  "builder_runs": 117,
+  "runs": 120,
+  "builder_runs": 118,
   "editor_runs": 2,
   "history": [
     {
@@ -1379,10 +1379,23 @@
       "code": "5/5",
       "commit": "✓",
       "summary": "New mechanism note: Pointer Arithmetic and Arrays. Derives the element-scaled add/subtract rule from first principles, verified against Primer §3.5.3, PPP §16.1, Pikus ch.11, and eel.is [expr.add]/[expr.sub]/[basic.lval]. Under the Hood reproduces (not just reports) GCC 11.4.0 asm for pointer scaling, ptrdiff_t subtraction, the signed-vs-unsigned loop-index codegen difference, and the exact boundary where -fsanitize=bounds/pointer-overflow stops catching an out-of-range pointer (decay/arithmetic erase the static array type). Registered a missing pitfall topic (buffer-overruns) the research surfaced and linked it in. Resolves frontier links already present in Pointers.md, Iterators.md and Map D04."
+    },
+    {
+      "when": "2026-09-30T17:25:55Z",
+      "run": 118,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "override-and-final"
+      ],
+      "lint": "100–100",
+      "code": "4/4",
+      "commit": "✓",
+      "summary": "AUTHOR: override and final (D08 concept, wave-2 focus) — derives the two C++11 checking specifiers from the near-miss trap Virtual Functions left open; verified override's zero-cost erasure (byte-identical GCC -O2 asm with/without the word) and a genuine, previously-undocumented blind spot in final (it requires only virtuality, not overriding — verified: a mismatched-but-explicitly-virtual override compiles clean under final, and the identical mismatch is rejected by override), contrasted with a compiled ✗/✓ pair; covers class-level final (Primer §15.2.2) and the non-reserved-identifier fact (both verified compiling). Cross-references rather than repeats Virtual Dispatch's existing devirtualization story. Added pre: [virtual-functions] to the registry entry (was empty). Resolved 4 pre-existing frontier links (Virtual Functions, Virtual Destructors, Abstract Classes and Interfaces, Overloading in Classes)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-30T16:24:43Z"
+  "last_builder": "2026-09-30T17:25:55Z"
 }

@@ -1554,7 +1554,8 @@
 			"y": 2814,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[override and final]]\n*concept · T1*"
+			"text": "◐ [[override and final]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-virtual-dispatch",
@@ -4058,6 +4059,13 @@
 			"fromNode": "t-virtual-functions",
 			"fromSide": "right",
 			"toNode": "t-virtual-dispatch",
+			"toSide": "left"
+		},
+		{
+			"id": "e-virtual-functions-override-and-final",
+			"fromNode": "t-virtual-functions",
+			"fromSide": "right",
+			"toNode": "t-override-and-final",
 			"toSide": "left"
 		},
 		{
