@@ -824,7 +824,8 @@
 			"y": 1370,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Double Free and Mismatched new-delete]]\n*pitfall · T2*"
+			"text": "◐ [[Double Free and Mismatched new-delete]]\n*pitfall · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-temporaries-and-lifetime-extension",

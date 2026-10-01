@@ -1,6 +1,6 @@
 {
-  "runs": 125,
-  "builder_runs": 123,
+  "runs": 126,
+  "builder_runs": 124,
   "editor_runs": 2,
   "history": [
     {
@@ -1460,10 +1460,23 @@
       "code": "4/4",
       "commit": "✓",
       "summary": "AUTHOR: Memory Leaks (pitfall, D04) — derived the leak/dangling contrast from first principles (object outlives every pointer vs. pointer outlives the object), reproduced an early-return leak and a shared_ptr reference cycle with a live-object counter and use_count() as proof (not UB, so no cc:ub tag), verified the detection table against real LeakSanitizer output observed in this vault's sandbox (GCC 11.4.0, x86-64 Linux; LSan unavailable on Windows/MinGW per its own docs) plus Valgrind and clang-analyzer-cplusplus.NewDeleteLeaks, fixed both with make_unique/RAII and weak_ptr (Core Guidelines R.21-R.24), and documented the pre-C++17 new-expression/function-argument interleaving leak via cppreference's eval_order rules 11 and 14 (P0145R3)."
+    },
+    {
+      "when": "2026-10-01T01:21:40Z",
+      "run": 124,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "double-free-and-mismatched-delete"
+      ],
+      "lint": "100–100",
+      "code": "3/3",
+      "commit": "✓",
+      "summary": "Hazard File for Double Free and Mismatched new-delete: delete/delete[] contract from [expr.delete], free-list corruption diagram, ASan-verified double-free and alloc-dealloc-mismatch repros, unique_ptr fix. Woven into existing links from RAII, Dangling Pointers and References, Dynamic Memory, Memory Leaks."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-10-01T00:24:57Z"
+  "last_builder": "2026-10-01T01:21:40Z"
 }
