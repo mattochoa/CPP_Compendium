@@ -43,7 +43,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `██░░░░░░` 3/16 |
 | `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `██░░░░░░` 6/30 |
 | `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `██░░░░░░` 3/11 |
-| `D12` | [[Map — Concurrency\|Concurrency]] | How do multiple threads of execution share memory without corrupting it? | `█░░░░░░░` 3/17 |
+| `D12` | [[Map — Concurrency\|Concurrency]] | How do multiple threads of execution share memory without corrupting it? | `██░░░░░░` 4/17 |
 | `D13` | [[Map — Performance & the Machine\|Performance & the Machine]] | What does the hardware actually do with our code, and how do we make it fast? | `██░░░░░░` 3/15 |
 | `D14` | [[Map — Tooling & Engineering\|Tooling & Engineering]] | Which tools turn correct-looking code into verified, maintainable software? | `█░░░░░░░` 2/11 |
 | `D15` | [[Map — Design & Idioms\|Design & Idioms]] | Which recurring shapes of solution survive contact with real programs? | `█░░░░░░░` 2/14 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 237 | 101 | 0 | 19 | 0 | 357 | 137 | 2 |
+| 236 | 102 | 0 | 19 | 0 | 357 | 140 | 2 |
 
 `███████░░░░░░░░░░░░░` **34%** of the Atlas written · last build 2026-10-01
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Data Races and Race Conditions]] · *pitfall* · `D12` — wave 2
-2. [[Mutexes and Lock Guards]] · *concept* · `D12` — wave 2
-3. [[Warnings as Guardrails]] · *idiom* · `D14` — wave 2
-4. [[CMake Fundamentals]] · *guide* · `D14` — wave 2
-5. [[Debugging with a Debugger]] · *guide* · `D14` — wave 2
-6. [[Sanitizers — ASan, UBSan, TSan]] · *guide* · `D14` — wave 2
+1. [[Data Races and Race Conditions]] · *pitfall* · `D12` — finish stub
+2. [[Warnings as Guardrails]] · *idiom* · `D14` — wave 2
+3. [[CMake Fundamentals]] · *guide* · `D14` — wave 2
+4. [[Debugging with a Debugger]] · *guide* · `D14` — wave 2
+5. [[Sanitizers — ASan, UBSan, TSan]] · *guide* · `D14` — wave 2
+6. [[Class Templates]] · *concept* · `D09` — wave 2
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Mutexes and Lock Guards]] · *concept* · updated 2026-10-01
 - ◐ [[Integer Representation and Two's Complement]] · *mechanism* · updated 2026-10-01
 - ◐ [[Performance — Measure, Don't Guess]] · *concept* · updated 2026-10-01
 - ◐ [[The Memory Hierarchy and Caches]] · *mechanism* · updated 2026-10-01
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ● [[RAII]] · *idiom* · updated 2026-10-01
 - ◐ [[Constructors]] · *concept* · updated 2026-10-01
 - ◐ [[A History of C++]] · *evolution* · updated 2026-10-01
-- ● [[Encapsulation and Class Invariants]] · *concept* · updated 2026-10-01
 <!-- cc:end -->
 
 ## Start here

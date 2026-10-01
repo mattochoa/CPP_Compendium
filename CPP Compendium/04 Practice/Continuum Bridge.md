@@ -67,7 +67,7 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 29 | Multithreaded Producer-Consumer Simulation | ◐ [[Map — Concurrency]], ◐ [[Map — Tooling & Engineering]], ◐ [[Concurrency vs Parallelism]], ◐ [[Threads — thread and jthread]], ○ [[Data Races and Race Conditions]], ○ [[Mutexes and Lock Guards]], ○ [[Condition Variables]], ○ [[Sanitizers — ASan, UBSan, TSan]], ◐ [[Kit — Background Worker (C++14-17)]] |
+| 29 | Multithreaded Producer-Consumer Simulation | ◐ [[Map — Concurrency]], ◐ [[Map — Tooling & Engineering]], ◐ [[Concurrency vs Parallelism]], ◐ [[Threads — thread and jthread]], ◌ [[Data Races and Race Conditions]], ◐ [[Mutexes and Lock Guards]], ○ [[Condition Variables]], ○ [[Sanitizers — ASan, UBSan, TSan]], ◐ [[Kit — Background Worker (C++14-17)]] |
 | 30 | Design Patterns Toolkit | ◐ [[Map — Design & Idioms]], ○ [[Strategy Pattern]], ○ [[Observer Pattern]], ○ [[Factory Patterns]], ○ [[Singleton — and Why to Avoid It]] |
 | 31 | TCP Chat Client/Server | ● [[RAII]] |
 | 32 | Performance Profiling & Optimization Challenge | ◐ [[Map — Performance & the Machine]], ○ [[chrono — Durations, Clocks, Time Points]], ◐ [[Performance — Measure, Don't Guess]], ◐ [[The Memory Hierarchy and Caches]], ○ [[Benchmarking Correctly]], ○ [[Profiling]], ○ [[Data Locality and Access Patterns]] |

@@ -123,8 +123,8 @@ flowchart LR
 
 **Tier 2 · Proficient**
 - ◐ [[Threads — thread and jthread]] · *concept*
-- ○ [[Data Races and Race Conditions]] · *pitfall*
-- ○ [[Mutexes and Lock Guards]] · *concept*
+- ◌ [[Data Races and Race Conditions]] · *pitfall*
+- ◐ [[Mutexes and Lock Guards]] · *concept*
 - ○ [[Deadlock]] · *pitfall*
 - ○ [[Condition Variables]] · *mechanism*
 - ○ [[Futures, Promises and async]] · *concept*
@@ -142,7 +142,7 @@ flowchart LR
 - ○ [[Lock-Free Programming Basics]] · *concept*
 - ○ [[Coroutines]] · *mechanism*
 
-`██░░░░░░░░` 3/17 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 4/17 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

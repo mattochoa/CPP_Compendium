@@ -2239,7 +2239,8 @@
 			"y": 3826,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Data Races and Race Conditions]]\n*pitfall · T2*"
+			"text": "◌ [[Data Races and Race Conditions]]\n*pitfall · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-mutexes-and-locks",
@@ -2248,7 +2249,8 @@
 			"y": 3898,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Mutexes and Lock Guards]]\n*concept · T2*"
+			"text": "◐ [[Mutexes and Lock Guards]]\n*concept · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-deadlock",
