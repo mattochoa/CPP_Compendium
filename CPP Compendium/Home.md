@@ -33,7 +33,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 |---|---|---|---|
 | `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `█████░░░` 6/9 |
 | `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `███░░░░░` 7/18 |
-| `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `██░░░░░░` 5/25 |
+| `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `██░░░░░░` 6/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `███░░░░░` 4/12 |
 | `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `█████░░░` 19/29 |
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `███░░░░░` 6/17 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 233 | 106 | 0 | 18 | 0 | 357 | 144 | 2 |
+| 232 | 107 | 0 | 18 | 0 | 357 | 145 | 2 |
 
 `███████░░░░░░░░░░░░░` **35%** of the Atlas written · last build 2026-10-01
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Implicit Conversions and Promotions]] · *mechanism* · `D02` — wave 2
-2. [[auto Type Deduction]] · *mechanism* · `D02` — wave 2
-3. [[Type Aliases (typedef and using)]] · *concept* · `D02` — wave 2
-4. [[Enumerations — Plain vs Scoped]] · *comparison* · `D02` — wave 2
-5. [[Signed Integer Overflow]] · *pitfall* · `D02` — wave 2
-6. [[Floating-Point Representation (IEEE 754)]] · *mechanism* · `D02` — wave 2
+1. [[array]] · *concept* · `D10` — wave 2
+2. [[Ordered Associative Containers — map and set]] · *concept* · `D10` — wave 2
+3. [[The Algorithms Library]] · *concept* · `D10` — wave 2
+4. [[IO Streams Architecture]] · *mechanism* · `D10` — wave 2
+5. [[Stream State and Robust Input]] · *idiom* · `D10` — wave 2
+6. [[File IO]] · *concept* · `D10` — wave 2
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Implicit Conversions and Promotions]] · *mechanism* · updated 2026-10-01
 - ◐ [[Anatomy of a Function]] · *concept* · updated 2026-10-01
 - ◐ [[Class Templates]] · *concept* · updated 2026-10-01
 - ◐ [[Warnings as Guardrails]] · *idiom* · updated 2026-10-01
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Performance — Measure, Don't Guess]] · *concept* · updated 2026-10-01
 - ◐ [[The Memory Hierarchy and Caches]] · *mechanism* · updated 2026-10-01
 - ◐ [[Threads — thread and jthread]] · *concept* · updated 2026-10-01
-- ◐ [[Function Templates]] · *concept* · updated 2026-10-01
 <!-- cc:end -->
 
 ## Start here

@@ -122,7 +122,7 @@ flowchart LR
 - ● [[Fundamental Types]] · *concept*
 - ● [[const and Const-Correctness]] · *concept*
 - ◐ [[Integer Representation and Two's Complement]] · *mechanism*
-- ○ [[Implicit Conversions and Promotions]] · *mechanism*
+- ◐ [[Implicit Conversions and Promotions]] · *mechanism*
 - ○ [[Narrowing Conversions and Brace Initialization]] · *concept*
 - ○ [[auto Type Deduction]] · *mechanism*
 - ○ [[Type Aliases (typedef and using)]] · *concept*
@@ -147,7 +147,7 @@ flowchart LR
 - ○ [[Strong Types]] · *idiom*
 - ○ [[volatile — What It Does Not Mean]] · *pitfall*
 
-`██░░░░░░░░` 5/25 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 6/25 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 233 |
+| ○ planned | 232 |
 | ◌ stub | 0 |
-| ◐ draft | 106 |
+| ◐ draft | 107 |
 | ⟲ revise | 0 |
 | ● reviewed | 18 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `███████░░░░░░░░░░░░░` 46/126
+- Wave 2: `███████░░░░░░░░░░░░░` 47/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/126
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -66,7 +66,7 @@ tags: [system/generated]
 
 ## D02 · Types & Values
 
-*How are meaning and operations attached to raw bits?*  `██░░░░░░░░` 5/25
+*How are meaning and operations attached to raw bits?*  `██░░░░░░░░` 6/25
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -75,7 +75,7 @@ tags: [system/generated]
 | ● | [[Fundamental Types]] | concept | 1 | 1 | 20 |
 | ● | [[const and Const-Correctness]] | concept | 1 | 1 | 20 |
 | ◐ | [[Integer Representation and Two's Complement]] | mechanism | 1 | 2 |  |
-| ○ | [[Implicit Conversions and Promotions]] | mechanism | 1 | 2 |  |
+| ◐ | [[Implicit Conversions and Promotions]] | mechanism | 1 | 2 |  |
 | ○ | [[Narrowing Conversions and Brace Initialization]] | concept | 1 | 2 |  |
 | ○ | [[auto Type Deduction]] | mechanism | 1 | 2 |  |
 | ○ | [[Type Aliases (typedef and using)]] | concept | 1 | 2 |  |

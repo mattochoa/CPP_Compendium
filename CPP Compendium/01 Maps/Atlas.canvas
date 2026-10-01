@@ -343,7 +343,8 @@
 			"y": 358,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Implicit Conversions and Promotions]]\n*mechanism · T1*"
+			"text": "◐ [[Implicit Conversions and Promotions]]\n*mechanism · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-narrowing-and-brace-init",
