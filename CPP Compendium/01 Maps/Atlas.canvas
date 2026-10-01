@@ -955,8 +955,8 @@
 			"y": 1226,
 			"width": 250,
 			"height": 56,
-			"text": "● [[Anatomy of a Function]]\n*concept · T1*",
-			"color": "4"
+			"text": "◐ [[Anatomy of a Function]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-call-stack",

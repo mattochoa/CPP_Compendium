@@ -1,6 +1,6 @@
 {
-  "runs": 145,
-  "builder_runs": 143,
+  "runs": 146,
+  "builder_runs": 144,
   "editor_runs": 2,
   "history": [
     {
@@ -1663,10 +1663,23 @@
       "code": "5/5",
       "commit": "✓",
       "summary": "AUTHOR: Class Templates — explicit arguments (no call to deduce from), member-by-member lazy instantiation (nm evidence), per-instantiation static members, pointer-vs-object implicit instantiation, CTAD scoped correctly as a narrowing, not a removal, of the explicit-argument requirement."
+    },
+    {
+      "when": "2026-10-01T22:13:35Z",
+      "run": 144,
+      "role": "builder",
+      "mode": "DEEPEN",
+      "items": [
+        "function-anatomy"
+      ],
+      "lint": "100–100",
+      "code": "4/4",
+      "commit": "✓",
+      "summary": "deepen: function-anatomy visual (rubric dim: visual 2/3 — the only weak dimension; score 20/21, never deepened before, oldest update (09-25) among the preflight DEEPEN candidates; top 3 candidates skipped per Directive 7 — cpp-design-philosophy/anatomy-of-an-expression/what-a-type-is are all stale-scored and already over-deepened since the 09-27 audit, same pattern runs 120/126/132 followed) — added a Mermaid sequenceDiagram in Under the Hood visualizing the compile-checked/link-resolved two-stage split (caller.cpp compiles against the declaration alone; fact.cpp supplies the body; the linker reconciles both), the exact mechanism the note's existing nm/ld transcript already demonstrated only in prose. Also honestly labelled that transcript (Style Guide S4.7/Directive 3): it previously named no compiler/platform; independently reproduced this run on GCC 11.4.0, Ubuntu 22.04, x86-64 (bit-for-bit same nm/ld output) before labelling it observed. No other section touched; net addition ~45 words plus one diagram."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-10-01T20:21:48Z"
+  "last_builder": "2026-10-01T22:13:35Z"
 }

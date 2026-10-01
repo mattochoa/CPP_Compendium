@@ -58,7 +58,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 233 | 105 | 0 | 19 | 0 | 357 | 143 | 2 |
+| 233 | 106 | 0 | 18 | 0 | 357 | 144 | 2 |
 
 `███████░░░░░░░░░░░░░` **35%** of the Atlas written · last build 2026-10-01
 <!-- cc:end -->
@@ -75,6 +75,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Anatomy of a Function]] · *concept* · updated 2026-10-01
 - ◐ [[Class Templates]] · *concept* · updated 2026-10-01
 - ◐ [[Warnings as Guardrails]] · *idiom* · updated 2026-10-01
 - ◐ [[Data Races and Race Conditions]] · *pitfall* · updated 2026-10-01
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[The Memory Hierarchy and Caches]] · *mechanism* · updated 2026-10-01
 - ◐ [[Threads — thread and jthread]] · *concept* · updated 2026-10-01
 - ◐ [[Function Templates]] · *concept* · updated 2026-10-01
-- ◐ [[Value Categories]] · *concept* · updated 2026-10-01
 <!-- cc:end -->
 
 ## Start here

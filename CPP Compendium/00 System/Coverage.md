@@ -10,9 +10,9 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 233 |
 | ◌ stub | 0 |
-| ◐ draft | 105 |
+| ◐ draft | 106 |
 | ⟲ revise | 0 |
-| ● reviewed | 19 |
+| ● reviewed | 18 |
 | ★ evergreen | 0 |
 
 **Total topics:** 357
@@ -158,7 +158,7 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Functions]] | map | 1 | 0 |  |
-| ● | [[Anatomy of a Function]] | concept | 1 | 1 | 20 |
+| ◐ | [[Anatomy of a Function]] | concept | 1 | 1 | 20 |
 | ◐ | [[The Call Stack and Stack Frames]] | mechanism | 1 | 1 |  |
 | ◐ | [[Parameter Passing — Value, Reference, Pointer]] | comparison | 1 | 1 |  |
 | ◐ | [[Function Overloading]] | concept | 1 | 2 |  |

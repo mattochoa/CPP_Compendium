@@ -7,7 +7,7 @@ aliases:
 type: concept
 domain: D05
 tier: 1
-status: reviewed
+status: draft
 standard: C++98
 prereqs: []
 related:
@@ -28,7 +28,7 @@ tags:
 - std/c++17
 - std/c++23
 created: 2026-09-25
-updated: 2026-09-25
+updated: 2026-10-01
 reviewed: 2026-09-27
 score: 20
 rubric:
@@ -100,7 +100,27 @@ Two call sites in two different files can both be compiled against the same decl
 ## Under the Hood
 
 > [!machine] The compiler doesn't need the body; the linker does
-> Compiling a file that only *declares* `fact` and calls it succeeds and produces a normal object file — the call becomes a reference to an external symbol, mangled per the Itanium C++ ABI as `_Z4facti` (`int fact(int)`; see [[Name Mangling and extern C]]). Only the **link** step, which happens after every file is compiled, fails if no object file anywhere supplies that symbol's body:
+> Compiling a file that only *declares* `fact` and calls it succeeds and produces a normal object file — the call becomes a reference to an external symbol, mangled per the Itanium C++ ABI as `_Z4facti` (`int fact(int)`; see [[Name Mangling and extern C]]). Only the **link** step, which happens after every file is compiled, fails if no object file anywhere supplies that symbol's body.
+
+The same two-stage split holds even when the caller and the definition sit in separate files, compiled independently and reconciled only afterward:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant C as caller.cpp
+    participant CC as Compiler
+    participant F as fact.cpp
+    participant LD as Linker
+    C->>CC: sees only `int fact(int);` — calls fact(5)
+    CC-->>CC: checks the call against the declaration's type, not a body
+    CC->>LD: caller.o — references fact(int), body undefined
+    F->>CC: supplies `int fact(int) { ... }`
+    CC->>LD: fact.o — defines fact(int)
+    LD-->>LD: match every undefined reference to exactly one definition
+    LD->>LD: emit prog (executable)
+```
+
+Observed on GCC 11.4.0 (Ubuntu 22.04, x86-64) — compiling the caller alone succeeds; only the link step can fail:
 
 ```text
 $ g++ -std=c++20 -c caller.cpp -o caller.o   # compiles fine: declaration is enough
