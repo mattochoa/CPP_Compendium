@@ -1,6 +1,6 @@
 {
-  "runs": 129,
-  "builder_runs": 127,
+  "runs": 130,
+  "builder_runs": 128,
   "editor_runs": 2,
   "history": [
     {
@@ -1501,10 +1501,24 @@
       "code": "3/3",
       "commit": "✓",
       "summary": "AUTHOR: Temporaries and Lifetime Extension — the direct-binding rule, its three exceptions (fn ref params, new-initializer, pre-C++26 return), and the P2748 C++26 change, with observed asm/ASan evidence."
+    },
+    {
+      "when": "2026-10-01T04:25:53Z",
+      "run": 128,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "performance-mindset",
+        "zero-overhead-principle"
+      ],
+      "lint": "100–100",
+      "code": "3/3 3/3",
+      "commit": "✓",
+      "summary": "AUTHOR: Performance — Measure, Don't Guess (D13 tier-1 foundational concept for the domain's measurement discipline); wove it into Zero-Overhead Principle's Connections and frontmatter"
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-10-01T03:22:08Z"
+  "last_builder": "2026-10-01T04:25:53Z"
 }

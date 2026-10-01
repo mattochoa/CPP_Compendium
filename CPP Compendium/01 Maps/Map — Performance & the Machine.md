@@ -115,7 +115,7 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D13 -->
 **Tier 1 · Foundational**
-- ○ [[Performance — Measure, Don't Guess]] · *concept*
+- ◐ [[Performance — Measure, Don't Guess]] · *concept*
 
 **Tier 2 · Proficient**
 - ○ [[The Memory Hierarchy and Caches]] · *mechanism*
@@ -136,7 +136,7 @@ flowchart LR
 **Tier 4 · Expert**
 - ○ [[SIMD and Auto-Vectorization]] · *mechanism*
 
-`█░░░░░░░░░` 1/15 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`█░░░░░░░░░` 2/15 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

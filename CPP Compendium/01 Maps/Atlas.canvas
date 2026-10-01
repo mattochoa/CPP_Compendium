@@ -2382,7 +2382,8 @@
 			"y": 3754,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Performance — Measure, Don't Guess]]\n*concept · T1*"
+			"text": "◐ [[Performance — Measure, Don't Guess]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-cache-hierarchy",

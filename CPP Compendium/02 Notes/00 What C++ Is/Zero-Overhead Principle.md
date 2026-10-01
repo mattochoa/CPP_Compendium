@@ -20,6 +20,7 @@ related:
 - "[[Empty Base Optimization]]"
 - "[[Virtual Dispatch — vptr and vtable]]"
 - "[[RAII]]"
+- "[[Performance — Measure, Don't Guess]]"
 practice: []
 tags:
 - type/concept
@@ -30,7 +31,7 @@ tags:
 - std/c++98
 - std/c++20
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-09-30
 ---
 
 # Zero-Overhead Principle
@@ -211,6 +212,7 @@ int call_fn(const std::function<int(int)>& fn, int x) { return fn(x); }   // ②
 - **Prerequisites:** [[The C++ Design Philosophy]] — pillar 2 stated in general terms; this note is its testable, mechanism-level form.
 - **Enables:** [[Templates — Code That Writes Code]] and [[Template Instantiation]] (the compile-time route this note's examples depend on) · [[Empty Base Optimization]] (zero overhead applied to class layout) · [[Static vs Dynamic Polymorphism]] and [[Callables and std-function]] (naming the run-time route and its cost explicitly) · [[Type Erasure]] (the idiom that generalizes Example 3).
 - **Illustrated by:** [[RAII]] (deterministic cleanup that compiles to hand-written cleanup, no collector) · [[Virtual Dispatch — vptr and vtable]] (the cost you buy on purpose when compile-time resolution isn't possible).
+- **Checked by:** [[Performance — Measure, Don't Guess]] — this note states the claim as a design goal; that one is how you find out whether a specific build actually delivers it.
 - **Domain:** [[Map — What C++ Is]].
 - **Practice:** no Continuum project is registered against this note yet; Example 1's instantiation-vs-hand-written comparison is a natural warm-up exercise before any template-heavy project.
 
