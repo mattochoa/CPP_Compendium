@@ -1,6 +1,6 @@
 {
-  "runs": 142,
-  "builder_runs": 140,
+  "runs": 143,
+  "builder_runs": 141,
   "editor_runs": 2,
   "history": [
     {
@@ -1624,10 +1624,23 @@
       "code": "4/4",
       "commit": "✓",
       "summary": "AUTHOR: Mutexes and Lock Guards — mutex ownership, lock_guard/unique_lock/scoped_lock, std::lock() deadlock-avoidance; verified via real compiles (g++) and Compiler Explorer asm (GCC 14.2) showing scoped_lock(1 mutex) == lock_guard byte-for-byte; two pitfalls empirically tested (forgotten-name = compile error, braced temporary = silent no-op)."
+    },
+    {
+      "when": "2026-10-01T18:24:05Z",
+      "run": 141,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "data-races"
+      ],
+      "lint": "100–100",
+      "code": "3/3",
+      "commit": "✓",
+      "summary": "AUTHOR: Data Races and Race Conditions — finished the stub as a Hazard File; derives the data-race/race-condition distinction (Regehr's bank-transfer matrix), cites [intro.races] and cppreference's multithread page, and reports two honestly-labeled real compiles (GCC 11.4, x86-64 Linux) showing the same racy counter print a clean total at -O2/4 threads but visibly undercount at -O0/2 threads."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-10-01T17:23:08Z"
+  "last_builder": "2026-10-01T18:24:05Z"
 }
