@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 243 |
+| ○ planned | 242 |
 | ◌ stub | 0 |
-| ◐ draft | 94 |
+| ◐ draft | 95 |
 | ⟲ revise | 0 |
 | ● reviewed | 20 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `██████░░░░░░░░░░░░░░` 36/126
+- Wave 2: `██████░░░░░░░░░░░░░░` 37/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/126
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -394,12 +394,12 @@ tags: [system/generated]
 
 ## D15 · Design & Idioms
 
-*Which recurring shapes of solution survive contact with real programs?*  `█░░░░░░░░░` 1/14
+*Which recurring shapes of solution survive contact with real programs?*  `█░░░░░░░░░` 2/14
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Design & Idioms]] | map | 1 | 0 |  |
-| ○ | [[Designing Interfaces — Easy to Use Correctly]] | concept | 2 | 2 |  |
+| ◐ | [[Designing Interfaces — Easy to Use Correctly]] | concept | 2 | 2 |  |
 | ○ | [[Scope Guards]] | idiom | 2 | 3 |  |
 | ○ | [[SOLID in C++]] | concept | 2 | 3 |  |
 | ○ | [[Strategy Pattern]] | idiom | 2 | 3 |  |

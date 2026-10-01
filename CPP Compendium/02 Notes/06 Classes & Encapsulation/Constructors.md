@@ -27,7 +27,7 @@ tags:
 - std/c++98
 - std/c++11
 created: 2026-09-27
-updated: 2026-09-29
+updated: 2026-10-01
 ---
 
 # Constructors
@@ -272,7 +272,7 @@ int main() {
 ## Connections
 
 - **Prerequisites:** [[Encapsulation and Class Invariants]] (states the job a constructor exists to do) · [[Classes as User-Defined Types]] (the class this note builds a constructor for) · [[Object Lifetime]] (what "begins" and "complete" mean for an object).
-- **Enables:** [[Destructors]] (construction's matching half) · [[Member Initializer Lists and Initialization Order]] (the full mechanics of the list this note only summarizes) · [[The Special Member Functions]] (copy and move constructors as two of the five) · [[RAII]] (acquire in the constructor, release in the destructor) · [[The Forms of Initialization]] (which constructor a given `T x(v);`, `T x = v;` or `T x{v};` is even allowed to call).
+- **Enables:** [[Destructors]] (construction's matching half) · [[Member Initializer Lists and Initialization Order]] (the full mechanics of the list this note only summarizes) · [[The Special Member Functions]] (copy and move constructors as two of the five) · [[RAII]] (acquire in the constructor, release in the destructor) · [[The Forms of Initialization]] (which constructor a given `T x(v);`, `T x = v;` or `T x{v};` is even allowed to call) · [[Designing Interfaces — Easy to Use Correctly]] (`explicit` and strong types attach to the constructor first).
 - **Siblings:** [[Overloading in Classes — Constructors, Members and Operators]] (every *kind* of constructor, in detail) · [[Virtual Calls in Constructors and Destructors]] (the pitfall in full).
 - **Domain:** [[Map — Classes & Encapsulation]].
 - **Practice:** *Continuum #17 Bank Account Simulator* — write the constructor that actually enforces the invariant [[Encapsulation and Class Invariants|the previous note]] only described. *Continuum #12 Build-Your-Own Dynamic Array* — a constructor that allocates a buffer must leave the object in a state its destructor can safely unwind if a later member throws.

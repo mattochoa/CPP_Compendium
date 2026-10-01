@@ -135,7 +135,7 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D15 -->
 **Tier 2 · Proficient**
-- ○ [[Designing Interfaces — Easy to Use Correctly]] · *concept*
+- ◐ [[Designing Interfaces — Easy to Use Correctly]] · *concept*
 - ○ [[Scope Guards]] · *idiom*
 - ○ [[SOLID in C++]] · *concept*
 - ○ [[Strategy Pattern]] · *idiom*
@@ -153,7 +153,7 @@ flowchart LR
 - ○ [[Type Erasure]] · *idiom*
 - ○ [[Policy-Based Design]] · *idiom*
 
-`█░░░░░░░░░` 1/14 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`█░░░░░░░░░` 2/14 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

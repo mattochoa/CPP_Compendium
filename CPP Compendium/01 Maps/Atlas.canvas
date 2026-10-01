@@ -2640,7 +2640,8 @@
 			"y": 3754,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Designing Interfaces — Easy to Use Correctly]]\n*concept · T2*"
+			"text": "◐ [[Designing Interfaces — Easy to Use Correctly]]\n*concept · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-scope-guards",

@@ -61,7 +61,7 @@ tags: [system/generated, practice]
 | 25 | Smart Pointer Refactor Lab | ◐ [[Map — Ownership & Move Semantics]], ● [[Value Categories]], ◐ [[Memory Leaks]], ● [[Dangling Pointers and References]], ◐ [[Double Free and Mismatched new-delete]], ● [[Ownership — Who Releases What]], ● [[RAII]], ◐ [[unique_ptr]], ◐ [[shared_ptr and Reference Counting]], ○ [[weak_ptr and Reference Cycles]] |
 | 26 | Custom Exception Hierarchy & Robust CSV Parser | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Errors & Contracts]], ● [[Ownership — Who Releases What]], ● [[RAII]], ○ [[Exception Safety Guarantees]], ◐ [[Error Handling Strategies Compared]], ◐ [[Exceptions]], ○ [[Designing Exception Hierarchies]] |
 | 27 | Task Manager with Lambdas & std::function | ◐ [[Map — Functions]], ○ [[Lambda Expressions]], ○ [[Callables and std-function]], ◐ [[Functions and Parameters — The Complete Picture]] |
-| 28 | Mini JSON Parser / Key-Value Store Engine | ◐ [[Map — Design & Idioms]], ○ [[variant and visit]], ○ [[Designing Interfaces — Easy to Use Correctly]], ○ [[Visitor — Classic vs variant]] |
+| 28 | Mini JSON Parser / Key-Value Store Engine | ◐ [[Map — Design & Idioms]], ○ [[variant and visit]], ◐ [[Designing Interfaces — Easy to Use Correctly]], ○ [[Visitor — Classic vs variant]] |
 
 ## Tier 6: Advanced & Systems Programming
 

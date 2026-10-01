@@ -25,7 +25,7 @@ tags:
 - std/c++98
 - std/c++11
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-10-01
 reviewed: 2026-09-27
 score: 20
 rubric:
@@ -283,7 +283,7 @@ cppreference flags that C++11 layout guarantee itself as holding only *until* C+
 ## Connections
 
 - **Prerequisites:** [[Classes as User-Defined Types]] — the values × operations × representation triple this note narrows by restricting which *values* are reachable.
-- **Enables:** [[Constructors]] (the mechanism that establishes the invariant) · [[Destructors]] (what runs once an invariant-respecting object's lifetime ends) · [[The this Pointer and Member Function Calls]] (what every member function checking the invariant is secretly given) · [[Rule of Zero, Three and Five]] · [[Inheritance]] (extends the public/protected/private boundary this note builds across a class's own edge to a derived class as well).
+- **Enables:** [[Constructors]] (the mechanism that establishes the invariant) · [[Destructors]] (what runs once an invariant-respecting object's lifetime ends) · [[The this Pointer and Member Function Calls]] (what every member function checking the invariant is secretly given) · [[Rule of Zero, Three and Five]] · [[Inheritance]] (extends the public/protected/private boundary this note builds across a class's own edge to a derived class as well) · [[Designing Interfaces — Easy to Use Correctly]] (narrows the call set the rest of the interface accepts, not only the data this note protects).
 - **Siblings:** [[struct vs class]] (the one keyword-level difference in default access) · [[Friends]] (the narrow, named exception to the boundary this note builds) · [[RAII]] (a constructor that acquires a resource is establishing an invariant about that resource's validity).
 - **Domain:** [[Map — Classes & Encapsulation]].
 - **Practice:** *Continuum #17 Bank Account Simulator* — the exact `Account` this note builds, taken further: reject every invalid state Example 3's boundary would otherwise let through.
