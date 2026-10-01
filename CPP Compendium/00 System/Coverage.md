@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 239 |
+| ○ planned | 238 |
 | ◌ stub | 0 |
-| ◐ draft | 99 |
+| ◐ draft | 100 |
 | ⟲ revise | 0 |
 | ● reviewed | 19 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `██████░░░░░░░░░░░░░░` 40/126
+- Wave 2: `███████░░░░░░░░░░░░░` 41/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/126
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -354,13 +354,13 @@ tags: [system/generated]
 
 ## D13 · Performance & the Machine
 
-*What does the hardware actually do with our code, and how do we make it fast?*  `█░░░░░░░░░` 2/15
+*What does the hardware actually do with our code, and how do we make it fast?*  `██░░░░░░░░` 3/15
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Performance & the Machine]] | map | 1 | 0 |  |
 | ◐ | [[Performance — Measure, Don't Guess]] | concept | 1 | 2 |  |
-| ○ | [[The Memory Hierarchy and Caches]] | mechanism | 2 | 2 |  |
+| ◐ | [[The Memory Hierarchy and Caches]] | mechanism | 2 | 2 |  |
 | ○ | [[Benchmarking Correctly]] | idiom | 2 | 3 |  |
 | ○ | [[Profiling]] | concept | 2 | 3 |  |
 | ○ | [[Data Locality and Access Patterns]] | concept | 2 | 3 |  |

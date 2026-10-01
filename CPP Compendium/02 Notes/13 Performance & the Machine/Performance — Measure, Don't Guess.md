@@ -23,7 +23,7 @@ tags:
 - tension/abstraction-vs-control
 - std/c++11
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 ---
 
 # Performance — Measure, Don't Guess
@@ -197,7 +197,7 @@ int main(int argc, char** argv) {
 ## Connections
 
 - **Prerequisites:** None — this is the discipline the rest of [[Map — Performance & the Machine|this domain]] assumes before any hardware fact is introduced.
-- **Enables:** [[Profiling]] (turns this into a whole-program habit) · [[Benchmarking Correctly]] (the isolated-measurement tool, built on the escape-hatch technique shown here).
+- **Enables:** [[Profiling]] (turns this into a whole-program habit) · [[Benchmarking Correctly]] (the isolated-measurement tool, built on the escape-hatch technique shown here) · [[The Memory Hierarchy and Caches]] (the first hardware fact this discipline exists to keep honest — its own numbers vary by machine exactly as this note warns).
 - **Checks the claim of:** [[Zero-Overhead Principle]] — states the goal; this note is how you find out whether a build actually meets it.
 - **Explains a trap in:** [[Virtual Dispatch — vptr and vtable]] (the "virtual calls are slow" folklore) · [[What Optimizers Do]] (why discarded results vanish).
 - **Domain:** [[Map — Performance & the Machine]].

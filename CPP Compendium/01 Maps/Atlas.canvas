@@ -2394,7 +2394,8 @@
 			"y": 3754,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[The Memory Hierarchy and Caches]]\n*mechanism · T2*"
+			"text": "◐ [[The Memory Hierarchy and Caches]]\n*mechanism · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-benchmarking",
