@@ -2778,7 +2778,8 @@
 			"y": 4478,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[A History of C++]]\n*evolution · T1*"
+			"text": "◐ [[A History of C++]]\n*evolution · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-cpp11",

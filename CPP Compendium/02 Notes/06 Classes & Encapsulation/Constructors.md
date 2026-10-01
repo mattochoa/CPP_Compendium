@@ -264,6 +264,7 @@ int main() {
 
 | Standard | Change | Why |
 |---|---|---|
+| pre-C++98 | Introduced in "C with Classes" (1979–80) as a renamed "new function"/"delete function" pair — see [[A History of C++]] | Stroustrup calls it the single most significant choice in the first design: setup and teardown stop being steps a caller can forget |
 | C++98 | Constructors as described here: named after the class, no return type, overloadable, default/copy forms synthesized under conditions | The baseline mechanism |
 | **C++11** | Delegating constructors (`X() : X(args) {}`); default member initializers (NSDMI); `= default` / `= delete`; inheriting constructors (`using Base::Base;`); constexpr constructors | Less duplication between overloaded constructors; a constructor no longer has to be the only place a member gets its default value |
 | C++17 | Guaranteed copy elision changes what a constructor call even *is* for a returned prvalue (see [[Value Categories]]) | Removes a copy/move requirement some constructors couldn't satisfy at all (e.g. `std::mutex`) |

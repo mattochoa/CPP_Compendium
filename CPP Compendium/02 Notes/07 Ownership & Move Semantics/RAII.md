@@ -32,7 +32,7 @@ tags:
 - tension/safety-vs-performance
 - tension/abstraction-vs-control
 created: 2026-09-23
-updated: 2026-09-28
+updated: 2026-10-01
 reviewed: 2026-09-23
 score: 20
 rubric:
@@ -68,7 +68,7 @@ A **resource** is anything that must be given back: heap memory, a file handle, 
 > [!tension] safety ⟷ performance, resolved without compromise
 > Garbage-collected languages make memory safe by deferring release to a collector, which costs run time and loses *determinism*: a file closes "eventually". RAII makes release **safe and immediate**, and it compiles to the same instructions you would have written by hand. That is the [[Zero-Overhead Principle]] in its purest form — the same bargain [[Map — What C++ Is|the language as a whole]] makes; see [[The C++ Design Philosophy]] for where that bargain is derived from first principles.
 
-The name is historical and slightly misleading. Stroustrup coined *Resource Acquisition Is Initialization* for the acquisition half, but the idiom's power lies in the release half. Many people prefer *scope-bound resource management*.
+The name is historical and slightly misleading. Stroustrup coined *Resource Acquisition Is Initialization* for the acquisition half, but the idiom's power lies in the release half. Many people prefer *scope-bound resource management*. He landed on it in 1988 while designing exception handling for pre-standard C++ — see [[A History of C++]] for how that search grew out of the same destructor guarantee this note builds on.
 
 ## Structure
 

@@ -47,7 +47,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D13` | [[Map — Performance & the Machine\|Performance & the Machine]] | What does the hardware actually do with our code, and how do we make it fast? | `█░░░░░░░` 2/15 |
 | `D14` | [[Map — Tooling & Engineering\|Tooling & Engineering]] | Which tools turn correct-looking code into verified, maintainable software? | `█░░░░░░░` 2/11 |
 | `D15` | [[Map — Design & Idioms\|Design & Idioms]] | Which recurring shapes of solution survive contact with real programs? | `█░░░░░░░` 2/14 |
-| `D16` | [[Map — Evolution of C++\|Evolution of C++]] | How did the language get here, and where is it going? | `█░░░░░░░` 1/10 |
+| `D16` | [[Map — Evolution of C++\|Evolution of C++]] | How did the language get here, and where is it going? | `██░░░░░░` 2/10 |
 | `SRC` | Sources | What should be read, in what order, and for what? | `█████░░░` 3/5 |
 | `PRX` | Practice | How does knowledge become skill? | `██░░░░░░` 1/4 |
 | `HDR` | [[Map — Standard Headers\|Standard Headers]] | Where does each standard facility live, and what exactly does its header promise? | `███░░░░░` 21/60 |
@@ -58,24 +58,26 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 242 | 95 | 0 | 20 | 0 | 357 | 130 | 2 |
+| 241 | 96 | 0 | 20 | 0 | 357 | 131 | 2 |
 
 `██████░░░░░░░░░░░░░░` **32%** of the Atlas written · last build 2026-10-01
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[A History of C++]] · *evolution* · `D16` — wave 2
-2. [[C++11 — The Modern Reboot]] · *evolution* · `D16` — wave 2
-3. [[C++20 — The Big Four]] · *evolution* · `D16` — wave 2
-4. [[Function Templates]] · *concept* · `D09` — wave 2
-5. [[Class Templates]] · *concept* · `D09` — wave 2
-6. [[Concepts and Constraints]] · *concept* · `D09` — wave 2
+1. [[Function Templates]] · *concept* · `D09` — wave 2
+2. [[Class Templates]] · *concept* · `D09` — wave 2
+3. [[Concepts and Constraints]] · *concept* · `D09` — wave 2
+4. [[Threads — thread and jthread]] · *concept* · `D12` — wave 2
+5. [[Data Races and Race Conditions]] · *pitfall* · `D12` — wave 2
+6. [[Mutexes and Lock Guards]] · *concept* · `D12` — wave 2
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ● [[RAII]] · *idiom* · updated 2026-10-01
 - ◐ [[Constructors]] · *concept* · updated 2026-10-01
+- ◐ [[A History of C++]] · *evolution* · updated 2026-10-01
 - ● [[Encapsulation and Class Invariants]] · *concept* · updated 2026-10-01
 - ◐ [[Designing Interfaces — Easy to Use Correctly]] · *concept* · updated 2026-10-01
 - ◐ [[Zero-Overhead Principle]] · *concept* · updated 2026-09-30
@@ -83,8 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Temporaries and Lifetime Extension]] · *mechanism* · updated 2026-09-30
 - ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-30
 - ◐ [[Memory Leaks]] · *pitfall* · updated 2026-09-30
-- ◐ [[Pointers]] · *concept* · updated 2026-09-30
-- ◐ [[Double Free and Mismatched new-delete]] · *pitfall* · updated 2026-09-30
 <!-- cc:end -->
 
 ## Start here

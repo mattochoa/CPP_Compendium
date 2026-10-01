@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 242 |
+| ○ planned | 241 |
 | ◌ stub | 0 |
-| ◐ draft | 95 |
+| ◐ draft | 96 |
 | ⟲ revise | 0 |
 | ● reviewed | 20 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `██████░░░░░░░░░░░░░░` 37/126
+- Wave 2: `██████░░░░░░░░░░░░░░` 38/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/126
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -415,12 +415,12 @@ tags: [system/generated]
 
 ## D16 · Evolution of C++
 
-*How did the language get here, and where is it going?*  `█░░░░░░░░░` 1/10
+*How did the language get here, and where is it going?*  `██░░░░░░░░` 2/10
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Evolution of C++]] | map | 1 | 0 |  |
-| ○ | [[A History of C++]] | evolution | 1 | 2 |  |
+| ◐ | [[A History of C++]] | evolution | 1 | 2 |  |
 | ○ | [[C++11 — The Modern Reboot]] | evolution | 1 | 2 |  |
 | ○ | [[C++20 — The Big Four]] | evolution | 2 | 2 |  |
 | ○ | [[C++98 and C++03]] | evolution | 1 | 3 |  |

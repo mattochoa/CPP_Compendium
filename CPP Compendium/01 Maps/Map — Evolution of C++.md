@@ -106,7 +106,7 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D16 -->
 **Tier 1 · Foundational**
-- ○ [[A History of C++]] · *evolution*
+- ◐ [[A History of C++]] · *evolution*
 - ○ [[C++11 — The Modern Reboot]] · *evolution*
 - ○ [[C++98 and C++03]] · *evolution*
 
@@ -120,7 +120,7 @@ flowchart LR
 **Tier 3 · Advanced**
 - ○ [[C++26]] · *evolution*
 
-`█░░░░░░░░░` 1/10 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 2/10 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
