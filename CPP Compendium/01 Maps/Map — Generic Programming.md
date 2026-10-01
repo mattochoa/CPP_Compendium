@@ -121,7 +121,7 @@ flowchart LR
 <!-- cc:auto:domain-index:D09 -->
 **Tier 1 · Foundational**
 - ● [[Templates — Code That Writes Code]] · *concept*
-- ○ [[Function Templates]] · *concept*
+- ◐ [[Function Templates]] · *concept*
 
 **Tier 2 · Proficient**
 - ○ [[Class Templates]] · *concept*
@@ -142,7 +142,7 @@ flowchart LR
 - ○ [[Two-Phase Lookup and Dependent Names]] · *mechanism*
 - ○ [[Compile-Time Programming — From TMP to constexpr]] · *concept*
 
-`█░░░░░░░░░` 2/16 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 3/16 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
