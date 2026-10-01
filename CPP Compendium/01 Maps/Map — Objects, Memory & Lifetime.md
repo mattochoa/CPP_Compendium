@@ -149,7 +149,7 @@ flowchart LR
 - ● [[Value Categories]] · *concept*
 - ◐ [[The Forms of Initialization]] · *comparison*
 - ◐ [[Double Free and Mismatched new-delete]] · *pitfall*
-- ○ [[Temporaries and Lifetime Extension]] · *mechanism*
+- ◐ [[Temporaries and Lifetime Extension]] · *mechanism*
 - ○ [[C-Style Strings]] · *concept*
 - ○ [[Object Representation, Padding and Layout]] · *mechanism*
 - ○ [[Memory Safety in C++ — Threats and Defenses]] · *concept*
@@ -165,7 +165,7 @@ flowchart LR
 **Tier 4 · Expert**
 - ○ [[Allocators and pmr Memory Resources]] · *concept*
 
-`██████░░░░` 18/29 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███████░░░` 19/29 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

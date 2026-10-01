@@ -834,7 +834,8 @@
 			"y": 1442,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Temporaries and Lifetime Extension]]\n*mechanism · T2*"
+			"text": "◐ [[Temporaries and Lifetime Extension]]\n*mechanism · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-c-strings",

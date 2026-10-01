@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 245 |
+| ○ planned | 244 |
 | ◌ stub | 0 |
-| ◐ draft | 92 |
+| ◐ draft | 93 |
 | ⟲ revise | 0 |
 | ● reviewed | 20 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `█████░░░░░░░░░░░░░░░` 34/126
+- Wave 2: `██████░░░░░░░░░░░░░░` 35/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/126
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -117,7 +117,7 @@ tags: [system/generated]
 
 ## D04 · Objects, Memory & Lifetime
 
-*Where does an object live, how long does it live, and who can reach it?*  `██████░░░░` 18/29
+*Where does an object live, how long does it live, and who can reach it?*  `███████░░░` 19/29
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -139,7 +139,7 @@ tags: [system/generated]
 | ◐ | [[Memory Leaks]] | pitfall | 1 | 2 |  |
 | ● | [[Dangling Pointers and References]] | pitfall | 1 | 2 | 20 |
 | ◐ | [[Double Free and Mismatched new-delete]] | pitfall | 2 | 2 |  |
-| ○ | [[Temporaries and Lifetime Extension]] | mechanism | 2 | 2 |  |
+| ◐ | [[Temporaries and Lifetime Extension]] | mechanism | 2 | 2 |  |
 | ○ | [[C-Style Strings]] | concept | 2 | 3 |  |
 | ○ | [[Object Representation, Padding and Layout]] | mechanism | 2 | 3 |  |
 | ○ | [[Memory Safety in C++ — Threats and Defenses]] | concept | 2 | 3 |  |

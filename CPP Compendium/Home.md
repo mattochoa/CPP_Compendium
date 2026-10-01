@@ -35,7 +35,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `███░░░░░` 7/18 |
 | `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `█░░░░░░░` 4/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `███░░░░░` 4/12 |
-| `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `█████░░░` 18/29 |
+| `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `█████░░░` 19/29 |
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `███░░░░░` 6/17 |
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `██░░░░░░` 6/20 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `████░░░░` 9/19 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 245 | 92 | 0 | 20 | 0 | 357 | 126 | 2 |
+| 244 | 93 | 0 | 20 | 0 | 357 | 127 | 2 |
 
-`██████░░░░░░░░░░░░░░` **31%** of the Atlas written · last build 2026-09-30
+`██████░░░░░░░░░░░░░░` **32%** of the Atlas written · last build 2026-09-30
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Temporaries and Lifetime Extension]] · *mechanism* · `D04` — wave 2 · focus
-2. [[Performance — Measure, Don't Guess]] · *concept* · `D13` — wave 2
-3. [[The Memory Hierarchy and Caches]] · *mechanism* · `D13` — wave 2
-4. [[Designing Interfaces — Easy to Use Correctly]] · *concept* · `D15` — wave 2
-5. [[A History of C++]] · *evolution* · `D16` — wave 2
-6. [[C++11 — The Modern Reboot]] · *evolution* · `D16` — wave 2
+1. [[Performance — Measure, Don't Guess]] · *concept* · `D13` — wave 2
+2. [[The Memory Hierarchy and Caches]] · *mechanism* · `D13` — wave 2
+3. [[Designing Interfaces — Easy to Use Correctly]] · *concept* · `D15` — wave 2
+4. [[A History of C++]] · *evolution* · `D16` — wave 2
+5. [[C++11 — The Modern Reboot]] · *evolution* · `D16` — wave 2
+6. [[C++20 — The Big Four]] · *evolution* · `D16` — wave 2
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Temporaries and Lifetime Extension]] · *mechanism* · updated 2026-09-30
 - ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-30
 - ◐ [[Memory Leaks]] · *pitfall* · updated 2026-09-30
 - ◐ [[Pointers]] · *concept* · updated 2026-09-30
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ● [[What a Type Is]] · *concept* · updated 2026-09-30
 - ◐ [[Anatomy of an Expression]] · *concept* · updated 2026-09-30
 - ◐ [[Function Overloading]] · *concept* · updated 2026-09-30
-- ◐ [[nullptr and Null Pointers]] · *concept* · updated 2026-09-30
 <!-- cc:end -->
 
 ## Start here
