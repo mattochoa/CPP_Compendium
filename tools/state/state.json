@@ -1,6 +1,6 @@
 {
-  "runs": 124,
-  "builder_runs": 122,
+  "runs": 125,
+  "builder_runs": 123,
   "editor_runs": 2,
   "history": [
     {
@@ -1447,10 +1447,23 @@
       "code": "4/4",
       "commit": "✓",
       "summary": "AUTHOR: Composition vs Inheritance (D08 comparison, wave-2 focus item 1) — is-a (public inheritance, licenses the derived-to-base conversion and the Liskov substitutability promise) vs has-a (composition, no conversion, no promise); derives why both exist from Primer's own is-a/has-a key concept (p.637). Deep Dive: a Rectangle/Square substitutability trap (compiled, prints the caller-surprising 16 instead of 20) adapted from the isocpp.org Circle/Ellipse FAQ; a BadStack-publicly-inherits-vector vs GoodStack-composes-vector contrast pair (compiled ✗, and ✓ with a cc:ill-formed proof that the leaked std::vector::insert is truly inaccessible through composition) built from Pikus's mt_stack interface-design argument (ch.7 p.242, 'prefer composition over inheritance'); an Under-the-Hood sizeof check (GCC 11.4.0, x86-64 Linux/Ubuntu 22.04 — labelled honestly per Style Guide S4.7, not claimed as 'this vault's toolchain') proving composition costs the same 24 bytes as inheritance here. Cites C++ Core Guidelines C.120/C.129 (fetched and verified exact wording, not assumed). Registered pre:[inheritance] on the topic (was empty). Back-links resolve on both existing frontier-linkers: Inheritance.md (reviewed) and Map — Inheritance & Polymorphism (D08 domain map) — both re-checked clean (100) after this note landed. check 100/100, code 4/4 PASS."
+    },
+    {
+      "when": "2026-10-01T00:24:57Z",
+      "run": 123,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "memory-leaks"
+      ],
+      "lint": "100–100",
+      "code": "4/4",
+      "commit": "✓",
+      "summary": "AUTHOR: Memory Leaks (pitfall, D04) — derived the leak/dangling contrast from first principles (object outlives every pointer vs. pointer outlives the object), reproduced an early-return leak and a shared_ptr reference cycle with a live-object counter and use_count() as proof (not UB, so no cc:ub tag), verified the detection table against real LeakSanitizer output observed in this vault's sandbox (GCC 11.4.0, x86-64 Linux; LSan unavailable on Windows/MinGW per its own docs) plus Valgrind and clang-analyzer-cplusplus.NewDeleteLeaks, fixed both with make_unique/RAII and weak_ptr (Core Guidelines R.21-R.24), and documented the pre-C++17 new-expression/function-argument interleaving leak via cppreference's eval_order rules 11 and 14 (P0145R3)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-09-30T23:22:27Z"
+  "last_builder": "2026-10-01T00:24:57Z"
 }

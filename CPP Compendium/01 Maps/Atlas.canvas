@@ -784,7 +784,8 @@
 			"y": 2090,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Memory Leaks]]\n*pitfall · T1*"
+			"text": "◐ [[Memory Leaks]]\n*pitfall · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-dangling-pointers-and-references",

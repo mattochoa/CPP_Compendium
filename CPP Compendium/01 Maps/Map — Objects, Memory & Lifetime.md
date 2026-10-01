@@ -142,7 +142,7 @@ flowchart LR
 - ● [[Pointers vs References]] · *comparison*
 - ◐ [[nullptr and Null Pointers]] · *concept*
 - ◐ [[Built-in Arrays and Array-to-Pointer Decay]] · *mechanism*
-- ○ [[Memory Leaks]] · *pitfall*
+- ◐ [[Memory Leaks]] · *pitfall*
 - ● [[Dangling Pointers and References]] · *pitfall*
 
 **Tier 2 · Proficient**
@@ -165,7 +165,7 @@ flowchart LR
 **Tier 4 · Expert**
 - ○ [[Allocators and pmr Memory Resources]] · *concept*
 
-`██████░░░░` 16/29 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██████░░░░` 17/29 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
