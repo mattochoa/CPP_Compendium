@@ -58,7 +58,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 241 | 96 | 0 | 20 | 0 | 357 | 131 | 2 |
+| 241 | 97 | 0 | 19 | 0 | 357 | 132 | 2 |
 
 `██████░░░░░░░░░░░░░░` **32%** of the Atlas written · last build 2026-10-01
 <!-- cc:end -->
@@ -75,6 +75,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Value Categories]] · *concept* · updated 2026-10-01
 - ● [[RAII]] · *idiom* · updated 2026-10-01
 - ◐ [[Constructors]] · *concept* · updated 2026-10-01
 - ◐ [[A History of C++]] · *evolution* · updated 2026-10-01
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Performance — Measure, Don't Guess]] · *concept* · updated 2026-09-30
 - ◐ [[Temporaries and Lifetime Extension]] · *mechanism* · updated 2026-09-30
 - ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-30
-- ◐ [[Memory Leaks]] · *pitfall* · updated 2026-09-30
 <!-- cc:end -->
 
 ## Start here

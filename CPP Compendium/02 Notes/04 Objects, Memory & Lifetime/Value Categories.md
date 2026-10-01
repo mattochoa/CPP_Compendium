@@ -10,7 +10,7 @@ aliases:
 type: concept
 domain: D04
 tier: 2
-status: reviewed
+status: draft
 standard: C++11
 prereqs:
 - "[[Object Lifetime]]"
@@ -21,6 +21,9 @@ related:
 - "[[Temporaries and Lifetime Extension]]"
 - "[[Copy Elision and RVO]]"
 - "[[decltype and decltype(auto)]]"
+- "[[References]]"
+- "[[Constructors]]"
+- "[[The C++ Object Model — What an Object Is]]"
 practice:
 - 22
 - 25
@@ -33,7 +36,7 @@ tags:
 - std/c++11
 - std/c++17
 created: 2026-09-23
-updated: 2026-09-24
+updated: 2026-10-01
 reviewed: 2026-09-23
 score: 20
 rubric:
@@ -287,10 +290,11 @@ See [[Map — Evolution of C++]] for how this fits the language's broader standa
 
 ## Connections
 
-- **Prerequisites:** [[Object Lifetime]] (what "expiring" means) · [[Anatomy of an Expression]] (every expression has a type and a category — see [[Map — Expressions & Control]] for the grammar this category system labels).
-- **Enables:** [[Rvalue References]] → [[Move Semantics]] → [[move and forward — Casts, Not Actions]] → [[Forwarding References and Reference Collapsing]].
+- **Prerequisites:** [[Object Lifetime]] (what "expiring" means) · [[Anatomy of an Expression]] (every expression has a type and a category — see [[Map — Expressions & Control]] for the grammar this category system labels) · [[The C++ Object Model — What an Object Is]] (the identity half of the value/identity question — "has this expression's object" presupposes the object-model's answer to what an object *is* and when two expressions denote the same one).
+- **Enables:** [[Rvalue References]] → [[Move Semantics]] → [[move and forward — Casts, Not Actions]] → [[Forwarding References and Reference Collapsing]]. Also [[Constructors]] (why a C++17 prvalue return needs no accessible copy/move constructor — [[Copy Elision and RVO]] is this note's own mechanism applied there).
 - **Explains:** [[Copy Elision and RVO]] (prvalues initialize directly) · [[Temporaries and Lifetime Extension]] · [[decltype and decltype(auto)]].
 - **Hazards:** [[Dangling Pointers and References]] · [[The Moved-From State]].
+- **Siblings:** [[References]] (states, from the binding side, which expressions a plain `T&` versus a `const T&`/`T&&` may accept — the same table as this note's Mechanics, read in the other direction).
 - **Domain:** [[Map — Objects, Memory & Lifetime]].
 - **Practice:** *Continuum #22 Rule-of-Five Resource Manager*: instrument your move constructor and watch which call sites pick it. *Continuum #25 Smart Pointer Refactor Lab*: `unique_ptr` can only be passed on through an rvalue.
 

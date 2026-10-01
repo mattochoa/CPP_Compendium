@@ -804,8 +804,8 @@
 			"y": 1226,
 			"width": 250,
 			"height": 56,
-			"text": "● [[Value Categories]]\n*concept · T2*",
-			"color": "4"
+			"text": "◐ [[Value Categories]]\n*concept · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-initialization-forms",

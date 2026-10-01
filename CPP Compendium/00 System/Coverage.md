@@ -10,9 +10,9 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 241 |
 | ◌ stub | 0 |
-| ◐ draft | 96 |
+| ◐ draft | 97 |
 | ⟲ revise | 0 |
-| ● reviewed | 20 |
+| ● reviewed | 19 |
 | ★ evergreen | 0 |
 
 **Total topics:** 357
@@ -129,7 +129,7 @@ tags: [system/generated]
 | ◐ | [[References]] | concept | 1 | 1 |  |
 | ◐ | [[Pointers]] | concept | 1 | 1 |  |
 | ◐ | [[Dynamic Memory — new and delete]] | mechanism | 1 | 1 |  |
-| ● | [[Value Categories]] | concept | 2 | 1 | 20 |
+| ◐ | [[Value Categories]] | concept | 2 | 1 | 20 |
 | ◐ | [[The Forms of Initialization]] | comparison | 2 | 2 |  |
 | ◐ | [[Reading Uninitialized Variables]] | pitfall | 1 | 2 |  |
 | ◐ | [[Pointer Arithmetic and Arrays]] | mechanism | 1 | 2 |  |

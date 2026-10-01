@@ -146,7 +146,7 @@ flowchart LR
 - ● [[Dangling Pointers and References]] · *pitfall*
 
 **Tier 2 · Proficient**
-- ● [[Value Categories]] · *concept*
+- ◐ [[Value Categories]] · *concept*
 - ◐ [[The Forms of Initialization]] · *comparison*
 - ◐ [[Double Free and Mismatched new-delete]] · *pitfall*
 - ◐ [[Temporaries and Lifetime Extension]] · *mechanism*

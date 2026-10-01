@@ -1,6 +1,6 @@
 {
-  "runs": 133,
-  "builder_runs": 131,
+  "runs": 134,
+  "builder_runs": 132,
   "editor_runs": 2,
   "history": [
     {
@@ -1545,10 +1545,23 @@
       "code": "2/2 3/3 4/4",
       "commit": "✓",
       "summary": "AUTHOR: A History of C++ (the pre-standard timeline, 1979-1998 — C with Classes through the ISO C++98 ballot); back-wove into RAII and Constructors"
+    },
+    {
+      "when": "2026-10-01T09:17:42Z",
+      "run": 132,
+      "role": "builder",
+      "mode": "DEEPEN",
+      "items": [
+        "value-categories"
+      ],
+      "lint": "100–100",
+      "code": "4/4",
+      "commit": "✓",
+      "summary": "deepen: value-categories integration (rubric dim: integration 2/3, 2026-09-27 audit; score=20, otherwise maxed — top 3 DEEPEN candidates skipped this run: cpp-design-philosophy deepened 7h ago at #126 with no re-score since, anatomy-of-an-expression and what-a-type-is each deepened 1-2x since the 09-27 audit on the same stale scores, all against Directive 7's stop-growing guidance) — closed 3 missing reciprocal links: References and The C++ Object Model already pointed in (Siblings/Explains) but Value Categories pointed back at neither; added Object Model to Prerequisites (identity half of the value/identity question), References to Siblings (mirroring its own reciprocal line), and Constructors to Enables (why C++17 prvalue return needs no accessible copy/move ctor). No prose added to body sections, no new examples — pure tightening per directive 7. check 0 errors, code 4/4 PASS unchanged."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-10-01T08:22:53Z"
+  "last_builder": "2026-10-01T09:17:42Z"
 }
