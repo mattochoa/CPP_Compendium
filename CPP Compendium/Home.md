@@ -33,7 +33,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 |---|---|---|---|
 | `D00` | [[Map — What C++ Is\|What C++ Is]] | What contract does C++ make between the programmer, the compiler and the machine? | `█████░░░` 6/9 |
 | `D01` | [[Map — Program Structure & Build\|Program Structure & Build]] | How does text in many files become one running program? | `███░░░░░` 7/18 |
-| `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `█░░░░░░░` 4/25 |
+| `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `██░░░░░░` 5/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `███░░░░░` 4/12 |
 | `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `█████░░░` 19/29 |
 | `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `███░░░░░` 6/17 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 238 | 100 | 0 | 19 | 0 | 357 | 136 | 2 |
+| 237 | 101 | 0 | 19 | 0 | 357 | 137 | 2 |
 
-`███████░░░░░░░░░░░░░` **33%** of the Atlas written · last build 2026-10-01
+`███████░░░░░░░░░░░░░` **34%** of the Atlas written · last build 2026-10-01
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Integer Representation and Two's Complement]] · *mechanism* · `D02` — wave 2
-2. [[Implicit Conversions and Promotions]] · *mechanism* · `D02` — wave 2
-3. [[auto Type Deduction]] · *mechanism* · `D02` — wave 2
-4. [[Type Aliases (typedef and using)]] · *concept* · `D02` — wave 2
-5. [[Enumerations — Plain vs Scoped]] · *comparison* · `D02` — wave 2
-6. [[Floating-Point Representation (IEEE 754)]] · *mechanism* · `D02` — wave 2
+1. [[Data Races and Race Conditions]] · *pitfall* · `D12` — wave 2
+2. [[Mutexes and Lock Guards]] · *concept* · `D12` — wave 2
+3. [[Warnings as Guardrails]] · *idiom* · `D14` — wave 2
+4. [[CMake Fundamentals]] · *guide* · `D14` — wave 2
+5. [[Debugging with a Debugger]] · *guide* · `D14` — wave 2
+6. [[Sanitizers — ASan, UBSan, TSan]] · *guide* · `D14` — wave 2
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Integer Representation and Two's Complement]] · *mechanism* · updated 2026-10-01
 - ◐ [[Performance — Measure, Don't Guess]] · *concept* · updated 2026-10-01
 - ◐ [[The Memory Hierarchy and Caches]] · *mechanism* · updated 2026-10-01
 - ◐ [[Threads — thread and jthread]] · *concept* · updated 2026-10-01
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Constructors]] · *concept* · updated 2026-10-01
 - ◐ [[A History of C++]] · *evolution* · updated 2026-10-01
 - ● [[Encapsulation and Class Invariants]] · *concept* · updated 2026-10-01
-- ◐ [[Designing Interfaces — Easy to Use Correctly]] · *concept* · updated 2026-10-01
 <!-- cc:end -->
 
 ## Start here

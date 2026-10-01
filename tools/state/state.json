@@ -1,6 +1,6 @@
 {
-  "runs": 138,
-  "builder_runs": 136,
+  "runs": 139,
+  "builder_runs": 137,
   "editor_runs": 2,
   "history": [
     {
@@ -1598,10 +1598,23 @@
       "code": "2/2 3/3",
       "commit": "✓",
       "summary": "AUTHOR: The Memory Hierarchy and Caches (mechanism, D13); integrated into Performance — Measure, Don't Guess"
+    },
+    {
+      "when": "2026-10-01T14:22:45Z",
+      "run": 137,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "integer-representation"
+      ],
+      "lint": "100–100",
+      "code": "4/4",
+      "commit": "✓",
+      "summary": "AUTHOR: Integer Representation and Two's Complement (mechanism, D02). Derives two's complement from one-adder-does-both-signs constraint (invert+1, congruent mod 2^N); distinguishes the C++20 P0907R4 mandate (representation + out-of-range conversion, now well-defined) from signed arithmetic overflow (still UB, untouched by P0907R4) per Directive 2. Under the Hood uses real GCC 11.4 (Ubuntu 22.04) asm from cc.py asm showing the compiler deleting a bounds-style check for signed int but not unsigned (mirrors Pikus's ch.11 benchmark), plus a zero-cost signed->unsigned cast proving the bit-identity claim. Two UB demos (INT_MAX+1, -INT_MIN) run under UBSan with honestly-labelled, directly observed sanitizer output. Back-weave already in place: Map — Types & Values and Fundamental Types both already pointed at this title as a frontier link; both now resolve."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-10-01T13:23:26Z"
+  "last_builder": "2026-10-01T14:22:45Z"
 }
