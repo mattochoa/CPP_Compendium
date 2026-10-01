@@ -122,7 +122,7 @@ flowchart LR
 - ◐ [[Concurrency vs Parallelism]] · *comparison*
 
 **Tier 2 · Proficient**
-- ○ [[Threads — thread and jthread]] · *concept*
+- ◐ [[Threads — thread and jthread]] · *concept*
 - ○ [[Data Races and Race Conditions]] · *pitfall*
 - ○ [[Mutexes and Lock Guards]] · *concept*
 - ○ [[Deadlock]] · *pitfall*
@@ -142,7 +142,7 @@ flowchart LR
 - ○ [[Lock-Free Programming Basics]] · *concept*
 - ○ [[Coroutines]] · *mechanism*
 
-`█░░░░░░░░░` 2/17 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 3/17 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

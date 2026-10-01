@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 240 |
+| ○ planned | 239 |
 | ◌ stub | 0 |
-| ◐ draft | 98 |
+| ◐ draft | 99 |
 | ⟲ revise | 0 |
 | ● reviewed | 19 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `██████░░░░░░░░░░░░░░` 39/126
+- Wave 2: `██████░░░░░░░░░░░░░░` 40/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/126
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -330,13 +330,13 @@ tags: [system/generated]
 
 ## D12 · Concurrency
 
-*How do multiple threads of execution share memory without corrupting it?*  `█░░░░░░░░░` 2/17
+*How do multiple threads of execution share memory without corrupting it?*  `██░░░░░░░░` 3/17
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Concurrency]] | map | 1 | 0 |  |
 | ◐ | [[Concurrency vs Parallelism]] | comparison | 1 | 1 |  |
-| ○ | [[Threads — thread and jthread]] | concept | 2 | 2 |  |
+| ◐ | [[Threads — thread and jthread]] | concept | 2 | 2 |  |
 | ○ | [[Data Races and Race Conditions]] | pitfall | 2 | 2 |  |
 | ○ | [[Mutexes and Lock Guards]] | concept | 2 | 2 |  |
 | ○ | [[Deadlock]] | pitfall | 2 | 3 |  |

@@ -269,7 +269,7 @@
 
 # ---------------------------------------------------------------- D12 Concurrency
 - {id: concurrency-vs-parallelism, t: "Concurrency vs Parallelism", ty: comparison, d: D12, tier: 1, w: 1}
-- {id: threads, t: "Threads — thread and jthread", ty: concept, d: D12, tier: 2, w: 2, pr: [29]}
+- {id: threads, t: "Threads — thread and jthread", ty: concept, d: D12, tier: 2, w: 2, pre: [concurrency-vs-parallelism], pr: [29]}
 - {id: data-races, t: "Data Races and Race Conditions", ty: pitfall, d: D12, tier: 2, w: 2, pr: [29]}
 - {id: mutexes-and-locks, t: "Mutexes and Lock Guards", ty: concept, d: D12, tier: 2, w: 2, pr: [29]}
 - {id: deadlock, t: "Deadlock", ty: pitfall, d: D12, tier: 2, w: 3}

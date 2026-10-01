@@ -43,7 +43,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `██░░░░░░` 3/16 |
 | `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `██░░░░░░` 6/30 |
 | `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `██░░░░░░` 3/11 |
-| `D12` | [[Map — Concurrency\|Concurrency]] | How do multiple threads of execution share memory without corrupting it? | `█░░░░░░░` 2/17 |
+| `D12` | [[Map — Concurrency\|Concurrency]] | How do multiple threads of execution share memory without corrupting it? | `█░░░░░░░` 3/17 |
 | `D13` | [[Map — Performance & the Machine\|Performance & the Machine]] | What does the hardware actually do with our code, and how do we make it fast? | `█░░░░░░░` 2/15 |
 | `D14` | [[Map — Tooling & Engineering\|Tooling & Engineering]] | Which tools turn correct-looking code into verified, maintainable software? | `█░░░░░░░` 2/11 |
 | `D15` | [[Map — Design & Idioms\|Design & Idioms]] | Which recurring shapes of solution survive contact with real programs? | `█░░░░░░░` 2/14 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 240 | 98 | 0 | 19 | 0 | 357 | 133 | 2 |
+| 239 | 99 | 0 | 19 | 0 | 357 | 134 | 2 |
 
 `███████░░░░░░░░░░░░░` **33%** of the Atlas written · last build 2026-10-01
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Threads — thread and jthread]] · *concept* · `D12` — wave 2
-2. [[Data Races and Race Conditions]] · *pitfall* · `D12` — wave 2
-3. [[Mutexes and Lock Guards]] · *concept* · `D12` — wave 2
-4. [[The Memory Hierarchy and Caches]] · *mechanism* · `D13` — wave 2
-5. [[Integer Representation and Two's Complement]] · *mechanism* · `D02` — wave 2
-6. [[Implicit Conversions and Promotions]] · *mechanism* · `D02` — wave 2
+1. [[The Memory Hierarchy and Caches]] · *mechanism* · `D13` — wave 2
+2. [[Integer Representation and Two's Complement]] · *mechanism* · `D02` — wave 2
+3. [[Implicit Conversions and Promotions]] · *mechanism* · `D02` — wave 2
+4. [[auto Type Deduction]] · *mechanism* · `D02` — wave 2
+5. [[Type Aliases (typedef and using)]] · *concept* · `D02` — wave 2
+6. [[Enumerations — Plain vs Scoped]] · *comparison* · `D02` — wave 2
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Threads — thread and jthread]] · *concept* · updated 2026-10-01
 - ◐ [[Function Templates]] · *concept* · updated 2026-10-01
 - ◐ [[Value Categories]] · *concept* · updated 2026-10-01
 - ● [[RAII]] · *idiom* · updated 2026-10-01
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Designing Interfaces — Easy to Use Correctly]] · *concept* · updated 2026-10-01
 - ◐ [[Zero-Overhead Principle]] · *concept* · updated 2026-09-30
 - ◐ [[Performance — Measure, Don't Guess]] · *concept* · updated 2026-09-30
-- ◐ [[Temporaries and Lifetime Extension]] · *mechanism* · updated 2026-09-30
 <!-- cc:end -->
 
 ## Start here

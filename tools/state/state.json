@@ -1,6 +1,6 @@
 {
-  "runs": 135,
-  "builder_runs": 133,
+  "runs": 136,
+  "builder_runs": 134,
   "editor_runs": 2,
   "history": [
     {
@@ -1571,10 +1571,23 @@
       "code": "4/4",
       "commit": "✓",
       "summary": "AUTHOR: Function Templates — deduction as the function-template-specific mechanism (class templates needed <T> explicit until C++17 CTAD); mechanics tables for deduction rules + explicit/default arguments; non-template-wins tie-break shown in real GCC 11.4 asm (-O0); ill-formed deduction-failure example quotes real GCC diagnostic."
+    },
+    {
+      "when": "2026-10-01T11:25:11Z",
+      "run": 134,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "threads"
+      ],
+      "lint": "100–100",
+      "code": "6/6",
+      "commit": "✓",
+      "summary": "AUTHOR: Threads — thread and jthread (concept, D12). Derives std::thread/jthread from the task/thread split (Tour, Pikus), covers handle-vs-execution lifecycle, arg decay-copy (proved as a compile error, not just a runtime surprise), destructor-terminate rule, and jthread's stop+join default. Registered threads' prereq (concurrency-vs-parallelism) in topics.yaml to match the domain's learning route."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-10-01T10:23:28Z"
+  "last_builder": "2026-10-01T11:25:11Z"
 }

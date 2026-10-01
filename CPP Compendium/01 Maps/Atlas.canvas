@@ -2228,7 +2228,8 @@
 			"y": 3754,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Threads — thread and jthread]]\n*concept · T2*"
+			"text": "◐ [[Threads — thread and jthread]]\n*concept · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-data-races",
@@ -4160,6 +4161,13 @@
 			"fromNode": "t-exceptions",
 			"fromSide": "right",
 			"toNode": "t-stack-unwinding",
+			"toSide": "left"
+		},
+		{
+			"id": "e-concurrency-vs-parallelism-threads",
+			"fromNode": "t-concurrency-vs-parallelism",
+			"fromSide": "right",
+			"toNode": "t-threads",
 			"toSide": "left"
 		},
 		{
