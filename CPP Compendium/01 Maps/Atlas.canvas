@@ -2545,7 +2545,8 @@
 			"y": 3826,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Warnings as Guardrails]]\n*idiom · T1*"
+			"text": "◐ [[Warnings as Guardrails]]\n*idiom · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-cmake-fundamentals",

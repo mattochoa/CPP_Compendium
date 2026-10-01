@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 235 |
+| ○ planned | 234 |
 | ◌ stub | 0 |
-| ◐ draft | 103 |
+| ◐ draft | 104 |
 | ⟲ revise | 0 |
 | ● reviewed | 19 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `███████░░░░░░░░░░░░░` 44/126
+- Wave 2: `███████░░░░░░░░░░░░░` 45/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/126
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -376,13 +376,13 @@ tags: [system/generated]
 
 ## D14 · Tooling & Engineering
 
-*Which tools turn correct-looking code into verified, maintainable software?*  `██░░░░░░░░` 2/11
+*Which tools turn correct-looking code into verified, maintainable software?*  `███░░░░░░░` 3/11
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Tooling & Engineering]] | map | 1 | 0 |  |
 | ◐ | [[Compilers and Essential Flags]] | guide | 1 | 1 |  |
-| ○ | [[Warnings as Guardrails]] | idiom | 1 | 2 |  |
+| ◐ | [[Warnings as Guardrails]] | idiom | 1 | 2 |  |
 | ○ | [[CMake Fundamentals]] | guide | 1 | 2 |  |
 | ○ | [[Debugging with a Debugger]] | guide | 1 | 2 |  |
 | ○ | [[Sanitizers — ASan, UBSan, TSan]] | guide | 2 | 2 |  |

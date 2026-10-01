@@ -114,7 +114,7 @@ flowchart LR
 <!-- cc:auto:domain-index:D14 -->
 **Tier 1 · Foundational**
 - ◐ [[Compilers and Essential Flags]] · *guide*
-- ○ [[Warnings as Guardrails]] · *idiom*
+- ◐ [[Warnings as Guardrails]] · *idiom*
 - ○ [[CMake Fundamentals]] · *guide*
 - ○ [[Debugging with a Debugger]] · *guide*
 
@@ -128,7 +128,7 @@ flowchart LR
 **Tier 3 · Advanced**
 - ○ [[Dependencies and Package Managers]] · *guide*
 
-`██░░░░░░░░` 2/11 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`███░░░░░░░` 3/11 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
