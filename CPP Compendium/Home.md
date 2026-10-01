@@ -40,7 +40,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `██░░░░░░` 6/20 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `████░░░░` 9/19 |
 | `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `█████░░░` 9/15 |
-| `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `██░░░░░░` 3/16 |
+| `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `██░░░░░░` 4/16 |
 | `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `██░░░░░░` 6/30 |
 | `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `██░░░░░░` 3/11 |
 | `D12` | [[Map — Concurrency\|Concurrency]] | How do multiple threads of execution share memory without corrupting it? | `██░░░░░░` 5/17 |
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 234 | 104 | 0 | 19 | 0 | 357 | 142 | 2 |
+| 233 | 105 | 0 | 19 | 0 | 357 | 143 | 2 |
 
-`███████░░░░░░░░░░░░░` **34%** of the Atlas written · last build 2026-10-01
+`███████░░░░░░░░░░░░░` **35%** of the Atlas written · last build 2026-10-01
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Class Templates]] · *concept* · `D09` — wave 2
-2. [[Template Instantiation]] · *mechanism* · `D09` — wave 2
-3. [[Concepts and Constraints]] · *concept* · `D09` — wave 2
-4. [[Implicit Conversions and Promotions]] · *mechanism* · `D02` — wave 2
-5. [[auto Type Deduction]] · *mechanism* · `D02` — wave 2
-6. [[Type Aliases (typedef and using)]] · *concept* · `D02` — wave 2
+1. [[Implicit Conversions and Promotions]] · *mechanism* · `D02` — wave 2
+2. [[auto Type Deduction]] · *mechanism* · `D02` — wave 2
+3. [[Type Aliases (typedef and using)]] · *concept* · `D02` — wave 2
+4. [[Enumerations — Plain vs Scoped]] · *comparison* · `D02` — wave 2
+5. [[Signed Integer Overflow]] · *pitfall* · `D02` — wave 2
+6. [[Floating-Point Representation (IEEE 754)]] · *mechanism* · `D02` — wave 2
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Class Templates]] · *concept* · updated 2026-10-01
 - ◐ [[Warnings as Guardrails]] · *idiom* · updated 2026-10-01
 - ◐ [[Data Races and Race Conditions]] · *pitfall* · updated 2026-10-01
 - ◐ [[Mutexes and Lock Guards]] · *concept* · updated 2026-10-01
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Threads — thread and jthread]] · *concept* · updated 2026-10-01
 - ◐ [[Function Templates]] · *concept* · updated 2026-10-01
 - ◐ [[Value Categories]] · *concept* · updated 2026-10-01
-- ● [[RAII]] · *idiom* · updated 2026-10-01
 <!-- cc:end -->
 
 ## Start here

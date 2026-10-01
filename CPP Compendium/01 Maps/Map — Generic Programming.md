@@ -124,7 +124,7 @@ flowchart LR
 - ◐ [[Function Templates]] · *concept*
 
 **Tier 2 · Proficient**
-- ○ [[Class Templates]] · *concept*
+- ◐ [[Class Templates]] · *concept*
 - ○ [[Template Instantiation]] · *mechanism*
 - ○ [[Why Templates Live in Headers]] · *pitfall*
 - ○ [[Concepts and Constraints]] · *concept*
@@ -142,7 +142,7 @@ flowchart LR
 - ○ [[Two-Phase Lookup and Dependent Names]] · *mechanism*
 - ○ [[Compile-Time Programming — From TMP to constexpr]] · *concept*
 
-`██░░░░░░░░` 3/16 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 4/16 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

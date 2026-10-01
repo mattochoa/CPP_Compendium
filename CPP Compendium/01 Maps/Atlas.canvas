@@ -1684,7 +1684,8 @@
 			"y": 2454,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Class Templates]]\n*concept · T2*"
+			"text": "◐ [[Class Templates]]\n*concept · T2*",
+			"color": "3"
 		},
 		{
 			"id": "t-template-instantiation",

@@ -1,6 +1,6 @@
 {
-  "runs": 144,
-  "builder_runs": 142,
+  "runs": 145,
+  "builder_runs": 143,
   "editor_runs": 2,
   "history": [
     {
@@ -1650,10 +1650,23 @@
       "code": "3/3",
       "commit": "✓",
       "summary": "AUTHOR: Warnings as Guardrails (idiom, D14) — -Wall/-Wextra/-Werror as a compile-time guardrail; the Window -Wreorder/-Wuninitialized example (Primer p.290) and the Account -Wshadow example both verified against GCC 11.4 locally and via cc.py code."
+    },
+    {
+      "when": "2026-10-01T20:21:48Z",
+      "run": 143,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "class-templates"
+      ],
+      "lint": "100–100",
+      "code": "5/5",
+      "commit": "✓",
+      "summary": "AUTHOR: Class Templates — explicit arguments (no call to deduce from), member-by-member lazy instantiation (nm evidence), per-instantiation static members, pointer-vs-object implicit instantiation, CTAD scoped correctly as a narrowing, not a removal, of the explicit-argument requirement."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-10-01T19:25:38Z"
+  "last_builder": "2026-10-01T20:21:48Z"
 }
