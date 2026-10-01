@@ -22,7 +22,7 @@ tags:
 - tension/compatibility-vs-evolution
 - std/c++98
 created: 2026-09-26
-updated: 2026-09-29
+updated: 2026-09-30
 reviewed: 2026-09-27
 score: 18
 rubric:
@@ -182,6 +182,17 @@ Zero-overhead abstractions are legal to *optimize into nothing* specifically bec
 > ```
 > `nm` reports both as weak (`W`) symbols the linker may fold across translation units but never across types: `int`'s body uses one integer `lea`; `double`'s uses SSE addition, because that is what each type's `+` actually compiles to. Neither instantiation is slower than a hand-written `triple_int`/`triple_double` would be — pillar 2 holds per call — but a template used with ten types ships (up to) ten function bodies where a single dynamically-typed routine would ship one. The cost pillar 2 promises not to charge is *runtime* cost; compile time and binary size were never part of the bargain (Pikus, *Function inlining* p. 352, on the sibling trade-off of weighing inlined code bloat against call overhead).
 
+> [!machine] Pillar 2's third price, observed: typeinfo and a vtable exist whether or not anyone asks
+> `Plain` declares no virtual function; `Poly` declares one, otherwise identical, each built as its own translation unit so neither optimizes away. GCC 11.4 (local toolchain), `-O2`, x86-64, `nm -C` on the two object files:
+> ```text
+> rtti_cost_plain.o   — no vtable, no typeinfo symbol: there is nothing to name
+> rtti_cost_poly.o
+>   0000000000000028 V vtable for Poly              ; 40 bytes
+>   0000000000000010 V typeinfo for Poly             ; 16 bytes
+>   0000000000000006 V typeinfo name for Poly        ;  6 bytes
+> ```
+> `sizeof(Plain) == 4`; `sizeof(Poly) == 16` — the extra 8 bytes are the vptr every `Poly` carries, plus padding. Nothing here ever calls `dynamic_cast` or `typeid` on a `Poly`, yet the compiler emits the vtable and typeinfo a caller elsewhere might need — weak (`V`) symbols the linker can fold across translation units, never remove from a binary that defines the class. Pillar 2 is a promise about the path that *executes*, not about what a class's mere declaration puts in the binary.
+
 ## In Code
 
 **1 · Trust the programmer: safety is bought at the interface, not forced by the language**
@@ -303,7 +314,7 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 > The mapping is direct relative to *the abstract machine's* model of memory and instructions — but the concrete machine, `int`'s width, and the exact instructions chosen are still implementation-defined or unspecified. "Runs close to the metal" and "behaves identically on every metal" are different claims. See [[The C++ Abstract Machine]] and [[The ISO Standard, Compilers and Conformance]].
 
 > [!trap] "Nothing until used" is a per-call-site promise, not a whole-binary one
-> GCC's own documentation justifies `-fno-rtti` as a way to "save some space": the `typeinfo` metadata that `dynamic_cast` and `typeid` need is generated for every class with virtual functions, whether or not the program ever calls either operation on it. The same shape of cost appears in the exceptions example above — the unwind tables exist for every function that could throw, not only the ones a given run does throw from. Zero overhead is a promise about the path actually *executed*; whether the *metadata* for an unused capability ships in the binary at all is a coarser, compiler-level decision, which is why `-fno-rtti` and `-fno-exceptions` exist as explicit opt-outs rather than happening automatically (GCC's names; Clang and MSVC expose the same trade differently).
+> The `Plain`/`Poly` evidence above is the general case: GCC's own documentation justifies `-fno-rtti` as a way to "save some space," because `typeinfo` is generated for *every* class with a virtual function, not only the ones a program actually feeds to `dynamic_cast` or `typeid`. The exceptions example earlier shows the same shape of cost from the other direction — unwind tables exist for every function that could throw, not only the ones a given run does throw from. Zero overhead is a promise about the path actually *executed*; whether unused-capability *metadata* ships in the binary at all is a coarser, compiler-level decision, which is why `-fno-rtti` and `-fno-exceptions` exist as explicit opt-outs rather than happening automatically (GCC's names; Clang and MSVC expose the same trade differently).
 
 > [!trap] "Templates cost nothing" conflates two different currencies
 > Pillar 2 promises a *runtime-cost* bargain, and a template specialization keeps it — `triple<int>` is exactly the instruction a hand-written `int` version would be. It says nothing about *compile time or binary size*: each type instantiated adds another compiled copy (see the `nm` evidence in Under the Hood). A template used across many types can grow a binary in a way a single non-template or runtime-dispatched routine never would. "Costs nothing" and "the specific thing it costs nothing in" are not the same claim.
@@ -317,6 +328,7 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 | C++11 | Move semantics; `constexpr` | Extend zero overhead to resource *transfer* (no copy-then-destroy tax) and push more computation to compile time |
 | C++17 | Guaranteed copy elision | Remove even an *elidable* copy's cost for prvalues — elision had previously been only *permitted*, as an explicit exception to the as-if rule (`[class.copy.elision]`), not required |
 | C++20 | Concepts | Move more interface-precondition checking into the compiler (P.5) without adding a runtime cost |
+| C++26 | [[Preconditions, Postconditions and Contracts]]: `pre(...)`, `post(...)`, `contract_assert(...)` | Give the `.at()`-vs-`operator[]` choice a single built-in syntax instead of a per-library convention — and make the "pay for it or don't" decision an *evaluation semantic* (`ignore`, `observe`, `enforce`, `quick-enforce`) picked per build, not baked permanently into the interface. With `ignore`, a contract assertion has no effect at all: the oldest pillar-2 bargain, now written into the language itself rather than left to each library's own design |
 
 ## Connections
 
@@ -355,4 +367,6 @@ Without `Meters`, `set_altitude(double)` would accept a raw number from any unit
 - Itanium C++ ABI, *Exception Handling*: https://itanium-cxx-abi.github.io/cxx-abi/abi-eh.html — the table-based unwinding convention GCC and Clang use, which is why a non-throwing call path costs nothing extra for having a `catch` nearby; the C++ Standard itself specifies only `try`/`catch` behavior, not this mechanism.
 - GCC, *C++ Dialect Options*, `-fno-rtti`: https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-fno-rtti — states plainly that RTTI metadata is generated "for use by" `dynamic_cast`/`typeid` for every class with virtual functions, and that disabling it "saves some space" precisely because that metadata is otherwise unconditional; the source for the fourth Pitfall.
 - Pikus, *Function inlining* (p. 352): the compiler weighs inlined code bloat against call overhead — the same shape of trade-off as one compiled body per template instantiation, the source for the fifth Pitfall and its `Under the Hood` evidence.
+- `nm -C` on GCC 11.4 (local toolchain) output for `Plain`/`Poly`, two classes differing only in one `virtual`: the source for the third `Under the Hood` block and the fourth Pitfall's evidence (`.cache/scratch/rtti_cost_plain.cpp`, `rtti_cost_poly.cpp`).
+- cppreference, *Contract assertions (since C++26)*: https://en.cppreference.com/w/cpp/language/contracts — evaluation semantics (`ignore`/`observe`/`enforce`/`quick-enforce`) and the "ignore has no effect" guarantee behind the Evolution table's C++26 row. Adopted into the C++26 Working Paper as `P2900R14` at the February 2025 Hagenberg meeting; C++26 itself was completed at the March 2026 London/Croydon meeting.
 - See [[Guide — A Tour of C++ (3rd ed)]] and [[Guide — cppreference, the Draft Standard and the Core Guidelines]] for how these sources fit the rest of the Atlas.

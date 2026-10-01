@@ -58,7 +58,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 245 | 92 | 0 | 20 | 0 | 357 | 124 | 2 |
+| 245 | 92 | 0 | 20 | 0 | 357 | 126 | 2 |
 
 `██████░░░░░░░░░░░░░░` **31%** of the Atlas written · last build 2026-09-30
 <!-- cc:end -->
@@ -75,16 +75,16 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
-- ◐ [[Double Free and Mismatched new-delete]] · *pitfall* · updated 2026-09-30
+- ◐ [[The C++ Design Philosophy]] · *concept* · updated 2026-09-30
 - ◐ [[Memory Leaks]] · *pitfall* · updated 2026-09-30
-- ◐ [[Composition vs Inheritance]] · *comparison* · updated 2026-09-30
 - ◐ [[Pointers]] · *concept* · updated 2026-09-30
+- ◐ [[Double Free and Mismatched new-delete]] · *pitfall* · updated 2026-09-30
+- ◐ [[Composition vs Inheritance]] · *comparison* · updated 2026-09-30
 - ◐ [[Built-in Arrays and Array-to-Pointer Decay]] · *mechanism* · updated 2026-09-30
 - ● [[What a Type Is]] · *concept* · updated 2026-09-30
 - ◐ [[Anatomy of an Expression]] · *concept* · updated 2026-09-30
 - ◐ [[Function Overloading]] · *concept* · updated 2026-09-30
 - ◐ [[nullptr and Null Pointers]] · *concept* · updated 2026-09-30
-- ◐ [[override and final]] · *concept* · updated 2026-09-30
 <!-- cc:end -->
 
 ## Start here

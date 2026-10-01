@@ -1,6 +1,6 @@
 {
-  "runs": 126,
-  "builder_runs": 124,
+  "runs": 128,
+  "builder_runs": 126,
   "editor_runs": 2,
   "history": [
     {
@@ -1473,10 +1473,25 @@
       "code": "3/3",
       "commit": "✓",
       "summary": "Hazard File for Double Free and Mismatched new-delete: delete/delete[] contract from [expr.delete], free-list corruption diagram, ASan-verified double-free and alloc-dealloc-mismatch repros, unique_ptr fix. Woven into existing links from RAII, Dangling Pointers and References, Dynamic Memory, Memory Leaks."
+    },
+    {
+      "when": "2026-10-01T02:50:24Z",
+      "run": 126,
+      "role": "builder",
+      "mode": "DEEPEN",
+      "items": [
+        "cpp-design-philosophy",
+        "pointers",
+        "memory-leaks"
+      ],
+      "lint": "100–100",
+      "code": "5/5 4/4 4/4",
+      "commit": "✓",
+      "summary": "deepen: cpp-design-philosophy — depth/visual/integration. Added verified GCC 11.4 nm evidence (Plain vs Poly: vtable+typeinfo emitted whether or not dynamic_cast/typeid is used) as a new Under-the-Hood block, tightened the redundant pitfall prose it now backs, added a sourced C++26 Contracts row to Evolution (pre/post/contract_assert, ignore=zero-cost), and backlinked two written neighbours (Pointers, Memory Leaks) to the root note."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-10-01T01:21:40Z"
+  "last_builder": "2026-10-01T02:50:24Z"
 }
