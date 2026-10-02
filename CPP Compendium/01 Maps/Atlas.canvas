@@ -1863,7 +1863,8 @@
 			"y": 2742,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[array]]\n*concept · T1*"
+			"text": "◐ [[array]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-associative-containers",

@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 232 |
+| ○ planned | 231 |
 | ◌ stub | 0 |
-| ◐ draft | 107 |
+| ◐ draft | 108 |
 | ⟲ revise | 0 |
 | ● reviewed | 18 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `███████░░░░░░░░░░░░░` 47/126
+- Wave 2: `████████░░░░░░░░░░░░` 48/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/126
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -275,7 +275,7 @@ tags: [system/generated]
 
 ## D10 · Standard Library
 
-*Which solved problems ship with the language, and how are they composed?*  `██░░░░░░░░` 6/30
+*Which solved problems ship with the language, and how are they composed?*  `██░░░░░░░░` 7/30
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -284,7 +284,7 @@ tags: [system/generated]
 | ◐ | [[vector]] | concept | 1 | 1 |  |
 | ◐ | [[Iterators]] | concept | 1 | 1 |  |
 | ● | [[string]] | concept | 1 | 1 | 20 |
-| ○ | [[array]] | concept | 1 | 2 |  |
+| ◐ | [[array]] | concept | 1 | 2 |  |
 | ○ | [[Ordered Associative Containers — map and set]] | concept | 1 | 2 |  |
 | ○ | [[The Algorithms Library]] | concept | 1 | 2 |  |
 | ○ | [[IO Streams Architecture]] | mechanism | 1 | 2 |  |

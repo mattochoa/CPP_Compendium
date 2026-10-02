@@ -41,7 +41,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `████░░░░` 9/19 |
 | `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `█████░░░` 9/15 |
 | `D09` | [[Map — Generic Programming\|Generic Programming]] | How can one piece of code work with many types chosen at compile time? | `██░░░░░░` 4/16 |
-| `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `██░░░░░░` 6/30 |
+| `D10` | [[Map — Standard Library\|Standard Library]] | Which solved problems ship with the language, and how are they composed? | `██░░░░░░` 7/30 |
 | `D11` | [[Map — Errors & Contracts\|Errors & Contracts]] | What happens when an operation cannot do what it promised? | `██░░░░░░` 3/11 |
 | `D12` | [[Map — Concurrency\|Concurrency]] | How do multiple threads of execution share memory without corrupting it? | `██░░░░░░` 5/17 |
 | `D13` | [[Map — Performance & the Machine\|Performance & the Machine]] | What does the hardware actually do with our code, and how do we make it fast? | `██░░░░░░` 3/15 |
@@ -58,23 +58,26 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 232 | 107 | 0 | 18 | 0 | 357 | 145 | 2 |
+| 231 | 108 | 0 | 18 | 0 | 357 | 146 | 2 |
 
 `███████░░░░░░░░░░░░░` **35%** of the Atlas written · last build 2026-10-01
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[array]] · *concept* · `D10` — wave 2
-2. [[Ordered Associative Containers — map and set]] · *concept* · `D10` — wave 2
-3. [[The Algorithms Library]] · *concept* · `D10` — wave 2
-4. [[IO Streams Architecture]] · *mechanism* · `D10` — wave 2
-5. [[Stream State and Robust Input]] · *idiom* · `D10` — wave 2
-6. [[File IO]] · *concept* · `D10` — wave 2
+1. [[C++11 — The Modern Reboot]] · *evolution* · `D16` — wave 2
+2. [[C++20 — The Big Four]] · *evolution* · `D16` — wave 2
+3. [[Ordered Associative Containers — map and set]] · *concept* · `D10` — wave 2
+4. [[The Algorithms Library]] · *concept* · `D10` — wave 2
+5. [[IO Streams Architecture]] · *mechanism* · `D10` — wave 2
+6. [[Stream State and Robust Input]] · *idiom* · `D10` — wave 2
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Built-in Arrays and Array-to-Pointer Decay]] · *mechanism* · updated 2026-10-01
+- ◐ [[vector]] · *concept* · updated 2026-10-01
+- ◐ [[array]] · *concept* · updated 2026-10-01
 - ◐ [[Implicit Conversions and Promotions]] · *mechanism* · updated 2026-10-01
 - ◐ [[Anatomy of a Function]] · *concept* · updated 2026-10-01
 - ◐ [[Class Templates]] · *concept* · updated 2026-10-01
@@ -82,9 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Data Races and Race Conditions]] · *pitfall* · updated 2026-10-01
 - ◐ [[Mutexes and Lock Guards]] · *concept* · updated 2026-10-01
 - ◐ [[Integer Representation and Two's Complement]] · *mechanism* · updated 2026-10-01
-- ◐ [[Performance — Measure, Don't Guess]] · *concept* · updated 2026-10-01
-- ◐ [[The Memory Hierarchy and Caches]] · *mechanism* · updated 2026-10-01
-- ◐ [[Threads — thread and jthread]] · *concept* · updated 2026-10-01
 <!-- cc:end -->
 
 ## Start here

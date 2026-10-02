@@ -1,6 +1,6 @@
 {
-  "runs": 147,
-  "builder_runs": 145,
+  "runs": 148,
+  "builder_runs": 146,
   "editor_runs": 2,
   "history": [
     {
@@ -1689,10 +1689,25 @@
       "code": "3/3",
       "commit": "✓",
       "summary": "author: Implicit Conversions and Promotions (mechanism, D02) — promotion vs conversion ladder, value transformations, asm proof of integral promotion, C++20 modulo-2^N conversion rule, 3 verified examples"
+    },
+    {
+      "when": "2026-10-02T00:22:26Z",
+      "run": 146,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "std-array",
+        "std-vector",
+        "arrays-and-decay"
+      ],
+      "lint": "100–100",
+      "code": "4/4 3/3 4/4",
+      "commit": "✓",
+      "summary": "Wrote array (D10, concept, wave 2): derived the fixed-size container from the raw-array-decay problem (Built-in Arrays and Array-to-Pointer Decay), showed its aggregate layout is bit-identical to a raw array (sizeof + identical asm for operator[]), and that this buys assignment and a Container interface but loses resizability — N is part of the type, and swap is O(N) because there's no handle to exchange. 4/4 code blocks PASS (GCC 11.4, x86-64 Linux). Back-wove into vector (Siblings) and Built-in Arrays and Array-to-Pointer Decay (Siblings)."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-09-27T12:32:48Z",
-  "last_builder": "2026-10-01T23:22:00Z"
+  "last_builder": "2026-10-02T00:22:26Z"
 }

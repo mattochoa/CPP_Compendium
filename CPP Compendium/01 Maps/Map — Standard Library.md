@@ -136,7 +136,7 @@ flowchart LR
 - ◐ [[vector]] · *concept*
 - ◐ [[Iterators]] · *concept*
 - ● [[string]] · *concept*
-- ○ [[array]] · *concept*
+- ◐ [[array]] · *concept*
 - ○ [[Ordered Associative Containers — map and set]] · *concept*
 - ○ [[The Algorithms Library]] · *concept*
 - ○ [[IO Streams Architecture]] · *mechanism*
@@ -166,7 +166,7 @@ flowchart LR
 - ○ [[Small String Optimization]] · *mechanism*
 - ○ [[any]] · *concept*
 
-`██░░░░░░░░` 6/30 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`██░░░░░░░░` 7/30 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

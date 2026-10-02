@@ -30,7 +30,7 @@ tags:
 - tension/safety-vs-performance
 - std/c++98
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-01
 ---
 
 # Built-in Arrays and Array-to-Pointer Decay
@@ -207,7 +207,7 @@ int main() {
 
 - **Prerequisites:** [[Pointers]] (decay's entire output type) · [[Storage Duration]] (why an array's elements are one contiguous object with no stored address of their own).
 - **Enables:** [[Pointer Arithmetic and Arrays]] (the operations this mechanism's output pointer supports) · [[C-Style Strings]] (a `char` array, permanently viewed through its decayed form) · [[Functions and Parameters — The Complete Picture]] (why array parameters silently become pointer parameters).
-- **Siblings:** [[References]] (`T (&)[N]` is the access path that captures `N` instead of losing it) · [[span]] (the C++20 type built specifically to carry the length decay throws away).
+- **Siblings:** [[References]] (`T (&)[N]` is the access path that captures `N` instead of losing it) · [[span]] (the C++20 type built specifically to carry the length decay throws away) · [[array]] (the library's fixed-size replacement: identical layout and cost, but no decay rule applies to it at all).
 - **Hazards:** [[Object Slicing]] (compounds with decay in the classic `draw(Circle[], n)` bug) · [[Buffer Overruns and Out-of-Bounds Access]] (a decayed pointer carries no bound for a sanitizer or a reader to check against).
 - **Domain:** [[Map — Objects, Memory & Lifetime]].
 - **Practice:** *Continuum #11 Pointer & Array Internals Lab* — print `sizeof` of the same array both in `main` and inside a function that receives it by a plain array parameter, and confirm the two numbers disagree exactly as Example 1 predicts.

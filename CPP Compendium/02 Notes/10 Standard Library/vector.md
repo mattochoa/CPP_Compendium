@@ -29,7 +29,7 @@ tags:
 - std/c++17
 - std/c++20
 created: 2026-09-26
-updated: 2026-09-27
+updated: 2026-10-01
 ---
 
 # vector
@@ -205,7 +205,7 @@ int main() {
 
 - **Prerequisites:** [[STL Architecture — Containers, Iterators, Algorithms]] — `vector` is the concrete case every claim there is checked against.
 - **Enables:** [[Iterators]] · [[The Algorithms Library]] · [[How vector Grows — Capacity and Amortized Cost]] · [[Iterator Invalidation]].
-- **Siblings:** [[Sequence Containers Compared]] (when *not* to reach for `vector`) · [[string]] (the identical handle-and-buffer model, specialized to characters, plus a mandatory null terminator `vector` never needs).
+- **Siblings:** [[Sequence Containers Compared]] (when *not* to reach for `vector`) · [[string]] (the identical handle-and-buffer model, specialized to characters, plus a mandatory null terminator `vector` never needs) · [[array]] (the compile-time-sized opposite number: no handle at all, because there is nothing to grow).
 - **Hazards:** [[Iterator Invalidation]] · [[Dangling Pointers and References]] · [[Object Slicing]].
 - **Lookup layer:** [[Header — vector]] for the full member reference, task recipes and the growth/invalidation tables in detail.
 - **Domain:** [[Map — Standard Library]].
