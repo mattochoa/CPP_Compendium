@@ -105,6 +105,8 @@ flowchart LR
 9. [[The Forms of Initialization]]: exactly when and how a lifetime begins.
 10. Advanced layer: [[Object Representation, Padding and Layout]] (including hidden members such as the [[Virtual Dispatch — vptr and vtable|vptr]]) → [[Strict Aliasing and Type Punning]] → [[Placement new and Manual Lifetime]] → [[Allocators and pmr Memory Resources]]. What that layout costs on real hardware — cache lines, false sharing, allocation overhead — is [[Map — Performance & the Machine|a later domain's]] question, not this one's.
 
+This domain is the hinge of [[Path — Course Companion]]'s route through the CPP Project Continuum: everything in Tiers 1–2 prepares for it, everything in Tiers 3–5 builds on it.
+
 ## Key Ideas
 
 1. **An object's lifetime and its storage are governed by two different clocks.** [[Object Lifetime|An object's lifetime]] begins once storage of the right size and alignment exists *and* initialization completes, and ends when a class type's destructor call starts or a non-class object is destroyed (`[basic.life]`); its *storage* is reclaimed only later — at scope exit, at `delete`, or at program end (`[basic.stc.general]`) — so a stale pointer can still address allocated-but-dead bytes for a while after its target's lifetime is already over. The boundary is not merely declared: [[Object Lifetime|GCC's emitted assembly]] shows every destructor rewriting the object's vptr to its *own* class on entry, the real mechanism `[class.cdtor]`'s during-destruction rule depends on — proof that this clock costs exactly as much control as the guarantee requires, and no more.

@@ -76,6 +76,8 @@ flowchart LR
 7. [[Undefined Behavior]]: what the contract deliberately leaves unsaid, and why the silence is load-bearing rather than an oversight.
 8. [[Implementation-Defined, Unspecified and Undefined Behavior]]: the three-way split hiding inside "the Standard doesn't pin this down" — and why only one of the three is dangerous.
 
+Once this map's contract is in hand, [[Path — Course Companion]] turns it into a reading order against the CPP Project Continuum's Tiers 1–5, naming which project each later domain unlocks.
+
 ## Key Ideas
 
 1. **The Standard defines a machine, not a computer.** [[The C++ Abstract Machine]] is a hypothetical, parameterized interpreter (`[intro.abstract]`); any real CPU running your program is only ever one "corresponding instance" of it, so a rule stated for the abstract machine binds every conforming implementation at once.

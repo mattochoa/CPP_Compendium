@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 231 |
+| ○ planned | 230 |
 | ◌ stub | 0 |
-| ◐ draft | 92 |
+| ◐ draft | 93 |
 | ⟲ revise | 0 |
 | ● reviewed | 34 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `████████░░░░░░░░░░░░` 48/126
+- Wave 2: `████████░░░░░░░░░░░░` 49/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/126
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -444,11 +444,11 @@ tags: [system/generated]
 
 ## PRX · Practice
 
-*How does knowledge become skill?*  `██░░░░░░░░` 1/4
+*How does knowledge become skill?*  `█████░░░░░` 2/4
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ○ | [[Path — Course Companion]] | path | 1 | 2 |  |
+| ◐ | [[Path — Course Companion]] | path | 1 | 2 |  |
 | ○ | [[Path — Modern C++ Fluency]] | path | 2 | 3 |  |
 | ○ | [[Path — Systems & Performance]] | path | 3 | 3 |  |
 | ◐ | [[Kit — Background Worker (C++14-17)]] | guide | 2 | 2 |  |

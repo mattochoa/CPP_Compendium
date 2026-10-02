@@ -49,7 +49,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D15` | [[Map — Design & Idioms\|Design & Idioms]] | Which recurring shapes of solution survive contact with real programs? | `█░░░░░░░` 2/14 |
 | `D16` | [[Map — Evolution of C++\|Evolution of C++]] | How did the language get here, and where is it going? | `██░░░░░░` 2/10 |
 | `SRC` | Sources | What should be read, in what order, and for what? | `█████░░░` 3/5 |
-| `PRX` | Practice | How does knowledge become skill? | `██░░░░░░` 1/4 |
+| `PRX` | Practice | How does knowledge become skill? | `████░░░░` 2/4 |
 | `HDR` | [[Map — Standard Headers\|Standard Headers]] | Where does each standard facility live, and what exactly does its header promise? | `███░░░░░` 21/60 |
 <!-- cc:end -->
 
@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 231 | 92 | 0 | 34 | 0 | 357 | 146 | 4 |
+| 230 | 93 | 0 | 34 | 0 | 357 | 147 | 4 |
 
-`███████░░░░░░░░░░░░░` **35%** of the Atlas written · last build 2026-10-02
+`███████░░░░░░░░░░░░░` **36%** of the Atlas written · last build 2026-10-02
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Path — Course Companion]] · *path* · `PRX` — pinned by Editor
-2. [[Stream State and Robust Input]] · *idiom* · `D10` — pinned by Editor
-3. [[File IO]] · *concept* · `D10` — pinned by Editor
-4. [[Recursion]] · *concept* · `D05` — pinned by Editor
-5. [[switch and Fallthrough]] · *concept* · `D03` — pinned by Editor
-6. [[Operator Overloading]] · *concept* · `D06` — pinned by Editor
+1. [[Stream State and Robust Input]] · *idiom* · `D10` — pinned by Editor
+2. [[File IO]] · *concept* · `D10` — pinned by Editor
+3. [[Recursion]] · *concept* · `D05` — pinned by Editor
+4. [[switch and Fallthrough]] · *concept* · `D03` — pinned by Editor
+5. [[Operator Overloading]] · *concept* · `D06` — pinned by Editor
+6. [[Rule of Zero, Three and Five]] · *idiom* · `D06` — pinned by Editor
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Path — Course Companion]] · *path* · updated 2026-10-02
 - ● [[Implicit Conversions and Promotions]] · *mechanism* · updated 2026-10-01
 - ● [[Integer Representation and Two's Complement]] · *mechanism* · updated 2026-10-01
 - ◐ [[Performance — Measure, Don't Guess]] · *concept* · updated 2026-10-01
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[array]] · *concept* · updated 2026-10-01
 - ◐ [[Anatomy of a Function]] · *concept* · updated 2026-10-01
 - ◐ [[Class Templates]] · *concept* · updated 2026-10-01
-- ◐ [[Warnings as Guardrails]] · *idiom* · updated 2026-10-01
 <!-- cc:end -->
 
 ## Start here

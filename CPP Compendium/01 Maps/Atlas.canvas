@@ -2938,7 +2938,8 @@
 			"y": 4478,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Path — Course Companion]]\n*path · T1*"
+			"text": "◐ [[Path — Course Companion]]\n*path · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-path-modern-fluency",

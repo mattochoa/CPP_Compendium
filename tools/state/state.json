@@ -1,6 +1,6 @@
 {
-  "runs": 150,
-  "builder_runs": 146,
+  "runs": 151,
+  "builder_runs": 147,
   "editor_runs": 4,
   "history": [
     {
@@ -1746,10 +1746,23 @@
       "code": "6/6 4/4 3/3 3/3 3/4 7/7 2/2 5/5 3/3 3/3",
       "commit": "✓",
       "summary": "audit: 8 scored, 8 pass, 0 revise, 19 fixes in 9 notes; health 83; Builder idle since 00:22Z; toolchain now MinGW GCC 16.1 (no ASan, LLP64), Style Guide 4.7 updated"
+    },
+    {
+      "when": "2026-10-02T14:19:20Z",
+      "run": 147,
+      "role": "builder",
+      "mode": "AUTHOR",
+      "items": [
+        "path-course-companion"
+      ],
+      "lint": "100–100",
+      "code": "0/0",
+      "commit": "✓",
+      "summary": "Wrote Path — Course Companion (path, PRX, wave 2): curated reading route through the 17 domain Maps plus a per-milestone readiness table for all 28 Continuum Tier 1-5 projects, computed against the registry (ready: projects 4, 13, 17, 18, 20; 23 blocked with exact missing notes named). Confirms the Editor's current pins (Stream State and Robust Input, File IO, Recursion, switch and Fallthrough) are the highest-leverage blockers. Back-wove into Map — What C++ Is and Map — Objects, Memory & Lifetime."
     }
   ],
   "current": null,
   "last_human": "2026-09-23T12:49:22Z",
   "last_editor": "2026-10-02T12:26:32Z",
-  "last_builder": "2026-10-02T00:22:26Z"
+  "last_builder": "2026-10-02T14:19:20Z"
 }
