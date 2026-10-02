@@ -130,12 +130,12 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D04 -->
 **Tier 1 · Foundational**
-- ◐ [[The C++ Object Model — What an Object Is]] · *concept*
+- ● [[The C++ Object Model — What an Object Is]] · *concept*
 - ● [[Process Memory Layout — Stack, Heap, Static]] · *mechanism*
-- ◐ [[Storage Duration]] · *concept*
-- ◐ [[Object Lifetime]] · *concept*
-- ◐ [[References]] · *concept*
-- ◐ [[Pointers]] · *concept*
+- ● [[Storage Duration]] · *concept*
+- ● [[Object Lifetime]] · *concept*
+- ● [[References]] · *concept*
+- ● [[Pointers]] · *concept*
 - ◐ [[Dynamic Memory — new and delete]] · *mechanism*
 - ◐ [[Reading Uninitialized Variables]] · *pitfall*
 - ◐ [[Pointer Arithmetic and Arrays]] · *mechanism*

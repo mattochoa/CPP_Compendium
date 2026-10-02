@@ -4,7 +4,7 @@ title: Constructors
 type: concept
 domain: D06
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Encapsulation and Class Invariants]]"
@@ -28,6 +28,16 @@ tags:
 - std/c++11
 created: 2026-09-27
 updated: 2026-10-01
+reviewed: 2026-10-01
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Constructors
@@ -75,7 +85,7 @@ flowchart TB
 | Situation | Rule | Example |
 |---|---|---|
 | Member has a default member initializer (C++11 NSDMI) | Uses that initializer | `int cap_ = 16;` → `16` when the constructor's list is silent about `cap_` |
-| Member has neither an initializer nor a list entry | Default-initialized | A class-type member calls its default constructor; a built-in (`int`, `int*`) gets an **indeterminate value** — reading it is undefined behavior until something assigns to it |
+| Member has neither an initializer nor a list entry | Default-initialized | A class-type member calls its default constructor; a built-in (`int`, `int*`) gets an **indeterminate value** — reading it is undefined behavior through C++23; in C++26 an object with automatic storage gets an *erroneous* value instead (P2795R5): still a bug, but no longer UB |
 
 > [!standard] Order is fixed, and it is not the list's order
 > `[class.base.init]` ¶15: in a non-delegating constructor, initialization proceeds *virtual bases* (most-derived object only, depth-first left-to-right) → *direct bases* (declaration order) → *data members* (declaration order) → *the constructor body*. The member initializer list only supplies **values**; the **order** is always the order members are declared, "regardless of the order of the mem-initializers" — the exact wording the standard uses because programmers reliably expect otherwise (*Pitfalls*).
@@ -184,7 +194,7 @@ int main() {
 }
 ```
 1. Read left to right, this looks like: set `width_`, set `height_`, then compute `area_` from both. That is not what happens.
-2. Construction order follows **declaration** order, so `area_` is initialized *first* — from `width_` and `height_`, which are still indeterminate. GCC 11.4.0 (`-Wall -Wextra -Wreorder`, this vault's toolchain) catches exactly this: `'height_' will be initialized after 'area_'`, plus a separate `-Wuninitialized` warning at the read of each member. Compiling and running it printed `0` for `area_` on this toolchain at `-O0` — but that number is not a guarantee. Reading an indeterminate `int` in an expression is undefined behavior (`[basic.indet]`); a different compiler, flag set, or optimization level is free to produce anything, including a value that looks plausible. The fix is to declare `area_` last, or compute it in the body instead of the list.
+2. Construction order follows **declaration** order, so `area_` is initialized *first* — from `width_` and `height_`, which are still indeterminate. GCC 11.4.0 (`-Wall -Wextra -Wreorder`, this vault's toolchain) catches exactly this: `'height_' will be initialized after 'area_'`, plus a separate `-Wuninitialized` warning at the read of each member. Compiling and running it printed `0` for `area_` on this toolchain at `-O0` — but that number is not a guarantee. Reading an indeterminate `int` in an expression is undefined behavior through C++23 (`[basic.indet]`); C++26 makes it *erroneous behavior* for an automatic-storage object like `r` (a wrong, diagnosable value, not UB), and the result is still meaningless. A different compiler, flag set, or optimization level is free to produce anything, including a value that looks plausible. The fix is to declare `area_` last, or compute it in the body instead of the list.
 
 **3 · A virtual call from a constructor never reaches a derived override**
 

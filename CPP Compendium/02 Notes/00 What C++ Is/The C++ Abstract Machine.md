@@ -4,7 +4,7 @@ title: The C++ Abstract Machine
 type: concept
 domain: D00
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs: []
 related:
@@ -24,6 +24,16 @@ tags:
 - std/c++26
 created: 2026-09-27
 updated: 2026-09-27
+reviewed: 2026-10-01
+score: 19
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # The C++ Abstract Machine
@@ -196,7 +206,7 @@ int main() {
     std::puts(wrapped_past_max(2147483647) ? "wrapped" : "did not wrap");
 }
 ```
-`x + 1 < x` looks like a wraparound check, but signed overflow has no defined result in C++ (`[intro.abstract]` ¶4), in every standard through C++23. A compiler is entitled to assume `x + 1 > x` always, fold the comparison to `false`, and print `"did not wrap"` unconditionally at higher optimization levels — the opposite of what the source seems to test for. This vault's toolchain, GCC 11.4 with `-O2` and no sanitizers, does exactly that (see Sources); never treat a `cc: ub` block's printed output, on any build, as a language guarantee.
+`x + 1 < x` looks like a wraparound check, but signed overflow has no defined result in C++ (`[expr.pre]` ¶4), in every standard, C++26 included (C++20's two's-complement mandate did not change this). A compiler is entitled to assume `x + 1 > x` always, fold the comparison to `false`, and print `"did not wrap"` unconditionally — the opposite of what the source seems to test for. Observed: GCC 11.4, x86-64 Linux, no sanitizers, prints `did not wrap` at both `-O0` and `-O2`; never treat a `cc: ub` block's printed output, on any build, as a language guarantee.
 
 ## Pitfalls
 
@@ -212,7 +222,7 @@ int main() {
 |---|---|---|
 | **C++98** | Abstract machine, observable behavior and the as-if rule codified (`[intro.abstract]`) | Give "correct C++ implementation" a definition no single vendor owns |
 | C++11 | Multi-threaded execution added to the model (`[intro.races]`); volatile-ordering guarantee scoped to a single thread | A purely sequential abstract machine could not describe concurrent programs |
-| C++14 | Calls to the replaceable `operator new`/`operator delete` exempted from the as-if rule | Let programs rely on a custom allocator actually being invoked, even though eliding the call would otherwise be legal |
+| C++14 | A *new-expression* may omit, or merge, calls to the replaceable global `operator new`/`operator delete` (N3664, `[expr.new]`) — an explicit permission *beyond* the as-if rule | A user-replaced allocator can have observable side effects, so as-if alone never allowed eliding the call; the new rule lets compilers remove or fuse heap allocations anyway |
 | **C++26** (working draft) | *Observable checkpoints* and a *defined prefix* bound how far an undefined operation's license reaches; a new *erroneous behavior* category (`[defns.erroneous]`) gives some former UB (e.g. reading an uninitialized `int`) a diagnose-or-terminate response instead | Make ordinary mistakes bounded and debuggable without weakening optimization everywhere else |
 
 ## Connections

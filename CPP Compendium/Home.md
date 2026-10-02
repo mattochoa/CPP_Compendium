@@ -58,23 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 231 | 108 | 0 | 18 | 0 | 357 | 146 | 2 |
+| 231 | 100 | 0 | 26 | 0 | 357 | 146 | 3 |
 
 `███████░░░░░░░░░░░░░` **35%** of the Atlas written · last build 2026-10-01
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[C++11 — The Modern Reboot]] · *evolution* · `D16` — wave 2
-2. [[C++20 — The Big Four]] · *evolution* · `D16` — wave 2
-3. [[Ordered Associative Containers — map and set]] · *concept* · `D10` — wave 2
-4. [[The Algorithms Library]] · *concept* · `D10` — wave 2
-5. [[IO Streams Architecture]] · *mechanism* · `D10` — wave 2
-6. [[Stream State and Robust Input]] · *idiom* · `D10` — wave 2
+1. [[Path — Course Companion]] · *path* · `PRX` — pinned by Editor
+2. [[Stream State and Robust Input]] · *idiom* · `D10` — pinned by Editor
+3. [[File IO]] · *concept* · `D10` — pinned by Editor
+4. [[Recursion]] · *concept* · `D05` — pinned by Editor
+5. [[switch and Fallthrough]] · *concept* · `D03` — pinned by Editor
+6. [[Operator Overloading]] · *concept* · `D06` — pinned by Editor
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ● [[Constructors]] · *concept* · updated 2026-10-01
 - ◐ [[Built-in Arrays and Array-to-Pointer Decay]] · *mechanism* · updated 2026-10-01
 - ◐ [[vector]] · *concept* · updated 2026-10-01
 - ◐ [[array]] · *concept* · updated 2026-10-01
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Warnings as Guardrails]] · *idiom* · updated 2026-10-01
 - ◐ [[Data Races and Race Conditions]] · *pitfall* · updated 2026-10-01
 - ◐ [[Mutexes and Lock Guards]] · *concept* · updated 2026-10-01
-- ◐ [[Integer Representation and Two's Complement]] · *mechanism* · updated 2026-10-01
 <!-- cc:end -->
 
 ## Start here

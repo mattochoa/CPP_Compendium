@@ -7,7 +7,7 @@ aliases:
 type: concept
 domain: D04
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[The C++ Object Model — What an Object Is]]"
@@ -34,6 +34,16 @@ tags:
 - std/c++20
 created: 2026-09-27
 updated: 2026-09-30
+reviewed: 2026-10-01
+score: 19
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Pointers
@@ -86,7 +96,7 @@ Every value of pointer type is one of exactly four kinds (`[basic.compound]`; pa
 | **Points to** an object or function | Holds that object's (or function's) address | Dereference, compare, copy, do arithmetic within its array |
 | **Points past the end** of an object | The address just after it — even a lone, non-array object counts as a 1-element array for this rule (`[basic.compound]` ¶3) | Compare, copy — **never** dereference |
 | **Null** | A dedicated "names nothing" value, distinct for every pointer type | Compare (`if (p)` is `false`), copy, reassign |
-| **Invalid** | A determinate address that fails the validity conditions — e.g. its target's lifetime has ended (`[basic.life]`) | Comparison, arithmetic and boolean conversion are merely **implementation-defined**; **dereferencing is undefined** (`[basic.compound]` ¶6) |
+| **Invalid** | An address whose target's *storage duration* has ended — e.g. after `delete`, or once the target's block has exited (`[basic.compound]` ¶6). Lifetime ending alone does not make a pointer invalid (¶6 Note 6); using such a pointer is restricted by `[basic.life]` ¶7 instead | Comparison, arithmetic and boolean conversion are merely **implementation-defined**; **dereferencing is undefined** (`[basic.compound]` ¶6) |
 
 > [!standard] "Invalid" is not automatically undefined — dereferencing it is
 > It is tempting to read "invalid pointer" as "undefined behavior waiting to happen." The current Standard is more specific: using an invalid pointer value in an indirection (`*p`, `p->m`) is undefined, but using the *same* invalid value in a comparison, in pointer arithmetic, or converting it to `bool` is only **implementation-defined** — some real, if unspecified, outcome, never a licence for anything (`[basic.compound]` ¶6). Only the act of reading *through* it, or `delete`-ing it, crosses into UB.
@@ -213,7 +223,7 @@ int main() {
 ## Pitfalls
 
 > [!ub] An uninitialized pointer is worse than merely invalid
-> A block-scope pointer with no initializer holds an **indeterminate** value, not a real-but-stale address. Producing an indeterminate value by evaluation — which includes simply *reading* the pointer, as in `int* q = p;` — is undefined behavior in its own right (cppreference, *Default-initialization*), before the separate question of whether the address it happens to contain is even valid. Primer's advice is unconditional: initialize every pointer, to a real address or to `nullptr`, the moment it's declared (Primer §2.3.2, p. 54). [[Reading Uninitialized Variables]] develops this failure mode in full.
+> A block-scope pointer with no initializer holds an **indeterminate** value, not a real-but-stale address. Producing an indeterminate value by evaluation — which includes simply *reading* the pointer, as in `int* q = p;` — is undefined behavior in its own right through C++23 (cppreference, *Default-initialization*); C++26 (P2795R5) reclassifies it as *erroneous behavior* for automatic variables — a wrong but non-UB value that implementations are encouraged to diagnose. Either way it is a bug, and it comes before the separate question of whether the address it happens to contain is even valid. Primer's advice is unconditional: initialize every pointer, to a real address or to `nullptr`, the moment it's declared (Primer §2.3.2, p. 54). [[Reading Uninitialized Variables]] develops this failure mode in full.
 
 > [!ub] Dereferencing null or dangling
 > Both are pointer values that fail the "points to an object" state — one by construction, one by the target's lifetime ending underneath it. The language performs no check at the dereference — [[The C++ Design Philosophy|the same interface-level choice]] that leaves `operator[]` unchecked and `.at()` checked, applied here to every raw pointer rather than to one container. [[Dangling Pointers and References]] is the complete treatment of the second case, including detection and fixes.
@@ -232,7 +242,7 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 |---|---|---|
 | C / **C++98** | The four-state pointer-value model; `0` or the `NULL` macro as the null pointer constant; `void*` converts implicitly from any object pointer but back only with a cast | A typed, reseatable, "maybe nothing" access path, inherited directly from C |
 | **C++11** | `nullptr` and `std::nullptr_t` (cppreference, *`nullptr`*) | `0`/`NULL` are integers in disguise: they silently prefer an `int` overload over a pointer overload. `nullptr` has its own type, so overload resolution can never confuse "no object" with the number zero |
-| C++17 | `std::launder` (`<new>`) added, for the narrow case of retrieving a valid pointer to an object created by placement-`new` over old storage of the same type | Needed once [[Object Lifetime|guaranteed transparent replacement]] made "same address, new object" a defined situation the optimizer could otherwise reason past |
+| C++17 | `std::launder` (`<new>`) added, for obtaining a usable pointer to a new object created in storage whose old object it does *not* transparently replace (e.g. the old object was `const`, or a base-class subobject) — `[basic.life]` ¶10 Note 6 | When [[Object Lifetime|transparent replacement]] holds, old pointers automatically refer to the new object; when it doesn't, the optimizer may still assume the old object's values, and `launder` is the explicit barrier |
 | **C++20** | Built-in `operator<=>` defined for pointer types, yielding `std::strong_ordering` for a shared *composite pointer type* (cppreference, *Comparison operators*) | Gives pointers a single three-way comparison consistent with the existing `==`/`<` rules, instead of requiring both spelled out |
 
 ## Connections

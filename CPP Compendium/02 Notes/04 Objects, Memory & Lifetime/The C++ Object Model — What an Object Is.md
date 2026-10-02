@@ -8,7 +8,7 @@ aliases:
 type: concept
 domain: D04
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[The C++ Abstract Machine]]"
@@ -28,6 +28,16 @@ tags:
 - std/c++20
 created: 2026-09-27
 updated: 2026-09-27
+reviewed: 2026-10-01
+score: 18
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 2
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # The C++ Object Model — What an Object Is
@@ -94,7 +104,7 @@ The Standard fixes these facts about every object in `[intro.object]`. The table
 > `[class.mem]` guarantees that a pointer to a *standard-layout* class object can be `reinterpret_cast` to a pointer to its first non-static data member, and back — in other words, **no padding is allowed before the first member**. That is a language guarantee, not an implementation habit, and it is exactly what Example 2 below checks. It does not extend to classes with virtual functions, multiple access sections mixed with data, or non-standard-layout bases; those may (and typically do) place hidden data before the first declared member.
 
 > [!standard] Polymorphic objects carry extra, compiler-managed state
-> `[intro.object]` note 2 observes that some objects are **polymorphic**: a class that declares or inherits a virtual function. The implementation attaches extra information to each such object — in every mainstream ABI, one hidden pointer — that lets `dynamic_cast` and virtual calls recover the object's real type at run time. This note only flags that the state exists; how it is laid out and used is [[Virtual Dispatch — vptr and vtable]]'s subject, once [[Virtual Functions]] introduces the mechanism it serves.
+> `[intro.object]` states that some objects are **polymorphic**: a class that declares or inherits a virtual function. The implementation attaches extra information to each such object — in every mainstream ABI, one hidden pointer — that lets `dynamic_cast` and virtual calls recover the object's real type at run time. This note only flags that the state exists; how it is laid out and used is [[Virtual Dispatch — vptr and vtable]]'s subject, once [[Virtual Functions]] introduces the mechanism it serves.
 
 ## Under the Hood
 
@@ -224,7 +234,7 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 | C++11 | `alignas`/`alignof` let code query and request the alignment leg of the model directly, rather than relying on the compiler's default choice | Libraries needed portable control over object placement (SIMD types, lock-free structures) |
 | C++17 | Guaranteed copy elision: a prvalue is no longer a temporary object but a recipe that initializes its target directly ([[Value Categories]], `[conv.rval]`) | Removed a needless object (and a copy/move requirement) from every `return`-by-value |
 | **C++20** | *Implicit-lifetime types* and rules for objects implicitly created by `malloc`, `memcpy`, and `std::bit_cast` (P0593R6) | Gave long-standing low-level idioms (`malloc`-then-populate, byte-copying a struct) a defined object-model story instead of relying on undefined behavior compilers happened not to punish |
-| C++26 (working draft) | Further generalizes implicit object creation and adds `std::start_lifetime_as`-style vocabulary; through C++23 the rules covered fewer operations | Ongoing work to make low-level storage reuse fully specified rather than "usually fine" |
+| C++23 | `std::start_lifetime_as` / `std::start_lifetime_as_array` (P2590R2) give code an explicit way to begin an implicit-lifetime object's lifetime in existing storage, keeping the bytes' value | Byte buffers received from I/O or the network could finally be viewed as objects without a `memcpy` round trip |
 
 ## Connections
 

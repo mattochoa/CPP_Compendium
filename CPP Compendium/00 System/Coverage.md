@@ -10,9 +10,9 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 231 |
 | ◌ stub | 0 |
-| ◐ draft | 108 |
+| ◐ draft | 100 |
 | ⟲ revise | 0 |
-| ● reviewed | 18 |
+| ● reviewed | 26 |
 | ★ evergreen | 0 |
 
 **Total topics:** 357
@@ -33,7 +33,7 @@ tags: [system/generated]
 | ◐ | [[The C++ Design Philosophy]] | concept | 1 | 1 | 18 |
 | ◐ | [[Zero-Overhead Principle]] | concept | 1 | 1 |  |
 | ◐ | [[Levels of Abstraction — From Bits to Libraries]] | concept | 1 | 1 |  |
-| ◐ | [[The C++ Abstract Machine]] | concept | 1 | 1 |  |
+| ● | [[The C++ Abstract Machine]] | concept | 1 | 1 | 19 |
 | ◐ | [[Undefined Behavior]] | concept | 1 | 1 |  |
 | ○ | [[The As-If Rule]] | mechanism | 2 | 2 |  |
 | ○ | [[Implementation-Defined, Unspecified and Undefined Behavior]] | comparison | 2 | 2 |  |
@@ -122,12 +122,12 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Objects, Memory & Lifetime]] | map | 1 | 0 | 19 |
-| ◐ | [[The C++ Object Model — What an Object Is]] | concept | 1 | 1 |  |
+| ● | [[The C++ Object Model — What an Object Is]] | concept | 1 | 1 | 18 |
 | ● | [[Process Memory Layout — Stack, Heap, Static]] | mechanism | 1 | 1 | 20 |
-| ◐ | [[Storage Duration]] | concept | 1 | 1 |  |
-| ◐ | [[Object Lifetime]] | concept | 1 | 1 |  |
-| ◐ | [[References]] | concept | 1 | 1 |  |
-| ◐ | [[Pointers]] | concept | 1 | 1 |  |
+| ● | [[Storage Duration]] | concept | 1 | 1 | 19 |
+| ● | [[Object Lifetime]] | concept | 1 | 1 | 20 |
+| ● | [[References]] | concept | 1 | 1 | 19 |
+| ● | [[Pointers]] | concept | 1 | 1 | 19 |
 | ◐ | [[Dynamic Memory — new and delete]] | mechanism | 1 | 1 |  |
 | ◐ | [[Value Categories]] | concept | 2 | 1 | 20 |
 | ◐ | [[The Forms of Initialization]] | comparison | 2 | 2 |  |
@@ -184,7 +184,7 @@ tags: [system/generated]
 | ◐ | [[Map — Classes & Encapsulation]] | map | 1 | 0 |  |
 | ● | [[Classes as User-Defined Types]] | concept | 1 | 1 | 20 |
 | ● | [[Encapsulation and Class Invariants]] | concept | 1 | 1 | 20 |
-| ◐ | [[Constructors]] | concept | 1 | 1 |  |
+| ● | [[Constructors]] | concept | 1 | 1 | 20 |
 | ◐ | [[Destructors]] | concept | 1 | 1 |  |
 | ○ | [[struct vs class]] | comparison | 1 | 2 |  |
 | ○ | [[Member Initializer Lists and Initialization Order]] | mechanism | 1 | 2 |  |
@@ -236,7 +236,7 @@ tags: [system/generated]
 |---|---|---|---|---|---|
 | ◐ | [[Map — Inheritance & Polymorphism]] | map | 1 | 0 |  |
 | ● | [[Inheritance]] | concept | 1 | 1 | 20 |
-| ◐ | [[Virtual Functions]] | concept | 1 | 1 |  |
+| ● | [[Virtual Functions]] | concept | 1 | 1 | 20 |
 | ● | [[Virtual Dispatch — vptr and vtable]] | mechanism | 2 | 1 | 21 |
 | ◐ | [[Abstract Classes and Interfaces]] | concept | 1 | 2 |  |
 | ◐ | [[Virtual Destructors]] | pitfall | 1 | 2 |  |

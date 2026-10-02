@@ -121,7 +121,7 @@ flowchart LR
 <!-- cc:auto:domain-index:D08 -->
 **Tier 1 · Foundational**
 - ● [[Inheritance]] · *concept*
-- ◐ [[Virtual Functions]] · *concept*
+- ● [[Virtual Functions]] · *concept*
 - ◐ [[Abstract Classes and Interfaces]] · *concept*
 - ◐ [[Virtual Destructors]] · *pitfall*
 - ◐ [[Object Slicing]] · *pitfall*

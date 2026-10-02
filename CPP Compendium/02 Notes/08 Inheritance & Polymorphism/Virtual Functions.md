@@ -4,7 +4,7 @@ title: Virtual Functions
 type: concept
 domain: D08
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Inheritance]]"
@@ -29,6 +29,16 @@ tags:
 - std/c++20
 created: 2026-09-27
 updated: 2026-09-27
+reviewed: 2026-10-01
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Virtual Functions

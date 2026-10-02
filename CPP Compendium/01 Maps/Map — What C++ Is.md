@@ -101,7 +101,7 @@ flowchart LR
 - ◐ [[The C++ Design Philosophy]] · *concept*
 - ◐ [[Zero-Overhead Principle]] · *concept*
 - ◐ [[Levels of Abstraction — From Bits to Libraries]] · *concept*
-- ◐ [[The C++ Abstract Machine]] · *concept*
+- ● [[The C++ Abstract Machine]] · *concept*
 - ◐ [[Undefined Behavior]] · *concept*
 - ○ [[The ISO Standard, Compilers and Conformance]] · *concept*
 

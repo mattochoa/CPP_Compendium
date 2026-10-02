@@ -4,7 +4,7 @@ title: Storage Duration
 type: concept
 domain: D04
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[The C++ Object Model — What an Object Is]]"
@@ -27,6 +27,16 @@ tags:
 - std/c++20
 created: 2026-09-27
 updated: 2026-09-27
+reviewed: 2026-10-01
+score: 19
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Storage Duration
@@ -73,7 +83,7 @@ The four boxes are exhaustive and mutually exclusive: every declared object, ref
 
 | Situation | Rule | Example |
 |---|---|---|
-| Namespace-scope variable | **Static** storage duration, always — this is fixed by scope alone, before any keyword is considered | `int g_counter;` |
+| Namespace-scope variable | **Static** storage duration unless declared `thread_local` — scope alone fixes it; `static`/`extern` change only linkage | `int g_counter;` |
 | Block-scope variable, no specifier | **Automatic**: storage lasts until the enclosing block exits | `int n = 0;` inside a function |
 | Block-scope variable, `static` | **Static**, but initialized only once — the first time control reaches the declaration ("magic static"; thread-safe since C++11) | `static int calls = 0;` inside a function |
 | Any variable, `thread_local` | **Thread**: one distinct object per thread; `static` may accompany it but never changes the duration | `thread_local int request_id;` |
@@ -95,7 +105,7 @@ The four boxes are exhaustive and mutually exclusive: every declared object, ref
 ## Under the Hood
 
 > [!machine] `static` at namespace scope changes the symbol, not the lifetime — GCC 11.4.0, x86-64 Linux, `nm` on the object file
-> Compiling `int global_var = 1;` and `static int file_var = 2;` from Example 3 below produces two data symbols with **identical storage duration** but different linkage, visible directly in the symbol table:
+> Compiling `int global_counter = 1;` and `static int file_counter = 2;` from Example 3 below produces two data symbols with **identical storage duration** but different linkage, visible directly in the symbol table:
 > ```text
 > $ g++ -std=c++20 -c linkage.cpp -o linkage.o && nm linkage.o
 > 0000000000000004 d _ZL12file_counter
@@ -118,7 +128,7 @@ The four boxes are exhaustive and mutually exclusive: every declared object, ref
 >                call __tls_get_addr@PLT
 >                mov  eax, DWORD PTR [rax]
 > ```
-> Without position-independent code, x86-64 Linux's *local-exec* TLS model resolves a `thread_local` read to a single segment-relative load through `%fs`, no cheaper than a global's direct load only in instruction count, not in mechanism. Compiled `-fPIC` — the ordinary case for a shared library — the compiler cannot assume it knows the thread's TLS layout at link time, so it falls back to the *general-dynamic* model: a genuine function call to `__tls_get_addr` on every access, unless the toolchain optimizes it further. Never assume "thread-local" means "as cheap as global" without checking which model applies to your build.
+> Without position-independent code, x86-64 Linux's *local-exec* TLS model resolves a `thread_local` read to a single segment-relative load through `%fs`: the same instruction count as a global's load, but a different mechanism (the address is relative to the current thread's block, not fixed in the image). Compiled `-fPIC` — the ordinary case for a shared library — the compiler cannot assume it knows the thread's TLS layout at link time, so it falls back to the *general-dynamic* model: a genuine function call to `__tls_get_addr` on every access, unless the toolchain optimizes it further. Never assume "thread-local" means "as cheap as global" without checking which model applies to your build.
 
 ## In Code
 
@@ -256,7 +266,7 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 
 ## Sources
 
-- Primer §6.1.1 "Function Basics" (pp. 205–206): automatic objects created and destroyed with their block, and local `static` objects initialized once and destroyed only at program termination — the C++11-era statement of the automatic/static split this note generalizes.
+- Primer §6.1.1 "Local Objects" (pp. 204–206): automatic objects created and destroyed with their block, and local `static` objects initialized once and destroyed only at program termination — the C++11-era statement of the automatic/static split this note generalizes.
 - Tour §19.2.1 "C++11 Language Features" (p. 264): `thread_local` listed among the C++11 additions, alongside the memory model it depends on.
 - PPP §7.4 "Function call implementation": the activation record built per call, the real-machine counterpart of automatic storage duration this note's Mental Model deliberately keeps abstract.
 - cppreference, *Storage class specifiers*: https://en.cppreference.com/w/cpp/language/storage_duration — the four durations, the specifier table, the independent linkage rules, and "static block variables" (magic statics).

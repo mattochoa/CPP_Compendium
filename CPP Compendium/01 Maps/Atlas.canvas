@@ -57,8 +57,8 @@
 			"y": 286,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[The C++ Abstract Machine]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[The C++ Abstract Machine]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-undefined-behavior",
@@ -666,8 +666,8 @@
 			"y": 1226,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[The C++ Object Model — What an Object Is]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[The C++ Object Model — What an Object Is]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-process-memory-layout",
@@ -686,8 +686,8 @@
 			"y": 1370,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Storage Duration]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[Storage Duration]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-object-lifetime",
@@ -696,8 +696,8 @@
 			"y": 1442,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Object Lifetime]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[Object Lifetime]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-references",
@@ -706,8 +706,8 @@
 			"y": 1514,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[References]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[References]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-pointers",
@@ -716,8 +716,8 @@
 			"y": 1586,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Pointers]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[Pointers]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-dynamic-memory",
@@ -1145,8 +1145,8 @@
 			"y": 1370,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Constructors]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[Constructors]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-destructors",
@@ -1521,8 +1521,8 @@
 			"y": 2526,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Virtual Functions]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[Virtual Functions]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-abstract-classes",

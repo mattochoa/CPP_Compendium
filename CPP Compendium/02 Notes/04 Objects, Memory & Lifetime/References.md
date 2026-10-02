@@ -8,7 +8,7 @@ aliases:
 type: concept
 domain: D04
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Object Lifetime]]"
@@ -29,6 +29,16 @@ tags:
 - std/c++98
 created: 2026-09-27
 updated: 2026-09-28
+reviewed: 2026-10-01
+score: 19
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # References
@@ -82,7 +92,7 @@ The Standard defines references in `[dcl.ref]` (declaration) and `[dcl.init.ref]
 | `const T&` ("reference to const") | Binds to an lvalue, a literal, or a general expression of a different type. When the initializer isn't already the right type or category, the compiler materializes a temporary and binds to *that* (`[dcl.init.ref]`; see [[Value Categories]] on temporary materialization) | `const int& r = 2 + 2;` |
 | A reference bound **directly** to a temporary (or its subobject) | Extends that temporary's lifetime to match the reference's own | In Code, Example 3 |
 | `&r` | Yields the address of the *referent* — a reference has no address of its own to give | `&r == &a` in Example 1 |
-| Reference to reference, pointer to reference, array of references | All ill-formed, outside the template-only exception of *reference collapsing* (`[dcl.ref]` ¶5, ¶7 — C++11) | `int& &x;` — ill-formed |
+| Reference to reference, pointer to reference, array of references | All ill-formed when written directly; a reference formed *through* a typedef, `decltype` or template parameter instead *collapses* (`[dcl.ref]` ¶5, ¶7 — C++11) | `int& &x;` — ill-formed |
 | A non-static data member of reference type | Has no default; must be bound in the constructor's member-initializer list, once, like any other reference (see [[Constructors]]) | `struct S { int& r; S(int& x) : r(x) {} };` |
 
 > [!standard] A reference is not an object, and its "lifetime" is a special case
@@ -206,7 +216,7 @@ See [[Map — Evolution of C++]] for the language-wide timeline.
 | **C++98** | References exist as lvalue references only: `T&`, with essentially today's binding, no-rebind and no-null rules (`[dcl.ref]`) | An alias mechanism with a pointer's performance and a named variable's syntax |
 | **C++11** | Rvalue references `T&&` added as a distinct type; *reference collapsing* formalized (`T& &`, `T& &&`, `T&& &` all collapse to `T&`; only `T&& &&` stays `T&&`) (`[dcl.ref]` ¶7) | Move semantics ([[Value Categories]]) needed a reference kind that binds to expiring values, and templates needed a defined rule for "a reference to a deduced reference type" |
 | C++17 | Guaranteed copy elision (P0135) changes *what* a reference to a prvalue initializer binds to: the prvalue materializes directly into the bound temporary, with no separate move-from-temporary step even notionally | Removes a copy/move step that earlier reference-binding rules implied but never required |
-| C++26 (working draft) | A function is ill-formed if its returned reference binds to the result of a temporary expression, instead of silently compiling to a dangling reference (`cppreference`, *Reference initialization* §Syntax note 4) | Turns the exact pattern in Pitfalls from silent undefined behavior into a compile error — eel.is tracks this working-draft text, not C++23 |
+| C++26 | A `return` statement whose returned reference would bind to a *temporary* is ill-formed (P2748R5, `[stmt.return]`): `const int& f() { return 42; }` no longer compiles | Closes the always-dangling temporary case at compile time. Returning a reference to a *named local* (the Pitfall below) is not covered: it is still undefined behavior, caught only by warnings such as GCC's `-Wreturn-local-addr` |
 
 ## Connections
 
