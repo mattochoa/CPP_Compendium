@@ -135,15 +135,15 @@ int main() {
 **2 · ✗ Vanishes: a discarded result lets the optimizer delete the benchmark**
 
 ```cpp
-long sum_naive(long n) {
-    long total = 0;
-    for (long i = 0; i < n; ++i) total += i;
+long long sum_naive(long long n) {
+    long long total = 0;
+    for (long long i = 0; i < n; ++i) total += i;
     return total;
 }
 
 int main(int argc, char** argv) {
-    long n = argc * 100'000'000L;   // ①
-    sum_naive(n);                    // ②
+    long long n = argc * 100'000'000LL;   // ①
+    sum_naive(n);                          // ②
 }
 ```
 1. `n` depends on `argc`, so it is unknown at compile time — the compiler cannot precompute the answer.
@@ -152,19 +152,19 @@ int main(int argc, char** argv) {
 **3 · ✓ Survives: an escape barrier forces the computation to happen**
 
 ```cpp
-inline void escape(long& value) {              // ③
+inline void escape(long long& value) {         // ③
     asm volatile("" : "+r"(value) :: "memory");
 }
 
-long sum_naive(long n) {
-    long total = 0;
-    for (long i = 0; i < n; ++i) total += i;
+long long sum_naive(long long n) {             // long long, not long: the sum overflows a 32-bit long (Windows)
+    long long total = 0;
+    for (long long i = 0; i < n; ++i) total += i;
     return total;
 }
 
 int main(int argc, char** argv) {
-    long n = argc * 100'000'000L;
-    long result = sum_naive(n);
+    long long n = argc * 100'000'000LL;
+    long long result = sum_naive(n);
     escape(result);                              // ④
 }
 ```

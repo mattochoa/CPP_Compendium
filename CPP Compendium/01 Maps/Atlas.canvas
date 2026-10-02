@@ -37,8 +37,8 @@
 			"y": 142,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Zero-Overhead Principle]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[Zero-Overhead Principle]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-abstraction-layers",
@@ -67,8 +67,8 @@
 			"y": 358,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Undefined Behavior]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[Undefined Behavior]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-standard-and-compilers",
@@ -154,8 +154,8 @@
 			"y": 286,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Headers and Include Guards]]\n*idiom · T1*",
-			"color": "3"
+			"text": "● [[Headers and Include Guards]]\n*idiom · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-declarations-vs-definitions",
@@ -164,8 +164,8 @@
 			"y": 358,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Declarations vs Definitions]]\n*comparison · T1*",
-			"color": "3"
+			"text": "● [[Declarations vs Definitions]]\n*comparison · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-scope",
@@ -174,8 +174,8 @@
 			"y": 430,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Scope]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[Scope]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-namespaces",
@@ -333,8 +333,8 @@
 			"y": 286,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Integer Representation and Two's Complement]]\n*mechanism · T1*",
-			"color": "3"
+			"text": "● [[Integer Representation and Two's Complement]]\n*mechanism · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-implicit-conversions",
@@ -343,8 +343,8 @@
 			"y": 358,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Implicit Conversions and Promotions]]\n*mechanism · T1*",
-			"color": "3"
+			"text": "● [[Implicit Conversions and Promotions]]\n*mechanism · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-narrowing-and-brace-init",
@@ -726,8 +726,8 @@
 			"y": 1658,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Dynamic Memory — new and delete]]\n*mechanism · T1*",
-			"color": "3"
+			"text": "● [[Dynamic Memory — new and delete]]\n*mechanism · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-uninitialized-variables",

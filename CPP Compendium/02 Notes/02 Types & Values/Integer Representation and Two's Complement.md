@@ -4,7 +4,7 @@ title: Integer Representation and Two's Complement
 type: mechanism
 domain: D02
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Fundamental Types]]"
@@ -24,6 +24,16 @@ tags:
 - std/c++20
 created: 2026-10-01
 updated: 2026-10-01
+reviewed: 2026-10-02
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 3
+  code: 3
+  integration: 2
 ---
 
 # Integer Representation and Two's Complement
@@ -43,7 +53,7 @@ A CPU's arithmetic unit owns exactly one adder per width. It adds two N-bit patt
 > 5. **Price:** the representable range becomes asymmetric, `-2^(N-1)` to `2^(N-1)-1`, because there is no bit pattern left over for a negative zero — the single most-negative value has no positive counterpart (see Consequences). And mandating the *representation* did not touch what happens when an *operation* overflows that range: the Standard still leaves signed arithmetic overflow completely undefined, so the portability P0907R4 bought is about which bits a value has, never about what happens when you exceed the range those bits can hold.
 
 > [!tension] compatibility ⟷ evolution
-> The three-representation legacy came from C, which still permits all three today. C++ inherited it, left it implementation-defined for 22 years, and only closed it once the gap between "legal" and "actually shipped" had become purely theoretical — see [[Map — Types & Values]] for the domain-wide pattern of narrowing C's old latitude without breaking it outright.
+> The three-representation legacy came from C, which permitted all three through C17 (C23 mandated two's complement too, via N2412). C++ inherited it, left it implementation-defined for 22 years, and only closed it once the gap between "legal" and "actually shipped" had become purely theoretical — see [[Map — Types & Values]] for the domain-wide pattern of narrowing C's old latitude without breaking it outright.
 
 > [!tension] safety ⟷ performance
 > Two's complement makes the *bits* of signed overflow well-defined — they're whatever the adder produces. The Standard nonetheless keeps the *value* of signed overflow undefined, on purpose: a compiler that may assume `x + 1 > x` always holds for `int` can delete range checks and simplify loop induction that it could never touch for `unsigned`. [[Signed Integer Overflow]] develops this trade fully; *Under the Hood* below shows the compiler actually taking it.

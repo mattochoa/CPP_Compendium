@@ -121,8 +121,8 @@ flowchart LR
 - ● [[What a Type Is]] · *concept*
 - ● [[Fundamental Types]] · *concept*
 - ● [[const and Const-Correctness]] · *concept*
-- ◐ [[Integer Representation and Two's Complement]] · *mechanism*
-- ◐ [[Implicit Conversions and Promotions]] · *mechanism*
+- ● [[Integer Representation and Two's Complement]] · *mechanism*
+- ● [[Implicit Conversions and Promotions]] · *mechanism*
 - ○ [[Narrowing Conversions and Brace Initialization]] · *concept*
 - ○ [[auto Type Deduction]] · *mechanism*
 - ○ [[Type Aliases (typedef and using)]] · *concept*

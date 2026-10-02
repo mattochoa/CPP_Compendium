@@ -4,7 +4,7 @@ title: Dynamic Memory — new and delete
 type: mechanism
 domain: D04
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Pointers]]"
@@ -31,6 +31,16 @@ tags:
 - std/c++20
 created: 2026-09-27
 updated: 2026-09-29
+reviewed: 2026-10-02
+score: 20
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 3
+  code: 3
+  integration: 3
 ---
 
 # Dynamic Memory — new and delete
@@ -237,9 +247,9 @@ The rule that release is never automatic is the source of most of this domain's 
 | A memory leak: a program's usage grows without bound | No scope, and no implicit action of any kind, calls `delete` when a raw pointer to dynamic storage goes out of scope — only an explicit, matching `delete` returns the bytes: [[Memory Leaks]] |
 | Use-after-free / double free | `delete` doesn't null the pointer or record that the bytes were freed; a second `delete` of the same address, or any later dereference, is undefined the instant it happens: [[Double Free and Mismatched new-delete]], [[Dangling Pointers and References]] |
 | `delete[] p` where `p` came from non-array `new`, or `delete p` where `p` came from `new[]`, is UB | The two forms call different allocation/deallocation function pairs and (for class types) run a different destructor sequence; `[expr.delete]` requires the form to match the `new` that produced `p` exactly — see *Step by Step* §1 |
-| `delete basePtr` runs the wrong destructor unless `~Base` is `virtual` | Deallocation-function lookup and the destructor actually invoked both follow the *dynamic* type only through a virtual destructor; without one, the *static* type's non-virtual destructor and its (possibly wrong-sized) `operator delete` are used instead: [[Virtual Functions]] |
+| `delete basePtr` on a derived object is undefined behavior unless `~Base` is `virtual` (`[expr.delete]`); in practice the wrong destructor runs | Deallocation-function lookup and the destructor actually invoked both follow the *dynamic* type only through a virtual destructor; without one, the *static* type's non-virtual destructor and its (possibly wrong-sized) `operator delete` are used instead: [[Virtual Functions]] |
 | Every RAII wrapper — `unique_ptr`, `vector`, `string` — exists | Wrapping exactly one `new`/`delete` pair inside a constructor/destructor pair is the only way to make the *scope* choose the release moment, since nothing in this mechanism will choose it for you: [[RAII]], [[unique_ptr]] |
-| A throwing constructor doesn't leak the storage it was given, but a throwing *initializer expression evaluated before* the `new` can still leak an already-completed sibling allocation | `[expr.new]`'s automatic cleanup covers *this* `new`-expression's own construction step only; two independent `new`s in one full expression (`f(new A, new B)`) are not guaranteed to be sequenced so that `B`'s allocation failing unwinds `A`'s — a `[!ub]`-adjacent surprise ([[Exception Safety Guarantees]]) that motivates never writing raw `new` in an argument list at all |
+| A throwing constructor doesn't leak the storage it was given, but a sibling allocation that already finished can still leak | `[expr.new]` ¶27's automatic cleanup covers only *this* `new`-expression's own initialization. In `f(new A, new B)`, if `new B` throws after `new A` has completed, nothing owns `A`'s raw pointer yet, so it leaks, in every standard. This is why raw `new` never belongs in an argument list ([[Exception Safety Guarantees]], [[Memory Leaks]]) |
 | Frequent allocation and deallocation of varied sizes costs more than the byte count suggests | The allocator's own bookkeeping (locking, free-list search, fragmentation) is real, measured cost that automatic storage never pays: *Under the Hood*, [[Allocators and pmr Memory Resources]] |
 
 ## Connections

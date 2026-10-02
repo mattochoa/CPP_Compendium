@@ -10,9 +10,9 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 231 |
 | ◌ stub | 0 |
-| ◐ draft | 100 |
+| ◐ draft | 92 |
 | ⟲ revise | 0 |
-| ● reviewed | 26 |
+| ● reviewed | 34 |
 | ★ evergreen | 0 |
 
 **Total topics:** 357
@@ -31,10 +31,10 @@ tags: [system/generated]
 |---|---|---|---|---|---|
 | ◐ | [[Map — What C++ Is]] | map | 1 | 0 |  |
 | ◐ | [[The C++ Design Philosophy]] | concept | 1 | 1 | 18 |
-| ◐ | [[Zero-Overhead Principle]] | concept | 1 | 1 |  |
+| ● | [[Zero-Overhead Principle]] | concept | 1 | 1 | 18 |
 | ◐ | [[Levels of Abstraction — From Bits to Libraries]] | concept | 1 | 1 |  |
 | ● | [[The C++ Abstract Machine]] | concept | 1 | 1 | 19 |
-| ◐ | [[Undefined Behavior]] | concept | 1 | 1 |  |
+| ● | [[Undefined Behavior]] | concept | 1 | 1 | 18 |
 | ○ | [[The As-If Rule]] | mechanism | 2 | 2 |  |
 | ○ | [[Implementation-Defined, Unspecified and Undefined Behavior]] | comparison | 2 | 2 |  |
 | ○ | [[The ISO Standard, Compilers and Conformance]] | concept | 1 | 2 |  |
@@ -49,9 +49,9 @@ tags: [system/generated]
 | ● | [[The Compilation Pipeline]] | mechanism | 1 | 1 | 20 |
 | ● | [[Translation Units]] | concept | 1 | 1 | 20 |
 | ● | [[The Preprocessor]] | mechanism | 1 | 1 | 20 |
-| ◐ | [[Headers and Include Guards]] | idiom | 1 | 1 |  |
-| ◐ | [[Declarations vs Definitions]] | comparison | 1 | 1 |  |
-| ◐ | [[Scope]] | concept | 1 | 1 |  |
+| ● | [[Headers and Include Guards]] | idiom | 1 | 1 | 20 |
+| ● | [[Declarations vs Definitions]] | comparison | 1 | 1 | 20 |
+| ● | [[Scope]] | concept | 1 | 1 | 19 |
 | ○ | [[Namespaces]] | concept | 1 | 2 |  |
 | ○ | [[Linkage — Internal, External, None]] | concept | 2 | 2 |  |
 | ○ | [[The One Definition Rule]] | concept | 2 | 2 |  |
@@ -74,8 +74,8 @@ tags: [system/generated]
 | ● | [[What a Type Is]] | concept | 1 | 1 | 19 |
 | ● | [[Fundamental Types]] | concept | 1 | 1 | 20 |
 | ● | [[const and Const-Correctness]] | concept | 1 | 1 | 20 |
-| ◐ | [[Integer Representation and Two's Complement]] | mechanism | 1 | 2 |  |
-| ◐ | [[Implicit Conversions and Promotions]] | mechanism | 1 | 2 |  |
+| ● | [[Integer Representation and Two's Complement]] | mechanism | 1 | 2 | 20 |
+| ● | [[Implicit Conversions and Promotions]] | mechanism | 1 | 2 | 17 |
 | ○ | [[Narrowing Conversions and Brace Initialization]] | concept | 1 | 2 |  |
 | ○ | [[auto Type Deduction]] | mechanism | 1 | 2 |  |
 | ○ | [[Type Aliases (typedef and using)]] | concept | 1 | 2 |  |
@@ -128,7 +128,7 @@ tags: [system/generated]
 | ● | [[Object Lifetime]] | concept | 1 | 1 | 20 |
 | ● | [[References]] | concept | 1 | 1 | 19 |
 | ● | [[Pointers]] | concept | 1 | 1 | 19 |
-| ◐ | [[Dynamic Memory — new and delete]] | mechanism | 1 | 1 |  |
+| ● | [[Dynamic Memory — new and delete]] | mechanism | 1 | 1 | 20 |
 | ◐ | [[Value Categories]] | concept | 2 | 1 | 20 |
 | ◐ | [[The Forms of Initialization]] | comparison | 2 | 2 |  |
 | ◐ | [[Reading Uninitialized Variables]] | pitfall | 1 | 2 |  |

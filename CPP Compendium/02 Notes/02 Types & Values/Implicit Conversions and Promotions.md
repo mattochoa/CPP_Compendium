@@ -8,7 +8,7 @@ aliases:
 type: mechanism
 domain: D02
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Fundamental Types]]"
@@ -28,6 +28,16 @@ tags:
 - std/c++20
 created: 2026-10-01
 updated: 2026-10-01
+reviewed: 2026-10-02
+score: 17
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 2
+  visual: 2
+  code: 3
+  integration: 2
 ---
 
 # Implicit Conversions and Promotions
@@ -88,7 +98,7 @@ flowchart TD
 
 1. **Value transformations run first, unconditionally.** An lvalue that names a variable is read into a value (*lvalue-to-rvalue conversion*); an array used where a pointer is expected decays to a pointer to its first element; a function name decays to a pointer to that function. These are not ranked against promotions or conversions — they happen whenever the expression's form requires them, before any type-matching question is even asked (Primer §4.11.2, p. 161).
 2. **Integral and floating-point promotions try first.** `bool`, `char`, `signed char`, `unsigned char`, `short`, and `unsigned short` promote to `int` if `int` can represent every value of the source type, otherwise to `unsigned int`; `float` promotes to `double` with no change in value (cppreference, *Implicit conversions* → *Integral promotion*; draft `[conv.prom]`). A promotion never changes what the value *means* — it only moves it to a type wide enough to compute in without special-casing the narrower type.
-3. **Conversions fire when no promotion reaches the target.** Integral conversions (any integer type to any other), floating–integral conversions, floating-point conversions between `float`/`double`/`long double`, the boolean conversion (any nonzero scalar becomes `true`, zero becomes `false`), and pointer/qualification conversions all live here. Unlike a promotion, a conversion can change the value: `double` → `int` truncates toward zero, and a value too large for the destination wraps.
+3. **Conversions fire when no promotion reaches the target.** Integral conversions (any integer type to any other), floating–integral conversions, floating-point conversions between `float`/`double`/`long double`, the boolean conversion (any nonzero scalar becomes `true`, zero becomes `false`), and pointer/qualification conversions all live here. Unlike a promotion, a conversion can change the value: `double` → `int` truncates toward zero, and an integer too large for a narrower integer type wraps modulo 2^N (see the callout below). A floating value whose truncated value doesn't fit the integer destination is a different case: that is undefined behavior (`[conv.fpint]`), not wraparound.
 4. **Context decides which target type `T` is asked for.** Initialization and assignment convert to the declared type; a function call converts each argument to its parameter's type; most binary operators (`+`, `<`, `==`, …) convert *both* operands to a shared type found by the **usual arithmetic conversions**, a specific algorithm built from exactly the promotions and conversions above ([[Usual Arithmetic Conversions]]); a controlling expression (an `if`, `while`, or `for` condition, or an operand of `!`, `&&`, `||`) converts to `bool`.
 
 > [!standard] Out-of-range integral conversion: well-defined since C++20
@@ -143,7 +153,7 @@ int main() {
 }
 // expect: true
 ```
-1. `const char* list[]` as a parameter is adjusted to `const char**` (Primer §4.11.2, p. 161): arrays cannot be passed by value, so the declaration itself bakes in the decay.
+1. `const char* list[]` as a parameter is adjusted to `const char**` (Primer §6.2.4 "Array Parameters", p. 214; draft `[dcl.fct]`): arrays cannot be passed by value, so the declaration itself bakes in the decay.
 2. `!list[i]` needs a `bool`. `list[i]` is a pointer; the boolean conversion treats a null pointer as `false`, any other address as `true`.
 3. `words` names an array; using it as an argument reads it through the same array-to-pointer conversion the parameter declaration anticipated. No cast appears anywhere in this program, yet three different implicit conversions ran.
 

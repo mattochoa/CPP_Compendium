@@ -58,9 +58,9 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 231 | 100 | 0 | 26 | 0 | 357 | 146 | 3 |
+| 231 | 92 | 0 | 34 | 0 | 357 | 146 | 4 |
 
-`███████░░░░░░░░░░░░░` **35%** of the Atlas written · last build 2026-10-01
+`███████░░░░░░░░░░░░░` **35%** of the Atlas written · last build 2026-10-02
 <!-- cc:end -->
 
 **Up next (Builder queue):**
@@ -75,16 +75,16 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ● [[Implicit Conversions and Promotions]] · *mechanism* · updated 2026-10-01
+- ● [[Integer Representation and Two's Complement]] · *mechanism* · updated 2026-10-01
+- ◐ [[Performance — Measure, Don't Guess]] · *concept* · updated 2026-10-01
 - ● [[Constructors]] · *concept* · updated 2026-10-01
 - ◐ [[Built-in Arrays and Array-to-Pointer Decay]] · *mechanism* · updated 2026-10-01
 - ◐ [[vector]] · *concept* · updated 2026-10-01
 - ◐ [[array]] · *concept* · updated 2026-10-01
-- ◐ [[Implicit Conversions and Promotions]] · *mechanism* · updated 2026-10-01
 - ◐ [[Anatomy of a Function]] · *concept* · updated 2026-10-01
 - ◐ [[Class Templates]] · *concept* · updated 2026-10-01
 - ◐ [[Warnings as Guardrails]] · *idiom* · updated 2026-10-01
-- ◐ [[Data Races and Race Conditions]] · *pitfall* · updated 2026-10-01
-- ◐ [[Mutexes and Lock Guards]] · *concept* · updated 2026-10-01
 <!-- cc:end -->
 
 ## Start here

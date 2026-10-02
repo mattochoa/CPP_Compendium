@@ -6,7 +6,7 @@ aliases:
 type: concept
 domain: D00
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[The C++ Abstract Machine]]"
@@ -28,6 +28,16 @@ tags:
 - std/c++26
 created: 2026-09-28
 updated: 2026-09-29
+reviewed: 2026-10-02
+score: 18
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 2
 ---
 
 # Undefined Behavior
@@ -78,7 +88,7 @@ flowchart TD
 | An out-of-range value is **converted** to a signed integer type | **Never UB** — implementation-defined through C++17, defined as reduction modulo 2ⁿ since C++20 (see `[!standard]` below) | `static_cast<std::int8_t>(200)` |
 | An object is accessed through a glvalue of an unrelated type (strict aliasing) | UB (`[basic.lval]`) | reading a `float` object through an `int*` |
 | An object is used outside its lifetime | UB (`[basic.life]`) | see [[Object Lifetime]], [[Dangling Pointers and References]] |
-| A scalar with no determinate value is read | UB through C++23; **erroneous behavior** from C++26 (`[defns.erroneous]`, diagnose-or-terminate, not silent) | an uninitialized `bool` or `int` |
+| A scalar with no determinate value is read | UB through C++23; for automatic variables, **erroneous behavior** from C++26 (`[defns.erroneous]`, `[basic.indet]`): well-defined, the read yields an implementation-chosen erroneous value, and the implementation is *recommended* (not required) to diagnose. Still UB if that value is not valid for the type, and for heap objects or variables marked with the C++26 `indeterminate` attribute | an uninitialized `int` |
 | Two threads access the same memory without synchronization and at least one access is a write | UB (`[intro.races]`) | an unmutexed shared counter |
 
 > [!standard] C++17 fixed one specific double-write, not evaluation order in general
@@ -186,7 +196,7 @@ int main(int argc, char**) {
 ```
 1. `ready` is a local `bool` with automatic storage duration and no initializer: its value is indeterminate (`[dcl.init]`), not `false` by default.
 2. On an ordinary run `argc == 1`, so this branch never executes and `ready` is never given a value.
-3–4. A single logical variable is read twice; a naive reader expects exactly one of "go" or "wait" to print, since a `bool` can't be both true and false. Compiled with GCC 11.4, x86-64 Linux, this program prints `wait` at `-O0` and prints `go` at `-O1`, `-O2`, `-O3` and `-Os` — five conforming, silent, mutually contradictory answers from one compiler to one question, because `[defns.undefined]` imposes no requirement on either read.
+3–4. A single logical variable is read twice; a naive reader expects exactly one of "go" or "wait" to print, since a `bool` can't be both true and false. Compiled with GCC 11.4, x86-64 Linux, this program prints `wait` at `-O0` and `go` at `-O1`, `-O2`, `-O3` and `-Os`: two contradictory answers across five optimization levels, all conforming and all silent, because `[defns.undefined]` imposes no requirement on either read. (Undefined through C++23. In C++26 the read is erroneous behavior instead: `ready` holds one implementation-chosen value, so both reads agree. It stays UB if that value isn't a valid `bool`; see [[Reading Uninitialized Variables]].)
 
 ## Pitfalls
 
@@ -204,7 +214,7 @@ int main(int argc, char**) {
 | C++11 | Sequence points replaced by the finer-grained *sequenced-before* relation (`[intro.execution]`) | Needed to describe evaluation order once multi-threaded execution entered the abstract machine |
 | **C++17** | `E1 = E2` and several other operators sequence the right operand's side effects before the left operand (P0145R3) | Made idioms like chained `<<` and `i = i++ + 1` well-defined instead of merely "usually working" |
 | **C++20** | Converting an out-of-range value to a signed type is defined as modulo-2ⁿ reduction, not implementation-defined (P0907-class change; see cppreference *Implicit conversions*) | Every mainstream platform already used two's complement; codify what compilers already did — this was never UB, only implementation-defined |
-| **C++26** (working draft) | *Erroneous behavior* (`[defns.erroneous]`) gives some historic UB — reading an uninitialized scalar of ordinary types — a diagnose-or-terminate response instead of an unbounded one | Make an extremely common mistake bounded and debuggable without weakening the UB-driven optimizations the rest of the language still relies on |
+| **C++26** (P2795R5) | *Erroneous behavior* (`[defns.erroneous]`) turns one historic UB, reading an uninitialized automatic variable, into well-defined behavior with an implementation-chosen value that implementations are recommended (not required) to diagnose | Make an extremely common mistake bounded and debuggable without weakening the UB-driven optimizations the rest of the language still relies on |
 
 ## Connections
 

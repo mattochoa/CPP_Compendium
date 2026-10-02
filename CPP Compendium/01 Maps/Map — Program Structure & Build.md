@@ -124,9 +124,9 @@ flowchart LR
 - ● [[The Compilation Pipeline]] · *mechanism*
 - ● [[Translation Units]] · *concept*
 - ● [[The Preprocessor]] · *mechanism*
-- ◐ [[Headers and Include Guards]] · *idiom*
-- ◐ [[Declarations vs Definitions]] · *comparison*
-- ◐ [[Scope]] · *concept*
+- ● [[Headers and Include Guards]] · *idiom*
+- ● [[Declarations vs Definitions]] · *comparison*
+- ● [[Scope]] · *concept*
 - ○ [[Namespaces]] · *concept*
 
 **Tier 2 · Proficient**

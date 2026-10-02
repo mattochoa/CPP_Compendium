@@ -136,7 +136,7 @@ flowchart LR
 - ● [[Object Lifetime]] · *concept*
 - ● [[References]] · *concept*
 - ● [[Pointers]] · *concept*
-- ◐ [[Dynamic Memory — new and delete]] · *mechanism*
+- ● [[Dynamic Memory — new and delete]] · *mechanism*
 - ◐ [[Reading Uninitialized Variables]] · *pitfall*
 - ◐ [[Pointer Arithmetic and Arrays]] · *mechanism*
 - ● [[Pointers vs References]] · *comparison*

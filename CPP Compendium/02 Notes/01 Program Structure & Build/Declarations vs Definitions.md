@@ -6,7 +6,7 @@ aliases:
 type: comparison
 domain: D01
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Translation Units]]"
@@ -29,6 +29,16 @@ tags:
 - std/c++17
 created: 2026-09-28
 updated: 2026-09-28
+reviewed: 2026-10-02
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Declarations vs Definitions
@@ -38,7 +48,7 @@ updated: 2026-09-28
 
 ## The Question
 
-Every non-trivial C++ program is spread across more than one [[Translation Units|translation unit]], and each one is compiled as if the others didn't exist. So whenever a name — a variable, a function, a class, a template — shows up in source, the compiler needs an answer to a narrower question first: does *this* occurrence merely say the name exists and what its type is, or does it actually create the thing? The two occurrences can look almost identical — `int f(int);` versus `int f(int){ return f; }` differ by a few characters — and using the wrong one in the wrong place is one of the first walls every C++ learner hits, because which failure it produces depends entirely on the toolchain's stage: a duplicate definition is usually caught by *this* compilation; a missing one usually isn't caught until the *linker* runs, and sometimes not even then.
+Every non-trivial C++ program is spread across more than one [[Translation Units|translation unit]], and each one is compiled as if the others didn't exist. So whenever a name — a variable, a function, a class, a template — shows up in source, the compiler needs an answer to a narrower question first: does *this* occurrence merely say the name exists and what its type is, or does it actually create the thing? The two occurrences can look almost identical — `int f(int);` versus `int f(int x){ return x; }` differ by a few characters — and using the wrong one in the wrong place is one of the first walls every C++ learner hits, because which failure it produces depends entirely on the toolchain's stage: a duplicate definition is usually caught by *this* compilation; a missing one usually isn't caught until the *linker* runs, and sometimes not even then.
 
 > [!principle] Why the split exists
 > 1. **Constraint.** [[Translation Units|A compiler processes one translation unit at a time]] and has no memory of any other file it has compiled or will compile. Yet a real program needs a name mentioned in `a.cpp` to reach a body written in `b.cpp`, and a header pasted into a hundred translation units must not thereby create a hundred conflicting copies of anything that has to be unique.

@@ -5,7 +5,7 @@ aliases: []
 type: concept
 domain: D01
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs: []
 related:
@@ -25,6 +25,16 @@ tags:
 - std/c++20
 created: 2026-09-28
 updated: 2026-09-28
+reviewed: 2026-10-02
+score: 19
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 3
+  code: 3
+  integration: 2
 ---
 
 # Scope
@@ -262,7 +272,7 @@ int main() {
 > A same-named inner declaration is not an error, so reusing a common word like `count`, `data`, or `result` in a nested block silently cuts off access to the outer variable for the rest of that block — the compiler will not tell you by default. GCC and Clang's `-Wshadow` flags exactly this class of declaration; it is not part of `-Wall`/`-Wextra` and must be requested on its own.
 
 > [!ub] Reading a name in its own initializer
-> `int x = x;` (Example 2) is legal C++ that reads an indeterminate value, because the point-of-declaration rule puts the name in scope before its initializer executes. See [[Dangling Pointers and References]] for the closely related family of bugs where a name is in scope but what it refers to is no longer valid.
+> `int x = x;` (Example 2) compiles, and reads the variable's own uninitialized value, because the point-of-declaration rule puts the name in scope before its initializer executes. Undefined through C++23; erroneous behavior in C++26 (P2795R5): the read then yields an implementation-chosen value the compiler is encouraged to diagnose, but it is still a bug. See [[Reading Uninitialized Variables]]. See [[Dangling Pointers and References]] for the closely related family of bugs where a name is in scope but what it refers to is no longer valid.
 
 > [!trap] A parameter or local hiding a data member
 > Any parameter or local variable spelled the same as a data member hides that member for the rest of its own scope (Example 4). `this->` (or a class-qualified name) is the only way back to the member from inside that scope; a `count = count;`-shaped bug compiles cleanly and does nothing.
@@ -294,7 +304,7 @@ int main() {
 > Because scopes exist precisely so that a name can be a local implementation detail — a loop counter or a helper total shouldn't have to be coordinated with every other use of that word in the program. Making redeclaration an error would defeat that purpose; the trade-off C++ makes instead is silent hiding, recoverable with `::` or a qualified name when you need the outer one.
 
 > [!quiz]- Predict: what does this print? `int n = 10; { int n = n * 2; { int n = n + 1; std::cout << n; } }`
-> This does not have a defined printed value — it's the same point-of-declaration trap as Example 2, three scopes deep. Each inner `n` is in scope (and hides the outer one) before its own initializer runs, so `n * 2` and `n + 1` each read an already-declared but not-yet-initialized `int`: undefined behavior, not a computable number.
+> This does not have a defined printed value — it's the same point-of-declaration trap as Example 2, three scopes deep. Each inner `n` is in scope (and hides the outer one) before its own initializer runs, so `n * 2` and `n + 1` each read an already-declared but not-yet-initialized `int`: undefined behavior through C++23 (erroneous behavior in C++26), not a computable number either way.
 
 > [!quiz]- In Example 4, why does `reset_fixed` work when `reset` doesn't, even though both are one line?
 > `reset`'s parameter `count` hides the member `count` for the entire function body, so `count = count;` assigns the parameter to itself — the member is never named. `reset_fixed` writes `this->count`, which is a qualified name and therefore not subject to hiding: it reaches the member explicitly regardless of what the parameter is called.
@@ -303,7 +313,7 @@ int main() {
 
 - Primer §2.2.4 "Scope of a Name" (pp. 48–49): scope kinds (global/block scope), nested scopes, hiding by redeclaration in an inner scope.
 - Primer §6.4 "Overloaded Functions" (pp. 234–235): the rule that inner-scope declarations hide outer ones outright rather than overloading with them.
-- Primer §6.1.1 "Local Static Objects" (p. 205): a `static` local's block scope vs. its static storage duration.
+- Primer §6.1.1 "Local Objects", subsection "Local `static` Objects" (p. 205): a `static` local's block scope vs. its static storage duration.
 - Primer §7.4 "Class Scope" (p. 282): class scope as a distinct kind, and out-of-class member definitions entering it.
 - Tour §1.5 "Scope and Lifetime" (p. 9): the four informal scope kinds (local, class, namespace, global) and their extents.
 - PPP §7.3 "Scope" (ch. 7 "Technicalities: Functions, etc."): the scope taxonomy (global, module, namespace, class, local, statement) and "the main purpose of a scope is to keep names local."

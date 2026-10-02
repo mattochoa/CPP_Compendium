@@ -9,7 +9,7 @@ aliases:
 type: idiom
 domain: D01
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[The Preprocessor]]"
@@ -28,6 +28,16 @@ tags:
 - tension/abstraction-vs-control
 created: 2026-09-27
 updated: 2026-09-27
+reviewed: 2026-10-02
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 2
+  visual: 3
+  code: 3
+  integration: 3
 ---
 
 # Headers and Include Guards

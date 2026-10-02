@@ -185,13 +185,13 @@ int main() {
 // cc: flags=-O2
 #include <cstdio>
 
-long sum_to(long n, long acc) {
+long long sum_to(long long n, long long acc) {
     if (n == 0) return acc;
     return sum_to(n - 1, acc + n);     // ① tail position: nothing left to do after it
 }
 
 int main() {
-    std::printf("%ld\n", sum_to(1'000'000, 0));
+    std::printf("%lld\n", sum_to(1'000'000, 0));   // long long: the sum overflows a 32-bit long (Windows)
 }
 // expect: 500000500000
 ```

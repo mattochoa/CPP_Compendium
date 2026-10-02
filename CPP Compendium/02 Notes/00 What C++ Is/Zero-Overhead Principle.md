@@ -6,7 +6,7 @@ aliases:
 type: concept
 domain: D00
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[The C++ Design Philosophy]]"
@@ -32,6 +32,16 @@ tags:
 - std/c++20
 created: 2026-09-28
 updated: 2026-09-30
+reviewed: 2026-10-02
+score: 18
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 2
 ---
 
 # Zero-Overhead Principle
@@ -77,7 +87,7 @@ flowchart TB
 ## Mechanics
 
 > [!standard] The principle, stated precisely
-> "You don't pay for what you don't use" and "what you do use is just as efficient as what you could reasonably write by hand." No feature should impose overhead, in time or space, greater than a programmer would have introduced without it (cppreference, *Zero-overhead principle*). It is not a normative rule the Standard itself states in one clause — it is the design constraint the C++ Core Guidelines record themselves as bound by (*In.aims*) and that WG21 checks new proposals against. cppreference names exactly two standard-library features that fail the first half even when unused: RTTI (`dynamic_cast`, `typeid`) and exceptions — every class with a virtual function carries `typeinfo` metadata, and every function that might throw carries unwind tables, whether or not the program ever exercises either. That's why `-fno-rtti` and `-fno-exceptions` exist as opt-outs rather than being automatic.
+> "You don't pay for what you don't use" and "what you do use is just as efficient as what you could reasonably write by hand." No feature should impose overhead, in time or space, greater than a programmer would have introduced without it (cppreference, *Zero-overhead principle*). It is not a normative rule the Standard itself states in one clause — it is the design constraint the C++ Core Guidelines record themselves as bound by (*In.aims*) and that WG21 checks new proposals against. cppreference names exactly two language features that fail the first half even when unused: RTTI (`dynamic_cast`, `typeid`) and exceptions — every class with a virtual function carries `typeinfo` metadata, and every function that might throw carries unwind tables, whether or not the program ever exercises either. That's why `-fno-rtti` and `-fno-exceptions` exist as opt-outs rather than being automatic.
 
 | Situation | Rule | Example |
 |---|---|---|
@@ -169,7 +179,7 @@ int use_box(int n) {
 }
 ```
 1. Called below, so `Box<int>::get()` is instantiated (and here, inlined away entirely).
-2. Never called anywhere in this program. A member function template is instantiated only when it is actually used (`[temp.inst]`); the compiler doesn't generate — let alone try to optimize away — a function nobody asked for.
+2. Never called anywhere in this program. A member function of a class template is instantiated only when it is actually used (`[temp.inst]`); the compiler doesn't generate — let alone try to optimize away — a function nobody asked for.
 3. The only symbol `nm -C` reports for this translation unit is `use_box(int)`.
 
 **3 · Type erasure is a deliberate, visible cost — not an accident**
@@ -193,7 +203,7 @@ int call_fn(const std::function<int(int)>& fn, int x) { return fn(x); }   // ②
 > [!trap] Compile-time genericity has its own price: code size
 > A template instantiated with ten distinct types is not one function costing nothing extra — it is (up to) ten separate function bodies in the binary, one per instantiation, each independently optimized. "Zero run-time overhead" and "zero cost" are different claims; the price the principle doesn't erase moves to binary size and to every translation unit's compile time. [[Why Templates Live in Headers|Where template definitions have to live]] is a direct consequence of how instantiation works, not an unrelated inconvenience.
 
-> [!ub] Exceptions are the standard's own acknowledged exception, and it isn't fully settled
+> [!trap] Exceptions are the standard's own acknowledged exception, and it isn't fully settled
 > cppreference names RTTI and exceptions as the two features that don't follow the principle even when unused — every function that might throw carries unwind-table metadata whether or not it ever does. This isn't a minor footnote: Herb Sutter's P0709 ("Zero-overhead deterministic exceptions," 2018–2019) proposed encoding failure in a function's return type instead, precisely to make error handling pay only where it's used — and as of this writing it has not been adopted into the Standard. Even the committee treats "zero-overhead exceptions" as an open problem, not a solved one.
 
 ## Evolution
@@ -201,7 +211,7 @@ int call_fn(const std::function<int(int)>& fn, int x) { return fn(x); }   // ②
 | Standard | Change | Why |
 |---|---|---|
 | Pre-standard (1979–1990) | Templates added to "C with Classes"'s successor for generic containers and algorithms | Give the STL a way to be generic without forcing every container through a `void*` or a common base class |
-| **C++98** | Templates and the zero-overhead principle formalized together as the mechanism and the standard it must meet | Fix "generic, but not slower" as a guarantee every conforming compiler owes, not one vendor's quality of implementation |
+| **C++98** | Templates standardized; the STL ships as the proof that generic code can meet the zero-overhead bar. The principle itself stays a design criterion, never normative text | Make "generic, but not slower" achievable by every conforming compiler. Whether a given build meets it is still a quality-of-implementation question |
 | C++11 | `constexpr` functions | Extend zero overhead from *type* genericity to *computation*: move work the compiler can already do onto the compiler, entirely |
 | C++17 | Guaranteed copy elision for prvalues (`[class.copy.elision]`) | Remove even an elidable copy's cost from ordinary return-by-value, without needing a template or an optimizer heuristic to get there — see [[Value Categories]] |
 | C++20 | Concepts constrain a template parameter and improve its error messages, entirely at compile time | Keep the compile-time route usable as templates grow more complex, without adding a run-time check anywhere |
