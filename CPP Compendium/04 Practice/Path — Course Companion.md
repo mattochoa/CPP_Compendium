@@ -44,7 +44,7 @@ tags:
 - domain/prx
 - tier/1
 created: 2026-10-02
-updated: 2026-10-02
+updated: 2026-10-03
 reviewed: 2026-10-03
 score: 17
 rubric:
@@ -135,7 +135,7 @@ Each table below is one Continuum tier. **Status** is computed, not estimated: a
 | 06 | Function Library & Header Refactor | ✗ Blocked — missing [[assert and static_assert]] | [[Map — Program Structure & Build]], [[Map — Functions]], [[Translation Units]], [[The Preprocessor]], [[Headers and Include Guards]], [[Declarations vs Definitions]], [[References]], [[Pointers vs References]], [[Anatomy of a Function]], [[Parameter Passing — Value, Reference, Pointer]], [[Function Overloading]], [[assert and static_assert]], [[Functions and Parameters — The Complete Picture]] |
 | 07 | Word & Text Analyzer | ✗ Blocked — missing [[Ordered Associative Containers — map and set]], [[IO Streams Architecture]], [[File IO]] | [[Map — Standard Library]], [[vector]], [[string]], [[Ordered Associative Containers — map and set]], [[IO Streams Architecture]], [[File IO]] |
 | 08 | Matrix Operations Toolkit | ✗ Blocked — missing [[Preconditions, Postconditions and Contracts]] | [[Preconditions, Postconditions and Contracts]] |
-| 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ✗ Blocked — missing [[Recursion]] | [[Map — Functions]], [[Anatomy of a Function]], [[The Call Stack and Stack Frames]], [[Recursion]], [[Functions and Parameters — The Complete Picture]] |
+| 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ✓ Ready | [[Map — Functions]], [[Anatomy of a Function]], [[The Call Stack and Stack Frames]], [[Recursion]], [[Functions and Parameters — The Complete Picture]] |
 | 10 | Caesar & Vigenere Cipher Toolkit | ✗ Blocked — missing [[Bitwise Operations and the bit Header]], [[File IO]] | [[Map — Types & Values]], [[Bitwise Operations and the bit Header]], [[File IO]] |
 
 ### Tier 3 — Memory & Data Structures
@@ -146,7 +146,7 @@ Each table below is one Continuum tier. **Status** is computed, not estimated: a
 | 12 | Build-Your-Own Dynamic Array | ✗ Blocked — missing [[Rule of Zero, Three and Five]], [[How vector Grows — Capacity and Amortized Cost]] | [[Map — Objects, Memory & Lifetime]], [[Map — Classes & Encapsulation]], [[Map — Ownership & Move Semantics]], [[Map — Standard Library]], [[Dynamic Memory — new and delete]], [[Constructors]], [[Destructors]], [[Rule of Zero, Three and Five]], [[Copy Semantics — Deep vs Shallow Copy]], [[vector]], [[How vector Grows — Capacity and Amortized Cost]] |
 | 13 | Singly & Doubly Linked List Library | ✓ Ready | [[Map — Objects, Memory & Lifetime]], [[Pointers vs References]], [[Dangling Pointers and References]] |
 | 14 | Stack & Queue Library + Applications | ✗ Blocked — missing [[Container Adaptors — stack, queue, priority_queue]] | [[Container Adaptors — stack, queue, priority_queue]] |
-| 15 | Binary Search Tree Explorer | ✗ Blocked — missing [[Recursion]] | [[Recursion]] |
+| 15 | Binary Search Tree Explorer | ✓ Ready | [[Recursion]] |
 | 16 | Student Record System | ✗ Blocked — missing [[IO Streams Architecture]], [[File IO]] | [[IO Streams Architecture]], [[File IO]] |
 
 ### Tier 4 — Object-Oriented Programming
@@ -171,7 +171,7 @@ Each table below is one Continuum tier. **Status** is computed, not estimated: a
 | 27 | Task Manager with Lambdas & std::function | ✗ Blocked — missing [[Lambda Expressions]], [[Callables and std-function]] | [[Map — Functions]], [[Lambda Expressions]], [[Callables and std-function]], [[Functions and Parameters — The Complete Picture]] |
 | 28 | Mini JSON Parser / Key-Value Store Engine | ✗ Blocked — missing [[variant and visit]], [[Visitor — Classic vs variant]] | [[Map — Design & Idioms]], [[variant and visit]], [[Designing Interfaces — Easy to Use Correctly]], [[Visitor — Classic vs variant]] |
 
-**Scorecard:** 5 of 28 Tier 1–5 milestones are ready today (04, 13, 17, 18, 20). The single highest-leverage note is [[Recursion]]: it is the *only* blocker of 09 and 15, so writing it makes two milestones ready at once. [[File IO]] appears in three blocker lists (07, 10, 16) and [[Stream State and Robust Input]] in two (03, 05), but none of those projects becomes ready from that note alone; each also waits on a second note named in its row. This matches the Editor's current pin order in [[Directives]] exactly — Stream State and Robust Input, File IO, Recursion and switch and Fallthrough are pinned precisely because they are this path's biggest blockers.
+**Scorecard:** 7 of 28 Tier 1–5 milestones are ready today (04, 09, 13, 15, 17, 18, 20). [[Recursion]] was the single highest-leverage note outstanding — it was the *only* blocker of 09 and 15, so writing it made two milestones ready at once. [[File IO]] appears in three blocker lists (07, 10, 16) and [[Stream State and Robust Input]] in two (03, 05), but none of those projects becomes ready from that note alone; each also waits on a second note named in its row. This matches the Editor's pin order in [[Directives]] — Stream State and Robust Input, File IO and switch and Fallthrough remain pinned precisely because they are this path's next-biggest blockers.
 
 ## Connections
 

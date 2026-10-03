@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 230 |
+| ○ planned | 229 |
 | ◌ stub | 0 |
-| ◐ draft | 85 |
+| ◐ draft | 86 |
 | ⟲ revise | 0 |
 | ● reviewed | 42 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `████████░░░░░░░░░░░░` 49/126
+- Wave 2: `████████░░░░░░░░░░░░` 50/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/126
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -153,7 +153,7 @@ tags: [system/generated]
 
 ## D05 · Functions
 
-*How is computation named, parameterised, reused and passed around?*  `████░░░░░░` 6/17
+*How is computation named, parameterised, reused and passed around?*  `████░░░░░░` 7/17
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -163,7 +163,7 @@ tags: [system/generated]
 | ● | [[Parameter Passing — Value, Reference, Pointer]] | comparison | 1 | 1 | 19 |
 | ◐ | [[Function Overloading]] | concept | 1 | 2 |  |
 | ○ | [[Default Arguments]] | concept | 1 | 2 |  |
-| ○ | [[Recursion]] | concept | 1 | 2 |  |
+| ◐ | [[Recursion]] | concept | 1 | 2 |  |
 | ○ | [[Lambda Expressions]] | concept | 1 | 2 |  |
 | ○ | [[Returning Values — Copies, References and RVO]] | concept | 2 | 2 |  |
 | ○ | [[Function Pointers]] | concept | 2 | 2 |  |

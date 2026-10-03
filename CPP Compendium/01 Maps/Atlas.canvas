@@ -1005,7 +1005,8 @@
 			"y": 1586,
 			"width": 250,
 			"height": 56,
-			"text": "○ [[Recursion]]\n*concept · T1*"
+			"text": "◐ [[Recursion]]\n*concept · T1*",
+			"color": "3"
 		},
 		{
 			"id": "t-lambdas",

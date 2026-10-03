@@ -36,7 +36,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D02` | [[Map — Types & Values\|Types & Values]] | How are meaning and operations attached to raw bits? | `██░░░░░░` 6/25 |
 | `D03` | [[Map — Expressions & Control\|Expressions & Control]] | How does a program compute a value and decide what to do next? | `███░░░░░` 4/12 |
 | `D04` | [[Map — Objects, Memory & Lifetime\|Objects, Memory & Lifetime]] | Where does an object live, how long does it live, and who can reach it? | `█████░░░` 19/29 |
-| `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `███░░░░░` 6/17 |
+| `D05` | [[Map — Functions\|Functions]] | How is computation named, parameterised, reused and passed around? | `███░░░░░` 7/17 |
 | `D06` | [[Map — Classes & Encapsulation\|Classes & Encapsulation]] | How do we build new types that protect their own invariants? | `██░░░░░░` 6/20 |
 | `D07` | [[Map — Ownership & Move Semantics\|Ownership & Move Semantics]] | Who is responsible for releasing a resource, and how does responsibility transfer? | `████░░░░` 9/19 |
 | `D08` | [[Map — Inheritance & Polymorphism\|Inheritance & Polymorphism]] | How can one piece of code work with many types chosen at run time? | `█████░░░` 9/15 |
@@ -58,24 +58,25 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 230 | 85 | 0 | 42 | 0 | 357 | 147 | 5 |
+| 229 | 86 | 0 | 42 | 0 | 357 | 148 | 5 |
 
 `███████░░░░░░░░░░░░░` **36%** of the Atlas written · last build 2026-10-03
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Recursion]] · *concept* · `D05` — pinned by Editor
-2. [[Stream State and Robust Input]] · *idiom* · `D10` — pinned by Editor
-3. [[IO Streams Architecture]] · *mechanism* · `D10` — pinned by Editor
-4. [[File IO]] · *concept* · `D10` — pinned by Editor
-5. [[switch and Fallthrough]] · *concept* · `D03` — pinned by Editor
-6. [[Random Number Generation]] · *concept* · `D10` — pinned by Editor
+1. [[Stream State and Robust Input]] · *idiom* · `D10` — pinned by Editor
+2. [[IO Streams Architecture]] · *mechanism* · `D10` — pinned by Editor
+3. [[File IO]] · *concept* · `D10` — pinned by Editor
+4. [[switch and Fallthrough]] · *concept* · `D03` — pinned by Editor
+5. [[Random Number Generation]] · *concept* · `D10` — pinned by Editor
+6. [[String Streams]] · *concept* · `D10` — pinned by Editor
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
-- ● [[Path — Course Companion]] · *path* · updated 2026-10-02
+- ● [[Path — Course Companion]] · *path* · updated 2026-10-03
+- ◐ [[Recursion]] · *concept* · updated 2026-10-03
 - ● [[Implicit Conversions and Promotions]] · *mechanism* · updated 2026-10-01
 - ● [[Integer Representation and Two's Complement]] · *mechanism* · updated 2026-10-01
 - ◐ [[Performance — Measure, Don't Guess]] · *concept* · updated 2026-10-01
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[vector]] · *concept* · updated 2026-10-01
 - ◐ [[array]] · *concept* · updated 2026-10-01
 - ◐ [[Anatomy of a Function]] · *concept* · updated 2026-10-01
-- ◐ [[Class Templates]] · *concept* · updated 2026-10-01
 <!-- cc:end -->
 
 ## Start here

@@ -27,7 +27,7 @@ tags: [system/generated, practice]
 | 06 | Function Library & Header Refactor | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Functions]], ● [[Translation Units]], ● [[The Preprocessor]], ● [[Headers and Include Guards]], ● [[Declarations vs Definitions]], ● [[References]], ● [[Pointers vs References]], ◐ [[Anatomy of a Function]], ● [[Parameter Passing — Value, Reference, Pointer]], ◐ [[Function Overloading]], ○ [[assert and static_assert]], ● [[Path — Course Companion]], ◐ [[Functions and Parameters — The Complete Picture]] |
 | 07 | Word & Text Analyzer | ◐ [[Map — Standard Library]], ◐ [[vector]], ● [[string]], ○ [[Ordered Associative Containers — map and set]], ○ [[IO Streams Architecture]], ○ [[File IO]], ● [[Path — Course Companion]] |
 | 08 | Matrix Operations Toolkit | ○ [[Preconditions, Postconditions and Contracts]], ● [[Path — Course Companion]] |
-| 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ◐ [[Map — Functions]], ◐ [[Anatomy of a Function]], ◐ [[The Call Stack and Stack Frames]], ○ [[Recursion]], ● [[Path — Course Companion]], ◐ [[Functions and Parameters — The Complete Picture]] |
+| 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ◐ [[Map — Functions]], ◐ [[Anatomy of a Function]], ◐ [[The Call Stack and Stack Frames]], ◐ [[Recursion]], ● [[Path — Course Companion]], ◐ [[Functions and Parameters — The Complete Picture]] |
 | 10 | Caesar & Vigenere Cipher Toolkit | ◐ [[Map — Types & Values]], ○ [[Bitwise Operations and the bit Header]], ○ [[File IO]], ● [[Path — Course Companion]] |
 
 ## Tier 3: Memory & Data Structures
@@ -38,7 +38,7 @@ tags: [system/generated, practice]
 | 12 | Build-Your-Own Dynamic Array | ◐ [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Standard Library]], ● [[Dynamic Memory — new and delete]], ● [[Constructors]], ● [[Destructors]], ○ [[Rule of Zero, Three and Five]], ◐ [[Copy Semantics — Deep vs Shallow Copy]], ◐ [[vector]], ○ [[How vector Grows — Capacity and Amortized Cost]], ● [[Path — Course Companion]] |
 | 13 | Singly & Doubly Linked List Library | ◐ [[Map — Objects, Memory & Lifetime]], ● [[Pointers vs References]], ● [[Dangling Pointers and References]], ● [[Path — Course Companion]] |
 | 14 | Stack & Queue Library + Applications | ○ [[Container Adaptors — stack, queue, priority_queue]], ● [[Path — Course Companion]] |
-| 15 | Binary Search Tree Explorer | ○ [[Recursion]], ● [[Path — Course Companion]] |
+| 15 | Binary Search Tree Explorer | ◐ [[Recursion]], ● [[Path — Course Companion]] |
 | 16 | Student Record System | ○ [[IO Streams Architecture]], ○ [[File IO]], ● [[Path — Course Companion]] |
 
 ## Tier 4: Object-Oriented Programming

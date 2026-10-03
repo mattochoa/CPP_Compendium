@@ -129,7 +129,7 @@ flowchart LR
 - ● [[Parameter Passing — Value, Reference, Pointer]] · *comparison*
 - ◐ [[Function Overloading]] · *concept*
 - ○ [[Default Arguments]] · *concept*
-- ○ [[Recursion]] · *concept*
+- ◐ [[Recursion]] · *concept*
 - ○ [[Lambda Expressions]] · *concept*
 - ◐ [[Functions and Parameters — The Complete Picture]] · *concept*
 
@@ -145,7 +145,7 @@ flowchart LR
 **Tier 3 · Advanced**
 - ○ [[Overload Resolution]] · *mechanism*
 
-`████░░░░░░` 6/17 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`████░░░░░░` 7/17 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources
