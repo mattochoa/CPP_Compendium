@@ -58,24 +58,24 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 230 | 93 | 0 | 34 | 0 | 357 | 147 | 4 |
+| 230 | 85 | 0 | 42 | 0 | 357 | 147 | 5 |
 
-`███████░░░░░░░░░░░░░` **36%** of the Atlas written · last build 2026-10-02
+`███████░░░░░░░░░░░░░` **36%** of the Atlas written · last build 2026-10-03
 <!-- cc:end -->
 
 **Up next (Builder queue):**
 <!-- cc:auto:home-next -->
-1. [[Stream State and Robust Input]] · *idiom* · `D10` — pinned by Editor
-2. [[File IO]] · *concept* · `D10` — pinned by Editor
-3. [[Recursion]] · *concept* · `D05` — pinned by Editor
-4. [[switch and Fallthrough]] · *concept* · `D03` — pinned by Editor
-5. [[Operator Overloading]] · *concept* · `D06` — pinned by Editor
-6. [[Rule of Zero, Three and Five]] · *idiom* · `D06` — pinned by Editor
+1. [[Recursion]] · *concept* · `D05` — pinned by Editor
+2. [[Stream State and Robust Input]] · *idiom* · `D10` — pinned by Editor
+3. [[IO Streams Architecture]] · *mechanism* · `D10` — pinned by Editor
+4. [[File IO]] · *concept* · `D10` — pinned by Editor
+5. [[switch and Fallthrough]] · *concept* · `D03` — pinned by Editor
+6. [[Random Number Generation]] · *concept* · `D10` — pinned by Editor
 <!-- cc:end -->
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
-- ◐ [[Path — Course Companion]] · *path* · updated 2026-10-02
+- ● [[Path — Course Companion]] · *path* · updated 2026-10-02
 - ● [[Implicit Conversions and Promotions]] · *mechanism* · updated 2026-10-01
 - ● [[Integer Representation and Two's Complement]] · *mechanism* · updated 2026-10-01
 - ◐ [[Performance — Measure, Don't Guess]] · *concept* · updated 2026-10-01

@@ -9,7 +9,7 @@ aliases:
 type: concept
 domain: D10
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[STL Architecture — Containers, Iterators, Algorithms]]"
@@ -31,6 +31,16 @@ tags:
 - std/c++20
 created: 2026-09-25
 updated: 2026-09-25
+reviewed: 2026-10-03
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Iterators
@@ -160,6 +170,7 @@ int main() {
     std::cout << names[1] << ' ' << names.size() << '\n';
 }
 // expect: found at 1
+// expect: bjarne 4
 ```
 1. `find` returns a **position**, not a copy of the element and not a `bool`.
 2. "Not found" is reported as `last`, the one value that can never be a real element's position.

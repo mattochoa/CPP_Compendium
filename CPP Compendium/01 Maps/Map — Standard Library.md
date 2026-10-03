@@ -132,9 +132,9 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D10 -->
 **Tier 1 · Foundational**
-- ◐ [[STL Architecture — Containers, Iterators, Algorithms]] · *concept*
+- ● [[STL Architecture — Containers, Iterators, Algorithms]] · *concept*
 - ◐ [[vector]] · *concept*
-- ◐ [[Iterators]] · *concept*
+- ● [[Iterators]] · *concept*
 - ● [[string]] · *concept*
 - ◐ [[array]] · *concept*
 - ○ [[Ordered Associative Containers — map and set]] · *concept*

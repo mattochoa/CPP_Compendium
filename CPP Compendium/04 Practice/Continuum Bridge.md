@@ -14,54 +14,54 @@ tags: [system/generated, practice]
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 01 | Hello, Compiler | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Tooling & Engineering]], ● [[The Compilation Pipeline]], ● [[Translation Units]], ◐ [[Compilers and Essential Flags]], ◐ [[Warnings as Guardrails]], ○ [[CMake Fundamentals]], ◐ [[Path — Course Companion]] |
-| 02 | Unit & Temperature Converter Suite | ◐ [[Map — Types & Values]], ◐ [[Map — Expressions & Control]], ● [[Fundamental Types]], ● [[Integer Representation and Two's Complement]], ◐ [[Anatomy of an Expression]], ● [[Precedence and Associativity]], ◐ [[Control Flow — Selection and Iteration]], ○ [[switch and Fallthrough]], ◐ [[Path — Course Companion]] |
-| 03 | Number Guessing Game | ◐ [[Map — Expressions & Control]], ◐ [[Anatomy of an Expression]], ● [[Precedence and Associativity]], ◐ [[Control Flow — Selection and Iteration]], ○ [[Stream State and Robust Input]], ○ [[Random Number Generation]], ◐ [[Path — Course Companion]] |
-| 04 | Grade & GPA Calculator | ◐ [[array]], ◐ [[Path — Course Companion]] |
-| 05 | Console Calculator REPL | ◐ [[Map — Functions]], ◐ [[Anatomy of a Function]], ◐ [[Function Overloading]], ○ [[Stream State and Robust Input]], ○ [[String Streams]], ◐ [[Exceptions]], ◐ [[Path — Course Companion]], ◐ [[Functions and Parameters — The Complete Picture]] |
+| 01 | Hello, Compiler | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Tooling & Engineering]], ● [[The Compilation Pipeline]], ● [[Translation Units]], ◐ [[Compilers and Essential Flags]], ◐ [[Warnings as Guardrails]], ○ [[CMake Fundamentals]], ● [[Path — Course Companion]] |
+| 02 | Unit & Temperature Converter Suite | ◐ [[Map — Types & Values]], ◐ [[Map — Expressions & Control]], ● [[Fundamental Types]], ● [[Integer Representation and Two's Complement]], ◐ [[Anatomy of an Expression]], ● [[Precedence and Associativity]], ● [[Control Flow — Selection and Iteration]], ○ [[switch and Fallthrough]], ● [[Path — Course Companion]] |
+| 03 | Number Guessing Game | ◐ [[Map — Expressions & Control]], ◐ [[Anatomy of an Expression]], ● [[Precedence and Associativity]], ● [[Control Flow — Selection and Iteration]], ○ [[Stream State and Robust Input]], ○ [[Random Number Generation]], ● [[Path — Course Companion]] |
+| 04 | Grade & GPA Calculator | ◐ [[array]], ● [[Path — Course Companion]] |
+| 05 | Console Calculator REPL | ◐ [[Map — Functions]], ◐ [[Anatomy of a Function]], ◐ [[Function Overloading]], ○ [[Stream State and Robust Input]], ○ [[String Streams]], ● [[Exceptions]], ● [[Path — Course Companion]], ◐ [[Functions and Parameters — The Complete Picture]] |
 
 ## Tier 2: Core Programming
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 06 | Function Library & Header Refactor | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Functions]], ● [[Translation Units]], ● [[The Preprocessor]], ● [[Headers and Include Guards]], ● [[Declarations vs Definitions]], ● [[References]], ● [[Pointers vs References]], ◐ [[Anatomy of a Function]], ◐ [[Parameter Passing — Value, Reference, Pointer]], ◐ [[Function Overloading]], ○ [[assert and static_assert]], ◐ [[Path — Course Companion]], ◐ [[Functions and Parameters — The Complete Picture]] |
-| 07 | Word & Text Analyzer | ◐ [[Map — Standard Library]], ◐ [[vector]], ● [[string]], ○ [[Ordered Associative Containers — map and set]], ○ [[IO Streams Architecture]], ○ [[File IO]], ◐ [[Path — Course Companion]] |
-| 08 | Matrix Operations Toolkit | ○ [[Preconditions, Postconditions and Contracts]], ◐ [[Path — Course Companion]] |
-| 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ◐ [[Map — Functions]], ◐ [[Anatomy of a Function]], ◐ [[The Call Stack and Stack Frames]], ○ [[Recursion]], ◐ [[Path — Course Companion]], ◐ [[Functions and Parameters — The Complete Picture]] |
-| 10 | Caesar & Vigenere Cipher Toolkit | ◐ [[Map — Types & Values]], ○ [[Bitwise Operations and the bit Header]], ○ [[File IO]], ◐ [[Path — Course Companion]] |
+| 06 | Function Library & Header Refactor | ◐ [[Map — Program Structure & Build]], ◐ [[Map — Functions]], ● [[Translation Units]], ● [[The Preprocessor]], ● [[Headers and Include Guards]], ● [[Declarations vs Definitions]], ● [[References]], ● [[Pointers vs References]], ◐ [[Anatomy of a Function]], ● [[Parameter Passing — Value, Reference, Pointer]], ◐ [[Function Overloading]], ○ [[assert and static_assert]], ● [[Path — Course Companion]], ◐ [[Functions and Parameters — The Complete Picture]] |
+| 07 | Word & Text Analyzer | ◐ [[Map — Standard Library]], ◐ [[vector]], ● [[string]], ○ [[Ordered Associative Containers — map and set]], ○ [[IO Streams Architecture]], ○ [[File IO]], ● [[Path — Course Companion]] |
+| 08 | Matrix Operations Toolkit | ○ [[Preconditions, Postconditions and Contracts]], ● [[Path — Course Companion]] |
+| 09 | Recursion Lab: Towers of Hanoi & Maze Solver | ◐ [[Map — Functions]], ◐ [[Anatomy of a Function]], ◐ [[The Call Stack and Stack Frames]], ○ [[Recursion]], ● [[Path — Course Companion]], ◐ [[Functions and Parameters — The Complete Picture]] |
+| 10 | Caesar & Vigenere Cipher Toolkit | ◐ [[Map — Types & Values]], ○ [[Bitwise Operations and the bit Header]], ○ [[File IO]], ● [[Path — Course Companion]] |
 
 ## Tier 3: Memory & Data Structures
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 11 | Pointer & Array Internals Lab | ◐ [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Tooling & Engineering]], ● [[Process Memory Layout — Stack, Heap, Static]], ● [[Storage Duration]], ● [[Object Lifetime]], ● [[Pointers]], ◐ [[Reading Uninitialized Variables]], ◐ [[Pointer Arithmetic and Arrays]], ● [[Pointers vs References]], ◐ [[nullptr and Null Pointers]], ◐ [[Built-in Arrays and Array-to-Pointer Decay]], ◐ [[Memory Leaks]], ● [[Dangling Pointers and References]], ◐ [[Double Free and Mismatched new-delete]], ○ [[Sanitizers — ASan, UBSan, TSan]], ◐ [[Path — Course Companion]], ○ [[Buffer Overruns and Out-of-Bounds Access]] |
-| 12 | Build-Your-Own Dynamic Array | ◐ [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Standard Library]], ● [[Dynamic Memory — new and delete]], ● [[Constructors]], ◐ [[Destructors]], ○ [[Rule of Zero, Three and Five]], ◐ [[Copy Semantics — Deep vs Shallow Copy]], ◐ [[vector]], ○ [[How vector Grows — Capacity and Amortized Cost]], ◐ [[Path — Course Companion]] |
-| 13 | Singly & Doubly Linked List Library | ◐ [[Map — Objects, Memory & Lifetime]], ● [[Pointers vs References]], ● [[Dangling Pointers and References]], ◐ [[Path — Course Companion]] |
-| 14 | Stack & Queue Library + Applications | ○ [[Container Adaptors — stack, queue, priority_queue]], ◐ [[Path — Course Companion]] |
-| 15 | Binary Search Tree Explorer | ○ [[Recursion]], ◐ [[Path — Course Companion]] |
-| 16 | Student Record System | ○ [[IO Streams Architecture]], ○ [[File IO]], ◐ [[Path — Course Companion]] |
+| 11 | Pointer & Array Internals Lab | ◐ [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Tooling & Engineering]], ● [[Process Memory Layout — Stack, Heap, Static]], ● [[Storage Duration]], ● [[Object Lifetime]], ● [[Pointers]], ◐ [[Reading Uninitialized Variables]], ◐ [[Pointer Arithmetic and Arrays]], ● [[Pointers vs References]], ◐ [[nullptr and Null Pointers]], ◐ [[Built-in Arrays and Array-to-Pointer Decay]], ◐ [[Memory Leaks]], ● [[Dangling Pointers and References]], ◐ [[Double Free and Mismatched new-delete]], ○ [[Sanitizers — ASan, UBSan, TSan]], ● [[Path — Course Companion]], ○ [[Buffer Overruns and Out-of-Bounds Access]] |
+| 12 | Build-Your-Own Dynamic Array | ◐ [[Map — Objects, Memory & Lifetime]], ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Standard Library]], ● [[Dynamic Memory — new and delete]], ● [[Constructors]], ● [[Destructors]], ○ [[Rule of Zero, Three and Five]], ◐ [[Copy Semantics — Deep vs Shallow Copy]], ◐ [[vector]], ○ [[How vector Grows — Capacity and Amortized Cost]], ● [[Path — Course Companion]] |
+| 13 | Singly & Doubly Linked List Library | ◐ [[Map — Objects, Memory & Lifetime]], ● [[Pointers vs References]], ● [[Dangling Pointers and References]], ● [[Path — Course Companion]] |
+| 14 | Stack & Queue Library + Applications | ○ [[Container Adaptors — stack, queue, priority_queue]], ● [[Path — Course Companion]] |
+| 15 | Binary Search Tree Explorer | ○ [[Recursion]], ● [[Path — Course Companion]] |
+| 16 | Student Record System | ○ [[IO Streams Architecture]], ○ [[File IO]], ● [[Path — Course Companion]] |
 
 ## Tier 4: Object-Oriented Programming
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 17 | Bank Account Simulator | ◐ [[Map — Types & Values]], ◐ [[Map — Classes & Encapsulation]], ● [[const and Const-Correctness]], ● [[Classes as User-Defined Types]], ● [[Encapsulation and Class Invariants]], ● [[Constructors]], ◐ [[Overloading in Classes — Constructors, Members and Operators]], ◐ [[Path — Course Companion]] |
-| 18 | Shape Hierarchy & Polymorphic Area Calculator | ◐ [[Map — Inheritance & Polymorphism]], ● [[Inheritance]], ● [[Virtual Functions]], ● [[Virtual Dispatch — vptr and vtable]], ◐ [[Abstract Classes and Interfaces]], ◐ [[Virtual Destructors]], ◐ [[Object Slicing]], ◐ [[override and final]], ◐ [[Path — Course Companion]] |
-| 19 | Complex Number & Vector Math Library | ◐ [[Map — Types & Values]], ◐ [[Map — Classes & Encapsulation]], ● [[const and Const-Correctness]], ○ [[Operator Overloading]], ◐ [[Overloading in Classes — Constructors, Members and Operators]], ○ [[Value Semantics]], ◐ [[Path — Course Companion]] |
-| 20 | Employee Management System | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Inheritance & Polymorphism]], ◐ [[Owning vs Observing Pointers]], ● [[Inheritance]], ◐ [[Composition vs Inheritance]], ◐ [[Path — Course Companion]] |
-| 21 | Game Entity System | ◐ [[Map — Inheritance & Polymorphism]], ● [[Virtual Dispatch — vptr and vtable]], ◐ [[Abstract Classes and Interfaces]], ○ [[RTTI and dynamic_cast]], ○ [[Multiple and Virtual Inheritance]], ◐ [[Path — Course Companion]] |
-| 22 | Rule-of-Five Resource Manager | ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ◐ [[Value Categories]], ○ [[Rule of Zero, Three and Five]], ◐ [[Rvalue References]], ◐ [[Move Semantics]], ○ [[noexcept and Why Move Must Not Throw]], ○ [[Benchmarking Correctly]], ◐ [[Path — Course Companion]] |
+| 17 | Bank Account Simulator | ◐ [[Map — Types & Values]], ◐ [[Map — Classes & Encapsulation]], ● [[const and Const-Correctness]], ● [[Classes as User-Defined Types]], ● [[Encapsulation and Class Invariants]], ● [[Constructors]], ◐ [[Overloading in Classes — Constructors, Members and Operators]], ● [[Path — Course Companion]] |
+| 18 | Shape Hierarchy & Polymorphic Area Calculator | ◐ [[Map — Inheritance & Polymorphism]], ● [[Inheritance]], ● [[Virtual Functions]], ● [[Virtual Dispatch — vptr and vtable]], ◐ [[Abstract Classes and Interfaces]], ◐ [[Virtual Destructors]], ◐ [[Object Slicing]], ◐ [[override and final]], ● [[Path — Course Companion]] |
+| 19 | Complex Number & Vector Math Library | ◐ [[Map — Types & Values]], ◐ [[Map — Classes & Encapsulation]], ● [[const and Const-Correctness]], ○ [[Operator Overloading]], ◐ [[Overloading in Classes — Constructors, Members and Operators]], ○ [[Value Semantics]], ● [[Path — Course Companion]] |
+| 20 | Employee Management System | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Inheritance & Polymorphism]], ◐ [[Owning vs Observing Pointers]], ● [[Inheritance]], ◐ [[Composition vs Inheritance]], ● [[Path — Course Companion]] |
+| 21 | Game Entity System | ◐ [[Map — Inheritance & Polymorphism]], ● [[Virtual Dispatch — vptr and vtable]], ◐ [[Abstract Classes and Interfaces]], ○ [[RTTI and dynamic_cast]], ○ [[Multiple and Virtual Inheritance]], ● [[Path — Course Companion]] |
+| 22 | Rule-of-Five Resource Manager | ◐ [[Map — Classes & Encapsulation]], ◐ [[Map — Ownership & Move Semantics]], ◐ [[Value Categories]], ○ [[Rule of Zero, Three and Five]], ◐ [[Rvalue References]], ◐ [[Move Semantics]], ○ [[noexcept and Why Move Must Not Throw]], ○ [[Benchmarking Correctly]], ● [[Path — Course Companion]] |
 
 ## Tier 5: Modern C++ & the STL
 
 | # | Project | Concepts it exercises |
 |---|---|---|
-| 23 | STL Container & Algorithm Playground | ◐ [[Map — Functions]], ◐ [[Map — Standard Library]], ○ [[Lambda Expressions]], ◐ [[STL Architecture — Containers, Iterators, Algorithms]], ◐ [[Iterators]], ○ [[The Algorithms Library]], ◐ [[Iterator Categories and Concepts]], ◐ [[Path — Course Companion]] |
-| 24 | Generic Data Structure Library | ◐ [[Map — Generic Programming]], ◐ [[Function Templates]], ◐ [[Class Templates]], ○ [[Concepts and Constraints]], ○ [[Full and Partial Specialization]], ◐ [[Iterator Categories and Concepts]], ◐ [[Path — Course Companion]] |
-| 25 | Smart Pointer Refactor Lab | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Value Categories]], ◐ [[Memory Leaks]], ● [[Dangling Pointers and References]], ◐ [[Double Free and Mismatched new-delete]], ● [[Ownership — Who Releases What]], ● [[RAII]], ◐ [[unique_ptr]], ◐ [[shared_ptr and Reference Counting]], ○ [[weak_ptr and Reference Cycles]], ◐ [[Path — Course Companion]] |
-| 26 | Custom Exception Hierarchy & Robust CSV Parser | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Errors & Contracts]], ● [[Ownership — Who Releases What]], ● [[RAII]], ○ [[Exception Safety Guarantees]], ◐ [[Error Handling Strategies Compared]], ◐ [[Exceptions]], ○ [[Designing Exception Hierarchies]], ◐ [[Path — Course Companion]] |
-| 27 | Task Manager with Lambdas & std::function | ◐ [[Map — Functions]], ○ [[Lambda Expressions]], ○ [[Callables and std-function]], ◐ [[Path — Course Companion]], ◐ [[Functions and Parameters — The Complete Picture]] |
-| 28 | Mini JSON Parser / Key-Value Store Engine | ◐ [[Map — Design & Idioms]], ○ [[variant and visit]], ◐ [[Designing Interfaces — Easy to Use Correctly]], ○ [[Visitor — Classic vs variant]], ◐ [[Path — Course Companion]] |
+| 23 | STL Container & Algorithm Playground | ◐ [[Map — Functions]], ◐ [[Map — Standard Library]], ○ [[Lambda Expressions]], ● [[STL Architecture — Containers, Iterators, Algorithms]], ● [[Iterators]], ○ [[The Algorithms Library]], ◐ [[Iterator Categories and Concepts]], ● [[Path — Course Companion]] |
+| 24 | Generic Data Structure Library | ◐ [[Map — Generic Programming]], ◐ [[Function Templates]], ◐ [[Class Templates]], ○ [[Concepts and Constraints]], ○ [[Full and Partial Specialization]], ◐ [[Iterator Categories and Concepts]], ● [[Path — Course Companion]] |
+| 25 | Smart Pointer Refactor Lab | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Value Categories]], ◐ [[Memory Leaks]], ● [[Dangling Pointers and References]], ◐ [[Double Free and Mismatched new-delete]], ● [[Ownership — Who Releases What]], ● [[RAII]], ◐ [[unique_ptr]], ◐ [[shared_ptr and Reference Counting]], ○ [[weak_ptr and Reference Cycles]], ● [[Path — Course Companion]] |
+| 26 | Custom Exception Hierarchy & Robust CSV Parser | ◐ [[Map — Ownership & Move Semantics]], ◐ [[Map — Errors & Contracts]], ● [[Ownership — Who Releases What]], ● [[RAII]], ○ [[Exception Safety Guarantees]], ● [[Error Handling Strategies Compared]], ● [[Exceptions]], ○ [[Designing Exception Hierarchies]], ● [[Path — Course Companion]] |
+| 27 | Task Manager with Lambdas & std::function | ◐ [[Map — Functions]], ○ [[Lambda Expressions]], ○ [[Callables and std-function]], ● [[Path — Course Companion]], ◐ [[Functions and Parameters — The Complete Picture]] |
+| 28 | Mini JSON Parser / Key-Value Store Engine | ◐ [[Map — Design & Idioms]], ○ [[variant and visit]], ◐ [[Designing Interfaces — Easy to Use Correctly]], ○ [[Visitor — Classic vs variant]], ● [[Path — Course Companion]] |
 
 ## Tier 6: Advanced & Systems Programming
 

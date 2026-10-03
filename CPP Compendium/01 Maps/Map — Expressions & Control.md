@@ -116,7 +116,7 @@ flowchart LR
 **Tier 1 · Foundational**
 - ◐ [[Anatomy of an Expression]] · *concept*
 - ● [[Precedence and Associativity]] · *concept*
-- ◐ [[Control Flow — Selection and Iteration]] · *concept*
+- ● [[Control Flow — Selection and Iteration]] · *concept*
 - ○ [[Short-Circuit Evaluation]] · *concept*
 - ○ [[Prefix vs Postfix Increment]] · *comparison*
 - ○ [[The Range-Based for Loop]] · *mechanism*

@@ -8,7 +8,7 @@ aliases:
 type: comparison
 domain: D05
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Anatomy of a Function]]"
@@ -30,6 +30,16 @@ tags:
 - tension/safety-vs-performance
 created: 2026-09-28
 updated: 2026-09-28
+reviewed: 2026-10-03
+score: 19
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Parameter Passing — Value, Reference, Pointer
@@ -68,7 +78,7 @@ A by-value parameter is copy-initialized from the argument, so the callee's `T x
 
 A pointer parameter is itself passed by value: `void f(int* p)` copies the *pointer*, not the pointee. Re-aiming the local copy (`p = &other;`) never affects the caller's pointer variable, but writing through it (`*p = 0;`) changes the object it points to, because that object was never copied — only its address was (Primer §6.2, p. 209). Confusing "the pointer is a copy" with "the pointee is a copy" is the single most common misreading of pointer parameters.
 
-Since C++11, by-value has a second job: the **sink** parameter. If a function will consume or move from its argument, taking it by value and calling `std::move` inside lets one implementation handle both an lvalue caller (which pays for a copy) and an rvalue caller (which pays only for a move) without writing an overload for each — the C++ Core Guidelines name this *F.18: For "will-move-from" parameters, pass by `X&&` and `std::move` the parameter*, and Pikus shows the same pattern chosen deliberately once a type is move-enabled (Pikus, "Copying and argument passing," p. 321).
+Since C++11, by-value has a second job: the **sink** parameter. If a function will consume or move from its argument, taking it by value and calling `std::move` inside lets one implementation handle both an lvalue caller (which pays for a copy) and an rvalue caller (which pays only for a move) without writing an overload for each. The C++ Core Guidelines state a stricter form, *F.18: For "will-move-from" parameters, pass by `X&&` and `std::move` the parameter*, which rejects lvalue callers outright; by-value-plus-move is the more permissive variant, paying one extra move in exchange for accepting both. Pikus shows the same pattern chosen deliberately once a type is move-enabled (Pikus, "Copying and argument passing," p. 321).
 
 ### By Reference — an Alias, Never a Copy
 
@@ -100,7 +110,7 @@ Pikus makes the failure mode concrete: passing a `std::vector<int>` by value int
 A natural assumption is that arguments are evaluated left to right, the way they're written. The Standard never promised that. Evaluating a function's arguments (and the postfix expression naming the function) are all sequenced *before* the function body runs, but relative to each other they are **indeterminately sequenced**: each individual argument's evaluation completes without overlapping another's, but the compiler may pick either order, and may pick a different order the next time the same call is compiled (cppreference, *Order of evaluation*, rule 14; the current working draft's `[intro.execution]`).
 
 > [!standard] This rule has moved
-> Before C++17, two arguments that both modified the *same* object — `f(++i, ++i)` — were undefined behavior: the unsequenced writes could race. Since C++17, each argument's initialization is still unsequenced relative to the others, but no longer allowed to *interleave*, so `f(++i, ++i)` is well-defined-but-unspecified: `i` ends up incremented twice, in some order the Standard won't name, rather than corrupted. Two arguments touching *unrelated* objects were never UB, at any standard — only the order was ever left open, which is what *In Code* §4 demonstrates.
+> Before C++17, two arguments that both modified the *same* object — `f(++i, ++i)` — were undefined behavior: the two writes were *unsequenced*. Since C++17 (P0145R3), each parameter's initialization, with all its side effects, is *indeterminately sequenced* relative to the others: either order, but never interleaved, so `f(++i, ++i)` is well-defined-but-unspecified: `i` ends up incremented twice, in some order the Standard won't name, rather than corrupted. Two arguments touching *unrelated* objects were never UB, at any standard — only the order was ever left open, which is what *In Code* §4 demonstrates.
 
 ## Decision Guide
 
@@ -205,7 +215,7 @@ int main() {
     combine(tag("left"), tag("right"));   // order between the two tag() calls is unspecified
     std::printf("\n");
 }
-// prints (GCC 14, local MinGW toolchain, -O0): "right left" on every run observed —
+// prints (GCC 11.4.0, x86-64 Linux, -O0 and -O2; re-run by the Editor 2026-10-03): "right left" —
 // the Standard permits either order, and neither this output nor "left right" is guaranteed
 ```
 This never crashes and never corrupts anything — `left` and `right` name unrelated objects, so there is no UB here at any standard. What's unspecified is purely which `tag()` call happens first, and a program that depends on the answer has a latent, compiler-specific bug.

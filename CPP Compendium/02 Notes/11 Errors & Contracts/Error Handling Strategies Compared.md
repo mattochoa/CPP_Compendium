@@ -7,7 +7,7 @@ aliases:
 type: comparison
 domain: D11
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs: []
 related:
@@ -29,6 +29,16 @@ tags:
 - tension/compile-time-vs-run-time
 created: 2026-09-26
 updated: 2026-09-26
+reviewed: 2026-10-03
+score: 16
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 2
+  depth: 2
+  visual: 2
+  code: 3
+  integration: 2
 ---
 
 # Error Handling Strategies Compared
@@ -194,8 +204,10 @@ int main() {
 #include <iostream>
 #include <stdexcept>
 
+void flush_to_disk() { throw std::runtime_error("disk full"); }
+
 void log_shutdown() noexcept {
-    throw std::runtime_error("disk full");   // ① breaks the noexcept promise
+    flush_to_disk();                         // ① a callee's throw breaks the noexcept promise
 }
 
 int main() {
@@ -205,8 +217,8 @@ int main() {
 }
 // cc: norun
 ```
-1. The compiler does not verify this promise; it only wires in the reaction for the moment it's broken.
-2. The search for a handler exits a function with a non-throwing exception specification, which calls `std::terminate()` directly (`[except.terminate]` ¶1.3) — no `catch` anywhere gets a chance to run.
+1. The compiler does not verify this promise; it only wires in the reaction for the moment it's broken. (GCC's `-Wterminate` does catch a `throw` written *directly* inside a `noexcept` body; the realistic case is a callee that throws, which no warning sees.)
+2. The search for a handler exits a function with a non-throwing exception specification, which calls `std::terminate()` directly (`[except.handle]` ¶7; listed in `[except.terminate]` Note 1, item 1.3) — no `catch` anywhere gets a chance to run.
 3. This is well-defined termination, not undefined behavior: the Standard names this exact situation and its response.
 
 ## Connections

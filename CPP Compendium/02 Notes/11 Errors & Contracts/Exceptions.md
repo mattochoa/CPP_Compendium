@@ -4,9 +4,10 @@ title: Exceptions
 type: concept
 domain: D11
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
-prereqs: []
+prereqs:
+- "[[The Call Stack and Stack Frames]]"
 related:
 - "[[Error Handling Strategies Compared]]"
 - "[[Stack Unwinding]]"
@@ -27,6 +28,16 @@ tags:
 - std/c++17
 created: 2026-09-27
 updated: 2026-09-27
+reviewed: 2026-10-03
+score: 18
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 2
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Exceptions
@@ -73,7 +84,7 @@ flowchart BT
 | Type match (`[except.handle]`) | `T` (or `T&`) matches exception object type `E` if `E` and `T` are the same type ignoring top-level cv-qualifiers, **or** `T` is an unambiguous public base of `E` | `catch (const std::exception&)` matches any standard exception, derived or not |
 | No match in this `try` | The search continues in the next dynamically enclosing `try` (of the same thread) | An unmatched `catch` block is simply skipped, whatever its position in the source |
 | No match anywhere | `std::terminate()` runs; whether the stack unwinds first is implementation-defined | An exception escaping `main` always terminates the program |
-| `throw;` (no operand, inside a handler) | Reactivates the **currently handled** exception object itself — no new object is created, so nothing is sliced | Ill-formed to terminate if used while no exception is being handled |
+| `throw;` (no operand, inside a handler) | Reactivates the **currently handled** exception object itself — no new object is created, so nothing is sliced | If no exception is being handled, `throw;` calls `std::terminate()` (`[except.terminate]` Note 1, item 1.8) |
 | `throw e;` (naming the caught variable) | Copy-initializes a **new** exception object of `e`'s declared (static) type | Slices to that type if `e`'s declared type is a base of the object actually thrown |
 
 > [!standard] `catch(...)` and handler-parameter initialization
@@ -262,12 +273,12 @@ int main() {
 | Standard | Change | Why |
 |---|---|---|
 | C++98 | `throw`/`try`/`catch` as described here; `<stdexcept>` hierarchy; dynamic exception specifications `throw(Type...)` on a function declaration | The baseline mechanism, plus a run-time-checked attempt at declaring what a function might throw |
-| **C++11** | `std::exception_ptr`, `std::current_exception`, `std::rethrow_exception` (capture an exception object and move or rethrow it later, even on another thread); `noexcept` specifier introduced alongside the dynamic ones | `std::promise`/`std::future` need to carry a failure detected on one thread to a `get()` called on another |
-| **C++17** | Dynamic exception specifications removed (only the empty `throw()` survives, as a spelling of `noexcept(true)`); `std::uncaught_exceptions()` (plural, a count) replaces the C++98 `std::uncaught_exception()` (a single bool, deprecated here, removed in C++20) | A checked-at-run-time "might throw X" gave none of `noexcept`'s compile-time benefit and just called `std::unexpected`/`terminate` when violated; a plain bool can't tell "unwinding for the exception I'm already handling" apart from "a second, unrelated exception started," which a nested destructor needs to know |
+| **C++11** | `std::exception_ptr`, `std::current_exception`, `std::rethrow_exception` (capture an exception object and move or rethrow it later, even on another thread); `noexcept` specifier introduced; dynamic exception specifications deprecated | `std::promise`/`std::future` need to carry a failure detected on one thread to a `get()` called on another |
+| **C++17** | Dynamic exception specifications removed (only the empty `throw()` survives, deprecated, as a spelling of `noexcept(true)`; C++20 removes it too); `std::uncaught_exceptions()` (plural, a count) replaces the C++98 `std::uncaught_exception()` (a single bool, deprecated here, removed in C++20) | A checked-at-run-time "might throw X" gave none of `noexcept`'s compile-time benefit and just called `std::unexpected`/`terminate` when violated; a plain bool can't tell "unwinding for the exception I'm already handling" apart from "a second, unrelated exception started," which a nested destructor needs to know |
 
 ## Connections
 
-- **Prerequisites:** None formally registered — this note assumes only that a function call places a new frame on the call stack. [[The Call Stack and Stack Frames]] deepens that picture once written.
+- **Prerequisites:** [[The Call Stack and Stack Frames]] — the frames a thrown exception walks up and abandons.
 - **Enables:** [[Stack Unwinding]] (exactly which destructors run, in what order) · [[Designing Exception Hierarchies]] (structuring what you throw) · [[The Cost of Exceptions]] (the "near-zero when it doesn't throw" claim, measured) · [[noexcept]] (declaring a function won't use this channel at all).
 - **Siblings:** [[Error Handling Strategies Compared]] (when to reach for this channel instead of an error code or an assertion).
 - **Foundation this depends on:** [[RAII]] — stack unwinding is only safe because RAII ties release to scope exit.

@@ -4,7 +4,7 @@ title: Control Flow — Selection and Iteration
 type: concept
 domain: D03
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Anatomy of an Expression]]"
@@ -27,6 +27,16 @@ tags:
 - std/c++17
 created: 2026-09-28
 updated: 2026-09-28
+reviewed: 2026-10-03
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 2
+  visual: 3
+  code: 3
+  integration: 3
 ---
 
 # Control Flow — Selection and Iteration
@@ -82,7 +92,7 @@ flowchart TD
 | `switch (cond) { case c1: ...; case c2: ...; default: ...; }` | multi-way | `cond` (contextually converted to an integral or enum type) is compared against each `case` constant; control jumps to the matching label, or to `default` if present, or to nowhere at all if neither matches. |
 
 > [!standard] `case` labels are jump targets, not scopes
-> A `case` label does not open a new block. Control can jump straight past a declaration into the middle of a scope that variable is supposed to live in, which the Standard forbids: a declaration inside one `case` that a later, reachable `case` could jump *over* without initializing it makes the whole `switch` ill-formed (`[stmt.switch]`; cppreference, *`switch` statement* §Notes). Wrap any `case` that declares a variable in its own `{ }` block to give it a scope the jump can legally skip.
+> A `case` label does not open a new block. Control can jump straight past a declaration into the middle of a scope that variable is supposed to live in, which the Standard forbids: a jump to a later `case` that bypasses a variable's declaration *with an initializer* (strictly: one whose initialization is not vacuous) makes the program ill-formed (`[stmt.dcl]` ¶2, which governs every jump, `case` labels included; cppreference, *`switch` statement* §Notes). A plain `int x;` with no initializer can legally be jumped over. Wrap any `case` that declares a variable in its own `{ }` block to give it a scope the jump can legally skip.
 
 **Iteration.** All three loop forms repeat one statement; they differ in *when* the condition is tested and *what else* is bundled into the header.
 

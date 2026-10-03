@@ -4,7 +4,7 @@ title: STL Architecture — Containers, Iterators, Algorithms
 type: concept
 domain: D10
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs: []
 related:
@@ -23,6 +23,16 @@ tags:
 - std/c++20
 created: 2026-09-25
 updated: 2026-09-25
+reviewed: 2026-10-03
+score: 19
+rubric:
+  accuracy: 2
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 3
+  code: 3
+  integration: 2
 ---
 
 # STL Architecture — Containers, Iterators, Algorithms
@@ -61,7 +71,7 @@ Picture three independent layers, connected by exactly one seam.
 ```
 
 > [!model] The universal socket, and where it breaks
-> An iterator is a socket standard: any appliance (algorithm) that only needs what the standard promises — a plug shape, a voltage — runs off any socket (container) that meets it, even one wired decades later by someone who never saw the appliance. **Where it breaks:** a socket standard has one tier; iterators have six, layered by what they promise (Mechanics). Plugging a "needs 240V" appliance into a "110V-only" socket is the electrician's job to prevent — for iterators, the compiler itself now refuses the mismatch (`[iterator.requirements.general]`, C++20 concepts).
+> An iterator is a socket standard: any appliance (algorithm) that only needs what the standard promises — a plug shape, a voltage — runs off any socket (container) that meets it, even one wired decades later by someone who never saw the appliance. **Where it breaks:** a socket standard has one tier; iterators have six, layered by what they promise (Mechanics). Plugging a "needs 240V" appliance into a "110V-only" socket is the electrician's job to prevent — for iterators, the C++20 `std::ranges::` algorithms make the compiler refuse the mismatch at the call site (iterator concepts); the classic `std::` algorithms still don't.
 
 ```mermaid
 flowchart LR
@@ -95,7 +105,7 @@ Every algorithm operates on a **range**: a half-open pair `[begin, end)`, the fi
 | An algorithm needs a range | Pass two iterators, not a container | `std::sort(v.begin(), v.end())` |
 | An algorithm needs a destination | Pass a third iterator that only needs to be *written to* | `std::copy(v.begin(), v.end(), out)` |
 | The destination has no room yet | Wrap it in an insert iterator, which extends the container | `std::back_inserter(result)` |
-| An algorithm's requirement isn't met | Ill-formed (C++20 concepts) or silently wrong (pre-C++20) | `std::sort` on a `list::iterator` |
+| An algorithm's requirement isn't met | `std::ranges::` algorithms (C++20) reject it at the call site via concepts; the classic `std::` algorithms are unconstrained, so the program is ill-formed only if a missing operator happens to be used (otherwise undefined behavior) | `std::ranges::sort(l)` → "constraints not satisfied"; `std::sort(l.begin(), l.end())` → "no match for `operator-`" deep in the library |
 
 **Iterator categories.** Not every container can offer every operation cheaply — a linked list cannot jump to element *k* in O(1) the way an array can. Rather than force every container to fake operations it can't do efficiently, the library groups iterator operations into categories and lets each algorithm declare the *weakest* category it can work with (Primer §10.5, pp. 410–412):
 
@@ -111,7 +121,7 @@ Every algorithm operates on a **range**: a half-open pair `[begin, end)`, the fi
 A category higher in the table supplies every operation of the categories below it (`[iterator.requirements.general]` ¶4), so an algorithm that only asks for a forward iterator happily accepts a random-access one.
 
 > [!standard] C++20 turned the categories into concepts, and generalized the pair
-> Before C++20, an iterator's category was established by convention — nested `typedef`s picked up by `iterator_traits` — and compilers were not required to reject a mismatched category at the call site (Pitfalls). C++20 names each category as a constrainable concept (`std::forward_iterator`, `std::random_access_iterator`, …) and adds a sixth, `contiguous_iterator`. It also generalizes the pair itself: a **range** is now an iterator and a *sentinel*, and the sentinel is allowed to be a different type from the iterator (`[iterator.requirements.general]` ¶8, footnote 177) — which is what lets `std::ranges` express a range with no fixed end, like an input stream read until failure.
+> Before C++20, an iterator's category was established by convention — nested `typedef`s picked up by `iterator_traits` — and compilers were not required to reject a mismatched category at the call site (Pitfalls). C++20 names each category as a constrainable concept (`std::forward_iterator`, `std::random_access_iterator`, …) and makes `contiguous_iterator` a concept (the category itself was introduced in C++17). The concepts constrain the new `std::ranges::` algorithms; the classic `std::sort` and friends keep their unconstrained C++98 signatures, so a mismatch there still fails, if at all, inside the library (GCC 11.4, `-std=c++20`: `std::ranges::sort(l)` reports "constraints not satisfied"; `std::sort(l.begin(), l.end())` reports "no match for `operator-`" in `stl_algo.h`). It also generalizes the pair itself: a **range** is now an iterator and a *sentinel*, and the sentinel is allowed to be a different type from the iterator (`[iterator.requirements.general]` ¶8, footnote 177) — which is what lets `std::ranges` express a range with no fixed end, like an input stream read until failure.
 
 ## Under the Hood
 
@@ -232,7 +242,7 @@ int main() {
 > A pointer happens to satisfy every category up to contiguous, so code prototyped on `vector` quietly assumes `+`, `-` and `[]` work on *any* iterator. Move the same code to a `std::map` or `std::list` and those operators aren't there — this is by design (Mechanics), not a library gap.
 
 > [!trap] A misused iterator category used to fail deep inside the library
-> Before C++20, a compiler was not required to reject the wrong iterator category at the call site, and older implementations often accepted it silently (Primer §10.5, p. 411). Where the mismatch did surface — as in Example 3 above — the message pointed at the algorithm's internals, not the caller's line. C++20's concept-constrained iterators improve this, but do not universally guarantee, a call-site diagnostic.
+> Before C++20, a compiler was not required to reject the wrong iterator category at the call site, and older implementations often accepted it silently (Primer §10.5, p. 411). Where the mismatch did surface — as in Example 3 above — the message pointed at the algorithm's internals, not the caller's line. C++20 fixes this only for the `std::ranges::` algorithms, which are concept-constrained; the classic `std::` overloads are not, so prefer `std::ranges::sort(v)` when you want the call-site diagnostic.
 
 > [!ub] Holding an iterator across a mutation that invalidates it
 > Every container documents which operations invalidate its iterators (inserting into a full `vector` invalidates all of them; erasing from a `list` invalidates only the erased element's). Using an invalidated iterator is undefined behavior, not a checked error. See [[Iterator Invalidation]].
@@ -244,7 +254,7 @@ int main() {
 | **C++98** | The STL (Stepanov's design) enters the standard library; five iterator categories via nested `typedef`s and `iterator_traits` | A shared, extensible container/algorithm framework, at the cost of convention-only enforcement |
 | C++11 | Move iterators; free `std::begin`/`std::end`; range-based `for` | Generic code can move instead of copy; iterate without naming a container's own `begin()`/`end()` |
 | C++17 | Parallel algorithm overloads take an `ExecutionPolicy` (`<execution>`) | The same algorithm call can ask for parallel or vectorized execution without a different function name |
-| **C++20** | Iterator categories become concepts; sixth category `contiguous_iterator`; ranges generalize `[begin, end)` to iterator + *sentinel*, possibly different types | Category mismatches move toward the call site; ranges can express an end that isn't another iterator (a predicate, a count, "read until failure") |
+| **C++20** | Iterator categories become concepts, including `contiguous_iterator` (a category since C++17); concept-constrained `std::ranges::` algorithms; ranges generalize `[begin, end)` to iterator + *sentinel*, possibly different types | Category mismatches move toward the call site; ranges can express an end that isn't another iterator (a predicate, a count, "read until failure") |
 
 ## Connections
 

@@ -62,18 +62,18 @@ Every time a function takes, returns or stores "access to an object that lives e
 
 ## At a Glance
 
-| Criterion | `T&` reference | `T*` pointer |
-|---|---|---|
-| **Can be null / "no object"** | ✗ never (a null reference would require UB to create) | ✓ `nullptr`: must be checked |
-| **Must be initialized** | ✓ at declaration | ✗ may be uninitialized (dangerous) |
-| **Can be re-aimed** | ✗ bound for life: `r = x` assigns *through* it | ✓ `p = &other` |
-| **Is an object** (has its own address, `sizeof`) | ✗ no: `&r` is the referent's address | ✓ yes: `&p` is a `T**` |
-| **Arithmetic / iteration** | ✗ | ✓ `p + 1`, `p[i]` (within arrays) |
-| **Arrays of them / in containers** | ✗ (use `std::reference_wrapper`) | ✓ |
-| **Syntax at use site** | ✓ like the object: `r.f()` | ~ `p->f()`, `*p` |
-| **Can dangle** | ✓ yes | ✓ yes |
-| **Expresses ownership** | ✗ never owns | ~ raw: *should* not own (use smart pointers) |
-| **Typical machine code** | an address | an address |
+| Criterion                                        | `T&` reference                                        | `T*` pointer                                 |
+| ------------------------------------------------ | ----------------------------------------------------- | -------------------------------------------- |
+| **Can be null / "no object"**                    | ✗ never (a null reference would require UB to create) | ✓ `nullptr`: must be checked                 |
+| **Must be initialized**                          | ✓ at declaration                                      | ✗ may be uninitialized (dangerous)           |
+| **Can be re-aimed**                              | ✗ bound for life: `r = x` assigns *through* it        | ✓ `p = &other`                               |
+| **Is an object** (has its own address, `sizeof`) | ✗ no: `&r` is the referent's address                  | ✓ yes: `&p` is a `T**`                       |
+| **Arithmetic / iteration**                       | ✗                                                     | ✓ `p + 1`, `p[i]` (within arrays)            |
+| **Arrays of them / in containers**               | ✗ (use `std::reference_wrapper`)                      | ✓                                            |
+| **Syntax at use site**                           | ✓ like the object: `r.f()`                            | ~ `p->f()`, `*p`                             |
+| **Can dangle**                                   | ✓ yes                                                 | ✓ yes                                        |
+| **Expresses ownership**                          | ✗ never owns                                          | ~ raw: *should* not own (use smart pointers) |
+| **Typical machine code**                         | an address                                            | an address                                   |
 
 ## Deep Dive
 

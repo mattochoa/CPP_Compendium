@@ -10,9 +10,9 @@ tags: [system/generated]
 |---|---|
 | ○ planned | 230 |
 | ◌ stub | 0 |
-| ◐ draft | 93 |
+| ◐ draft | 85 |
 | ⟲ revise | 0 |
-| ● reviewed | 34 |
+| ● reviewed | 42 |
 | ★ evergreen | 0 |
 
 **Total topics:** 357
@@ -105,7 +105,7 @@ tags: [system/generated]
 | ◐ | [[Map — Expressions & Control]] | map | 1 | 0 |  |
 | ◐ | [[Anatomy of an Expression]] | concept | 1 | 1 | 19 |
 | ● | [[Precedence and Associativity]] | concept | 1 | 1 | 20 |
-| ◐ | [[Control Flow — Selection and Iteration]] | concept | 1 | 1 |  |
+| ● | [[Control Flow — Selection and Iteration]] | concept | 1 | 1 | 20 |
 | ○ | [[Evaluation Order and Sequencing]] | mechanism | 2 | 2 |  |
 | ○ | [[Short-Circuit Evaluation]] | concept | 1 | 2 |  |
 | ○ | [[Prefix vs Postfix Increment]] | comparison | 1 | 2 |  |
@@ -160,7 +160,7 @@ tags: [system/generated]
 | ◐ | [[Map — Functions]] | map | 1 | 0 |  |
 | ◐ | [[Anatomy of a Function]] | concept | 1 | 1 | 20 |
 | ◐ | [[The Call Stack and Stack Frames]] | mechanism | 1 | 1 |  |
-| ◐ | [[Parameter Passing — Value, Reference, Pointer]] | comparison | 1 | 1 |  |
+| ● | [[Parameter Passing — Value, Reference, Pointer]] | comparison | 1 | 1 | 19 |
 | ◐ | [[Function Overloading]] | concept | 1 | 2 |  |
 | ○ | [[Default Arguments]] | concept | 1 | 2 |  |
 | ○ | [[Recursion]] | concept | 1 | 2 |  |
@@ -185,7 +185,7 @@ tags: [system/generated]
 | ● | [[Classes as User-Defined Types]] | concept | 1 | 1 | 20 |
 | ● | [[Encapsulation and Class Invariants]] | concept | 1 | 1 | 20 |
 | ● | [[Constructors]] | concept | 1 | 1 | 20 |
-| ◐ | [[Destructors]] | concept | 1 | 1 |  |
+| ● | [[Destructors]] | concept | 1 | 1 | 20 |
 | ○ | [[struct vs class]] | comparison | 1 | 2 |  |
 | ○ | [[Member Initializer Lists and Initialization Order]] | mechanism | 1 | 2 |  |
 | ○ | [[The this Pointer and Member Function Calls]] | mechanism | 1 | 2 |  |
@@ -280,9 +280,9 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Standard Library]] | map | 1 | 0 |  |
-| ◐ | [[STL Architecture — Containers, Iterators, Algorithms]] | concept | 1 | 1 |  |
+| ● | [[STL Architecture — Containers, Iterators, Algorithms]] | concept | 1 | 1 | 19 |
 | ◐ | [[vector]] | concept | 1 | 1 |  |
-| ◐ | [[Iterators]] | concept | 1 | 1 |  |
+| ● | [[Iterators]] | concept | 1 | 1 | 20 |
 | ● | [[string]] | concept | 1 | 1 | 20 |
 | ◐ | [[array]] | concept | 1 | 2 |  |
 | ○ | [[Ordered Associative Containers — map and set]] | concept | 1 | 2 |  |
@@ -317,8 +317,8 @@ tags: [system/generated]
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
 | ◐ | [[Map — Errors & Contracts]] | map | 1 | 0 |  |
-| ◐ | [[Error Handling Strategies Compared]] | comparison | 1 | 1 |  |
-| ◐ | [[Exceptions]] | concept | 1 | 1 |  |
+| ● | [[Error Handling Strategies Compared]] | comparison | 1 | 1 | 16 |
+| ● | [[Exceptions]] | concept | 1 | 1 | 18 |
 | ○ | [[assert and static_assert]] | concept | 1 | 2 |  |
 | ○ | [[Stack Unwinding]] | mechanism | 2 | 2 |  |
 | ○ | [[Designing Exception Hierarchies]] | idiom | 2 | 3 |  |
@@ -448,7 +448,7 @@ tags: [system/generated]
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
-| ◐ | [[Path — Course Companion]] | path | 1 | 2 |  |
+| ● | [[Path — Course Companion]] | path | 1 | 2 | 17 |
 | ○ | [[Path — Modern C++ Fluency]] | path | 2 | 3 |  |
 | ○ | [[Path — Systems & Performance]] | path | 3 | 3 |  |
 | ◐ | [[Kit — Background Worker (C++14-17)]] | guide | 2 | 2 |  |

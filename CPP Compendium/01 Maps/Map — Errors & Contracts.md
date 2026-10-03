@@ -109,8 +109,8 @@ flowchart LR
 
 <!-- cc:auto:domain-index:D11 -->
 **Tier 1 · Foundational**
-- ◐ [[Error Handling Strategies Compared]] · *comparison*
-- ◐ [[Exceptions]] · *concept*
+- ● [[Error Handling Strategies Compared]] · *comparison*
+- ● [[Exceptions]] · *concept*
 - ○ [[assert and static_assert]] · *concept*
 
 **Tier 2 · Proficient**

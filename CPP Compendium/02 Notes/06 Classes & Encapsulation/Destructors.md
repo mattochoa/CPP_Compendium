@@ -7,7 +7,7 @@ aliases:
 type: concept
 domain: D06
 tier: 1
-status: draft
+status: reviewed
 standard: C++98
 prereqs:
 - "[[Object Lifetime]]"
@@ -30,6 +30,16 @@ tags:
 - std/c++11
 created: 2026-09-28
 updated: 2026-09-28
+reviewed: 2026-10-03
+score: 20
+rubric:
+  accuracy: 3
+  first_principles: 3
+  clarity: 3
+  depth: 3
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Destructors
@@ -92,7 +102,7 @@ flowchart TB
 **A destructor with nothing to do costs nothing to call.** `[class.dtor]` ¶8: a destructor is **trivial** if it is not user-provided, not virtual, every direct base's destructor is trivial, and every class-type non-static member's destructor is trivial. A trivial destructor performs no action — not even an empty function call (*Under the Hood*).
 
 > [!standard] A destructor is implicitly `noexcept` — even one you write yourself
-> `[class.dtor]` Note 2: a destructor declared *without* its own `noexcept`-specifier gets exactly the exception specification it would have gotten if implicitly declared. Per cppreference (*Destructors*) and `[except.spec]`, that specification is **non-throwing, unless a base or member's own destructor is itself potentially-throwing** — a class is "poisoned" only by what it contains, since C++17's rule for computing implicit specifications. Writing your own `~Widget() { … }` does **not**, by itself, remove this guarantee. Only an explicit `noexcept(false)`, or a poisoned member, does (*In Code* 3).
+> `[class.dtor]` Note 2: a destructor declared *without* its own `noexcept`-specifier gets exactly the exception specification it would have gotten if implicitly declared. Per cppreference (*Destructors*) and `[except.spec]`, that specification is **non-throwing, unless a base or member's own destructor is itself potentially-throwing** — a class is "poisoned" only by what it contains. This has held since C++11 (implicit destructors and destructors without an exception specification); C++17 only reworded it in terms of *potentially-throwing* functions. Writing your own `~Widget() { … }` does **not**, by itself, remove this guarantee. Only an explicit `noexcept(false)`, or a poisoned member, does (*In Code* 3).
 
 ## Under the Hood
 
@@ -243,7 +253,7 @@ int main() {
 1. `Alarm::~Alarm` is explicitly `noexcept(false)`, so it is *allowed* to throw — the language permits this even though it is almost never wise.
 2. `arm()`'s own throw begins unwinding the stack, which is what triggers `a`'s destructor in the first place.
 
-Marked `// cc: norun` because the observed behavior is a process abort, not a checkable `stdout`. Run under GCC 11.4.0, x86-64 Linux, this vault's toolchain printed `Alarm::~Alarm firing`, then `terminate called after throwing an instance of 'std::runtime_error'` on `stderr`, and the process exited via `SIGABRT` — `catch` never ran. This is not undefined behavior; `[except.terminate]` ¶1.4 requires it: a destructor invoked during stack unwinding that itself exits via an exception calls `std::terminate`, by name, every conforming implementation.
+Marked `// cc: norun` because the observed behavior is a process abort, not a checkable `stdout`. Run under GCC 11.4.0, x86-64 Linux, this vault's toolchain printed `Alarm::~Alarm firing`, then `terminate called after throwing an instance of 'std::runtime_error'` on `stderr`, and the process exited via `SIGABRT` — `catch` never ran. This is not undefined behavior: every conforming implementation must call `std::terminate` when a destructor invoked during stack unwinding exits via an exception (listed in `[except.terminate]` ¶1, Note 1 item 1.4; ¶2 also forbids unwinding further before the call).
 
 ## Pitfalls
 

@@ -4,7 +4,7 @@ title: Path — Course Companion
 type: path
 domain: PRX
 tier: 1
-status: draft
+status: reviewed
 standard: ''
 prereqs:
 - "[[Map — What C++ Is]]"
@@ -45,6 +45,16 @@ tags:
 - tier/1
 created: 2026-10-02
 updated: 2026-10-02
+reviewed: 2026-10-03
+score: 17
+rubric:
+  accuracy: 2
+  first_principles: 2
+  clarity: 3
+  depth: 2
+  visual: 2
+  code: 3
+  integration: 3
 ---
 
 # Path — Course Companion
@@ -132,7 +142,7 @@ Each table below is one Continuum tier. **Status** is computed, not estimated: a
 
 | # | Project | Status | Notes to read first |
 |---|---|---|---|
-| 11 | Pointer & Array Internals Lab | ✗ Blocked — missing [[Sanitizers — ASan, UBSan, TSan]] | [[Map — Objects, Memory & Lifetime]], [[Map — Tooling & Engineering]], [[Process Memory Layout — Stack, Heap, Static]], [[Storage Duration]], [[Object Lifetime]], [[Pointers]], [[Reading Uninitialized Variables]], [[Pointer Arithmetic and Arrays]], [[Pointers vs References]], [[nullptr and Null Pointers]], [[Built-in Arrays and Array-to-Pointer Decay]], [[Memory Leaks]], [[Dangling Pointers and References]], [[Double Free and Mismatched new-delete]], [[Sanitizers — ASan, UBSan, TSan]], [[Buffer Overruns and Out-of-Bounds Access]] |
+| 11 | Pointer & Array Internals Lab | ✗ Blocked — missing [[Sanitizers — ASan, UBSan, TSan]], [[Buffer Overruns and Out-of-Bounds Access]] | [[Map — Objects, Memory & Lifetime]], [[Map — Tooling & Engineering]], [[Process Memory Layout — Stack, Heap, Static]], [[Storage Duration]], [[Object Lifetime]], [[Pointers]], [[Reading Uninitialized Variables]], [[Pointer Arithmetic and Arrays]], [[Pointers vs References]], [[nullptr and Null Pointers]], [[Built-in Arrays and Array-to-Pointer Decay]], [[Memory Leaks]], [[Dangling Pointers and References]], [[Double Free and Mismatched new-delete]], [[Sanitizers — ASan, UBSan, TSan]], [[Buffer Overruns and Out-of-Bounds Access]] |
 | 12 | Build-Your-Own Dynamic Array | ✗ Blocked — missing [[Rule of Zero, Three and Five]], [[How vector Grows — Capacity and Amortized Cost]] | [[Map — Objects, Memory & Lifetime]], [[Map — Classes & Encapsulation]], [[Map — Ownership & Move Semantics]], [[Map — Standard Library]], [[Dynamic Memory — new and delete]], [[Constructors]], [[Destructors]], [[Rule of Zero, Three and Five]], [[Copy Semantics — Deep vs Shallow Copy]], [[vector]], [[How vector Grows — Capacity and Amortized Cost]] |
 | 13 | Singly & Doubly Linked List Library | ✓ Ready | [[Map — Objects, Memory & Lifetime]], [[Pointers vs References]], [[Dangling Pointers and References]] |
 | 14 | Stack & Queue Library + Applications | ✗ Blocked — missing [[Container Adaptors — stack, queue, priority_queue]] | [[Container Adaptors — stack, queue, priority_queue]] |
@@ -161,7 +171,7 @@ Each table below is one Continuum tier. **Status** is computed, not estimated: a
 | 27 | Task Manager with Lambdas & std::function | ✗ Blocked — missing [[Lambda Expressions]], [[Callables and std-function]] | [[Map — Functions]], [[Lambda Expressions]], [[Callables and std-function]], [[Functions and Parameters — The Complete Picture]] |
 | 28 | Mini JSON Parser / Key-Value Store Engine | ✗ Blocked — missing [[variant and visit]], [[Visitor — Classic vs variant]] | [[Map — Design & Idioms]], [[variant and visit]], [[Designing Interfaces — Easy to Use Correctly]], [[Visitor — Classic vs variant]] |
 
-**Scorecard:** 5 of 28 Tier 1–5 milestones are ready today (04, 13, 17, 18, 20). The single highest-leverage note is [[Recursion]] (unblocks 09 and 15); [[Stream State and Robust Input]] and [[File IO]] each unblock three milestones (03/05 and 07/10/16 respectively). This matches the Editor's current pin order in [[Directives]] exactly — Stream State and Robust Input, File IO, Recursion and switch and Fallthrough are pinned precisely because they are this path's biggest blockers.
+**Scorecard:** 5 of 28 Tier 1–5 milestones are ready today (04, 13, 17, 18, 20). The single highest-leverage note is [[Recursion]]: it is the *only* blocker of 09 and 15, so writing it makes two milestones ready at once. [[File IO]] appears in three blocker lists (07, 10, 16) and [[Stream State and Robust Input]] in two (03, 05), but none of those projects becomes ready from that note alone; each also waits on a second note named in its row. This matches the Editor's current pin order in [[Directives]] exactly — Stream State and Robust Input, File IO, Recursion and switch and Fallthrough are pinned precisely because they are this path's biggest blockers.
 
 ## Connections
 

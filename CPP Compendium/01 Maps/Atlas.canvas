@@ -564,8 +564,8 @@
 			"y": 214,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Control Flow — Selection and Iteration]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[Control Flow — Selection and Iteration]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-short-circuit-evaluation",
@@ -976,8 +976,8 @@
 			"y": 1370,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Parameter Passing — Value, Reference, Pointer]]\n*comparison · T1*",
-			"color": "3"
+			"text": "● [[Parameter Passing — Value, Reference, Pointer]]\n*comparison · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-function-overloading",
@@ -1155,8 +1155,8 @@
 			"y": 1442,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Destructors]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[Destructors]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-struct-vs-class",
@@ -1823,8 +1823,8 @@
 			"y": 2454,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[STL Architecture — Containers, Iterators, Algorithms]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[STL Architecture — Containers, Iterators, Algorithms]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-std-vector",
@@ -1843,8 +1843,8 @@
 			"y": 2598,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Iterators]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[Iterators]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-std-string",
@@ -2110,8 +2110,8 @@
 			"y": 2454,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Error Handling Strategies Compared]]\n*comparison · T1*",
-			"color": "3"
+			"text": "● [[Error Handling Strategies Compared]]\n*comparison · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-exceptions",
@@ -2120,8 +2120,8 @@
 			"y": 2526,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Exceptions]]\n*concept · T1*",
-			"color": "3"
+			"text": "● [[Exceptions]]\n*concept · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-assertions",
@@ -2938,8 +2938,8 @@
 			"y": 4478,
 			"width": 250,
 			"height": 56,
-			"text": "◐ [[Path — Course Companion]]\n*path · T1*",
-			"color": "3"
+			"text": "● [[Path — Course Companion]]\n*path · T1*",
+			"color": "4"
 		},
 		{
 			"id": "t-path-modern-fluency",
