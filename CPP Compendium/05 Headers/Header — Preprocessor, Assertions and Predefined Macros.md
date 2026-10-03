@@ -42,168 +42,189 @@ header: <cassert>
 # Header — Preprocessor, Assertions and Predefined Macros
 
 > [!essence]
-> The **preprocessor** rewrites your source text before the compiler sees it: it pastes in headers, replaces macros, and keeps or deletes blocks of code depending on conditions. It also gives you the earliest of C++'s three **assertion layers**: `#error`/`#warning` stop or warn *while preprocessing*, `static_assert` stops *while compiling*, and `assert` (from **`<cassert>`**) stops *while running*. Every layer can ask the toolchain questions through **predefined macros** (`__cplusplus`, `__FILE__`, `__LINE__`, feature-test macros, compiler and platform macros), which is how one source file adapts to many compilers, standards and operating systems.
+> The **preprocessor** edits your source text before the compiler sees it: it pastes in headers, replaces macros, and keeps or drops blocks of code. It also hosts the first of C++'s **three assertion layers**. `#error` stops the build while preprocessing, `static_assert` stops it while compiling, and `assert` from **`<cassert>`** stops the program while it runs. Each layer can ask the toolchain questions through **predefined macros** such as `__cplusplus`, `__FILE__` and `__LINE__`.
 
 > [!standard] Versions
-> C++98 (`#include`, `#define`, `#if`/`#ifdef`/`#elif`, `#`/`##`, `#error`, `#pragma`, `#line`, `assert`/`NDEBUG`, `__cplusplus`/`__FILE__`/`__LINE__`/`__DATE__`/`__TIME__`) / C++11 (`static_assert`, variadic macros `__VA_ARGS__`, `_Pragma`, `__func__`, `__STDC_HOSTED__`, `__STDCPP_THREADS__`) / C++17 (`static_assert` without a message, `__has_include`, `__STDCPP_DEFAULT_NEW_ALIGNMENT__`) / C++20 (`__VA_OPT__`, `__has_cpp_attribute`, feature-test macros standardized, `<version>`, `std::source_location`, `module`/`import` directives) / C++23 (`#elifdef`, `#elifndef`, `#warning`, `__STDCPP_FLOAT16_T__` and the other extended floating-point macros; `__STDCPP_STRICT_POINTER_SAFETY__` removed) / C++26 (`#embed`, `__has_embed`, variadic `assert(...)`, contract assertions `pre`/`post`/`contract_assert`)
+> - **C++98**: directives, `#` and `##`, `#error`, `assert` + `NDEBUG`, `__cplusplus`, `__FILE__`, `__LINE__`
+> - **C++11**: `static_assert`, `__VA_ARGS__`, `_Pragma`, `__func__`, `__STDC_HOSTED__`
+> - **C++17**: `static_assert` without a message, `__has_include`
+> - **C++20**: `__VA_OPT__`, `__has_cpp_attribute`, standard feature-test macros, `<version>`, `std::source_location`
+> - **C++23**: `#elifdef`, `#elifndef`, `#warning`
+> - **C++26**: `#embed`, `__has_embed`, variadic `assert(...)`, contract assertions
 
-## Class Hierarchy / Family
-
-**Where the preprocessor runs, and the three layers of assertion.**
+## The Three Assertion Layers
 
 ```text
-  your .cpp + headers
-         │
-         ▼
-  ┌──────────────────────────────┐   #include #define #if #ifdef #elif #else #endif
-  │ TRANSLATION PHASE 4:         │   #  ##  __VA_ARGS__  __VA_OPT__   predefined macros
-  │ PREPROCESSING  (text/tokens) │   ── ASSERT LAYER 1 ──▶ #error "msg"  stops the build
-  │                              │                         #warning "msg" (C++23) warns
-  └──────────────┬───────────────┘
-                 │ one expanded "translation unit"  (see it with:  g++ -E file.cpp)
-                 ▼
-  ┌──────────────────────────────┐   types, templates, constexpr, overloads
-  │ PHASES 5-7: COMPILATION      │   ── ASSERT LAYER 2 ──▶ static_assert(cond, "msg")
-  │ (types and constants known)  │                         stops the build
-  └──────────────┬───────────────┘
-                 │ object files → linker → program
-                 ▼
-  ┌──────────────────────────────┐   real input, real data
-  │ RUN TIME                     │   ── ASSERT LAYER 3 ──▶ assert(cond)  (<cassert>)
-  │                              │                         prints + std::abort(); gone if NDEBUG
-  └──────────────────────────────┘                         C++26: contract_assert / pre / post
+  source files
+       │
+       ▼
+  ┌─────────────────────────┐
+  │ 1  PREPROCESSING        │  sees: macros only
+  │    (translation phase 4)│  #error "msg"     stops the build
+  │                         │  #warning "msg"   warns (C++23)
+  └────────────┬────────────┘
+               ▼
+  ┌─────────────────────────┐
+  │ 2  COMPILATION          │  sees: types, sizeof, constexpr values
+  │                         │  static_assert(cond, "msg")   stops the build
+  └────────────┬────────────┘
+               ▼
+  ┌─────────────────────────┐
+  │ 3  RUN TIME             │  sees: real values
+  │                         │  assert(cond)   prints, then std::abort()
+  │                         │  removed when NDEBUG is defined
+  └─────────────────────────┘
 ```
 
-Rule: **check each fact at the earliest layer that can see it.** `#error` sees only macros (the standard, the platform, configuration flags). `static_assert` sees types and constants (`sizeof`, traits, `constexpr` values). `assert` sees run-time values (function arguments, loop state).
+**Rule:** check every fact at the earliest layer that can see it.
 
 ## Quick Reference
+
+### DIRECTIVES — Directive | Effect | Note
 
 ```cpp
 // cc: fragment
 // ═══════════════════════════════════════════════════════════════════════════
 // INCLUDING
 // ═══════════════════════════════════════════════════════════════════════════
-#include <vector>                       // <…> searches the system/library include paths
-#include "config.h"                     // "…" searches next to the current file first, then like <…>
-#if __has_include(<optional>)           // C++17: does this header exist?
-#pragma once                            // non-standard but universal: include this file only once
-#ifndef APP_CONFIG_H                    // the portable include guard...
-#define APP_CONFIG_H                    //   ...wrapping the whole header
-#endif
-#embed "logo.png"                       // C++26: a file's bytes as a comma-separated list of ints
+#include <vector>                 // system | Paste a library header  | System paths
+#include "config.h"               // local  | Paste your own header   | This folder first
+#pragma once                      // guard  | Include file only once  | Non-standard
+#ifndef CONFIG_H / #define ...    // guard  | Portable include guard  | Wraps the file
+#embed "logo.png"                 // bytes  | File bytes as int list  | C++26
 
 // ═══════════════════════════════════════════════════════════════════════════
-// MACROS
+// DEFINING MACROS
 // ═══════════════════════════════════════════════════════════════════════════
-#define PI 3.14159                      // object-like: plain token replacement
-#define SQUARE(x) ((x) * (x))           // function-like: parenthesize every use AND the whole body
-#define STR(x)  #x                      // # stringizes the argument: STR(a+b) → "a+b"
-#define CAT(a, b) a##b                  // ## pastes tokens: CAT(var, 1) → var1
-#define LOG(fmt, ...) printf(fmt __VA_OPT__(,) __VA_ARGS__)   // ... + __VA_ARGS__ (C++11), __VA_OPT__ (C++20)
-#define DO_TWICE(s) do { s; s; } while (0)   // statement macro: safe after if without braces
-#undef PI                               // forget a macro
-//   macros have NO scope, NO types, NO namespaces: they apply from #define to #undef / end of TU
+#define PI 3.14159                // object | Token replacement       | Prefer constexpr
+#define SQ(x) ((x) * (x))         // func   | Replacement with args   | Parenthesize all
+#define STR(x) #x                 // #      | Argument → "string"     | STR(a+b) → "a+b"
+#define CAT(a, b) a##b            // ##     | Paste two tokens        | CAT(v, 1) → v1
+#define F(...) g(__VA_ARGS__)     // ...    | Variadic macro          | C++11
+__VA_OPT__(,)                     // opt    | Comma only if args      | C++20
+#define S(x) do { x; } while (0)  // stmt   | Acts as one statement   | Safe after `if`
+#undef PI                         // remove | Forget a macro          | No scope
 
 // ═══════════════════════════════════════════════════════════════════════════
 // CONDITIONAL COMPILATION
 // ═══════════════════════════════════════════════════════════════════════════
-#if EXPR  /  #elif EXPR  /  #else  /  #endif   // EXPR: integer constant expression of macros
-#ifdef NAME   /  #ifndef NAME                  // same as #if defined(NAME) / #if !defined(NAME)
-#elifdef NAME /  #elifndef NAME                // C++23
-#if defined(_WIN32) && !defined(NDEBUG)        // undefined identifiers in #if evaluate to 0
-#if __has_cpp_attribute(nodiscard)             // C++20: attribute support (value = version date)
-#if __has_embed("logo.png")                    // C++26
+#if EXPR                          // test   | Keep block if EXPR != 0 | Unknown name = 0
+#elif EXPR / #else / #endif       // chain  | Alternatives
+#ifdef NAME / #ifndef NAME        // test   | Is NAME defined?        | #if defined(NAME)
+#elifdef NAME / #elifndef NAME    // chain  | Defined-test in a chain | C++23
+__has_include(<optional>)         // test   | Does the header exist?  | C++17
+__has_cpp_attribute(nodiscard)    // test   | Attribute supported?    | C++20
+__has_embed("logo.png")           // test   | Resource exists?        | C++26
 
 // ═══════════════════════════════════════════════════════════════════════════
-// ASSERTIONS & DIAGNOSTICS (earliest layer first)
+// DIAGNOSTICS, PRAGMAS, LINE CONTROL
 // ═══════════════════════════════════════════════════════════════════════════
-#error "This library needs C++17"       // preprocessing: stop the build with a message
-#warning "deprecated config"            // C++23 (long-standing GCC/Clang extension): warn, keep going
-static_assert(sizeof(int) == 4, "need 32-bit int");   // C++11: compile time, needs a constant
-static_assert(sizeof(void*) == 8);                     // C++17: message optional
-#include <cassert>                      // brings in assert, reading NDEBUG at THIS point
-assert(index < size);                   // run time: if false → prints expr, file, line, function; abort()
-assert(ptr && "ptr must not be null");  // idiom: && "message" puts text in the diagnostic
-#define NDEBUG                          // before including <cassert>: every assert becomes ((void)0)
-contract_assert(x > 0);                 // C++26 contract assertion (also pre(...) / post(...) on functions)
+#error "needs C++17"              // stop   | Build fails with text   | Layer 1
+#warning "deprecated"             // warn   | Build continues         | C++23
+#pragma message("note")           // note   | Print during build      | GCC, Clang, MSVC
+#pragma GCC diagnostic push       // GCC    | Save warning settings   | Also Clang
+#pragma warning(push)             // MSVC   | Save warning settings   | MSVC
+_Pragma("GCC diagnostic pop")     // op     | #pragma inside a macro  | C++11
+#line 100 "gen.cpp"               // line   | Reset __LINE__/__FILE__ | Code generators
+#                                 // null   | Does nothing
+```
+
+### ASSERTIONS — Expression | Layer | Note
+
+```cpp
+// cc: fragment
+// ═══════════════════════════════════════════════════════════════════════════
+// COMPILE TIME (layer 2)
+// ═══════════════════════════════════════════════════════════════════════════
+static_assert(cond, "msg")        // build  | Fails if cond is false  | C++11
+static_assert(cond)               // build  | Same, no message        | C++17
 
 // ═══════════════════════════════════════════════════════════════════════════
-// PRAGMAS, LINE CONTROL, NULL DIRECTIVE
+// RUN TIME (layer 3) — <cassert>
 // ═══════════════════════════════════════════════════════════════════════════
-#pragma GCC diagnostic push / ignored "-Wunused" / pop     // GCC & Clang
-#pragma warning(push) / warning(disable: 4996) / pop       // MSVC
-#pragma message("building debug")       // print a note during compilation (GCC, Clang, MSVC)
-_Pragma("GCC diagnostic ignored \"-Wunused\"")   // C++11: a pragma as an operator, usable INSIDE macros
-#line 100 "generated.cpp"               // set __LINE__ / __FILE__ (used by code generators)
-#                                       // null directive: does nothing
+#include <cassert>                // setup  | Defines assert          | Reads NDEBUG here
+assert(i < n)                     // run    | False → message, abort  | Prints expr+line
+assert(p && "p is set")           // run    | Adds a message          | Literal is true
+assert((same_v<A, B>))            // run    | Extra parens for commas | Fixed in C++26
+#define NDEBUG                    // off    | Every assert → nothing  | Before #include
+contract_assert(x > 0)            // run    | Contract assertion      | C++26
+```
 
-// ═══════════════════════════════════════════════════════════════════════════
-// SEE WHAT THE PREPROCESSOR DID
-// ═══════════════════════════════════════════════════════════════════════════
-//   g++ -E main.cpp                  full preprocessed output
-//   g++ -dM -E -x c++ /dev/null      every predefined macro (GCC/Clang; ~460 on GCC 13)
-//   cl /P main.cpp                   MSVC: writes main.i
+### TOOLS — Command | Shows
+
+```text
+g++ -E main.cpp                   preprocessed output (what the compiler actually sees)
+g++ -dM -E -x c++ /dev/null       every predefined macro (GCC/Clang; about 460 on GCC 13)
+cl /P main.cpp                    MSVC: writes the preprocessed file main.i
 ```
 
 ## Predefined Macros
 
-**Standard macros** (defined by every conforming implementation):
+### `__cplusplus` by Standard
+
+| Standard | Value |
+|---|---|
+| C++98 / C++03 | `199711L` |
+| C++11 | `201103L` |
+| C++14 | `201402L` |
+| C++17 | `201703L` |
+| C++20 | `202002L` |
+| C++23 | `202302L` |
+| C++26 | `202603L` |
+
+Pre-release modes report interim values (GCC 13 with `-std=c++23` gives `202100L`). **MSVC** reports `199711L` for every standard unless you compile with `/Zc:__cplusplus`; its true value is in `_MSVC_LANG`.
+
+### Standard Macros
 
 | Macro | Value | Since |
 |---|---|---|
-| `__cplusplus` | `199711L` C++98/03 · `201103L` C++11 · `201402L` C++14 · `201703L` C++17 · `202002L` C++20 · `202302L` C++23 · `202603L` C++26 (per cppreference); pre-release modes report interim values, e.g. GCC 13 `-std=c++23` gives `202100L` | C++98 |
-| `__FILE__` | Current source file name, a string literal (changes inside headers) | C++98 |
-| `__LINE__` | Current line number, an integer constant | C++98 |
-| `__DATE__` | Compilation date, `"Mmm dd yyyy"` (e.g. `"Oct  3 2026"`) | C++98 |
-| `__TIME__` | Compilation time, `"hh:mm:ss"` | C++98 |
-| `__STDC_HOSTED__` | `1` hosted (full library), `0` freestanding (embedded, kernels) | C++11 |
-| `__STDCPP_DEFAULT_NEW_ALIGNMENT__` | Alignment `operator new` guarantees, a `std::size_t` literal (16 on x86-64 GCC) | C++17 |
-| `__STDCPP_FLOAT16_T__` `__STDCPP_FLOAT32_T__` `__STDCPP_FLOAT64_T__` `__STDCPP_FLOAT128_T__` `__STDCPP_BFLOAT16_T__` | `1` if `std::float16_t` etc. exist (`<stdfloat>`) | C++23 |
-| `__STDC_EMBED_NOT_FOUND__` / `__STDC_EMBED_FOUND__` / `__STDC_EMBED_EMPTY__` | `0` / `1` / `2`: results of `__has_embed` | C++26 |
+| `__FILE__` | Current file name | C++98 |
+| `__LINE__` | Current line number | C++98 |
+| `__DATE__` | Build date, `"Oct  3 2026"` | C++98 |
+| `__TIME__` | Build time, `"17:04:47"` | C++98 |
+| `__STDC_HOSTED__` | `1` full library, `0` freestanding | C++11 |
+| `__STDCPP_THREADS__` | `1` if threads are possible | C++11 |
+| `__STDCPP_DEFAULT_NEW_ALIGNMENT__` | `new`'s alignment (16 on x86-64) | C++17 |
+| `__STDCPP_FLOAT16_T__` etc. | `1` if `std::float16_t` etc. exist | C++23 |
+| `__STDC_EMBED_FOUND__` etc. | Results of `__has_embed` | C++26 |
 
-**Standard but implementation-defined** (present only if the implementation chooses):
+Optional, implementation-defined: `__STDC__`, `__STDC_VERSION__`, `__STDC_ISO_10646__`, `__STDC_MB_MIGHT_NEQ_WC__`. Removed in C++23: `__STDCPP_STRICT_POINTER_SAFETY__`.
 
-| Macro | Meaning | Since |
+**Not macros, used the same way:** `__func__` (C++11) holds the current function's name. `std::source_location::current()` (C++20) bundles file, line, column and function into an object.
+
+### Feature-Test Macros
+
+| Macro | Tests for | Where |
 |---|---|---|
-| `__STDC__` | C conformance indicator (GCC defines it as `1` even in C++) | C++98 |
-| `__STDC_VERSION__` | C standard version, if any | C++11 |
-| `__STDC_ISO_10646__` | `wchar_t` holds Unicode code points (`yyyymmL`) | C++11 |
-| `__STDC_MB_MIGHT_NEQ_WC__` | `1` if `'x' == L'x'` might be false (EBCDIC systems) | C++11 |
-| `__STDCPP_THREADS__` | `1` if the program can have more than one thread | C++11 |
-| `__STDCPP_STRICT_POINTER_SAFETY__` | Garbage-collection support flag | C++11, **removed C++23** |
+| `__cpp_constexpr` | `constexpr` level | Predefined |
+| `__cpp_concepts` | Concepts | Predefined |
+| `__cpp_modules` | Modules | Predefined |
+| `__cpp_lib_optional` | `std::optional` | `<version>` |
+| `__cpp_lib_format` | `std::format` | `<version>` |
+| `__cpp_lib_ranges` | Ranges | `<version>` |
 
-**Not macros, but used the same way:** `__func__` (C++11) is a function-local `static const char[]` holding the function's name. `std::source_location::current()` (C++20, `<source_location>`) packages file, line, column and function name as an object you can pass to a logging function as a default argument, with no macro needed ([[Header — Modern IO]]).
+Each value is the date the feature was adopted, for example `201606L`. Library macros come from any standard header, most reliably `<version>` (C++20).
 
-**Feature-test macros** (C++20 made them standard; compilers had them earlier). *Language* macros `__cpp_*` are predefined; *library* macros `__cpp_lib_*` come from any standard header, most reliably `<version>` (C++20):
+### Compiler, Platform and Build Macros
 
-| Macro (examples) | Tests for | Example value |
+| Macro | Defined by | Note |
 |---|---|---|
-| `__cpp_constexpr` | `constexpr` capabilities | `201603L` (C++17 constexpr lambdas) |
-| `__cpp_concepts` | Concepts | `202002L` |
-| `__cpp_modules` | Modules | `201907L` |
-| `__cpp_lib_optional` | `std::optional` | `201606L` |
-| `__cpp_lib_format` | `std::format` | `201907L` (GCC 13) |
-| `__cpp_lib_ranges` | Ranges library | `202110L` (value grows as the feature is extended) |
-| `__has_include(<h>)` / `__has_cpp_attribute(a)` | Header present / attribute supported | `1` / date value |
-
-**Compiler, platform and build macros** (not standard, but universal in practice):
-
-| Macro | Defined when | Note |
-|---|---|---|
-| `__GNUC__` `__GNUC_MINOR__` | GCC **and Clang** (Clang pretends to be GCC 4.2) | Check `__clang__` first |
-| `__clang__` `__clang_major__` | Clang | Also defined by Apple Clang |
-| `_MSC_VER` | MSVC (e.g. `1940` for VS 2022 17.10) | `_MSC_FULL_VER` for build number |
-| `_MSVC_LANG` | MSVC: the *real* standard value | MSVC's `__cplusplus` stays `199711L` unless you compile with **`/Zc:__cplusplus`** |
-| `_WIN32` / `_WIN64` | Windows (`_WIN32` also on 64-bit) | |
-| `__linux__` · `__APPLE__` (+ `TARGET_OS_*`) · `__unix__` · `__ANDROID__` | Operating system | |
-| `__x86_64__` / `_M_X64` · `__aarch64__` / `_M_ARM64` | CPU architecture (GCC/Clang / MSVC spelling) | |
-| `__BYTE_ORDER__` (GCC/Clang) | Endianness | C++20: `std::endian` in `<bit>` instead |
-| `NDEBUG` | Release builds (CMake Release, `-DNDEBUG`, VS Release) | The only macro `<cassert>` looks at |
-| `_DEBUG` | MSVC debug runtime (`/MDd`, `/MTd`) | MSVC only |
-| `__OPTIMIZE__` | GCC/Clang with `-O1` or higher | |
-| `__PRETTY_FUNCTION__` (GCC/Clang) · `__FUNCSIG__` (MSVC) · `__FUNCTION__` | Full signature / name of the current function | Extensions; prefer `__func__` or `source_location` |
-| `__COUNTER__` | Increments on each use (unique names) | Extension (GCC, Clang, MSVC) |
-| `__INCLUDE_LEVEL__` · `__BASE_FILE__` · `__TIMESTAMP__` | Include depth · main file · file modification time | GCC/Clang extensions |
+| `__clang__` | Clang | Check before `__GNUC__` |
+| `__GNUC__` | GCC **and** Clang | Clang claims GCC 4.2 |
+| `_MSC_VER` | MSVC | `1940` = VS 2022 17.10 |
+| `_MSVC_LANG` | MSVC | Real C++ standard |
+| `_WIN32` | Windows | Also on 64-bit |
+| `_WIN64` | 64-bit Windows | |
+| `__linux__` | Linux | |
+| `__APPLE__` | macOS, iOS | |
+| `__x86_64__` / `_M_X64` | x86-64 | GCC/Clang / MSVC |
+| `__aarch64__` / `_M_ARM64` | ARM64 | GCC/Clang / MSVC |
+| `NDEBUG` | Release builds | Read by `<cassert>` |
+| `_DEBUG` | MSVC debug runtime | MSVC only |
+| `__OPTIMIZE__` | `-O1` and higher | GCC/Clang |
+| `__PRETTY_FUNCTION__` | GCC/Clang | Full signature |
+| `__FUNCSIG__` | MSVC | Full signature |
+| `__COUNTER__` | GCC, Clang, MSVC | +1 on each use |
 
 ## Patterns
 
@@ -221,17 +242,19 @@ int main() {
 #else
     const char* compiler = "unknown";
 #endif
+
 #if defined(_MSVC_LANG)
-    long standard = _MSVC_LANG;                       // MSVC's honest value
+    long standard = _MSVC_LANG;           // MSVC's real value
 #else
     long standard = __cplusplus;
 #endif
-    std::cout << compiler << ", C++ " << standard << ", hosted=" << __STDC_HOSTED__ << '\n';
-    std::cout << (standard >= 201703L ? "C++17 or newer" : "older than C++17") << '\n';
+
+    std::cout << compiler << ", " << standard << '\n';
+    std::cout << (standard >= 201703L ? "C++17 or newer" : "older") << '\n';
 }
 // expect: C++17 or newer
 ```
-Test `__clang__` before `__GNUC__`, because Clang defines both. On MSVC read `_MSVC_LANG` (or compile with `/Zc:__cplusplus`), otherwise every version reports `199711L`.
+Test `__clang__` first, because Clang also defines `__GNUC__`.
 
 ### Stop the Build Early: `#error` and `static_assert` (C++17)
 ```cpp
@@ -240,21 +263,21 @@ Test `__clang__` before `__GNUC__`, because Clang defines both. On MSVC read `_M
 #include <type_traits>
 
 #if __cplusplus < 201703L && !defined(_MSVC_LANG)
-#error "This code needs C++17 or newer"          // layer 1: decided from macros alone
+#error "This code needs C++17 or newer"
 #endif
 
-static_assert(CHAR_BIT == 8, "bytes must be 8 bits");             // layer 2: constants
-static_assert(sizeof(std::int32_t) == 4);                          // C++17: no message needed
+static_assert(CHAR_BIT == 8, "bytes must be 8 bits");
+static_assert(sizeof(std::int32_t) == 4);          // C++17: no message
 
 template <typename T>
 T average(T a, T b) {
-    static_assert(std::is_arithmetic<T>::value, "average() needs a number type");   // checked per T
+    static_assert(std::is_arithmetic<T>::value, "average() needs a number");
     return (a + b) / 2;
 }
 
 int main() { return average(4, 6) == 5 ? 0 : 1; }
 ```
-`#error` can only see macros. `static_assert` sees types, `sizeof` and `constexpr` values, and inside a template it fires per instantiation with your message instead of a page of template errors.
+`#error` sees only macros. `static_assert` sees types and constants. Inside a template it runs once per type and prints your message instead of a long template error.
 
 ### The Build Stopped by `#error`
 ```cpp
@@ -262,20 +285,20 @@ int main() { return average(4, 6) == 5 ? 0 : 1; }
 #define CONFIG_MAX_USERS 0
 
 #if CONFIG_MAX_USERS <= 0
-#error "CONFIG_MAX_USERS must be positive"       // compilation ends here, with this exact text
+#error "CONFIG_MAX_USERS must be positive"
 #endif
 
 int main() {}
 ```
 
-### `assert`: Run-Time Checks That Vanish in Release Builds
+### `assert`: Checks That Vanish in Release Builds
 ```cpp
 #include <cassert>
 #include <iostream>
 #include <vector>
 
 double mean(const std::vector<double>& v) {
-    assert(!v.empty() && "mean() of an empty vector");      // documents AND checks the precondition
+    assert(!v.empty() && "mean() of an empty vector");
     double s = 0;
     for (double x : v) s += x;
     return s / static_cast<double>(v.size());
@@ -283,108 +306,93 @@ double mean(const std::vector<double>& v) {
 
 int main() {
     std::cout << mean({2, 4, 9}) << '\n';
-    // mean({});   // debug build: "Assertion `!v.empty() && "mean() of an empty vector"' failed."
-    //             //   + file, line, function name, then abort()
+    // mean({});  → Assertion `!v.empty() && "mean() of an empty vector"' failed.
 }
 // expect: 5
 ```
-The `&& "text"` idiom works because a string literal is always "true", and the whole expression is what gets printed. Never put work with side effects inside `assert` (`assert(++count < 10)`): in a release build the whole expression disappears.
+A failed `assert` prints the expression, file, line and function, then calls `std::abort()`. Never put side effects inside it (`assert(++n < 10)`): release builds delete the whole expression.
 
-### NDEBUG Is Read at Each `#include <cassert>`
+### `NDEBUG` Is Read at Each `#include <cassert>`
 ```cpp
-#define NDEBUG                 // ① must come BEFORE the include
+#define NDEBUG                 // ① before the include
 #include <cassert>
 #include <iostream>
 
 int main() {
-    assert(1 + 1 == 3);        // ② expands to ((void)0): not even evaluated
+    assert(1 + 1 == 3);        // ② becomes ((void)0)
     std::cout << "still running\n";
 }
 // expect: still running
 ```
-1. Release configurations pass `-DNDEBUG` (CMake's `Release` and `RelWithDebInfo` do; Visual Studio's Release does). `<cassert>` is special: it re-reads `NDEBUG` *every* time it is included, so a file can switch assertions on and off part-way through (rarely a good idea).
-2. Because the expression vanishes, code that only works if the assert runs is a bug that appears only in release builds.
+1. Release configurations pass `-DNDEBUG`, as CMake's `Release` and Visual Studio's Release do.
+2. The expression is not even evaluated.
 
-### A Better Assert Macro: Message, Location, and Values
+### A Better Assert Macro
 ```cpp
 #include <cstdio>
-#include <cstdlib>
 
-#define CHECK(cond, msg)                                                         \
-    do {                                                                         \
-        if (!(cond)) {                                                           \
-            std::fprintf(stderr, "CHECK failed: %s (%s) at %s:%d in %s\n",       \
-                         #cond, msg, __FILE__, __LINE__, __func__);              \
-            /* std::abort(); */                                                  \
-        }                                                                        \
+#define CHECK(cond, msg)                                         \
+    do {                                                         \
+        if (!(cond))                                             \
+            std::fprintf(stderr, "CHECK failed: %s (%s) %s:%d\n", \
+                         #cond, msg, __FILE__, __LINE__);        \
     } while (0)
 
 int main() {
     int stock = -2;
-    if (stock < 0) CHECK(stock >= 0, "stock went negative");   // do/while(0): safe after if
+    if (stock < 0) CHECK(stock >= 0, "stock went negative");
     std::puts("done");
 }
 // expect: done
 ```
-`#cond` turns the expression into text, `__FILE__`/`__LINE__` expand at the *call site* (that's why this has to be a macro), and `do { ... } while (0)` makes the macro behave like a single statement after an `if` with no braces. Unlike `assert`, this one stays on in release builds; production code often keeps a check like this for invariants that guard data. In C++20, a function taking `std::source_location loc = std::source_location::current()` gets the location without a macro, but it still can't stringize the expression.
+- `#cond` turns the condition into text.
+- `__FILE__` and `__LINE__` expand where `CHECK` is used, which only a macro can do.
+- `do { } while (0)` makes the macro a single statement, safe after an `if` without braces.
+- Unlike `assert`, it stays on in release builds.
 
 ### Feature Detection Instead of Version Numbers (C++17)
 ```cpp
 #include <iostream>
 #if __has_include(<version>)
-#include <version>                                  // C++20: all __cpp_lib_* macros in one place
+#include <version>
 #endif
 
 #if defined(__cpp_lib_optional)
 #include <optional>
-using MaybeInt = std::optional<int>;
 const char* backend = "std::optional";
 #else
-struct MaybeInt { bool has = false; int value = 0; };   // fallback for old libraries
-const char* backend = "fallback struct";
+const char* backend = "fallback";
 #endif
 
-int main() {
-    std::cout << "using " << backend
-#if defined(__cpp_concepts)
-              << ", concepts available"
-#endif
-              << '\n';
-}
+int main() { std::cout << "using " << backend << '\n'; }
 // expect: using std::optional
 ```
-Testing the specific feature (`__cpp_lib_optional`) is more reliable than testing `__cplusplus`: a compiler can claim C++20 while still missing parts of its library, or support a feature early.
+Testing the exact feature beats testing `__cplusplus`: compilers ship library features at different times.
 
-### Stringize and Token-Paste, Including the Two-Level Trick
+### Stringize and Token-Paste: the Two-Level Trick
 ```cpp
 #include <iostream>
 
-#define VERSION_MAJOR 3
+#define VERSION 3
 #define STR_RAW(x) #x
-#define STR(x) STR_RAW(x)                 // ① expand first, THEN stringize
+#define STR(x) STR_RAW(x)          // expand first, then stringize
 #define CAT_RAW(a, b) a##b
 #define CAT(a, b) CAT_RAW(a, b)
 
-int CAT(counter_, VERSION_MAJOR) = 7;     // ② defines: int counter_3 = 7;
+int CAT(counter_, VERSION) = 7;    // int counter_3 = 7;
 
 int main() {
-    std::cout << STR_RAW(VERSION_MAJOR) << ' '        // "VERSION_MAJOR": # does not expand
-              << STR(VERSION_MAJOR) << ' '            // "3": the extra level expands it
-              << STR(__LINE__) << ' ' << counter_3 << '\n';
+    std::cout << STR_RAW(VERSION) << ' ' << STR(VERSION) << ' ' << counter_3 << '\n';
 }
-// expect: VERSION_MAJOR 3
+// expect: VERSION 3 7
 ```
-1. `#` and `##` use the argument *exactly as written*, before macro expansion. Passing it through one more macro level expands it first. This is the standard trick for `STR(__LINE__)` and for building unique names such as `CAT(guard_, __LINE__)`.
-2. Token pasting builds identifiers; reach for it rarely, because generated names are invisible to search and to the debugger.
+`#` and `##` use the argument exactly as written. One extra macro level expands it first.
 
 ### X-Macros: One List, Several Expansions
 ```cpp
 #include <iostream>
 
-#define COLOR_LIST(X) \
-    X(Red)            \
-    X(Green)          \
-    X(Blue)
+#define COLOR_LIST(X) X(Red) X(Green) X(Blue)
 
 enum class Color {
 #define AS_ENUM(name) name,
@@ -401,26 +409,24 @@ const char* to_string(Color c) {
     return "?";
 }
 
-int main() { std::cout << to_string(Color::Green) << ' ' << to_string(Color::Blue) << '\n'; }
-// expect: Green Blue
+int main() { std::cout << to_string(Color::Green) << '\n'; }
+// expect: Green
 ```
-The enum and its name table can never drift apart, because both come from one list. This is one of the few jobs where macros still beat every language feature (until C++26 reflection).
+The enum and its names come from one list, so they can never drift apart.
 
-### Variadic Logging Macro with `__VA_OPT__` (C++20)
+### Variadic Logging with `__VA_OPT__` (C++20)
 ```cpp
 // cc: std=c++20
 #include <cstdio>
 
-#define LOG(level, fmt, ...) \
-    std::printf("[%s] %s:%d " fmt "\n", level, __func__, __LINE__ __VA_OPT__(,) __VA_ARGS__)
+#define LOG(fmt, ...) std::printf("[log] " fmt "\n" __VA_OPT__(,) __VA_ARGS__)
 
 int main() {
-    LOG("info", "starting");                          // no extra args: __VA_OPT__(,) vanishes
-    LOG("warn", "disk at %d%%", 91);                  // extra args: the comma appears
+    LOG("starting");               // no extra args: no comma
+    LOG("disk at %d%%", 91);       // extra args: comma added
 }
-// expect: disk at 91%
+// expect: [log] disk at 91%
 ```
-Before C++20, an empty `__VA_ARGS__` left a dangling comma; compilers offered the non-standard `, ##__VA_ARGS__` fix. `__VA_OPT__(,)` is the standard spelling.
 
 ### `#elifdef` and `#warning` (C++23)
 ```cpp
@@ -430,12 +436,12 @@ Before C++20, an empty `__VA_ARGS__` left a dangling comma; compilers offered th
 #define USE_FAST_PATH
 
 #ifdef USE_SAFE_PATH
-constexpr const char* path = "safe";
-#elifdef USE_FAST_PATH                    // C++23: shorthand for #elif defined(USE_FAST_PATH)
-constexpr const char* path = "fast";
+const char* path = "safe";
+#elifdef USE_FAST_PATH
+const char* path = "fast";
 #else
-#warning "no path selected, defaulting"   // C++23: standard (GCC/Clang had it as an extension)
-constexpr const char* path = "default";
+#warning "no path selected"
+const char* path = "default";
 #endif
 
 int main() { std::cout << path << '\n'; }
@@ -444,101 +450,98 @@ int main() { std::cout << path << '\n'; }
 
 ## Key Concepts
 
-### The Preprocessor Works on Tokens, Not on C++
-Macro replacement happens in translation phase 4, before the compiler knows any type, scope or namespace. A macro named `max` replaces *every* later token `max`, including `std::max` (the reason `<windows.h>` users write `#define NOMINMAX`). Macros are therefore named in `ALL_CAPS` by convention, so they can't collide with normal identifiers ([[The Preprocessor]]).
+### Macros Are Text, Not C++
+The preprocessor runs before types, scopes and namespaces exist. A macro named `max` replaces every later `max`, including `std::max`; that's why Windows code defines `NOMINMAX`. Name macros in `ALL_CAPS` so they can't collide with ordinary names ([[The Preprocessor]]).
 
-### Function-Like Macros Evaluate Arguments Textually
-`SQUARE(i++)` becomes `((i++) * (i++))`: two unsequenced increments of the same variable, which is undefined behaviour. Missing parentheses turn `SQUARE(a + 1)` into `a + 1 * a + 1`. Prefer `constexpr` functions, templates and `inline` variables; keep macros for what only the preprocessor can do: stringizing, `__FILE__`/`__LINE__` at the call site, conditional compilation, and include guards.
+### Function-Like Macros Copy Their Arguments
+`SQ(i++)` becomes `((i++) * (i++))`, which is undefined behaviour. `SQ(a + 1)` without the inner parentheses becomes `a + 1 * a + 1`. Prefer `constexpr` functions and templates. Keep macros for what only the preprocessor can do: `#` stringizing, `__FILE__`/`__LINE__` at the call site, conditional compilation, include guards.
 
-### Three Assertion Layers, One Rule: Earliest Wins
-| Layer | Tool | Sees | Cost | Typical use |
-|---|---|---|---|---|
-| Preprocessing | `#error`, `#warning` (C++23) | Macros only | Zero | Wrong standard, platform, configuration |
-| Compilation | `static_assert` (C++11) | Types, `sizeof`, `constexpr` values, traits | Zero | Layout assumptions, template requirements |
-| Run time | `assert` (`<cassert>`), C++26 `contract_assert` / `pre` / `post` | Actual values | A branch, unless `NDEBUG` | Preconditions, invariants, "can't happen" states |
+### Choosing the Assertion Layer
 
-C++20 concepts replace many template `static_assert`s with constraints that also take part in overload resolution ([[Concepts and Constraints]]).
+| Layer | Tool | Sees | Use for |
+|---|---|---|---|
+| 1 · Preprocessing | `#error`, `#warning` | Macros | Wrong standard, platform, config |
+| 2 · Compilation | `static_assert` | Types, constants | Sizes, traits, template rules |
+| 3 · Run time | `assert`, `contract_assert` | Real values | Preconditions, invariants |
 
-### `assert` Is for Bugs, Not for Errors
-An assertion says "if this is false, the *program* is wrong". It is not for things that can legitimately fail (a missing file, bad user input, a network timeout); those need error handling that also works in release builds ([[Exceptions]], [[Error Handling Strategies Compared]]). Asserts document preconditions and get deleted in release builds, so they must never be the only defence against invalid input.
+### `assert` Is for Bugs, Not Errors
+An assertion means "if this is false, the program is wrong". A missing file or bad user input is not a bug, so handle it with real error handling that also runs in release builds ([[Exceptions]], [[Error Handling Strategies Compared]]).
 
-### `assert` and Commas (Before C++26)
-`assert` is a macro with one parameter, so a comma not inside parentheses splits the argument: `assert(std::is_same<int, int>::value)` fails to compile. Wrap the expression in extra parentheses: `assert((std::is_same<int, int>::value))`. C++26 made `assert(...)` variadic to fix this.
+### `assert` and Commas
+Before C++26, `assert` takes one macro argument, so a top-level comma splits it: `assert(std::is_same_v<int, int>)` fails to compile. Add parentheses: `assert((std::is_same_v<int, int>))`.
 
-### Different `NDEBUG` in Different Files Can Break the ODR
-An `inline` function or template that contains `assert` and is compiled in one file with `NDEBUG` and in another without has two different definitions, which violates the One Definition Rule, and the linker keeps one at random. Set `NDEBUG` once per build configuration, on the command line, never with `#define` in individual files.
+### Keep `NDEBUG` the Same Everywhere
+An `inline` function containing `assert`, compiled with `NDEBUG` in one file and without it in another, has two different definitions. That breaks the [[The One Definition Rule|One Definition Rule]]. Set `NDEBUG` per build configuration on the command line, never per file.
 
-### Feature-Test Macros Beat Version Checks
-`#if __cplusplus >= 202002L` assumes the whole C++20 library exists; real compilers ship features at different times, and MSVC reports `199711L` by default. Test the exact feature (`__cpp_lib_format`, `__has_include(<format>)`) and include `<version>` to get all library macros.
+### Detect Features, Not Versions
+A compiler can claim C++20 while missing parts of its library, and MSVC reports `199711L` by default. Test the exact feature (`__cpp_lib_format`, `__has_include(<format>)`) with `<version>` included.
 
-### GCC's Obsolete `#assert` Directive
-GCC once supported "preprocessor assertions", `#assert machine(x86)` tested with `#if #machine(x86)`, and `#unassert`. They are deprecated, non-standard and rejected by other compilers. Use ordinary macros and `#if defined(...)` instead. They are unrelated to `assert`.
+### GCC's Obsolete `#assert`
+GCC once had "preprocessor assertions": `#assert machine(x86)`, tested with `#if #machine(x86)`. They are deprecated and non-standard, and unrelated to `assert`. Use `#if defined(...)`.
 
 ## Choosing a Tool
 
 ```text
-Need                                                    Best choice
-────────────────────────────────────────────────────────────────────────────────────────
-Refuse to build on the wrong standard/platform/config   #if ... #error "why" #endif
-Warn but keep building                                  #warning (C++23) or #pragma message
-Check a type's size, trait or a constexpr value         static_assert(cond, "why")
-Restrict which types a template accepts                 C++20 concepts / requires; else static_assert
-Check a precondition or invariant while developing      assert(cond && "why")      (<cassert>)
-Check something that must hold in release builds too    a custom CHECK macro, or throw/return an error
-Report file/line/function from a helper function        std::source_location (C++20); before: __FILE__/__LINE__ macro
-Detect a library/language feature                       <version> + __cpp_lib_xxx / __cpp_xxx / __has_include
-Detect compiler / OS / CPU                              __clang__ · __GNUC__ · _MSC_VER · _WIN32 · __linux__ · __x86_64__
-A named constant                                        constexpr variable, not #define
-A small reusable computation                            constexpr / inline function, not a macro
-Generate parallel lists (enum ↔ names)                  X-macro (or C++26 reflection)
-Include a header once                                   #pragma once or an include guard
-Embed a binary file in the program                      #embed (C++26); before: a generated array
+Need                                         Use
+───────────────────────────────────────────────────────────────────────────
+Refuse the wrong standard/platform/config    #if ... #error "why" #endif
+Warn but keep building                       #warning (C++23) / #pragma message
+Check a size, trait or constexpr value       static_assert(cond, "why")
+Restrict a template's types                  C++20 concepts, else static_assert
+Check a precondition while developing        assert(cond && "why")
+Check something in release builds too        your own CHECK macro, or an error
+Report file/line from a helper function      std::source_location (C++20)
+Detect a feature                             <version> + __cpp_lib_* / __has_include
+Detect compiler / OS / CPU                   __clang__ _MSC_VER _WIN32 __linux__
+A named constant                             constexpr variable
+A small computation                          constexpr / inline function
+Matching enum + name table                   X-macro
+Include a header once                        #pragma once or an include guard
 ```
 
 ## Best Practices
 
-1. **Check each fact at the earliest layer that can see it**: `#error` → `static_assert` → `assert`
-2. **Always give assertions a message** (`static_assert(c, "why")`, `assert(c && "why")`)
-3. **Never put side effects in `assert`**; they disappear when `NDEBUG` is defined
-4. **Set `NDEBUG` per build configuration** on the command line, never per file
-5. **Prefer `constexpr`, `inline` and templates to macros**; use macros only for what needs the preprocessor
-6. **Parenthesize every macro parameter and the whole body**; wrap statement macros in `do { } while (0)`
-7. **Name macros in `ALL_CAPS`** and `#undef` local helper macros after use
-8. **Detect features, not versions**: `<version>` + `__cpp_lib_*`, `__has_include`, `__has_cpp_attribute`
-9. **On MSVC, compile with `/Zc:__cplusplus`** (and `/Zc:preprocessor` for the standard-conforming preprocessor), or read `_MSVC_LANG`
-10. **When a macro misbehaves, look at the output of `g++ -E`** (or `cl /P`) rather than guessing
+1. **Check at the earliest layer** that can see the fact: `#error`, then `static_assert`, then `assert`
+2. **Give every assertion a message**
+3. **Never put side effects inside `assert`**
+4. **Set `NDEBUG` per build configuration**, never per file
+5. **Prefer `constexpr` and templates to macros**
+6. **Parenthesize macro parameters and bodies**; wrap statement macros in `do { } while (0)`
+7. **Name macros in `ALL_CAPS`**, and `#undef` helper macros after use
+8. **Detect features, not versions**
+9. **On MSVC, use `/Zc:__cplusplus`** and `/Zc:preprocessor`
+10. **Read `g++ -E` output** when a macro misbehaves
 
 ## Related Headers
 
 ```cpp
 // cc: std=c++23
-#include <cassert>          // assert, reads NDEBUG at the point of inclusion
-#include <version>          // C++20: every library feature-test macro (__cpp_lib_*)
-#include <source_location>  // C++20: std::source_location, the macro-free __FILE__/__LINE__/__func__
-#include <stacktrace>       // C++23: std::stacktrace for richer failure reports
-#include <type_traits>      // traits used inside static_assert
-#include <climits>          // macro limits: CHAR_BIT, INT_MAX ...
-#include <cstdint>          // INT32_MAX, UINT64_C(...) and other integer macros
-#include <cstdlib>          // std::abort, EXIT_SUCCESS / EXIT_FAILURE
-#include <cerrno>           // errno and its E* macros
+#include <cassert>          // assert; reads NDEBUG where included
+#include <version>          // C++20: all __cpp_lib_* macros
+#include <source_location>  // C++20: file, line, function without macros
+#include <stacktrace>       // C++23: call stacks for failure reports
+#include <type_traits>      // traits used in static_assert
+#include <climits>          // CHAR_BIT, INT_MAX ...
+#include <cstdint>          // INT32_MAX, UINT64_C(...)
+#include <cstdlib>          // std::abort, EXIT_SUCCESS
 ```
 
 ## Connections
 
 - **Hub:** [[Map — Standard Headers]]
-- **Concept notes (the why behind this card):** [[The Preprocessor]] · [[assert and static_assert]] · [[Headers and Include Guards]] · [[The Compilation Pipeline]] · [[Translation Units]] · [[Modules (C++20)]] · [[Concepts and Constraints]]
-- **Hazards:** [[Undefined Behavior]] (redefining standard macros, side effects in macro arguments) · [[The One Definition Rule]] (mixed `NDEBUG`)
+- **Concepts:** [[The Preprocessor]] · [[assert and static_assert]] · [[Headers and Include Guards]] · [[The Compilation Pipeline]] · [[Translation Units]] · [[Modules (C++20)]] · [[Concepts and Constraints]]
+- **Hazards:** [[Undefined Behavior]] · [[The One Definition Rule]]
 - **Error handling:** [[Exceptions]] · [[Error Handling Strategies Compared]]
-- **Sibling cards:** [[Header — Modern IO]] (`source_location`-based logging) · [[Header — cstdio]] (`printf`-style logging macros)
-- **Practice:** *Continuum #1 Hello, Compiler* (print the compiler, `__cplusplus` and platform macros; dump them with `g++ -dM -E`) · *#6 Function Library & Header Refactor* (include guards, `static_assert` on your types, `assert` on every precondition, then build with `-DNDEBUG` and compare)
+- **Sibling cards:** [[Header — Modern IO]] · [[Header — cstdio]]
+- **Practice:** *Continuum #1 Hello, Compiler* (print the compiler and standard, dump the macros with `g++ -dM -E`) · *#6 Function Library & Header Refactor* (include guards, `static_assert`, `assert`, then build with `-DNDEBUG`)
 
 ## Sources
 
-- Primer §2.6.3 "Writing Our Own Header Files" (p. 76): a brief introduction to the preprocessor, preprocessor variables and header guards.
-- Primer §6.5.3 "Aids for Debugging" (p. 240): the `assert` preprocessor macro and the `NDEBUG` preprocessor variable (p. 241), with `__func__`, `__FILE__`, `__LINE__`, `__TIME__`, `__DATE__`.
-- Tour §4.5 "Assertions" (p. 48): `assert`, `static_assert` and when to check at compile time versus run time.
-- Tour §19.2 "C++ Feature Evolution" (p. 263): which standard introduced which facility.
-- cppreference / web, *Preprocessor*, *Replacing text macros* (predefined macros, `__VA_OPT__`, `#`, `##`), *Conditional inclusion*, *Diagnostic directives*, *Feature testing*, *assert*, *static_assert*: https://en.cppreference.com/w/cpp/preprocessor · https://en.cppreference.com/w/cpp/preprocessor/replace · https://en.cppreference.com/w/cpp/preprocessor/conditional · https://en.cppreference.com/w/cpp/preprocessor/error · https://en.cppreference.com/w/cpp/feature_test · https://en.cppreference.com/w/cpp/error/assert · https://en.cppreference.com/w/cpp/language/static_assert
-- GCC manual, *The C Preprocessor*: "Predefined Macros", "Common Predefined Macros", "Obsolete Features: Assertions": https://gcc.gnu.org/onlinedocs/cpp/
-- Microsoft Learn, *Predefined macros* and *`/Zc:__cplusplus`*: https://learn.microsoft.com/en-us/cpp/preprocessor/predefined-macros
-- C++ Core Guidelines ES.30 "Don't use macros for program text manipulation", ES.31 "Don't use macros for constants or functions", ES.32 "Use ALL_CAPS for all macro names", I.6 "Prefer `Expects()` for expressing preconditions", P.5 "Prefer compile-time checking to run-time checking", P.7 "Catch run-time errors early": https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
+- Primer §2.6.3 "Writing Our Own Header Files" (p. 76): the preprocessor, preprocessor variables, header guards.
+- Primer §6.5.3 "Aids for Debugging" (p. 240): `assert` and `NDEBUG` (p. 241), `__func__`, `__FILE__`, `__LINE__`, `__TIME__`, `__DATE__`.
+- Tour §4.5 "Assertions" (p. 48): `assert`, `static_assert`, compile time versus run time.
+- Tour §19.2 "C++ Feature Evolution" (p. 263): which standard added which facility.
+- cppreference / web, *Preprocessor*, *Replacing text macros*, *Conditional inclusion*, *Feature testing*, *assert*, *static_assert*: https://en.cppreference.com/w/cpp/preprocessor · https://en.cppreference.com/w/cpp/preprocessor/replace · https://en.cppreference.com/w/cpp/feature_test · https://en.cppreference.com/w/cpp/error/assert · https://en.cppreference.com/w/cpp/language/static_assert
+- GCC manual, *The C Preprocessor* ("Predefined Macros", "Obsolete Features"): https://gcc.gnu.org/onlinedocs/cpp/
+- Microsoft Learn, *Predefined macros* and `/Zc:__cplusplus`: https://learn.microsoft.com/en-us/cpp/preprocessor/predefined-macros
+- C++ Core Guidelines ES.30, ES.31, ES.32 (macros), I.6 (preconditions), P.5, P.7 (check early): https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines
