@@ -138,6 +138,10 @@ The stream family is one architecture seen at three layers: [[Header — streamb
 | "Why does my `string_view` print garbage?" | [[Header — string_view]] | the dangling view |
 | "Can I pass `sv.data()` to `fopen` or `printf`?" | [[Header — string_view]] | `data()` is not a C string |
 | "How do I split or trim a string without copying?" | [[Header — string_view]] | split without allocating · trim |
+| "Which C++ standard / compiler am I building with?" | [[Header — Preprocessor, Assertions and Predefined Macros]] | predefined macros · ask the toolchain |
+| "Why does `__cplusplus` say 199711 on Visual Studio?" | [[Header — Preprocessor, Assertions and Predefined Macros]] | `_MSVC_LANG` / `/Zc:__cplusplus` |
+| "`assert`, `static_assert` or `#error`?" | [[Header — Preprocessor, Assertions and Predefined Macros]] | three assertion layers |
+| "Why do my asserts do nothing in Release?" | [[Header — Preprocessor, Assertions and Predefined Macros]] | `NDEBUG` |
 | "What's the difference between `fail` and `bad`?" | [[Header — ios]] | state flag decision table |
 | "How do I reset a `stringstream`?" | [[Header — sstream]] | the two-step reset |
 | "How do I make `cout` write to a socket?" | [[Header — streambuf]] | custom buffers |
@@ -194,7 +198,7 @@ C++26   strstream removed; println() with no arguments; runtime_format
 - ○ [[Header — exception and stdexcept]] · *header*
 - ○ [[Header — cstdlib]] · *header*
 - ○ [[Header — cstdint]] · *header*
-- ○ [[Header — cassert]] · *header*
+- ◐ [[Header — Preprocessor, Assertions and Predefined Macros]] · *header*
 
 **Tier 2 · Proficient**
 - ◐ [[Header — ios]] · *header*
@@ -243,7 +247,7 @@ C++26   strstream removed; println() with no arguments; runtime_format
 **Tier 4 · Expert**
 - ○ [[Header — coroutine]] · *header*
 
-`████░░░░░░` 21/60 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
+`████░░░░░░` 22/60 written · legend ○ planned ◐ draft ● reviewed ★ evergreen ⟲ revise
 <!-- cc:end -->
 
 ## Sources

@@ -8,9 +8,9 @@ tags: [system/generated]
 
 | Status | Count |
 |---|---|
-| ○ planned | 229 |
+| ○ planned | 228 |
 | ◌ stub | 0 |
-| ◐ draft | 86 |
+| ◐ draft | 87 |
 | ⟲ revise | 0 |
 | ● reviewed | 42 |
 | ★ evergreen | 0 |
@@ -19,7 +19,7 @@ tags: [system/generated]
 
 - Wave 0: `████████████████████` 18/18
 - Wave 1: `████████████████████` 52/52
-- Wave 2: `████████░░░░░░░░░░░░` 50/126
+- Wave 2: `████████░░░░░░░░░░░░` 51/126
 - Wave 3: `█░░░░░░░░░░░░░░░░░░░` 8/126
 - Wave 4: `░░░░░░░░░░░░░░░░░░░░` 0/35
 
@@ -455,7 +455,7 @@ tags: [system/generated]
 
 ## HDR · Standard Headers
 
-*Where does each standard facility live, and what exactly does its header promise?*  `████░░░░░░` 21/60
+*Where does each standard facility live, and what exactly does its header promise?*  `████░░░░░░` 22/60
 
 | | Topic | Type | Tier | Wave | Score |
 |---|---|---|---|---|---|
@@ -490,7 +490,7 @@ tags: [system/generated]
 | ○ | [[Header — cstdlib]] | header | 1 | 2 |  |
 | ○ | [[Header — cstdint]] | header | 1 | 2 |  |
 | ○ | [[Header — limits]] | header | 2 | 2 |  |
-| ○ | [[Header — cassert]] | header | 1 | 2 |  |
+| ◐ | [[Header — Preprocessor, Assertions and Predefined Macros]] | header | 1 | 2 |  |
 | ○ | [[Header — queue and stack]] | header | 2 | 3 |  |
 | ○ | [[Header — optional, variant and any]] | header | 2 | 3 |  |
 | ○ | [[Header — tuple]] | header | 2 | 3 |  |

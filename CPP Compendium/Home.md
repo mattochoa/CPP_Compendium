@@ -50,7 +50,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 | `D16` | [[Map — Evolution of C++\|Evolution of C++]] | How did the language get here, and where is it going? | `██░░░░░░` 2/10 |
 | `SRC` | Sources | What should be read, in what order, and for what? | `█████░░░` 3/5 |
 | `PRX` | Practice | How does knowledge become skill? | `████░░░░` 2/4 |
-| `HDR` | [[Map — Standard Headers\|Standard Headers]] | Where does each standard facility live, and what exactly does its header promise? | `███░░░░░` 21/60 |
+| `HDR` | [[Map — Standard Headers\|Standard Headers]] | Where does each standard facility live, and what exactly does its header promise? | `███░░░░░` 22/60 |
 <!-- cc:end -->
 
 ## Progress
@@ -58,7 +58,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 <!-- cc:auto:home-stats -->
 | Planned | Draft | Revise | Reviewed | Evergreen | Total | Builder runs | Editor runs |
 |---|---|---|---|---|---|---|---|
-| 229 | 86 | 0 | 42 | 0 | 357 | 148 | 5 |
+| 228 | 87 | 0 | 42 | 0 | 357 | 149 | 5 |
 
 `███████░░░░░░░░░░░░░` **36%** of the Atlas written · last build 2026-10-03
 <!-- cc:end -->
@@ -75,6 +75,7 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 
 **Recently written:**
 <!-- cc:auto:home-recent -->
+- ◐ [[Header — Preprocessor, Assertions and Predefined Macros]] · *header* · updated 2026-10-03
 - ● [[Path — Course Companion]] · *path* · updated 2026-10-03
 - ◐ [[Recursion]] · *concept* · updated 2026-10-03
 - ● [[Implicit Conversions and Promotions]] · *mechanism* · updated 2026-10-01
@@ -84,7 +85,6 @@ Open **[[Atlas.canvas|the Atlas canvas]]** to see the whole language on one boar
 - ◐ [[Built-in Arrays and Array-to-Pointer Decay]] · *mechanism* · updated 2026-10-01
 - ◐ [[vector]] · *concept* · updated 2026-10-01
 - ◐ [[array]] · *concept* · updated 2026-10-01
-- ◐ [[Anatomy of a Function]] · *concept* · updated 2026-10-01
 <!-- cc:end -->
 
 ## Start here

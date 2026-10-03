@@ -386,7 +386,7 @@
 - {id: hdr-cstdlib, t: "Header — cstdlib", ty: header, d: HDR, tier: 1, w: 2, al: ["<cstdlib>", "stdlib.h"]}
 - {id: hdr-cstdint, t: "Header — cstdint", ty: header, d: HDR, tier: 1, w: 2, pre: [fundamental-types], al: ["<cstdint>"]}
 - {id: hdr-limits, t: "Header — limits", ty: header, d: HDR, tier: 2, w: 2, pre: [fundamental-types], al: ["<limits>", "numeric_limits"]}
-- {id: hdr-cassert, t: "Header — cassert", ty: header, d: HDR, tier: 1, w: 2, pre: [assertions], al: ["<cassert>"]}
+- {id: hdr-cassert, t: "Header — Preprocessor, Assertions and Predefined Macros", ty: header, d: HDR, tier: 1, w: 2, pre: [preprocessor, assertions], al: ["<cassert>", "assert", "NDEBUG", "predefined macros", "__cplusplus", "#error", "feature-test macros"]}
 - {id: hdr-queue-stack, t: "Header — queue and stack", ty: header, d: HDR, tier: 2, w: 3, pre: [container-adaptors], al: ["<queue>", "<stack>"]}
 - {id: hdr-optional-variant-any, t: "Header — optional, variant and any", ty: header, d: HDR, tier: 2, w: 3, pre: [optional], al: ["<optional>", "<variant>", "<any>"]}
 - {id: hdr-tuple, t: "Header — tuple", ty: header, d: HDR, tier: 2, w: 3, pre: [pair-and-tuple], al: ["<tuple>"]}
