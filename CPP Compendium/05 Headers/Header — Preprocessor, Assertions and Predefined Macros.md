@@ -45,7 +45,7 @@ header: <cassert>
 > The **preprocessor** edits your source text before the compiler sees it: it pastes in headers, replaces macros, and keeps or drops blocks of code. It also hosts the first of C++'s **three assertion layers**. `#error` stops the build while preprocessing, `static_assert` stops it while compiling, and `assert` from **`<cassert>`** stops the program while it runs. Each layer can ask the toolchain questions through **predefined macros** such as `__cplusplus`, `__FILE__` and `__LINE__`.
 
 > [!standard] Versions
-> - **C++98**: directives, `#` and `##`, `#error`, `assert` + `NDEBUG`, `__cplusplus`, `__FILE__`, `__LINE__`
+> - **C++98**: directives, `defined` (inherited from C89), `#` and `##`, `#error`, `assert` + `NDEBUG`, `__cplusplus`, `__FILE__`, `__LINE__`
 > - **C++11**: `static_assert`, `__VA_ARGS__`, `_Pragma`, `__func__`, `__STDC_HOSTED__`
 > - **C++17**: `static_assert` without a message, `__has_include`
 > - **C++20**: `__VA_OPT__`, `__has_cpp_attribute`, standard feature-test macros, `<version>`, `std::source_location`
@@ -109,6 +109,7 @@ __VA_OPT__(,)                     // opt    | Comma only if args      | C++20
 // CONDITIONAL COMPILATION
 // ═══════════════════════════════════════════════════════════════════════════
 #if EXPR                          // test   | Keep block if EXPR != 0 | Unknown name = 0
+defined(NAME) / defined NAME      // op     | 1 if NAME is a macro    | Only inside #if
 #elif EXPR / #else / #endif       // chain  | Alternatives
 #ifdef NAME / #ifndef NAME        // test   | Is NAME defined?        | #if defined(NAME)
 #elifdef NAME / #elifndef NAME    // chain  | Defined-test in a chain | C++23
@@ -369,6 +370,40 @@ int main() { std::cout << "using " << backend << '\n'; }
 ```
 Testing the exact feature beats testing `__cplusplus`: compilers ship library features at different times.
 
+### Combining Conditions: `defined` and Precedence
+```cpp
+#include <iostream>
+
+#define A                                   // defined, but empty
+#define B 0                                 // defined, value 0
+#define LEVEL 3
+
+int main() {
+#if defined(A) && !B                        // ① tests the NAME, not the value
+    std::cout << "1 ";
+#endif
+#if !defined(A) && defined(B) || defined(LEVEL)   // ② ((!A) && B) || LEVEL
+    std::cout << "2 ";
+#endif
+#if !(defined(A) && defined(B)) || LEVEL > 5      // ③ parentheses regroup
+    std::cout << "3 ";
+#endif
+#if LEVEL & 1 == 1                          // ④ means LEVEL & (1 == 1)
+    std::cout << "4 ";
+#endif
+#if defined LEVEL and not defined(C)        // ⑤ C++ spellings and / not
+    std::cout << "5 ";
+#endif
+    std::cout << '\n';
+}
+// expect: 1 2 4 5
+```
+1. `A` is defined even though it expands to nothing, and `B` is defined even though its value is `0`. `defined` only asks whether the name exists.
+2. `!` binds tighter than `&&`, and `&&` binds tighter than `||`. The first two tests are false, but `|| defined(LEVEL)` is true, so the block is kept.
+3. With parentheses, `!` applies to the whole `&&`: `!(1 && 1)` is `0`, and `3 > 5` is `0`, so nothing prints.
+4. `==` binds tighter than `&`, so this is `3 & (1 == 1)`, which is `3 & 1`, which is `1`. It happens to give the intended answer here, but `#if LEVEL & 4 == 4` is also `3 & 1` (true) even though bit 4 is not set. Always parenthesize bitwise tests: `#if (LEVEL & 4) == 4`.
+5. In C++, `and`, `or` and `not` are the same operators as `&&`, `||` and `!`, also inside `#if`.
+
 ### Stringize and Token-Paste: the Two-Level Trick
 ```cpp
 #include <iostream>
@@ -453,6 +488,62 @@ int main() { std::cout << path << '\n'; }
 ### Macros Are Text, Not C++
 The preprocessor runs before types, scopes and namespaces exist. A macro named `max` replaces every later `max`, including `std::max`; that's why Windows code defines `NOMINMAX`. Name macros in `ALL_CAPS` so they can't collide with ordinary names ([[The Preprocessor]]).
 
+### Where `defined` Comes From
+
+The original K&R C preprocessor could only test one name at a time, with `#ifdef` and `#ifndef`, and couldn't combine tests: there was no way to write "A defined and B not defined" in one line. ANSI C (C89) added the `defined` operator, together with `#elif`, and C++ inherited both. `defined` is **not a macro and not a function**. It is a unary operator that exists only inside `#if` and `#elif` expressions:
+
+| Rule | Detail |
+|---|---|
+| Two spellings | `defined NAME` and `defined(NAME)` mean the same |
+| Result | `1` if `NAME` is currently a macro, `0` if not |
+| Tests existence, not value | `#define DEBUG 0` still makes `defined(DEBUG)` equal `1` |
+| Operand is not expanded | `defined(X)` checks the name `X`, never what `X` expands to |
+| Operand must be one identifier | `defined(A + B)` or `defined 1` is undefined behaviour |
+| Can't be built by a macro | `#define IS(x) defined(x)` and then `#if IS(A)` is undefined behaviour (ill-formed in C++26); some compilers allow it, so code using it isn't portable |
+| `#ifdef` is shorthand | `#ifdef N` = `#if defined N`, `#ifndef N` = `#if !defined N`; C++23 adds `#elifdef` and `#elifndef` |
+| Also counts as defined | `__has_include` (C++17), `__has_cpp_attribute` (C++20), `__has_embed` (C++26) |
+
+Use `#ifdef` for a single test. Use `#if defined(...)` when combining tests with `&&`, `||` or `!`, which `#ifdef` can't do.
+
+### How `#if` Is Evaluated, in Order
+
+1. **Expand macros** in the expression, except the operands of `defined`.
+2. **Evaluate the preprocessor-only operators**: `defined`, `__has_include`, `__has_cpp_attribute`, `__has_embed`.
+3. **Replace every remaining identifier with `0`**, except `true` and `false`. A misspelled macro name silently becomes `0`; compile with `-Wundef` to get a warning.
+4. **Evaluate an integer constant expression.** All signed values behave as `std::intmax_t` and unsigned values as `std::uintmax_t` (C++11). There are no casts, `sizeof`, floating point, strings, function calls or assignments. The block is kept if the result is not `0`.
+
+An empty macro can be *tested* but not *used as a value*: with `#define A`, `#ifdef A` works, but `#if A` is an error ("`#if` with no expression").
+
+### Operator Precedence Inside `#if`
+
+The same precedence as ordinary C++ expressions, highest first:
+
+```text
+Level  Operators                        Groups
+──────────────────────────────────────────────────────────
+  1    ( )                              overrides everything
+  2    defined  !  ~  unary +  unary -  right to left
+  3    *  /  %                          left to right
+  4    +  -                             left to right
+  5    <<  >>                           left to right
+  6    <  <=  >  >=                     left to right
+  7    ==  !=                           left to right
+  8    &                                left to right
+  9    ^                                left to right
+ 10    |                                left to right
+ 11    &&   (also spelled: and)         left to right
+ 12    ||   (also spelled: or)          left to right
+ 13    ? :                              right to left
+```
+
+Three consequences:
+
+- `!defined(A) && defined(B)` means `(!defined(A)) && defined(B)`, because unary operators bind tightest.
+- `a && b || c` means `(a && b) || c`. Mixing `&&` and `||` without parentheses is legal but easy to misread; add the parentheses.
+- `FLAGS & MASK == MASK` means `FLAGS & (MASK == MASK)`, because `==` binds tighter than `&`. Write `(FLAGS & MASK) == MASK`.
+
+`&&`, `||` and `?:` short-circuit here too: in `#if defined(X) && X > 2`, the `X > 2` part isn't evaluated when `X` is undefined, so `-Wundef` stays quiet. That's the standard guard before comparing a macro's value. See [[Precedence and Associativity]] for the same table in ordinary C++ code.
+
 ### Function-Like Macros Copy Their Arguments
 `SQ(i++)` becomes `((i++) * (i++))`, which is undefined behaviour. `SQ(a + 1)` without the inner parentheses becomes `a + 1 * a + 1`. Prefer `constexpr` functions and templates. Keep macros for what only the preprocessor can do: `#` stringizing, `__FILE__`/`__LINE__` at the call site, conditional compilation, include guards.
 
@@ -529,7 +620,7 @@ Include a header once                        #pragma once or an include guard
 ## Connections
 
 - **Hub:** [[Map — Standard Headers]]
-- **Concepts:** [[The Preprocessor]] · [[assert and static_assert]] · [[Headers and Include Guards]] · [[The Compilation Pipeline]] · [[Translation Units]] · [[Modules (C++20)]] · [[Concepts and Constraints]]
+- **Concepts:** [[The Preprocessor]] · [[Precedence and Associativity]] · [[assert and static_assert]] · [[Headers and Include Guards]] · [[The Compilation Pipeline]] · [[Translation Units]] · [[Modules (C++20)]] · [[Concepts and Constraints]]
 - **Hazards:** [[Undefined Behavior]] · [[The One Definition Rule]]
 - **Error handling:** [[Exceptions]] · [[Error Handling Strategies Compared]]
 - **Sibling cards:** [[Header — Modern IO]] · [[Header — cstdio]]
@@ -541,6 +632,7 @@ Include a header once                        #pragma once or an include guard
 - Primer §6.5.3 "Aids for Debugging" (p. 240): `assert` and `NDEBUG` (p. 241), `__func__`, `__FILE__`, `__LINE__`, `__TIME__`, `__DATE__`.
 - Tour §4.5 "Assertions" (p. 48): `assert`, `static_assert`, compile time versus run time.
 - Tour §19.2 "C++ Feature Evolution" (p. 263): which standard added which facility.
+- cppreference / web, *Conditional inclusion* (`defined`, the `#if` evaluation steps): https://en.cppreference.com/w/cpp/preprocessor/conditional
 - cppreference / web, *Preprocessor*, *Replacing text macros*, *Conditional inclusion*, *Feature testing*, *assert*, *static_assert*: https://en.cppreference.com/w/cpp/preprocessor · https://en.cppreference.com/w/cpp/preprocessor/replace · https://en.cppreference.com/w/cpp/feature_test · https://en.cppreference.com/w/cpp/error/assert · https://en.cppreference.com/w/cpp/language/static_assert
 - GCC manual, *The C Preprocessor* ("Predefined Macros", "Obsolete Features"): https://gcc.gnu.org/onlinedocs/cpp/
 - Microsoft Learn, *Predefined macros* and `/Zc:__cplusplus`: https://learn.microsoft.com/en-us/cpp/preprocessor/predefined-macros
